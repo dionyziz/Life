@@ -1,0 +1,10 @@
+posts
+    id
+    userid
+    text
+    created
+users
+    id
+    name
+    password
+    created

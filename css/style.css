@@ -1,0 +1,223 @@
+/*
+ * Developer: Dionysis "dionyziz" Zindros <dionyziz@gmail.com>
+ */
+
+body {
+    font-family: "Trebuchet MS", Verdana, sans-serif;
+    padding: 0 0 15px 0px;
+    margin: 0;
+    border-top: 3px solid #e50071;
+}
+textarea {
+    height: 100px;
+    width: 62%;
+    font-family: "Trebuchet MS", Verdana, sans-serif;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding: 5px;
+    margin: 5px;
+}
+span.time {
+    float: right;
+    color: black;
+    width: 37%;
+    text-transform: uppercase;
+    font-size: 70%;
+    font-weight: bold;
+    background-color: #eee;
+    display: block;
+    padding: 18px 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: -1px;
+}
+div.different span.time {
+    border-top: 1px solid #ccc;
+}
+div.lasthour span.time {
+    background-image: -webkit-gradient(
+        linear,
+        left bottom,
+        left top,
+        color-stop(0.06, rgb(238,238,238)),
+        color-stop(0, rgb(255,255,255))
+    );
+    background-image: -moz-linear-gradient(
+        center bottom,
+        rgb(238,238,238) 6%,
+        rgb(255,255,255) 0%
+    );
+}
+span.time span.padlock {
+    background-image: url( '../images/padlock-closed.png' );
+    background-repeat: no-repeat;
+    background-position: top right;
+    display: block;
+    float: left;
+    width: 16px;
+    height: 16px;
+    margin: 0px 0 0 5px;
+}
+span.time span.clock {
+    margin-left: 10px;
+    text-shadow: 1px 1px 0 white;
+    padding: 4px;
+}
+span.time span.clock.editable:hover {
+    border: 1px solid #666;
+    background-color: white;
+    padding: 3px;
+    border-radius: 2px;
+    cursor: pointer;
+}
+span.time span.date {
+    float: right;
+    padding-right: 10px;
+    text-transform: none;
+    font-size: 200%;
+    font-weight: normal;
+    font-family: Impact, Charcoal, sans-serif;
+    line-height: 12px;
+    color: #999;
+    white-space: nowrap;
+    text-shadow: 1px 1px 0px white;
+}
+p {
+    width: 62%;
+    padding: 15px 15px 15px 10px;
+    margin: 0;
+    position: relative;
+}
+p span.text {
+    display: block;
+    margin-right: 15px;
+}
+div.posts p img {
+    border: 1px solid #ccc;
+    background-color: white;
+    padding: 1px;
+    max-width: 95%;
+}
+div.posts div:first-child p, div.posts div.different p {
+    border-top: 1px solid #ccc;
+}
+div.posts div {
+    padding: 0;
+    clear: both;
+    position: relative;
+}
+form {
+    width: 100%;
+}
+ul.toolbar {
+    list-style: none;
+    padding: 0 0 0 0;
+    margin: 0;
+    float: right;
+}
+ul.toolbar li {
+    float: right;
+    height: 33px;
+    line-height: 33px;
+    font-size: 90%;
+}
+ul.toolbar li a {
+    display: block;
+    padding: 0px 10px 0px 8px;
+    border-radius: 0;
+    font-size: 100%;
+}
+ul.toolbar li:after {
+    padding-left: 3px;
+}
+ul.toolbar li:last-child:after {
+    content: "";
+}
+a {
+    color: #e50071;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 80%;
+    padding: 2px;
+}
+a:hover {
+    color: white;
+    background-color: #e50071;
+    border-radius: 5px;
+}
+p a {
+    font-size: 100%;
+}
+form.login {
+    margin: 20px auto;
+    width: 270px;
+}
+form.login label {
+    width: 100px;
+    display: block;
+    float: left;
+}
+form.login input[type=text], form.login input[type=password] {
+    width: 163px;
+}
+form.login input[type=submit] {
+    float: right;
+}
+div.error {
+    width: 500px;
+    background-color: #ac3737;
+    margin: 10px auto;
+    padding: 10px;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    font-size: 90%;
+    border-radius: 5px;
+}
+.uploadarea {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: #333;
+    color: white;
+    font-family: Impact, Charcoal, sans-serif;
+    font-size: 400%;
+    text-align: center;
+    padding: 100px;
+    z-index: 1;
+    display: none;
+}
+a.x {
+    display: none;
+    float: right;
+    font-size: 150%;
+    font-weight: normal;
+    padding: 0 5px;
+    position: absolute;
+    top: -5px;
+    right: 0;
+    margin: 10px;
+}
+div.posts p:hover a.x {
+    display: block;
+}
+form.newpost span.padlock {
+    background-image: url( '../images/padlock-closed.png' );
+    background-repeat: no-repeat;
+    background-position: top right;
+    display: block;
+    width: 16px;
+    height: 16px;
+    margin: 10px 0 0 22px;
+    position: absolute;
+    left: 62%;
+    top: 0;
+    cursor: pointer;
+}
+form.newpost span.padlock.open {
+    background-image: url( '../images/padlock-open.png' );
+    margin-left: 24px;
+}
