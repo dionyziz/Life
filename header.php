@@ -2,7 +2,8 @@
     session_start();
     set_include_path( get_include_path() . PATH_SEPARATOR . '/home/dionyziz/life/models/ZendGdata/library' );
     function Redirect( $url = '' ) {
-        $url = 'http://dionyziz.kamibu.com/life/' . $url;
+        global $settings;
+        $url = $settings[ 'url' ] . $url;
         header( 'Location: ' . $url );
     }
     function view( $path, $variables = false) {

@@ -9,14 +9,14 @@
         ?><p>No posts here.</p>
         <p>Why not check out this <a href="http://en.wikipedia.org/wiki/Special:Random">random Wikipedia article</a> to learn something new?</p><?php
     }
-    foreach ( $posts as $post ) {
+    while ( $post = array_shift( $posts ) ) {
         $differentday = false;
         $lasthourofday = false;
         if ( $lastdate != date( 'F j', strtotime( $post[ 'created' ] ) ) ) {
             $lastdate = date( 'F j', strtotime( $post[ 'created' ] ) );
             $differentday = true;
         }
-        if ( isset( $posts[ $i + 1 ] ) && date( 'F j', strtotime( $posts[ $i + 1 ][ 'created' ] ) ) != $lastdate ) {
+        if ( isset( $posts[ 0 ] ) && date( 'F j', strtotime( $posts[ 0 ][ 'created' ] ) ) != $lastdate ) {
             $lasthourofday = true;
         }
         ?><div<?php
@@ -60,16 +60,37 @@
         }
         if ( $post[ 'type' ] == 'text' ) {
             ?><span class="text"><?php
-            echo nl2br( htmlspecialchars( $post[ 'text' ] ) );
+            echo $post[ 'formatted' ]; 
             ?></span><?php
         }
         else {
-            ?><img src="thumb.php?file=uploads/<?php
-            echo $post[ 'text' ];
-            ?>" alt="" /><?php
+            if ( substr( $post[ 'text' ], 0, strlen( 'picasa:' ) ) == 'picasa:' ) {
+                ?><span class='gallery'><?php
+                do {
+                    $post[ 'text' ] = substr( $post[ 'text' ], strlen( 'picasa:' ) );
+                    list( $contentUrl, $thumbnailUrl, $link ) = explode( ' ', $post[ 'text' ] );
+                    ?><a href='<?php
+                    echo htmlspecialchars( $link );
+                    ?>' class='imagelink'><img src="<?php
+                    echo htmlspecialchars( $thumbnailUrl );
+                    ?>" /></a><?php
+                } while (
+                    count( $posts )
+                 && $posts[ 0 ][ 'type' ] == 'photo'
+                 && substr( $posts[ 0 ][ 'text' ], 0, strlen( 'picasa:' ) ) == 'picasa:'
+                 && $post = array_shift( $posts )
+                );
+                ?><span style='clear:both;display:block'></span></span><?php
+            }
+            else {
+                ?><img src="thumb.php?file=uploads/<?php
+                echo htmlspecialchars( $post[ 'text' ] );
+                ?>" alt="" /><?php
+            }
         }
         ?></p></div><?php
         ++$i;
     }
-    ?></div><?php
+    ?></div>
+    <?php
 ?>

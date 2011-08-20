@@ -27,5 +27,9 @@
             $taken = date( "Y-m-d H:i:s", $taken );
             db_update( 'photos', compact( 'id' ), compact( 'taken' ) );
         }
+        public static function timeFromFile( $file ) {
+            $exif = exif_read_data( $file, 0, true );
+            return strtotime( $exif[ 'EXIF' ][ 'DateTimeOriginal' ] );
+        }
     }
 ?>

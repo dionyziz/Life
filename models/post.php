@@ -32,6 +32,9 @@
                     DATE( created ) DESC, TIME( created ) ASC, id ASC',
                 compact( 'userid', 'visibility' )
             );
+            foreach ( $rows as $i => $row ) {
+                $rows[ $i ][ 'formatted' ] = Post::format( $row[ 'text' ] );
+            }
             return $rows;
         }
         public static function update( $id, $created ) {
@@ -40,6 +43,7 @@
             );
         }
         public static function format( $text ) {
+            return nl2br( htmlspecialchars( $text ) );
         }
     }
 ?>

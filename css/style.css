@@ -98,6 +98,7 @@ div.posts p img {
     background-color: white;
     padding: 1px;
     max-width: 95%;
+    min-height: 292px;
 }
 div.posts div:first-child p, div.posts div.different p {
     border-top: 1px solid #ccc;
@@ -145,6 +146,12 @@ a:hover {
     color: white;
     background-color: #e50071;
     border-radius: 5px;
+}
+a.imagelink:hover {
+    background-color: transparent;
+}
+a.imagelink img:hover {
+    background-color: #e50071;
 }
 p a {
     font-size: 100%;

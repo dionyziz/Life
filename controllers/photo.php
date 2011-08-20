@@ -68,8 +68,7 @@
                 throw new Exception( 'File already exists.' );
             }
             file_put_contents( $uploadfile, $data );
-            $exif = exif_read_data( $uploadfile, 0, true );
-            $taken = strtotime( $exif[ 'EXIF' ][ 'DateTimeOriginal' ] );
+            $taken = Photo::timeFromFile( $uploadfile );
             Photo::update( $id, $taken );
             echo 'File uploaded successfully.';
             Post::create( $filename, $_SESSION[ 'user' ][ 'id' ], 'photo', $visibility, $taken );
