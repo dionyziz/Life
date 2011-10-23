@@ -20,7 +20,7 @@
         $method = '';
     }
     if ( !isset( $methods[ $method ] ) ) {
-        $method = 'listing';
+        $method = 'view';
     }
     switch ( $_SERVER[ 'REQUEST_METHOD' ] ) {
         case 'POST':
@@ -34,17 +34,20 @@
             break;
     }
     if ( $methods[ $method ] == 1 && $_SERVER[ 'REQUEST_METHOD' ] != 'POST' ) {
-        die( 'Method "' . $method . '" which is a POST method called using HTTP GET. (Rejected)'  );
+        $method = $method . 'View';
+        // die( 'Method "' . $method . '" which is a POST method called using HTTP GET. (Rejected)'  );
     }
     $resource = basename( $resource );
     $filename = 'controllers/' . $resource . '.php';
     if ( !file_exists( $filename ) ) {
-        $resource = 'post';
+        // die( 'File not found: ' . $filename );
+        $resource = 'session';
+        $method = 'createView';
         $filename = 'controllers/' . $resource . '.php';
     }
     include $filename;
     $controllername = ucfirst( $resource ) . 'Controller';
-    $methodname = ucfirst( $method );
+    $methodname = $method;
     $reflection = new ReflectionMethod( $controllername, $methodname );
     $parameters = $reflection->getParameters();
     $arguments = array();
@@ -58,6 +61,14 @@
     }
     try {
         call_user_func_array( array( $controllername, $methodname ), $arguments );
+    }
+    catch ( NotImplemented $e ) {
+        die( 'An attempt was made to call a non-implemented function: ' . $e->getFunctionName() );
+    }
+    catch ( RedirectException $e ) {
+        global $settings;
+        $url = $settings[ 'url' ] . $e->getURL();
+        header( 'Location: ' . $url );
     }
     catch ( Exception $e ) {
         die( $controllername . '::' . $methodname . ' call rejected: ' . $e->getMessage() );

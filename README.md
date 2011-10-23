@@ -42,6 +42,5 @@ features in the future:
 * Picasa integration
 * Post pagination
 * Calendar view and time ranges
-* Account registration
 * Post editing
 

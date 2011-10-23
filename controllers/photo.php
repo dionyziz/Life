@@ -1,6 +1,6 @@
 <?php
     class PhotoController {
-        public function Create( $data, $filename, $visibility ) {
+        public function create( $data, $filename, $visibility ) {
             if ( $data == '' ) {
                 // attempt to overcome PHP bug that causes
                 // the HTTP POST value to be empty

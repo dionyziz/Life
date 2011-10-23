@@ -15,12 +15,18 @@
     </head>
     <body>
         <ul class="toolbar"><?php
-        if ( $loggedin ) {
-            ?><li><a href="session/delete" id="logoutlink">Log out</a></li>
-            <li><span>dionyziz</span></li>
-<?php
+        if ( $loginform ) {
+            ?><li><a href='user/create'>Get a life</a></li><?php
         }
         else {
-            ?><li><a href="session/view">Log in</a></li><?php
+            if ( $loggedin ) {
+                ?><li><a href="session/delete" id="logoutlink">Log out</a></li>
+                <li><span><?php
+                echo $user[ 'name' ];
+                ?></span></li> <?php
+            }
+            else {
+                ?><li><a href="session/view">Log in</a></li><?php
+            }
         }
         ?></ul><?php

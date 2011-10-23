@@ -105,7 +105,7 @@ if ( document.getElementById( 'logoutlink' ) ) {
     $( 'a.x' ).click( function () {
         var link = this;
         $.post( 'post/delete', {
-            postid: $( this ).parents( 'p' )[ 0 ].id.split( 'p' )[ 1 ]
+            id: $( this ).parents( 'p' )[ 0 ].id.split( 'p' )[ 1 ]
         }, function () {
             $( $( link ).parents( 'div' )[ 0 ] ).remove();
         } );
