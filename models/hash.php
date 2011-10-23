@@ -1,4 +1,15 @@
 <?php 
+    function blowfishEncrypt( $password ) {
+        $iterations = 7;
+        $alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+        $salt = '';
+        for ( $i = 0; $i < 22; ++$i ) {
+            $salt .= $alphabet[ rand( 0, strlen( $alphabet ) - 1 ) ];
+        }
+
+        return crypt( $password, '$2a$' . $iterations . '$' . $salt . '$' );
+    }
+
     function hash_random() {
         $bytes = array(); // the array of all our 16 bytes
         for ( $i = 0; $i < 8 ; ++$i ) {
