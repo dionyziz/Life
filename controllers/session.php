@@ -1,17 +1,21 @@
 <?php
     class SessionController {
-        public function View( $error ) {
+        public function createView( $error ) {
+            if ( isset( $_SESSION[ 'user' ] ) ) {
+                Redirect( 'post/listing' );
+            }
+            $loginform = true;
             view( 'session/view', compact( 'error' ) );
         }
-        public function Create( $username, $password ) {
+        public function create( $username, $password ) {
             $user = User::authenticate( $username, $password );
             if ( $user === false ) {
-                return Redirect( 'session/view?error=yes' );
+                Redirect( 'session/create?error=yes' );
             }
             $_SESSION[ 'user' ] = $user;
-            return Redirect( 'index.php' );
+            Redirect( 'index.php' );
         }
-        public function Delete() {
+        public function delete() {
             session_destroy();
         }
     }

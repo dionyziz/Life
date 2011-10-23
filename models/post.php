@@ -45,5 +45,8 @@
         public static function format( $text ) {
             return nl2br( htmlspecialchars( $text ) );
         }
+        public static function item( $id ) {
+            return array_shift( db_select( 'posts', compact( 'id' ) ) );
+        }
     }
 ?>
