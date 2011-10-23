@@ -1,0 +1,193 @@
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title>Zend Gdata API Documentation</title><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" href="css/black-tie/jquery-ui-1.8.2.custom.css" type="text/css"></link><link rel="stylesheet" href="css/jquery.treeview.css" type="text/css"></link><link rel="stylesheet" href="css/theme.css" type="text/css"></link><script type="text/javascript" src="js/jquery-1.4.2.min.js"></script><script type="text/javascript" src="js/jquery-ui-1.8.2.custom.min.js"></script><script type="text/javascript" src="js/jquery.cookie.js"></script><script type="text/javascript" src="js/jquery.treeview.js"></script><script type="text/javascript">
+            $(document).ready(function() {
+                $(".filetree").treeview({
+                    collapsed: true,
+                    persist: "cookie"
+                });
+
+                $("#accordion").accordion({
+                    collapsible: true,
+                    autoHeight:  false,
+                    fillSpace:   true
+                });
+
+                $(".tabs").tabs();
+            });
+        </script></head><body><div xmlns="" class="content">
+<div class="sub-page-main-header-api-documentation"><h2>API Documentation</h2></div>
+<div class="dotted-line"></div>
+</div>
+<div xmlns="" id="content">
+<script>
+      $(document).ready(function() {
+        $('dl.function-info, dl.constant-info, dl.property-info').prev().css('cursor', 'pointer');
+        $('dl.function-info, dl.constant-info, dl.property-info').prev().click(function() {
+          if ($(this).next().is(':hidden'))
+          {
+            $(this).children('img')[0].src = 'images/arrow_down.gif';
+          } else
+          {
+            $(this).children('img')[0].src = 'images/arrow_right.gif';
+          }
+          $(this).next().slideToggle();
+        });
+      $('dl.function-info, dl.constant-info, dl.property-info').hide();
+      $('dl.function-info img, dl.constant-info img, dl.property-info img').show();
+      });
+    </script><a name="top"></a><h1 class="file">Gdata/Exif/Extension/Flash.php</h1>
+<div class="file_menu">
+<a href="#includes">Includes</a> <a href="#classes">Classes</a> </div>
+<dl class="file-info">
+<dt>category</dt>
+<dd>Zend</dd>
+<dt>copyright</dt>
+<dd>Copyright (c) 2005-2011 Zend Technologies USA Inc. (http://www.zend.com)</dd>
+<dt>license</dt>
+<dd>http://framework.zend.com/license/new-bsd     New BSD License</dd>
+<dt>package</dt>
+<dd>Zend_Gdata</dd>
+<dt>subpackage</dt>
+<dd>Exif</dd>
+<dt>version</dt>
+<dd>$Id: Flash.php 23775 2011-03-01 17:25:24Z ralph $</dd>
+<dt>Classes</dt>
+<dd><a class="class" href="#%5CZend_Gdata_Exif_Extension_Flash">Zend_Gdata_Exif_Extension_Flash</a></dd>
+</dl>
+<h2>Description</h2>
+<p class="short-description">Zend Framework</p>
+<div class="long-description"><p>LICENSE</p>
+
+<p>This source file is subject to the new BSD license that is bundled
+with this package in the file LICENSE.txt.
+It is also available through the world-wide-web at this URL:
+http://framework.zend.com/license/new-bsd
+If you did not receive a copy of the license and are unable to
+obtain it through the world-wide-web, please send an email
+to license@zend.com so we can send you a copy immediately.</p>
+</div>
+<a name="classes"></a><a id="\Zend_Gdata_Exif_Extension_Flash"></a><h2 class="class">\Zend_Gdata_Exif_Extension_Flash<div class="to-top"><a href="#top">jump to top</a></div>
+</h2>
+<div class="class">
+<dl class="class-info">
+<dt>Extends from</dt>
+<dd><a href="_Gdata_Extension.html#%5CZend_Gdata_Extension">\Zend_Gdata_Extension</a></dd>
+<dt>category</dt>
+<dd>Zend</dd>
+<dt>copyright</dt>
+<dd>Copyright (c) 2005-2011 Zend Technologies USA Inc. (http://www.zend.com)</dd>
+<dt>license</dt>
+<dd>http://framework.zend.com/license/new-bsd     New BSD License</dd>
+<dt>package</dt>
+<dd>Zend_Gdata</dd>
+<dt>subpackage</dt>
+<dd>Exif</dd>
+<dt><a href="#" onclick="$(this).children('img').toggle().parents('dt').nextUntil('dt').slideToggle(); return false;"><img src="images/arrow_down.gif"><img src="images/arrow_right.gif" style="display: none">
+                Properties
+              </a></dt>
+<dd><a class="property protected" href="#%5CZend_Gdata_Exif_Extension_Flash::%24_rootElement">$_rootElement</a></dd>
+<dd><a class="property protected" href="#%5CZend_Gdata_Exif_Extension_Flash::%24_rootNamespace">$_rootNamespace</a></dd>
+<dt><a href="#" onclick="$(this).children('img').toggle().parents('dt').nextUntil('dt').slideToggle(); return false;"><img src="images/arrow_down.gif"><img src="images/arrow_right.gif" style="display: none">
+                Methods
+              </a></dt>
+<dd><a class="method public" href="#%5CZend_Gdata_Exif_Extension_Flash::__construct()">__construct</a></dd>
+</dl>
+<h3>Description</h3>
+<p class="short-description">Represents the exif:flash element used by the Gdata Exif extensions.</p>
+<div class="long-description">
+</div>
+<h3>Properties</h3>
+<div>
+<a id="\Zend_Gdata_Exif_Extension_Flash::$_rootElement"></a><h4 class="property protected">$_rootElement<div class="to-top"><a href="#%5CZend_Gdata_Exif_Extension_Flash">jump to class</a></div>
+</h4>
+<div class="property">
+<code>string <span class="highlight">$_rootElement</span> = 'flash'</code><p class="short-description"></p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt></dt>
+<dd>string<br><em>The XML element name, including prefix if desired</em>
+</dd>
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd>flash</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Exif_Extension_Flash::$_rootNamespace"></a><h4 class="property protected">$_rootNamespace<div class="to-top"><a href="#%5CZend_Gdata_Exif_Extension_Flash">jump to class</a></div>
+</h4>
+<div class="property">
+<code>string <span class="highlight">$_rootNamespace</span> = 'exif'</code><p class="short-description"></p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt></dt>
+<dd>string<br><em>The XML namespace prefix</em>
+</dd>
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd>exif</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+</div>
+<h3>Methods</h3>
+<div>
+<a id="\Zend_Gdata_Exif_Extension_Flash::__construct()"></a><h4 class="method public">__construct<div class="to-top"><a href="#Zend_Gdata_Exif_Extension_Flash">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">__construct</span><span class="nb-faded-text">(
+          string $text
+              =
+              null
+          )
+        </span>
+        :
+        </code><p class="short-description">Constructs a new Zend_Gdata_Exif_Extension_Flash object.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$text</dt>
+<dd>string<br><em>(optional) The value to use for this element.</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<small xmlns="" class="footer">Documentation was generated by <a href="http://docblox-project.org">DocBlox 0.12.2</a>.
+    </small></body></html>

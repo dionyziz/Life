@@ -1,0 +1,724 @@
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title>Zend Gdata API Documentation</title><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" href="css/black-tie/jquery-ui-1.8.2.custom.css" type="text/css"></link><link rel="stylesheet" href="css/jquery.treeview.css" type="text/css"></link><link rel="stylesheet" href="css/theme.css" type="text/css"></link><script type="text/javascript" src="js/jquery-1.4.2.min.js"></script><script type="text/javascript" src="js/jquery-ui-1.8.2.custom.min.js"></script><script type="text/javascript" src="js/jquery.cookie.js"></script><script type="text/javascript" src="js/jquery.treeview.js"></script><script type="text/javascript">
+            $(document).ready(function() {
+                $(".filetree").treeview({
+                    collapsed: true,
+                    persist: "cookie"
+                });
+
+                $("#accordion").accordion({
+                    collapsible: true,
+                    autoHeight:  false,
+                    fillSpace:   true
+                });
+
+                $(".tabs").tabs();
+            });
+        </script></head><body><div xmlns="" class="content">
+<div class="sub-page-main-header-api-documentation"><h2>API Documentation</h2></div>
+<div class="dotted-line"></div>
+</div>
+<div xmlns="" id="content">
+<script>
+      $(document).ready(function() {
+        $('dl.function-info, dl.constant-info, dl.property-info').prev().css('cursor', 'pointer');
+        $('dl.function-info, dl.constant-info, dl.property-info').prev().click(function() {
+          if ($(this).next().is(':hidden'))
+          {
+            $(this).children('img')[0].src = 'images/arrow_down.gif';
+          } else
+          {
+            $(this).children('img')[0].src = 'images/arrow_right.gif';
+          }
+          $(this).next().slideToggle();
+        });
+      $('dl.function-info, dl.constant-info, dl.property-info').hide();
+      $('dl.function-info img, dl.constant-info img, dl.property-info img').show();
+      });
+    </script><a name="top"></a><h1 class="file">Gdata/Docs.php</h1>
+<div class="file_menu">
+<a href="#includes">Includes</a> <a href="#classes">Classes</a> </div>
+<dl class="file-info">
+<dt>category</dt>
+<dd>Zend</dd>
+<dt>copyright</dt>
+<dd>Copyright (c) 2005-2011 Zend Technologies USA Inc. (http://www.zend.com)</dd>
+<dt>license</dt>
+<dd>http://framework.zend.com/license/new-bsd     New BSD License</dd>
+<dt>package</dt>
+<dd>Zend_Gdata</dd>
+<dt>subpackage</dt>
+<dd>Docs</dd>
+<dt>version</dt>
+<dd>$Id: Docs.php 23805 2011-03-16 00:55:40Z tjohns $</dd>
+<dt>Classes</dt>
+<dd><a class="class" href="#%5CZend_Gdata_Docs">Zend_Gdata_Docs</a></dd>
+</dl>
+<h2>Description</h2>
+<p class="short-description">Zend Framework</p>
+<div class="long-description"><p>LICENSE</p>
+
+<p>This source file is subject to the new BSD license that is bundled
+with this package in the file LICENSE.txt.
+It is also available through the world-wide-web at this URL:
+http://framework.zend.com/license/new-bsd
+If you did not receive a copy of the license and are unable to
+obtain it through the world-wide-web, please send an email
+to license@zend.com so we can send you a copy immediately.</p>
+</div>
+<a name="classes"></a><a id="\Zend_Gdata_Docs"></a><h2 class="class">\Zend_Gdata_Docs<div class="to-top"><a href="#top">jump to top</a></div>
+</h2>
+<div class="class">
+<dl class="class-info">
+<dt>Extends from</dt>
+<dd><a href="_Gdata.html#%5CZend_Gdata">\Zend_Gdata</a></dd>
+<dt>category</dt>
+<dd>Zend</dd>
+<dt>copyright</dt>
+<dd>Copyright (c) 2005-2011 Zend Technologies USA Inc. (http://www.zend.com)</dd>
+<dt>license</dt>
+<dd>http://framework.zend.com/license/new-bsd     New BSD License</dd>
+<dt>link</dt>
+<dd><a href="http://code.google.com/apis/documents/">http://code.google.com/apis/documents/</a></dd>
+<dt>package</dt>
+<dd>Zend_Gdata</dd>
+<dt>subpackage</dt>
+<dd>Docs</dd>
+<dt><a href="#" onclick="$(this).children('img').toggle().parents('dt').nextUntil('dt').slideToggle(); return false;"><img src="images/arrow_down.gif"><img src="images/arrow_right.gif" style="display: none">
+                Constants
+              </a></dt>
+<dd><a class="constant" href="#%5CZend_Gdata_Docs::AUTH_SERVICE_NAME">AUTH_SERVICE_NAME</a></dd>
+<dd><a class="constant" href="#%5CZend_Gdata_Docs::DOCUMENTS_CATEGORY_SCHEMA">DOCUMENTS_CATEGORY_SCHEMA</a></dd>
+<dd><a class="constant" href="#%5CZend_Gdata_Docs::DOCUMENTS_CATEGORY_TERM">DOCUMENTS_CATEGORY_TERM</a></dd>
+<dd><a class="constant" href="#%5CZend_Gdata_Docs::DOCUMENTS_FOLDER_FEED_URI">DOCUMENTS_FOLDER_FEED_URI</a></dd>
+<dd><a class="constant" href="#%5CZend_Gdata_Docs::DOCUMENTS_LIST_FEED_URI">DOCUMENTS_LIST_FEED_URI</a></dd>
+<dt><a href="#" onclick="$(this).children('img').toggle().parents('dt').nextUntil('dt').slideToggle(); return false;"><img src="images/arrow_down.gif"><img src="images/arrow_right.gif" style="display: none">
+                Properties
+              </a></dt>
+<dd><a class="property private" href="#%5CZend_Gdata_Docs::%24SUPPORTED_FILETYPES">$SUPPORTED_FILETYPES</a></dd>
+<dd><a class="property protected" href="#%5CZend_Gdata_Docs::%24_defaultPostUri">$_defaultPostUri</a></dd>
+<dt><a href="#" onclick="$(this).children('img').toggle().parents('dt').nextUntil('dt').slideToggle(); return false;"><img src="images/arrow_down.gif"><img src="images/arrow_right.gif" style="display: none">
+                Methods
+              </a></dt>
+<dd><a class="method public" href="#%5CZend_Gdata_Docs::__construct()">__construct</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Docs::createFolder()">createFolder</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Docs::getDoc()">getDoc</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Docs::getDocument()">getDocument</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Docs::getDocumentListEntry()">getDocumentListEntry</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Docs::getDocumentListFeed()">getDocumentListFeed</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Docs::getPresentation()">getPresentation</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Docs::getSpreadsheet()">getSpreadsheet</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Docs::insertDocument()">insertDocument</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Docs::lookupMimeType()">lookupMimeType</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Docs::uploadFile()">uploadFile</a></dd>
+</dl>
+<h3>Description</h3>
+<p class="short-description">Service class for interacting with the Google Document List data API</p>
+<div class="long-description"><p>As the Google data API protocol is based upon the Atom Publishing Protocol
+(APP), Gdata functionality extends the appropriate Zend_Gdata_App classes</p>
+</div>
+<h3>Constants</h3>
+<div>
+<a id="\Zend_Gdata_Docs::DOCUMENTS_LIST_FEED_URI"></a><h4 class="constant">DOCUMENTS_LIST_FEED_URI<div class="to-top"><a href="#Zend_Gdata_Docs">jump to class</a></div>
+</h4>
+<div class="constant">
+<code> <span class="highlight">DOCUMENTS_LIST_FEED_URI</span> = 'https://docs.google.com/feeds/documents/private/full'
+      </code><div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="constant-info">
+<dt>value</dt>
+<dd>https://docs.google.com/feeds/documents/private/full</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Docs::DOCUMENTS_FOLDER_FEED_URI"></a><h4 class="constant">DOCUMENTS_FOLDER_FEED_URI<div class="to-top"><a href="#Zend_Gdata_Docs">jump to class</a></div>
+</h4>
+<div class="constant">
+<code> <span class="highlight">DOCUMENTS_FOLDER_FEED_URI</span> = 'https://docs.google.com/feeds/folders/private/full'
+      </code><div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="constant-info">
+<dt>value</dt>
+<dd>https://docs.google.com/feeds/folders/private/full</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Docs::DOCUMENTS_CATEGORY_SCHEMA"></a><h4 class="constant">DOCUMENTS_CATEGORY_SCHEMA<div class="to-top"><a href="#Zend_Gdata_Docs">jump to class</a></div>
+</h4>
+<div class="constant">
+<code> <span class="highlight">DOCUMENTS_CATEGORY_SCHEMA</span> = 'https://schemas.google.com/g/2005#kind'
+      </code><div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="constant-info">
+<dt>value</dt>
+<dd>https://schemas.google.com/g/2005#kind</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Docs::DOCUMENTS_CATEGORY_TERM"></a><h4 class="constant">DOCUMENTS_CATEGORY_TERM<div class="to-top"><a href="#Zend_Gdata_Docs">jump to class</a></div>
+</h4>
+<div class="constant">
+<code> <span class="highlight">DOCUMENTS_CATEGORY_TERM</span> = 'https://schemas.google.com/docs/2007#folder'
+      </code><div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="constant-info">
+<dt>value</dt>
+<dd>https://schemas.google.com/docs/2007#folder</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Docs::AUTH_SERVICE_NAME"></a><h4 class="constant">AUTH_SERVICE_NAME<div class="to-top"><a href="#Zend_Gdata_Docs">jump to class</a></div>
+</h4>
+<div class="constant">
+<code> <span class="highlight">AUTH_SERVICE_NAME</span> = 'writely'
+      </code><div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="constant-info">
+<dt>value</dt>
+<dd>writely</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+</div>
+<h3>Properties</h3>
+<div>
+<a id="\Zend_Gdata_Docs::$SUPPORTED_FILETYPES"></a><h4 class="property private">$SUPPORTED_FILETYPES<div class="to-top"><a href="#%5CZend_Gdata_Docs">jump to class</a></div>
+</h4>
+<div class="property">
+<code> <span class="highlight">$SUPPORTED_FILETYPES</span> = 'array'</code><div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt>visibility</dt>
+<dd>private</dd>
+<dt>default</dt>
+<dd>array</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>true</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Docs::$_defaultPostUri"></a><h4 class="property protected">$_defaultPostUri<div class="to-top"><a href="#%5CZend_Gdata_Docs">jump to class</a></div>
+</h4>
+<div class="property">
+<code>string <span class="highlight">$_defaultPostUri</span> = 'self'</code><p class="short-description">Default URI to which to POST.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt></dt>
+<dd>string<br><em></em>
+</dd>
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd>self</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+</div>
+<h3>Methods</h3>
+<div>
+<a id="\Zend_Gdata_Docs::__construct()"></a><h4 class="method public">__construct<div class="to-top"><a href="#Zend_Gdata_Docs">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">__construct</span><span class="nb-faded-text">(
+          <a href="_Http_Client.html#%5CZend_Http_Client">\Zend_Http_Client</a> $client
+              =
+              null, string $applicationId
+              =
+              MyCompany-MyApp-1.0
+          )
+        </span>
+        :
+        </code><p class="short-description">Create Gdata_Docs object</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$client</dt>
+<dd>\Zend_Http_Client<br><em>(optional) The HTTP client to use when when communicating with the Google servers.</em>
+</dd>
+<dt>$applicationId</dt>
+<dd>string<br><em>The identity of the app in the form of Company-AppName-Version</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Docs::createFolder()"></a><h4 class="method public">createFolder<div class="to-top"><a href="#Zend_Gdata_Docs">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">createFolder</span><span class="nb-faded-text">(
+          string $folderName, string|null $folderResourceId
+              =
+              null
+          )
+        </span>
+        :
+        <a href="_Gdata_Entry.html#%5CZend_Gdata_Entry">\Zend_Gdata_Entry</a></code><p class="short-description">Creates a new folder in Google Docs</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$folderName</dt>
+<dd>string<br><em>The folder name to create</em>
+</dd>
+<dt>$folderResourceId</dt>
+<dd>stringnull<br><em>The parent folder to create it in (&amp;quot;folder%3Amy_parent_folder&amp;quot;)</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_Entry.html#%5CZend_Gdata_Entry">\Zend_Gdata_Entry</a></dt>
+<dd><em>The folder entry created.</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+<dt>todo</dt>
+<dd>ZF-8732: This should return a *subclass* of Zend_Gdata_Entry, but
+the appropriate type doesn&#039;t exist yet.</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Docs::getDoc()"></a><h4 class="method public">getDoc<div class="to-top"><a href="#Zend_Gdata_Docs">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getDoc</span><span class="nb-faded-text">(
+          string $docId, string $docType
+          )
+        </span>
+        :
+        <a href="_Gdata_Docs_DocumentListEntry.html#%5CZend_Gdata_Docs_DocumentListEntry">\Zend_Gdata_Docs_DocumentListEntry</a></code><p class="short-description">Retreive entry object representing a single document.</p>
+<div class="long-description"><p>This method builds the URL where this item is stored using the type
+and the id of the document.</p>
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$docId</dt>
+<dd>string<br><em>The URL key for the document. Examples: dcmg89gw_62hfjj8m, pKq0CzjiF3YmGd0AIlHKqeg</em>
+</dd>
+<dt>$docType</dt>
+<dd>string<br><em>The type of the document as used in the Google Document List URLs. Examples: document, spreadsheet, presentation</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_Docs_DocumentListEntry.html#%5CZend_Gdata_Docs_DocumentListEntry">\Zend_Gdata_Docs_DocumentListEntry</a></dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Docs::getDocument()"></a><h4 class="method public">getDocument<div class="to-top"><a href="#Zend_Gdata_Docs">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getDocument</span><span class="nb-faded-text">(
+          string $id
+          )
+        </span>
+        :
+        </code><p class="short-description">Retreive entry object for the desired word processing document.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$id</dt>
+<dd>string<br><em>The URL id for the document. Example: dcmg89gw_62hfjj8m</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Docs::getDocumentListEntry()"></a><h4 class="method public">getDocumentListEntry<div class="to-top"><a href="#Zend_Gdata_Docs">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getDocumentListEntry</span><span class="nb-faded-text">(
+          mixed $location
+              =
+              null
+          )
+        </span>
+        :
+        <a href="_Gdata_Docs_DocumentListEntry.html#%5CZend_Gdata_Docs_DocumentListEntry">\Zend_Gdata_Docs_DocumentListEntry</a></code><p class="short-description">Retreive entry object representing a single document.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$location</dt>
+<dd>mixed<br><em>The location for the entry, as a URL or Query</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_Docs_DocumentListEntry.html#%5CZend_Gdata_Docs_DocumentListEntry">\Zend_Gdata_Docs_DocumentListEntry</a></dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Docs::getDocumentListFeed()"></a><h4 class="method public">getDocumentListFeed<div class="to-top"><a href="#Zend_Gdata_Docs">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getDocumentListFeed</span><span class="nb-faded-text">(
+          mixed $location
+              =
+              null
+          )
+        </span>
+        :
+        <a href="_Gdata_Docs_DocumentListFeed.html#%5CZend_Gdata_Docs_DocumentListFeed">\Zend_Gdata_Docs_DocumentListFeed</a></code><p class="short-description">Retreive feed object containing entries for the user's documents.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$location</dt>
+<dd>mixed<br><em>The location for the feed, as a URL or Query</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_Docs_DocumentListFeed.html#%5CZend_Gdata_Docs_DocumentListFeed">\Zend_Gdata_Docs_DocumentListFeed</a></dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Docs::getPresentation()"></a><h4 class="method public">getPresentation<div class="to-top"><a href="#Zend_Gdata_Docs">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getPresentation</span><span class="nb-faded-text">(
+          string $id
+          )
+        </span>
+        :
+        </code><p class="short-description">Retreive entry object for the desired presentation.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$id</dt>
+<dd>string<br><em>The URL id for the document. Example: dcmg89gw_21gtrjcn</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Docs::getSpreadsheet()"></a><h4 class="method public">getSpreadsheet<div class="to-top"><a href="#Zend_Gdata_Docs">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getSpreadsheet</span><span class="nb-faded-text">(
+          string $id
+          )
+        </span>
+        :
+        </code><p class="short-description">Retreive entry object for the desired spreadsheet.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$id</dt>
+<dd>string<br><em>The URL id for the document. Example: pKq0CzjiF3YmGd0AIlHKqeg</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Docs::insertDocument()"></a><h4 class="method public">insertDocument<div class="to-top"><a href="#Zend_Gdata_Docs">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">insertDocument</span><span class="nb-faded-text">(
+          mixed $data, string $uri, string $className
+              =
+              Zend_Gdata_Docs_DocumentListEntry
+          )
+        </span>
+        :
+        <a href="_Gdata_Docs_DocumentListEntry.html#%5CZend_Gdata_Docs_DocumentListEntry">\Zend_Gdata_Docs_DocumentListEntry</a></code><p class="short-description">Inserts an entry to a given URI and returns the response as an Entry.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$data</dt>
+<dd>mixed<br><em>The Zend_Gdata_Docs_DocumentListEntry or media source to post. If it is a DocumentListEntry, the mediaSource should already have been set. If $data is a mediaSource, it should have the correct slug header and mime type.</em>
+</dd>
+<dt>$uri</dt>
+<dd>string<br><em>POST URI</em>
+</dd>
+<dt>$className</dt>
+<dd>string<br><em>(optional) The class of entry to be returned. The default is a &amp;#039;Zend_Gdata_Docs_DocumentListEntry&amp;#039;.</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_Docs_DocumentListEntry.html#%5CZend_Gdata_Docs_DocumentListEntry">\Zend_Gdata_Docs_DocumentListEntry</a></dt>
+<dd><em>The entry returned by the service after insertion.</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Docs::lookupMimeType()"></a><h4 class="method public">lookupMimeType<div class="to-top"><a href="#Zend_Gdata_Docs">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">lookupMimeType</span><span class="nb-faded-text">(
+          string $fileExtension
+          )
+        </span>
+        :
+        string</code><p class="short-description">Looks up the mime type based on the file name extension. For example,
+calling this method with 'csv' would return
+'text/comma-separated-values'. The Mime type is sent as a header in
+the upload HTTP POST request.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$fileExtension</dt>
+<dd>string<br><em></em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>string</dt>
+<dd><em>The mime type to be sent to the server to tell it how the multipart mime data should be interpreted.</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>true</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Docs::uploadFile()"></a><h4 class="method public">uploadFile<div class="to-top"><a href="#Zend_Gdata_Docs">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">uploadFile</span><span class="nb-faded-text">(
+          string $fileLocation, string $title
+              =
+              null, string $mimeType
+              =
+              null, string $uri
+              =
+              null
+          )
+        </span>
+        :
+        <a href="_Gdata_Docs_DocumentListEntry.html#%5CZend_Gdata_Docs_DocumentListEntry">\Zend_Gdata_Docs_DocumentListEntry</a></code><p class="short-description">Upload a local file to create a new Google Document entry.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$fileLocation</dt>
+<dd>string<br><em>The full or relative path of the file to be uploaded.</em>
+</dd>
+<dt>$title</dt>
+<dd>string<br><em>The name that this document should have on the server. If set, the title is used as the slug header in the POST request. If no title is provided, the location of the file will be used as the slug header in the request. If no mimeType is provided, this method attempts to determine the mime type based on the slugHeader by looking for .doc, .csv, .txt, etc. at the end of the file name. Example value: &amp;#039;test.doc&amp;#039;.</em>
+</dd>
+<dt>$mimeType</dt>
+<dd>string<br><em>Describes the type of data which is being sent to the server. This must be one of the accepted mime types which are enumerated in SUPPORTED_FILETYPES.</em>
+</dd>
+<dt>$uri</dt>
+<dd>string<br><em>(optional) The URL to which the upload should be made. Example: &amp;#039;https://docs.google.com/feeds/documents/private/full&amp;#039;.</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_Docs_DocumentListEntry.html#%5CZend_Gdata_Docs_DocumentListEntry">\Zend_Gdata_Docs_DocumentListEntry</a></dt>
+<dd><em>The entry for the newly created Google Document.</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<small xmlns="" class="footer">Documentation was generated by <a href="http://docblox-project.org">DocBlox 0.12.2</a>.
+    </small></body></html>

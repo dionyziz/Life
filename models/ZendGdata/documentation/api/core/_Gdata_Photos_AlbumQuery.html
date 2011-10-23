@@ -1,0 +1,369 @@
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title>Zend Gdata API Documentation</title><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" href="css/black-tie/jquery-ui-1.8.2.custom.css" type="text/css"></link><link rel="stylesheet" href="css/jquery.treeview.css" type="text/css"></link><link rel="stylesheet" href="css/theme.css" type="text/css"></link><script type="text/javascript" src="js/jquery-1.4.2.min.js"></script><script type="text/javascript" src="js/jquery-ui-1.8.2.custom.min.js"></script><script type="text/javascript" src="js/jquery.cookie.js"></script><script type="text/javascript" src="js/jquery.treeview.js"></script><script type="text/javascript">
+            $(document).ready(function() {
+                $(".filetree").treeview({
+                    collapsed: true,
+                    persist: "cookie"
+                });
+
+                $("#accordion").accordion({
+                    collapsible: true,
+                    autoHeight:  false,
+                    fillSpace:   true
+                });
+
+                $(".tabs").tabs();
+            });
+        </script></head><body><div xmlns="" class="content">
+<div class="sub-page-main-header-api-documentation"><h2>API Documentation</h2></div>
+<div class="dotted-line"></div>
+</div>
+<div xmlns="" id="content">
+<script>
+      $(document).ready(function() {
+        $('dl.function-info, dl.constant-info, dl.property-info').prev().css('cursor', 'pointer');
+        $('dl.function-info, dl.constant-info, dl.property-info').prev().click(function() {
+          if ($(this).next().is(':hidden'))
+          {
+            $(this).children('img')[0].src = 'images/arrow_down.gif';
+          } else
+          {
+            $(this).children('img')[0].src = 'images/arrow_right.gif';
+          }
+          $(this).next().slideToggle();
+        });
+      $('dl.function-info, dl.constant-info, dl.property-info').hide();
+      $('dl.function-info img, dl.constant-info img, dl.property-info img').show();
+      });
+    </script><a name="top"></a><h1 class="file">Gdata/Photos/AlbumQuery.php</h1>
+<div class="file_menu">
+<a href="#includes">Includes</a> <a href="#classes">Classes</a> </div>
+<dl class="file-info">
+<dt>category</dt>
+<dd>Zend</dd>
+<dt>copyright</dt>
+<dd>Copyright (c) 2005-2011 Zend Technologies USA Inc. (http://www.zend.com)</dd>
+<dt>license</dt>
+<dd>http://framework.zend.com/license/new-bsd     New BSD License</dd>
+<dt>package</dt>
+<dd>Zend_Gdata</dd>
+<dt>subpackage</dt>
+<dd>Photos</dd>
+<dt>version</dt>
+<dd>$Id: AlbumQuery.php 23775 2011-03-01 17:25:24Z ralph $</dd>
+<dt>Classes</dt>
+<dd><a class="class" href="#%5CZend_Gdata_Photos_AlbumQuery">Zend_Gdata_Photos_AlbumQuery</a></dd>
+</dl>
+<h2>Description</h2>
+<p class="short-description">Zend Framework</p>
+<div class="long-description"><p>LICENSE</p>
+
+<p>This source file is subject to the new BSD license that is bundled
+with this package in the file LICENSE.txt.
+It is also available through the world-wide-web at this URL:
+http://framework.zend.com/license/new-bsd
+If you did not receive a copy of the license and are unable to
+obtain it through the world-wide-web, please send an email
+to license@zend.com so we can send you a copy immediately.</p>
+</div>
+<a name="classes"></a><a id="\Zend_Gdata_Photos_AlbumQuery"></a><h2 class="class">\Zend_Gdata_Photos_AlbumQuery<div class="to-top"><a href="#top">jump to top</a></div>
+</h2>
+<div class="class">
+<dl class="class-info">
+<dt>Extends from</dt>
+<dd><a href="_Gdata_Photos_UserQuery.html#%5CZend_Gdata_Photos_UserQuery">\Zend_Gdata_Photos_UserQuery</a></dd>
+<dt>category</dt>
+<dd>Zend</dd>
+<dt>copyright</dt>
+<dd>Copyright (c) 2005-2011 Zend Technologies USA Inc. (http://www.zend.com)</dd>
+<dt>license</dt>
+<dd>http://framework.zend.com/license/new-bsd     New BSD License</dd>
+<dt>package</dt>
+<dd>Zend_Gdata</dd>
+<dt>subpackage</dt>
+<dd>Photos</dd>
+<dt><a href="#" onclick="$(this).children('img').toggle().parents('dt').nextUntil('dt').slideToggle(); return false;"><img src="images/arrow_down.gif"><img src="images/arrow_right.gif" style="display: none">
+                Properties
+              </a></dt>
+<dd><a class="property protected" href="#%5CZend_Gdata_Photos_AlbumQuery::%24_albumId">$_albumId</a></dd>
+<dd><a class="property protected" href="#%5CZend_Gdata_Photos_AlbumQuery::%24_albumName">$_albumName</a></dd>
+<dt><a href="#" onclick="$(this).children('img').toggle().parents('dt').nextUntil('dt').slideToggle(); return false;"><img src="images/arrow_down.gif"><img src="images/arrow_right.gif" style="display: none">
+                Methods
+              </a></dt>
+<dd><a class="method public" href="#%5CZend_Gdata_Photos_AlbumQuery::getAlbumId()">getAlbumId</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Photos_AlbumQuery::getAlbumName()">getAlbumName</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Photos_AlbumQuery::getQueryUrl()">getQueryUrl</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Photos_AlbumQuery::setAlbumId()">setAlbumId</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Photos_AlbumQuery::setAlbumName()">setAlbumName</a></dd>
+</dl>
+<h3>Description</h3>
+<p class="short-description">Assists in constructing album queries for various entries.</p>
+<div class="long-description"><p>Instances of this class can be provided in many places where a URL is
+required.</p>
+
+<p>For information on submitting queries to a server, see the service
+class, Zend_Gdata_Photos.</p>
+</div>
+<h3>Properties</h3>
+<div>
+<a id="\Zend_Gdata_Photos_AlbumQuery::$_albumId"></a><h4 class="property protected">$_albumId<div class="to-top"><a href="#%5CZend_Gdata_Photos_AlbumQuery">jump to class</a></div>
+</h4>
+<div class="property">
+<code>string <span class="highlight">$_albumId</span> = 'null'</code><p class="short-description">The ID of the album to query for. Mutually exclusive with AlbumName.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt></dt>
+<dd>string<br><em></em>
+</dd>
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd>null</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Photos_AlbumQuery::$_albumName"></a><h4 class="property protected">$_albumName<div class="to-top"><a href="#%5CZend_Gdata_Photos_AlbumQuery">jump to class</a></div>
+</h4>
+<div class="property">
+<code>string <span class="highlight">$_albumName</span> = 'null'</code><p class="short-description">The name of the album to query for. Mutually exclusive with AlbumId.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt></dt>
+<dd>string<br><em></em>
+</dd>
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd>null</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+</div>
+<h3>Methods</h3>
+<div>
+<a id="\Zend_Gdata_Photos_AlbumQuery::getAlbumId()"></a><h4 class="method public">getAlbumId<div class="to-top"><a href="#Zend_Gdata_Photos_AlbumQuery">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getAlbumId</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        string</code><p class="short-description">Get the album ID which is to be returned.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>string</dt>
+<dd><em>The ID of the album to retrieve.</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+<dt>see</dt>
+<dd>setAlbum</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Photos_AlbumQuery::getAlbumName()"></a><h4 class="method public">getAlbumName<div class="to-top"><a href="#Zend_Gdata_Photos_AlbumQuery">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getAlbumName</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        string</code><p class="short-description">Get the album name which is to be returned.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>string</dt>
+<dd><em>The name of the album to retrieve.</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+<dt>see</dt>
+<dd>setAlbumName</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Photos_AlbumQuery::getQueryUrl()"></a><h4 class="method public">getQueryUrl<div class="to-top"><a href="#Zend_Gdata_Photos_AlbumQuery">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getQueryUrl</span><span class="nb-faded-text">(
+           $incomingUri
+          )
+        </span>
+        :
+        string</code><p class="short-description">Returns the URL generated for this query, based on it's current
+parameters.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$incomingUri</dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>string</dt>
+<dd><em>A URL generated based on the state of this query.</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_App_InvalidArgumentException.html#%5CZend_Gdata_App_InvalidArgumentException"></a></dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Photos_AlbumQuery::setAlbumId()"></a><h4 class="method public">setAlbumId<div class="to-top"><a href="#Zend_Gdata_Photos_AlbumQuery">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">setAlbumId</span><span class="nb-faded-text">(
+          string $value
+          )
+        </span>
+        :
+        <a href="_Gdata_Photos_AlbumQuery.html#%5CZend_Gdata_Photos_AlbumQuery">\Zend_Gdata_Photos_AlbumQuery</a></code><p class="short-description">Set the album ID to query for. When set, this album's photographs
+be returned. If not set or null, the default user's feed will be
+returned instead.</p>
+<div class="long-description"><p>NOTE: Album and AlbumId are mutually exclusive. Setting one will
+      automatically set the other to null.</p>
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$value</dt>
+<dd>string<br><em>The ID of the album to retrieve, or null to clear.</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_Photos_AlbumQuery.html#%5CZend_Gdata_Photos_AlbumQuery">\Zend_Gdata_Photos_AlbumQuery</a></dt>
+<dd><em>The query object.</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Photos_AlbumQuery::setAlbumName()"></a><h4 class="method public">setAlbumName<div class="to-top"><a href="#Zend_Gdata_Photos_AlbumQuery">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">setAlbumName</span><span class="nb-faded-text">(
+          string $value
+          )
+        </span>
+        :
+        <a href="_Gdata_Photos_AlbumQuery.html#%5CZend_Gdata_Photos_AlbumQuery">\Zend_Gdata_Photos_AlbumQuery</a></code><p class="short-description">Set the album name to query for. When set, this album's photographs
+be returned. If not set or null, the default user's feed will be
+returned instead.</p>
+<div class="long-description"><p>NOTE: AlbumName and AlbumId are mutually exclusive. Setting one will
+      automatically set the other to null.</p>
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$value</dt>
+<dd>string<br><em>The name of the album to retrieve, or null to clear.</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_Photos_AlbumQuery.html#%5CZend_Gdata_Photos_AlbumQuery">\Zend_Gdata_Photos_AlbumQuery</a></dt>
+<dd><em>The query object.</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<small xmlns="" class="footer">Documentation was generated by <a href="http://docblox-project.org">DocBlox 0.12.2</a>.
+    </small></body></html>

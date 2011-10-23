@@ -1,0 +1,2182 @@
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title>Zend Gdata API Documentation</title><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" href="css/black-tie/jquery-ui-1.8.2.custom.css" type="text/css"></link><link rel="stylesheet" href="css/jquery.treeview.css" type="text/css"></link><link rel="stylesheet" href="css/theme.css" type="text/css"></link><script type="text/javascript" src="js/jquery-1.4.2.min.js"></script><script type="text/javascript" src="js/jquery-ui-1.8.2.custom.min.js"></script><script type="text/javascript" src="js/jquery.cookie.js"></script><script type="text/javascript" src="js/jquery.treeview.js"></script><script type="text/javascript">
+            $(document).ready(function() {
+                $(".filetree").treeview({
+                    collapsed: true,
+                    persist: "cookie"
+                });
+
+                $("#accordion").accordion({
+                    collapsible: true,
+                    autoHeight:  false,
+                    fillSpace:   true
+                });
+
+                $(".tabs").tabs();
+            });
+        </script></head><body><div xmlns="" class="content">
+<div class="sub-page-main-header-api-documentation"><h2>API Documentation</h2></div>
+<div class="dotted-line"></div>
+</div>
+<div xmlns="" id="content">
+<script>
+      $(document).ready(function() {
+        $('dl.function-info, dl.constant-info, dl.property-info').prev().css('cursor', 'pointer');
+        $('dl.function-info, dl.constant-info, dl.property-info').prev().click(function() {
+          if ($(this).next().is(':hidden'))
+          {
+            $(this).children('img')[0].src = 'images/arrow_down.gif';
+          } else
+          {
+            $(this).children('img')[0].src = 'images/arrow_right.gif';
+          }
+          $(this).next().slideToggle();
+        });
+      $('dl.function-info, dl.constant-info, dl.property-info').hide();
+      $('dl.function-info img, dl.constant-info img, dl.property-info img').show();
+      });
+    </script><a name="top"></a><h1 class="file">Gdata/App.php</h1>
+<div class="file_menu">
+<a href="#includes">Includes</a> <a href="#functions">Functions</a> <a href="#classes">Classes</a> </div>
+<dl class="file-info">
+<dt>category</dt>
+<dd>Zend</dd>
+<dt>copyright</dt>
+<dd>Copyright (c) 2005-2011 Zend Technologies USA Inc. (http://www.zend.com)</dd>
+<dt>license</dt>
+<dd>http://framework.zend.com/license/new-bsd     New BSD License</dd>
+<dt>package</dt>
+<dd>Zend_Gdata</dd>
+<dt>subpackage</dt>
+<dd>App</dd>
+<dt>version</dt>
+<dd>$Id: App.php 23775 2011-03-01 17:25:24Z ralph $</dd>
+<dt>Functions</dt>
+<dd><a class="function" href="#::retrieveAllEntriesForFeed()">retrieveAllEntriesForFeed</a></dd>
+<dd><a class="function" href="#::enableRequestDebugLogging()">enableRequestDebugLogging</a></dd>
+<dd><a class="function" href="#::getNextFeed()">getNextFeed</a></dd>
+<dd><a class="function" href="#::getPreviousFeed()">getPreviousFeed</a></dd>
+<dd><a class="function" href="#::generateIfMatchHeaderData()">generateIfMatchHeaderData</a></dd>
+<dd><a class="function" href="#::usingObjectMapping()">usingObjectMapping</a></dd>
+<dd><a class="function" href="#::useObjectMapping()">useObjectMapping</a></dd>
+<dt>Classes</dt>
+<dd><a class="class" href="#%5CZend_Gdata_App">Zend_Gdata_App</a></dd>
+</dl>
+<h2>Description</h2>
+<p class="short-description">Zend Framework</p>
+<div class="long-description"><p>LICENSE</p>
+
+<p>This source file is subject to the new BSD license that is bundled
+with this package in the file LICENSE.txt.
+It is also available through the world-wide-web at this URL:
+http://framework.zend.com/license/new-bsd
+If you did not receive a copy of the license and are unable to
+obtain it through the world-wide-web, please send an email
+to license@zend.com so we can send you a copy immediately.</p>
+</div>
+<a name="functions"></a><h2>Functions</h2>
+<div>
+<a id="::enableRequestDebugLogging()"></a><h3 class="function ">enableRequestDebugLogging<div class="to-top"><a href="#top">jump to top</a></div>
+</h3>
+<div class="function">
+<code><span class="highlight">enableRequestDebugLogging</span><span class="nb-faded-text">(
+          string $logfile
+          )
+        </span>
+        :
+        </code><p class="short-description">This method enables logging of requests by changing the
+Zend_Http_Client_Adapter used for performing the requests.</p>
+<div class="long-description"><p>NOTE: This will not work if you have customized the adapter
+already to use a proxy server or other interface.</p>
+</div>
+<div class="api-section">
+<h4 class="arguments">Arguments</h4>
+<dl class="argument-info">
+<dt>$logfile</dt>
+<dd>string<br><em>The logfile to use when logging the requests</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="::generateIfMatchHeaderData()"></a><h3 class="function ">generateIfMatchHeaderData<div class="to-top"><a href="#top">jump to top</a></div>
+</h3>
+<div class="function">
+<code><span class="highlight">generateIfMatchHeaderData</span><span class="nb-faded-text">(
+           $data,  $allowWeek
+          )
+        </span>
+        :
+        string|null</code><p class="short-description">Returns the data for an If-Match header based on the current Etag
+property. If Etags are not supported by the server or cannot be
+extracted from the data, then null will be returned.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="arguments">Arguments</h4>
+<dl class="argument-info">
+<dt>$data</dt>
+<dd><em></em></dd>
+<dt>$allowWeek</dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h4 class="output">Output</h4>
+<dl class="return-info">
+<dt>string|null</dt>
+<dd><em>$data</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="::getNextFeed()"></a><h3 class="function ">getNextFeed<div class="to-top"><a href="#top">jump to top</a></div>
+</h3>
+<div class="function">
+<code><span class="highlight">getNextFeed</span><span class="nb-faded-text">(
+          <a href="_Gdata_App_Feed.html#%5CZend_Gdata_App_Feed">\Zend_Gdata_App_Feed</a> $feed, string $className
+              =
+              null
+          )
+        </span>
+        :
+        <a href="_Gdata_App_Feed.html#%5CZend_Gdata_App_Feed">\Zend_Gdata_App_Feed</a>|null</code><p class="short-description">Retrieve next set of results based on a given feed.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="arguments">Arguments</h4>
+<dl class="argument-info">
+<dt>$feed</dt>
+<dd>\Zend_Gdata_App_Feed<br><em>The feed from which to retreive the next set of results.</em>
+</dd>
+<dt>$className</dt>
+<dd>string<br><em>(optional) The class of feed to be returned. If null, the next feed (if found) will be the same class as the feed that was given as the first argument.</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h4 class="output">Output</h4>
+<dl class="return-info">
+<dt>
+<a href="_Gdata_App_Feed.html#%5CZend_Gdata_App_Feed">\Zend_Gdata_App_Feed</a>|null</dt>
+<dd><em>Returns a Zend_Gdata_App_Feed or null if no next set of results exists.</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="::getPreviousFeed()"></a><h3 class="function ">getPreviousFeed<div class="to-top"><a href="#top">jump to top</a></div>
+</h3>
+<div class="function">
+<code><span class="highlight">getPreviousFeed</span><span class="nb-faded-text">(
+          <a href="_Gdata_App_Feed.html#%5CZend_Gdata_App_Feed">\Zend_Gdata_App_Feed</a> $feed, string $className
+              =
+              null
+          )
+        </span>
+        :
+        <a href="_Gdata_App_Feed.html#%5CZend_Gdata_App_Feed">\Zend_Gdata_App_Feed</a>|null</code><p class="short-description">Retrieve previous set of results based on a given feed.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="arguments">Arguments</h4>
+<dl class="argument-info">
+<dt>$feed</dt>
+<dd>\Zend_Gdata_App_Feed<br><em>The feed from which to retreive the previous set of results.</em>
+</dd>
+<dt>$className</dt>
+<dd>string<br><em>(optional) The class of feed to be returned. If null, the previous feed (if found) will be the same class as the feed that was given as the first argument.</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h4 class="output">Output</h4>
+<dl class="return-info">
+<dt>
+<a href="_Gdata_App_Feed.html#%5CZend_Gdata_App_Feed">\Zend_Gdata_App_Feed</a>|null</dt>
+<dd><em>Returns a Zend_Gdata_App_Feed or null if no previous set of results exists.</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="::retrieveAllEntriesForFeed()"></a><h3 class="function ">retrieveAllEntriesForFeed<div class="to-top"><a href="#top">jump to top</a></div>
+</h3>
+<div class="function">
+<code><span class="highlight">retrieveAllEntriesForFeed</span><span class="nb-faded-text">(
+          object $feed
+          )
+        </span>
+        :
+        mixed</code><p class="short-description">Retrieve all entries for a feed, iterating through pages as necessary.</p>
+<div class="long-description"><p>Be aware that calling this function on a large dataset will take a
+significant amount of time to complete. In some cases this may cause
+execution to timeout without proper precautions in place.</p>
+</div>
+<div class="api-section">
+<h4 class="arguments">Arguments</h4>
+<dl class="argument-info">
+<dt>$feed</dt>
+<dd>object<br><em>The feed to iterate through.</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h4 class="output">Output</h4>
+<dl class="return-info">
+<dt>mixed</dt>
+<dd><em>A new feed of the same type as the one originally passed in, containing all relevent entries.</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="::useObjectMapping()"></a><h3 class="function ">useObjectMapping<div class="to-top"><a href="#top">jump to top</a></div>
+</h3>
+<div class="function">
+<code><span class="highlight">useObjectMapping</span><span class="nb-faded-text">(
+          boolean $value
+          )
+        </span>
+        :
+        void</code><p class="short-description">Enable/disable the use of XML to object mapping.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="arguments">Arguments</h4>
+<dl class="argument-info">
+<dt>$value</dt>
+<dd>boolean<br><em>Pass in true to use the XML to object mapping. Pass in false or null to disable it.</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="::usingObjectMapping()"></a><h3 class="function ">usingObjectMapping<div class="to-top"><a href="#top">jump to top</a></div>
+</h3>
+<div class="function">
+<code><span class="highlight">usingObjectMapping</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        boolean</code><p class="short-description">Determine whether service object is using XML to object mapping.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="output">Output</h4>
+<dl class="return-info">
+<dt>boolean</dt>
+<dd><em>True if service object is using XML to object mapping, false otherwise.</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+</div>
+<a name="classes"></a><a id="\Zend_Gdata_App"></a><h2 class="class">\Zend_Gdata_App<div class="to-top"><a href="#top">jump to top</a></div>
+</h2>
+<div class="class">
+<dl class="class-info">
+<dt>category</dt>
+<dd>Zend</dd>
+<dt>copyright</dt>
+<dd>Copyright (c) 2005-2011 Zend Technologies USA Inc. (http://www.zend.com)</dd>
+<dt>license</dt>
+<dd>http://framework.zend.com/license/new-bsd     New BSD License</dd>
+<dt>package</dt>
+<dd>Zend_Gdata</dd>
+<dt>subpackage</dt>
+<dd>App</dd>
+<dt><a href="#" onclick="$(this).children('img').toggle().parents('dt').nextUntil('dt').slideToggle(); return false;"><img src="images/arrow_down.gif"><img src="images/arrow_right.gif" style="display: none">
+                Constants
+              </a></dt>
+<dd><a class="constant" href="#%5CZend_Gdata_App::DEFAULT_MAJOR_PROTOCOL_VERSION">DEFAULT_MAJOR_PROTOCOL_VERSION</a></dd>
+<dd><a class="constant" href="#%5CZend_Gdata_App::DEFAULT_MINOR_PROTOCOL_VERSION">DEFAULT_MINOR_PROTOCOL_VERSION</a></dd>
+<dt><a href="#" onclick="$(this).children('img').toggle().parents('dt').nextUntil('dt').slideToggle(); return false;"><img src="images/arrow_down.gif"><img src="images/arrow_right.gif" style="display: none">
+                Properties
+              </a></dt>
+<dd><a class="property protected" href="#%5CZend_Gdata_App::%24_defaultPostUri">$_defaultPostUri</a></dd>
+<dd><a class="property protected" href="#%5CZend_Gdata_App::%24_gzipEnabled">$_gzipEnabled</a></dd>
+<dd><a class="property protected" href="#%5CZend_Gdata_App::%24_httpClient">$_httpClient</a></dd>
+<dd><a class="property protected" href="#%5CZend_Gdata_App::%24_httpMethodOverride">$_httpMethodOverride</a></dd>
+<dd><a class="property protected" href="#%5CZend_Gdata_App::%24_majorProtocolVersion">$_majorProtocolVersion</a></dd>
+<dd><a class="property protected" href="#%5CZend_Gdata_App::%24_maxRedirects">$_maxRedirects</a></dd>
+<dd><a class="property protected" href="#%5CZend_Gdata_App::%24_minorProtocolVersion">$_minorProtocolVersion</a></dd>
+<dd><a class="property protected" href="#%5CZend_Gdata_App::%24_registeredPackages">$_registeredPackages</a></dd>
+<dd><a class="property protected" href="#%5CZend_Gdata_App::%24_staticHttpClient">$_staticHttpClient</a></dd>
+<dd><a class="property protected" href="#%5CZend_Gdata_App::%24_useObjectMapping">$_useObjectMapping</a></dd>
+<dd><a class="property protected" href="#%5CZend_Gdata_App::%24_verboseExceptionMessages">$_verboseExceptionMessages</a></dd>
+<dt><a href="#" onclick="$(this).children('img').toggle().parents('dt').nextUntil('dt').slideToggle(); return false;"><img src="images/arrow_down.gif"><img src="images/arrow_right.gif" style="display: none">
+                Methods
+              </a></dt>
+<dd><a class="method public" href="#%5CZend_Gdata_App::__call()">__call</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_App::__construct()">__construct</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_App::delete()">delete</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_App::get()">get</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_App::getEntry()">getEntry</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_App::getFeed()">getFeed</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_App::getGzipEnabled()">getGzipEnabled</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_App::getHttpClient()">getHttpClient</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_App::getHttpMethodOverride()">getHttpMethodOverride</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_App::getMajorProtocolVersion()">getMajorProtocolVersion</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_App::getMaxRedirects()">getMaxRedirects</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_App::getMinorProtocolVersion()">getMinorProtocolVersion</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_App::getStaticHttpClient()">getStaticHttpClient</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_App::getVerboseExceptionMessages()">getVerboseExceptionMessages</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_App::import()">import</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_App::importFile()">importFile</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_App::importString()">importString</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_App::importUrl()">importUrl</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_App::insertEntry()">insertEntry</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_App::performHttpRequest()">performHttpRequest</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_App::post()">post</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_App::prepareRequest()">prepareRequest</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_App::put()">put</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_App::registerPackage()">registerPackage</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_App::setGzipEnabled()">setGzipEnabled</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_App::setHttpClient()">setHttpClient</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_App::setHttpMethodOverride()">setHttpMethodOverride</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_App::setMajorProtocolVersion()">setMajorProtocolVersion</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_App::setMaxRedirects()">setMaxRedirects</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_App::setMinorProtocolVersion()">setMinorProtocolVersion</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_App::setStaticHttpClient()">setStaticHttpClient</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_App::setVerboseExceptionMessages()">setVerboseExceptionMessages</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_App::updateEntry()">updateEntry</a></dd>
+</dl>
+<h3>Description</h3>
+<p class="short-description">Provides Atom Publishing Protocol (APP) functionality.  This class and all
+other components of Zend_Gdata_App are designed to work independently from
+other Zend_Gdata components in order to interact with generic APP services.</p>
+<div class="long-description">
+</div>
+<h3>Constants</h3>
+<div>
+<a id="\Zend_Gdata_App::DEFAULT_MAJOR_PROTOCOL_VERSION"></a><h4 class="constant">DEFAULT_MAJOR_PROTOCOL_VERSION<div class="to-top"><a href="#Zend_Gdata_App">jump to class</a></div>
+</h4>
+<div class="constant">
+<code> <span class="highlight">DEFAULT_MAJOR_PROTOCOL_VERSION</span> = '1'
+      </code><p class="short-description">Default major protocol version.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="constant-info">
+<dt>value</dt>
+<dd>1</dd>
+<dt>see</dt>
+<dd>_majorProtocolVersion</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_App::DEFAULT_MINOR_PROTOCOL_VERSION"></a><h4 class="constant">DEFAULT_MINOR_PROTOCOL_VERSION<div class="to-top"><a href="#Zend_Gdata_App">jump to class</a></div>
+</h4>
+<div class="constant">
+<code> <span class="highlight">DEFAULT_MINOR_PROTOCOL_VERSION</span> = 'null'
+      </code><p class="short-description">Default minor protocol version.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="constant-info">
+<dt>value</dt>
+<dd>null</dd>
+<dt>see</dt>
+<dd>_minorProtocolVersion</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+</div>
+<h3>Properties</h3>
+<div>
+<a id="\Zend_Gdata_App::$_defaultPostUri"></a><h4 class="property protected">$_defaultPostUri<div class="to-top"><a href="#%5CZend_Gdata_App">jump to class</a></div>
+</h4>
+<div class="property">
+<code>string <span class="highlight">$_defaultPostUri</span> = 'null'</code><p class="short-description">Default URI to which to POST.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt></dt>
+<dd>string<br><em></em>
+</dd>
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd>null</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_App::$_gzipEnabled"></a><h4 class="property protected">$_gzipEnabled<div class="to-top"><a href="#%5CZend_Gdata_App">jump to class</a></div>
+</h4>
+<div class="property">
+<code>boolean <span class="highlight">$_gzipEnabled</span> = 'false'</code><p class="short-description">Enable gzipped responses?</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt></dt>
+<dd>boolean<br><em></em>
+</dd>
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd>false</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>true</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_App::$_httpClient"></a><h4 class="property protected">$_httpClient<div class="to-top"><a href="#%5CZend_Gdata_App">jump to class</a></div>
+</h4>
+<div class="property">
+<code><a href="_Http_Client.html#%5CZend_Http_Client">\Zend_Http_Client</a> <span class="highlight">$_httpClient</span> = ''</code><p class="short-description">Client object used to communicate</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt></dt>
+<dd>
+<a href="_Http_Client.html#%5CZend_Http_Client">\Zend_Http_Client</a><br><em></em>
+</dd>
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd></dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_App::$_httpMethodOverride"></a><h4 class="property protected">$_httpMethodOverride<div class="to-top"><a href="#%5CZend_Gdata_App">jump to class</a></div>
+</h4>
+<div class="property">
+<code>boolean <span class="highlight">$_httpMethodOverride</span> = 'false'</code><p class="short-description">Override HTTP PUT and DELETE request methods?</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt></dt>
+<dd>boolean<br><em></em>
+</dd>
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd>false</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>true</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_App::$_majorProtocolVersion"></a><h4 class="property protected">$_majorProtocolVersion<div class="to-top"><a href="#%5CZend_Gdata_App">jump to class</a></div>
+</h4>
+<div class="property">
+<code> <span class="highlight">$_majorProtocolVersion</span> = ''</code><p class="short-description">Indicates the major protocol version that should be used.</p>
+<div class="long-description"><p>At present, recognized values are either 1 or 2. However, any integer
+value >= 1 is considered valid.</p>
+
+<p>Under most circumtances, this will be automatically set by
+Zend_Gdata_App subclasses.</p>
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd></dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+<dt>see</dt>
+<dd>setMajorProtocolVersion()</dd>
+<dt>see</dt>
+<dd>getMajorProtocolVersion()</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_App::$_maxRedirects"></a><h4 class="property protected">$_maxRedirects<div class="to-top"><a href="#%5CZend_Gdata_App">jump to class</a></div>
+</h4>
+<div class="property">
+<code>int <span class="highlight">$_maxRedirects</span> = '5'</code><p class="short-description">Maximum number of redirects to follow during HTTP operations</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt></dt>
+<dd>int<br><em></em>
+</dd>
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd>5</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>true</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_App::$_minorProtocolVersion"></a><h4 class="property protected">$_minorProtocolVersion<div class="to-top"><a href="#%5CZend_Gdata_App">jump to class</a></div>
+</h4>
+<div class="property">
+<code> <span class="highlight">$_minorProtocolVersion</span> = ''</code><p class="short-description">Indicates the minor protocol version that should be used. Can be set
+to either an integer &gt;= 0, or NULL if no minor version should be sent
+to the server.</p>
+<div class="long-description"><p>At present, this field is not used by any Google services, but may be
+used in the future.</p>
+
+<p>Under most circumtances, this will be automatically set by
+Zend_Gdata_App subclasses.</p>
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd></dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+<dt>see</dt>
+<dd>setMinorProtocolVersion()</dd>
+<dt>see</dt>
+<dd>getMinorProtocolVersion()</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_App::$_registeredPackages"></a><h4 class="property protected">$_registeredPackages<div class="to-top"><a href="#%5CZend_Gdata_App">jump to class</a></div>
+</h4>
+<div class="property">
+<code>array <span class="highlight">$_registeredPackages</span> = 'array'</code><p class="short-description">Packages to search for classes when using magic __call method, in order.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt></dt>
+<dd>array<br><em></em>
+</dd>
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd>array</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_App::$_staticHttpClient"></a><h4 class="property protected">$_staticHttpClient<div class="to-top"><a href="#%5CZend_Gdata_App">jump to class</a></div>
+</h4>
+<div class="property">
+<code><a href="_Http_Client.html#%5CZend_Http_Client">\Zend_Http_Client</a> <span class="highlight">$_staticHttpClient</span> = 'null'</code><p class="short-description">Client object used to communicate in static context</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt></dt>
+<dd>
+<a href="_Http_Client.html#%5CZend_Http_Client">\Zend_Http_Client</a><br><em></em>
+</dd>
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd>null</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>true</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_App::$_useObjectMapping"></a><h4 class="property protected">$_useObjectMapping<div class="to-top"><a href="#%5CZend_Gdata_App">jump to class</a></div>
+</h4>
+<div class="property">
+<code>boolean <span class="highlight">$_useObjectMapping</span> = 'true'</code><p class="short-description">Whether we want to use XML to object mapping when fetching data.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt></dt>
+<dd>boolean<br><em></em>
+</dd>
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd>true</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_App::$_verboseExceptionMessages"></a><h4 class="property protected">$_verboseExceptionMessages<div class="to-top"><a href="#%5CZend_Gdata_App">jump to class</a></div>
+</h4>
+<div class="property">
+<code>boolean <span class="highlight">$_verboseExceptionMessages</span> = 'true'</code><p class="short-description">Use verbose exception messages.  In the case of HTTP errors,
+use the body of the HTTP response in the exception message.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt></dt>
+<dd>boolean<br><em></em>
+</dd>
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd>true</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>true</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+</div>
+<h3>Methods</h3>
+<div>
+<a id="\Zend_Gdata_App::__call()"></a><h4 class="method public">__call<div class="to-top"><a href="#Zend_Gdata_App">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">__call</span><span class="nb-faded-text">(
+          string $method, array $args
+          )
+        </span>
+        :
+        </code><p class="short-description">Provides a magic factory method to instantiate new objects with
+shorter syntax than would otherwise be required by the Zend Framework
+naming conventions.  For instance, to construct a new
+Zend_Gdata_Calendar_Extension_Color, a developer simply needs to do
+$gCal-&gt;newColor().  For this magic constructor, packages are searched
+in the same order as which they appear in the $_registeredPackages
+array</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$method</dt>
+<dd>string<br><em>The method name being called</em>
+</dd>
+<dt>$args</dt>
+<dd>array<br><em>The arguments passed to the call</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_App_Exception.html#%5CZend_Gdata_App_Exception"></a></dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_App::__construct()"></a><h4 class="method public">__construct<div class="to-top"><a href="#Zend_Gdata_App">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">__construct</span><span class="nb-faded-text">(
+          <a href="_Http_Client.html#%5CZend_Http_Client">\Zend_Http_Client</a> $client
+              =
+              null, string $applicationId
+              =
+              MyCompany-MyApp-1.0
+          )
+        </span>
+        :
+        </code><p class="short-description">Create Gdata object</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$client</dt>
+<dd>\Zend_Http_Client<br><em></em>
+</dd>
+<dt>$applicationId</dt>
+<dd>string<br><em></em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_App::delete()"></a><h4 class="method public">delete<div class="to-top"><a href="#Zend_Gdata_App">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">delete</span><span class="nb-faded-text">(
+          mixed $data,  $remainingRedirects
+              =
+              null
+          )
+        </span>
+        :
+        void</code><p class="short-description">DELETE entry with client object</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$data</dt>
+<dd>mixed<br><em>The Zend_Gdata_App_Entry or URL to delete</em>
+</dd>
+<dt>$remainingRedirects</dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_App_Exception.html#%5CZend_Gdata_App_Exception"></a></dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_App_HttpException.html#%5CZend_Gdata_App_HttpException"></a></dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_App_InvalidArgumentException.html#%5CZend_Gdata_App_InvalidArgumentException"></a></dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_App::get()"></a><h4 class="method public">get<div class="to-top"><a href="#Zend_Gdata_App">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">get</span><span class="nb-faded-text">(
+          string $uri, array $extraHeaders
+              =
+              array
+          )
+        </span>
+        :
+        <a href="_Http_Response.html#%5CZend_Http_Response">\Zend_Http_Response</a></code><p class="short-description">GET a URI using client object.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$uri</dt>
+<dd>string<br><em>GET URI</em>
+</dd>
+<dt>$extraHeaders</dt>
+<dd>array<br><em>Extra headers to add to the request, as an array of string-based key/value pairs.</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Http_Response.html#%5CZend_Http_Response">\Zend_Http_Response</a></dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_App_HttpException.html#%5CZend_Gdata_App_HttpException"></a></dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_App::getEntry()"></a><h4 class="method public">getEntry<div class="to-top"><a href="#Zend_Gdata_App">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getEntry</span><span class="nb-faded-text">(
+          string $uri, string $className
+              =
+              Zend_Gdata_App_Entry
+          )
+        </span>
+        :
+        string|<a href="_Gdata_App_Entry.html#%5CZend_Gdata_App_Entry">\Zend_Gdata_App_Entry</a></code><p class="short-description">Retrieve entry as string or object</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$uri</dt>
+<dd>string<br><em></em>
+</dd>
+<dt>$className</dt>
+<dd>string<br><em>The class which is used as the return type</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>string|<a href="_Gdata_App_Entry.html#%5CZend_Gdata_App_Entry">\Zend_Gdata_App_Entry</a>
+</dt>
+<dd><em>Returns string only if the object mapping has been disabled explicitly by passing false to the useObjectMapping() function.</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_App::getFeed()"></a><h4 class="method public">getFeed<div class="to-top"><a href="#Zend_Gdata_App">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getFeed</span><span class="nb-faded-text">(
+          string $uri, string $className
+              =
+              Zend_Gdata_App_Feed
+          )
+        </span>
+        :
+        string|<a href="_Gdata_App_Feed.html#%5CZend_Gdata_App_Feed">\Zend_Gdata_App_Feed</a></code><p class="short-description">Retrieve feed as string or object</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$uri</dt>
+<dd>string<br><em>The uri from which to retrieve the feed</em>
+</dd>
+<dt>$className</dt>
+<dd>string<br><em>The class which is used as the return type</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>string|<a href="_Gdata_App_Feed.html#%5CZend_Gdata_App_Feed">\Zend_Gdata_App_Feed</a>
+</dt>
+<dd><em>Returns string only if the object mapping has been disabled explicitly by passing false to the useObjectMapping() function.</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_App::getGzipEnabled()"></a><h4 class="method public">getGzipEnabled<div class="to-top"><a href="#Zend_Gdata_App">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getGzipEnabled</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        boolean</code><p class="short-description">Get the HTTP override state</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>boolean</dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>true</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_App::getHttpClient()"></a><h4 class="method public">getHttpClient<div class="to-top"><a href="#Zend_Gdata_App">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getHttpClient</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        <a href="_Http_Client.html#%5CZend_Http_Client">\Zend_Http_Client</a></code><p class="short-description">Get the Zend_Http_Client object used for communication</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Http_Client.html#%5CZend_Http_Client">\Zend_Http_Client</a></dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_App::getHttpMethodOverride()"></a><h4 class="method public">getHttpMethodOverride<div class="to-top"><a href="#Zend_Gdata_App">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getHttpMethodOverride</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        boolean</code><p class="short-description">Get the HTTP override state</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>boolean</dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>true</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_App::getMajorProtocolVersion()"></a><h4 class="method public">getMajorProtocolVersion<div class="to-top"><a href="#Zend_Gdata_App">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getMajorProtocolVersion</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        int</code><p class="short-description">Get the major protocol version that is in use.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>int</dt>
+<dd><em>The major protocol version in use.</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+<dt>see</dt>
+<dd>_majorProtocolVersion</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_App::getMaxRedirects()"></a><h4 class="method public">getMaxRedirects<div class="to-top"><a href="#Zend_Gdata_App">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getMaxRedirects</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        int</code><p class="short-description">Get the maximum number of redirects to follow during HTTP operations</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>int</dt>
+<dd><em>Maximum number of redirects to follow</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>true</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_App::getMinorProtocolVersion()"></a><h4 class="method public">getMinorProtocolVersion<div class="to-top"><a href="#Zend_Gdata_App">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getMinorProtocolVersion</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        \(int|\NULL)</code><p class="short-description">Get the minor protocol version that is in use.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>\(int|\NULL)</dt>
+<dd><em>The major protocol version in use, or NULL if no minor version is specified.</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+<dt>see</dt>
+<dd>_minorProtocolVersion</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_App::getStaticHttpClient()"></a><h4 class="method public">getStaticHttpClient<div class="to-top"><a href="#Zend_Gdata_App">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getStaticHttpClient</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        <a href="_Http_Client.html#%5CZend_Http_Client">\Zend_Http_Client</a></code><p class="short-description">Gets the HTTP client object. If none is set, a new Zend_Http_Client will be used.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Http_Client.html#%5CZend_Http_Client">\Zend_Http_Client</a></dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>true</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_App::getVerboseExceptionMessages()"></a><h4 class="method public">getVerboseExceptionMessages<div class="to-top"><a href="#Zend_Gdata_App">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getVerboseExceptionMessages</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        boolean</code><p class="short-description">Get whether to use verbose exception messages</p>
+<div class="long-description"><p>In the case of HTTP errors,  use the body of the HTTP response
+in the exception message.</p>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>boolean</dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>true</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_App::import()"></a><h4 class="method public">import<div class="to-top"><a href="#Zend_Gdata_App">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">import</span><span class="nb-faded-text">(
+          string $uri, <a href="_Http_Client.html#%5CZend_Http_Client">\Zend_Http_Client</a> $client
+              =
+              null, string $className
+              =
+              Zend_Gdata_App_Feed
+          )
+        </span>
+        :
+        string|<a href="_Gdata_App_Feed.html#%5CZend_Gdata_App_Feed">\Zend_Gdata_App_Feed</a></code><p class="short-description">Imports a feed located at $uri.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$uri</dt>
+<dd>string<br><em></em>
+</dd>
+<dt>$client</dt>
+<dd>\Zend_Http_Client<br><em>The client used for communication</em>
+</dd>
+<dt>$className</dt>
+<dd>string<br><em>The class which is used as the return type</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>string|<a href="_Gdata_App_Feed.html#%5CZend_Gdata_App_Feed">\Zend_Gdata_App_Feed</a>
+</dt>
+<dd><em>Returns string only if the object mapping has been disabled explicitly by passing false to the useObjectMapping() function.</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>true</dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_App_Exception.html#%5CZend_Gdata_App_Exception"></a></dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_App::importFile()"></a><h4 class="method public">importFile<div class="to-top"><a href="#Zend_Gdata_App">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">importFile</span><span class="nb-faded-text">(
+          string $filename, string $className
+              =
+              Zend_Gdata_App_Feed, string $useIncludePath
+              =
+              false
+          )
+        </span>
+        :
+        <a href="_Gdata_App_Feed.html#%5CZend_Gdata_App_Feed">\Zend_Gdata_App_Feed</a></code><p class="short-description">Imports a feed from a file located at $filename.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$filename</dt>
+<dd>string<br><em></em>
+</dd>
+<dt>$className</dt>
+<dd>string<br><em>The class which is used as the return type</em>
+</dd>
+<dt>$useIncludePath</dt>
+<dd>string<br><em>Whether the include_path should be searched</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_App_Feed.html#%5CZend_Gdata_App_Feed">\Zend_Gdata_App_Feed</a></dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>true</dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_App_Exception.html#%5CZend_Gdata_App_Exception"></a></dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_App::importString()"></a><h4 class="method public">importString<div class="to-top"><a href="#Zend_Gdata_App">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">importString</span><span class="nb-faded-text">(
+          string $string, string $className
+              =
+              Zend_Gdata_App_Feed,  $majorProtocolVersion
+              =
+              null,  $minorProtocolVersion
+              =
+              null
+          )
+        </span>
+        :
+        <a href="_Gdata_App_Feed.html#%5CZend_Gdata_App_Feed">\Zend_Gdata_App_Feed</a></code><p class="short-description">Imports a feed represented by $string.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$string</dt>
+<dd>string<br><em></em>
+</dd>
+<dt>$className</dt>
+<dd>string<br><em>The class which is used as the return type</em>
+</dd>
+<dt>$majorProtocolVersion</dt>
+<dd><em></em></dd>
+<dt>$minorProtocolVersion</dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_App_Feed.html#%5CZend_Gdata_App_Feed">\Zend_Gdata_App_Feed</a></dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>true</dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_App_Exception.html#%5CZend_Gdata_App_Exception"></a></dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_App::importUrl()"></a><h4 class="method public">importUrl<div class="to-top"><a href="#Zend_Gdata_App">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">importUrl</span><span class="nb-faded-text">(
+          string $url, string $className
+              =
+              Zend_Gdata_App_Feed, array $extraHeaders
+              =
+              array
+          )
+        </span>
+        :
+        string|<a href="_Gdata_App_Feed.html#%5CZend_Gdata_App_Feed">\Zend_Gdata_App_Feed</a></code><p class="short-description">Imports the specified URL (non-statically).</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$url</dt>
+<dd>string<br><em>The URL to import</em>
+</dd>
+<dt>$className</dt>
+<dd>string<br><em>The class which is used as the return type</em>
+</dd>
+<dt>$extraHeaders</dt>
+<dd>array<br><em>Extra headers to add to the request, as an array of string-based key/value pairs.</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>string|<a href="_Gdata_App_Feed.html#%5CZend_Gdata_App_Feed">\Zend_Gdata_App_Feed</a>
+</dt>
+<dd><em>Returns string only if the object mapping has been disabled explicitly by passing false to the useObjectMapping() function.</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_App_Exception.html#%5CZend_Gdata_App_Exception"></a></dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_App::insertEntry()"></a><h4 class="method public">insertEntry<div class="to-top"><a href="#Zend_Gdata_App">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">insertEntry</span><span class="nb-faded-text">(
+          mixed $data, string $uri, string $className
+              =
+              Zend_Gdata_App_Entry, array $extraHeaders
+              =
+              array
+          )
+        </span>
+        :
+        <a href="_Gdata_App_Entry.html#%5CZend_Gdata_App_Entry">\Zend_Gdata_App_Entry</a></code><p class="short-description">Inserts an entry to a given URI and returns the response as a
+fully formed Entry.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$data</dt>
+<dd>mixed<br><em>The Zend_Gdata_App_Entry or XML to post</em>
+</dd>
+<dt>$uri</dt>
+<dd>string<br><em>POST URI</em>
+</dd>
+<dt>$className</dt>
+<dd>string<br><em>The class of entry to be returned.</em>
+</dd>
+<dt>$extraHeaders</dt>
+<dd>array<br><em>Extra headers to add to the request, as an array of string-based key/value pairs.</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_App_Entry.html#%5CZend_Gdata_App_Entry">\Zend_Gdata_App_Entry</a></dt>
+<dd><em>The entry returned by the service after insertion.</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_App::performHttpRequest()"></a><h4 class="method public">performHttpRequest<div class="to-top"><a href="#Zend_Gdata_App">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">performHttpRequest</span><span class="nb-faded-text">(
+          string $method, string $url, array $headers
+              =
+              null, string $body
+              =
+              null, string $contentType
+              =
+              null, int $remainingRedirects
+              =
+              null
+          )
+        </span>
+        :
+        <a href="_Http_Response.html#%5CZend_Http_Response">\Zend_Http_Response</a></code><p class="short-description">Performs a HTTP request using the specified method</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$method</dt>
+<dd>string<br><em>The HTTP method for the request - &amp;#039;GET&amp;#039;, &amp;#039;POST&amp;#039;, &amp;#039;PUT&amp;#039;, &amp;#039;DELETE&amp;#039;</em>
+</dd>
+<dt>$url</dt>
+<dd>string<br><em>The URL to which this request is being performed</em>
+</dd>
+<dt>$headers</dt>
+<dd>array<br><em>An associative array of HTTP headers for this request</em>
+</dd>
+<dt>$body</dt>
+<dd>string<br><em>The body of the HTTP request</em>
+</dd>
+<dt>$contentType</dt>
+<dd>string<br><em>The value for the content type of the request body</em>
+</dd>
+<dt>$remainingRedirects</dt>
+<dd>int<br><em>Number of redirects to follow if request s results in one</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Http_Response.html#%5CZend_Http_Response">\Zend_Http_Response</a></dt>
+<dd><em>The response object</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_App::post()"></a><h4 class="method public">post<div class="to-top"><a href="#Zend_Gdata_App">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">post</span><span class="nb-faded-text">(
+          mixed $data, string $uri
+              =
+              null,  $remainingRedirects
+              =
+              null, string $contentType
+              =
+              null, array $extraHeaders
+              =
+              null
+          )
+        </span>
+        :
+        <a href="_Http_Response.html#%5CZend_Http_Response">\Zend_Http_Response</a></code><p class="short-description">POST data with client object</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$data</dt>
+<dd>mixed<br><em>The Zend_Gdata_App_Entry or XML to post</em>
+</dd>
+<dt>$uri</dt>
+<dd>string<br><em>POST URI</em>
+</dd>
+<dt>$remainingRedirects</dt>
+<dd><em></em></dd>
+<dt>$contentType</dt>
+<dd>string<br><em>Content-type of the data</em>
+</dd>
+<dt>$extraHeaders</dt>
+<dd>array<br><em>Extra headers to add to the request, as an array of string-based key/value pairs.</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Http_Response.html#%5CZend_Http_Response">\Zend_Http_Response</a></dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_App_Exception.html#%5CZend_Gdata_App_Exception"></a></dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_App_HttpException.html#%5CZend_Gdata_App_HttpException"></a></dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_App_InvalidArgumentException.html#%5CZend_Gdata_App_InvalidArgumentException"></a></dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_App::prepareRequest()"></a><h4 class="method public">prepareRequest<div class="to-top"><a href="#Zend_Gdata_App">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">prepareRequest</span><span class="nb-faded-text">(
+          string $method, string $url
+              =
+              null, array $headers
+              =
+              array, mixed $data
+              =
+              null, string $contentTypeOverride
+              =
+              null
+          )
+        </span>
+        :
+        array</code><p class="short-description">Provides pre-processing for HTTP requests to APP services.</p>
+<div class="long-description"><ol>
+<li>Checks the $data element and, if it's an entry, extracts the XML,
+multipart data, edit link (PUT,DELETE), etc.</li>
+<li>If $data is a string, sets the default content-type  header as
+'application/atom+xml' if it's not already been set.</li>
+<li>Adds a x-http-method override header and changes the HTTP method
+to 'POST' if necessary as per getHttpMethodOverride()</li>
+</ol>
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$method</dt>
+<dd>string<br><em>The HTTP method for the request - &amp;#039;GET&amp;#039;, &amp;#039;POST&amp;#039;, &amp;#039;PUT&amp;#039;, &amp;#039;DELETE&amp;#039;</em>
+</dd>
+<dt>$url</dt>
+<dd>string<br><em>The URL to which this request is being performed, or null if found in $data</em>
+</dd>
+<dt>$headers</dt>
+<dd>array<br><em>An associative array of HTTP headers for this request</em>
+</dd>
+<dt>$data</dt>
+<dd>mixed<br><em>The Zend_Gdata_App_Entry or XML for the body of the request</em>
+</dd>
+<dt>$contentTypeOverride</dt>
+<dd>string<br><em>The override value for the content type of the request body</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>array</dt>
+<dd><em>An associative array containing the determined &#039;method&#039;, &#039;url&#039;, &#039;data&#039;, &#039;headers&#039;, &#039;contentType&#039;</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_App::put()"></a><h4 class="method public">put<div class="to-top"><a href="#Zend_Gdata_App">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">put</span><span class="nb-faded-text">(
+          mixed $data, string $uri
+              =
+              null,  $remainingRedirects
+              =
+              null, string $contentType
+              =
+              null, array $extraHeaders
+              =
+              null
+          )
+        </span>
+        :
+        <a href="_Http_Response.html#%5CZend_Http_Response">\Zend_Http_Response</a></code><p class="short-description">PUT data with client object</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$data</dt>
+<dd>mixed<br><em>The Zend_Gdata_App_Entry or XML to post</em>
+</dd>
+<dt>$uri</dt>
+<dd>string<br><em>PUT URI</em>
+</dd>
+<dt>$remainingRedirects</dt>
+<dd><em></em></dd>
+<dt>$contentType</dt>
+<dd>string<br><em>Content-type of the data</em>
+</dd>
+<dt>$extraHeaders</dt>
+<dd>array<br><em>Extra headers to add to the request, as an array of string-based key/value pairs.</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Http_Response.html#%5CZend_Http_Response">\Zend_Http_Response</a></dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_App_Exception.html#%5CZend_Gdata_App_Exception"></a></dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_App_HttpException.html#%5CZend_Gdata_App_HttpException"></a></dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_App_InvalidArgumentException.html#%5CZend_Gdata_App_InvalidArgumentException"></a></dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_App::registerPackage()"></a><h4 class="method public">registerPackage<div class="to-top"><a href="#Zend_Gdata_App">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">registerPackage</span><span class="nb-faded-text">(
+          string $name
+          )
+        </span>
+        :
+        void</code><p class="short-description">Adds a Zend Framework package to the $_registeredPackages array.</p>
+<div class="long-description"><p>This array is searched when using the magic __call method below
+to instantiante new objects.</p>
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$name</dt>
+<dd>string<br><em>The name of the package (eg Zend_Gdata_App)</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_App::setGzipEnabled()"></a><h4 class="method public">setGzipEnabled<div class="to-top"><a href="#Zend_Gdata_App">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">setGzipEnabled</span><span class="nb-faded-text">(
+          boolean $enabled
+              =
+              false
+          )
+        </span>
+        :
+        void</code><p class="short-description">Toggle requesting gzip encoded responses</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$enabled</dt>
+<dd>boolean<br><em>Whether or not to enable gzipped responses</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>true</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_App::setHttpClient()"></a><h4 class="method public">setHttpClient<div class="to-top"><a href="#Zend_Gdata_App">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">setHttpClient</span><span class="nb-faded-text">(
+          <a href="_Http_Client.html#%5CZend_Http_Client">\Zend_Http_Client</a> $client,  $applicationId
+              =
+              MyCompany-MyApp-1.0
+          )
+        </span>
+        :
+        <a href="_Gdata_App.html#%5CZend_Gdata_App">\Zend_Gdata_App</a></code><p class="short-description">Set the Zend_Http_Client object used for communication</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$client</dt>
+<dd>\Zend_Http_Client<br><em>The client to use for communication</em>
+</dd>
+<dt>$applicationId</dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_App.html#%5CZend_Gdata_App">\Zend_Gdata_App</a></dt>
+<dd><em>Provides a fluent interface</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_App_HttpException.html#%5CZend_Gdata_App_HttpException"></a></dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_App::setHttpMethodOverride()"></a><h4 class="method public">setHttpMethodOverride<div class="to-top"><a href="#Zend_Gdata_App">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">setHttpMethodOverride</span><span class="nb-faded-text">(
+          boolean $override
+              =
+              true
+          )
+        </span>
+        :
+        void</code><p class="short-description">Toggle using POST instead of PUT and DELETE HTTP methods</p>
+<div class="long-description"><p>Some feed implementations do not accept PUT and DELETE HTTP
+methods, or they can't be used because of proxies or other
+measures. This allows turning on using POST where PUT and
+DELETE would normally be used; in addition, an
+X-Method-Override header will be sent with a value of PUT or
+DELETE as appropriate.</p>
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$override</dt>
+<dd>boolean<br><em>Whether to override PUT and DELETE with POST.</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>true</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_App::setMajorProtocolVersion()"></a><h4 class="method public">setMajorProtocolVersion<div class="to-top"><a href="#Zend_Gdata_App">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">setMajorProtocolVersion</span><span class="nb-faded-text">(
+          int $value
+          )
+        </span>
+        :
+        </code><p class="short-description">Set the major protocol version that should be used. Values &lt; 1 will
+cause a Zend_Gdata_App_InvalidArgumentException to be thrown.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$value</dt>
+<dd>int<br><em>The major protocol version to use.</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+<dt>see</dt>
+<dd>_majorProtocolVersion</dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_App_InvalidArgumentException.html#%5CZend_Gdata_App_InvalidArgumentException"></a></dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_App::setMaxRedirects()"></a><h4 class="method public">setMaxRedirects<div class="to-top"><a href="#Zend_Gdata_App">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">setMaxRedirects</span><span class="nb-faded-text">(
+          int $maxRedirects
+          )
+        </span>
+        :
+        void</code><p class="short-description">Set the maximum number of redirects to follow during HTTP operations</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$maxRedirects</dt>
+<dd>int<br><em>Maximum number of redirects to follow</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>true</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_App::setMinorProtocolVersion()"></a><h4 class="method public">setMinorProtocolVersion<div class="to-top"><a href="#Zend_Gdata_App">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">setMinorProtocolVersion</span><span class="nb-faded-text">(
+          \(int|\NULL) $value
+          )
+        </span>
+        :
+        </code><p class="short-description">Set the minor protocol version that should be used. If set to NULL, no
+minor protocol version will be sent to the server. Values &lt; 0 will
+cause a Zend_Gdata_App_InvalidArgumentException to be thrown.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$value</dt>
+<dd>\(int\NULL)<br><em>The minor protocol version to use.</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+<dt>see</dt>
+<dd>_minorProtocolVersion</dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_App_InvalidArgumentException.html#%5CZend_Gdata_App_InvalidArgumentException"></a></dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_App::setStaticHttpClient()"></a><h4 class="method public">setStaticHttpClient<div class="to-top"><a href="#Zend_Gdata_App">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">setStaticHttpClient</span><span class="nb-faded-text">(
+          <a href="_Http_Client.html#%5CZend_Http_Client">\Zend_Http_Client</a> $httpClient
+          )
+        </span>
+        :
+        void</code><p class="short-description">Set the static HTTP client instance</p>
+<div class="long-description"><p>Sets the static HTTP client object to use for retrieving the feed.</p>
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$httpClient</dt>
+<dd>\Zend_Http_Client<br><em></em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>true</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_App::setVerboseExceptionMessages()"></a><h4 class="method public">setVerboseExceptionMessages<div class="to-top"><a href="#Zend_Gdata_App">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">setVerboseExceptionMessages</span><span class="nb-faded-text">(
+          boolean $verbose
+          )
+        </span>
+        :
+        </code><p class="short-description">Set whether to use verbose exception messages</p>
+<div class="long-description"><p>In the case of HTTP errors, use the body of the HTTP response
+in the exception message.</p>
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$verbose</dt>
+<dd>boolean<br><em>Whether to use verbose exception messages</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>true</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_App::updateEntry()"></a><h4 class="method public">updateEntry<div class="to-top"><a href="#Zend_Gdata_App">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">updateEntry</span><span class="nb-faded-text">(
+          mixed $data, string|null $uri
+              =
+              null, string|null $className
+              =
+              null, array $extraHeaders
+              =
+              array
+          )
+        </span>
+        :
+        <a href="_Gdata_App_Entry.html#%5CZend_Gdata_App_Entry">\Zend_Gdata_App_Entry</a></code><p class="short-description">Update an entry</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$data</dt>
+<dd>mixed<br><em>Zend_Gdata_App_Entry or XML (w/ID and link rel=&amp;#039;edit&amp;#039;)</em>
+</dd>
+<dt>$uri</dt>
+<dd>stringnull<br><em>The URI to send requests to, or null if $data contains the URI.</em>
+</dd>
+<dt>$className</dt>
+<dd>stringnull<br><em>The name of the class that should be deserialized from the server response. If null, then &amp;#039;Zend_Gdata_App_Entry&amp;#039; will be used.</em>
+</dd>
+<dt>$extraHeaders</dt>
+<dd>array<br><em>Extra headers to add to the request, as an array of string-based key/value pairs.</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_App_Entry.html#%5CZend_Gdata_App_Entry">\Zend_Gdata_App_Entry</a></dt>
+<dd><em>The entry returned from the server</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_App_Exception.html#%5CZend_Gdata_App_Exception"></a></dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<small xmlns="" class="footer">Documentation was generated by <a href="http://docblox-project.org">DocBlox 0.12.2</a>.
+    </small></body></html>

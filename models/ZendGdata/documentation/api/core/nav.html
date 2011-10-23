@@ -1,0 +1,635 @@
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title>Zend Gdata API Documentation</title><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" href="css/black-tie/jquery-ui-1.8.2.custom.css" type="text/css"></link><link rel="stylesheet" href="css/jquery.treeview.css" type="text/css"></link><link rel="stylesheet" href="css/theme.css" type="text/css"></link><script type="text/javascript" src="js/jquery-1.4.2.min.js"></script><script type="text/javascript" src="js/jquery-ui-1.8.2.custom.min.js"></script><script type="text/javascript" src="js/jquery.cookie.js"></script><script type="text/javascript" src="js/jquery.treeview.js"></script><script type="text/javascript">
+            $(document).ready(function() {
+                $(".filetree").treeview({
+                    collapsed: true,
+                    persist: "cookie"
+                });
+
+                $("#accordion").accordion({
+                    collapsible: true,
+                    autoHeight:  false,
+                    fillSpace:   true
+                });
+
+                $(".tabs").tabs();
+            });
+        </script></head><body><div xmlns="" id="accordion">
+<h1><a href="#">Packages</a></h1>
+<div style="padding: 0px;"><ul id="packages-" class="filetree">
+<li class="closed">
+<span class="folder">Default</span><ul id="packages_" class="filetree"></ul>
+</li>
+<li class="closed">
+<span class="folder">Zend</span><ul id="packages_Zend" class="filetree"><li class="closed"><span class="class"><a href="_Exception.html#%5CZend_Exception" target="content">Zend_Exception<br><small></small></a></span></li></ul>
+</li>
+<li class="closed">
+<span class="folder">Zend_Gdata</span><ul id="packages_Zend_Gdata" class="filetree">
+<li class="closed">
+<span class="folder">App</span><ul id="packages_Zend_Gdata_App" class="filetree">
+<li class="closed"><span class="function"><a href="_Gdata_App_Base.html#::__isset()" target="content">__isset<br><small>Magic __isset method</small></a></span></li>
+<li class="closed"><span class="function"><a href="_Gdata_App_BaseMediaSource.html#::__isset()" target="content">__isset<br><small>Magic __isset method</small></a></span></li>
+<li class="closed"><span class="function"><a href="_Gdata_App_Base.html#::__set()" target="content">__set<br><small>Magic setter to allow acces like $entry-&gt;foo='bar' to call
+$entry-&gt;setFoo('bar') automatically.</small></a></span></li>
+<li class="closed"><span class="function"><a href="_Gdata_App_BaseMediaSource.html#::__set()" target="content">__set<br><small>Magic setter to allow acces like $source-&gt;foo='bar' to call
+$source-&gt;setFoo('bar') automatically.</small></a></span></li>
+<li class="closed"><span class="function"><a href="_Gdata_App_Base.html#::__toString()" target="content">__toString<br><small>Magic toString method allows using this directly via echo
+Works best in PHP &gt;= 4.2.0</small></a></span></li>
+<li class="closed"><span class="function"><a href="_Gdata_App_Base.html#::__unset()" target="content">__unset<br><small>Magic __unset method</small></a></span></li>
+<li class="closed"><span class="function"><a href="_Gdata_App_LoggingHttpClientAdapterSocket.html#::close()" target="content">close<br><small>Close the connection to the server</small></a></span></li>
+<li class="closed"><span class="function"><a href="_Gdata_App.html#::enableRequestDebugLogging()" target="content">enableRequestDebugLogging<br><small>This method enables logging of requests by changing the
+Zend_Http_Client_Adapter used for performing the requests.</small></a></span></li>
+<li class="closed"><span class="function"><a href="_Gdata_App.html#::generateIfMatchHeaderData()" target="content">generateIfMatchHeaderData<br><small>Returns the data for an If-Match header based on the current Etag
+property. If Etags are not supported by the server or cannot be
+extracted from the data, then null will be returned.</small></a></span></li>
+<li class="closed"><span class="function"><a href="_Gdata_App.html#::getNextFeed()" target="content">getNextFeed<br><small>Retrieve next set of results based on a given feed.</small></a></span></li>
+<li class="closed"><span class="function"><a href="_Gdata_App.html#::getPreviousFeed()" target="content">getPreviousFeed<br><small>Retrieve previous set of results based on a given feed.</small></a></span></li>
+<li class="closed"><span class="function"><a href="_Gdata_App_LoggingHttpClientAdapterSocket.html#::read()" target="content">read<br><small>Read response from server</small></a></span></li>
+<li class="closed"><span class="function"><a href="_Gdata_App.html#::retrieveAllEntriesForFeed()" target="content">retrieveAllEntriesForFeed<br><small>Retrieve all entries for a feed, iterating through pages as necessary.</small></a></span></li>
+<li class="closed"><span class="function"><a href="_Gdata_App.html#::useObjectMapping()" target="content">useObjectMapping<br><small>Enable/disable the use of XML to object mapping.</small></a></span></li>
+<li class="closed"><span class="function"><a href="_Gdata_App.html#::usingObjectMapping()" target="content">usingObjectMapping<br><small>Determine whether service object is using XML to object mapping.</small></a></span></li>
+<li class="closed"><span class="function"><a href="_Gdata_App_LoggingHttpClientAdapterSocket.html#::write()" target="content">write<br><small>Send request to the remote server</small></a></span></li>
+<li><span class="class"><a href="_Gdata_App.html#%5CZend_Gdata_App" target="content">Zend_Gdata_App<br><small>Provides Atom Publishing Protocol (APP) functionality.  This class and all
+other components of Zend_Gdata_App are designed to work independently from
+other Zend_Gdata components in order to interact with generic APP services.</small></a></span></li>
+<li><span class="class"><a href="_Gdata_App_AuthException.html#%5CZend_Gdata_App_AuthException" target="content">Zend_Gdata_App_AuthException<br><small>Gdata exceptions</small></a></span></li>
+<li><span class="class"><a href="_Gdata_App_BadMethodCallException.html#%5CZend_Gdata_App_BadMethodCallException" target="content">Zend_Gdata_App_BadMethodCallException<br><small>Gdata APP exceptions</small></a></span></li>
+<li><span class="class"><a href="_Gdata_App_Base.html#%5CZend_Gdata_App_Base" target="content">Zend_Gdata_App_Base<br><small>Abstract class for all XML elements</small></a></span></li>
+<li><span class="class"><a href="_Gdata_App_BaseMediaSource.html#%5CZend_Gdata_App_BaseMediaSource" target="content">Zend_Gdata_App_BaseMediaSource<br><small>Concrete class to use a file handle as an attachment within a MediaEntry.</small></a></span></li>
+<li><span class="class"><a href="_Gdata_App_CaptchaRequiredException.html#%5CZend_Gdata_App_CaptchaRequiredException" target="content">Zend_Gdata_App_CaptchaRequiredException<br><small>Gdata exceptions</small></a></span></li>
+<li><span class="class"><a href="_Gdata_App_Entry.html#%5CZend_Gdata_App_Entry" target="content">Zend_Gdata_App_Entry<br><small>Concrete class for working with Atom entries.</small></a></span></li>
+<li><span class="class"><a href="_Gdata_App_Exception.html#%5CZend_Gdata_App_Exception" target="content">Zend_Gdata_App_Exception<br><small>Gdata App exceptions</small></a></span></li>
+<li><span class="class"><a href="_Gdata_App_Extension.html#%5CZend_Gdata_App_Extension" target="content">Zend_Gdata_App_Extension<br><small>Gdata App extensions</small></a></span></li>
+<li><span class="class"><a href="_Gdata_App_Extension_Author.html#%5CZend_Gdata_App_Extension_Author" target="content">Zend_Gdata_App_Extension_Author<br><small>Represents the atom:author element</small></a></span></li>
+<li><span class="class"><a href="_Gdata_App_Extension_Category.html#%5CZend_Gdata_App_Extension_Category" target="content">Zend_Gdata_App_Extension_Category<br><small>Represents the atom:category element</small></a></span></li>
+<li><span class="class"><a href="_Gdata_App_Extension_Content.html#%5CZend_Gdata_App_Extension_Content" target="content">Zend_Gdata_App_Extension_Content<br><small>Represents the atom:content element</small></a></span></li>
+<li><span class="class"><a href="_Gdata_App_Extension_Contributor.html#%5CZend_Gdata_App_Extension_Contributor" target="content">Zend_Gdata_App_Extension_Contributor<br><small>Represents the atom:contributor element</small></a></span></li>
+<li><span class="class"><a href="_Gdata_App_Extension_Control.html#%5CZend_Gdata_App_Extension_Control" target="content">Zend_Gdata_App_Extension_Control<br><small>Represents the app:control element</small></a></span></li>
+<li><span class="class"><a href="_Gdata_App_Extension_Draft.html#%5CZend_Gdata_App_Extension_Draft" target="content">Zend_Gdata_App_Extension_Draft<br><small>Represents the app:draft element</small></a></span></li>
+<li><span class="class"><a href="_Gdata_App_Extension_Edited.html#%5CZend_Gdata_App_Extension_Edited" target="content">Zend_Gdata_App_Extension_Edited<br><small>Represents the app:edited element</small></a></span></li>
+<li><span class="class"><a href="_Gdata_App_Extension_Element.html#%5CZend_Gdata_App_Extension_Element" target="content">Zend_Gdata_App_Extension_Element<br><small>Class that represents elements which were not handled by other parsing
+code in the library.</small></a></span></li>
+<li><span class="class"><a href="_Gdata_App_Extension_Email.html#%5CZend_Gdata_App_Extension_Email" target="content">Zend_Gdata_App_Extension_Email<br><small>Represents the atom:email element</small></a></span></li>
+<li><span class="class"><a href="_Gdata_App_Extension_Generator.html#%5CZend_Gdata_App_Extension_Generator" target="content">Zend_Gdata_App_Extension_Generator<br><small>Represents the atom:generator element</small></a></span></li>
+<li><span class="class"><a href="_Gdata_App_Extension_Icon.html#%5CZend_Gdata_App_Extension_Icon" target="content">Zend_Gdata_App_Extension_Icon<br><small>Represents the atom:icon element</small></a></span></li>
+<li><span class="class"><a href="_Gdata_App_Extension_Id.html#%5CZend_Gdata_App_Extension_Id" target="content">Zend_Gdata_App_Extension_Id<br><small>Represents the atom:id element</small></a></span></li>
+<li><span class="class"><a href="_Gdata_App_Extension_Link.html#%5CZend_Gdata_App_Extension_Link" target="content">Zend_Gdata_App_Extension_Link<br><small>Data model for representing an atom:link element</small></a></span></li>
+<li><span class="class"><a href="_Gdata_App_Extension_Logo.html#%5CZend_Gdata_App_Extension_Logo" target="content">Zend_Gdata_App_Extension_Logo<br><small>Represents the atom:logo element</small></a></span></li>
+<li><span class="class"><a href="_Gdata_App_Extension_Name.html#%5CZend_Gdata_App_Extension_Name" target="content">Zend_Gdata_App_Extension_Name<br><small>Represents the atom:name element</small></a></span></li>
+<li><span class="class"><a href="_Gdata_App_Extension_Person.html#%5CZend_Gdata_App_Extension_Person" target="content">Zend_Gdata_App_Extension_Person<br><small>Base class for people (currently used by atom:author, atom:contributor)</small></a></span></li>
+<li><span class="class"><a href="_Gdata_App_Extension_Published.html#%5CZend_Gdata_App_Extension_Published" target="content">Zend_Gdata_App_Extension_Published<br><small>Represents the atom:published element</small></a></span></li>
+<li><span class="class"><a href="_Gdata_App_Extension_Rights.html#%5CZend_Gdata_App_Extension_Rights" target="content">Zend_Gdata_App_Extension_Rights<br><small>Represents the atom:rights element</small></a></span></li>
+<li><span class="class"><a href="_Gdata_App_Extension_Source.html#%5CZend_Gdata_App_Extension_Source" target="content">Zend_Gdata_App_Extension_Source<br><small>Atom feed class</small></a></span></li>
+<li><span class="class"><a href="_Gdata_App_Extension_Subtitle.html#%5CZend_Gdata_App_Extension_Subtitle" target="content">Zend_Gdata_App_Extension_Subtitle<br><small>Represents the atom:subtitle element</small></a></span></li>
+<li><span class="class"><a href="_Gdata_App_Extension_Summary.html#%5CZend_Gdata_App_Extension_Summary" target="content">Zend_Gdata_App_Extension_Summary<br><small>Represents the atom:summary element</small></a></span></li>
+<li><span class="class"><a href="_Gdata_App_Extension_Text.html#%5CZend_Gdata_App_Extension_Text" target="content">Zend_Gdata_App_Extension_Text<br><small>Abstract class for data models that require only text and type-- such as:
+title, summary, etc.</small></a></span></li>
+<li><span class="class"><a href="_Gdata_App_Extension_Title.html#%5CZend_Gdata_App_Extension_Title" target="content">Zend_Gdata_App_Extension_Title<br><small>Represents the atom:title element</small></a></span></li>
+<li><span class="class"><a href="_Gdata_App_Extension_Updated.html#%5CZend_Gdata_App_Extension_Updated" target="content">Zend_Gdata_App_Extension_Updated<br><small>Represents the atom:updated element</small></a></span></li>
+<li><span class="class"><a href="_Gdata_App_Extension_Uri.html#%5CZend_Gdata_App_Extension_Uri" target="content">Zend_Gdata_App_Extension_Uri<br><small>Represents the atom:uri element</small></a></span></li>
+<li><span class="class"><a href="_Gdata_App_Feed.html#%5CZend_Gdata_App_Feed" target="content">Zend_Gdata_App_Feed<br><small>Atom feed class</small></a></span></li>
+<li><span class="class"><a href="_Gdata_App_FeedEntryParent.html#%5CZend_Gdata_App_FeedEntryParent" target="content">Zend_Gdata_App_FeedEntryParent<br><small>Abstract class for common functionality in entries and feeds</small></a></span></li>
+<li><span class="class"><a href="_Gdata_App_FeedSourceParent.html#%5CZend_Gdata_App_FeedSourceParent" target="content">Zend_Gdata_App_FeedSourceParent<br><small>Atom feed class</small></a></span></li>
+<li><span class="class"><a href="_Gdata_App_HttpException.html#%5CZend_Gdata_App_HttpException" target="content">Zend_Gdata_App_HttpException<br><small>Gdata exceptions</small></a></span></li>
+<li><span class="class"><a href="_Gdata_App_IOException.html#%5CZend_Gdata_App_IOException" target="content">Zend_Gdata_App_IOException<br><small>Gdata App IO exceptions.</small></a></span></li>
+<li><span class="class"><a href="_Gdata_App_InvalidArgumentException.html#%5CZend_Gdata_App_InvalidArgumentException" target="content">Zend_Gdata_App_InvalidArgumentException<br><small>Gdata exceptions</small></a></span></li>
+<li><span class="class"><a href="_Gdata_App_LoggingHttpClientAdapterSocket.html#%5CZend_Gdata_App_LoggingHttpClientAdapterSocket" target="content">Zend_Gdata_App_LoggingHttpClientAdapterSocket<br><small>Overrides the traditional socket-based adapter class for Zend_Http_Client to
+enable logging of requests.  All requests are logged to a location specified
+in the config as $config['logfile'].  Requests and responses are logged after
+they are sent and received/processed, thus an error could prevent logging.</small></a></span></li>
+<li><span class="class"><a href="_Gdata_App_MediaEntry.html#%5CZend_Gdata_App_MediaEntry" target="content">Zend_Gdata_App_MediaEntry<br><small>Concrete class for working with Atom entries containing multi-part data.</small></a></span></li>
+<li><span class="class"><a href="_Gdata_App_MediaFileSource.html#%5CZend_Gdata_App_MediaFileSource" target="content">Zend_Gdata_App_MediaFileSource<br><small>Concrete class to use a file handle as an attachment within a MediaEntry.</small></a></span></li>
+<li><span class="interface"><a href="_Gdata_App_MediaSource.html#%5CZend_Gdata_App_MediaSource" target="content">Zend_Gdata_App_MediaSource<br><small>Interface for defining data that can be encoded and sent over the network.</small></a></span></li>
+<li><span class="class"><a href="_Gdata_App_Util.html#%5CZend_Gdata_App_Util" target="content">Zend_Gdata_App_Util<br><small>Utility class for static functions needed by Zend_Gdata_App</small></a></span></li>
+<li><span class="class"><a href="_Gdata_App_VersionException.html#%5CZend_Gdata_App_VersionException" target="content">Zend_Gdata_App_VersionException<br><small>Gdata APP exceptions</small></a></span></li>
+</ul>
+</li>
+<li class="closed">
+<span class="folder">Books</span><ul id="packages_Zend_Gdata_Books" class="filetree">
+<li><span class="class"><a href="_Gdata_Books.html#%5CZend_Gdata_Books" target="content">Zend_Gdata_Books<br><small>Service class for interacting with the Books service</small></a></span></li>
+<li><span class="class"><a href="_Gdata_Books_CollectionEntry.html#%5CZend_Gdata_Books_CollectionEntry" target="content">Zend_Gdata_Books_CollectionEntry<br><small>Describes an entry in a feed of collections</small></a></span></li>
+<li><span class="class"><a href="_Gdata_Books_CollectionFeed.html#%5CZend_Gdata_Books_CollectionFeed" target="content">Zend_Gdata_Books_CollectionFeed<br><small>Describes a Book Search collection feed</small></a></span></li>
+<li><span class="class"><a href="_Gdata_Books_Extension_AnnotationLink.html#%5CZend_Gdata_Books_Extension_AnnotationLink" target="content">Zend_Gdata_Books_Extension_AnnotationLink<br><small>Describes an annotation link</small></a></span></li>
+<li><span class="class"><a href="_Gdata_Books_Extension_BooksCategory.html#%5CZend_Gdata_Books_Extension_BooksCategory" target="content">Zend_Gdata_Books_Extension_BooksCategory<br><small>Describes a books category</small></a></span></li>
+<li><span class="class"><a href="_Gdata_Books_Extension_BooksLink.html#%5CZend_Gdata_Books_Extension_BooksLink" target="content">Zend_Gdata_Books_Extension_BooksLink<br><small>Extends the base Link class with Books extensions</small></a></span></li>
+<li><span class="class"><a href="_Gdata_Books_Extension_Embeddability.html#%5CZend_Gdata_Books_Extension_Embeddability" target="content">Zend_Gdata_Books_Extension_Embeddability<br><small>Describes an embeddability</small></a></span></li>
+<li><span class="class"><a href="_Gdata_Books_Extension_InfoLink.html#%5CZend_Gdata_Books_Extension_InfoLink" target="content">Zend_Gdata_Books_Extension_InfoLink<br><small>Describes an info link</small></a></span></li>
+<li><span class="class"><a href="_Gdata_Books_Extension_PreviewLink.html#%5CZend_Gdata_Books_Extension_PreviewLink" target="content">Zend_Gdata_Books_Extension_PreviewLink<br><small>Describes a preview link</small></a></span></li>
+<li><span class="class"><a href="_Gdata_Books_Extension_Review.html#%5CZend_Gdata_Books_Extension_Review" target="content">Zend_Gdata_Books_Extension_Review<br><small>User-provided review</small></a></span></li>
+<li><span class="class"><a href="_Gdata_Books_Extension_ThumbnailLink.html#%5CZend_Gdata_Books_Extension_ThumbnailLink" target="content">Zend_Gdata_Books_Extension_ThumbnailLink<br><small>Describes a thumbnail link</small></a></span></li>
+<li><span class="class"><a href="_Gdata_Books_Extension_Viewability.html#%5CZend_Gdata_Books_Extension_Viewability" target="content">Zend_Gdata_Books_Extension_Viewability<br><small>Describes a viewability</small></a></span></li>
+<li><span class="class"><a href="_Gdata_Books_VolumeEntry.html#%5CZend_Gdata_Books_VolumeEntry" target="content">Zend_Gdata_Books_VolumeEntry<br><small>Describes an entry in a feed of Book Search volumes</small></a></span></li>
+<li><span class="class"><a href="_Gdata_Books_VolumeFeed.html#%5CZend_Gdata_Books_VolumeFeed" target="content">Zend_Gdata_Books_VolumeFeed<br><small>Describes a Book Search volume feed</small></a></span></li>
+<li><span class="class"><a href="_Gdata_Books_VolumeQuery.html#%5CZend_Gdata_Books_VolumeQuery" target="content">Zend_Gdata_Books_VolumeQuery<br><small>Assists in constructing queries for Books volumes</small></a></span></li>
+</ul>
+</li>
+<li class="closed">
+<span class="folder">Calendar</span><ul id="packages_Zend_Gdata_Calendar" class="filetree">
+<li><span class="class"><a href="_Gdata_Calendar.html#%5CZend_Gdata_Calendar" target="content">Zend_Gdata_Calendar<br><small>Service class for interacting with the Google Calendar data API</small></a></span></li>
+<li><span class="class"><a href="_Gdata_Calendar_EventEntry.html#%5CZend_Gdata_Calendar_EventEntry" target="content">Zend_Gdata_Calendar_EventEntry<br><small>Data model class for a Google Calendar Event Entry</small></a></span></li>
+<li><span class="class"><a href="_Gdata_Calendar_EventFeed.html#%5CZend_Gdata_Calendar_EventFeed" target="content">Zend_Gdata_Calendar_EventFeed<br><small>Data model for a Google Calendar feed of events</small></a></span></li>
+<li><span class="class"><a href="_Gdata_Calendar_EventQuery.html#%5CZend_Gdata_Calendar_EventQuery" target="content">Zend_Gdata_Calendar_EventQuery<br><small>Assists in constructing queries for Google Calendar events</small></a></span></li>
+<li><span class="class"><a href="_Gdata_Calendar_Extension_AccessLevel.html#%5CZend_Gdata_Calendar_Extension_AccessLevel" target="content">Zend_Gdata_Calendar_Extension_AccessLevel<br><small>Represents the gCal:accessLevel element used by the Calendar data API</small></a></span></li>
+<li><span class="class"><a href="_Gdata_Calendar_Extension_Color.html#%5CZend_Gdata_Calendar_Extension_Color" target="content">Zend_Gdata_Calendar_Extension_Color<br><small>Represents the gCal:color element used by the Calendar data API
+to define the color of a calendar in the UI.</small></a></span></li>
+<li><span class="class"><a href="_Gdata_Calendar_Extension_Hidden.html#%5CZend_Gdata_Calendar_Extension_Hidden" target="content">Zend_Gdata_Calendar_Extension_Hidden<br><small>Represents the gCal:hidden element used by the Calendar data API</small></a></span></li>
+<li><span class="class"><a href="_Gdata_Calendar_Extension_Link.html#%5CZend_Gdata_Calendar_Extension_Link" target="content">Zend_Gdata_Calendar_Extension_Link<br><small>Specialized Link class for use with Calendar. Enables use of gCal extension elements.</small></a></span></li>
+<li><span class="class"><a href="_Gdata_Calendar_Extension_QuickAdd.html#%5CZend_Gdata_Calendar_Extension_QuickAdd" target="content">Zend_Gdata_Calendar_Extension_QuickAdd<br><small>Represents the gCal:quickAdd element used by the Calendar data API</small></a></span></li>
+<li><span class="class"><a href="_Gdata_Calendar_Extension_Selected.html#%5CZend_Gdata_Calendar_Extension_Selected" target="content">Zend_Gdata_Calendar_Extension_Selected<br><small>Represents the gCal:selected element used by the Calendar data API</small></a></span></li>
+<li><span class="class"><a href="_Gdata_Calendar_Extension_SendEventNotifications.html#%5CZend_Gdata_Calendar_Extension_SendEventNotifications" target="content">Zend_Gdata_Calendar_Extension_SendEventNotifications<br><small>Data model class to represent an entry's sendEventNotifications</small></a></span></li>
+<li><span class="class"><a href="_Gdata_Calendar_Extension_Timezone.html#%5CZend_Gdata_Calendar_Extension_Timezone" target="content">Zend_Gdata_Calendar_Extension_Timezone<br><small>Represents the gCal:timezone element used by the Calendar data API</small></a></span></li>
+<li><span class="class"><a href="_Gdata_Calendar_Extension_WebContent.html#%5CZend_Gdata_Calendar_Extension_WebContent" target="content">Zend_Gdata_Calendar_Extension_WebContent<br><small>Represents the gCal:webContent element used by the Calendar data API</small></a></span></li>
+<li><span class="class"><a href="_Gdata_Calendar_ListEntry.html#%5CZend_Gdata_Calendar_ListEntry" target="content">Zend_Gdata_Calendar_ListEntry<br><small>Represents a Calendar entry in the Calendar data API meta feed of a user's
+calendars.</small></a></span></li>
+<li><span class="class"><a href="_Gdata_Calendar_ListFeed.html#%5CZend_Gdata_Calendar_ListFeed" target="content">Zend_Gdata_Calendar_ListFeed<br><small>Represents the meta-feed list of calendars</small></a></span></li>
+</ul>
+</li>
+<li class="closed">
+<span class="folder">Docs</span><ul id="packages_Zend_Gdata_Docs" class="filetree">
+<li><span class="class"><a href="_Gdata_Docs.html#%5CZend_Gdata_Docs" target="content">Zend_Gdata_Docs<br><small>Service class for interacting with the Google Document List data API</small></a></span></li>
+<li><span class="class"><a href="_Gdata_Docs_DocumentListEntry.html#%5CZend_Gdata_Docs_DocumentListEntry" target="content">Zend_Gdata_Docs_DocumentListEntry<br><small>Represents a Documents List entry in the Documents List data API meta feed
+of a user's documents.</small></a></span></li>
+<li><span class="class"><a href="_Gdata_Docs_DocumentListFeed.html#%5CZend_Gdata_Docs_DocumentListFeed" target="content">Zend_Gdata_Docs_DocumentListFeed<br><small>Data model for a Google Documents List feed of documents</small></a></span></li>
+<li><span class="class"><a href="_Gdata_Docs_Query.html#%5CZend_Gdata_Docs_Query" target="content">Zend_Gdata_Docs_Query<br><small>Assists in constructing queries for Google Document List documents</small></a></span></li>
+</ul>
+</li>
+<li class="closed">
+<span class="folder">DublinCore</span><ul id="packages_Zend_Gdata_DublinCore" class="filetree">
+<li><span class="class"><a href="_Gdata_DublinCore.html#%5CZend_Gdata_DublinCore" target="content">Zend_Gdata_DublinCore<br><small>Service class for interacting with the services which use the
+DublinCore extensions.</small></a></span></li>
+<li><span class="class"><a href="_Gdata_DublinCore_Extension_Creator.html#%5CZend_Gdata_DublinCore_Extension_Creator" target="content">Zend_Gdata_DublinCore_Extension_Creator<br><small>Entity primarily responsible for making the resource</small></a></span></li>
+<li><span class="class"><a href="_Gdata_DublinCore_Extension_Date.html#%5CZend_Gdata_DublinCore_Extension_Date" target="content">Zend_Gdata_DublinCore_Extension_Date<br><small>Point or period of time associated with an event in the lifecycle of the
+resource</small></a></span></li>
+<li><span class="class"><a href="_Gdata_DublinCore_Extension_Description.html#%5CZend_Gdata_DublinCore_Extension_Description" target="content">Zend_Gdata_DublinCore_Extension_Description<br><small>Account of the resource</small></a></span></li>
+<li><span class="class"><a href="_Gdata_DublinCore_Extension_Format.html#%5CZend_Gdata_DublinCore_Extension_Format" target="content">Zend_Gdata_DublinCore_Extension_Format<br><small>File format, physical medium, or dimensions of the resource</small></a></span></li>
+<li><span class="class"><a href="_Gdata_DublinCore_Extension_Identifier.html#%5CZend_Gdata_DublinCore_Extension_Identifier" target="content">Zend_Gdata_DublinCore_Extension_Identifier<br><small>An unambiguous reference to the resource within a given context</small></a></span></li>
+<li><span class="class"><a href="_Gdata_DublinCore_Extension_Language.html#%5CZend_Gdata_DublinCore_Extension_Language" target="content">Zend_Gdata_DublinCore_Extension_Language<br><small>Language of the resource</small></a></span></li>
+<li><span class="class"><a href="_Gdata_DublinCore_Extension_Publisher.html#%5CZend_Gdata_DublinCore_Extension_Publisher" target="content">Zend_Gdata_DublinCore_Extension_Publisher<br><small>Entity responsible for making the resource available</small></a></span></li>
+<li><span class="class"><a href="_Gdata_DublinCore_Extension_Rights.html#%5CZend_Gdata_DublinCore_Extension_Rights" target="content">Zend_Gdata_DublinCore_Extension_Rights<br><small>Information about rights held in and over the resource</small></a></span></li>
+<li><span class="class"><a href="_Gdata_DublinCore_Extension_Subject.html#%5CZend_Gdata_DublinCore_Extension_Subject" target="content">Zend_Gdata_DublinCore_Extension_Subject<br><small>Topic of the resource</small></a></span></li>
+<li><span class="class"><a href="_Gdata_DublinCore_Extension_Title.html#%5CZend_Gdata_DublinCore_Extension_Title" target="content">Zend_Gdata_DublinCore_Extension_Title<br><small>Name given to the resource</small></a></span></li>
+</ul>
+</li>
+<li class="closed">
+<span class="folder">Exif</span><ul id="packages_Zend_Gdata_Exif" class="filetree">
+<li><span class="class"><a href="_Gdata_Exif.html#%5CZend_Gdata_Exif" target="content">Zend_Gdata_Exif<br><small>Service class for interacting with the services which use the EXIF extensions</small></a></span></li>
+<li><span class="class"><a href="_Gdata_Exif_Entry.html#%5CZend_Gdata_Exif_Entry" target="content">Zend_Gdata_Exif_Entry<br><small>An Atom entry containing EXIF metadata.</small></a></span></li>
+<li><span class="class"><a href="_Gdata_Exif_Extension_Distance.html#%5CZend_Gdata_Exif_Extension_Distance" target="content">Zend_Gdata_Exif_Extension_Distance<br><small>Represents the exif:distance element used by the Gdata Exif extensions.</small></a></span></li>
+<li><span class="class"><a href="_Gdata_Exif_Extension_Exposure.html#%5CZend_Gdata_Exif_Extension_Exposure" target="content">Zend_Gdata_Exif_Extension_Exposure<br><small>Represents the exif:exposure element used by the Gdata Exif extensions.</small></a></span></li>
+<li><span class="class"><a href="_Gdata_Exif_Extension_FStop.html#%5CZend_Gdata_Exif_Extension_FStop" target="content">Zend_Gdata_Exif_Extension_FStop<br><small>Represents the exif:fStop element used by the Gdata Exif extensions.</small></a></span></li>
+<li><span class="class"><a href="_Gdata_Exif_Extension_Flash.html#%5CZend_Gdata_Exif_Extension_Flash" target="content">Zend_Gdata_Exif_Extension_Flash<br><small>Represents the exif:flash element used by the Gdata Exif extensions.</small></a></span></li>
+<li><span class="class"><a href="_Gdata_Exif_Extension_FocalLength.html#%5CZend_Gdata_Exif_Extension_FocalLength" target="content">Zend_Gdata_Exif_Extension_FocalLength<br><small>Represents the exif:focalLength element used by the Gdata Exif extensions.</small></a></span></li>
+<li><span class="class"><a href="_Gdata_Exif_Extension_ImageUniqueId.html#%5CZend_Gdata_Exif_Extension_ImageUniqueId" target="content">Zend_Gdata_Exif_Extension_ImageUniqueId<br><small>Represents the exif:imageUniqueId element used by the Gdata Exif extensions.</small></a></span></li>
+<li><span class="class"><a href="_Gdata_Exif_Extension_Iso.html#%5CZend_Gdata_Exif_Extension_Iso" target="content">Zend_Gdata_Exif_Extension_Iso<br><small>Represents the exif:iso element used by the Gdata Exif extensions.</small></a></span></li>
+<li><span class="class"><a href="_Gdata_Exif_Extension_Make.html#%5CZend_Gdata_Exif_Extension_Make" target="content">Zend_Gdata_Exif_Extension_Make<br><small>Represents the exif:make element used by the Gdata Exif extensions.</small></a></span></li>
+<li><span class="class"><a href="_Gdata_Exif_Extension_Model.html#%5CZend_Gdata_Exif_Extension_Model" target="content">Zend_Gdata_Exif_Extension_Model<br><small>Represents the exif:model element used by the Gdata Exif extensions.</small></a></span></li>
+<li><span class="class"><a href="_Gdata_Exif_Extension_Tags.html#%5CZend_Gdata_Exif_Extension_Tags" target="content">Zend_Gdata_Exif_Extension_Tags<br><small>Represents the exif:tags element used by the Gdata Exif extensions.</small></a></span></li>
+<li><span class="class"><a href="_Gdata_Exif_Extension_Time.html#%5CZend_Gdata_Exif_Extension_Time" target="content">Zend_Gdata_Exif_Extension_Time<br><small>Represents the exif:time element used by the Gdata Exif extensions.</small></a></span></li>
+<li><span class="class"><a href="_Gdata_Exif_Feed.html#%5CZend_Gdata_Exif_Feed" target="content">Zend_Gdata_Exif_Feed<br><small>Feed for Gdata EXIF data entries.</small></a></span></li>
+</ul>
+</li>
+<li class="closed">
+<span class="folder">Gapps</span><ul id="packages_Zend_Gdata_Gapps" class="filetree">
+<li class="closed"><span class="function"><a href="_Gdata_Gapps.html#::addMemberToGroup()" target="content">addMemberToGroup<br><small>Add an email address to a group as a member</small></a></span></li>
+<li class="closed"><span class="function"><a href="_Gdata_Gapps.html#::addOwnerToGroup()" target="content">addOwnerToGroup<br><small>Add an email as an owner of a group</small></a></span></li>
+<li class="closed"><span class="function"><a href="_Gdata_Gapps.html#::addRecipientToEmailList()" target="content">addRecipientToEmailList<br><small>Add a specified recipient to an existing emailList.</small></a></span></li>
+<li class="closed"><span class="function"><a href="_Gdata_Gapps.html#::createEmailList()" target="content">createEmailList<br><small>Create a new email list.</small></a></span></li>
+<li class="closed"><span class="function"><a href="_Gdata_Gapps.html#::createGroup()" target="content">createGroup<br><small>Create a new group.</small></a></span></li>
+<li class="closed"><span class="function"><a href="_Gdata_Gapps.html#::createNickname()" target="content">createNickname<br><small>Create a nickname for a given user.</small></a></span></li>
+<li class="closed"><span class="function"><a href="_Gdata_Gapps.html#::createUser()" target="content">createUser<br><small>Create a new user entry and send it to the Google Apps servers.</small></a></span></li>
+<li class="closed"><span class="function"><a href="_Gdata_Gapps.html#::deleteEmailList()" target="content">deleteEmailList<br><small>Delete a specified email list.</small></a></span></li>
+<li class="closed"><span class="function"><a href="_Gdata_Gapps.html#::deleteGroup()" target="content">deleteGroup<br><small>Delete a group</small></a></span></li>
+<li class="closed"><span class="function"><a href="_Gdata_Gapps.html#::deleteNickname()" target="content">deleteNickname<br><small>Delete a specified nickname.</small></a></span></li>
+<li class="closed"><span class="function"><a href="_Gdata_Gapps.html#::deleteUser()" target="content">deleteUser<br><small>Delete a user by username.</small></a></span></li>
+<li class="closed"><span class="function"><a href="_Gdata_Gapps.html#::isMember()" target="content">isMember<br><small>Check to see if a member id or group id is a member of group</small></a></span></li>
+<li class="closed"><span class="function"><a href="_Gdata_Gapps.html#::isOwner()" target="content">isOwner<br><small>Checks to see if an email is an owner of a group</small></a></span></li>
+<li class="closed"><span class="function"><a href="_Gdata_Gapps.html#::removeMemberFromGroup()" target="content">removeMemberFromGroup<br><small>Remove a member id from a group</small></a></span></li>
+<li class="closed"><span class="function"><a href="_Gdata_Gapps.html#::removeOwnerFromGroup()" target="content">removeOwnerFromGroup<br><small>Remove email as an owner of a group</small></a></span></li>
+<li class="closed"><span class="function"><a href="_Gdata_Gapps.html#::removeRecipientFromEmailList()" target="content">removeRecipientFromEmailList<br><small>Remove a specified recipient from an email list.</small></a></span></li>
+<li class="closed"><span class="function"><a href="_Gdata_Gapps.html#::restoreUser()" target="content">restoreUser<br><small>Mark a given user as not suspended.</small></a></span></li>
+<li class="closed"><span class="function"><a href="_Gdata_Gapps.html#::retrieveAllEmailLists()" target="content">retrieveAllEmailLists<br><small>Retrieve all email lists associated with the curent domain. Be aware that
+calling this function on a domain with many email lists will take a
+signifigant amount of time to complete. On larger domains this may
+may cause execution to timeout without proper precautions in place.</small></a></span></li>
+<li class="closed"><span class="function"><a href="_Gdata_Gapps.html#::retrieveAllGroups()" target="content">retrieveAllGroups<br><small>Retrieve all groups in the current domain. Be aware that
+calling this function on a domain with many groups will take a
+signifigant amount of time to complete. On larger domains this may
+may cause execution to timeout without proper precautions in place.</small></a></span></li>
+<li class="closed"><span class="function"><a href="_Gdata_Gapps.html#::retrieveAllMembers()" target="content">retrieveAllMembers<br><small>Retrieves all the members of a group</small></a></span></li>
+<li class="closed"><span class="function"><a href="_Gdata_Gapps.html#::retrieveAllNicknames()" target="content">retrieveAllNicknames<br><small>Retrieve all nicknames in the current domain. Be aware that
+calling this function on a domain with many nicknames will take a
+signifigant amount of time to complete. On larger domains this may
+may cause execution to timeout without proper precautions in place.</small></a></span></li>
+<li class="closed"><span class="function"><a href="_Gdata_Gapps.html#::retrieveAllRecipients()" target="content">retrieveAllRecipients<br><small>Retrieve all recipients associated with an email list. Be aware that
+calling this function on a domain with many email lists will take a
+signifigant amount of time to complete. On larger domains this may
+may cause execution to timeout without proper precautions in place.</small></a></span></li>
+<li class="closed"><span class="function"><a href="_Gdata_Gapps.html#::retrieveAllUsers()" target="content">retrieveAllUsers<br><small>Retrieve all users in the current domain. Be aware that
+calling this function on a domain with many users will take a
+signifigant amount of time to complete. On larger domains this may
+may cause execution to timeout without proper precautions in place.</small></a></span></li>
+<li class="closed"><span class="function"><a href="_Gdata_Gapps.html#::retrieveEmailLists()" target="content">retrieveEmailLists<br><small>Retrieve all email lists associated with a recipient.</small></a></span></li>
+<li class="closed"><span class="function"><a href="_Gdata_Gapps.html#::retrieveGroup()" target="content">retrieveGroup<br><small>Retrieves a group based on group id</small></a></span></li>
+<li class="closed"><span class="function"><a href="_Gdata_Gapps.html#::retrieveGroupOwners()" target="content">retrieveGroupOwners<br><small>Retrieves all the owners of a group</small></a></span></li>
+<li class="closed"><span class="function"><a href="_Gdata_Gapps.html#::retrieveGroups()" target="content">retrieveGroups<br><small>Retrieve all of the groups that a user is a member of</small></a></span></li>
+<li class="closed"><span class="function"><a href="_Gdata_Gapps.html#::retrieveNickname()" target="content">retrieveNickname<br><small>Retrieve the entry for a specified nickname.</small></a></span></li>
+<li class="closed"><span class="function"><a href="_Gdata_Gapps.html#::retrieveNicknames()" target="content">retrieveNicknames<br><small>Retrieve all nicknames associated with a specific username.</small></a></span></li>
+<li class="closed"><span class="function"><a href="_Gdata_Gapps.html#::retrievePageOfEmailLists()" target="content">retrievePageOfEmailLists<br><small>Retrieve a page of email lists in alphabetical order, starting with the
+provided email list.</small></a></span></li>
+<li class="closed"><span class="function"><a href="_Gdata_Gapps.html#::retrievePageOfGroups()" target="content">retrievePageOfGroups<br><small>Retrieve a page of groups in alphabetical order, starting with the
+provided group.</small></a></span></li>
+<li class="closed"><span class="function"><a href="_Gdata_Gapps.html#::retrievePageOfMembers()" target="content">retrievePageOfMembers<br><small>Gets page of Members</small></a></span></li>
+<li class="closed"><span class="function"><a href="_Gdata_Gapps.html#::retrievePageOfNicknames()" target="content">retrievePageOfNicknames<br><small>Retrieve a page of nicknames in alphabetical order, starting with the
+provided nickname.</small></a></span></li>
+<li class="closed"><span class="function"><a href="_Gdata_Gapps.html#::retrievePageOfRecipients()" target="content">retrievePageOfRecipients<br><small>Retrieve a page of email list recipients in alphabetical order,
+starting with the provided email list recipient.</small></a></span></li>
+<li class="closed"><span class="function"><a href="_Gdata_Gapps.html#::retrievePageOfUsers()" target="content">retrievePageOfUsers<br><small>Retrieve a page of users in alphabetical order, starting with the
+provided username.</small></a></span></li>
+<li class="closed"><span class="function"><a href="_Gdata_Gapps.html#::retrieveUser()" target="content">retrieveUser<br><small>Retrieve a user based on their username.</small></a></span></li>
+<li class="closed"><span class="function"><a href="_Gdata_Gapps.html#::suspendUser()" target="content">suspendUser<br><small>Mark a given user as suspended.</small></a></span></li>
+<li class="closed"><span class="function"><a href="_Gdata_Gapps.html#::updateGroup()" target="content">updateGroup<br><small>Update group properties with new values. any property not defined will not
+be updated</small></a></span></li>
+<li class="closed"><span class="function"><a href="_Gdata_Gapps.html#::updateUser()" target="content">updateUser<br><small>Overwrite a specified username with the provided UserEntry.  The
+UserEntry does not need to contain an edit link.</small></a></span></li>
+<li><span class="class"><a href="_Gdata_Gapps.html#%5CZend_Gdata_Gapps" target="content">Zend_Gdata_Gapps<br><small>Service class for interacting with the Google Apps Provisioning API.</small></a></span></li>
+<li><span class="class"><a href="_Gdata_Gapps_EmailListEntry.html#%5CZend_Gdata_Gapps_EmailListEntry" target="content">Zend_Gdata_Gapps_EmailListEntry<br><small>Data model class for a Google Apps Email List Entry.</small></a></span></li>
+<li><span class="class"><a href="_Gdata_Gapps_EmailListFeed.html#%5CZend_Gdata_Gapps_EmailListFeed" target="content">Zend_Gdata_Gapps_EmailListFeed<br><small>Data model for a collection of Google Apps email list entries, usually
+provided by the Google Apps servers.</small></a></span></li>
+<li><span class="class"><a href="_Gdata_Gapps_EmailListQuery.html#%5CZend_Gdata_Gapps_EmailListQuery" target="content">Zend_Gdata_Gapps_EmailListQuery<br><small>Assists in constructing queries for Google Apps email list entries.</small></a></span></li>
+<li><span class="class"><a href="_Gdata_Gapps_EmailListRecipientEntry.html#%5CZend_Gdata_Gapps_EmailListRecipientEntry" target="content">Zend_Gdata_Gapps_EmailListRecipientEntry<br><small>Data model class for a Google Apps Email List Recipient Entry.</small></a></span></li>
+<li><span class="class"><a href="_Gdata_Gapps_EmailListRecipientFeed.html#%5CZend_Gdata_Gapps_EmailListRecipientFeed" target="content">Zend_Gdata_Gapps_EmailListRecipientFeed<br><small>Data model for a collection of Google Apps email list recipient entries,
+usually provided by the Google Apps servers.</small></a></span></li>
+<li><span class="class"><a href="_Gdata_Gapps_EmailListRecipientQuery.html#%5CZend_Gdata_Gapps_EmailListRecipientQuery" target="content">Zend_Gdata_Gapps_EmailListRecipientQuery<br><small>Assists in constructing queries for Google Apps email list recipient
+entries. Instances of this class can be provided in many places where a
+URL is required.</small></a></span></li>
+<li><span class="class"><a href="_Gdata_Gapps_Error.html#%5CZend_Gdata_Gapps_Error" target="content">Zend_Gdata_Gapps_Error<br><small>Gdata Gapps Error class. This class is used to represent errors returned
+within an AppsForYourDomainErrors message received from the Google Apps
+servers.</small></a></span></li>
+<li><span class="class"><a href="_Gdata_Gapps_Extension_EmailList.html#%5CZend_Gdata_Gapps_Extension_EmailList" target="content">Zend_Gdata_Gapps_Extension_EmailList<br><small>Represents the apps:emailList element used by the Apps data API. This
+class represents properties of an email list and is usually contained
+within an instance of Zend_Gdata_Gapps_EmailListEntry.</small></a></span></li>
+<li><span class="class"><a href="_Gdata_Gapps_Extension_Login.html#%5CZend_Gdata_Gapps_Extension_Login" target="content">Zend_Gdata_Gapps_Extension_Login<br><small>Represents the apps:login element used by the Apps data API. This
+class is used to describe properties of a user, and is usually contained
+within instances of Zene_Gdata_Gapps_UserEntry or any other class
+which is linked to a particular username.</small></a></span></li>
+<li><span class="class"><a href="_Gdata_Gapps_Extension_Name.html#%5CZend_Gdata_Gapps_Extension_Name" target="content">Zend_Gdata_Gapps_Extension_Name<br><small>Represents the apps:name element used by the Apps data API. This is used
+to represent a user's full name. This class is usually contained within
+instances of Zend_Gdata_Gapps_UserEntry.</small></a></span></li>
+<li><span class="class"><a href="_Gdata_Gapps_Extension_Nickname.html#%5CZend_Gdata_Gapps_Extension_Nickname" target="content">Zend_Gdata_Gapps_Extension_Nickname<br><small>Represents the apps:nickname element used by the Apps data API. This
+is used to describe a nickname's properties, and is usually contained
+within instances of Zend_Gdata_Gapps_NicknameEntry.</small></a></span></li>
+<li><span class="class"><a href="_Gdata_Gapps_Extension_Property.html#%5CZend_Gdata_Gapps_Extension_Property" target="content">Zend_Gdata_Gapps_Extension_Property<br><small>Represents the apps:Property element used by the Apps data API.</small></a></span></li>
+<li><span class="class"><a href="_Gdata_Gapps_Extension_Quota.html#%5CZend_Gdata_Gapps_Extension_Quota" target="content">Zend_Gdata_Gapps_Extension_Quota<br><small>Represents the apps:quota element used by the Apps data API. This is
+used to indicate the amount of storage space available to a user. Quotas
+may not be able to be set, depending on the domain used. This class
+is usually contained within an instance of Zend_Gdata_Gapps_UserEntry.</small></a></span></li>
+<li><span class="class"><a href="_Gdata_Gapps_GroupEntry.html#%5CZend_Gdata_Gapps_GroupEntry" target="content">Zend_Gdata_Gapps_GroupEntry<br><small>Data model class for a Google Apps Group Entry.</small></a></span></li>
+<li><span class="class"><a href="_Gdata_Gapps_GroupFeed.html#%5CZend_Gdata_Gapps_GroupFeed" target="content">Zend_Gdata_Gapps_GroupFeed<br><small>Data model for a collection of Google Apps group entries, usually
+provided by the Google Apps servers.</small></a></span></li>
+<li><span class="class"><a href="_Gdata_Gapps_GroupQuery.html#%5CZend_Gdata_Gapps_GroupQuery" target="content">Zend_Gdata_Gapps_GroupQuery<br><small>Assists in constructing queries for Google Apps group entries.</small></a></span></li>
+<li><span class="class"><a href="_Gdata_Gapps_MemberEntry.html#%5CZend_Gdata_Gapps_MemberEntry" target="content">Zend_Gdata_Gapps_MemberEntry<br><small>Data model class for a Google Apps Member Entry.</small></a></span></li>
+<li><span class="class"><a href="_Gdata_Gapps_MemberFeed.html#%5CZend_Gdata_Gapps_MemberFeed" target="content">Zend_Gdata_Gapps_MemberFeed<br><small>Data model for a collection of Google Apps member entries, usually
+provided by the Google Apps servers.</small></a></span></li>
+<li><span class="class"><a href="_Gdata_Gapps_MemberQuery.html#%5CZend_Gdata_Gapps_MemberQuery" target="content">Zend_Gdata_Gapps_MemberQuery<br><small>Assists in constructing queries for Google Apps member entries.</small></a></span></li>
+<li><span class="class"><a href="_Gdata_Gapps_NicknameEntry.html#%5CZend_Gdata_Gapps_NicknameEntry" target="content">Zend_Gdata_Gapps_NicknameEntry<br><small>Data model class for a Google Apps Nickname Entry.</small></a></span></li>
+<li><span class="class"><a href="_Gdata_Gapps_NicknameFeed.html#%5CZend_Gdata_Gapps_NicknameFeed" target="content">Zend_Gdata_Gapps_NicknameFeed<br><small>Data model for a collection of Google Apps nickname entries, usually
+provided by the Google Apps servers.</small></a></span></li>
+<li><span class="class"><a href="_Gdata_Gapps_NicknameQuery.html#%5CZend_Gdata_Gapps_NicknameQuery" target="content">Zend_Gdata_Gapps_NicknameQuery<br><small>Assists in constructing queries for Google Apps nickname entries.</small></a></span></li>
+<li><span class="class"><a href="_Gdata_Gapps_OwnerEntry.html#%5CZend_Gdata_Gapps_OwnerEntry" target="content">Zend_Gdata_Gapps_OwnerEntry<br><small>Data model class for a Google Apps Owner Entry.</small></a></span></li>
+<li><span class="class"><a href="_Gdata_Gapps_OwnerFeed.html#%5CZend_Gdata_Gapps_OwnerFeed" target="content">Zend_Gdata_Gapps_OwnerFeed<br><small>Data model for a collection of Google Apps owner entries, usually
+provided by the Google Apps servers.</small></a></span></li>
+<li><span class="class"><a href="_Gdata_Gapps_OwnerQuery.html#%5CZend_Gdata_Gapps_OwnerQuery" target="content">Zend_Gdata_Gapps_OwnerQuery<br><small>Assists in constructing queries for Google Apps owner entries.</small></a></span></li>
+<li><span class="class"><a href="_Gdata_Gapps_Query.html#%5CZend_Gdata_Gapps_Query" target="content">Zend_Gdata_Gapps_Query<br><small>Assists in constructing queries for Google Apps entries. This class
+provides common methods used by all other Google Apps query classes.</small></a></span></li>
+<li><span class="class"><a href="_Gdata_Gapps_ServiceException.html#%5CZend_Gdata_Gapps_ServiceException" target="content">Zend_Gdata_Gapps_ServiceException<br><small>Gdata Gapps Exception class. This is thrown when an
+AppsForYourDomainErrors message is received from the Google Apps
+servers.</small></a></span></li>
+<li><span class="class"><a href="_Gdata_Gapps_UserEntry.html#%5CZend_Gdata_Gapps_UserEntry" target="content">Zend_Gdata_Gapps_UserEntry<br><small>Data model class for a Google Apps User Entry.</small></a></span></li>
+<li><span class="class"><a href="_Gdata_Gapps_UserFeed.html#%5CZend_Gdata_Gapps_UserFeed" target="content">Zend_Gdata_Gapps_UserFeed<br><small>Data model for a collection of Google Apps user entries, usually
+provided by the Google Apps servers.</small></a></span></li>
+<li><span class="class"><a href="_Gdata_Gapps_UserQuery.html#%5CZend_Gdata_Gapps_UserQuery" target="content">Zend_Gdata_Gapps_UserQuery<br><small>Assists in constructing queries for Google Apps user entries.</small></a></span></li>
+</ul>
+</li>
+<li class="closed">
+<span class="folder">Gbase</span><ul id="packages_Zend_Gdata_Gbase" class="filetree">
+<li><span class="class"><a href="_Gdata_Gbase.html#%5CZend_Gdata_Gbase" target="content">Zend_Gdata_Gbase<br><small>Service class for interacting with the Google Base data API</small></a></span></li>
+<li><span class="class"><a href="_Gdata_Gbase_Entry.html#%5CZend_Gdata_Gbase_Entry" target="content">Zend_Gdata_Gbase_Entry<br><small>Base class for working with Google Base entries.</small></a></span></li>
+<li><span class="class"><a href="_Gdata_Gbase_Extension_BaseAttribute.html#%5CZend_Gdata_Gbase_Extension_BaseAttribute" target="content">Zend_Gdata_Gbase_Extension_BaseAttribute<br><small>Concrete class for working with ItemType elements.</small></a></span></li>
+<li><span class="class"><a href="_Gdata_Gbase_Feed.html#%5CZend_Gdata_Gbase_Feed" target="content">Zend_Gdata_Gbase_Feed<br><small>Base class for the Google Base Feed</small></a></span></li>
+<li><span class="class"><a href="_Gdata_Gbase_ItemEntry.html#%5CZend_Gdata_Gbase_ItemEntry" target="content">Zend_Gdata_Gbase_ItemEntry<br><small>Concrete class for working with Item entries.</small></a></span></li>
+<li><span class="class"><a href="_Gdata_Gbase_ItemFeed.html#%5CZend_Gdata_Gbase_ItemFeed" target="content">Zend_Gdata_Gbase_ItemFeed<br><small>Represents the Google Base Customer Items Feed</small></a></span></li>
+<li><span class="class"><a href="_Gdata_Gbase_ItemQuery.html#%5CZend_Gdata_Gbase_ItemQuery" target="content">Zend_Gdata_Gbase_ItemQuery<br><small>Assists in constructing queries for Google Base Customer Items Feed</small></a></span></li>
+<li><span class="class"><a href="_Gdata_Gbase_Query.html#%5CZend_Gdata_Gbase_Query" target="content">Zend_Gdata_Gbase_Query<br><small>Assists in constructing queries for Google Base</small></a></span></li>
+<li><span class="class"><a href="_Gdata_Gbase_SnippetEntry.html#%5CZend_Gdata_Gbase_SnippetEntry" target="content">Zend_Gdata_Gbase_SnippetEntry<br><small>Concrete class for working with Snippet entries.</small></a></span></li>
+<li><span class="class"><a href="_Gdata_Gbase_SnippetFeed.html#%5CZend_Gdata_Gbase_SnippetFeed" target="content">Zend_Gdata_Gbase_SnippetFeed<br><small>Represents the Google Base Snippets Feed</small></a></span></li>
+<li><span class="class"><a href="_Gdata_Gbase_SnippetQuery.html#%5CZend_Gdata_Gbase_SnippetQuery" target="content">Zend_Gdata_Gbase_SnippetQuery<br><small>Assists in constructing queries for Google Base Snippets Feed</small></a></span></li>
+</ul>
+</li>
+<li class="closed">
+<span class="folder">Gdata</span><ul id="packages_Zend_Gdata_Gdata" class="filetree">
+<li><span class="class"><a href="_Gdata.html#%5CZend_Gdata" target="content">Zend_Gdata<br><small>Provides functionality to interact with Google data APIs
+Subclasses exist to implement service-specific features</small></a></span></li>
+<li><span class="class"><a href="_Gdata_AuthSub.html#%5CZend_Gdata_AuthSub" target="content">Zend_Gdata_AuthSub<br><small>Wrapper around Zend_Http_Client to facilitate Google's "Account Authentication
+Proxy for Web-Based Applications".</small></a></span></li>
+<li><span class="class"><a href="_Gdata_ClientLogin.html#%5CZend_Gdata_ClientLogin" target="content">Zend_Gdata_ClientLogin<br><small>Class to facilitate Google's "Account Authentication
+for Installed Applications" also known as "ClientLogin".</small></a></span></li>
+<li><span class="class"><a href="_Gdata_Entry.html#%5CZend_Gdata_Entry" target="content">Zend_Gdata_Entry<br><small>Represents the Gdata flavor of an Atom entry</small></a></span></li>
+<li><span class="class"><a href="_Gdata_Extension.html#%5CZend_Gdata_Extension" target="content">Zend_Gdata_Extension<br><small>Represents a Gdata extension</small></a></span></li>
+<li><span class="class"><a href="_Gdata_Extension_AttendeeStatus.html#%5CZend_Gdata_Extension_AttendeeStatus" target="content">Zend_Gdata_Extension_AttendeeStatus<br><small>Data model class to represent an attendee's status (gd:attendeeStatus)</small></a></span></li>
+<li><span class="class"><a href="_Gdata_Extension_AttendeeType.html#%5CZend_Gdata_Extension_AttendeeType" target="content">Zend_Gdata_Extension_AttendeeType<br><small>Data model class to represent an attendee's type (gd:attendeeType)</small></a></span></li>
+<li><span class="class"><a href="_Gdata_Extension_Comments.html#%5CZend_Gdata_Extension_Comments" target="content">Zend_Gdata_Extension_Comments<br><small>Represents the gd:comments element</small></a></span></li>
+<li><span class="class"><a href="_Gdata_Extension_EntryLink.html#%5CZend_Gdata_Extension_EntryLink" target="content">Zend_Gdata_Extension_EntryLink<br><small>Represents the gd:entryLink element</small></a></span></li>
+<li><span class="class"><a href="_Gdata_Extension_EventStatus.html#%5CZend_Gdata_Extension_EventStatus" target="content">Zend_Gdata_Extension_EventStatus<br><small>Represents the gd:eventStatus element</small></a></span></li>
+<li><span class="class"><a href="_Gdata_Extension_ExtendedProperty.html#%5CZend_Gdata_Extension_ExtendedProperty" target="content">Zend_Gdata_Extension_ExtendedProperty<br><small>Data model for gd:extendedProperty element, used by some Gdata
+services to implement arbitrary name/value pair storage</small></a></span></li>
+<li><span class="class"><a href="_Gdata_Extension_FeedLink.html#%5CZend_Gdata_Extension_FeedLink" target="content">Zend_Gdata_Extension_FeedLink<br><small>Represents the gd:feedLink element</small></a></span></li>
+<li><span class="class"><a href="_Gdata_Extension_OpenSearchItemsPerPage.html#%5CZend_Gdata_Extension_OpenSearchItemsPerPage" target="content">Zend_Gdata_Extension_OpenSearchItemsPerPage<br><small>Represents the openSearch:itemsPerPage element</small></a></span></li>
+<li><span class="class"><a href="_Gdata_Extension_OpenSearchStartIndex.html#%5CZend_Gdata_Extension_OpenSearchStartIndex" target="content">Zend_Gdata_Extension_OpenSearchStartIndex<br><small>Represents the openSeach:startIndex element</small></a></span></li>
+<li><span class="class"><a href="_Gdata_Extension_OpenSearchTotalResults.html#%5CZend_Gdata_Extension_OpenSearchTotalResults" target="content">Zend_Gdata_Extension_OpenSearchTotalResults<br><small>Represents the openSearch:totalResults element</small></a></span></li>
+<li><span class="class"><a href="_Gdata_Extension_OriginalEvent.html#%5CZend_Gdata_Extension_OriginalEvent" target="content">Zend_Gdata_Extension_OriginalEvent<br><small>Represents the gd:originalEvent element</small></a></span></li>
+<li><span class="class"><a href="_Gdata_Extension_Rating.html#%5CZend_Gdata_Extension_Rating" target="content">Zend_Gdata_Extension_Rating<br><small>Implements the gd:rating element</small></a></span></li>
+<li><span class="class"><a href="_Gdata_Extension_Recurrence.html#%5CZend_Gdata_Extension_Recurrence" target="content">Zend_Gdata_Extension_Recurrence<br><small>Represents the gd:recurrence element</small></a></span></li>
+<li><span class="class"><a href="_Gdata_Extension_RecurrenceException.html#%5CZend_Gdata_Extension_RecurrenceException" target="content">Zend_Gdata_Extension_RecurrenceException<br><small>Data model class to represent an entry's recurrenceException</small></a></span></li>
+<li><span class="class"><a href="_Gdata_Extension_Reminder.html#%5CZend_Gdata_Extension_Reminder" target="content">Zend_Gdata_Extension_Reminder<br><small>Implements the gd:reminder element used to set/retrieve notifications</small></a></span></li>
+<li><span class="class"><a href="_Gdata_Extension_Transparency.html#%5CZend_Gdata_Extension_Transparency" target="content">Zend_Gdata_Extension_Transparency<br><small>Data model class to represent an entry's transparency</small></a></span></li>
+<li><span class="class"><a href="_Gdata_Extension_Visibility.html#%5CZend_Gdata_Extension_Visibility" target="content">Zend_Gdata_Extension_Visibility<br><small>Data model class to represent an entry's visibility</small></a></span></li>
+<li><span class="class"><a href="_Gdata_Extension_When.html#%5CZend_Gdata_Extension_When" target="content">Zend_Gdata_Extension_When<br><small>Represents the gd:when element</small></a></span></li>
+<li><span class="class"><a href="_Gdata_Extension_Where.html#%5CZend_Gdata_Extension_Where" target="content">Zend_Gdata_Extension_Where<br><small>Data model class to represent a location (gd:where element)</small></a></span></li>
+<li><span class="class"><a href="_Gdata_Extension_Who.html#%5CZend_Gdata_Extension_Who" target="content">Zend_Gdata_Extension_Who<br><small>Data model class to represent a participant</small></a></span></li>
+<li><span class="class"><a href="_Gdata_Feed.html#%5CZend_Gdata_Feed" target="content">Zend_Gdata_Feed<br><small>The Gdata flavor of an Atom Feed</small></a></span></li>
+<li><span class="class"><a href="_Gdata_HttpAdapterStreamingProxy.html#%5CZend_Gdata_HttpAdapterStreamingProxy" target="content">Zend_Gdata_HttpAdapterStreamingProxy<br><small>Extends the proxy HTTP adapter to handle streams instead of discrete body
+strings.</small></a></span></li>
+<li><span class="class"><a href="_Gdata_HttpAdapterStreamingSocket.html#%5CZend_Gdata_HttpAdapterStreamingSocket" target="content">Zend_Gdata_HttpAdapterStreamingSocket<br><small>Extends the default HTTP adapter to handle streams instead of discrete body
+strings.</small></a></span></li>
+<li><span class="class"><a href="_Gdata_HttpClient.html#%5CZend_Gdata_HttpClient" target="content">Zend_Gdata_HttpClient<br><small>Gdata Http Client object.</small></a></span></li>
+<li><span class="class"><a href="_Gdata_Kind_EventEntry.html#%5CZend_Gdata_Kind_EventEntry" target="content">Zend_Gdata_Kind_EventEntry<br><small>Data model for the Gdata Event "Kind".  Google Calendar has a separate
+EventEntry class which extends this.</small></a></span></li>
+<li><span class="class"><a href="_Gdata_MediaMimeStream.html#%5CZend_Gdata_MediaMimeStream" target="content">Zend_Gdata_MediaMimeStream<br><small>A streaming Media MIME class that allows for buffered read operations.</small></a></span></li>
+<li><span class="class"><a href="_Gdata_MimeBodyString.html#%5CZend_Gdata_MimeBodyString" target="content">Zend_Gdata_MimeBodyString<br><small>A wrapper for strings for buffered reading.</small></a></span></li>
+<li><span class="class"><a href="_Gdata_MimeFile.html#%5CZend_Gdata_MimeFile" target="content">Zend_Gdata_MimeFile<br><small>A wrapper for strings for buffered reading.</small></a></span></li>
+<li><span class="class"><a href="_Gdata_Query.html#%5CZend_Gdata_Query" target="content">Zend_Gdata_Query<br><small>Provides a mechanism to build a query URL for Gdata services.</small></a></span></li>
+</ul>
+</li>
+<li class="closed">
+<span class="folder">Geo</span><ul id="packages_Zend_Gdata_Geo" class="filetree">
+<li><span class="class"><a href="_Gdata_Geo.html#%5CZend_Gdata_Geo" target="content">Zend_Gdata_Geo<br><small>Service class for interacting with the services which use the
+GeoRSS + GML extensions.</small></a></span></li>
+<li><span class="class"><a href="_Gdata_Geo_Entry.html#%5CZend_Gdata_Geo_Entry" target="content">Zend_Gdata_Geo_Entry<br><small>An Atom entry containing Geograpic data.</small></a></span></li>
+<li><span class="class"><a href="_Gdata_Geo_Extension_GeoRssWhere.html#%5CZend_Gdata_Geo_Extension_GeoRssWhere" target="content">Zend_Gdata_Geo_Extension_GeoRssWhere<br><small>Represents the georss:where element used by the Gdata Geo extensions.</small></a></span></li>
+<li><span class="class"><a href="_Gdata_Geo_Extension_GmlPoint.html#%5CZend_Gdata_Geo_Extension_GmlPoint" target="content">Zend_Gdata_Geo_Extension_GmlPoint<br><small>Represents the gml:point element used by the Gdata Geo extensions.</small></a></span></li>
+<li><span class="class"><a href="_Gdata_Geo_Extension_GmlPos.html#%5CZend_Gdata_Geo_Extension_GmlPos" target="content">Zend_Gdata_Geo_Extension_GmlPos<br><small>Represents the gml:pos element used by the Gdata Geo extensions.</small></a></span></li>
+<li><span class="class"><a href="_Gdata_Geo_Feed.html#%5CZend_Gdata_Geo_Feed" target="content">Zend_Gdata_Geo_Feed<br><small>Feed for Gdata Geographic data entries.</small></a></span></li>
+</ul>
+</li>
+<li class="closed">
+<span class="folder">Health</span><ul id="packages_Zend_Gdata_Health" class="filetree">
+<li><span class="class"><a href="_Gdata_Health.html#%5CZend_Gdata_Health" target="content">Zend_Gdata_Health<br><small>Service class for interacting with the Google Health Data API</small></a></span></li>
+<li><span class="class"><a href="_Gdata_Health_Extension_Ccr.html#%5CZend_Gdata_Health_Extension_Ccr" target="content">Zend_Gdata_Health_Extension_Ccr<br><small>Concrete class for working with CCR elements.</small></a></span></li>
+<li><span class="class"><a href="_Gdata_Health_ProfileEntry.html#%5CZend_Gdata_Health_ProfileEntry" target="content">Zend_Gdata_Health_ProfileEntry<br><small>Concrete class for working with Health profile entries.</small></a></span></li>
+<li><span class="class"><a href="_Gdata_Health_ProfileFeed.html#%5CZend_Gdata_Health_ProfileFeed" target="content">Zend_Gdata_Health_ProfileFeed<br><small>Represents a Google Health user's Profile Feed</small></a></span></li>
+<li><span class="class"><a href="_Gdata_Health_ProfileListEntry.html#%5CZend_Gdata_Health_ProfileListEntry" target="content">Zend_Gdata_Health_ProfileListEntry<br><small>Concrete class for working with Health profile list entries.</small></a></span></li>
+<li><span class="class"><a href="_Gdata_Health_ProfileListFeed.html#%5CZend_Gdata_Health_ProfileListFeed" target="content">Zend_Gdata_Health_ProfileListFeed<br><small>Represents a Google Health user's Profile List Feed</small></a></span></li>
+<li><span class="class"><a href="_Gdata_Health_Query.html#%5CZend_Gdata_Health_Query" target="content">Zend_Gdata_Health_Query<br><small>Assists in constructing queries for Google Health</small></a></span></li>
+</ul>
+</li>
+<li class="closed">
+<span class="folder">Media</span><ul id="packages_Zend_Gdata_Media" class="filetree">
+<li><span class="class"><a href="_Gdata_Media.html#%5CZend_Gdata_Media" target="content">Zend_Gdata_Media<br><small>Service class for interacting with the services which use the media extensions</small></a></span></li>
+<li><span class="class"><a href="_Gdata_Media_Entry.html#%5CZend_Gdata_Media_Entry" target="content">Zend_Gdata_Media_Entry<br><small>Represents the Gdata flavor of an Atom entry</small></a></span></li>
+<li><span class="class"><a href="_Gdata_Media_Extension_MediaCategory.html#%5CZend_Gdata_Media_Extension_MediaCategory" target="content">Zend_Gdata_Media_Extension_MediaCategory<br><small>Represents the media:category element</small></a></span></li>
+<li><span class="class"><a href="_Gdata_Media_Extension_MediaContent.html#%5CZend_Gdata_Media_Extension_MediaContent" target="content">Zend_Gdata_Media_Extension_MediaContent<br><small>Represents the media:content element of Media RSS.</small></a></span></li>
+<li><span class="class"><a href="_Gdata_Media_Extension_MediaCopyright.html#%5CZend_Gdata_Media_Extension_MediaCopyright" target="content">Zend_Gdata_Media_Extension_MediaCopyright<br><small>Represents the media:copyright element</small></a></span></li>
+<li><span class="class"><a href="_Gdata_Media_Extension_MediaCredit.html#%5CZend_Gdata_Media_Extension_MediaCredit" target="content">Zend_Gdata_Media_Extension_MediaCredit<br><small>Represents the media:credit element</small></a></span></li>
+<li><span class="class"><a href="_Gdata_Media_Extension_MediaDescription.html#%5CZend_Gdata_Media_Extension_MediaDescription" target="content">Zend_Gdata_Media_Extension_MediaDescription<br><small>Represents the media:description element</small></a></span></li>
+<li><span class="class"><a href="_Gdata_Media_Extension_MediaGroup.html#%5CZend_Gdata_Media_Extension_MediaGroup" target="content">Zend_Gdata_Media_Extension_MediaGroup<br><small>This class represents the media:group element of Media RSS.</small></a></span></li>
+<li><span class="class"><a href="_Gdata_Media_Extension_MediaHash.html#%5CZend_Gdata_Media_Extension_MediaHash" target="content">Zend_Gdata_Media_Extension_MediaHash<br><small>Represents the media:hash element</small></a></span></li>
+<li><span class="class"><a href="_Gdata_Media_Extension_MediaKeywords.html#%5CZend_Gdata_Media_Extension_MediaKeywords" target="content">Zend_Gdata_Media_Extension_MediaKeywords<br><small>Represents the media:keywords element</small></a></span></li>
+<li><span class="class"><a href="_Gdata_Media_Extension_MediaPlayer.html#%5CZend_Gdata_Media_Extension_MediaPlayer" target="content">Zend_Gdata_Media_Extension_MediaPlayer<br><small>Represents the media:player element</small></a></span></li>
+<li><span class="class"><a href="_Gdata_Media_Extension_MediaRating.html#%5CZend_Gdata_Media_Extension_MediaRating" target="content">Zend_Gdata_Media_Extension_MediaRating<br><small>Represents the media:rating element</small></a></span></li>
+<li><span class="class"><a href="_Gdata_Media_Extension_MediaRestriction.html#%5CZend_Gdata_Media_Extension_MediaRestriction" target="content">Zend_Gdata_Media_Extension_MediaRestriction<br><small>Represents the media:restriction element</small></a></span></li>
+<li><span class="class"><a href="_Gdata_Media_Extension_MediaText.html#%5CZend_Gdata_Media_Extension_MediaText" target="content">Zend_Gdata_Media_Extension_MediaText<br><small>Represents the media:text element</small></a></span></li>
+<li><span class="class"><a href="_Gdata_Media_Extension_MediaThumbnail.html#%5CZend_Gdata_Media_Extension_MediaThumbnail" target="content">Zend_Gdata_Media_Extension_MediaThumbnail<br><small>Represents the media:thumbnail element</small></a></span></li>
+<li><span class="class"><a href="_Gdata_Media_Extension_MediaTitle.html#%5CZend_Gdata_Media_Extension_MediaTitle" target="content">Zend_Gdata_Media_Extension_MediaTitle<br><small>Represents the media:title element in MediaRSS</small></a></span></li>
+<li><span class="class"><a href="_Gdata_Media_Feed.html#%5CZend_Gdata_Media_Feed" target="content">Zend_Gdata_Media_Feed<br><small>The Gdata flavor of an Atom Feed with media support</small></a></span></li>
+<li><span class="class"><a href="_Gdata_YouTube_Extension_MediaCredit.html#%5CZend_Gdata_YouTube_Extension_MediaCredit" target="content">Zend_Gdata_YouTube_Extension_MediaCredit<br><small>Represents the YouTube specific media:credit element</small></a></span></li>
+</ul>
+</li>
+<li class="closed">
+<span class="folder">Photos</span><ul id="packages_Zend_Gdata_Photos" class="filetree">
+<li><span class="class"><a href="_Gdata_Photos.html#%5CZend_Gdata_Photos" target="content">Zend_Gdata_Photos<br><small>Service class for interacting with the Google Photos Data API.</small></a></span></li>
+<li><span class="class"><a href="_Gdata_Photos_AlbumEntry.html#%5CZend_Gdata_Photos_AlbumEntry" target="content">Zend_Gdata_Photos_AlbumEntry<br><small>Data model class for a Photo Album Entry.</small></a></span></li>
+<li><span class="class"><a href="_Gdata_Photos_AlbumFeed.html#%5CZend_Gdata_Photos_AlbumFeed" target="content">Zend_Gdata_Photos_AlbumFeed<br><small>Data model for a collection of album entries, usually
+provided by the servers.</small></a></span></li>
+<li><span class="class"><a href="_Gdata_Photos_AlbumQuery.html#%5CZend_Gdata_Photos_AlbumQuery" target="content">Zend_Gdata_Photos_AlbumQuery<br><small>Assists in constructing album queries for various entries.</small></a></span></li>
+<li><span class="class"><a href="_Gdata_Photos_CommentEntry.html#%5CZend_Gdata_Photos_CommentEntry" target="content">Zend_Gdata_Photos_CommentEntry<br><small>Data model class for a Comment Entry.</small></a></span></li>
+<li><span class="class"><a href="_Gdata_Photos_Extension_Access.html#%5CZend_Gdata_Photos_Extension_Access" target="content">Zend_Gdata_Photos_Extension_Access<br><small>Represents the gphoto:access element used by the API.</small></a></span></li>
+<li><span class="class"><a href="_Gdata_Photos_Extension_AlbumId.html#%5CZend_Gdata_Photos_Extension_AlbumId" target="content">Zend_Gdata_Photos_Extension_AlbumId<br><small>Represents the gphoto:albumid element used by the API. This
+class represents the ID of an album and is usually contained
+within an instance of Zend_Gdata_Photos_AlbumEntry or CommentEntry.</small></a></span></li>
+<li><span class="class"><a href="_Gdata_Photos_Extension_BytesUsed.html#%5CZend_Gdata_Photos_Extension_BytesUsed" target="content">Zend_Gdata_Photos_Extension_BytesUsed<br><small>Represents the gphoto:bytesUsed element used by the API.</small></a></span></li>
+<li><span class="class"><a href="_Gdata_Photos_Extension_Checksum.html#%5CZend_Gdata_Photos_Extension_Checksum" target="content">Zend_Gdata_Photos_Extension_Checksum<br><small>Represents the gphoto:checksum element used by the API.</small></a></span></li>
+<li><span class="class"><a href="_Gdata_Photos_Extension_Client.html#%5CZend_Gdata_Photos_Extension_Client" target="content">Zend_Gdata_Photos_Extension_Client<br><small>Represents the gphoto:client element used by the API.</small></a></span></li>
+<li><span class="class"><a href="_Gdata_Photos_Extension_CommentCount.html#%5CZend_Gdata_Photos_Extension_CommentCount" target="content">Zend_Gdata_Photos_Extension_CommentCount<br><small>Represents the gphoto:commentCount element used by the API. This
+class represents the number of comments attached to an entry and is usually contained
+within an instance of Zend_Gdata_Photos_PhotoEntry or AlbumEntry.</small></a></span></li>
+<li><span class="class"><a href="_Gdata_Photos_Extension_CommentingEnabled.html#%5CZend_Gdata_Photos_Extension_CommentingEnabled" target="content">Zend_Gdata_Photos_Extension_CommentingEnabled<br><small>Represents the gphoto:commentingEnabled element used by the API.</small></a></span></li>
+<li><span class="class"><a href="_Gdata_Photos_Extension_Height.html#%5CZend_Gdata_Photos_Extension_Height" target="content">Zend_Gdata_Photos_Extension_Height<br><small>Represents the gphoto:height element used by the API.</small></a></span></li>
+<li><span class="class"><a href="_Gdata_Photos_Extension_Id.html#%5CZend_Gdata_Photos_Extension_Id" target="content">Zend_Gdata_Photos_Extension_Id<br><small>Represents the gphoto:id element used by the API. This class
+represents the unique ID assigned to an element by the servers.</small></a></span></li>
+<li><span class="class"><a href="_Gdata_Photos_Extension_Location.html#%5CZend_Gdata_Photos_Extension_Location" target="content">Zend_Gdata_Photos_Extension_Location<br><small>Represents the gphoto:location element used by the API.</small></a></span></li>
+<li><span class="class"><a href="_Gdata_Photos_Extension_MaxPhotosPerAlbum.html#%5CZend_Gdata_Photos_Extension_MaxPhotosPerAlbum" target="content">Zend_Gdata_Photos_Extension_MaxPhotosPerAlbum<br><small>Represents the gphoto:maxPhotosPerAlbum element used by the API.</small></a></span></li>
+<li><span class="class"><a href="_Gdata_Photos_Extension_Name.html#%5CZend_Gdata_Photos_Extension_Name" target="content">Zend_Gdata_Photos_Extension_Name<br><small>Represents the gphoto:name element used by the API.</small></a></span></li>
+<li><span class="class"><a href="_Gdata_Photos_Extension_Nickname.html#%5CZend_Gdata_Photos_Extension_Nickname" target="content">Zend_Gdata_Photos_Extension_Nickname<br><small>Represents the gphoto:nickname element used by the API.</small></a></span></li>
+<li><span class="class"><a href="_Gdata_Photos_Extension_NumPhotos.html#%5CZend_Gdata_Photos_Extension_NumPhotos" target="content">Zend_Gdata_Photos_Extension_NumPhotos<br><small>Represents the gphoto:numphotos element used by the API.</small></a></span></li>
+<li><span class="class"><a href="_Gdata_Photos_Extension_NumPhotosRemaining.html#%5CZend_Gdata_Photos_Extension_NumPhotosRemaining" target="content">Zend_Gdata_Photos_Extension_NumPhotosRemaining<br><small>Represents the gphoto:numphotosremaining element used by the API.</small></a></span></li>
+<li><span class="class"><a href="_Gdata_Photos_Extension_PhotoId.html#%5CZend_Gdata_Photos_Extension_PhotoId" target="content">Zend_Gdata_Photos_Extension_PhotoId<br><small>Represents the gphoto:id element used by the Picasa API.</small></a></span></li>
+<li><span class="class"><a href="_Gdata_Photos_Extension_Position.html#%5CZend_Gdata_Photos_Extension_Position" target="content">Zend_Gdata_Photos_Extension_Position<br><small>Represents the gphoto:position element used by the API.</small></a></span></li>
+<li><span class="class"><a href="_Gdata_Photos_Extension_QuotaCurrent.html#%5CZend_Gdata_Photos_Extension_QuotaCurrent" target="content">Zend_Gdata_Photos_Extension_QuotaCurrent<br><small>Represents the gphoto:quotaCurrent element used by the API.</small></a></span></li>
+<li><span class="class"><a href="_Gdata_Photos_Extension_QuotaLimit.html#%5CZend_Gdata_Photos_Extension_QuotaLimit" target="content">Zend_Gdata_Photos_Extension_QuotaLimit<br><small>Represents the gphoto:quotaLimit element used by the API.</small></a></span></li>
+<li><span class="class"><a href="_Gdata_Photos_Extension_Rotation.html#%5CZend_Gdata_Photos_Extension_Rotation" target="content">Zend_Gdata_Photos_Extension_Rotation<br><small>Represents the gphoto:rotation element used by the API.</small></a></span></li>
+<li><span class="class"><a href="_Gdata_Photos_Extension_Size.html#%5CZend_Gdata_Photos_Extension_Size" target="content">Zend_Gdata_Photos_Extension_Size<br><small>Represents the gphoto:size element used by the API.</small></a></span></li>
+<li><span class="class"><a href="_Gdata_Photos_Extension_Thumbnail.html#%5CZend_Gdata_Photos_Extension_Thumbnail" target="content">Zend_Gdata_Photos_Extension_Thumbnail<br><small>Represents the gphoto:thumbnail element used by the API.</small></a></span></li>
+<li><span class="class"><a href="_Gdata_Photos_Extension_Timestamp.html#%5CZend_Gdata_Photos_Extension_Timestamp" target="content">Zend_Gdata_Photos_Extension_Timestamp<br><small>Represents the gphoto:timestamp element used by the API.</small></a></span></li>
+<li><span class="class"><a href="_Gdata_Photos_Extension_User.html#%5CZend_Gdata_Photos_Extension_User" target="content">Zend_Gdata_Photos_Extension_User<br><small>Represents the gphoto:user element used by the API.</small></a></span></li>
+<li><span class="class"><a href="_Gdata_Photos_Extension_Version.html#%5CZend_Gdata_Photos_Extension_Version" target="content">Zend_Gdata_Photos_Extension_Version<br><small>Represents the gphoto:version element used by the API.</small></a></span></li>
+<li><span class="class"><a href="_Gdata_Photos_Extension_Weight.html#%5CZend_Gdata_Photos_Extension_Weight" target="content">Zend_Gdata_Photos_Extension_Weight<br><small>Represents the gphoto:weight element used by the API.</small></a></span></li>
+<li><span class="class"><a href="_Gdata_Photos_Extension_Width.html#%5CZend_Gdata_Photos_Extension_Width" target="content">Zend_Gdata_Photos_Extension_Width<br><small>Represents the gphoto:width element used by the API.</small></a></span></li>
+<li><span class="class"><a href="_Gdata_Photos_PhotoEntry.html#%5CZend_Gdata_Photos_PhotoEntry" target="content">Zend_Gdata_Photos_PhotoEntry<br><small>Data model class for a Comment Entry.</small></a></span></li>
+<li><span class="class"><a href="_Gdata_Photos_PhotoFeed.html#%5CZend_Gdata_Photos_PhotoFeed" target="content">Zend_Gdata_Photos_PhotoFeed<br><small>Data model for a collection of photo entries, usually
+provided by the Picasa servers.</small></a></span></li>
+<li><span class="class"><a href="_Gdata_Photos_PhotoQuery.html#%5CZend_Gdata_Photos_PhotoQuery" target="content">Zend_Gdata_Photos_PhotoQuery<br><small>Assists in constructing queries for comment/tag entries.</small></a></span></li>
+<li><span class="class"><a href="_Gdata_Photos_TagEntry.html#%5CZend_Gdata_Photos_TagEntry" target="content">Zend_Gdata_Photos_TagEntry<br><small>Data model class for a Tag Entry.</small></a></span></li>
+<li><span class="class"><a href="_Gdata_Photos_UserEntry.html#%5CZend_Gdata_Photos_UserEntry" target="content">Zend_Gdata_Photos_UserEntry<br><small>Data model class for a User Entry.</small></a></span></li>
+<li><span class="class"><a href="_Gdata_Photos_UserFeed.html#%5CZend_Gdata_Photos_UserFeed" target="content">Zend_Gdata_Photos_UserFeed<br><small>Data model for a collection of entries for a specific user, usually
+provided by the servers.</small></a></span></li>
+<li><span class="class"><a href="_Gdata_Photos_UserQuery.html#%5CZend_Gdata_Photos_UserQuery" target="content">Zend_Gdata_Photos_UserQuery<br><small>Assists in constructing queries for user entries.</small></a></span></li>
+</ul>
+</li>
+<li class="closed">
+<span class="folder">Spreadsheets</span><ul id="packages_Zend_Gdata_Spreadsheets" class="filetree">
+<li><span class="class"><a href="_Gdata_Spreadsheets.html#%5CZend_Gdata_Spreadsheets" target="content">Zend_Gdata_Spreadsheets<br><small>Gdata Spreadsheets</small></a></span></li>
+<li><span class="class"><a href="_Gdata_Spreadsheets_CellEntry.html#%5CZend_Gdata_Spreadsheets_CellEntry" target="content">Zend_Gdata_Spreadsheets_CellEntry<br><small>Concrete class for working with Cell entries.</small></a></span></li>
+<li><span class="class"><a href="_Gdata_Spreadsheets_CellFeed.html#%5CZend_Gdata_Spreadsheets_CellFeed" target="content">Zend_Gdata_Spreadsheets_CellFeed<br><small>The Gdata flavor of an Atom Feed</small></a></span></li>
+<li><span class="class"><a href="_Gdata_Spreadsheets_CellQuery.html#%5CZend_Gdata_Spreadsheets_CellQuery" target="content">Zend_Gdata_Spreadsheets_CellQuery<br><small>Assists in constructing queries for Google Spreadsheets cells</small></a></span></li>
+<li><span class="class"><a href="_Gdata_Spreadsheets_DocumentQuery.html#%5CZend_Gdata_Spreadsheets_DocumentQuery" target="content">Zend_Gdata_Spreadsheets_DocumentQuery<br><small>Assists in constructing queries for Google Spreadsheets documents</small></a></span></li>
+<li><span class="class"><a href="_Gdata_Spreadsheets_Extension_Cell.html#%5CZend_Gdata_Spreadsheets_Extension_Cell" target="content">Zend_Gdata_Spreadsheets_Extension_Cell<br><small>Concrete class for working with cell elements.</small></a></span></li>
+<li><span class="class"><a href="_Gdata_Spreadsheets_Extension_ColCount.html#%5CZend_Gdata_Spreadsheets_Extension_ColCount" target="content">Zend_Gdata_Spreadsheets_Extension_ColCount<br><small>Concrete class for working with colCount elements.</small></a></span></li>
+<li><span class="class"><a href="_Gdata_Spreadsheets_Extension_Custom.html#%5CZend_Gdata_Spreadsheets_Extension_Custom" target="content">Zend_Gdata_Spreadsheets_Extension_Custom<br><small>Concrete class for working with custom gsx elements.</small></a></span></li>
+<li><span class="class"><a href="_Gdata_Spreadsheets_Extension_RowCount.html#%5CZend_Gdata_Spreadsheets_Extension_RowCount" target="content">Zend_Gdata_Spreadsheets_Extension_RowCount<br><small>Concrete class for working with RowCount elements.</small></a></span></li>
+<li><span class="class"><a href="_Gdata_Spreadsheets_ListEntry.html#%5CZend_Gdata_Spreadsheets_ListEntry" target="content">Zend_Gdata_Spreadsheets_ListEntry<br><small>Concrete class for working with List entries.</small></a></span></li>
+<li><span class="class"><a href="_Gdata_Spreadsheets_ListFeed.html#%5CZend_Gdata_Spreadsheets_ListFeed" target="content">Zend_Gdata_Spreadsheets_ListFeed<br><small>The Gdata flavor of an Atom Feed</small></a></span></li>
+<li><span class="class"><a href="_Gdata_Spreadsheets_ListQuery.html#%5CZend_Gdata_Spreadsheets_ListQuery" target="content">Zend_Gdata_Spreadsheets_ListQuery<br><small>Assists in constructing queries for Google Spreadsheets lists</small></a></span></li>
+<li><span class="class"><a href="_Gdata_Spreadsheets_SpreadsheetEntry.html#%5CZend_Gdata_Spreadsheets_SpreadsheetEntry" target="content">Zend_Gdata_Spreadsheets_SpreadsheetEntry<br><small>Concrete class for working with Atom entries.</small></a></span></li>
+<li><span class="class"><a href="_Gdata_Spreadsheets_SpreadsheetFeed.html#%5CZend_Gdata_Spreadsheets_SpreadsheetFeed" target="content">Zend_Gdata_Spreadsheets_SpreadsheetFeed<br><small>The Gdata flavor of an Atom Feed</small></a></span></li>
+<li><span class="class"><a href="_Gdata_Spreadsheets_WorksheetEntry.html#%5CZend_Gdata_Spreadsheets_WorksheetEntry" target="content">Zend_Gdata_Spreadsheets_WorksheetEntry<br><small>Concrete class for working with Worksheet entries.</small></a></span></li>
+<li><span class="class"><a href="_Gdata_Spreadsheets_WorksheetFeed.html#%5CZend_Gdata_Spreadsheets_WorksheetFeed" target="content">Zend_Gdata_Spreadsheets_WorksheetFeed<br><small>The Gdata flavor of an Atom Feed</small></a></span></li>
+</ul>
+</li>
+<li class="closed">
+<span class="folder">YouTube</span><ul id="packages_Zend_Gdata_YouTube" class="filetree">
+<li><span class="class"><a href="_Gdata_YouTube.html#%5CZend_Gdata_YouTube" target="content">Zend_Gdata_YouTube<br><small>Service class for interacting with the YouTube Data API.</small></a></span></li>
+<li><span class="class"><a href="_Gdata_YouTube_ActivityEntry.html#%5CZend_Gdata_YouTube_ActivityEntry" target="content">Zend_Gdata_YouTube_ActivityEntry<br><small>A concrete class for working with YouTube user activity entries.</small></a></span></li>
+<li><span class="class"><a href="_Gdata_YouTube_ActivityFeed.html#%5CZend_Gdata_YouTube_ActivityFeed" target="content">Zend_Gdata_YouTube_ActivityFeed<br><small>A feed of user activity entries for YouTube</small></a></span></li>
+<li><span class="class"><a href="_Gdata_YouTube_CommentEntry.html#%5CZend_Gdata_YouTube_CommentEntry" target="content">Zend_Gdata_YouTube_CommentEntry<br><small>The YouTube comments flavor of an Atom Entry</small></a></span></li>
+<li><span class="class"><a href="_Gdata_YouTube_CommentFeed.html#%5CZend_Gdata_YouTube_CommentFeed" target="content">Zend_Gdata_YouTube_CommentFeed<br><small>The YouTube comments flavor of an Atom Feed</small></a></span></li>
+<li><span class="class"><a href="_Gdata_YouTube_ContactEntry.html#%5CZend_Gdata_YouTube_ContactEntry" target="content">Zend_Gdata_YouTube_ContactEntry<br><small>The YouTube contacts flavor of an Atom Entry with media support
+Represents a an individual contact</small></a></span></li>
+<li><span class="class"><a href="_Gdata_YouTube_ContactFeed.html#%5CZend_Gdata_YouTube_ContactFeed" target="content">Zend_Gdata_YouTube_ContactFeed<br><small>The YouTube contacts flavor of an Atom Feed with media support
+Represents a list of individual contacts, where each contained entry is
+a contact.</small></a></span></li>
+<li><span class="class"><a href="_Gdata_YouTube_Extension_AboutMe.html#%5CZend_Gdata_YouTube_Extension_AboutMe" target="content">Zend_Gdata_YouTube_Extension_AboutMe<br><small>Represents the yt:aboutMe element</small></a></span></li>
+<li><span class="class"><a href="_Gdata_YouTube_Extension_Age.html#%5CZend_Gdata_YouTube_Extension_Age" target="content">Zend_Gdata_YouTube_Extension_Age<br><small>Represents the yt:age element</small></a></span></li>
+<li><span class="class"><a href="_Gdata_YouTube_Extension_Books.html#%5CZend_Gdata_YouTube_Extension_Books" target="content">Zend_Gdata_YouTube_Extension_Books<br><small>Represents the yt:books element</small></a></span></li>
+<li><span class="class"><a href="_Gdata_YouTube_Extension_Company.html#%5CZend_Gdata_YouTube_Extension_Company" target="content">Zend_Gdata_YouTube_Extension_Company<br><small>Represents the yt:company element</small></a></span></li>
+<li><span class="class"><a href="_Gdata_YouTube_Extension_Control.html#%5CZend_Gdata_YouTube_Extension_Control" target="content">Zend_Gdata_YouTube_Extension_Control<br><small>Specialized Control class for use with YouTube. Enables use of yt extension elements.</small></a></span></li>
+<li><span class="class"><a href="_Gdata_YouTube_Extension_CountHint.html#%5CZend_Gdata_YouTube_Extension_CountHint" target="content">Zend_Gdata_YouTube_Extension_CountHint<br><small>Represents the yt:countHint element</small></a></span></li>
+<li><span class="class"><a href="_Gdata_YouTube_Extension_Description.html#%5CZend_Gdata_YouTube_Extension_Description" target="content">Zend_Gdata_YouTube_Extension_Description<br><small>Represents the yt:description element</small></a></span></li>
+<li><span class="class"><a href="_Gdata_YouTube_Extension_Duration.html#%5CZend_Gdata_YouTube_Extension_Duration" target="content">Zend_Gdata_YouTube_Extension_Duration<br><small>Represents the yt:duration element used by the YouTube data API</small></a></span></li>
+<li><span class="class"><a href="_Gdata_YouTube_Extension_FirstName.html#%5CZend_Gdata_YouTube_Extension_FirstName" target="content">Zend_Gdata_YouTube_Extension_FirstName<br><small>Represents the yt:firstName element</small></a></span></li>
+<li><span class="class"><a href="_Gdata_YouTube_Extension_Gender.html#%5CZend_Gdata_YouTube_Extension_Gender" target="content">Zend_Gdata_YouTube_Extension_Gender<br><small>Represents the yt:gender element</small></a></span></li>
+<li><span class="class"><a href="_Gdata_YouTube_Extension_Hobbies.html#%5CZend_Gdata_YouTube_Extension_Hobbies" target="content">Zend_Gdata_YouTube_Extension_Hobbies<br><small>Represents the yt:hobbies element</small></a></span></li>
+<li><span class="class"><a href="_Gdata_YouTube_Extension_Hometown.html#%5CZend_Gdata_YouTube_Extension_Hometown" target="content">Zend_Gdata_YouTube_Extension_Hometown<br><small>Represents the yt:hometown element</small></a></span></li>
+<li><span class="class"><a href="_Gdata_YouTube_Extension_LastName.html#%5CZend_Gdata_YouTube_Extension_LastName" target="content">Zend_Gdata_YouTube_Extension_LastName<br><small>Represents the yt:lastName element</small></a></span></li>
+<li><span class="class"><a href="_Gdata_YouTube_Extension_Link.html#%5CZend_Gdata_YouTube_Extension_Link" target="content">Zend_Gdata_YouTube_Extension_Link<br><small>Specialized Link class for use with YouTube. Enables use of yt extension elements.</small></a></span></li>
+<li><span class="class"><a href="_Gdata_YouTube_Extension_Location.html#%5CZend_Gdata_YouTube_Extension_Location" target="content">Zend_Gdata_YouTube_Extension_Location<br><small>Represents the yt:location element</small></a></span></li>
+<li><span class="class"><a href="_Gdata_YouTube_Extension_MediaContent.html#%5CZend_Gdata_YouTube_Extension_MediaContent" target="content">Zend_Gdata_YouTube_Extension_MediaContent<br><small>Represents the media:content element of Media RSS.</small></a></span></li>
+<li><span class="class"><a href="_Gdata_YouTube_Extension_MediaGroup.html#%5CZend_Gdata_YouTube_Extension_MediaGroup" target="content">Zend_Gdata_YouTube_Extension_MediaGroup<br><small>This class represents the media:group element of Media RSS.</small></a></span></li>
+<li><span class="class"><a href="_Gdata_YouTube_Extension_MediaRating.html#%5CZend_Gdata_YouTube_Extension_MediaRating" target="content">Zend_Gdata_YouTube_Extension_MediaRating<br><small>Represents the media:rating element specific to YouTube.</small></a></span></li>
+<li><span class="class"><a href="_Gdata_YouTube_Extension_Movies.html#%5CZend_Gdata_YouTube_Extension_Movies" target="content">Zend_Gdata_YouTube_Extension_Movies<br><small>Represents the yt:movies element</small></a></span></li>
+<li><span class="class"><a href="_Gdata_YouTube_Extension_Music.html#%5CZend_Gdata_YouTube_Extension_Music" target="content">Zend_Gdata_YouTube_Extension_Music<br><small>Represents the yt:music element</small></a></span></li>
+<li><span class="class"><a href="_Gdata_YouTube_Extension_NoEmbed.html#%5CZend_Gdata_YouTube_Extension_NoEmbed" target="content">Zend_Gdata_YouTube_Extension_NoEmbed<br><small>Represents the yt:noembed element used by the YouTube data API</small></a></span></li>
+<li><span class="class"><a href="_Gdata_YouTube_Extension_Occupation.html#%5CZend_Gdata_YouTube_Extension_Occupation" target="content">Zend_Gdata_YouTube_Extension_Occupation<br><small>Represents the yt:occupation element</small></a></span></li>
+<li><span class="class"><a href="_Gdata_YouTube_Extension_PlaylistId.html#%5CZend_Gdata_YouTube_Extension_PlaylistId" target="content">Zend_Gdata_YouTube_Extension_PlaylistId<br><small>Represents the yt:playlistId element</small></a></span></li>
+<li><span class="class"><a href="_Gdata_YouTube_Extension_PlaylistTitle.html#%5CZend_Gdata_YouTube_Extension_PlaylistTitle" target="content">Zend_Gdata_YouTube_Extension_PlaylistTitle<br><small>Represents the yt:playlistTitle element</small></a></span></li>
+<li><span class="class"><a href="_Gdata_YouTube_Extension_Position.html#%5CZend_Gdata_YouTube_Extension_Position" target="content">Zend_Gdata_YouTube_Extension_Position<br><small>Data model class to represent a playlist item's position in the list (yt:position)</small></a></span></li>
+<li><span class="class"><a href="_Gdata_YouTube_Extension_Private.html#%5CZend_Gdata_YouTube_Extension_Private" target="content">Zend_Gdata_YouTube_Extension_Private<br><small>Represents the yt:private element used by the YouTube data API</small></a></span></li>
+<li><span class="class"><a href="_Gdata_YouTube_Extension_QueryString.html#%5CZend_Gdata_YouTube_Extension_QueryString" target="content">Zend_Gdata_YouTube_Extension_QueryString<br><small>Represents the yt:queryString element</small></a></span></li>
+<li><span class="class"><a href="_Gdata_YouTube_Extension_Racy.html#%5CZend_Gdata_YouTube_Extension_Racy" target="content">Zend_Gdata_YouTube_Extension_Racy<br><small>Represents the yt:racy element used by the YouTube data API</small></a></span></li>
+<li><span class="class"><a href="_Gdata_YouTube_Extension_Recorded.html#%5CZend_Gdata_YouTube_Extension_Recorded" target="content">Zend_Gdata_YouTube_Extension_Recorded<br><small>Represents the yt:recorded element</small></a></span></li>
+<li><span class="class"><a href="_Gdata_YouTube_Extension_Relationship.html#%5CZend_Gdata_YouTube_Extension_Relationship" target="content">Zend_Gdata_YouTube_Extension_Relationship<br><small>Represents the yt:relationship element</small></a></span></li>
+<li><span class="class"><a href="_Gdata_YouTube_Extension_ReleaseDate.html#%5CZend_Gdata_YouTube_Extension_ReleaseDate" target="content">Zend_Gdata_YouTube_Extension_ReleaseDate<br><small>Represents the yt:releaseDate element</small></a></span></li>
+<li><span class="class"><a href="_Gdata_YouTube_Extension_School.html#%5CZend_Gdata_YouTube_Extension_School" target="content">Zend_Gdata_YouTube_Extension_School<br><small>Represents the yt:school element</small></a></span></li>
+<li><span class="class"><a href="_Gdata_YouTube_Extension_State.html#%5CZend_Gdata_YouTube_Extension_State" target="content">Zend_Gdata_YouTube_Extension_State<br><small>Represents the yt:state element used by the YouTube data API</small></a></span></li>
+<li><span class="class"><a href="_Gdata_YouTube_Extension_Statistics.html#%5CZend_Gdata_YouTube_Extension_Statistics" target="content">Zend_Gdata_YouTube_Extension_Statistics<br><small>Represents the yt:statistics element used by the YouTube data API</small></a></span></li>
+<li><span class="class"><a href="_Gdata_YouTube_Extension_Status.html#%5CZend_Gdata_YouTube_Extension_Status" target="content">Zend_Gdata_YouTube_Extension_Status<br><small>Represents the yt:status element</small></a></span></li>
+<li><span class="class"><a href="_Gdata_YouTube_Extension_Token.html#%5CZend_Gdata_YouTube_Extension_Token" target="content">Zend_Gdata_YouTube_Extension_Token<br><small>Represents the yt:token element used by the YouTube data API</small></a></span></li>
+<li><span class="class"><a href="_Gdata_YouTube_Extension_Uploaded.html#%5CZend_Gdata_YouTube_Extension_Uploaded" target="content">Zend_Gdata_YouTube_Extension_Uploaded<br><small>Represents the yt:uploaded element</small></a></span></li>
+<li><span class="class"><a href="_Gdata_YouTube_Extension_Username.html#%5CZend_Gdata_YouTube_Extension_Username" target="content">Zend_Gdata_YouTube_Extension_Username<br><small>Represents the yt:username element</small></a></span></li>
+<li><span class="class"><a href="_Gdata_YouTube_Extension_VideoId.html#%5CZend_Gdata_YouTube_Extension_VideoId" target="content">Zend_Gdata_YouTube_Extension_VideoId<br><small>Represents the yt:videoid element</small></a></span></li>
+<li><span class="class"><a href="_Gdata_YouTube_InboxEntry.html#%5CZend_Gdata_YouTube_InboxEntry" target="content">Zend_Gdata_YouTube_InboxEntry<br><small>Represents the YouTube message flavor of an Atom entry</small></a></span></li>
+<li><span class="class"><a href="_Gdata_YouTube_InboxFeed.html#%5CZend_Gdata_YouTube_InboxFeed" target="content">Zend_Gdata_YouTube_InboxFeed<br><small>The YouTube inbox feed list flavor of an Atom Feed with media support
+Represents a list of individual inbox entries, where each contained entry is
+a message.</small></a></span></li>
+<li><span class="class"><a href="_Gdata_YouTube_MediaEntry.html#%5CZend_Gdata_YouTube_MediaEntry" target="content">Zend_Gdata_YouTube_MediaEntry<br><small>Represents the YouTube flavor of a Gdata Media Entry</small></a></span></li>
+<li><span class="class"><a href="_Gdata_YouTube_PlaylistListEntry.html#%5CZend_Gdata_YouTube_PlaylistListEntry" target="content">Zend_Gdata_YouTube_PlaylistListEntry<br><small>Represents the YouTube video playlist flavor of an Atom entry</small></a></span></li>
+<li><span class="class"><a href="_Gdata_YouTube_PlaylistListFeed.html#%5CZend_Gdata_YouTube_PlaylistListFeed" target="content">Zend_Gdata_YouTube_PlaylistListFeed<br><small>The YouTube video playlist flavor of an Atom Feed with media support
+Represents a list of individual playlists, where each contained entry is
+a playlist.</small></a></span></li>
+<li><span class="class"><a href="_Gdata_YouTube_PlaylistVideoEntry.html#%5CZend_Gdata_YouTube_PlaylistVideoEntry" target="content">Zend_Gdata_YouTube_PlaylistVideoEntry<br><small>Represents the YouTube video playlist flavor of an Atom entry</small></a></span></li>
+<li><span class="class"><a href="_Gdata_YouTube_PlaylistVideoFeed.html#%5CZend_Gdata_YouTube_PlaylistVideoFeed" target="content">Zend_Gdata_YouTube_PlaylistVideoFeed<br><small>The YouTube video playlist flavor of an Atom Feed with media support
+Represents a list of videos contained in a playlist.  Each entry in this
+feed represents an individual video.</small></a></span></li>
+<li><span class="class"><a href="_Gdata_YouTube_SubscriptionEntry.html#%5CZend_Gdata_YouTube_SubscriptionEntry" target="content">Zend_Gdata_YouTube_SubscriptionEntry<br><small>Represents the YouTube video subscription flavor of an Atom entry</small></a></span></li>
+<li><span class="class"><a href="_Gdata_YouTube_SubscriptionFeed.html#%5CZend_Gdata_YouTube_SubscriptionFeed" target="content">Zend_Gdata_YouTube_SubscriptionFeed<br><small>The YouTube video subscription list flavor of an Atom Feed with media support
+Represents a list of individual subscriptions, where each contained entry is
+a subscription.</small></a></span></li>
+<li><span class="class"><a href="_Gdata_YouTube_UserProfileEntry.html#%5CZend_Gdata_YouTube_UserProfileEntry" target="content">Zend_Gdata_YouTube_UserProfileEntry<br><small>Represents the YouTube video playlist flavor of an Atom entry</small></a></span></li>
+<li><span class="class"><a href="_Gdata_YouTube_VideoEntry.html#%5CZend_Gdata_YouTube_VideoEntry" target="content">Zend_Gdata_YouTube_VideoEntry<br><small>Represents the YouTube video flavor of an Atom entry</small></a></span></li>
+<li><span class="class"><a href="_Gdata_YouTube_VideoFeed.html#%5CZend_Gdata_YouTube_VideoFeed" target="content">Zend_Gdata_YouTube_VideoFeed<br><small>The YouTube video flavor of an Atom Feed with media support</small></a></span></li>
+<li><span class="class"><a href="_Gdata_YouTube_VideoQuery.html#%5CZend_Gdata_YouTube_VideoQuery" target="content">Zend_Gdata_YouTube_VideoQuery<br><small>Assists in constructing queries for YouTube videos</small></a></span></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="closed">
+<span class="folder">Zend_Http</span><ul id="packages_Zend_Http" class="filetree">
+<li class="closed">
+<span class="folder">Client</span><ul id="packages_Zend_Http_Client" class="filetree">
+<li><span class="class"><a href="_Http_Client.html#%5CZend_Http_Client" target="content">Zend_Http_Client<br><small>Zend_Http_Client is an implementation of an HTTP client in PHP. The client
+supports basic features like sending different HTTP requests and handling
+redirections, as well as more advanced features like proxy settings, HTTP
+authentication and cookie persistence (using a Zend_Http_CookieJar object)</small></a></span></li>
+<li><span class="class"><a href="_Http_Client_Exception.html#%5CZend_Http_Client_Exception" target="content">Zend_Http_Client_Exception<br><small></small></a></span></li>
+<li><span class="class"><a href="_Http_Exception.html#%5CZend_Http_Exception" target="content">Zend_Http_Exception<br><small></small></a></span></li>
+</ul>
+</li>
+<li class="closed">
+<span class="folder">Client_Adapter</span><ul id="packages_Zend_Http_Client_Adapter" class="filetree">
+<li><span class="class"><a href="_Http_Client_Adapter_Curl.html#%5CZend_Http_Client_Adapter_Curl" target="content">Zend_Http_Client_Adapter_Curl<br><small>An adapter class for Zend_Http_Client based on the curl extension.</small></a></span></li>
+<li><span class="class"><a href="_Http_Client_Adapter_Exception.html#%5CZend_Http_Client_Adapter_Exception" target="content">Zend_Http_Client_Adapter_Exception<br><small></small></a></span></li>
+<li><span class="interface"><a href="_Http_Client_Adapter_Interface.html#%5CZend_Http_Client_Adapter_Interface" target="content">Zend_Http_Client_Adapter_Interface<br><small>An interface description for Zend_Http_Client_Adapter classes.</small></a></span></li>
+<li><span class="class"><a href="_Http_Client_Adapter_Proxy.html#%5CZend_Http_Client_Adapter_Proxy" target="content">Zend_Http_Client_Adapter_Proxy<br><small>HTTP Proxy-supporting Zend_Http_Client adapter class, based on the default
+socket based adapter.</small></a></span></li>
+<li><span class="class"><a href="_Http_Client_Adapter_Socket.html#%5CZend_Http_Client_Adapter_Socket" target="content">Zend_Http_Client_Adapter_Socket<br><small>A sockets based (stream_socket_client) adapter class for Zend_Http_Client. Can be used
+on almost every PHP environment, and does not require any special extensions.</small></a></span></li>
+<li><span class="interface"><a href="_Http_Client_Adapter_Stream.html#%5CZend_Http_Client_Adapter_Stream" target="content">Zend_Http_Client_Adapter_Stream<br><small>An interface description for Zend_Http_Client_Adapter_Stream classes.</small></a></span></li>
+<li><span class="class"><a href="_Http_Client_Adapter_Test.html#%5CZend_Http_Client_Adapter_Test" target="content">Zend_Http_Client_Adapter_Test<br><small>A testing-purposes adapter.</small></a></span></li>
+</ul>
+</li>
+<li class="closed">
+<span class="folder">Client_Adapter_Exception</span><ul id="packages_Zend_Http_Client_Adapter_Exception" class="filetree"></ul>
+</li>
+<li class="closed">
+<span class="folder">Client_Exception</span><ul id="packages_Zend_Http_Client_Exception" class="filetree"></ul>
+</li>
+<li class="closed">
+<span class="folder">Exception</span><ul id="packages_Zend_Http_Exception" class="filetree"></ul>
+</li>
+<li class="closed">
+<span class="folder">Response</span><ul id="packages_Zend_Http_Response" class="filetree">
+<li><span class="class"><a href="_Http_Response.html#%5CZend_Http_Response" target="content">Zend_Http_Response<br><small>Zend_Http_Response represents an HTTP 1.0 / 1.1 response message. It
+includes easy access to all the response's different elemts, as well as some
+convenience methods for parsing and validating HTTP responses.</small></a></span></li>
+<li><span class="class"><a href="_Http_Response_Stream.html#%5CZend_Http_Response_Stream" target="content">Zend_Http_Response_Stream<br><small>Zend_Http_Response represents an HTTP 1.0 / 1.1 response message. It
+includes easy access to all the response's different elemts, as well as some
+convenience methods for parsing and validating HTTP responses.</small></a></span></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="closed">
+<span class="folder">Zend_Loader</span><ul id="packages_Zend_Loader" class="filetree"><li class="closed"><span class="class"><a href="_Loader.html#%5CZend_Loader" target="content">Zend_Loader<br><small>Static methods for loading classes and files.</small></a></span></li></ul>
+</li>
+<li class="closed">
+<span class="folder">Zend_Registry</span><ul id="packages_Zend_Registry" class="filetree"><li class="closed"><span class="class"><a href="_Registry.html#%5CZend_Registry" target="content">Zend_Registry<br><small>Generic storage class helps to manage global data.</small></a></span></li></ul>
+</li>
+<li class="closed">
+<span class="folder">Zend_Uri</span><ul id="packages_Zend_Uri" class="filetree">
+<li class="closed"><span class="class"><a href="_Uri.html#%5CZend_Uri" target="content">Zend_Uri<br><small>Abstract class for all Zend_Uri handlers</small></a></span></li>
+<li class="closed"><span class="class"><a href="_Uri_Exception.html#%5CZend_Uri_Exception" target="content">Zend_Uri_Exception<br><small>Exceptions for Zend_Uri</small></a></span></li>
+<li class="closed"><span class="class"><a href="_Uri_Http.html#%5CZend_Uri_Http" target="content">Zend_Uri_Http<br><small>HTTP(S) URI handler</small></a></span></li>
+</ul>
+</li>
+<li class="closed">
+<span class="folder">Zend_Validate</span><ul id="packages_Zend_Validate" class="filetree">
+<li class="closed"><span class="class"><a href="_Validate_Abstract.html#%5CZend_Validate_Abstract" target="content">Zend_Validate_Abstract<br><small></small></a></span></li>
+<li class="closed"><span class="class"><a href="_Validate_Hostname.html#%5CZend_Validate_Hostname" target="content">Zend_Validate_Hostname<br><small>Please note there are two standalone test scripts for testing IDN characters due to problems
+with file encoding.</small></a></span></li>
+<li class="closed"><span class="interface"><a href="_Validate_Interface.html#%5CZend_Validate_Interface" target="content">Zend_Validate_Interface<br><small></small></a></span></li>
+<li class="closed"><span class="class"><a href="_Validate_Ip.html#%5CZend_Validate_Ip" target="content">Zend_Validate_Ip<br><small></small></a></span></li>
+</ul>
+</li>
+<li class="closed">
+<span class="folder">Zend_Version</span><ul id="packages_Zend_Version" class="filetree"><li class="closed"><span class="class"><a href="_Version.html#%5CZend_Version" target="content">Zend_Version<br><small>Class to store and retrieve the version of Zend Framework.</small></a></span></li></ul>
+</li>
+</ul></div>
+</div></body></html>

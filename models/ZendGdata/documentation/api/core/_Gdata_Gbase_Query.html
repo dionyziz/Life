@@ -1,0 +1,791 @@
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title>Zend Gdata API Documentation</title><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" href="css/black-tie/jquery-ui-1.8.2.custom.css" type="text/css"></link><link rel="stylesheet" href="css/jquery.treeview.css" type="text/css"></link><link rel="stylesheet" href="css/theme.css" type="text/css"></link><script type="text/javascript" src="js/jquery-1.4.2.min.js"></script><script type="text/javascript" src="js/jquery-ui-1.8.2.custom.min.js"></script><script type="text/javascript" src="js/jquery.cookie.js"></script><script type="text/javascript" src="js/jquery.treeview.js"></script><script type="text/javascript">
+            $(document).ready(function() {
+                $(".filetree").treeview({
+                    collapsed: true,
+                    persist: "cookie"
+                });
+
+                $("#accordion").accordion({
+                    collapsible: true,
+                    autoHeight:  false,
+                    fillSpace:   true
+                });
+
+                $(".tabs").tabs();
+            });
+        </script></head><body><div xmlns="" class="content">
+<div class="sub-page-main-header-api-documentation"><h2>API Documentation</h2></div>
+<div class="dotted-line"></div>
+</div>
+<div xmlns="" id="content">
+<script>
+      $(document).ready(function() {
+        $('dl.function-info, dl.constant-info, dl.property-info').prev().css('cursor', 'pointer');
+        $('dl.function-info, dl.constant-info, dl.property-info').prev().click(function() {
+          if ($(this).next().is(':hidden'))
+          {
+            $(this).children('img')[0].src = 'images/arrow_down.gif';
+          } else
+          {
+            $(this).children('img')[0].src = 'images/arrow_right.gif';
+          }
+          $(this).next().slideToggle();
+        });
+      $('dl.function-info, dl.constant-info, dl.property-info').hide();
+      $('dl.function-info img, dl.constant-info img, dl.property-info img').show();
+      });
+    </script><a name="top"></a><h1 class="file">Gdata/Gbase/Query.php</h1>
+<div class="file_menu">
+<a href="#includes">Includes</a> <a href="#classes">Classes</a> </div>
+<dl class="file-info">
+<dt>category</dt>
+<dd>Zend</dd>
+<dt>copyright</dt>
+<dd>Copyright (c) 2005-2011 Zend Technologies USA Inc. (http://www.zend.com)</dd>
+<dt>license</dt>
+<dd>http://framework.zend.com/license/new-bsd     New BSD License</dd>
+<dt>package</dt>
+<dd>Zend_Gdata</dd>
+<dt>subpackage</dt>
+<dd>Gbase</dd>
+<dt>version</dt>
+<dd>$Id: Query.php 23805 2011-03-16 00:55:40Z tjohns $</dd>
+<dt>Classes</dt>
+<dd><a class="class" href="#%5CZend_Gdata_Gbase_Query">Zend_Gdata_Gbase_Query</a></dd>
+</dl>
+<h2>Description</h2>
+<p class="short-description">Zend Framework</p>
+<div class="long-description"><p>LICENSE</p>
+
+<p>This source file is subject to the new BSD license that is bundled
+with this package in the file LICENSE.txt.
+It is also available through the world-wide-web at this URL:
+http://framework.zend.com/license/new-bsd
+If you did not receive a copy of the license and are unable to
+obtain it through the world-wide-web, please send an email
+to license@zend.com so we can send you a copy immediately.</p>
+</div>
+<a name="classes"></a><a id="\Zend_Gdata_Gbase_Query"></a><h2 class="class">\Zend_Gdata_Gbase_Query<div class="to-top"><a href="#top">jump to top</a></div>
+</h2>
+<div class="class">
+<dl class="class-info">
+<dt>Extends from</dt>
+<dd><a href="_Gdata_Query.html#%5CZend_Gdata_Query">\Zend_Gdata_Query</a></dd>
+<dt>category</dt>
+<dd>Zend</dd>
+<dt>copyright</dt>
+<dd>Copyright (c) 2005-2011 Zend Technologies USA Inc. (http://www.zend.com)</dd>
+<dt>license</dt>
+<dd>http://framework.zend.com/license/new-bsd     New BSD License</dd>
+<dt>link</dt>
+<dd><a href="http://code.google.com/apis/base">http://code.google.com/apis/base</a></dd>
+<dt>package</dt>
+<dd>Zend_Gdata</dd>
+<dt>subpackage</dt>
+<dd>Gbase</dd>
+<dt><a href="#" onclick="$(this).children('img').toggle().parents('dt').nextUntil('dt').slideToggle(); return false;"><img src="images/arrow_down.gif"><img src="images/arrow_right.gif" style="display: none">
+                Constants
+              </a></dt>
+<dd><a class="constant" href="#%5CZend_Gdata_Gbase_Query::GBASE_ITEM_FEED_URI">GBASE_ITEM_FEED_URI</a></dd>
+<dd><a class="constant" href="#%5CZend_Gdata_Gbase_Query::GBASE_SNIPPET_FEED_URI">GBASE_SNIPPET_FEED_URI</a></dd>
+<dt><a href="#" onclick="$(this).children('img').toggle().parents('dt').nextUntil('dt').slideToggle(); return false;"><img src="images/arrow_down.gif"><img src="images/arrow_right.gif" style="display: none">
+                Properties
+              </a></dt>
+<dd><a class="property protected" href="#%5CZend_Gdata_Gbase_Query::%24_defaultFeedUri">$_defaultFeedUri</a></dd>
+<dt><a href="#" onclick="$(this).children('img').toggle().parents('dt').nextUntil('dt').slideToggle(); return false;"><img src="images/arrow_down.gif"><img src="images/arrow_right.gif" style="display: none">
+                Methods
+              </a></dt>
+<dd><a class="method public" href="#%5CZend_Gdata_Gbase_Query::getAdjust()">getAdjust</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Gbase_Query::getBq()">getBq</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Gbase_Query::getContent()">getContent</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Gbase_Query::getCrowdBy()">getCrowdBy</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Gbase_Query::getKey()">getKey</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Gbase_Query::getOrderBy()">getOrderBy</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Gbase_Query::getRefine()">getRefine</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Gbase_Query::getSortOrder()">getSortOrder</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Gbase_Query::setAdjust()">setAdjust</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Gbase_Query::setBq()">setBq</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Gbase_Query::setContent()">setContent</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Gbase_Query::setCrowdBy()">setCrowdBy</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Gbase_Query::setKey()">setKey</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Gbase_Query::setOrderBy()">setOrderBy</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Gbase_Query::setRefine()">setRefine</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Gbase_Query::setSortOrder()">setSortOrder</a></dd>
+</dl>
+<h3>Description</h3>
+<p class="short-description">Assists in constructing queries for Google Base</p>
+<div class="long-description"><p>Queries are not defined for APP, but are provided by Gdata services
+as an extension.</p>
+</div>
+<h3>Constants</h3>
+<div>
+<a id="\Zend_Gdata_Gbase_Query::GBASE_ITEM_FEED_URI"></a><h4 class="constant">GBASE_ITEM_FEED_URI<div class="to-top"><a href="#Zend_Gdata_Gbase_Query">jump to class</a></div>
+</h4>
+<div class="constant">
+<code> <span class="highlight">GBASE_ITEM_FEED_URI</span> = 'https://www.google.com/base/feeds/items'
+      </code><p class="short-description">Path to the customer items feeds on the Google Base server.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="constant-info">
+<dt>value</dt>
+<dd>https://www.google.com/base/feeds/items</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Gbase_Query::GBASE_SNIPPET_FEED_URI"></a><h4 class="constant">GBASE_SNIPPET_FEED_URI<div class="to-top"><a href="#Zend_Gdata_Gbase_Query">jump to class</a></div>
+</h4>
+<div class="constant">
+<code> <span class="highlight">GBASE_SNIPPET_FEED_URI</span> = 'https://www.google.com/base/feeds/snippets'
+      </code><p class="short-description">Path to the snippets feeds on the Google Base server.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="constant-info">
+<dt>value</dt>
+<dd>https://www.google.com/base/feeds/snippets</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+</div>
+<h3>Properties</h3>
+<div>
+<a id="\Zend_Gdata_Gbase_Query::$_defaultFeedUri"></a><h4 class="property protected">$_defaultFeedUri<div class="to-top"><a href="#%5CZend_Gdata_Gbase_Query">jump to class</a></div>
+</h4>
+<div class="property">
+<code>string <span class="highlight">$_defaultFeedUri</span> = 'self'</code><p class="short-description">The default URI for POST methods</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt></dt>
+<dd>string<br><em></em>
+</dd>
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd>self</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+</div>
+<h3>Methods</h3>
+<div>
+<a id="\Zend_Gdata_Gbase_Query::getAdjust()"></a><h4 class="method public">getAdjust<div class="to-top"><a href="#Zend_Gdata_Gbase_Query">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getAdjust</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        string</code><p class="short-description"></p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>string</dt>
+<dd><em>adjust</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Gbase_Query::getBq()"></a><h4 class="method public">getBq<div class="to-top"><a href="#Zend_Gdata_Gbase_Query">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getBq</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        string</code><p class="short-description"></p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>string</dt>
+<dd><em>bq</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Gbase_Query::getContent()"></a><h4 class="method public">getContent<div class="to-top"><a href="#Zend_Gdata_Gbase_Query">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getContent</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        string</code><p class="short-description"></p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>string</dt>
+<dd><em>content</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Gbase_Query::getCrowdBy()"></a><h4 class="method public">getCrowdBy<div class="to-top"><a href="#Zend_Gdata_Gbase_Query">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getCrowdBy</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        string</code><p class="short-description"></p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>string</dt>
+<dd><em>crowdby</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Gbase_Query::getKey()"></a><h4 class="method public">getKey<div class="to-top"><a href="#Zend_Gdata_Gbase_Query">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getKey</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        string</code><p class="short-description"></p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>string</dt>
+<dd><em>key</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Gbase_Query::getOrderBy()"></a><h4 class="method public">getOrderBy<div class="to-top"><a href="#Zend_Gdata_Gbase_Query">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getOrderBy</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        string</code><p class="short-description"></p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>string</dt>
+<dd><em>orderby</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Gbase_Query::getRefine()"></a><h4 class="method public">getRefine<div class="to-top"><a href="#Zend_Gdata_Gbase_Query">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getRefine</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        string</code><p class="short-description"></p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>string</dt>
+<dd><em>refine</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Gbase_Query::getSortOrder()"></a><h4 class="method public">getSortOrder<div class="to-top"><a href="#Zend_Gdata_Gbase_Query">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getSortOrder</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        string</code><p class="short-description"></p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>string</dt>
+<dd><em>sortorder</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Gbase_Query::setAdjust()"></a><h4 class="method public">setAdjust<div class="to-top"><a href="#Zend_Gdata_Gbase_Query">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">setAdjust</span><span class="nb-faded-text">(
+          string $value
+          )
+        </span>
+        :
+        <a href="_Gdata_Gbase_ItemQuery.html#%5CZend_Gdata_Gbase_ItemQuery">\Zend_Gdata_Gbase_ItemQuery</a></code><p class="short-description"></p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$value</dt>
+<dd>string<br><em></em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_Gbase_ItemQuery.html#%5CZend_Gdata_Gbase_ItemQuery">\Zend_Gdata_Gbase_ItemQuery</a></dt>
+<dd><em>Provides a fluent interface</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Gbase_Query::setBq()"></a><h4 class="method public">setBq<div class="to-top"><a href="#Zend_Gdata_Gbase_Query">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">setBq</span><span class="nb-faded-text">(
+          string $value
+          )
+        </span>
+        :
+        <a href="_Gdata_Gbase_ItemQuery.html#%5CZend_Gdata_Gbase_ItemQuery">\Zend_Gdata_Gbase_ItemQuery</a></code><p class="short-description"></p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$value</dt>
+<dd>string<br><em></em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_Gbase_ItemQuery.html#%5CZend_Gdata_Gbase_ItemQuery">\Zend_Gdata_Gbase_ItemQuery</a></dt>
+<dd><em>Provides a fluent interface</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Gbase_Query::setContent()"></a><h4 class="method public">setContent<div class="to-top"><a href="#Zend_Gdata_Gbase_Query">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">setContent</span><span class="nb-faded-text">(
+          string $value
+          )
+        </span>
+        :
+        <a href="_Gdata_Gbase_ItemQuery.html#%5CZend_Gdata_Gbase_ItemQuery">\Zend_Gdata_Gbase_ItemQuery</a></code><p class="short-description"></p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$value</dt>
+<dd>string<br><em></em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_Gbase_ItemQuery.html#%5CZend_Gdata_Gbase_ItemQuery">\Zend_Gdata_Gbase_ItemQuery</a></dt>
+<dd><em>Provides a fluent interface</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Gbase_Query::setCrowdBy()"></a><h4 class="method public">setCrowdBy<div class="to-top"><a href="#Zend_Gdata_Gbase_Query">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">setCrowdBy</span><span class="nb-faded-text">(
+          string $value
+          )
+        </span>
+        :
+        <a href="_Gdata_Gbase_ItemQuery.html#%5CZend_Gdata_Gbase_ItemQuery">\Zend_Gdata_Gbase_ItemQuery</a></code><p class="short-description"></p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$value</dt>
+<dd>string<br><em></em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_Gbase_ItemQuery.html#%5CZend_Gdata_Gbase_ItemQuery">\Zend_Gdata_Gbase_ItemQuery</a></dt>
+<dd><em>Provides a fluent interface</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Gbase_Query::setKey()"></a><h4 class="method public">setKey<div class="to-top"><a href="#Zend_Gdata_Gbase_Query">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">setKey</span><span class="nb-faded-text">(
+          string $value
+          )
+        </span>
+        :
+        <a href="_Gdata_Gbase_Query.html#%5CZend_Gdata_Gbase_Query">\Zend_Gdata_Gbase_Query</a></code><p class="short-description"></p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$value</dt>
+<dd>string<br><em></em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_Gbase_Query.html#%5CZend_Gdata_Gbase_Query">\Zend_Gdata_Gbase_Query</a></dt>
+<dd><em>Provides a fluent interface</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Gbase_Query::setOrderBy()"></a><h4 class="method public">setOrderBy<div class="to-top"><a href="#Zend_Gdata_Gbase_Query">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">setOrderBy</span><span class="nb-faded-text">(
+          string $value
+          )
+        </span>
+        :
+        <a href="_Gdata_Gbase_ItemQuery.html#%5CZend_Gdata_Gbase_ItemQuery">\Zend_Gdata_Gbase_ItemQuery</a></code><p class="short-description"></p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$value</dt>
+<dd>string<br><em></em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_Gbase_ItemQuery.html#%5CZend_Gdata_Gbase_ItemQuery">\Zend_Gdata_Gbase_ItemQuery</a></dt>
+<dd><em>Provides a fluent interface</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Gbase_Query::setRefine()"></a><h4 class="method public">setRefine<div class="to-top"><a href="#Zend_Gdata_Gbase_Query">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">setRefine</span><span class="nb-faded-text">(
+          string $value
+          )
+        </span>
+        :
+        <a href="_Gdata_Gbase_ItemQuery.html#%5CZend_Gdata_Gbase_ItemQuery">\Zend_Gdata_Gbase_ItemQuery</a></code><p class="short-description"></p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$value</dt>
+<dd>string<br><em></em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_Gbase_ItemQuery.html#%5CZend_Gdata_Gbase_ItemQuery">\Zend_Gdata_Gbase_ItemQuery</a></dt>
+<dd><em>Provides a fluent interface</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Gbase_Query::setSortOrder()"></a><h4 class="method public">setSortOrder<div class="to-top"><a href="#Zend_Gdata_Gbase_Query">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">setSortOrder</span><span class="nb-faded-text">(
+          string $value
+          )
+        </span>
+        :
+        <a href="_Gdata_Gbase_ItemQuery.html#%5CZend_Gdata_Gbase_ItemQuery">\Zend_Gdata_Gbase_ItemQuery</a></code><p class="short-description"></p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$value</dt>
+<dd>string<br><em></em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_Gbase_ItemQuery.html#%5CZend_Gdata_Gbase_ItemQuery">\Zend_Gdata_Gbase_ItemQuery</a></dt>
+<dd><em>Provides a fluent interface</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<small xmlns="" class="footer">Documentation was generated by <a href="http://docblox-project.org">DocBlox 0.12.2</a>.
+    </small></body></html>

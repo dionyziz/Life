@@ -1,0 +1,467 @@
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title>Zend Gdata API Documentation</title><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" href="css/black-tie/jquery-ui-1.8.2.custom.css" type="text/css"></link><link rel="stylesheet" href="css/jquery.treeview.css" type="text/css"></link><link rel="stylesheet" href="css/theme.css" type="text/css"></link><script type="text/javascript" src="js/jquery-1.4.2.min.js"></script><script type="text/javascript" src="js/jquery-ui-1.8.2.custom.min.js"></script><script type="text/javascript" src="js/jquery.cookie.js"></script><script type="text/javascript" src="js/jquery.treeview.js"></script><script type="text/javascript">
+            $(document).ready(function() {
+                $(".filetree").treeview({
+                    collapsed: true,
+                    persist: "cookie"
+                });
+
+                $("#accordion").accordion({
+                    collapsible: true,
+                    autoHeight:  false,
+                    fillSpace:   true
+                });
+
+                $(".tabs").tabs();
+            });
+        </script></head><body><div xmlns="" class="content">
+<div class="sub-page-main-header-api-documentation"><h2>API Documentation</h2></div>
+<div class="dotted-line"></div>
+</div>
+<div xmlns="" id="content">
+<script>
+      $(document).ready(function() {
+        $('dl.function-info, dl.constant-info, dl.property-info').prev().css('cursor', 'pointer');
+        $('dl.function-info, dl.constant-info, dl.property-info').prev().click(function() {
+          if ($(this).next().is(':hidden'))
+          {
+            $(this).children('img')[0].src = 'images/arrow_down.gif';
+          } else
+          {
+            $(this).children('img')[0].src = 'images/arrow_right.gif';
+          }
+          $(this).next().slideToggle();
+        });
+      $('dl.function-info, dl.constant-info, dl.property-info').hide();
+      $('dl.function-info img, dl.constant-info img, dl.property-info img').show();
+      });
+    </script><a name="top"></a><h1 class="file">Uri.php</h1>
+<div class="file_menu">
+<a href="#classes">Classes</a> </div>
+<dl class="file-info">
+<dt>category</dt>
+<dd>Zend</dd>
+<dt>copyright</dt>
+<dd>Copyright (c) 2005-2011 Zend Technologies USA Inc. (http://www.zend.com)</dd>
+<dt>license</dt>
+<dd>http://framework.zend.com/license/new-bsd     New BSD License</dd>
+<dt>package</dt>
+<dd>Zend_Uri</dd>
+<dt>version</dt>
+<dd>$Id: Uri.php 23775 2011-03-01 17:25:24Z ralph $</dd>
+<dt>Classes</dt>
+<dd><a class="class" href="#%5CZend_Uri">Zend_Uri</a></dd>
+</dl>
+<h2>Description</h2>
+<p class="short-description">Zend Framework</p>
+<div class="long-description"><p>LICENSE</p>
+
+<p>This source file is subject to the new BSD license that is bundled
+with this package in the file LICENSE.txt.
+It is also available through the world-wide-web at this URL:
+http://framework.zend.com/license/new-bsd
+If you did not receive a copy of the license and are unable to
+obtain it through the world-wide-web, please send an email
+to license@zend.com so we can send you a copy immediately.</p>
+</div>
+<a name="classes"></a><a id="\Zend_Uri"></a><h2 class="class">\Zend_Uri<div class="to-top"><a href="#top">jump to top</a></div>
+</h2>
+<div class="class">
+<dl class="class-info">
+<dt>category</dt>
+<dd>Zend</dd>
+<dt>copyright</dt>
+<dd>Copyright (c) 2005-2011 Zend Technologies USA Inc. (http://www.zend.com)</dd>
+<dt>license</dt>
+<dd>http://framework.zend.com/license/new-bsd     New BSD License</dd>
+<dt>package</dt>
+<dd>Zend_Uri</dd>
+<dt><a href="#" onclick="$(this).children('img').toggle().parents('dt').nextUntil('dt').slideToggle(); return false;"><img src="images/arrow_down.gif"><img src="images/arrow_right.gif" style="display: none">
+                Properties
+              </a></dt>
+<dd><a class="property protected" href="#%5CZend_Uri::%24_config">$_config</a></dd>
+<dd><a class="property protected" href="#%5CZend_Uri::%24_scheme">$_scheme</a></dd>
+<dt><a href="#" onclick="$(this).children('img').toggle().parents('dt').nextUntil('dt').slideToggle(); return false;"><img src="images/arrow_down.gif"><img src="images/arrow_right.gif" style="display: none">
+                Methods
+              </a></dt>
+<dd><a class="method protected" href="#%5CZend_Uri::__construct()">__construct</a></dd>
+<dd><a class="method public" href="#%5CZend_Uri::__toString()">__toString</a></dd>
+<dd><a class="method public" href="#%5CZend_Uri::check()">check</a></dd>
+<dd><a class="method public" href="#%5CZend_Uri::factory()">factory</a></dd>
+<dd><a class="method public" href="#%5CZend_Uri::getScheme()">getScheme</a></dd>
+<dd><a class="method public" href="#%5CZend_Uri::getUri()">getUri</a></dd>
+<dd><a class="method public" href="#%5CZend_Uri::setConfig()">setConfig</a></dd>
+<dd><a class="method public" href="#%5CZend_Uri::valid()">valid</a></dd>
+</dl>
+<h3>Description</h3>
+<p class="short-description">Abstract class for all Zend_Uri handlers</p>
+<div class="long-description">
+</div>
+<h3>Properties</h3>
+<div>
+<a id="\Zend_Uri::$_config"></a><h4 class="property protected">$_config<div class="to-top"><a href="#%5CZend_Uri">jump to class</a></div>
+</h4>
+<div class="property">
+<code>array <span class="highlight">$_config</span> = 'array'</code><p class="short-description">Global configuration array</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt></dt>
+<dd>array<br><em></em>
+</dd>
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd>array</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>true</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Uri::$_scheme"></a><h4 class="property protected">$_scheme<div class="to-top"><a href="#%5CZend_Uri">jump to class</a></div>
+</h4>
+<div class="property">
+<code>string <span class="highlight">$_scheme</span> = ''</code><p class="short-description">Scheme of this URI (http, ftp, etc.)</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt></dt>
+<dd>string<br><em></em>
+</dd>
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd></dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+</div>
+<h3>Methods</h3>
+<div>
+<a id="\Zend_Uri::__construct()"></a><h4 class="method protected">__construct<div class="to-top"><a href="#Zend_Uri">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">__construct</span><span class="nb-faded-text">(
+          string $scheme, string $schemeSpecific
+          )
+        </span>
+        :
+        </code><p class="short-description">Zend_Uri and its subclasses cannot be instantiated directly.</p>
+<div class="long-description"><p>Use Zend_Uri::factory() to return a new Zend_Uri object.</p>
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$scheme</dt>
+<dd>string<br><em>The scheme of the URI</em>
+</dd>
+<dt>$schemeSpecific</dt>
+<dd>string<br><em>The scheme-specific part of the URI</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Uri::__toString()"></a><h4 class="method public">__toString<div class="to-top"><a href="#Zend_Uri">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">__toString</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        string</code><p class="short-description">Return a string representation of this URI.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>string</dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+<dt>see</dt>
+<dd>getUri()</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Uri::check()"></a><h4 class="method public">check<div class="to-top"><a href="#Zend_Uri">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">check</span><span class="nb-faded-text">(
+          string $uri
+          )
+        </span>
+        :
+        boolean</code><p class="short-description">Convenience function, checks that a $uri string is well-formed
+by validating it but not returning an object.  Returns TRUE if
+$uri is a well-formed URI, or FALSE otherwise.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$uri</dt>
+<dd>string<br><em>The URI to check</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>boolean</dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>true</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Uri::factory()"></a><h4 class="method public">factory<div class="to-top"><a href="#Zend_Uri">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">factory</span><span class="nb-faded-text">(
+          string $uri
+              =
+              http, string $className
+              =
+              null
+          )
+        </span>
+        :
+        <a href="_Uri.html#%5CZend_Uri">\Zend_Uri</a></code><p class="short-description">Create a new Zend_Uri object for a URI.  If building a new URI, then $uri should contain
+only the scheme (http, ftp, etc).  Otherwise, supply $uri with the complete URI.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$uri</dt>
+<dd>string<br><em>The URI form which a Zend_Uri instance is created</em>
+</dd>
+<dt>$className</dt>
+<dd>string<br><em>The name of the class to use in order to manipulate URI</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Uri.html#%5CZend_Uri">\Zend_Uri</a></dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>true</dd>
+<dt>link</dt>
+<dd><a href="http://www.faqs.org/rfcs/rfc2396.html">http://www.faqs.org/rfcs/rfc2396.html</a></dd>
+<dt>throws</dt>
+<dd><a href="_Uri_Exception.html#%5CZend_Uri_Exception">When an empty string was supplied for the scheme</a></dd>
+<dt>throws</dt>
+<dd><a href="_Uri_Exception.html#%5CZend_Uri_Exception">When an illegal scheme is supplied</a></dd>
+<dt>throws</dt>
+<dd><a href="_Uri_Exception.html#%5CZend_Uri_Exception">When the scheme is not supported</a></dd>
+<dt>throws</dt>
+<dd><a href="_Uri_Exception.html#%5CZend_Uri_Exception">When $className doesn&#039;t exist or doesn&#039;t implements Zend_Uri</a></dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Uri::getScheme()"></a><h4 class="method public">getScheme<div class="to-top"><a href="#Zend_Uri">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getScheme</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        string|\false</code><p class="short-description">Get the URI's scheme</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>string|\false</dt>
+<dd><em>Scheme or false if no scheme is set.</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Uri::getUri()"></a><h4 class="method public">getUri<div class="to-top"><a href="#Zend_Uri">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getUri</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        string</code><p class="short-description">Return a string representation of this URI.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>string</dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Uri::setConfig()"></a><h4 class="method public">setConfig<div class="to-top"><a href="#Zend_Uri">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">setConfig</span><span class="nb-faded-text">(
+          \Zend_Config|array $config
+          )
+        </span>
+        :
+        </code><p class="short-description">Set global configuration options</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$config</dt>
+<dd>\Zend_Configarray<br><em></em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>true</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Uri::valid()"></a><h4 class="method public">valid<div class="to-top"><a href="#Zend_Uri">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">valid</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        boolean</code><p class="short-description">Returns TRUE if this URI is valid, or FALSE otherwise.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>boolean</dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<small xmlns="" class="footer">Documentation was generated by <a href="http://docblox-project.org">DocBlox 0.12.2</a>.
+    </small></body></html>

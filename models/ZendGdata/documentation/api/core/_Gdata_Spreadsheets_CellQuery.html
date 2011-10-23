@@ -1,0 +1,1216 @@
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title>Zend Gdata API Documentation</title><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" href="css/black-tie/jquery-ui-1.8.2.custom.css" type="text/css"></link><link rel="stylesheet" href="css/jquery.treeview.css" type="text/css"></link><link rel="stylesheet" href="css/theme.css" type="text/css"></link><script type="text/javascript" src="js/jquery-1.4.2.min.js"></script><script type="text/javascript" src="js/jquery-ui-1.8.2.custom.min.js"></script><script type="text/javascript" src="js/jquery.cookie.js"></script><script type="text/javascript" src="js/jquery.treeview.js"></script><script type="text/javascript">
+            $(document).ready(function() {
+                $(".filetree").treeview({
+                    collapsed: true,
+                    persist: "cookie"
+                });
+
+                $("#accordion").accordion({
+                    collapsible: true,
+                    autoHeight:  false,
+                    fillSpace:   true
+                });
+
+                $(".tabs").tabs();
+            });
+        </script></head><body><div xmlns="" class="content">
+<div class="sub-page-main-header-api-documentation"><h2>API Documentation</h2></div>
+<div class="dotted-line"></div>
+</div>
+<div xmlns="" id="content">
+<script>
+      $(document).ready(function() {
+        $('dl.function-info, dl.constant-info, dl.property-info').prev().css('cursor', 'pointer');
+        $('dl.function-info, dl.constant-info, dl.property-info').prev().click(function() {
+          if ($(this).next().is(':hidden'))
+          {
+            $(this).children('img')[0].src = 'images/arrow_down.gif';
+          } else
+          {
+            $(this).children('img')[0].src = 'images/arrow_right.gif';
+          }
+          $(this).next().slideToggle();
+        });
+      $('dl.function-info, dl.constant-info, dl.property-info').hide();
+      $('dl.function-info img, dl.constant-info img, dl.property-info img').show();
+      });
+    </script><a name="top"></a><h1 class="file">Gdata/Spreadsheets/CellQuery.php</h1>
+<div class="file_menu">
+<a href="#includes">Includes</a> <a href="#classes">Classes</a> </div>
+<dl class="file-info">
+<dt>category</dt>
+<dd>Zend</dd>
+<dt>copyright</dt>
+<dd>Copyright (c) 2005-2011 Zend Technologies USA Inc. (http://www.zend.com)</dd>
+<dt>license</dt>
+<dd>http://framework.zend.com/license/new-bsd     New BSD License</dd>
+<dt>package</dt>
+<dd>Zend_Gdata</dd>
+<dt>subpackage</dt>
+<dd>Spreadsheets</dd>
+<dt>version</dt>
+<dd>$Id: CellQuery.php 23805 2011-03-16 00:55:40Z tjohns $</dd>
+<dt>Classes</dt>
+<dd><a class="class" href="#%5CZend_Gdata_Spreadsheets_CellQuery">Zend_Gdata_Spreadsheets_CellQuery</a></dd>
+</dl>
+<h2>Description</h2>
+<p class="short-description">Zend Framework</p>
+<div class="long-description"><p>LICENSE</p>
+
+<p>This source file is subject to the new BSD license that is bundled
+with this package in the file LICENSE.txt.
+It is also available through the world-wide-web at this URL:
+http://framework.zend.com/license/new-bsd
+If you did not receive a copy of the license and are unable to
+obtain it through the world-wide-web, please send an email
+to license@zend.com so we can send you a copy immediately.</p>
+</div>
+<a name="classes"></a><a id="\Zend_Gdata_Spreadsheets_CellQuery"></a><h2 class="class">\Zend_Gdata_Spreadsheets_CellQuery<div class="to-top"><a href="#top">jump to top</a></div>
+</h2>
+<div class="class">
+<dl class="class-info">
+<dt>Extends from</dt>
+<dd><a href="_Gdata_Query.html#%5CZend_Gdata_Query">\Zend_Gdata_Query</a></dd>
+<dt>category</dt>
+<dd>Zend</dd>
+<dt>copyright</dt>
+<dd>Copyright (c) 2005-2011 Zend Technologies USA Inc. (http://www.zend.com)</dd>
+<dt>license</dt>
+<dd>http://framework.zend.com/license/new-bsd     New BSD License</dd>
+<dt>link</dt>
+<dd><a href="http://code.google.com/apis/gdata/spreadsheets/">http://code.google.com/apis/gdata/spreadsheets/</a></dd>
+<dt>package</dt>
+<dd>Zend_Gdata</dd>
+<dt>subpackage</dt>
+<dd>Spreadsheets</dd>
+<dt><a href="#" onclick="$(this).children('img').toggle().parents('dt').nextUntil('dt').slideToggle(); return false;"><img src="images/arrow_down.gif"><img src="images/arrow_right.gif" style="display: none">
+                Constants
+              </a></dt>
+<dd><a class="constant" href="#%5CZend_Gdata_Spreadsheets_CellQuery::SPREADSHEETS_CELL_FEED_URI">SPREADSHEETS_CELL_FEED_URI</a></dd>
+<dt><a href="#" onclick="$(this).children('img').toggle().parents('dt').nextUntil('dt').slideToggle(); return false;"><img src="images/arrow_down.gif"><img src="images/arrow_right.gif" style="display: none">
+                Properties
+              </a></dt>
+<dd><a class="property protected" href="#%5CZend_Gdata_Spreadsheets_CellQuery::%24_cellId">$_cellId</a></dd>
+<dd><a class="property protected" href="#%5CZend_Gdata_Spreadsheets_CellQuery::%24_defaultFeedUri">$_defaultFeedUri</a></dd>
+<dd><a class="property protected" href="#%5CZend_Gdata_Spreadsheets_CellQuery::%24_projection">$_projection</a></dd>
+<dd><a class="property protected" href="#%5CZend_Gdata_Spreadsheets_CellQuery::%24_spreadsheetKey">$_spreadsheetKey</a></dd>
+<dd><a class="property protected" href="#%5CZend_Gdata_Spreadsheets_CellQuery::%24_visibility">$_visibility</a></dd>
+<dd><a class="property protected" href="#%5CZend_Gdata_Spreadsheets_CellQuery::%24_worksheetId">$_worksheetId</a></dd>
+<dt><a href="#" onclick="$(this).children('img').toggle().parents('dt').nextUntil('dt').slideToggle(); return false;"><img src="images/arrow_down.gif"><img src="images/arrow_right.gif" style="display: none">
+                Methods
+              </a></dt>
+<dd><a class="method public" href="#%5CZend_Gdata_Spreadsheets_CellQuery::__construct()">__construct</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Spreadsheets_CellQuery::getCellId()">getCellId</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Spreadsheets_CellQuery::getMaxCol()">getMaxCol</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Spreadsheets_CellQuery::getMaxRow()">getMaxRow</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Spreadsheets_CellQuery::getMinCol()">getMinCol</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Spreadsheets_CellQuery::getMinRow()">getMinRow</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Spreadsheets_CellQuery::getProjection()">getProjection</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Spreadsheets_CellQuery::getQueryString()">getQueryString</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Spreadsheets_CellQuery::getQueryUrl()">getQueryUrl</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Spreadsheets_CellQuery::getRange()">getRange</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Spreadsheets_CellQuery::getReturnEmpty()">getReturnEmpty</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Spreadsheets_CellQuery::getSpreadsheetKey()">getSpreadsheetKey</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Spreadsheets_CellQuery::getVisibility()">getVisibility</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Spreadsheets_CellQuery::getWorksheetId()">getWorksheetId</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Spreadsheets_CellQuery::setCellId()">setCellId</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Spreadsheets_CellQuery::setMaxCol()">setMaxCol</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Spreadsheets_CellQuery::setMaxRow()">setMaxRow</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Spreadsheets_CellQuery::setMinCol()">setMinCol</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Spreadsheets_CellQuery::setMinRow()">setMinRow</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Spreadsheets_CellQuery::setProjection()">setProjection</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Spreadsheets_CellQuery::setRange()">setRange</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Spreadsheets_CellQuery::setReturnEmpty()">setReturnEmpty</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Spreadsheets_CellQuery::setSpreadsheetKey()">setSpreadsheetKey</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Spreadsheets_CellQuery::setVisibility()">setVisibility</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Spreadsheets_CellQuery::setWorksheetId()">setWorksheetId</a></dd>
+</dl>
+<h3>Description</h3>
+<p class="short-description">Assists in constructing queries for Google Spreadsheets cells</p>
+<div class="long-description"><p>Queries are not defined for APP, but are provided by Gdata services
+as an extension.</p>
+</div>
+<h3>Constants</h3>
+<div>
+<a id="\Zend_Gdata_Spreadsheets_CellQuery::SPREADSHEETS_CELL_FEED_URI"></a><h4 class="constant">SPREADSHEETS_CELL_FEED_URI<div class="to-top"><a href="#Zend_Gdata_Spreadsheets_CellQuery">jump to class</a></div>
+</h4>
+<div class="constant">
+<code> <span class="highlight">SPREADSHEETS_CELL_FEED_URI</span> = 'https://spreadsheets.google.com/feeds/cells'
+      </code><div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="constant-info">
+<dt>value</dt>
+<dd>https://spreadsheets.google.com/feeds/cells</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+</div>
+<h3>Properties</h3>
+<div>
+<a id="\Zend_Gdata_Spreadsheets_CellQuery::$_cellId"></a><h4 class="property protected">$_cellId<div class="to-top"><a href="#%5CZend_Gdata_Spreadsheets_CellQuery">jump to class</a></div>
+</h4>
+<div class="property">
+<code> <span class="highlight">$_cellId</span> = 'null'</code><div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd>null</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Spreadsheets_CellQuery::$_defaultFeedUri"></a><h4 class="property protected">$_defaultFeedUri<div class="to-top"><a href="#%5CZend_Gdata_Spreadsheets_CellQuery">jump to class</a></div>
+</h4>
+<div class="property">
+<code>string <span class="highlight">$_defaultFeedUri</span> = 'self'</code><p class="short-description">The default URI for POST methods</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt></dt>
+<dd>string<br><em></em>
+</dd>
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd>self</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Spreadsheets_CellQuery::$_projection"></a><h4 class="property protected">$_projection<div class="to-top"><a href="#%5CZend_Gdata_Spreadsheets_CellQuery">jump to class</a></div>
+</h4>
+<div class="property">
+<code> <span class="highlight">$_projection</span> = 'full'</code><p class="short-description">Projection to be requested by queries. Defaults to "full". A null value
+should be used when the calendar address has already been set as part
+of the query URI.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd>full</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Spreadsheets_CellQuery::$_spreadsheetKey"></a><h4 class="property protected">$_spreadsheetKey<div class="to-top"><a href="#%5CZend_Gdata_Spreadsheets_CellQuery">jump to class</a></div>
+</h4>
+<div class="property">
+<code> <span class="highlight">$_spreadsheetKey</span> = 'null'</code><div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd>null</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Spreadsheets_CellQuery::$_visibility"></a><h4 class="property protected">$_visibility<div class="to-top"><a href="#%5CZend_Gdata_Spreadsheets_CellQuery">jump to class</a></div>
+</h4>
+<div class="property">
+<code> <span class="highlight">$_visibility</span> = 'private'</code><div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd>private</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Spreadsheets_CellQuery::$_worksheetId"></a><h4 class="property protected">$_worksheetId<div class="to-top"><a href="#%5CZend_Gdata_Spreadsheets_CellQuery">jump to class</a></div>
+</h4>
+<div class="property">
+<code> <span class="highlight">$_worksheetId</span> = 'default'</code><div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd>default</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+</div>
+<h3>Methods</h3>
+<div>
+<a id="\Zend_Gdata_Spreadsheets_CellQuery::__construct()"></a><h4 class="method public">__construct<div class="to-top"><a href="#Zend_Gdata_Spreadsheets_CellQuery">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">__construct</span><span class="nb-faded-text">(
+          string $url
+              =
+              null
+          )
+        </span>
+        :
+        </code><p class="short-description">Constructs a new Zend_Gdata_Spreadsheets_CellQuery object.</p>
+<div class="long-description"><p>If the URL already contains a calendar ID, projection, visibility,
+event ID, or comment ID, you will need to set these fields to null
+to prevent them from being inserted. See this class's properties for
+more information.</p>
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$url</dt>
+<dd>string<br><em>Base URL to use for queries</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Spreadsheets_CellQuery::getCellId()"></a><h4 class="method public">getCellId<div class="to-top"><a href="#Zend_Gdata_Spreadsheets_CellQuery">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getCellId</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        string</code><p class="short-description">Gets the cell id for this query.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>string</dt>
+<dd><em>cell id</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Spreadsheets_CellQuery::getMaxCol()"></a><h4 class="method public">getMaxCol<div class="to-top"><a href="#Zend_Gdata_Spreadsheets_CellQuery">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getMaxCol</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        string</code><p class="short-description">Gets the max-col attribute for this query.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>string</dt>
+<dd><em>max-col</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Spreadsheets_CellQuery::getMaxRow()"></a><h4 class="method public">getMaxRow<div class="to-top"><a href="#Zend_Gdata_Spreadsheets_CellQuery">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getMaxRow</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        string</code><p class="short-description">Gets the max-row attribute for this query.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>string</dt>
+<dd><em>max-row</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Spreadsheets_CellQuery::getMinCol()"></a><h4 class="method public">getMinCol<div class="to-top"><a href="#Zend_Gdata_Spreadsheets_CellQuery">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getMinCol</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        string</code><p class="short-description">Gets the min-col attribute for this query.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>string</dt>
+<dd><em>min-col</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Spreadsheets_CellQuery::getMinRow()"></a><h4 class="method public">getMinRow<div class="to-top"><a href="#Zend_Gdata_Spreadsheets_CellQuery">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getMinRow</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        string</code><p class="short-description">Gets the min-row attribute for this query.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>string</dt>
+<dd><em>min-row</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Spreadsheets_CellQuery::getProjection()"></a><h4 class="method public">getProjection<div class="to-top"><a href="#Zend_Gdata_Spreadsheets_CellQuery">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getProjection</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        string</code><p class="short-description">Gets the projection for this query.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>string</dt>
+<dd><em>projection</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Spreadsheets_CellQuery::getQueryString()"></a><h4 class="method public">getQueryString<div class="to-top"><a href="#Zend_Gdata_Spreadsheets_CellQuery">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getQueryString</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        string</code><p class="short-description">Gets the attribute query string for this query.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>string</dt>
+<dd><em>query string</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_App_VersionException.html#%5CZend_Gdata_App_VersionException"></a></dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Spreadsheets_CellQuery::getQueryUrl()"></a><h4 class="method public">getQueryUrl<div class="to-top"><a href="#Zend_Gdata_Spreadsheets_CellQuery">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getQueryUrl</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        string</code><p class="short-description">Gets the full query URL for this query.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>string</dt>
+<dd><em>url</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Spreadsheets_CellQuery::getRange()"></a><h4 class="method public">getRange<div class="to-top"><a href="#Zend_Gdata_Spreadsheets_CellQuery">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getRange</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        string</code><p class="short-description">Gets the range attribute for this query.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>string</dt>
+<dd><em>range</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Spreadsheets_CellQuery::getReturnEmpty()"></a><h4 class="method public">getReturnEmpty<div class="to-top"><a href="#Zend_Gdata_Spreadsheets_CellQuery">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getReturnEmpty</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        string</code><p class="short-description">Gets the return-empty attribute for this query.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>string</dt>
+<dd><em>return-empty</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Spreadsheets_CellQuery::getSpreadsheetKey()"></a><h4 class="method public">getSpreadsheetKey<div class="to-top"><a href="#Zend_Gdata_Spreadsheets_CellQuery">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getSpreadsheetKey</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        string</code><p class="short-description">Gets the spreadsheet key for this query.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>string</dt>
+<dd><em>spreadsheet key</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Spreadsheets_CellQuery::getVisibility()"></a><h4 class="method public">getVisibility<div class="to-top"><a href="#Zend_Gdata_Spreadsheets_CellQuery">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getVisibility</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        string</code><p class="short-description">Gets the visibility for this query.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>string</dt>
+<dd><em>visibility</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Spreadsheets_CellQuery::getWorksheetId()"></a><h4 class="method public">getWorksheetId<div class="to-top"><a href="#Zend_Gdata_Spreadsheets_CellQuery">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getWorksheetId</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        string</code><p class="short-description">Gets the worksheet id for this query.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>string</dt>
+<dd><em>worksheet id</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Spreadsheets_CellQuery::setCellId()"></a><h4 class="method public">setCellId<div class="to-top"><a href="#Zend_Gdata_Spreadsheets_CellQuery">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">setCellId</span><span class="nb-faded-text">(
+          string $value
+          )
+        </span>
+        :
+        <a href="_Gdata_Spreadsheets_CellQuery.html#%5CZend_Gdata_Spreadsheets_CellQuery">\Zend_Gdata_Spreadsheets_CellQuery</a></code><p class="short-description">Sets the cell id for this query.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$value</dt>
+<dd>string<br><em></em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_Spreadsheets_CellQuery.html#%5CZend_Gdata_Spreadsheets_CellQuery">\Zend_Gdata_Spreadsheets_CellQuery</a></dt>
+<dd><em>Provides a fluent interface</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Spreadsheets_CellQuery::setMaxCol()"></a><h4 class="method public">setMaxCol<div class="to-top"><a href="#Zend_Gdata_Spreadsheets_CellQuery">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">setMaxCol</span><span class="nb-faded-text">(
+          string $value
+          )
+        </span>
+        :
+        <a href="_Gdata_Spreadsheets_CellQuery.html#%5CZend_Gdata_Spreadsheets_CellQuery">\Zend_Gdata_Spreadsheets_CellQuery</a></code><p class="short-description">Sets the max-col attribute for this query.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$value</dt>
+<dd>string<br><em></em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_Spreadsheets_CellQuery.html#%5CZend_Gdata_Spreadsheets_CellQuery">\Zend_Gdata_Spreadsheets_CellQuery</a></dt>
+<dd><em>Provides a fluent interface</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Spreadsheets_CellQuery::setMaxRow()"></a><h4 class="method public">setMaxRow<div class="to-top"><a href="#Zend_Gdata_Spreadsheets_CellQuery">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">setMaxRow</span><span class="nb-faded-text">(
+          string $value
+          )
+        </span>
+        :
+        <a href="_Gdata_Spreadsheets_CellQuery.html#%5CZend_Gdata_Spreadsheets_CellQuery">\Zend_Gdata_Spreadsheets_CellQuery</a></code><p class="short-description">Sets the max-row attribute for this query.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$value</dt>
+<dd>string<br><em></em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_Spreadsheets_CellQuery.html#%5CZend_Gdata_Spreadsheets_CellQuery">\Zend_Gdata_Spreadsheets_CellQuery</a></dt>
+<dd><em>Provides a fluent interface</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Spreadsheets_CellQuery::setMinCol()"></a><h4 class="method public">setMinCol<div class="to-top"><a href="#Zend_Gdata_Spreadsheets_CellQuery">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">setMinCol</span><span class="nb-faded-text">(
+          string $value
+          )
+        </span>
+        :
+        <a href="_Gdata_Spreadsheets_CellQuery.html#%5CZend_Gdata_Spreadsheets_CellQuery">\Zend_Gdata_Spreadsheets_CellQuery</a></code><p class="short-description">Sets the min-col attribute for this query.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$value</dt>
+<dd>string<br><em></em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_Spreadsheets_CellQuery.html#%5CZend_Gdata_Spreadsheets_CellQuery">\Zend_Gdata_Spreadsheets_CellQuery</a></dt>
+<dd><em>Provides a fluent interface</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Spreadsheets_CellQuery::setMinRow()"></a><h4 class="method public">setMinRow<div class="to-top"><a href="#Zend_Gdata_Spreadsheets_CellQuery">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">setMinRow</span><span class="nb-faded-text">(
+          string $value
+          )
+        </span>
+        :
+        <a href="_Gdata_Spreadsheets_CellQuery.html#%5CZend_Gdata_Spreadsheets_CellQuery">\Zend_Gdata_Spreadsheets_CellQuery</a></code><p class="short-description">Sets the min-row attribute for this query.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$value</dt>
+<dd>string<br><em></em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_Spreadsheets_CellQuery.html#%5CZend_Gdata_Spreadsheets_CellQuery">\Zend_Gdata_Spreadsheets_CellQuery</a></dt>
+<dd><em>Provides a fluent interface</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Spreadsheets_CellQuery::setProjection()"></a><h4 class="method public">setProjection<div class="to-top"><a href="#Zend_Gdata_Spreadsheets_CellQuery">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">setProjection</span><span class="nb-faded-text">(
+          string $value
+          )
+        </span>
+        :
+        <a href="_Gdata_Spreadsheets_CellQuery.html#%5CZend_Gdata_Spreadsheets_CellQuery">\Zend_Gdata_Spreadsheets_CellQuery</a></code><p class="short-description">Sets the projection for this query.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$value</dt>
+<dd>string<br><em></em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_Spreadsheets_CellQuery.html#%5CZend_Gdata_Spreadsheets_CellQuery">\Zend_Gdata_Spreadsheets_CellQuery</a></dt>
+<dd><em>Provides a fluent interface</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Spreadsheets_CellQuery::setRange()"></a><h4 class="method public">setRange<div class="to-top"><a href="#Zend_Gdata_Spreadsheets_CellQuery">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">setRange</span><span class="nb-faded-text">(
+          string $value
+          )
+        </span>
+        :
+        <a href="_Gdata_Spreadsheets_CellQuery.html#%5CZend_Gdata_Spreadsheets_CellQuery">\Zend_Gdata_Spreadsheets_CellQuery</a></code><p class="short-description">Sets the range attribute for this query.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$value</dt>
+<dd>string<br><em></em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_Spreadsheets_CellQuery.html#%5CZend_Gdata_Spreadsheets_CellQuery">\Zend_Gdata_Spreadsheets_CellQuery</a></dt>
+<dd><em>Provides a fluent interface</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Spreadsheets_CellQuery::setReturnEmpty()"></a><h4 class="method public">setReturnEmpty<div class="to-top"><a href="#Zend_Gdata_Spreadsheets_CellQuery">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">setReturnEmpty</span><span class="nb-faded-text">(
+          mixed $value
+          )
+        </span>
+        :
+        <a href="_Gdata_Spreadsheets_CellQuery.html#%5CZend_Gdata_Spreadsheets_CellQuery">\Zend_Gdata_Spreadsheets_CellQuery</a></code><p class="short-description">Sets the return-empty attribute for this query.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$value</dt>
+<dd>mixed<br><em>String or bool value for whether to return empty cells</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_Spreadsheets_CellQuery.html#%5CZend_Gdata_Spreadsheets_CellQuery">\Zend_Gdata_Spreadsheets_CellQuery</a></dt>
+<dd><em>Provides a fluent interface</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Spreadsheets_CellQuery::setSpreadsheetKey()"></a><h4 class="method public">setSpreadsheetKey<div class="to-top"><a href="#Zend_Gdata_Spreadsheets_CellQuery">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">setSpreadsheetKey</span><span class="nb-faded-text">(
+          string $value
+          )
+        </span>
+        :
+        <a href="_Gdata_Spreadsheets_CellQuery.html#%5CZend_Gdata_Spreadsheets_CellQuery">\Zend_Gdata_Spreadsheets_CellQuery</a></code><p class="short-description">Sets the spreadsheet key for this query.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$value</dt>
+<dd>string<br><em></em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_Spreadsheets_CellQuery.html#%5CZend_Gdata_Spreadsheets_CellQuery">\Zend_Gdata_Spreadsheets_CellQuery</a></dt>
+<dd><em>Provides a fluent interface</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Spreadsheets_CellQuery::setVisibility()"></a><h4 class="method public">setVisibility<div class="to-top"><a href="#Zend_Gdata_Spreadsheets_CellQuery">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">setVisibility</span><span class="nb-faded-text">(
+          bool $value
+          )
+        </span>
+        :
+        <a href="_Gdata_Spreadsheets_CellQuery.html#%5CZend_Gdata_Spreadsheets_CellQuery">\Zend_Gdata_Spreadsheets_CellQuery</a></code><p class="short-description">Sets the visibility for this query.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$value</dt>
+<dd>bool<br><em></em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_Spreadsheets_CellQuery.html#%5CZend_Gdata_Spreadsheets_CellQuery">\Zend_Gdata_Spreadsheets_CellQuery</a></dt>
+<dd><em>Provides a fluent interface</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Spreadsheets_CellQuery::setWorksheetId()"></a><h4 class="method public">setWorksheetId<div class="to-top"><a href="#Zend_Gdata_Spreadsheets_CellQuery">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">setWorksheetId</span><span class="nb-faded-text">(
+          string $value
+          )
+        </span>
+        :
+        <a href="_Gdata_Spreadsheets_CellQuery.html#%5CZend_Gdata_Spreadsheets_CellQuery">\Zend_Gdata_Spreadsheets_CellQuery</a></code><p class="short-description">Sets the worksheet id for this query.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$value</dt>
+<dd>string<br><em></em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_Spreadsheets_CellQuery.html#%5CZend_Gdata_Spreadsheets_CellQuery">\Zend_Gdata_Spreadsheets_CellQuery</a></dt>
+<dd><em>Provides a fluent interface</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<small xmlns="" class="footer">Documentation was generated by <a href="http://docblox-project.org">DocBlox 0.12.2</a>.
+    </small></body></html>

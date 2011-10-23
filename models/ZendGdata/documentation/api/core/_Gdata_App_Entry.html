@@ -1,0 +1,942 @@
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title>Zend Gdata API Documentation</title><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" href="css/black-tie/jquery-ui-1.8.2.custom.css" type="text/css"></link><link rel="stylesheet" href="css/jquery.treeview.css" type="text/css"></link><link rel="stylesheet" href="css/theme.css" type="text/css"></link><script type="text/javascript" src="js/jquery-1.4.2.min.js"></script><script type="text/javascript" src="js/jquery-ui-1.8.2.custom.min.js"></script><script type="text/javascript" src="js/jquery.cookie.js"></script><script type="text/javascript" src="js/jquery.treeview.js"></script><script type="text/javascript">
+            $(document).ready(function() {
+                $(".filetree").treeview({
+                    collapsed: true,
+                    persist: "cookie"
+                });
+
+                $("#accordion").accordion({
+                    collapsible: true,
+                    autoHeight:  false,
+                    fillSpace:   true
+                });
+
+                $(".tabs").tabs();
+            });
+        </script></head><body><div xmlns="" class="content">
+<div class="sub-page-main-header-api-documentation"><h2>API Documentation</h2></div>
+<div class="dotted-line"></div>
+</div>
+<div xmlns="" id="content">
+<script>
+      $(document).ready(function() {
+        $('dl.function-info, dl.constant-info, dl.property-info').prev().css('cursor', 'pointer');
+        $('dl.function-info, dl.constant-info, dl.property-info').prev().click(function() {
+          if ($(this).next().is(':hidden'))
+          {
+            $(this).children('img')[0].src = 'images/arrow_down.gif';
+          } else
+          {
+            $(this).children('img')[0].src = 'images/arrow_right.gif';
+          }
+          $(this).next().slideToggle();
+        });
+      $('dl.function-info, dl.constant-info, dl.property-info').hide();
+      $('dl.function-info img, dl.constant-info img, dl.property-info img').show();
+      });
+    </script><a name="top"></a><h1 class="file">Gdata/App/Entry.php</h1>
+<div class="file_menu">
+<a href="#includes">Includes</a> <a href="#classes">Classes</a> </div>
+<dl class="file-info">
+<dt>category</dt>
+<dd>Zend</dd>
+<dt>copyright</dt>
+<dd>Copyright (c) 2005-2011 Zend Technologies USA Inc. (http://www.zend.com)</dd>
+<dt>license</dt>
+<dd>http://framework.zend.com/license/new-bsd     New BSD License</dd>
+<dt>package</dt>
+<dd>Zend_Gdata</dd>
+<dt>subpackage</dt>
+<dd>App</dd>
+<dt>version</dt>
+<dd>$Id: Entry.php 23775 2011-03-01 17:25:24Z ralph $</dd>
+<dt>Classes</dt>
+<dd><a class="class" href="#%5CZend_Gdata_App_Entry">Zend_Gdata_App_Entry</a></dd>
+</dl>
+<h2>Description</h2>
+<p class="short-description">Zend Framework</p>
+<div class="long-description"><p>LICENSE</p>
+
+<p>This source file is subject to the new BSD license that is bundled
+with this package in the file LICENSE.txt.
+It is also available through the world-wide-web at this URL:
+http://framework.zend.com/license/new-bsd
+If you did not receive a copy of the license and are unable to
+obtain it through the world-wide-web, please send an email
+to license@zend.com so we can send you a copy immediately.</p>
+</div>
+<a name="classes"></a><a id="\Zend_Gdata_App_Entry"></a><h2 class="class">\Zend_Gdata_App_Entry<div class="to-top"><a href="#top">jump to top</a></div>
+</h2>
+<div class="class">
+<dl class="class-info">
+<dt>Extends from</dt>
+<dd><a href="_Gdata_App_FeedEntryParent.html#%5CZend_Gdata_App_FeedEntryParent">\Zend_Gdata_App_FeedEntryParent</a></dd>
+<dt>category</dt>
+<dd>Zend</dd>
+<dt>copyright</dt>
+<dd>Copyright (c) 2005-2011 Zend Technologies USA Inc. (http://www.zend.com)</dd>
+<dt>license</dt>
+<dd>http://framework.zend.com/license/new-bsd     New BSD License</dd>
+<dt>package</dt>
+<dd>Zend_Gdata</dd>
+<dt>subpackage</dt>
+<dd>App</dd>
+<dt><a href="#" onclick="$(this).children('img').toggle().parents('dt').nextUntil('dt').slideToggle(); return false;"><img src="images/arrow_down.gif"><img src="images/arrow_right.gif" style="display: none">
+                Properties
+              </a></dt>
+<dd><a class="property protected" href="#%5CZend_Gdata_App_Entry::%24_content">$_content</a></dd>
+<dd><a class="property protected" href="#%5CZend_Gdata_App_Entry::%24_control">$_control</a></dd>
+<dd><a class="property protected" href="#%5CZend_Gdata_App_Entry::%24_edited">$_edited</a></dd>
+<dd><a class="property protected" href="#%5CZend_Gdata_App_Entry::%24_entryClassName">$_entryClassName</a></dd>
+<dd><a class="property protected" href="#%5CZend_Gdata_App_Entry::%24_published">$_published</a></dd>
+<dd><a class="property protected" href="#%5CZend_Gdata_App_Entry::%24_rootElement">$_rootElement</a></dd>
+<dd><a class="property protected" href="#%5CZend_Gdata_App_Entry::%24_source">$_source</a></dd>
+<dd><a class="property protected" href="#%5CZend_Gdata_App_Entry::%24_summary">$_summary</a></dd>
+<dt><a href="#" onclick="$(this).children('img').toggle().parents('dt').nextUntil('dt').slideToggle(); return false;"><img src="images/arrow_down.gif"><img src="images/arrow_right.gif" style="display: none">
+                Methods
+              </a></dt>
+<dd><a class="method public" href="#%5CZend_Gdata_App_Entry::delete()">delete</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_App_Entry::getContent()">getContent</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_App_Entry::getControl()">getControl</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_App_Entry::getDOM()">getDOM</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_App_Entry::getPublished()">getPublished</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_App_Entry::getSource()">getSource</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_App_Entry::getSummary()">getSummary</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_App_Entry::reload()">reload</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_App_Entry::save()">save</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_App_Entry::setContent()">setContent</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_App_Entry::setControl()">setControl</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_App_Entry::setPublished()">setPublished</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_App_Entry::setSource()">setSource</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_App_Entry::setSummary()">setSummary</a></dd>
+<dd><a class="method protected" href="#%5CZend_Gdata_App_Entry::takeChildFromDOM()">takeChildFromDOM</a></dd>
+</dl>
+<h3>Description</h3>
+<p class="short-description">Concrete class for working with Atom entries.</p>
+<div class="long-description">
+</div>
+<h3>Properties</h3>
+<div>
+<a id="\Zend_Gdata_App_Entry::$_content"></a><h4 class="property protected">$_content<div class="to-top"><a href="#%5CZend_Gdata_App_Entry">jump to class</a></div>
+</h4>
+<div class="property">
+<code><a href="_Gdata_App_Extension_Content.html#%5CZend_Gdata_App_Extension_Content">\Zend_Gdata_App_Extension_Content</a> <span class="highlight">$_content</span> = 'null'</code><p class="short-description">atom:content element</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt></dt>
+<dd>
+<a href="_Gdata_App_Extension_Content.html#%5CZend_Gdata_App_Extension_Content">\Zend_Gdata_App_Extension_Content</a><br><em></em>
+</dd>
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd>null</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_App_Entry::$_control"></a><h4 class="property protected">$_control<div class="to-top"><a href="#%5CZend_Gdata_App_Entry">jump to class</a></div>
+</h4>
+<div class="property">
+<code><a href="_Gdata_App_Extension_Control.html#%5CZend_Gdata_App_Extension_Control">\Zend_Gdata_App_Extension_Control</a> <span class="highlight">$_control</span> = 'null'</code><p class="short-description">app:control element</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt></dt>
+<dd>
+<a href="_Gdata_App_Extension_Control.html#%5CZend_Gdata_App_Extension_Control">\Zend_Gdata_App_Extension_Control</a><br><em></em>
+</dd>
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd>null</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_App_Entry::$_edited"></a><h4 class="property protected">$_edited<div class="to-top"><a href="#%5CZend_Gdata_App_Entry">jump to class</a></div>
+</h4>
+<div class="property">
+<code><a href="_Gdata_App_Extension_Edited.html#%5CZend_Gdata_App_Extension_Edited">\Zend_Gdata_App_Extension_Edited</a> <span class="highlight">$_edited</span> = 'null'</code><p class="short-description">app:edited element</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt></dt>
+<dd>
+<a href="_Gdata_App_Extension_Edited.html#%5CZend_Gdata_App_Extension_Edited">\Zend_Gdata_App_Extension_Edited</a><br><em></em>
+</dd>
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd>null</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_App_Entry::$_entryClassName"></a><h4 class="property protected">$_entryClassName<div class="to-top"><a href="#%5CZend_Gdata_App_Entry">jump to class</a></div>
+</h4>
+<div class="property">
+<code>string <span class="highlight">$_entryClassName</span> = 'Zend_Gdata_App_Entry'</code><p class="short-description">Class name for each entry in this feed*</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt></dt>
+<dd>string<br><em></em>
+</dd>
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd>Zend_Gdata_App_Entry</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_App_Entry::$_published"></a><h4 class="property protected">$_published<div class="to-top"><a href="#%5CZend_Gdata_App_Entry">jump to class</a></div>
+</h4>
+<div class="property">
+<code><a href="_Gdata_App_Extension_Published.html#%5CZend_Gdata_App_Extension_Published">\Zend_Gdata_App_Extension_Published</a> <span class="highlight">$_published</span> = 'null'</code><p class="short-description">atom:published element</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt></dt>
+<dd>
+<a href="_Gdata_App_Extension_Published.html#%5CZend_Gdata_App_Extension_Published">\Zend_Gdata_App_Extension_Published</a><br><em></em>
+</dd>
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd>null</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_App_Entry::$_rootElement"></a><h4 class="property protected">$_rootElement<div class="to-top"><a href="#%5CZend_Gdata_App_Entry">jump to class</a></div>
+</h4>
+<div class="property">
+<code>string <span class="highlight">$_rootElement</span> = 'entry'</code><p class="short-description">Root XML element for Atom entries.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt></dt>
+<dd>string<br><em></em>
+</dd>
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd>entry</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_App_Entry::$_source"></a><h4 class="property protected">$_source<div class="to-top"><a href="#%5CZend_Gdata_App_Entry">jump to class</a></div>
+</h4>
+<div class="property">
+<code><a href="_Gdata_App_Extension_Source.html#%5CZend_Gdata_App_Extension_Source">\Zend_Gdata_App_Extension_Source</a> <span class="highlight">$_source</span> = 'null'</code><p class="short-description">atom:source element</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt></dt>
+<dd>
+<a href="_Gdata_App_Extension_Source.html#%5CZend_Gdata_App_Extension_Source">\Zend_Gdata_App_Extension_Source</a><br><em></em>
+</dd>
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd>null</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_App_Entry::$_summary"></a><h4 class="property protected">$_summary<div class="to-top"><a href="#%5CZend_Gdata_App_Entry">jump to class</a></div>
+</h4>
+<div class="property">
+<code><a href="_Gdata_App_Extension_Summary.html#%5CZend_Gdata_App_Extension_Summary">\Zend_Gdata_App_Extension_Summary</a> <span class="highlight">$_summary</span> = 'null'</code><p class="short-description">atom:summary element</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt></dt>
+<dd>
+<a href="_Gdata_App_Extension_Summary.html#%5CZend_Gdata_App_Extension_Summary">\Zend_Gdata_App_Extension_Summary</a><br><em></em>
+</dd>
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd>null</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+</div>
+<h3>Methods</h3>
+<div>
+<a id="\Zend_Gdata_App_Entry::delete()"></a><h4 class="method public">delete<div class="to-top"><a href="#Zend_Gdata_App_Entry">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">delete</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        void</code><p class="short-description">Deletes this entry to the server using the referenced
+Zend_Http_Client to do a HTTP DELETE to the edit link stored in this
+entry's link collection.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_App_Exception.html#%5CZend_Gdata_App_Exception"></a></dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_App_Entry::getContent()"></a><h4 class="method public">getContent<div class="to-top"><a href="#Zend_Gdata_App_Entry">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getContent</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        <a href="_Gdata_App_Extension_Content.html#%5CZend_Gdata_App_Extension_Content">\Zend_Gdata_App_Extension_Content</a></code><p class="short-description">Gets the value of the atom:content element</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_App_Extension_Content.html#%5CZend_Gdata_App_Extension_Content">\Zend_Gdata_App_Extension_Content</a></dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_App_Entry::getControl()"></a><h4 class="method public">getControl<div class="to-top"><a href="#Zend_Gdata_App_Entry">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getControl</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        <a href="_Gdata_App_Extension_Control.html#%5CZend_Gdata_App_Extension_Control">\Zend_Gdata_App_Extension_Control</a></code><p class="short-description">Gets the value of the app:control element</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_App_Extension_Control.html#%5CZend_Gdata_App_Extension_Control">\Zend_Gdata_App_Extension_Control</a></dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_App_Entry::getDOM()"></a><h4 class="method public">getDOM<div class="to-top"><a href="#Zend_Gdata_App_Entry">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getDOM</span><span class="nb-faded-text">(
+          <a href="http://php.net/manual/en/class.domdocument.php">\DOMDocument</a> $doc
+              =
+              null,  $majorVersion
+              =
+              1,  $minorVersion
+              =
+              null
+          )
+        </span>
+        :
+        <a href="http://php.net/manual/en/class.domelement.php">\DOMElement</a></code><p class="short-description">Retrieves the DOM model representing this object and all children</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$doc</dt>
+<dd>\DOMDocument<br><em></em>
+</dd>
+<dt>$majorVersion</dt>
+<dd><em></em></dd>
+<dt>$minorVersion</dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="http://php.net/manual/en/class.domelement.php">\DOMElement</a></dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_App_Entry::getPublished()"></a><h4 class="method public">getPublished<div class="to-top"><a href="#Zend_Gdata_App_Entry">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getPublished</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        <a href="_Gdata_App_Extension_Published.html#%5CZend_Gdata_App_Extension_Published">\Zend_Gdata_App_Extension_Published</a></code><p class="short-description">Sets the value of the atom:published element
+This represents the publishing date for an entry</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_App_Extension_Published.html#%5CZend_Gdata_App_Extension_Published">\Zend_Gdata_App_Extension_Published</a></dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_App_Entry::getSource()"></a><h4 class="method public">getSource<div class="to-top"><a href="#Zend_Gdata_App_Entry">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getSource</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        <a href="_Gdata_App_Extension_Source.html#%5CZend_Gdata_App_Extension_Source">\Zend_Gdata_App_Extension_Source</a></code><p class="short-description">Gets the value of the atom:source element</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_App_Extension_Source.html#%5CZend_Gdata_App_Extension_Source">\Zend_Gdata_App_Extension_Source</a></dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_App_Entry::getSummary()"></a><h4 class="method public">getSummary<div class="to-top"><a href="#Zend_Gdata_App_Entry">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getSummary</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        <a href="_Gdata_App_Extension_Summary.html#%5CZend_Gdata_App_Extension_Summary">\Zend_Gdata_App_Extension_Summary</a></code><p class="short-description">Gets the value of the atom:summary element
+This represents a textual summary of this entry's content</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_App_Extension_Summary.html#%5CZend_Gdata_App_Extension_Summary">\Zend_Gdata_App_Extension_Summary</a></dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_App_Entry::reload()"></a><h4 class="method public">reload<div class="to-top"><a href="#Zend_Gdata_App_Entry">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">reload</span><span class="nb-faded-text">(
+          string|null $uri
+              =
+              null, string|null $className
+              =
+              null, array $extraHeaders
+              =
+              array
+          )
+        </span>
+        :
+        mixed</code><p class="short-description">Reload the current entry. Returns a new copy of the entry as returned
+by the server, or null if no changes exist. This does not
+modify the current entry instance.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$uri</dt>
+<dd>stringnull<br><em>The URI to send requests to, or null if $data contains the URI.</em>
+</dd>
+<dt>$className</dt>
+<dd>stringnull<br><em>The name of the class that should we deserializing the server response. If null, then &amp;#039;Zend_Gdata_App_Entry&amp;#039; will be used.</em>
+</dd>
+<dt>$extraHeaders</dt>
+<dd>array<br><em>Extra headers to add to the request, as an array of string-based key/value pairs.</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>mixed</dt>
+<dd><em>A new instance of the current entry with updated data, or null if the server reports that no changes have been made.</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_App_Exception.html#%5CZend_Gdata_App_Exception"></a></dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_App_Entry::save()"></a><h4 class="method public">save<div class="to-top"><a href="#Zend_Gdata_App_Entry">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">save</span><span class="nb-faded-text">(
+          string|null $uri
+              =
+              null, string|null $className
+              =
+              null, array $extraHeaders
+              =
+              array
+          )
+        </span>
+        :
+        <a href="_Gdata_App_Entry.html#%5CZend_Gdata_App_Entry">\Zend_Gdata_App_Entry</a></code><p class="short-description">Uploads changes in this entry to the server using Zend_Gdata_App</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$uri</dt>
+<dd>stringnull<br><em>The URI to send requests to, or null if $data contains the URI.</em>
+</dd>
+<dt>$className</dt>
+<dd>stringnull<br><em>The name of the class that should we deserializing the server response. If null, then &amp;#039;Zend_Gdata_App_Entry&amp;#039; will be used.</em>
+</dd>
+<dt>$extraHeaders</dt>
+<dd>array<br><em>Extra headers to add to the request, as an array of string-based key/value pairs.</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_App_Entry.html#%5CZend_Gdata_App_Entry">\Zend_Gdata_App_Entry</a></dt>
+<dd><em>The updated entry.</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_App_Exception.html#%5CZend_Gdata_App_Exception"></a></dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_App_Entry::setContent()"></a><h4 class="method public">setContent<div class="to-top"><a href="#Zend_Gdata_App_Entry">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">setContent</span><span class="nb-faded-text">(
+          <a href="_Gdata_App_Extension_Content.html#%5CZend_Gdata_App_Extension_Content">\Zend_Gdata_App_Extension_Content</a> $value
+          )
+        </span>
+        :
+        <a href="_Gdata_App_Entry.html#%5CZend_Gdata_App_Entry">\Zend_Gdata_App_Entry</a></code><p class="short-description">Sets the value of the atom:content element</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$value</dt>
+<dd>\Zend_Gdata_App_Extension_Content<br><em></em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_App_Entry.html#%5CZend_Gdata_App_Entry">\Zend_Gdata_App_Entry</a></dt>
+<dd><em>Provides a fluent interface</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_App_Entry::setControl()"></a><h4 class="method public">setControl<div class="to-top"><a href="#Zend_Gdata_App_Entry">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">setControl</span><span class="nb-faded-text">(
+          <a href="_Gdata_App_Extension_Control.html#%5CZend_Gdata_App_Extension_Control">\Zend_Gdata_App_Extension_Control</a> $value
+          )
+        </span>
+        :
+        <a href="_Gdata_App_Entry.html#%5CZend_Gdata_App_Entry">\Zend_Gdata_App_Entry</a></code><p class="short-description">Sets the value of the app:control element</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$value</dt>
+<dd>\Zend_Gdata_App_Extension_Control<br><em></em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_App_Entry.html#%5CZend_Gdata_App_Entry">\Zend_Gdata_App_Entry</a></dt>
+<dd><em>Provides a fluent interface</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_App_Entry::setPublished()"></a><h4 class="method public">setPublished<div class="to-top"><a href="#Zend_Gdata_App_Entry">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">setPublished</span><span class="nb-faded-text">(
+          <a href="_Gdata_App_Extension_Published.html#%5CZend_Gdata_App_Extension_Published">\Zend_Gdata_App_Extension_Published</a> $value
+          )
+        </span>
+        :
+        <a href="_Gdata_App_Entry.html#%5CZend_Gdata_App_Entry">\Zend_Gdata_App_Entry</a></code><p class="short-description">Sets the value of the atom:published element
+This represents the publishing date for an entry</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$value</dt>
+<dd>\Zend_Gdata_App_Extension_Published<br><em></em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_App_Entry.html#%5CZend_Gdata_App_Entry">\Zend_Gdata_App_Entry</a></dt>
+<dd><em>Provides a fluent interface</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_App_Entry::setSource()"></a><h4 class="method public">setSource<div class="to-top"><a href="#Zend_Gdata_App_Entry">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">setSource</span><span class="nb-faded-text">(
+          <a href="_Gdata_App_Extension_Source.html#%5CZend_Gdata_App_Extension_Source">\Zend_Gdata_App_Extension_Source</a> $value
+          )
+        </span>
+        :
+        <a href="_Gdata_App_Entry.html#%5CZend_Gdata_App_Entry">\Zend_Gdata_App_Entry</a></code><p class="short-description">Sets the value of the atom:source element</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$value</dt>
+<dd>\Zend_Gdata_App_Extension_Source<br><em></em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_App_Entry.html#%5CZend_Gdata_App_Entry">\Zend_Gdata_App_Entry</a></dt>
+<dd><em>Provides a fluent interface</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_App_Entry::setSummary()"></a><h4 class="method public">setSummary<div class="to-top"><a href="#Zend_Gdata_App_Entry">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">setSummary</span><span class="nb-faded-text">(
+          <a href="_Gdata_App_Extension_Summary.html#%5CZend_Gdata_App_Extension_Summary">\Zend_Gdata_App_Extension_Summary</a> $value
+          )
+        </span>
+        :
+        <a href="_Gdata_App_Entry.html#%5CZend_Gdata_App_Entry">\Zend_Gdata_App_Entry</a></code><p class="short-description">Sets the value of the atom:summary element
+This represents a textual summary of this entry's content</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$value</dt>
+<dd>\Zend_Gdata_App_Extension_Summary<br><em></em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_App_Entry.html#%5CZend_Gdata_App_Entry">\Zend_Gdata_App_Entry</a></dt>
+<dd><em>Provides a fluent interface</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_App_Entry::takeChildFromDOM()"></a><h4 class="method protected">takeChildFromDOM<div class="to-top"><a href="#Zend_Gdata_App_Entry">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">takeChildFromDOM</span><span class="nb-faded-text">(
+          <a href="http://php.net/manual/en/class.domnode.php">\DOMNode</a> $child
+          )
+        </span>
+        :
+        </code><p class="short-description">Creates individual Entry objects of the appropriate type and
+stores them in the $_entry array based upon DOM data.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$child</dt>
+<dd>\DOMNode<br><em>The DOMNode to process</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<small xmlns="" class="footer">Documentation was generated by <a href="http://docblox-project.org">DocBlox 0.12.2</a>.
+    </small></body></html>

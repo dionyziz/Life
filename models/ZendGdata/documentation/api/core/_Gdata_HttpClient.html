@@ -1,0 +1,916 @@
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title>Zend Gdata API Documentation</title><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" href="css/black-tie/jquery-ui-1.8.2.custom.css" type="text/css"></link><link rel="stylesheet" href="css/jquery.treeview.css" type="text/css"></link><link rel="stylesheet" href="css/theme.css" type="text/css"></link><script type="text/javascript" src="js/jquery-1.4.2.min.js"></script><script type="text/javascript" src="js/jquery-ui-1.8.2.custom.min.js"></script><script type="text/javascript" src="js/jquery.cookie.js"></script><script type="text/javascript" src="js/jquery.treeview.js"></script><script type="text/javascript">
+            $(document).ready(function() {
+                $(".filetree").treeview({
+                    collapsed: true,
+                    persist: "cookie"
+                });
+
+                $("#accordion").accordion({
+                    collapsible: true,
+                    autoHeight:  false,
+                    fillSpace:   true
+                });
+
+                $(".tabs").tabs();
+            });
+        </script></head><body><div xmlns="" class="content">
+<div class="sub-page-main-header-api-documentation"><h2>API Documentation</h2></div>
+<div class="dotted-line"></div>
+</div>
+<div xmlns="" id="content">
+<script>
+      $(document).ready(function() {
+        $('dl.function-info, dl.constant-info, dl.property-info').prev().css('cursor', 'pointer');
+        $('dl.function-info, dl.constant-info, dl.property-info').prev().click(function() {
+          if ($(this).next().is(':hidden'))
+          {
+            $(this).children('img')[0].src = 'images/arrow_down.gif';
+          } else
+          {
+            $(this).children('img')[0].src = 'images/arrow_right.gif';
+          }
+          $(this).next().slideToggle();
+        });
+      $('dl.function-info, dl.constant-info, dl.property-info').hide();
+      $('dl.function-info img, dl.constant-info img, dl.property-info img').show();
+      });
+    </script><a name="top"></a><h1 class="file">Gdata/HttpClient.php</h1>
+<div class="file_menu">
+<a href="#includes">Includes</a> <a href="#classes">Classes</a> </div>
+<dl class="file-info">
+<dt>category</dt>
+<dd>Zend</dd>
+<dt>copyright</dt>
+<dd>Copyright (c) 2005-2011 Zend Technologies USA Inc. (http://www.zend.com)</dd>
+<dt>license</dt>
+<dd>http://framework.zend.com/license/new-bsd     New BSD License</dd>
+<dt>package</dt>
+<dd>Zend_Gdata</dd>
+<dt>subpackage</dt>
+<dd>Gdata</dd>
+<dt>version</dt>
+<dd>$Id: HttpClient.php 23775 2011-03-01 17:25:24Z ralph $</dd>
+<dt>Classes</dt>
+<dd><a class="class" href="#%5CZend_Gdata_HttpClient">Zend_Gdata_HttpClient</a></dd>
+</dl>
+<h2>Description</h2>
+<p class="short-description">Zend Framework</p>
+<div class="long-description"><p>LICENSE</p>
+
+<p>This source file is subject to the new BSD license that is bundled
+with this package in the file LICENSE.txt.
+It is also available through the world-wide-web at this URL:
+http://framework.zend.com/license/new-bsd
+If you did not receive a copy of the license and are unable to
+obtain it through the world-wide-web, please send an email
+to license@zend.com so we can send you a copy immediately.</p>
+</div>
+<a name="classes"></a><a id="\Zend_Gdata_HttpClient"></a><h2 class="class">\Zend_Gdata_HttpClient<div class="to-top"><a href="#top">jump to top</a></div>
+</h2>
+<div class="class">
+<dl class="class-info">
+<dt>Extends from</dt>
+<dd><a href="_Http_Client.html#%5CZend_Http_Client">\Zend_Http_Client</a></dd>
+<dt>category</dt>
+<dd>Zend</dd>
+<dt>copyright</dt>
+<dd>Copyright (c) 2005-2011 Zend Technologies USA Inc. (http://www.zend.com)</dd>
+<dt>license</dt>
+<dd>http://framework.zend.com/license/new-bsd     New BSD License</dd>
+<dt>package</dt>
+<dd>Zend_Gdata</dd>
+<dt>subpackage</dt>
+<dd>Gdata</dd>
+<dt><a href="#" onclick="$(this).children('img').toggle().parents('dt').nextUntil('dt').slideToggle(); return false;"><img src="images/arrow_down.gif"><img src="images/arrow_right.gif" style="display: none">
+                Properties
+              </a></dt>
+<dd><a class="property private" href="#%5CZend_Gdata_HttpClient::%24_authSubPrivateKeyId">$_authSubPrivateKeyId</a></dd>
+<dd><a class="property private" href="#%5CZend_Gdata_HttpClient::%24_authSubToken">$_authSubToken</a></dd>
+<dd><a class="property private" href="#%5CZend_Gdata_HttpClient::%24_clientLoginKey">$_clientLoginKey</a></dd>
+<dd><a class="property private" href="#%5CZend_Gdata_HttpClient::%24_clientLoginToken">$_clientLoginToken</a></dd>
+<dd><a class="property protected" href="#%5CZend_Gdata_HttpClient::%24_streamingRequest">$_streamingRequest</a></dd>
+<dt><a href="#" onclick="$(this).children('img').toggle().parents('dt').nextUntil('dt').slideToggle(); return false;"><img src="images/arrow_down.gif"><img src="images/arrow_right.gif" style="display: none">
+                Methods
+              </a></dt>
+<dd><a class="method protected" href="#%5CZend_Gdata_HttpClient::_prepareBody()">_prepareBody</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_HttpClient::filterHttpRequest()">filterHttpRequest</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_HttpClient::filterHttpResponse()">filterHttpResponse</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_HttpClient::getAdapter()">getAdapter</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_HttpClient::getAuthSubPrivateKeyId()">getAuthSubPrivateKeyId</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_HttpClient::getAuthSubToken()">getAuthSubToken</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_HttpClient::getClientLoginToken()">getClientLoginToken</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_HttpClient::getStreamingRequest()">getStreamingRequest</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_HttpClient::resetParameters()">resetParameters</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_HttpClient::setAdapter()">setAdapter</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_HttpClient::setAuthSubPrivateKey()">setAuthSubPrivateKey</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_HttpClient::setAuthSubPrivateKeyFile()">setAuthSubPrivateKeyFile</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_HttpClient::setAuthSubToken()">setAuthSubToken</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_HttpClient::setClientLoginToken()">setClientLoginToken</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_HttpClient::setRawDataStream()">setRawDataStream</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_HttpClient::setStreamingRequest()">setStreamingRequest</a></dd>
+</dl>
+<h3>Description</h3>
+<p class="short-description">Gdata Http Client object.</p>
+<div class="long-description"><p>Class to extend the generic Zend Http Client with the ability to perform
+secure AuthSub requests</p>
+</div>
+<h3>Properties</h3>
+<div>
+<a id="\Zend_Gdata_HttpClient::$_authSubPrivateKeyId"></a><h4 class="property private">$_authSubPrivateKeyId<div class="to-top"><a href="#%5CZend_Gdata_HttpClient">jump to class</a></div>
+</h4>
+<div class="property">
+<code>resource <span class="highlight">$_authSubPrivateKeyId</span> = 'null'</code><p class="short-description">OpenSSL private key resource id
+This key is used for AuthSub authentication.  If this value is set,
+it is assuemd that secure AuthSub is desired.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt></dt>
+<dd>resource<br><em></em>
+</dd>
+<dt>visibility</dt>
+<dd>private</dd>
+<dt>default</dt>
+<dd>null</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_HttpClient::$_authSubToken"></a><h4 class="property private">$_authSubToken<div class="to-top"><a href="#%5CZend_Gdata_HttpClient">jump to class</a></div>
+</h4>
+<div class="property">
+<code>string <span class="highlight">$_authSubToken</span> = 'null'</code><p class="short-description">Token for AuthSub authentication.</p>
+<div class="long-description"><p>If this token is set, AuthSub authentication is used.</p>
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt></dt>
+<dd>string<br><em></em>
+</dd>
+<dt>visibility</dt>
+<dd>private</dd>
+<dt>default</dt>
+<dd>null</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_HttpClient::$_clientLoginKey"></a><h4 class="property private">$_clientLoginKey<div class="to-top"><a href="#%5CZend_Gdata_HttpClient">jump to class</a></div>
+</h4>
+<div class="property">
+<code>string <span class="highlight">$_clientLoginKey</span> = 'null'</code><p class="short-description">Token for ClientLogin authentication.</p>
+<div class="long-description"><p>If this token is set, and the AuthSub key is not set,
+ClientLogin authentication is used</p>
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt></dt>
+<dd>string<br><em></em>
+</dd>
+<dt>visibility</dt>
+<dd>private</dd>
+<dt>default</dt>
+<dd>null</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_HttpClient::$_clientLoginToken"></a><h4 class="property private">$_clientLoginToken<div class="to-top"><a href="#%5CZend_Gdata_HttpClient">jump to class</a></div>
+</h4>
+<div class="property">
+<code>string <span class="highlight">$_clientLoginToken</span> = 'null'</code><p class="short-description">Token for ClientLogin authentication.</p>
+<div class="long-description"><p>If only this token is set, ClientLogin authentication is used.</p>
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt></dt>
+<dd>string<br><em></em>
+</dd>
+<dt>visibility</dt>
+<dd>private</dd>
+<dt>default</dt>
+<dd>null</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_HttpClient::$_streamingRequest"></a><h4 class="property protected">$_streamingRequest<div class="to-top"><a href="#%5CZend_Gdata_HttpClient">jump to class</a></div>
+</h4>
+<div class="property">
+<code>bool <span class="highlight">$_streamingRequest</span> = 'null'</code><p class="short-description">True if this request is being made with data supplied by
+a stream object instead of a raw encoded string.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt></dt>
+<dd>bool<br><em></em>
+</dd>
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd>null</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+</div>
+<h3>Methods</h3>
+<div>
+<a id="\Zend_Gdata_HttpClient::_prepareBody()"></a><h4 class="method protected">_prepareBody<div class="to-top"><a href="#Zend_Gdata_HttpClient">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">_prepareBody</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        string</code><p class="short-description">Prepare the request body (for POST and PUT requests)</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>string</dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+<dt>throws</dt>
+<dd><a href="_Http_Client_Exception.html#%5CZend_Http_Client_Exception"></a></dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_HttpClient::filterHttpRequest()"></a><h4 class="method public">filterHttpRequest<div class="to-top"><a href="#Zend_Gdata_HttpClient">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">filterHttpRequest</span><span class="nb-faded-text">(
+          string $method, string $url, array $headers
+              =
+              array, string $body
+              =
+              null, string $contentType
+              =
+              null
+          )
+        </span>
+        :
+        array</code><p class="short-description">Filters the HTTP requests being sent to add the Authorization header.</p>
+<div class="long-description"><p>If both AuthSub and ClientLogin tokens are set,
+AuthSub takes precedence.  If an AuthSub key is set, then
+secure AuthSub authentication is used, and the request is signed.
+Requests must be signed only with the private key corresponding to the
+public key registered with Google.  If an AuthSub key is set, but
+openssl support is not enabled in the PHP installation, an exception is
+thrown.</p>
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$method</dt>
+<dd>string<br><em>The HTTP method</em>
+</dd>
+<dt>$url</dt>
+<dd>string<br><em>The URL</em>
+</dd>
+<dt>$headers</dt>
+<dd>array<br><em>An associate array of headers to be sent with the request or null</em>
+</dd>
+<dt>$body</dt>
+<dd>string<br><em>The body of the request or null</em>
+</dd>
+<dt>$contentType</dt>
+<dd>string<br><em>The MIME content type of the body or null</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>array</dt>
+<dd><em>The processed values in an associative array, using the same names as the params</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_App_Exception.html#%5CZend_Gdata_App_Exception">if there was a signing failure</a></dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_HttpClient::filterHttpResponse()"></a><h4 class="method public">filterHttpResponse<div class="to-top"><a href="#Zend_Gdata_HttpClient">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">filterHttpResponse</span><span class="nb-faded-text">(
+          <a href="_Http_Response.html#%5CZend_Http_Response">\Zend_Http_Response</a> $response
+          )
+        </span>
+        :
+        <a href="_Http_Response.html#%5CZend_Http_Response">\Zend_Http_Response</a></code><p class="short-description">Method for filtering the HTTP response, though no filtering is
+currently done.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$response</dt>
+<dd>\Zend_Http_Response<br><em>The response object to filter</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Http_Response.html#%5CZend_Http_Response">\Zend_Http_Response</a></dt>
+<dd><em>The filterd response object</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_HttpClient::getAdapter()"></a><h4 class="method public">getAdapter<div class="to-top"><a href="#Zend_Gdata_HttpClient">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getAdapter</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        <a href="_Http_Client_Adapter_Interface.html#%5CZend_Http_Client_Adapter_Interface">\Zend_Http_Client_Adapter_Interface</a>|string</code><p class="short-description">Return the current connection adapter</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>
+<a href="_Http_Client_Adapter_Interface.html#%5CZend_Http_Client_Adapter_Interface">\Zend_Http_Client_Adapter_Interface</a>|string</dt>
+<dd><em>$adapter</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_HttpClient::getAuthSubPrivateKeyId()"></a><h4 class="method public">getAuthSubPrivateKeyId<div class="to-top"><a href="#Zend_Gdata_HttpClient">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getAuthSubPrivateKeyId</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        string</code><p class="short-description">Gets the openssl private key id</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>string</dt>
+<dd><em>The private key</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_HttpClient::getAuthSubToken()"></a><h4 class="method public">getAuthSubToken<div class="to-top"><a href="#Zend_Gdata_HttpClient">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getAuthSubToken</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        string</code><p class="short-description">Gets the AuthSub token used for authentication</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>string</dt>
+<dd><em>The token</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_HttpClient::getClientLoginToken()"></a><h4 class="method public">getClientLoginToken<div class="to-top"><a href="#Zend_Gdata_HttpClient">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getClientLoginToken</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        string</code><p class="short-description">Gets the ClientLogin token used for authentication</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>string</dt>
+<dd><em>The token</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_HttpClient::getStreamingRequest()"></a><h4 class="method public">getStreamingRequest<div class="to-top"><a href="#Zend_Gdata_HttpClient">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getStreamingRequest</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        boolean</code><p class="short-description">Check whether the client is set to perform streaming requests.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>boolean</dt>
+<dd><em>True if yes, false otherwise.</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_HttpClient::resetParameters()"></a><h4 class="method public">resetParameters<div class="to-top"><a href="#Zend_Gdata_HttpClient">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">resetParameters</span><span class="nb-faded-text">(
+          bool $clearAll
+              =
+              false
+          )
+        </span>
+        :
+        <a href="_Http_Client.html#%5CZend_Http_Client">\Zend_Http_Client</a></code><p class="short-description">Clear all custom parameters we set.</p>
+<div class="long-description"><p>Should be used to reset the request parameters if the client is
+used for several concurrent requests.</p>
+
+<p>clearAll parameter controls if we clean just parameters or also
+headers and last_*</p>
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$clearAll</dt>
+<dd>bool<br><em>Should all data be cleared?</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Http_Client.html#%5CZend_Http_Client">\Zend_Http_Client</a></dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_HttpClient::setAdapter()"></a><h4 class="method public">setAdapter<div class="to-top"><a href="#Zend_Gdata_HttpClient">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">setAdapter</span><span class="nb-faded-text">(
+          <a href="_Http_Client_Adapter_Interface.html#%5CZend_Http_Client_Adapter_Interface">\Zend_Http_Client_Adapter_Interface</a> $adapter
+          )
+        </span>
+        :
+        void</code><p class="short-description">Load the connection adapter</p>
+<div class="long-description"><p>While this method is not called more than one for a client, it is
+seperated from ->request() to preserve logic and readability</p>
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$adapter</dt>
+<dd>\Zend_Http_Client_Adapter_Interface<br><em></em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+<dt>throws</dt>
+<dd><a href="_Http_Client_Exception.html#%5CZend_Http_Client_Exception"></a></dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_HttpClient::setAuthSubPrivateKey()"></a><h4 class="method public">setAuthSubPrivateKey<div class="to-top"><a href="#Zend_Gdata_HttpClient">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">setAuthSubPrivateKey</span><span class="nb-faded-text">(
+          string $key, string $passphrase
+              =
+              null
+          )
+        </span>
+        :
+        <a href="_Gdata_HttpClient.html#%5CZend_Gdata_HttpClient">\Zend_Gdata_HttpClient</a></code><p class="short-description">Sets the PEM formatted private key to be used for secure AuthSub auth.</p>
+<div class="long-description"><p>In order to call this method, openssl must be enabled in your PHP
+installation.  Otherwise, a Zend_Gdata_App_InvalidArgumentException
+will be thrown.</p>
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$key</dt>
+<dd>string<br><em>The private key</em>
+</dd>
+<dt>$passphrase</dt>
+<dd>string<br><em>The optional private key passphrase</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_HttpClient.html#%5CZend_Gdata_HttpClient">\Zend_Gdata_HttpClient</a></dt>
+<dd><em>Provides a fluent interface</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_App_InvalidArgumentException.html#%5CZend_Gdata_App_InvalidArgumentException"></a></dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_HttpClient::setAuthSubPrivateKeyFile()"></a><h4 class="method public">setAuthSubPrivateKeyFile<div class="to-top"><a href="#Zend_Gdata_HttpClient">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">setAuthSubPrivateKeyFile</span><span class="nb-faded-text">(
+          string $file, string $passphrase
+              =
+              null, bool $useIncludePath
+              =
+              false
+          )
+        </span>
+        :
+        void</code><p class="short-description">Sets the PEM formatted private key, as read from a file.</p>
+<div class="long-description"><p>This method reads the file and then calls setAuthSubPrivateKey()
+with the file contents.</p>
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$file</dt>
+<dd>string<br><em>The location of the file containing the PEM key</em>
+</dd>
+<dt>$passphrase</dt>
+<dd>string<br><em>The optional private key passphrase</em>
+</dd>
+<dt>$useIncludePath</dt>
+<dd>bool<br><em>Whether to search the include_path for the file</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_HttpClient::setAuthSubToken()"></a><h4 class="method public">setAuthSubToken<div class="to-top"><a href="#Zend_Gdata_HttpClient">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">setAuthSubToken</span><span class="nb-faded-text">(
+          string $token
+          )
+        </span>
+        :
+        <a href="_Gdata_HttpClient.html#%5CZend_Gdata_HttpClient">\Zend_Gdata_HttpClient</a></code><p class="short-description">Sets the AuthSub token used for authentication</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$token</dt>
+<dd>string<br><em>The token</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_HttpClient.html#%5CZend_Gdata_HttpClient">\Zend_Gdata_HttpClient</a></dt>
+<dd><em>Provides a fluent interface</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_HttpClient::setClientLoginToken()"></a><h4 class="method public">setClientLoginToken<div class="to-top"><a href="#Zend_Gdata_HttpClient">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">setClientLoginToken</span><span class="nb-faded-text">(
+          string $token
+          )
+        </span>
+        :
+        <a href="_Gdata_HttpClient.html#%5CZend_Gdata_HttpClient">\Zend_Gdata_HttpClient</a></code><p class="short-description">Sets the ClientLogin token used for authentication</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$token</dt>
+<dd>string<br><em>The token</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_HttpClient.html#%5CZend_Gdata_HttpClient">\Zend_Gdata_HttpClient</a></dt>
+<dd><em>Provides a fluent interface</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_HttpClient::setRawDataStream()"></a><h4 class="method public">setRawDataStream<div class="to-top"><a href="#Zend_Gdata_HttpClient">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">setRawDataStream</span><span class="nb-faded-text">(
+          string $data, string $enctype
+              =
+              null
+          )
+        </span>
+        :
+        <a href="_Http_Client.html#%5CZend_Http_Client">\Zend_Http_Client</a></code><p class="short-description">Set the raw (already encoded) POST data from a stream source.</p>
+<div class="long-description"><p>This is used to support POSTing from open file handles without
+caching the entire body into memory. It is a wrapper around
+Zend_Http_Client::setRawData().</p>
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$data</dt>
+<dd>string<br><em>The request data</em>
+</dd>
+<dt>$enctype</dt>
+<dd>string<br><em>The encoding type</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Http_Client.html#%5CZend_Http_Client">\Zend_Http_Client</a></dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_HttpClient::setStreamingRequest()"></a><h4 class="method public">setStreamingRequest<div class="to-top"><a href="#Zend_Gdata_HttpClient">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">setStreamingRequest</span><span class="nb-faded-text">(
+          boolean $value
+          )
+        </span>
+        :
+        void</code><p class="short-description">Set the streamingRequest variable which controls whether we are
+sending the raw (already encoded) POST data from a stream source.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$value</dt>
+<dd>boolean<br><em>The value to set.</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<small xmlns="" class="footer">Documentation was generated by <a href="http://docblox-project.org">DocBlox 0.12.2</a>.
+    </small></body></html>

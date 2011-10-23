@@ -1,0 +1,3478 @@
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title>Zend Gdata API Documentation</title><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" href="css/black-tie/jquery-ui-1.8.2.custom.css" type="text/css"></link><link rel="stylesheet" href="css/jquery.treeview.css" type="text/css"></link><link rel="stylesheet" href="css/theme.css" type="text/css"></link><script type="text/javascript" src="js/jquery-1.4.2.min.js"></script><script type="text/javascript" src="js/jquery-ui-1.8.2.custom.min.js"></script><script type="text/javascript" src="js/jquery.cookie.js"></script><script type="text/javascript" src="js/jquery.treeview.js"></script><script type="text/javascript">
+            $(document).ready(function() {
+                $(".filetree").treeview({
+                    collapsed: true,
+                    persist: "cookie"
+                });
+
+                $("#accordion").accordion({
+                    collapsible: true,
+                    autoHeight:  false,
+                    fillSpace:   true
+                });
+
+                $(".tabs").tabs();
+            });
+        </script></head><body><div xmlns="" class="content">
+<div class="sub-page-main-header-api-documentation"><h2>API Documentation</h2></div>
+<div class="dotted-line"></div>
+</div>
+<div xmlns="" id="content">
+<script>
+      $(document).ready(function() {
+        $('dl.function-info, dl.constant-info, dl.property-info').prev().css('cursor', 'pointer');
+        $('dl.function-info, dl.constant-info, dl.property-info').prev().click(function() {
+          if ($(this).next().is(':hidden'))
+          {
+            $(this).children('img')[0].src = 'images/arrow_down.gif';
+          } else
+          {
+            $(this).children('img')[0].src = 'images/arrow_right.gif';
+          }
+          $(this).next().slideToggle();
+        });
+      $('dl.function-info, dl.constant-info, dl.property-info').hide();
+      $('dl.function-info img, dl.constant-info img, dl.property-info img').show();
+      });
+    </script><a name="top"></a><h1 class="file">Gdata/Gapps.php</h1>
+<div class="file_menu">
+<a href="#includes">Includes</a> <a href="#functions">Functions</a> <a href="#classes">Classes</a> </div>
+<dl class="file-info">
+<dt>category</dt>
+<dd>Zend</dd>
+<dt>copyright</dt>
+<dd>Copyright (c) 2005-2011 Zend Technologies USA Inc. (http://www.zend.com)</dd>
+<dt>license</dt>
+<dd>http://framework.zend.com/license/new-bsd     New BSD License</dd>
+<dt>package</dt>
+<dd>Zend_Gdata</dd>
+<dt>subpackage</dt>
+<dd>Gapps</dd>
+<dt>version</dt>
+<dd>$Id: Gapps.php 23775 2011-03-01 17:25:24Z ralph $</dd>
+<dt>Functions</dt>
+<dd><a class="function" href="#::createUser()">createUser</a></dd>
+<dd><a class="function" href="#::retrieveUser()">retrieveUser</a></dd>
+<dd><a class="function" href="#::retrievePageOfUsers()">retrievePageOfUsers</a></dd>
+<dd><a class="function" href="#::retrieveAllUsers()">retrieveAllUsers</a></dd>
+<dd><a class="function" href="#::updateUser()">updateUser</a></dd>
+<dd><a class="function" href="#::suspendUser()">suspendUser</a></dd>
+<dd><a class="function" href="#::restoreUser()">restoreUser</a></dd>
+<dd><a class="function" href="#::deleteUser()">deleteUser</a></dd>
+<dd><a class="function" href="#::createNickname()">createNickname</a></dd>
+<dd><a class="function" href="#::retrieveNickname()">retrieveNickname</a></dd>
+<dd><a class="function" href="#::retrieveNicknames()">retrieveNicknames</a></dd>
+<dd><a class="function" href="#::retrievePageOfNicknames()">retrievePageOfNicknames</a></dd>
+<dd><a class="function" href="#::retrieveAllNicknames()">retrieveAllNicknames</a></dd>
+<dd><a class="function" href="#::deleteNickname()">deleteNickname</a></dd>
+<dd><a class="function" href="#::createGroup()">createGroup</a></dd>
+<dd><a class="function" href="#::retrieveGroup()">retrieveGroup</a></dd>
+<dd><a class="function" href="#::retrieveAllGroups()">retrieveAllGroups</a></dd>
+<dd><a class="function" href="#::deleteGroup()">deleteGroup</a></dd>
+<dd><a class="function" href="#::isMember()">isMember</a></dd>
+<dd><a class="function" href="#::addMemberToGroup()">addMemberToGroup</a></dd>
+<dd><a class="function" href="#::removeMemberFromGroup()">removeMemberFromGroup</a></dd>
+<dd><a class="function" href="#::retrieveAllMembers()">retrieveAllMembers</a></dd>
+<dd><a class="function" href="#::addOwnerToGroup()">addOwnerToGroup</a></dd>
+<dd><a class="function" href="#::retrieveGroupOwners()">retrieveGroupOwners</a></dd>
+<dd><a class="function" href="#::isOwner()">isOwner</a></dd>
+<dd><a class="function" href="#::removeOwnerFromGroup()">removeOwnerFromGroup</a></dd>
+<dd><a class="function" href="#::updateGroup()">updateGroup</a></dd>
+<dd><a class="function" href="#::retrieveGroups()">retrieveGroups</a></dd>
+<dd><a class="function" href="#::retrievePageOfGroups()">retrievePageOfGroups</a></dd>
+<dd><a class="function" href="#::retrievePageOfMembers()">retrievePageOfMembers</a></dd>
+<dd><a class="function" href="#::createEmailList()">createEmailList</a></dd>
+<dd><a class="function" href="#::retrieveEmailLists()">retrieveEmailLists</a></dd>
+<dd><a class="function" href="#::retrievePageOfEmailLists()">retrievePageOfEmailLists</a></dd>
+<dd><a class="function" href="#::retrieveAllEmailLists()">retrieveAllEmailLists</a></dd>
+<dd><a class="function" href="#::deleteEmailList()">deleteEmailList</a></dd>
+<dd><a class="function" href="#::addRecipientToEmailList()">addRecipientToEmailList</a></dd>
+<dd><a class="function" href="#::retrievePageOfRecipients()">retrievePageOfRecipients</a></dd>
+<dd><a class="function" href="#::retrieveAllRecipients()">retrieveAllRecipients</a></dd>
+<dd><a class="function" href="#::removeRecipientFromEmailList()">removeRecipientFromEmailList</a></dd>
+<dt>Classes</dt>
+<dd><a class="class" href="#%5CZend_Gdata_Gapps">Zend_Gdata_Gapps</a></dd>
+</dl>
+<h2>Description</h2>
+<p class="short-description">Zend Framework</p>
+<div class="long-description"><p>LICENSE</p>
+
+<p>This source file is subject to the new BSD license that is bundled
+with this package in the file LICENSE.txt.
+It is also available through the world-wide-web at this URL:
+http://framework.zend.com/license/new-bsd
+If you did not receive a copy of the license and are unable to
+obtain it through the world-wide-web, please send an email
+to license@zend.com so we can send you a copy immediately.</p>
+</div>
+<a name="functions"></a><h2>Functions</h2>
+<div>
+<a id="::addMemberToGroup()"></a><h3 class="function ">addMemberToGroup<div class="to-top"><a href="#top">jump to top</a></div>
+</h3>
+<div class="function">
+<code><span class="highlight">addMemberToGroup</span><span class="nb-faded-text">(
+          string $recipientAddress, string $groupId
+          )
+        </span>
+        :
+        <a href="_Gdata_Gapps_MemberEntry.html#%5CZend_Gdata_Gapps_MemberEntry">\Zend_Gdata_Gapps_MemberEntry</a></code><p class="short-description">Add an email address to a group as a member</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="arguments">Arguments</h4>
+<dl class="argument-info">
+<dt>$recipientAddress</dt>
+<dd>string<br><em>Email address, member id, or group id</em>
+</dd>
+<dt>$groupId</dt>
+<dd>string<br><em>The unique id of the group</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h4 class="output">Output</h4>
+<dl class="return-info">
+<dt><a href="_Gdata_Gapps_MemberEntry.html#%5CZend_Gdata_Gapps_MemberEntry">\Zend_Gdata_Gapps_MemberEntry</a></dt>
+<dd><em>The member entry returned by the server</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="::addOwnerToGroup()"></a><h3 class="function ">addOwnerToGroup<div class="to-top"><a href="#top">jump to top</a></div>
+</h3>
+<div class="function">
+<code><span class="highlight">addOwnerToGroup</span><span class="nb-faded-text">(
+          string $email, string $groupId
+          )
+        </span>
+        :
+        <a href="_Gdata_Gapps_OwnerEntry.html#%5CZend_Gdata_Gapps_OwnerEntry">\Zend_Gdata_Gapps_OwnerEntry</a></code><p class="short-description">Add an email as an owner of a group</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="arguments">Arguments</h4>
+<dl class="argument-info">
+<dt>$email</dt>
+<dd>string<br><em>Owner&amp;#039;s email</em>
+</dd>
+<dt>$groupId</dt>
+<dd>string<br><em>Group ownership to be checked for</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h4 class="output">Output</h4>
+<dl class="return-info">
+<dt><a href="_Gdata_Gapps_OwnerEntry.html#%5CZend_Gdata_Gapps_OwnerEntry">\Zend_Gdata_Gapps_OwnerEntry</a></dt>
+<dd><em>The OwnerEntry returned by the server</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="::addRecipientToEmailList()"></a><h3 class="function ">addRecipientToEmailList<div class="to-top"><a href="#top">jump to top</a></div>
+</h3>
+<div class="function">
+<code><span class="highlight">addRecipientToEmailList</span><span class="nb-faded-text">(
+          string $recipientAddress, string $emailList
+          )
+        </span>
+        :
+        <a href="_Gdata_Gapps_EmailListRecipientEntry.html#%5CZend_Gdata_Gapps_EmailListRecipientEntry">\Zend_Gdata_Gapps_EmailListRecipientEntry</a></code><p class="short-description">Add a specified recipient to an existing emailList.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="arguments">Arguments</h4>
+<dl class="argument-info">
+<dt>$recipientAddress</dt>
+<dd>string<br><em>The address of the recipient to be added to the email list.</em>
+</dd>
+<dt>$emailList</dt>
+<dd>string<br><em>The name of the email address to which the recipient should be added.</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h4 class="output">Output</h4>
+<dl class="return-info">
+<dt><a href="_Gdata_Gapps_EmailListRecipientEntry.html#%5CZend_Gdata_Gapps_EmailListRecipientEntry">\Zend_Gdata_Gapps_EmailListRecipientEntry</a></dt>
+<dd><em>The recipient entry created by the server.</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="function-info">
+<dt>throws</dt>
+<dd><a href="_Gdata_App_Exception.html#%5CZend_Gdata_App_Exception"></a></dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_App_HttpException.html#%5CZend_Gdata_App_HttpException"></a></dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_Gapps_ServiceException.html#%5CZend_Gdata_Gapps_ServiceException"></a></dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="::createEmailList()"></a><h3 class="function ">createEmailList<div class="to-top"><a href="#top">jump to top</a></div>
+</h3>
+<div class="function">
+<code><span class="highlight">createEmailList</span><span class="nb-faded-text">(
+          string $emailList
+          )
+        </span>
+        :
+        <a href="_Gdata_Gapps_EmailListEntry.html#%5CZend_Gdata_Gapps_EmailListEntry">\Zend_Gdata_Gapps_EmailListEntry</a></code><p class="short-description">Create a new email list.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="arguments">Arguments</h4>
+<dl class="argument-info">
+<dt>$emailList</dt>
+<dd>string<br><em>The name of the email list to be created.</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h4 class="output">Output</h4>
+<dl class="return-info">
+<dt><a href="_Gdata_Gapps_EmailListEntry.html#%5CZend_Gdata_Gapps_EmailListEntry">\Zend_Gdata_Gapps_EmailListEntry</a></dt>
+<dd><em>The email list entry as created on the server.</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="function-info">
+<dt>throws</dt>
+<dd><a href="_Gdata_App_Exception.html#%5CZend_Gdata_App_Exception"></a></dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_App_HttpException.html#%5CZend_Gdata_App_HttpException"></a></dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_Gapps_ServiceException.html#%5CZend_Gdata_Gapps_ServiceException"></a></dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="::createGroup()"></a><h3 class="function ">createGroup<div class="to-top"><a href="#top">jump to top</a></div>
+</h3>
+<div class="function">
+<code><span class="highlight">createGroup</span><span class="nb-faded-text">(
+          string $groupId, string $groupName, string $description
+              =
+              null, string $emailPermission
+              =
+              null
+          )
+        </span>
+        :
+        <a href="_Gdata_Gapps_GroupEntry.html#%5CZend_Gdata_Gapps_GroupEntry">\Zend_Gdata_Gapps_GroupEntry</a></code><p class="short-description">Create a new group.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="arguments">Arguments</h4>
+<dl class="argument-info">
+<dt>$groupId</dt>
+<dd>string<br><em>A unique identifier for the group</em>
+</dd>
+<dt>$groupName</dt>
+<dd>string<br><em>The name of the group</em>
+</dd>
+<dt>$description</dt>
+<dd>string<br><em>A description of the group</em>
+</dd>
+<dt>$emailPermission</dt>
+<dd>string<br><em>The subscription permission of the group</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h4 class="output">Output</h4>
+<dl class="return-info">
+<dt><a href="_Gdata_Gapps_GroupEntry.html#%5CZend_Gdata_Gapps_GroupEntry">\Zend_Gdata_Gapps_GroupEntry</a></dt>
+<dd><em>The group entry as created on the server.</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="::createNickname()"></a><h3 class="function ">createNickname<div class="to-top"><a href="#top">jump to top</a></div>
+</h3>
+<div class="function">
+<code><span class="highlight">createNickname</span><span class="nb-faded-text">(
+          string $username, string $nickname
+          )
+        </span>
+        :
+        <a href="_Gdata_Gapps_NicknameEntry.html#%5CZend_Gdata_Gapps_NicknameEntry">\Zend_Gdata_Gapps_NicknameEntry</a></code><p class="short-description">Create a nickname for a given user.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="arguments">Arguments</h4>
+<dl class="argument-info">
+<dt>$username</dt>
+<dd>string<br><em>The username to which the new nickname should be associated.</em>
+</dd>
+<dt>$nickname</dt>
+<dd>string<br><em>The new nickname to be created.</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h4 class="output">Output</h4>
+<dl class="return-info">
+<dt><a href="_Gdata_Gapps_NicknameEntry.html#%5CZend_Gdata_Gapps_NicknameEntry">\Zend_Gdata_Gapps_NicknameEntry</a></dt>
+<dd><em>The nickname entry which was created by the server.</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="function-info">
+<dt>throws</dt>
+<dd><a href="_Gdata_App_Exception.html#%5CZend_Gdata_App_Exception"></a></dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_App_HttpException.html#%5CZend_Gdata_App_HttpException"></a></dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_Gapps_ServiceException.html#%5CZend_Gdata_Gapps_ServiceException"></a></dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="::createUser()"></a><h3 class="function ">createUser<div class="to-top"><a href="#top">jump to top</a></div>
+</h3>
+<div class="function">
+<code><span class="highlight">createUser</span><span class="nb-faded-text">(
+          string $username, string $givenName, string $familyName, string $password,  $passwordHashFunction
+              =
+              null, string $quotaLimitInMB
+              =
+              null
+          )
+        </span>
+        :
+        <a href="_Gdata_Gapps_UserEntry.html#%5CZend_Gdata_Gapps_UserEntry">\Zend_Gdata_Gapps_UserEntry</a></code><p class="short-description">Create a new user entry and send it to the Google Apps servers.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="arguments">Arguments</h4>
+<dl class="argument-info">
+<dt>$username</dt>
+<dd>string<br><em>The username for the new user.</em>
+</dd>
+<dt>$givenName</dt>
+<dd>string<br><em>The given name for the new user.</em>
+</dd>
+<dt>$familyName</dt>
+<dd>string<br><em>The family name for the new user.</em>
+</dd>
+<dt>$password</dt>
+<dd>string<br><em>The password for the new user as a plaintext string (if $passwordHashFunction is null) or a SHA-1 hashed value (if $passwordHashFunction = &amp;#039;SHA-1&amp;#039;).</em>
+</dd>
+<dt>$passwordHashFunction</dt>
+<dd><em></em></dd>
+<dt>$quotaLimitInMB</dt>
+<dd>string<br><em>(optional) The quota limit for the new user in MB.</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h4 class="output">Output</h4>
+<dl class="return-info">
+<dt><a href="_Gdata_Gapps_UserEntry.html#%5CZend_Gdata_Gapps_UserEntry">\Zend_Gdata_Gapps_UserEntry</a></dt>
+<dd><em>(optional) The new user entry as returned by server.</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="function-info">
+<dt>throws</dt>
+<dd><a href="_Gdata_App_Exception.html#%5CZend_Gdata_App_Exception"></a></dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_App_HttpException.html#%5CZend_Gdata_App_HttpException"></a></dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_Gapps_ServiceException.html#%5CZend_Gdata_Gapps_ServiceException"></a></dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="::deleteEmailList()"></a><h3 class="function ">deleteEmailList<div class="to-top"><a href="#top">jump to top</a></div>
+</h3>
+<div class="function">
+<code><span class="highlight">deleteEmailList</span><span class="nb-faded-text">(
+          string $emailList
+          )
+        </span>
+        :
+        </code><p class="short-description">Delete a specified email list.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="arguments">Arguments</h4>
+<dl class="argument-info">
+<dt>$emailList</dt>
+<dd>string<br><em>The name of the emailList to be deleted.</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="function-info">
+<dt>throws</dt>
+<dd><a href="_Gdata_App_Exception.html#%5CZend_Gdata_App_Exception"></a></dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_App_HttpException.html#%5CZend_Gdata_App_HttpException"></a></dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_Gapps_ServiceException.html#%5CZend_Gdata_Gapps_ServiceException"></a></dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="::deleteGroup()"></a><h3 class="function ">deleteGroup<div class="to-top"><a href="#top">jump to top</a></div>
+</h3>
+<div class="function">
+<code><span class="highlight">deleteGroup</span><span class="nb-faded-text">(
+          string $groupId
+          )
+        </span>
+        :
+        </code><p class="short-description">Delete a group</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="arguments">Arguments</h4>
+<dl class="argument-info">
+<dt>$groupId</dt>
+<dd>string<br><em>The unique identifier for the group</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="::deleteNickname()"></a><h3 class="function ">deleteNickname<div class="to-top"><a href="#top">jump to top</a></div>
+</h3>
+<div class="function">
+<code><span class="highlight">deleteNickname</span><span class="nb-faded-text">(
+          string $nickname
+          )
+        </span>
+        :
+        </code><p class="short-description">Delete a specified nickname.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="arguments">Arguments</h4>
+<dl class="argument-info">
+<dt>$nickname</dt>
+<dd>string<br><em>The name of the nickname to be deleted.</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="function-info">
+<dt>throws</dt>
+<dd><a href="_Gdata_App_Exception.html#%5CZend_Gdata_App_Exception"></a></dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_App_HttpException.html#%5CZend_Gdata_App_HttpException"></a></dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_Gapps_ServiceException.html#%5CZend_Gdata_Gapps_ServiceException"></a></dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="::deleteUser()"></a><h3 class="function ">deleteUser<div class="to-top"><a href="#top">jump to top</a></div>
+</h3>
+<div class="function">
+<code><span class="highlight">deleteUser</span><span class="nb-faded-text">(
+          string $username
+          )
+        </span>
+        :
+        </code><p class="short-description">Delete a user by username.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="arguments">Arguments</h4>
+<dl class="argument-info">
+<dt>$username</dt>
+<dd>string<br><em>The username associated with the user who should be deleted.</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="function-info">
+<dt>throws</dt>
+<dd><a href="_Gdata_App_Exception.html#%5CZend_Gdata_App_Exception"></a></dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_App_HttpException.html#%5CZend_Gdata_App_HttpException"></a></dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_Gapps_ServiceException.html#%5CZend_Gdata_Gapps_ServiceException"></a></dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="::isMember()"></a><h3 class="function ">isMember<div class="to-top"><a href="#top">jump to top</a></div>
+</h3>
+<div class="function">
+<code><span class="highlight">isMember</span><span class="nb-faded-text">(
+          string $memberId, string $groupId
+          )
+        </span>
+        :
+        bool</code><p class="short-description">Check to see if a member id or group id is a member of group</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="arguments">Arguments</h4>
+<dl class="argument-info">
+<dt>$memberId</dt>
+<dd>string<br><em>Member id or group group id</em>
+</dd>
+<dt>$groupId</dt>
+<dd>string<br><em>Group to be checked for</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h4 class="output">Output</h4>
+<dl class="return-info">
+<dt>bool</dt>
+<dd><em>True, if given entity is a member</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="::isOwner()"></a><h3 class="function ">isOwner<div class="to-top"><a href="#top">jump to top</a></div>
+</h3>
+<div class="function">
+<code><span class="highlight">isOwner</span><span class="nb-faded-text">(
+          string $email, string $groupId
+          )
+        </span>
+        :
+        bool</code><p class="short-description">Checks to see if an email is an owner of a group</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="arguments">Arguments</h4>
+<dl class="argument-info">
+<dt>$email</dt>
+<dd>string<br><em>Owner&amp;#039;s email</em>
+</dd>
+<dt>$groupId</dt>
+<dd>string<br><em>Group ownership to be checked for</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h4 class="output">Output</h4>
+<dl class="return-info">
+<dt>bool</dt>
+<dd><em>True, if given entity is an owner</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="::removeMemberFromGroup()"></a><h3 class="function ">removeMemberFromGroup<div class="to-top"><a href="#top">jump to top</a></div>
+</h3>
+<div class="function">
+<code><span class="highlight">removeMemberFromGroup</span><span class="nb-faded-text">(
+          string $memberId, string $groupId
+          )
+        </span>
+        :
+        </code><p class="short-description">Remove a member id from a group</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="arguments">Arguments</h4>
+<dl class="argument-info">
+<dt>$memberId</dt>
+<dd>string<br><em>Member id or group id</em>
+</dd>
+<dt>$groupId</dt>
+<dd>string<br><em>The unique id of the group</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="::removeOwnerFromGroup()"></a><h3 class="function ">removeOwnerFromGroup<div class="to-top"><a href="#top">jump to top</a></div>
+</h3>
+<div class="function">
+<code><span class="highlight">removeOwnerFromGroup</span><span class="nb-faded-text">(
+          string $email, string $groupId
+          )
+        </span>
+        :
+        </code><p class="short-description">Remove email as an owner of a group</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="arguments">Arguments</h4>
+<dl class="argument-info">
+<dt>$email</dt>
+<dd>string<br><em>Owner&amp;#039;s email</em>
+</dd>
+<dt>$groupId</dt>
+<dd>string<br><em>The unique identifier for the group</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="::removeRecipientFromEmailList()"></a><h3 class="function ">removeRecipientFromEmailList<div class="to-top"><a href="#top">jump to top</a></div>
+</h3>
+<div class="function">
+<code><span class="highlight">removeRecipientFromEmailList</span><span class="nb-faded-text">(
+          string $recipientAddress, string $emailList
+          )
+        </span>
+        :
+        </code><p class="short-description">Remove a specified recipient from an email list.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="arguments">Arguments</h4>
+<dl class="argument-info">
+<dt>$recipientAddress</dt>
+<dd>string<br><em>The recipient to be removed.</em>
+</dd>
+<dt>$emailList</dt>
+<dd>string<br><em>The list from which the recipient should be removed.</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="function-info">
+<dt>throws</dt>
+<dd><a href="_Gdata_App_Exception.html#%5CZend_Gdata_App_Exception"></a></dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_App_HttpException.html#%5CZend_Gdata_App_HttpException"></a></dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_Gapps_ServiceException.html#%5CZend_Gdata_Gapps_ServiceException"></a></dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="::restoreUser()"></a><h3 class="function ">restoreUser<div class="to-top"><a href="#top">jump to top</a></div>
+</h3>
+<div class="function">
+<code><span class="highlight">restoreUser</span><span class="nb-faded-text">(
+          string $username
+          )
+        </span>
+        :
+        <a href="_Gdata_Gapps_UserEntry.html#%5CZend_Gdata_Gapps_UserEntry">\Zend_Gdata_Gapps_UserEntry</a></code><p class="short-description">Mark a given user as not suspended.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="arguments">Arguments</h4>
+<dl class="argument-info">
+<dt>$username</dt>
+<dd>string<br><em>The username associated with the user who should be restored.</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h4 class="output">Output</h4>
+<dl class="return-info">
+<dt><a href="_Gdata_Gapps_UserEntry.html#%5CZend_Gdata_Gapps_UserEntry">\Zend_Gdata_Gapps_UserEntry</a></dt>
+<dd><em>The UserEntry for the modified user.</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="function-info">
+<dt>throws</dt>
+<dd><a href="_Gdata_App_Exception.html#%5CZend_Gdata_App_Exception"></a></dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_App_HttpException.html#%5CZend_Gdata_App_HttpException"></a></dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_Gapps_ServiceException.html#%5CZend_Gdata_Gapps_ServiceException"></a></dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="::retrieveAllEmailLists()"></a><h3 class="function ">retrieveAllEmailLists<div class="to-top"><a href="#top">jump to top</a></div>
+</h3>
+<div class="function">
+<code><span class="highlight">retrieveAllEmailLists</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        <a href="_Gdata_Gapps_EmailListFeed.html#%5CZend_Gdata_Gapps_EmailListFeed">\Zend_Gdata_Gapps_EmailListFeed</a></code><p class="short-description">Retrieve all email lists associated with the curent domain. Be aware that
+calling this function on a domain with many email lists will take a
+signifigant amount of time to complete. On larger domains this may
+may cause execution to timeout without proper precautions in place.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="output">Output</h4>
+<dl class="return-info">
+<dt><a href="_Gdata_Gapps_EmailListFeed.html#%5CZend_Gdata_Gapps_EmailListFeed">\Zend_Gdata_Gapps_EmailListFeed</a></dt>
+<dd><em>The list of email lists found as Zend_Gdata_Gapps_EmailListEntry objects.</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="function-info">
+<dt>throws</dt>
+<dd><a href="_Gdata_App_Exception.html#%5CZend_Gdata_App_Exception"></a></dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_App_HttpException.html#%5CZend_Gdata_App_HttpException"></a></dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_Gapps_ServiceException.html#%5CZend_Gdata_Gapps_ServiceException"></a></dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="::retrieveAllGroups()"></a><h3 class="function ">retrieveAllGroups<div class="to-top"><a href="#top">jump to top</a></div>
+</h3>
+<div class="function">
+<code><span class="highlight">retrieveAllGroups</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        <a href="_Gdata_Gapps_GroupFeed.html#%5CZend_Gdata_Gapps_GroupFeed">\Zend_Gdata_Gapps_GroupFeed</a></code><p class="short-description">Retrieve all groups in the current domain. Be aware that
+calling this function on a domain with many groups will take a
+signifigant amount of time to complete. On larger domains this may
+may cause execution to timeout without proper precautions in place.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="output">Output</h4>
+<dl class="return-info">
+<dt><a href="_Gdata_Gapps_GroupFeed.html#%5CZend_Gdata_Gapps_GroupFeed">\Zend_Gdata_Gapps_GroupFeed</a></dt>
+<dd><em>Collection of Zend_Gdata_GroupEntry objects representing all groups apart of the domain.</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="::retrieveAllMembers()"></a><h3 class="function ">retrieveAllMembers<div class="to-top"><a href="#top">jump to top</a></div>
+</h3>
+<div class="function">
+<code><span class="highlight">retrieveAllMembers</span><span class="nb-faded-text">(
+          string $groupId
+          )
+        </span>
+        :
+        <a href="_Gdata_Gapps_MemberFeed.html#%5CZend_Gdata_Gapps_MemberFeed">\Zend_Gdata_Gapps_MemberFeed</a></code><p class="short-description">Retrieves all the members of a group</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="arguments">Arguments</h4>
+<dl class="argument-info">
+<dt>$groupId</dt>
+<dd>string<br><em>The unique id of the group</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h4 class="output">Output</h4>
+<dl class="return-info">
+<dt><a href="_Gdata_Gapps_MemberFeed.html#%5CZend_Gdata_Gapps_MemberFeed">\Zend_Gdata_Gapps_MemberFeed</a></dt>
+<dd><em>Collection of MemberEntry objects representing all members apart of the group.</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="::retrieveAllNicknames()"></a><h3 class="function ">retrieveAllNicknames<div class="to-top"><a href="#top">jump to top</a></div>
+</h3>
+<div class="function">
+<code><span class="highlight">retrieveAllNicknames</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        <a href="_Gdata_Gapps_NicknameFeed.html#%5CZend_Gdata_Gapps_NicknameFeed">\Zend_Gdata_Gapps_NicknameFeed</a></code><p class="short-description">Retrieve all nicknames in the current domain. Be aware that
+calling this function on a domain with many nicknames will take a
+signifigant amount of time to complete. On larger domains this may
+may cause execution to timeout without proper precautions in place.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="output">Output</h4>
+<dl class="return-info">
+<dt><a href="_Gdata_Gapps_NicknameFeed.html#%5CZend_Gdata_Gapps_NicknameFeed">\Zend_Gdata_Gapps_NicknameFeed</a></dt>
+<dd><em>Collection of Zend_Gdata_NicknameEntry objects representing all nicknames in the domain.</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="function-info">
+<dt>throws</dt>
+<dd><a href="_Gdata_App_Exception.html#%5CZend_Gdata_App_Exception"></a></dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_App_HttpException.html#%5CZend_Gdata_App_HttpException"></a></dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_Gapps_ServiceException.html#%5CZend_Gdata_Gapps_ServiceException"></a></dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="::retrieveAllRecipients()"></a><h3 class="function ">retrieveAllRecipients<div class="to-top"><a href="#top">jump to top</a></div>
+</h3>
+<div class="function">
+<code><span class="highlight">retrieveAllRecipients</span><span class="nb-faded-text">(
+           $emailList
+          )
+        </span>
+        :
+        <a href="_Gdata_Gapps_EmailListRecipientFeed.html#%5CZend_Gdata_Gapps_EmailListRecipientFeed">\Zend_Gdata_Gapps_EmailListRecipientFeed</a></code><p class="short-description">Retrieve all recipients associated with an email list. Be aware that
+calling this function on a domain with many email lists will take a
+signifigant amount of time to complete. On larger domains this may
+may cause execution to timeout without proper precautions in place.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="arguments">Arguments</h4>
+<dl class="argument-info">
+<dt>$emailList</dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h4 class="output">Output</h4>
+<dl class="return-info">
+<dt><a href="_Gdata_Gapps_EmailListRecipientFeed.html#%5CZend_Gdata_Gapps_EmailListRecipientFeed">\Zend_Gdata_Gapps_EmailListRecipientFeed</a></dt>
+<dd><em>The list of email lists found as Zend_Gdata_Gapps_EmailListRecipientEntry objects.</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="function-info">
+<dt>throws</dt>
+<dd><a href="_Gdata_App_Exception.html#%5CZend_Gdata_App_Exception"></a></dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_App_HttpException.html#%5CZend_Gdata_App_HttpException"></a></dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_Gapps_ServiceException.html#%5CZend_Gdata_Gapps_ServiceException"></a></dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="::retrieveAllUsers()"></a><h3 class="function ">retrieveAllUsers<div class="to-top"><a href="#top">jump to top</a></div>
+</h3>
+<div class="function">
+<code><span class="highlight">retrieveAllUsers</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        <a href="_Gdata_Gapps_UserFeed.html#%5CZend_Gdata_Gapps_UserFeed">\Zend_Gdata_Gapps_UserFeed</a></code><p class="short-description">Retrieve all users in the current domain. Be aware that
+calling this function on a domain with many users will take a
+signifigant amount of time to complete. On larger domains this may
+may cause execution to timeout without proper precautions in place.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="output">Output</h4>
+<dl class="return-info">
+<dt><a href="_Gdata_Gapps_UserFeed.html#%5CZend_Gdata_Gapps_UserFeed">\Zend_Gdata_Gapps_UserFeed</a></dt>
+<dd><em>Collection of Zend_Gdata_UserEntry objects representing all users in the domain.</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="function-info">
+<dt>throws</dt>
+<dd><a href="_Gdata_App_Exception.html#%5CZend_Gdata_App_Exception"></a></dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_App_HttpException.html#%5CZend_Gdata_App_HttpException"></a></dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_Gapps_ServiceException.html#%5CZend_Gdata_Gapps_ServiceException"></a></dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="::retrieveEmailLists()"></a><h3 class="function ">retrieveEmailLists<div class="to-top"><a href="#top">jump to top</a></div>
+</h3>
+<div class="function">
+<code><span class="highlight">retrieveEmailLists</span><span class="nb-faded-text">(
+           $recipient
+          )
+        </span>
+        :
+        <a href="_Gdata_Gapps_EmailListFeed.html#%5CZend_Gdata_Gapps_EmailListFeed">\Zend_Gdata_Gapps_EmailListFeed</a></code><p class="short-description">Retrieve all email lists associated with a recipient.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="arguments">Arguments</h4>
+<dl class="argument-info">
+<dt>$recipient</dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h4 class="output">Output</h4>
+<dl class="return-info">
+<dt><a href="_Gdata_Gapps_EmailListFeed.html#%5CZend_Gdata_Gapps_EmailListFeed">\Zend_Gdata_Gapps_EmailListFeed</a></dt>
+<dd><em>The list of email lists found as Zend_Gdata_EmailListEntry objects.</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="function-info">
+<dt>throws</dt>
+<dd><a href="_Gdata_App_Exception.html#%5CZend_Gdata_App_Exception"></a></dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_App_HttpException.html#%5CZend_Gdata_App_HttpException"></a></dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_Gapps_ServiceException.html#%5CZend_Gdata_Gapps_ServiceException"></a></dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="::retrieveGroup()"></a><h3 class="function ">retrieveGroup<div class="to-top"><a href="#top">jump to top</a></div>
+</h3>
+<div class="function">
+<code><span class="highlight">retrieveGroup</span><span class="nb-faded-text">(
+          string $groupId
+          )
+        </span>
+        :
+        <a href="_Gdata_Gapps_GroupEntry.html#%5CZend_Gdata_Gapps_GroupEntry">\Zend_Gdata_Gapps_GroupEntry</a></code><p class="short-description">Retrieves a group based on group id</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="arguments">Arguments</h4>
+<dl class="argument-info">
+<dt>$groupId</dt>
+<dd>string<br><em>The unique identifier for the group</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h4 class="output">Output</h4>
+<dl class="return-info">
+<dt><a href="_Gdata_Gapps_GroupEntry.html#%5CZend_Gdata_Gapps_GroupEntry">\Zend_Gdata_Gapps_GroupEntry</a></dt>
+<dd><em>The group entry as returned by the server.</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="::retrieveGroupOwners()"></a><h3 class="function ">retrieveGroupOwners<div class="to-top"><a href="#top">jump to top</a></div>
+</h3>
+<div class="function">
+<code><span class="highlight">retrieveGroupOwners</span><span class="nb-faded-text">(
+          string $groupId
+          )
+        </span>
+        :
+        <a href="_Gdata_Gapps_OwnerFeed.html#%5CZend_Gdata_Gapps_OwnerFeed">\Zend_Gdata_Gapps_OwnerFeed</a></code><p class="short-description">Retrieves all the owners of a group</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="arguments">Arguments</h4>
+<dl class="argument-info">
+<dt>$groupId</dt>
+<dd>string<br><em>The unique identifier for the group</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h4 class="output">Output</h4>
+<dl class="return-info">
+<dt><a href="_Gdata_Gapps_OwnerFeed.html#%5CZend_Gdata_Gapps_OwnerFeed">\Zend_Gdata_Gapps_OwnerFeed</a></dt>
+<dd><em>Collection of Zend_Gdata_OwnerEntry objects representing all owners apart of the group.</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="::retrieveGroups()"></a><h3 class="function ">retrieveGroups<div class="to-top"><a href="#top">jump to top</a></div>
+</h3>
+<div class="function">
+<code><span class="highlight">retrieveGroups</span><span class="nb-faded-text">(
+          string $memberId, bool $directOnly
+              =
+              null
+          )
+        </span>
+        :
+        <a href="_Gdata_Gapps_GroupFeed.html#%5CZend_Gdata_Gapps_GroupFeed">\Zend_Gdata_Gapps_GroupFeed</a></code><p class="short-description">Retrieve all of the groups that a user is a member of</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="arguments">Arguments</h4>
+<dl class="argument-info">
+<dt>$memberId</dt>
+<dd>string<br><em>Member username</em>
+</dd>
+<dt>$directOnly</dt>
+<dd>bool<br><em>(Optional) If true, members with direct association only will be considered</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h4 class="output">Output</h4>
+<dl class="return-info">
+<dt><a href="_Gdata_Gapps_GroupFeed.html#%5CZend_Gdata_Gapps_GroupFeed">\Zend_Gdata_Gapps_GroupFeed</a></dt>
+<dd><em>Collection of Zend_Gdata_GroupEntry objects representing all groups member is apart of in the domain.</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="::retrieveNickname()"></a><h3 class="function ">retrieveNickname<div class="to-top"><a href="#top">jump to top</a></div>
+</h3>
+<div class="function">
+<code><span class="highlight">retrieveNickname</span><span class="nb-faded-text">(
+          string $nickname
+          )
+        </span>
+        :
+        <a href="_Gdata_Gapps_NicknameEntry.html#%5CZend_Gdata_Gapps_NicknameEntry">\Zend_Gdata_Gapps_NicknameEntry</a></code><p class="short-description">Retrieve the entry for a specified nickname.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="arguments">Arguments</h4>
+<dl class="argument-info">
+<dt>$nickname</dt>
+<dd>string<br><em>The nickname to be retrieved.</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h4 class="output">Output</h4>
+<dl class="return-info">
+<dt><a href="_Gdata_Gapps_NicknameEntry.html#%5CZend_Gdata_Gapps_NicknameEntry">\Zend_Gdata_Gapps_NicknameEntry</a></dt>
+<dd><em>The requested nickname entry.</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="function-info">
+<dt>throws</dt>
+<dd><a href="_Gdata_App_Exception.html#%5CZend_Gdata_App_Exception"></a></dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_App_HttpException.html#%5CZend_Gdata_App_HttpException"></a></dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_Gapps_ServiceException.html#%5CZend_Gdata_Gapps_ServiceException"></a></dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="::retrieveNicknames()"></a><h3 class="function ">retrieveNicknames<div class="to-top"><a href="#top">jump to top</a></div>
+</h3>
+<div class="function">
+<code><span class="highlight">retrieveNicknames</span><span class="nb-faded-text">(
+          string $username
+          )
+        </span>
+        :
+        <a href="_Gdata_Gapps_NicknameFeed.html#%5CZend_Gdata_Gapps_NicknameFeed">\Zend_Gdata_Gapps_NicknameFeed</a></code><p class="short-description">Retrieve all nicknames associated with a specific username.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="arguments">Arguments</h4>
+<dl class="argument-info">
+<dt>$username</dt>
+<dd>string<br><em>The username whose nicknames should be returned.</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h4 class="output">Output</h4>
+<dl class="return-info">
+<dt><a href="_Gdata_Gapps_NicknameFeed.html#%5CZend_Gdata_Gapps_NicknameFeed">\Zend_Gdata_Gapps_NicknameFeed</a></dt>
+<dd><em>A feed containing all nicknames for the given user, or null if</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="function-info">
+<dt>throws</dt>
+<dd><a href="_Gdata_App_Exception.html#%5CZend_Gdata_App_Exception"></a></dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_App_HttpException.html#%5CZend_Gdata_App_HttpException"></a></dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_Gapps_ServiceException.html#%5CZend_Gdata_Gapps_ServiceException"></a></dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="::retrievePageOfEmailLists()"></a><h3 class="function ">retrievePageOfEmailLists<div class="to-top"><a href="#top">jump to top</a></div>
+</h3>
+<div class="function">
+<code><span class="highlight">retrievePageOfEmailLists</span><span class="nb-faded-text">(
+           $startNickname
+              =
+              null
+          )
+        </span>
+        :
+        <a href="_Gdata_Gapps_EmailListFeed.html#%5CZend_Gdata_Gapps_EmailListFeed">\Zend_Gdata_Gapps_EmailListFeed</a></code><p class="short-description">Retrieve a page of email lists in alphabetical order, starting with the
+provided email list.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="arguments">Arguments</h4>
+<dl class="argument-info">
+<dt>$startNickname</dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h4 class="output">Output</h4>
+<dl class="return-info">
+<dt><a href="_Gdata_Gapps_EmailListFeed.html#%5CZend_Gdata_Gapps_EmailListFeed">\Zend_Gdata_Gapps_EmailListFeed</a></dt>
+<dd><em>Collection of Zend_Gdata_EmailListEntry objects representing all nicknames in the domain.</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="function-info">
+<dt>throws</dt>
+<dd><a href="_Gdata_App_Exception.html#%5CZend_Gdata_App_Exception"></a></dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_App_HttpException.html#%5CZend_Gdata_App_HttpException"></a></dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_Gapps_ServiceException.html#%5CZend_Gdata_Gapps_ServiceException"></a></dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="::retrievePageOfGroups()"></a><h3 class="function ">retrievePageOfGroups<div class="to-top"><a href="#top">jump to top</a></div>
+</h3>
+<div class="function">
+<code><span class="highlight">retrievePageOfGroups</span><span class="nb-faded-text">(
+          string $startGroup
+              =
+              null
+          )
+        </span>
+        :
+        <a href="_Gdata_Gapps_GroupFeed.html#%5CZend_Gdata_Gapps_GroupFeed">\Zend_Gdata_Gapps_GroupFeed</a></code><p class="short-description">Retrieve a page of groups in alphabetical order, starting with the
+provided group.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="arguments">Arguments</h4>
+<dl class="argument-info">
+<dt>$startGroup</dt>
+<dd>string<br><em>(optional) The first group to retrieve. If null or not defined, the page will begin with the first group in the domain.</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h4 class="output">Output</h4>
+<dl class="return-info">
+<dt><a href="_Gdata_Gapps_GroupFeed.html#%5CZend_Gdata_Gapps_GroupFeed">\Zend_Gdata_Gapps_GroupFeed</a></dt>
+<dd><em>Collection of Zend_Gdata_GroupEntry objects representing the groups in the domain.</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="function-info">
+<dt>throws</dt>
+<dd><a href="_Gdata_App_Exception.html#%5CZend_Gdata_App_Exception"></a></dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_App_HttpException.html#%5CZend_Gdata_App_HttpException"></a></dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_Gapps_ServiceException.html#%5CZend_Gdata_Gapps_ServiceException"></a></dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="::retrievePageOfMembers()"></a><h3 class="function ">retrievePageOfMembers<div class="to-top"><a href="#top">jump to top</a></div>
+</h3>
+<div class="function">
+<code><span class="highlight">retrievePageOfMembers</span><span class="nb-faded-text">(
+          string $groupId, string $startMember
+              =
+              null
+          )
+        </span>
+        :
+        <a href="_Gdata_Gapps_MemberFeed.html#%5CZend_Gdata_Gapps_MemberFeed">\Zend_Gdata_Gapps_MemberFeed</a></code><p class="short-description">Gets page of Members</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="arguments">Arguments</h4>
+<dl class="argument-info">
+<dt>$groupId</dt>
+<dd>string<br><em>The group id which should be searched.</em>
+</dd>
+<dt>$startMember</dt>
+<dd>string<br><em>(optinal) The address of the first member, or null to start with the first member in the list.</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h4 class="output">Output</h4>
+<dl class="return-info">
+<dt><a href="_Gdata_Gapps_MemberFeed.html#%5CZend_Gdata_Gapps_MemberFeed">\Zend_Gdata_Gapps_MemberFeed</a></dt>
+<dd><em>Collection of Zend_Gdata_MemberEntry objects</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="::retrievePageOfNicknames()"></a><h3 class="function ">retrievePageOfNicknames<div class="to-top"><a href="#top">jump to top</a></div>
+</h3>
+<div class="function">
+<code><span class="highlight">retrievePageOfNicknames</span><span class="nb-faded-text">(
+          string $startNickname
+              =
+              null
+          )
+        </span>
+        :
+        <a href="_Gdata_Gapps_NicknameFeed.html#%5CZend_Gdata_Gapps_NicknameFeed">\Zend_Gdata_Gapps_NicknameFeed</a></code><p class="short-description">Retrieve a page of nicknames in alphabetical order, starting with the
+provided nickname.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="arguments">Arguments</h4>
+<dl class="argument-info">
+<dt>$startNickname</dt>
+<dd>string<br><em>(optional) The first nickname to retrieve. If null or not declared, the page will begin with the first nickname in the domain.</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h4 class="output">Output</h4>
+<dl class="return-info">
+<dt><a href="_Gdata_Gapps_NicknameFeed.html#%5CZend_Gdata_Gapps_NicknameFeed">\Zend_Gdata_Gapps_NicknameFeed</a></dt>
+<dd><em>Collection of Zend_Gdata_NicknameEntry objects representing all nicknames in the domain.</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="function-info">
+<dt>throws</dt>
+<dd><a href="_Gdata_App_Exception.html#%5CZend_Gdata_App_Exception"></a></dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_App_HttpException.html#%5CZend_Gdata_App_HttpException"></a></dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_Gapps_ServiceException.html#%5CZend_Gdata_Gapps_ServiceException"></a></dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="::retrievePageOfRecipients()"></a><h3 class="function ">retrievePageOfRecipients<div class="to-top"><a href="#top">jump to top</a></div>
+</h3>
+<div class="function">
+<code><span class="highlight">retrievePageOfRecipients</span><span class="nb-faded-text">(
+           $emailList, string $startRecipient
+              =
+              null
+          )
+        </span>
+        :
+        <a href="_Gdata_Gapps_EmailListRecipientFeed.html#%5CZend_Gdata_Gapps_EmailListRecipientFeed">\Zend_Gdata_Gapps_EmailListRecipientFeed</a></code><p class="short-description">Retrieve a page of email list recipients in alphabetical order,
+starting with the provided email list recipient.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="arguments">Arguments</h4>
+<dl class="argument-info">
+<dt>$emailList</dt>
+<dd><em></em></dd>
+<dt>$startRecipient</dt>
+<dd>string<br><em>(optinal) The address of the first recipient, or null to start with the first recipient in the list.</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h4 class="output">Output</h4>
+<dl class="return-info">
+<dt><a href="_Gdata_Gapps_EmailListRecipientFeed.html#%5CZend_Gdata_Gapps_EmailListRecipientFeed">\Zend_Gdata_Gapps_EmailListRecipientFeed</a></dt>
+<dd><em>Collection of Zend_Gdata_EmailListRecipientEntry objects representing all recpients in the specified list.</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="function-info">
+<dt>throws</dt>
+<dd><a href="_Gdata_App_Exception.html#%5CZend_Gdata_App_Exception"></a></dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_App_HttpException.html#%5CZend_Gdata_App_HttpException"></a></dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_Gapps_ServiceException.html#%5CZend_Gdata_Gapps_ServiceException"></a></dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="::retrievePageOfUsers()"></a><h3 class="function ">retrievePageOfUsers<div class="to-top"><a href="#top">jump to top</a></div>
+</h3>
+<div class="function">
+<code><span class="highlight">retrievePageOfUsers</span><span class="nb-faded-text">(
+          string $startUsername
+              =
+              null
+          )
+        </span>
+        :
+        <a href="_Gdata_Gapps_UserFeed.html#%5CZend_Gdata_Gapps_UserFeed">\Zend_Gdata_Gapps_UserFeed</a></code><p class="short-description">Retrieve a page of users in alphabetical order, starting with the
+provided username.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="arguments">Arguments</h4>
+<dl class="argument-info">
+<dt>$startUsername</dt>
+<dd>string<br><em>(optional) The first username to retrieve. If null or not declared, the page will begin with the first user in the domain.</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h4 class="output">Output</h4>
+<dl class="return-info">
+<dt><a href="_Gdata_Gapps_UserFeed.html#%5CZend_Gdata_Gapps_UserFeed">\Zend_Gdata_Gapps_UserFeed</a></dt>
+<dd><em>Collection of Zend_Gdata_UserEntry objects representing all users in the domain.</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="function-info">
+<dt>throws</dt>
+<dd><a href="_Gdata_App_Exception.html#%5CZend_Gdata_App_Exception"></a></dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_App_HttpException.html#%5CZend_Gdata_App_HttpException"></a></dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_Gapps_ServiceException.html#%5CZend_Gdata_Gapps_ServiceException"></a></dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="::retrieveUser()"></a><h3 class="function ">retrieveUser<div class="to-top"><a href="#top">jump to top</a></div>
+</h3>
+<div class="function">
+<code><span class="highlight">retrieveUser</span><span class="nb-faded-text">(
+          string $username
+          )
+        </span>
+        :
+        <a href="_Gdata_Gapps_UserEntry.html#%5CZend_Gdata_Gapps_UserEntry">\Zend_Gdata_Gapps_UserEntry</a></code><p class="short-description">Retrieve a user based on their username.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="arguments">Arguments</h4>
+<dl class="argument-info">
+<dt>$username</dt>
+<dd>string<br><em>The username to search for.</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h4 class="output">Output</h4>
+<dl class="return-info">
+<dt><a href="_Gdata_Gapps_UserEntry.html#%5CZend_Gdata_Gapps_UserEntry">\Zend_Gdata_Gapps_UserEntry</a></dt>
+<dd><em>The username to search for, or null if no match found.</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="function-info">
+<dt>throws</dt>
+<dd><a href="_Gdata_App_InvalidArgumentException.html#%5CZend_Gdata_App_InvalidArgumentException"></a></dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_App_HttpException.html#%5CZend_Gdata_App_HttpException"></a></dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="::suspendUser()"></a><h3 class="function ">suspendUser<div class="to-top"><a href="#top">jump to top</a></div>
+</h3>
+<div class="function">
+<code><span class="highlight">suspendUser</span><span class="nb-faded-text">(
+          string $username
+          )
+        </span>
+        :
+        <a href="_Gdata_Gapps_UserEntry.html#%5CZend_Gdata_Gapps_UserEntry">\Zend_Gdata_Gapps_UserEntry</a></code><p class="short-description">Mark a given user as suspended.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="arguments">Arguments</h4>
+<dl class="argument-info">
+<dt>$username</dt>
+<dd>string<br><em>The username associated with the user who should be suspended.</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h4 class="output">Output</h4>
+<dl class="return-info">
+<dt><a href="_Gdata_Gapps_UserEntry.html#%5CZend_Gdata_Gapps_UserEntry">\Zend_Gdata_Gapps_UserEntry</a></dt>
+<dd><em>The UserEntry for the modified user.</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="function-info">
+<dt>throws</dt>
+<dd><a href="_Gdata_App_Exception.html#%5CZend_Gdata_App_Exception"></a></dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_App_HttpException.html#%5CZend_Gdata_App_HttpException"></a></dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_Gapps_ServiceException.html#%5CZend_Gdata_Gapps_ServiceException"></a></dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="::updateGroup()"></a><h3 class="function ">updateGroup<div class="to-top"><a href="#top">jump to top</a></div>
+</h3>
+<div class="function">
+<code><span class="highlight">updateGroup</span><span class="nb-faded-text">(
+          string $groupId, string $groupName
+              =
+              null, string $description
+              =
+              null, string $emailPermission
+              =
+              null
+          )
+        </span>
+        :
+        <a href="_Gdata_Gapps_GroupEntry.html#%5CZend_Gdata_Gapps_GroupEntry">\Zend_Gdata_Gapps_GroupEntry</a></code><p class="short-description">Update group properties with new values. any property not defined will not
+be updated</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="arguments">Arguments</h4>
+<dl class="argument-info">
+<dt>$groupId</dt>
+<dd>string<br><em>A unique identifier for the group</em>
+</dd>
+<dt>$groupName</dt>
+<dd>string<br><em>The name of the group</em>
+</dd>
+<dt>$description</dt>
+<dd>string<br><em>A description of the group</em>
+</dd>
+<dt>$emailPermission</dt>
+<dd>string<br><em>The subscription permission of the group</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h4 class="output">Output</h4>
+<dl class="return-info">
+<dt><a href="_Gdata_Gapps_GroupEntry.html#%5CZend_Gdata_Gapps_GroupEntry">\Zend_Gdata_Gapps_GroupEntry</a></dt>
+<dd><em>The group entry as updated on the server.</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="::updateUser()"></a><h3 class="function ">updateUser<div class="to-top"><a href="#top">jump to top</a></div>
+</h3>
+<div class="function">
+<code><span class="highlight">updateUser</span><span class="nb-faded-text">(
+          string $username, <a href="_Gdata_Gapps_UserEntry.html#%5CZend_Gdata_Gapps_UserEntry">\Zend_Gdata_Gapps_UserEntry</a> $userEntry
+          )
+        </span>
+        :
+        <a href="_Gdata_Gapps_UserEntry.html#%5CZend_Gdata_Gapps_UserEntry">\Zend_Gdata_Gapps_UserEntry</a></code><p class="short-description">Overwrite a specified username with the provided UserEntry.  The
+UserEntry does not need to contain an edit link.</p>
+<div class="long-description"><p>This method is provided for compliance with the Google Apps
+Provisioning API specification. Normally users will instead want to
+call UserEntry::save() instead.</p>
+</div>
+<div class="api-section">
+<h4 class="arguments">Arguments</h4>
+<dl class="argument-info">
+<dt>$username</dt>
+<dd>string<br><em>The username whose data will be overwritten.</em>
+</dd>
+<dt>$userEntry</dt>
+<dd>\Zend_Gdata_Gapps_UserEntry<br><em>The user entry which will be overwritten.</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h4 class="output">Output</h4>
+<dl class="return-info">
+<dt><a href="_Gdata_Gapps_UserEntry.html#%5CZend_Gdata_Gapps_UserEntry">\Zend_Gdata_Gapps_UserEntry</a></dt>
+<dd><em>The UserEntry returned by the server.</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="function-info">
+<dt>see</dt>
+<dd>Zend_Gdata_App_Entry::save</dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_App_Exception.html#%5CZend_Gdata_App_Exception"></a></dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_App_HttpException.html#%5CZend_Gdata_App_HttpException"></a></dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_Gapps_ServiceException.html#%5CZend_Gdata_Gapps_ServiceException"></a></dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+</div>
+<a name="classes"></a><a id="\Zend_Gdata_Gapps"></a><h2 class="class">\Zend_Gdata_Gapps<div class="to-top"><a href="#top">jump to top</a></div>
+</h2>
+<div class="class">
+<dl class="class-info">
+<dt>Extends from</dt>
+<dd><a href="_Gdata.html#%5CZend_Gdata">\Zend_Gdata</a></dd>
+<dt>category</dt>
+<dd>Zend</dd>
+<dt>copyright</dt>
+<dd>Copyright (c) 2005-2011 Zend Technologies USA Inc. (http://www.zend.com)</dd>
+<dt>license</dt>
+<dd>http://framework.zend.com/license/new-bsd     New BSD License</dd>
+<dt>link</dt>
+<dd><a href="http://code.google.com/apis/apps/gdata_provisioning_api_v2.0_reference.html">http://code.google.com/apis/apps/gdata_provisioning_api_v2.0_reference.html</a></dd>
+<dt>package</dt>
+<dd>Zend_Gdata</dd>
+<dt>subpackage</dt>
+<dd>Gapps</dd>
+<dt><a href="#" onclick="$(this).children('img').toggle().parents('dt').nextUntil('dt').slideToggle(); return false;"><img src="images/arrow_down.gif"><img src="images/arrow_right.gif" style="display: none">
+                Constants
+              </a></dt>
+<dd><a class="constant" href="#%5CZend_Gdata_Gapps::APPS_BASE_FEED_URI">APPS_BASE_FEED_URI</a></dd>
+<dd><a class="constant" href="#%5CZend_Gdata_Gapps::APPS_EMAIL_LIST_PATH">APPS_EMAIL_LIST_PATH</a></dd>
+<dd><a class="constant" href="#%5CZend_Gdata_Gapps::APPS_EMAIL_LIST_RECIPIENT_POSTFIX">APPS_EMAIL_LIST_RECIPIENT_POSTFIX</a></dd>
+<dd><a class="constant" href="#%5CZend_Gdata_Gapps::APPS_GROUP_PATH">APPS_GROUP_PATH</a></dd>
+<dd><a class="constant" href="#%5CZend_Gdata_Gapps::APPS_NICKNAME_PATH">APPS_NICKNAME_PATH</a></dd>
+<dd><a class="constant" href="#%5CZend_Gdata_Gapps::APPS_USER_PATH">APPS_USER_PATH</a></dd>
+<dd><a class="constant" href="#%5CZend_Gdata_Gapps::AUTH_SERVICE_NAME">AUTH_SERVICE_NAME</a></dd>
+<dt><a href="#" onclick="$(this).children('img').toggle().parents('dt').nextUntil('dt').slideToggle(); return false;"><img src="images/arrow_down.gif"><img src="images/arrow_right.gif" style="display: none">
+                Properties
+              </a></dt>
+<dd><a class="property protected" href="#%5CZend_Gdata_Gapps::%24_domain">$_domain</a></dd>
+<dd><a class="property public" href="#%5CZend_Gdata_Gapps::%24args">$args</a></dd>
+<dd><a class="property public" href="#%5CZend_Gdata_Gapps::%24method">$method</a></dd>
+<dd><a class="property public" href="#%5CZend_Gdata_Gapps::%24namespaces">$namespaces</a></dd>
+<dt><a href="#" onclick="$(this).children('img').toggle().parents('dt').nextUntil('dt').slideToggle(); return false;"><img src="images/arrow_down.gif"><img src="images/arrow_right.gif" style="display: none">
+                Methods
+              </a></dt>
+<dd><a class="method public" href="#%5CZend_Gdata_Gapps::__call()">__call</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Gapps::__construct()">__construct</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Gapps::delete()">delete</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Gapps::get()">get</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Gapps::getBaseUrl()">getBaseUrl</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Gapps::getDomain()">getDomain</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Gapps::getEmailListEntry()">getEmailListEntry</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Gapps::getEmailListFeed()">getEmailListFeed</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Gapps::getEmailListRecipientEntry()">getEmailListRecipientEntry</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Gapps::getEmailListRecipientFeed()">getEmailListRecipientFeed</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Gapps::getGroupEntry()">getGroupEntry</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Gapps::getGroupFeed()">getGroupFeed</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Gapps::getMemberEntry()">getMemberEntry</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Gapps::getMemberFeed()">getMemberFeed</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Gapps::getNicknameEntry()">getNicknameEntry</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Gapps::getNicknameFeed()">getNicknameFeed</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Gapps::getOwnerEntry()">getOwnerEntry</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Gapps::getOwnerFeed()">getOwnerFeed</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Gapps::getUserEntry()">getUserEntry</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Gapps::getUserFeed()">getUserFeed</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Gapps::import()">import</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Gapps::insertEmailList()">insertEmailList</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Gapps::insertEmailListRecipient()">insertEmailListRecipient</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Gapps::insertGroup()">insertGroup</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Gapps::insertMember()">insertMember</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Gapps::insertNickname()">insertNickname</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Gapps::insertOwner()">insertOwner</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Gapps::insertUser()">insertUser</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Gapps::post()">post</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Gapps::put()">put</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Gapps::setDomain()">setDomain</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Gapps::throwServiceExceptionIfDetected()">throwServiceExceptionIfDetected</a></dd>
+</dl>
+<h3>Description</h3>
+<p class="short-description">Service class for interacting with the Google Apps Provisioning API.</p>
+<div class="long-description"><p>Like other service classes in this module, this class provides access via
+an HTTP client to Google servers for working with entries and feeds.</p>
+
+<p>Because of the nature of this API, all access must occur over an
+authenticated connection.</p>
+</div>
+<h3>Constants</h3>
+<div>
+<a id="\Zend_Gdata_Gapps::APPS_BASE_FEED_URI"></a><h4 class="constant">APPS_BASE_FEED_URI<div class="to-top"><a href="#Zend_Gdata_Gapps">jump to class</a></div>
+</h4>
+<div class="constant">
+<code> <span class="highlight">APPS_BASE_FEED_URI</span> = 'https://apps-apis.google.com/a/feeds'
+      </code><div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="constant-info">
+<dt>value</dt>
+<dd>https://apps-apis.google.com/a/feeds</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Gapps::AUTH_SERVICE_NAME"></a><h4 class="constant">AUTH_SERVICE_NAME<div class="to-top"><a href="#Zend_Gdata_Gapps">jump to class</a></div>
+</h4>
+<div class="constant">
+<code> <span class="highlight">AUTH_SERVICE_NAME</span> = 'apps'
+      </code><div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="constant-info">
+<dt>value</dt>
+<dd>apps</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Gapps::APPS_USER_PATH"></a><h4 class="constant">APPS_USER_PATH<div class="to-top"><a href="#Zend_Gdata_Gapps">jump to class</a></div>
+</h4>
+<div class="constant">
+<code> <span class="highlight">APPS_USER_PATH</span> = '/user/2.0'
+      </code><p class="short-description">Path to user feeds on the Google Apps server.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="constant-info">
+<dt>value</dt>
+<dd>/user/2.0</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Gapps::APPS_NICKNAME_PATH"></a><h4 class="constant">APPS_NICKNAME_PATH<div class="to-top"><a href="#Zend_Gdata_Gapps">jump to class</a></div>
+</h4>
+<div class="constant">
+<code> <span class="highlight">APPS_NICKNAME_PATH</span> = '/nickname/2.0'
+      </code><p class="short-description">Path to nickname feeds on the Google Apps server.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="constant-info">
+<dt>value</dt>
+<dd>/nickname/2.0</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Gapps::APPS_GROUP_PATH"></a><h4 class="constant">APPS_GROUP_PATH<div class="to-top"><a href="#Zend_Gdata_Gapps">jump to class</a></div>
+</h4>
+<div class="constant">
+<code> <span class="highlight">APPS_GROUP_PATH</span> = '/group/2.0'
+      </code><p class="short-description">Path to group feeds on the Google Apps server.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="constant-info">
+<dt>value</dt>
+<dd>/group/2.0</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Gapps::APPS_EMAIL_LIST_PATH"></a><h4 class="constant">APPS_EMAIL_LIST_PATH<div class="to-top"><a href="#Zend_Gdata_Gapps">jump to class</a></div>
+</h4>
+<div class="constant">
+<code> <span class="highlight">APPS_EMAIL_LIST_PATH</span> = '/emailList/2.0'
+      </code><p class="short-description">Path to email list feeds on the Google Apps server.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="constant-info">
+<dt>value</dt>
+<dd>/emailList/2.0</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Gapps::APPS_EMAIL_LIST_RECIPIENT_POSTFIX"></a><h4 class="constant">APPS_EMAIL_LIST_RECIPIENT_POSTFIX<div class="to-top"><a href="#Zend_Gdata_Gapps">jump to class</a></div>
+</h4>
+<div class="constant">
+<code> <span class="highlight">APPS_EMAIL_LIST_RECIPIENT_POSTFIX</span> = '/recipient'
+      </code><p class="short-description">Path to email list recipient feeds on the Google Apps server.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="constant-info">
+<dt>value</dt>
+<dd>/recipient</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+</div>
+<h3>Properties</h3>
+<div>
+<a id="\Zend_Gdata_Gapps::$_domain"></a><h4 class="property protected">$_domain<div class="to-top"><a href="#%5CZend_Gdata_Gapps">jump to class</a></div>
+</h4>
+<div class="property">
+<code>string <span class="highlight">$_domain</span> = 'null'</code><p class="short-description">The domain which is being administered via the Provisioning API.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt></dt>
+<dd>string<br><em></em>
+</dd>
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd>null</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Gapps::$args"></a><h4 class="property public">$args<div class="to-top"><a href="#%5CZend_Gdata_Gapps">jump to class</a></div>
+</h4>
+<div class="property">
+<code> <span class="highlight">$args</span> = ''</code><div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>default</dt>
+<dd></dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Gapps::$method"></a><h4 class="property public">$method<div class="to-top"><a href="#%5CZend_Gdata_Gapps">jump to class</a></div>
+</h4>
+<div class="property">
+<code> <span class="highlight">$method</span> = ''</code><div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>default</dt>
+<dd></dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Gapps::$namespaces"></a><h4 class="property public">$namespaces<div class="to-top"><a href="#%5CZend_Gdata_Gapps">jump to class</a></div>
+</h4>
+<div class="property">
+<code>array <span class="highlight">$namespaces</span> = 'array'</code><p class="short-description">Namespaces used for Zend_Gdata_Gapps</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt></dt>
+<dd>array<br><em></em>
+</dd>
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>default</dt>
+<dd>array</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>true</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+</div>
+<h3>Methods</h3>
+<div>
+<a id="\Zend_Gdata_Gapps::__call()"></a><h4 class="method public">__call<div class="to-top"><a href="#Zend_Gdata_Gapps">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">__call</span><span class="nb-faded-text">(
+          string $method, array $args
+          )
+        </span>
+        :
+        </code><p class="short-description">Provides a magic factory method to instantiate new objects with
+shorter syntax than would otherwise be required by the Zend Framework
+naming conventions. For more information, see Zend_Gdata_App::__call().</p>
+<div class="long-description"><p>This overrides the default behavior of __call() so that query classes
+do not need to have their domain manually set when created with
+a magic factory method.</p>
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$method</dt>
+<dd>string<br><em>The method name being called</em>
+</dd>
+<dt>$args</dt>
+<dd>array<br><em>The arguments passed to the call</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+<dt>see</dt>
+<dd>Zend_Gdata_App::__call()</dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_App_Exception.html#%5CZend_Gdata_App_Exception"></a></dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Gapps::__construct()"></a><h4 class="method public">__construct<div class="to-top"><a href="#Zend_Gdata_Gapps">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">__construct</span><span class="nb-faded-text">(
+          <a href="_Http_Client.html#%5CZend_Http_Client">\Zend_Http_Client</a> $client
+              =
+              null, string $domain
+              =
+              null, string $applicationId
+              =
+              MyCompany-MyApp-1.0
+          )
+        </span>
+        :
+        </code><p class="short-description">Create Gdata_Gapps object</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$client</dt>
+<dd>\Zend_Http_Client<br><em>(optional) The HTTP client to use when when communicating with the Google Apps servers.</em>
+</dd>
+<dt>$domain</dt>
+<dd>string<br><em>(optional) The Google Apps domain which is to be accessed.</em>
+</dd>
+<dt>$applicationId</dt>
+<dd>string<br><em>The identity of the app in the form of Company-AppName-Version</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Gapps::delete()"></a><h4 class="method public">delete<div class="to-top"><a href="#Zend_Gdata_Gapps">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">delete</span><span class="nb-faded-text">(
+          mixed $data, integer $remainingRedirects
+              =
+              null
+          )
+        </span>
+        :
+        void</code><p class="short-description">DELETE entry with client object
+This method overrides the default behavior of Zend_Gdata_App,
+providing support for Zend_Gdata_Gapps_ServiceException.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$data</dt>
+<dd>mixed<br><em>The Zend_Gdata_App_Entry or URL to delete</em>
+</dd>
+<dt>$remainingRedirects</dt>
+<dd>integer<br><em>(optional)</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_App_HttpException.html#%5CZend_Gdata_App_HttpException"></a></dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_App_InvalidArgumentException.html#%5CZend_Gdata_App_InvalidArgumentException"></a></dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_Gapps_ServiceException.html#%5CZend_Gdata_Gapps_ServiceException"></a></dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Gapps::get()"></a><h4 class="method public">get<div class="to-top"><a href="#Zend_Gdata_Gapps">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">get</span><span class="nb-faded-text">(
+          string $uri, array $extraHeaders
+              =
+              array
+          )
+        </span>
+        :
+        <a href="_Http_Response.html#%5CZend_Http_Response">\Zend_Http_Response</a></code><p class="short-description">GET a URI using client object.</p>
+<div class="long-description"><p>This method overrides the default behavior of Zend_Gdata_App,
+providing support for Zend_Gdata_Gapps_ServiceException.</p>
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$uri</dt>
+<dd>string<br><em>GET URI</em>
+</dd>
+<dt>$extraHeaders</dt>
+<dd>array<br><em>Extra headers to add to the request, as an array of string-based key/value pairs.</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Http_Response.html#%5CZend_Http_Response">\Zend_Http_Response</a></dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_App_HttpException.html#%5CZend_Gdata_App_HttpException"></a></dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_Gapps_ServiceException.html#%5CZend_Gdata_Gapps_ServiceException"></a></dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Gapps::getBaseUrl()"></a><h4 class="method public">getBaseUrl<div class="to-top"><a href="#Zend_Gdata_Gapps">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getBaseUrl</span><span class="nb-faded-text">(
+          string $domain
+              =
+              null
+          )
+        </span>
+        :
+        </code><p class="short-description">Returns the base URL used to access the Google Apps service, based
+on the current domain. The current domain can be temporarily
+overridden by providing a fully qualified domain as $domain.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$domain</dt>
+<dd>string<br><em>(optional) A fully-qualified domain to use instead of the default domain for this service instance.</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_App_InvalidArgumentException.html#%5CZend_Gdata_App_InvalidArgumentException"></a></dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Gapps::getDomain()"></a><h4 class="method public">getDomain<div class="to-top"><a href="#Zend_Gdata_Gapps">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getDomain</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        string</code><p class="short-description">Get domain for this service instance. This should be a fully qualified
+domain, such as 'foo.example.com'. If no domain is set, null will be
+returned.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>string</dt>
+<dd><em>The domain to be used for this session, or null if not set.</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Gapps::getEmailListEntry()"></a><h4 class="method public">getEmailListEntry<div class="to-top"><a href="#Zend_Gdata_Gapps">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getEmailListEntry</span><span class="nb-faded-text">(
+          mixed $location
+          )
+        </span>
+        :
+        <a href="_Gdata_Gapps_EmailListEntry.html#%5CZend_Gdata_Gapps_EmailListEntry">\Zend_Gdata_Gapps_EmailListEntry</a></code><p class="short-description">Retreive a single EmailListEntry object.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$location</dt>
+<dd>mixed<br><em>The location for the feed, as a URL or Query.</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_Gapps_EmailListEntry.html#%5CZend_Gdata_Gapps_EmailListEntry">\Zend_Gdata_Gapps_EmailListEntry</a></dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_App_Exception.html#%5CZend_Gdata_App_Exception"></a></dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_App_HttpException.html#%5CZend_Gdata_App_HttpException"></a></dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_Gapps_ServiceException.html#%5CZend_Gdata_Gapps_ServiceException"></a></dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Gapps::getEmailListFeed()"></a><h4 class="method public">getEmailListFeed<div class="to-top"><a href="#Zend_Gdata_Gapps">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getEmailListFeed</span><span class="nb-faded-text">(
+          mixed $location
+              =
+              null
+          )
+        </span>
+        :
+        <a href="_Gdata_Gapps_EmailListFeed.html#%5CZend_Gdata_Gapps_EmailListFeed">\Zend_Gdata_Gapps_EmailListFeed</a></code><p class="short-description">Retreive EmailListFeed object containing multiple EmailListEntry
+objects.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$location</dt>
+<dd>mixed<br><em>(optional) The location for the feed, as a URL or Query.</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_Gapps_EmailListFeed.html#%5CZend_Gdata_Gapps_EmailListFeed">\Zend_Gdata_Gapps_EmailListFeed</a></dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_App_Exception.html#%5CZend_Gdata_App_Exception"></a></dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_App_HttpException.html#%5CZend_Gdata_App_HttpException"></a></dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_Gapps_ServiceException.html#%5CZend_Gdata_Gapps_ServiceException"></a></dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Gapps::getEmailListRecipientEntry()"></a><h4 class="method public">getEmailListRecipientEntry<div class="to-top"><a href="#Zend_Gdata_Gapps">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getEmailListRecipientEntry</span><span class="nb-faded-text">(
+          mixed $location
+          )
+        </span>
+        :
+        <a href="_Gdata_Gapps_EmailListRecipientEntry.html#%5CZend_Gdata_Gapps_EmailListRecipientEntry">\Zend_Gdata_Gapps_EmailListRecipientEntry</a></code><p class="short-description">Retreive a single EmailListRecipientEntry object.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$location</dt>
+<dd>mixed<br><em>The location for the feed, as a URL or Query.</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_Gapps_EmailListRecipientEntry.html#%5CZend_Gdata_Gapps_EmailListRecipientEntry">\Zend_Gdata_Gapps_EmailListRecipientEntry</a></dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_App_Exception.html#%5CZend_Gdata_App_Exception"></a></dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_App_HttpException.html#%5CZend_Gdata_App_HttpException"></a></dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_Gapps_ServiceException.html#%5CZend_Gdata_Gapps_ServiceException"></a></dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Gapps::getEmailListRecipientFeed()"></a><h4 class="method public">getEmailListRecipientFeed<div class="to-top"><a href="#Zend_Gdata_Gapps">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getEmailListRecipientFeed</span><span class="nb-faded-text">(
+          mixed $location
+          )
+        </span>
+        :
+        <a href="_Gdata_Gapps_EmailListRecipientFeed.html#%5CZend_Gdata_Gapps_EmailListRecipientFeed">\Zend_Gdata_Gapps_EmailListRecipientFeed</a></code><p class="short-description">Retreive EmailListRecipientFeed object containing multiple
+EmailListRecipientEntry objects.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$location</dt>
+<dd>mixed<br><em>The location for the feed, as a URL or Query.</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_Gapps_EmailListRecipientFeed.html#%5CZend_Gdata_Gapps_EmailListRecipientFeed">\Zend_Gdata_Gapps_EmailListRecipientFeed</a></dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_App_Exception.html#%5CZend_Gdata_App_Exception"></a></dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_App_HttpException.html#%5CZend_Gdata_App_HttpException"></a></dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_Gapps_ServiceException.html#%5CZend_Gdata_Gapps_ServiceException"></a></dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Gapps::getGroupEntry()"></a><h4 class="method public">getGroupEntry<div class="to-top"><a href="#Zend_Gdata_Gapps">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getGroupEntry</span><span class="nb-faded-text">(
+          mixed $location
+              =
+              null
+          )
+        </span>
+        :
+        <a href="_Gdata_Gapps_GroupEntry.html#%5CZend_Gdata_Gapps_GroupEntry">\Zend_Gdata_Gapps_GroupEntry</a></code><p class="short-description">Retreive a single GroupEntry object.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$location</dt>
+<dd>mixed<br><em>The location for the feed, as a URL or Query.</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_Gapps_GroupEntry.html#%5CZend_Gdata_Gapps_GroupEntry">\Zend_Gdata_Gapps_GroupEntry</a></dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_App_Exception.html#%5CZend_Gdata_App_Exception"></a></dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_App_HttpException.html#%5CZend_Gdata_App_HttpException"></a></dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_Gapps_ServiceException.html#%5CZend_Gdata_Gapps_ServiceException"></a></dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Gapps::getGroupFeed()"></a><h4 class="method public">getGroupFeed<div class="to-top"><a href="#Zend_Gdata_Gapps">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getGroupFeed</span><span class="nb-faded-text">(
+          mixed $location
+              =
+              null
+          )
+        </span>
+        :
+        <a href="_Gdata_Gapps_GroupFeed.html#%5CZend_Gdata_Gapps_GroupFeed">\Zend_Gdata_Gapps_GroupFeed</a></code><p class="short-description">Retreive GroupFeed object containing multiple GroupEntry
+objects.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$location</dt>
+<dd>mixed<br><em>(optional) The location for the feed, as a URL or Query.</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_Gapps_GroupFeed.html#%5CZend_Gdata_Gapps_GroupFeed">\Zend_Gdata_Gapps_GroupFeed</a></dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_App_Exception.html#%5CZend_Gdata_App_Exception"></a></dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_App_HttpException.html#%5CZend_Gdata_App_HttpException"></a></dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_Gapps_ServiceException.html#%5CZend_Gdata_Gapps_ServiceException"></a></dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Gapps::getMemberEntry()"></a><h4 class="method public">getMemberEntry<div class="to-top"><a href="#Zend_Gdata_Gapps">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getMemberEntry</span><span class="nb-faded-text">(
+          mixed $location
+              =
+              null
+          )
+        </span>
+        :
+        <a href="_Gdata_Gapps_MemberEntry.html#%5CZend_Gdata_Gapps_MemberEntry">\Zend_Gdata_Gapps_MemberEntry</a></code><p class="short-description">Retreive a single MemberEntry object.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$location</dt>
+<dd>mixed<br><em>The location for the feed, as a URL or Query.</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_Gapps_MemberEntry.html#%5CZend_Gdata_Gapps_MemberEntry">\Zend_Gdata_Gapps_MemberEntry</a></dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_App_Exception.html#%5CZend_Gdata_App_Exception"></a></dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_App_HttpException.html#%5CZend_Gdata_App_HttpException"></a></dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_Gapps_ServiceException.html#%5CZend_Gdata_Gapps_ServiceException"></a></dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Gapps::getMemberFeed()"></a><h4 class="method public">getMemberFeed<div class="to-top"><a href="#Zend_Gdata_Gapps">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getMemberFeed</span><span class="nb-faded-text">(
+          mixed $location
+              =
+              null
+          )
+        </span>
+        :
+        <a href="_Gdata_Gapps_MemberFeed.html#%5CZend_Gdata_Gapps_MemberFeed">\Zend_Gdata_Gapps_MemberFeed</a></code><p class="short-description">Retreive MemberFeed object containing multiple MemberEntry
+objects.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$location</dt>
+<dd>mixed<br><em>(optional) The location for the feed, as a URL or Query.</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_Gapps_MemberFeed.html#%5CZend_Gdata_Gapps_MemberFeed">\Zend_Gdata_Gapps_MemberFeed</a></dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_App_Exception.html#%5CZend_Gdata_App_Exception"></a></dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_App_HttpException.html#%5CZend_Gdata_App_HttpException"></a></dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_Gapps_ServiceException.html#%5CZend_Gdata_Gapps_ServiceException"></a></dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Gapps::getNicknameEntry()"></a><h4 class="method public">getNicknameEntry<div class="to-top"><a href="#Zend_Gdata_Gapps">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getNicknameEntry</span><span class="nb-faded-text">(
+          mixed $location
+          )
+        </span>
+        :
+        <a href="_Gdata_Gapps_NicknameEntry.html#%5CZend_Gdata_Gapps_NicknameEntry">\Zend_Gdata_Gapps_NicknameEntry</a></code><p class="short-description">Retreive a single NicknameEntry object.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$location</dt>
+<dd>mixed<br><em>The location for the feed, as a URL or Query.</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_Gapps_NicknameEntry.html#%5CZend_Gdata_Gapps_NicknameEntry">\Zend_Gdata_Gapps_NicknameEntry</a></dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_App_Exception.html#%5CZend_Gdata_App_Exception"></a></dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_App_HttpException.html#%5CZend_Gdata_App_HttpException"></a></dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_Gapps_ServiceException.html#%5CZend_Gdata_Gapps_ServiceException"></a></dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Gapps::getNicknameFeed()"></a><h4 class="method public">getNicknameFeed<div class="to-top"><a href="#Zend_Gdata_Gapps">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getNicknameFeed</span><span class="nb-faded-text">(
+          mixed $location
+              =
+              null
+          )
+        </span>
+        :
+        <a href="_Gdata_Gapps_NicknameFeed.html#%5CZend_Gdata_Gapps_NicknameFeed">\Zend_Gdata_Gapps_NicknameFeed</a></code><p class="short-description">Retreive NicknameFeed object containing multiple NicknameEntry objects.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$location</dt>
+<dd>mixed<br><em>(optional) The location for the feed, as a URL or Query.</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_Gapps_NicknameFeed.html#%5CZend_Gdata_Gapps_NicknameFeed">\Zend_Gdata_Gapps_NicknameFeed</a></dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_App_Exception.html#%5CZend_Gdata_App_Exception"></a></dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_App_HttpException.html#%5CZend_Gdata_App_HttpException"></a></dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_Gapps_ServiceException.html#%5CZend_Gdata_Gapps_ServiceException"></a></dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Gapps::getOwnerEntry()"></a><h4 class="method public">getOwnerEntry<div class="to-top"><a href="#Zend_Gdata_Gapps">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getOwnerEntry</span><span class="nb-faded-text">(
+          mixed $location
+              =
+              null
+          )
+        </span>
+        :
+        <a href="_Gdata_Gapps_OwnerEntry.html#%5CZend_Gdata_Gapps_OwnerEntry">\Zend_Gdata_Gapps_OwnerEntry</a></code><p class="short-description">Retreive a single OwnerEntry object.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$location</dt>
+<dd>mixed<br><em>The location for the feed, as a URL or Query.</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_Gapps_OwnerEntry.html#%5CZend_Gdata_Gapps_OwnerEntry">\Zend_Gdata_Gapps_OwnerEntry</a></dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_App_Exception.html#%5CZend_Gdata_App_Exception"></a></dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_App_HttpException.html#%5CZend_Gdata_App_HttpException"></a></dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_Gapps_ServiceException.html#%5CZend_Gdata_Gapps_ServiceException"></a></dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Gapps::getOwnerFeed()"></a><h4 class="method public">getOwnerFeed<div class="to-top"><a href="#Zend_Gdata_Gapps">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getOwnerFeed</span><span class="nb-faded-text">(
+          mixed $location
+              =
+              null
+          )
+        </span>
+        :
+        <a href="_Gdata_Gapps_OwnerFeed.html#%5CZend_Gdata_Gapps_OwnerFeed">\Zend_Gdata_Gapps_OwnerFeed</a></code><p class="short-description">Retreive OwnerFeed object containing multiple OwnerEntry
+objects.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$location</dt>
+<dd>mixed<br><em>(optional) The location for the feed, as a URL or Query.</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_Gapps_OwnerFeed.html#%5CZend_Gdata_Gapps_OwnerFeed">\Zend_Gdata_Gapps_OwnerFeed</a></dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_App_Exception.html#%5CZend_Gdata_App_Exception"></a></dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_App_HttpException.html#%5CZend_Gdata_App_HttpException"></a></dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_Gapps_ServiceException.html#%5CZend_Gdata_Gapps_ServiceException"></a></dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Gapps::getUserEntry()"></a><h4 class="method public">getUserEntry<div class="to-top"><a href="#Zend_Gdata_Gapps">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getUserEntry</span><span class="nb-faded-text">(
+          mixed $location
+          )
+        </span>
+        :
+        <a href="_Gdata_Gapps_UserEntry.html#%5CZend_Gdata_Gapps_UserEntry">\Zend_Gdata_Gapps_UserEntry</a></code><p class="short-description">Retreive a single UserEntry object.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$location</dt>
+<dd>mixed<br><em>The location for the feed, as a URL or Query.</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_Gapps_UserEntry.html#%5CZend_Gdata_Gapps_UserEntry">\Zend_Gdata_Gapps_UserEntry</a></dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_App_Exception.html#%5CZend_Gdata_App_Exception"></a></dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_App_HttpException.html#%5CZend_Gdata_App_HttpException"></a></dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_Gapps_ServiceException.html#%5CZend_Gdata_Gapps_ServiceException"></a></dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Gapps::getUserFeed()"></a><h4 class="method public">getUserFeed<div class="to-top"><a href="#Zend_Gdata_Gapps">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getUserFeed</span><span class="nb-faded-text">(
+          mixed $location
+              =
+              null
+          )
+        </span>
+        :
+        <a href="_Gdata_Gapps_UserFeed.html#%5CZend_Gdata_Gapps_UserFeed">\Zend_Gdata_Gapps_UserFeed</a></code><p class="short-description">Retrieve a UserFeed containing multiple UserEntry objects.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$location</dt>
+<dd>mixed<br><em>(optional) The location for the feed, as a URL or Query.</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_Gapps_UserFeed.html#%5CZend_Gdata_Gapps_UserFeed">\Zend_Gdata_Gapps_UserFeed</a></dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_App_Exception.html#%5CZend_Gdata_App_Exception"></a></dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_App_HttpException.html#%5CZend_Gdata_App_HttpException"></a></dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_Gapps_ServiceException.html#%5CZend_Gdata_Gapps_ServiceException"></a></dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Gapps::import()"></a><h4 class="method public">import<div class="to-top"><a href="#Zend_Gdata_Gapps">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">import</span><span class="nb-faded-text">(
+          string $uri, <a href="_Http_Client.html#%5CZend_Http_Client">\Zend_Http_Client</a> $client
+              =
+              null, string $className
+              =
+              Zend_Gdata_App_Feed
+          )
+        </span>
+        :
+        <a href="_Gdata_App_Feed.html#%5CZend_Gdata_App_Feed">\Zend_Gdata_App_Feed</a></code><p class="short-description">Imports a feed located at $uri.</p>
+<div class="long-description"><p>This method overrides the default behavior of Zend_Gdata_App,
+providing support for Zend_Gdata_Gapps_ServiceException.</p>
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$uri</dt>
+<dd>string<br><em></em>
+</dd>
+<dt>$client</dt>
+<dd>\Zend_Http_Client<br><em>(optional) The client used for communication</em>
+</dd>
+<dt>$className</dt>
+<dd>string<br><em>(optional) The class which is used as the return type</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_App_Feed.html#%5CZend_Gdata_App_Feed">\Zend_Gdata_App_Feed</a></dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>true</dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_App_Exception.html#%5CZend_Gdata_App_Exception"></a></dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_App_HttpException.html#%5CZend_Gdata_App_HttpException"></a></dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_Gapps_ServiceException.html#%5CZend_Gdata_Gapps_ServiceException"></a></dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Gapps::insertEmailList()"></a><h4 class="method public">insertEmailList<div class="to-top"><a href="#Zend_Gdata_Gapps">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">insertEmailList</span><span class="nb-faded-text">(
+          <a href="_Gdata_Gapps_EmailListEntry.html#%5CZend_Gdata_Gapps_EmailListEntry">\Zend_Gdata_Gapps_EmailListEntry</a> $emailList, string $uri
+              =
+              null
+          )
+        </span>
+        :
+        <a href="_Gdata_Gapps_EmailListEntry.html#%5CZend_Gdata_Gapps_EmailListEntry">\Zend_Gdata_Gapps_EmailListEntry</a></code><p class="short-description">Create a new email list from an EmailListEntry.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$emailList</dt>
+<dd>\Zend_Gdata_Gapps_EmailListEntry<br><em>The email list entry to insert.</em>
+</dd>
+<dt>$uri</dt>
+<dd>string<br><em>(optional) The URI where the email list should be uploaded to. If null, the default email list creation URI for this domain will be used.</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_Gapps_EmailListEntry.html#%5CZend_Gdata_Gapps_EmailListEntry">\Zend_Gdata_Gapps_EmailListEntry</a></dt>
+<dd><em>The inserted email list entry as returned by the server.</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_App_Exception.html#%5CZend_Gdata_App_Exception"></a></dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_App_HttpException.html#%5CZend_Gdata_App_HttpException"></a></dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_Gapps_ServiceException.html#%5CZend_Gdata_Gapps_ServiceException"></a></dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Gapps::insertEmailListRecipient()"></a><h4 class="method public">insertEmailListRecipient<div class="to-top"><a href="#Zend_Gdata_Gapps">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">insertEmailListRecipient</span><span class="nb-faded-text">(
+          <a href="_Gdata_Gapps_EmailListRecipientEntry.html#%5CZend_Gdata_Gapps_EmailListRecipientEntry">\Zend_Gdata_Gapps_EmailListRecipientEntry</a> $recipient, string $uri
+              =
+              null
+          )
+        </span>
+        :
+        <a href="_Gdata_Gapps_EmailListRecipientEntry.html#%5CZend_Gdata_Gapps_EmailListRecipientEntry">\Zend_Gdata_Gapps_EmailListRecipientEntry</a></code><p class="short-description">Create a new email list recipient from an EmailListRecipientEntry.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$recipient</dt>
+<dd>\Zend_Gdata_Gapps_EmailListRecipientEntry<br><em>The recipient entry to insert.</em>
+</dd>
+<dt>$uri</dt>
+<dd>string<br><em>(optional) The URI where the recipient should be uploaded to. If null, the default recipient creation URI for this domain will be used.</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_Gapps_EmailListRecipientEntry.html#%5CZend_Gdata_Gapps_EmailListRecipientEntry">\Zend_Gdata_Gapps_EmailListRecipientEntry</a></dt>
+<dd><em>The inserted recipient entry as returned by the server.</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_App_Exception.html#%5CZend_Gdata_App_Exception"></a></dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_App_HttpException.html#%5CZend_Gdata_App_HttpException"></a></dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_Gapps_ServiceException.html#%5CZend_Gdata_Gapps_ServiceException"></a></dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Gapps::insertGroup()"></a><h4 class="method public">insertGroup<div class="to-top"><a href="#Zend_Gdata_Gapps">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">insertGroup</span><span class="nb-faded-text">(
+          <a href="_Gdata_Gapps_GroupEntry.html#%5CZend_Gdata_Gapps_GroupEntry">\Zend_Gdata_Gapps_GroupEntry</a> $group, string $uri
+              =
+              null
+          )
+        </span>
+        :
+        <a href="_Gdata_Gapps_GroupEntry.html#%5CZend_Gdata_Gapps_GroupEntry">\Zend_Gdata_Gapps_GroupEntry</a></code><p class="short-description">Create a new group from a GroupEntry.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$group</dt>
+<dd>\Zend_Gdata_Gapps_GroupEntry<br><em>The group entry to insert.</em>
+</dd>
+<dt>$uri</dt>
+<dd>string<br><em>(optional) The URI where the group should be uploaded to. If null, the default user creation URI for this domain will be used.</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_Gapps_GroupEntry.html#%5CZend_Gdata_Gapps_GroupEntry">\Zend_Gdata_Gapps_GroupEntry</a></dt>
+<dd><em>The inserted group entry as returned by the server.</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_App_Exception.html#%5CZend_Gdata_App_Exception"></a></dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_App_HttpException.html#%5CZend_Gdata_App_HttpException"></a></dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_Gapps_ServiceException.html#%5CZend_Gdata_Gapps_ServiceException"></a></dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Gapps::insertMember()"></a><h4 class="method public">insertMember<div class="to-top"><a href="#Zend_Gdata_Gapps">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">insertMember</span><span class="nb-faded-text">(
+          <a href="_Gdata_Gapps_MemberEntry.html#%5CZend_Gdata_Gapps_MemberEntry">\Zend_Gdata_Gapps_MemberEntry</a> $member, string $uri
+              =
+              null
+          )
+        </span>
+        :
+        <a href="_Gdata_Gapps_MemberEntry.html#%5CZend_Gdata_Gapps_MemberEntry">\Zend_Gdata_Gapps_MemberEntry</a></code><p class="short-description">Create a new member from a MemberEntry.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$member</dt>
+<dd>\Zend_Gdata_Gapps_MemberEntry<br><em>The member entry to insert.</em>
+</dd>
+<dt>$uri</dt>
+<dd>string<br><em>(optional) The URI where the group should be uploaded to. If null, the default user creation URI for this domain will be used.</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_Gapps_MemberEntry.html#%5CZend_Gdata_Gapps_MemberEntry">\Zend_Gdata_Gapps_MemberEntry</a></dt>
+<dd><em>The inserted member entry as returned by the server.</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_App_Exception.html#%5CZend_Gdata_App_Exception"></a></dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_App_HttpException.html#%5CZend_Gdata_App_HttpException"></a></dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_Gapps_ServiceException.html#%5CZend_Gdata_Gapps_ServiceException"></a></dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Gapps::insertNickname()"></a><h4 class="method public">insertNickname<div class="to-top"><a href="#Zend_Gdata_Gapps">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">insertNickname</span><span class="nb-faded-text">(
+          <a href="_Gdata_Gapps_NicknameEntry.html#%5CZend_Gdata_Gapps_NicknameEntry">\Zend_Gdata_Gapps_NicknameEntry</a> $nickname, string $uri
+              =
+              null
+          )
+        </span>
+        :
+        <a href="_Gdata_Gapps_NicknameEntry.html#%5CZend_Gdata_Gapps_NicknameEntry">\Zend_Gdata_Gapps_NicknameEntry</a></code><p class="short-description">Create a new nickname from a NicknameEntry.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$nickname</dt>
+<dd>\Zend_Gdata_Gapps_NicknameEntry<br><em>The nickname entry to insert.</em>
+</dd>
+<dt>$uri</dt>
+<dd>string<br><em>(optional) The URI where the nickname should be uploaded to. If null, the default nickname creation URI for this domain will be used.</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_Gapps_NicknameEntry.html#%5CZend_Gdata_Gapps_NicknameEntry">\Zend_Gdata_Gapps_NicknameEntry</a></dt>
+<dd><em>The inserted nickname entry as returned by the server.</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_App_Exception.html#%5CZend_Gdata_App_Exception"></a></dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_App_HttpException.html#%5CZend_Gdata_App_HttpException"></a></dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_Gapps_ServiceException.html#%5CZend_Gdata_Gapps_ServiceException"></a></dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Gapps::insertOwner()"></a><h4 class="method public">insertOwner<div class="to-top"><a href="#Zend_Gdata_Gapps">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">insertOwner</span><span class="nb-faded-text">(
+          <a href="_Gdata_Gapps_OwnerEntry.html#%5CZend_Gdata_Gapps_OwnerEntry">\Zend_Gdata_Gapps_OwnerEntry</a> $owner, string $uri
+              =
+              null
+          )
+        </span>
+        :
+        <a href="_Gdata_Gapps_OwnerEntry.html#%5CZend_Gdata_Gapps_OwnerEntry">\Zend_Gdata_Gapps_OwnerEntry</a></code><p class="short-description">Create a new group from a OwnerEntry.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$owner</dt>
+<dd>\Zend_Gdata_Gapps_OwnerEntry<br><em>The owner entry to insert.</em>
+</dd>
+<dt>$uri</dt>
+<dd>string<br><em>(optional) The URI where the owner should be uploaded to. If null, the default user creation URI for this domain will be used.</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_Gapps_OwnerEntry.html#%5CZend_Gdata_Gapps_OwnerEntry">\Zend_Gdata_Gapps_OwnerEntry</a></dt>
+<dd><em>The inserted owner entry as returned by the server.</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_App_Exception.html#%5CZend_Gdata_App_Exception"></a></dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_App_HttpException.html#%5CZend_Gdata_App_HttpException"></a></dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_Gapps_ServiceException.html#%5CZend_Gdata_Gapps_ServiceException"></a></dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Gapps::insertUser()"></a><h4 class="method public">insertUser<div class="to-top"><a href="#Zend_Gdata_Gapps">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">insertUser</span><span class="nb-faded-text">(
+          <a href="_Gdata_Gapps_UserEntry.html#%5CZend_Gdata_Gapps_UserEntry">\Zend_Gdata_Gapps_UserEntry</a> $user, string $uri
+              =
+              null
+          )
+        </span>
+        :
+        <a href="_Gdata_Gapps_UserEntry.html#%5CZend_Gdata_Gapps_UserEntry">\Zend_Gdata_Gapps_UserEntry</a></code><p class="short-description">Create a new user from a UserEntry.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$user</dt>
+<dd>\Zend_Gdata_Gapps_UserEntry<br><em>The user entry to insert.</em>
+</dd>
+<dt>$uri</dt>
+<dd>string<br><em>(optional) The URI where the user should be uploaded to. If null, the default user creation URI for this domain will be used.</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_Gapps_UserEntry.html#%5CZend_Gdata_Gapps_UserEntry">\Zend_Gdata_Gapps_UserEntry</a></dt>
+<dd><em>The inserted user entry as returned by the server.</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_App_Exception.html#%5CZend_Gdata_App_Exception"></a></dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_App_HttpException.html#%5CZend_Gdata_App_HttpException"></a></dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_Gapps_ServiceException.html#%5CZend_Gdata_Gapps_ServiceException"></a></dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Gapps::post()"></a><h4 class="method public">post<div class="to-top"><a href="#Zend_Gdata_Gapps">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">post</span><span class="nb-faded-text">(
+          mixed $data, string $uri
+              =
+              null, integer $remainingRedirects
+              =
+              null, string $contentType
+              =
+              null,  $extraHeaders
+              =
+              null
+          )
+        </span>
+        :
+        <a href="_Http_Response.html#%5CZend_Http_Response">\Zend_Http_Response</a></code><p class="short-description">POST data with client object.</p>
+<div class="long-description"><p>This method overrides the default behavior of Zend_Gdata_App,
+providing support for Zend_Gdata_Gapps_ServiceException.</p>
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$data</dt>
+<dd>mixed<br><em>The Zend_Gdata_App_Entry or XML to post</em>
+</dd>
+<dt>$uri</dt>
+<dd>string<br><em>(optional) POST URI</em>
+</dd>
+<dt>$remainingRedirects</dt>
+<dd>integer<br><em>(optional)</em>
+</dd>
+<dt>$contentType</dt>
+<dd>string<br><em>Content-type of the data</em>
+</dd>
+<dt>$extraHeaders</dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Http_Response.html#%5CZend_Http_Response">\Zend_Http_Response</a></dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_App_HttpException.html#%5CZend_Gdata_App_HttpException"></a></dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_App_InvalidArgumentException.html#%5CZend_Gdata_App_InvalidArgumentException"></a></dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_Gapps_ServiceException.html#%5CZend_Gdata_Gapps_ServiceException"></a></dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Gapps::put()"></a><h4 class="method public">put<div class="to-top"><a href="#Zend_Gdata_Gapps">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">put</span><span class="nb-faded-text">(
+          mixed $data, string $uri
+              =
+              null, integer $remainingRedirects
+              =
+              null, string $contentType
+              =
+              null,  $extraHeaders
+              =
+              null
+          )
+        </span>
+        :
+        <a href="_Http_Response.html#%5CZend_Http_Response">\Zend_Http_Response</a></code><p class="short-description">PUT data with client object
+This method overrides the default behavior of Zend_Gdata_App,
+providing support for Zend_Gdata_Gapps_ServiceException.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$data</dt>
+<dd>mixed<br><em>The Zend_Gdata_App_Entry or XML to post</em>
+</dd>
+<dt>$uri</dt>
+<dd>string<br><em>(optional) PUT URI</em>
+</dd>
+<dt>$remainingRedirects</dt>
+<dd>integer<br><em>(optional)</em>
+</dd>
+<dt>$contentType</dt>
+<dd>string<br><em>Content-type of the data</em>
+</dd>
+<dt>$extraHeaders</dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Http_Response.html#%5CZend_Http_Response">\Zend_Http_Response</a></dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_App_HttpException.html#%5CZend_Gdata_App_HttpException"></a></dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_App_InvalidArgumentException.html#%5CZend_Gdata_App_InvalidArgumentException"></a></dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_Gapps_ServiceException.html#%5CZend_Gdata_Gapps_ServiceException"></a></dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Gapps::setDomain()"></a><h4 class="method public">setDomain<div class="to-top"><a href="#Zend_Gdata_Gapps">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">setDomain</span><span class="nb-faded-text">(
+          string $value
+          )
+        </span>
+        :
+        </code><p class="short-description">Set domain for this service instance. This should be a fully qualified
+domain, such as 'foo.example.com'.</p>
+<div class="long-description"><p>This value is used when calculating URLs for retrieving and posting
+entries. If no value is specified, a URL will have to be manually
+constructed prior to using any methods which interact with the Google
+Apps provisioning service.</p>
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$value</dt>
+<dd>string<br><em>The domain to be used for this session.</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Gapps::throwServiceExceptionIfDetected()"></a><h4 class="method public">throwServiceExceptionIfDetected<div class="to-top"><a href="#Zend_Gdata_Gapps">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">throwServiceExceptionIfDetected</span><span class="nb-faded-text">(
+          \Zend_Gdata_Exception $e
+          )
+        </span>
+        :
+        </code><p class="short-description">Convert an exception to an ServiceException if an AppsForYourDomain
+XML document is contained within the original exception's HTTP
+response. If conversion fails, throw the original error.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$e</dt>
+<dd>\Zend_Gdata_Exception<br><em>The exception to convert.</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>true</dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_Gapps_ServiceException.html#%5CZend_Gdata_Gapps_ServiceException"></a></dd>
+<dt>throws</dt>
+<dd></dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<small xmlns="" class="footer">Documentation was generated by <a href="http://docblox-project.org">DocBlox 0.12.2</a>.
+    </small></body></html>

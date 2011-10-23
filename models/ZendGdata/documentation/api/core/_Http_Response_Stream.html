@@ -1,0 +1,646 @@
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title>Zend Gdata API Documentation</title><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" href="css/black-tie/jquery-ui-1.8.2.custom.css" type="text/css"></link><link rel="stylesheet" href="css/jquery.treeview.css" type="text/css"></link><link rel="stylesheet" href="css/theme.css" type="text/css"></link><script type="text/javascript" src="js/jquery-1.4.2.min.js"></script><script type="text/javascript" src="js/jquery-ui-1.8.2.custom.min.js"></script><script type="text/javascript" src="js/jquery.cookie.js"></script><script type="text/javascript" src="js/jquery.treeview.js"></script><script type="text/javascript">
+            $(document).ready(function() {
+                $(".filetree").treeview({
+                    collapsed: true,
+                    persist: "cookie"
+                });
+
+                $("#accordion").accordion({
+                    collapsible: true,
+                    autoHeight:  false,
+                    fillSpace:   true
+                });
+
+                $(".tabs").tabs();
+            });
+        </script></head><body><div xmlns="" class="content">
+<div class="sub-page-main-header-api-documentation"><h2>API Documentation</h2></div>
+<div class="dotted-line"></div>
+</div>
+<div xmlns="" id="content">
+<script>
+      $(document).ready(function() {
+        $('dl.function-info, dl.constant-info, dl.property-info').prev().css('cursor', 'pointer');
+        $('dl.function-info, dl.constant-info, dl.property-info').prev().click(function() {
+          if ($(this).next().is(':hidden'))
+          {
+            $(this).children('img')[0].src = 'images/arrow_down.gif';
+          } else
+          {
+            $(this).children('img')[0].src = 'images/arrow_right.gif';
+          }
+          $(this).next().slideToggle();
+        });
+      $('dl.function-info, dl.constant-info, dl.property-info').hide();
+      $('dl.function-info img, dl.constant-info img, dl.property-info img').show();
+      });
+    </script><a name="top"></a><h1 class="file">Http/Response/Stream.php</h1>
+<div class="file_menu">
+<a href="#classes">Classes</a> </div>
+<dl class="file-info">
+<dt>category</dt>
+<dd>Zend</dd>
+<dt>copyright</dt>
+<dd>Copyright (c) 2005-2011 Zend Technologies USA Inc. (http://www.zend.com)</dd>
+<dt>license</dt>
+<dd>http://framework.zend.com/license/new-bsd     New BSD License</dd>
+<dt>package</dt>
+<dd>Zend_Http</dd>
+<dt>subpackage</dt>
+<dd>Response</dd>
+<dt>version</dt>
+<dd>$Id: Stream.php 23775 2011-03-01 17:25:24Z ralph $</dd>
+<dt>Classes</dt>
+<dd><a class="class" href="#%5CZend_Http_Response_Stream">Zend_Http_Response_Stream</a></dd>
+</dl>
+<h2>Description</h2>
+<p class="short-description">Zend Framework</p>
+<div class="long-description"><p>LICENSE</p>
+
+<p>This source file is subject to the new BSD license that is bundled
+with this package in the file LICENSE.txt.
+It is also available through the world-wide-web at this URL:
+http://framework.zend.com/license/new-bsd
+If you did not receive a copy of the license and are unable to
+obtain it through the world-wide-web, please send an email
+to license@zend.com so we can send you a copy immediately.</p>
+</div>
+<a name="classes"></a><a id="\Zend_Http_Response_Stream"></a><h2 class="class">\Zend_Http_Response_Stream<div class="to-top"><a href="#top">jump to top</a></div>
+</h2>
+<div class="class">
+<dl class="class-info">
+<dt>Extends from</dt>
+<dd><a href="_Http_Response.html#%5CZend_Http_Response">\Zend_Http_Response</a></dd>
+<dt>copyright</dt>
+<dd>Copyright (c) 2005-2011 Zend Technologies USA Inc. (http://www.zend.com)</dd>
+<dt>license</dt>
+<dd>http://framework.zend.com/license/new-bsd     New BSD License</dd>
+<dt>package</dt>
+<dd>Zend_Http</dd>
+<dt>subpackage</dt>
+<dd>Response</dd>
+<dt><a href="#" onclick="$(this).children('img').toggle().parents('dt').nextUntil('dt').slideToggle(); return false;"><img src="images/arrow_down.gif"><img src="images/arrow_right.gif" style="display: none">
+                Properties
+              </a></dt>
+<dd><a class="property protected" href="#%5CZend_Http_Response_Stream::%24_cleanup">$_cleanup</a></dd>
+<dd><a class="property protected" href="#%5CZend_Http_Response_Stream::%24stream">$stream</a></dd>
+<dd><a class="property protected" href="#%5CZend_Http_Response_Stream::%24stream_name">$stream_name</a></dd>
+<dt><a href="#" onclick="$(this).children('img').toggle().parents('dt').nextUntil('dt').slideToggle(); return false;"><img src="images/arrow_down.gif"><img src="images/arrow_right.gif" style="display: none">
+                Methods
+              </a></dt>
+<dd><a class="method public" href="#%5CZend_Http_Response_Stream::__construct()">__construct</a></dd>
+<dd><a class="method public" href="#%5CZend_Http_Response_Stream::__destruct()">__destruct</a></dd>
+<dd><a class="method public" href="#%5CZend_Http_Response_Stream::fromStream()">fromStream</a></dd>
+<dd><a class="method public" href="#%5CZend_Http_Response_Stream::getBody()">getBody</a></dd>
+<dd><a class="method public" href="#%5CZend_Http_Response_Stream::getCleanup()">getCleanup</a></dd>
+<dd><a class="method public" href="#%5CZend_Http_Response_Stream::getRawBody()">getRawBody</a></dd>
+<dd><a class="method public" href="#%5CZend_Http_Response_Stream::getStream()">getStream</a></dd>
+<dd><a class="method public" href="#%5CZend_Http_Response_Stream::getStreamName()">getStreamName</a></dd>
+<dd><a class="method protected" href="#%5CZend_Http_Response_Stream::readStream()">readStream</a></dd>
+<dd><a class="method public" href="#%5CZend_Http_Response_Stream::setCleanup()">setCleanup</a></dd>
+<dd><a class="method public" href="#%5CZend_Http_Response_Stream::setStream()">setStream</a></dd>
+<dd><a class="method public" href="#%5CZend_Http_Response_Stream::setStreamName()">setStreamName</a></dd>
+</dl>
+<h3>Description</h3>
+<p class="short-description">Zend_Http_Response represents an HTTP 1.0 / 1.1 response message. It
+includes easy access to all the response's different elemts, as well as some
+convenience methods for parsing and validating HTTP responses.</p>
+<div class="long-description">
+</div>
+<h3>Properties</h3>
+<div>
+<a id="\Zend_Http_Response_Stream::$_cleanup"></a><h4 class="property protected">$_cleanup<div class="to-top"><a href="#%5CZend_Http_Response_Stream">jump to class</a></div>
+</h4>
+<div class="property">
+<code>boolean <span class="highlight">$_cleanup</span> = ''</code><p class="short-description">Should we clean up the stream file when this response is closed?</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt></dt>
+<dd>boolean<br><em></em>
+</dd>
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd></dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Http_Response_Stream::$stream"></a><h4 class="property protected">$stream<div class="to-top"><a href="#%5CZend_Http_Response_Stream">jump to class</a></div>
+</h4>
+<div class="property">
+<code>resource <span class="highlight">$stream</span> = ''</code><p class="short-description">Response as stream</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt></dt>
+<dd>resource<br><em></em>
+</dd>
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd></dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Http_Response_Stream::$stream_name"></a><h4 class="property protected">$stream_name<div class="to-top"><a href="#%5CZend_Http_Response_Stream">jump to class</a></div>
+</h4>
+<div class="property">
+<code>string <span class="highlight">$stream_name</span> = ''</code><p class="short-description">The name of the file containing the stream</p>
+<div class="long-description"><p>Will be empty if stream is not file-based.</p>
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt></dt>
+<dd>string<br><em></em>
+</dd>
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd></dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+</div>
+<h3>Methods</h3>
+<div>
+<a id="\Zend_Http_Response_Stream::__construct()"></a><h4 class="method public">__construct<div class="to-top"><a href="#Zend_Http_Response_Stream">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">__construct</span><span class="nb-faded-text">(
+          int $code, array $headers, string $body
+              =
+              null, string $version
+              =
+              1.1, string $message
+              =
+              null
+          )
+        </span>
+        :
+        </code><p class="short-description">HTTP response constructor</p>
+<div class="long-description"><p>In most cases, you would use Zend_Http_Response::fromString to parse an HTTP
+response string and create a new Zend_Http_Response object.</p>
+
+<p>NOTE: The constructor no longer accepts nulls or empty values for the code and
+headers and will throw an exception if the passed values do not form a valid HTTP
+responses.</p>
+
+<p>If no message is passed, the message will be guessed according to the response code.</p>
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$code</dt>
+<dd>int<br><em>Response code (200, 404, ...)</em>
+</dd>
+<dt>$headers</dt>
+<dd>array<br><em>Headers array</em>
+</dd>
+<dt>$body</dt>
+<dd>string<br><em>Response body</em>
+</dd>
+<dt>$version</dt>
+<dd>string<br><em>HTTP version</em>
+</dd>
+<dt>$message</dt>
+<dd>string<br><em>Response code as text</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+<dt>throws</dt>
+<dd><a href="_Http_Exception.html#%5CZend_Http_Exception"></a></dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Http_Response_Stream::__destruct()"></a><h4 class="method public">__destruct<div class="to-top"><a href="#Zend_Http_Response_Stream">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">__destruct</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        </code><div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Http_Response_Stream::fromStream()"></a><h4 class="method public">fromStream<div class="to-top"><a href="#Zend_Http_Response_Stream">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">fromStream</span><span class="nb-faded-text">(
+          string $response_str, resource $stream
+          )
+        </span>
+        :
+        <a href="_Http_Response_Stream.html#%5CZend_Http_Response_Stream">\Zend_Http_Response_Stream</a></code><p class="short-description">Create a new Zend_Http_Response_Stream object from a string</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$response_str</dt>
+<dd>string<br><em></em>
+</dd>
+<dt>$stream</dt>
+<dd>resource<br><em></em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Http_Response_Stream.html#%5CZend_Http_Response_Stream">\Zend_Http_Response_Stream</a></dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>true</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Http_Response_Stream::getBody()"></a><h4 class="method public">getBody<div class="to-top"><a href="#Zend_Http_Response_Stream">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getBody</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        string</code><p class="short-description">Get the response body as string</p>
+<div class="long-description"><p>This method returns the body of the HTTP response (the content), as it
+should be in it's readable version - that is, after decoding it (if it
+was decoded), deflating it (if it was gzip compressed), etc.</p>
+
+<p>If you want to get the raw body (as transfered on wire) use
+$this->getRawBody() instead.</p>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>string</dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Http_Response_Stream::getCleanup()"></a><h4 class="method public">getCleanup<div class="to-top"><a href="#Zend_Http_Response_Stream">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getCleanup</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        boolean</code><p class="short-description">Get the cleanup trigger</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>boolean</dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Http_Response_Stream::getRawBody()"></a><h4 class="method public">getRawBody<div class="to-top"><a href="#Zend_Http_Response_Stream">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getRawBody</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        string</code><p class="short-description">Get the raw response body (as transfered "on wire") as string</p>
+<div class="long-description"><p>If the body is encoded (with Transfer-Encoding, not content-encoding -
+IE "chunked" body), gzip compressed, etc. it will not be decoded.</p>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>string</dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Http_Response_Stream::getStream()"></a><h4 class="method public">getStream<div class="to-top"><a href="#Zend_Http_Response_Stream">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getStream</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        \resourse</code><p class="short-description">Get the response as stream</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>\resourse</dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Http_Response_Stream::getStreamName()"></a><h4 class="method public">getStreamName<div class="to-top"><a href="#Zend_Http_Response_Stream">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getStreamName</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        string</code><p class="short-description">Get file name associated with the stream</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>string</dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Http_Response_Stream::readStream()"></a><h4 class="method protected">readStream<div class="to-top"><a href="#Zend_Http_Response_Stream">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">readStream</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        string</code><p class="short-description">Read stream content and return it as string</p>
+<div class="long-description"><p>Function reads the remainder of the body from the stream and closes the stream.</p>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>string</dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Http_Response_Stream::setCleanup()"></a><h4 class="method public">setCleanup<div class="to-top"><a href="#Zend_Http_Response_Stream">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">setCleanup</span><span class="nb-faded-text">(
+          bool $cleanup
+              =
+              true
+          )
+        </span>
+        :
+        </code><p class="short-description">Set the cleanup trigger</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$cleanup</dt>
+<dd>bool<br><em>Set cleanup trigger</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Http_Response_Stream::setStream()"></a><h4 class="method public">setStream<div class="to-top"><a href="#Zend_Http_Response_Stream">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">setStream</span><span class="nb-faded-text">(
+          \resourse $stream
+          )
+        </span>
+        :
+        <a href="_Http_Response_Stream.html#%5CZend_Http_Response_Stream">\Zend_Http_Response_Stream</a></code><p class="short-description">Set the response stream</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$stream</dt>
+<dd>\resourse<br><em></em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Http_Response_Stream.html#%5CZend_Http_Response_Stream">\Zend_Http_Response_Stream</a></dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Http_Response_Stream::setStreamName()"></a><h4 class="method public">setStreamName<div class="to-top"><a href="#Zend_Http_Response_Stream">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">setStreamName</span><span class="nb-faded-text">(
+          string $stream_name
+          )
+        </span>
+        :
+        <a href="_Http_Response_Stream.html#%5CZend_Http_Response_Stream">\Zend_Http_Response_Stream</a></code><p class="short-description">Set file name associated with the stream</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$stream_name</dt>
+<dd>string<br><em>Name to set</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Http_Response_Stream.html#%5CZend_Http_Response_Stream">\Zend_Http_Response_Stream</a></dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<small xmlns="" class="footer">Documentation was generated by <a href="http://docblox-project.org">DocBlox 0.12.2</a>.
+    </small></body></html>

@@ -1,0 +1,592 @@
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title>Zend Gdata API Documentation</title><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" href="css/black-tie/jquery-ui-1.8.2.custom.css" type="text/css"></link><link rel="stylesheet" href="css/jquery.treeview.css" type="text/css"></link><link rel="stylesheet" href="css/theme.css" type="text/css"></link><script type="text/javascript" src="js/jquery-1.4.2.min.js"></script><script type="text/javascript" src="js/jquery-ui-1.8.2.custom.min.js"></script><script type="text/javascript" src="js/jquery.cookie.js"></script><script type="text/javascript" src="js/jquery.treeview.js"></script><script type="text/javascript">
+            $(document).ready(function() {
+                $(".filetree").treeview({
+                    collapsed: true,
+                    persist: "cookie"
+                });
+
+                $("#accordion").accordion({
+                    collapsible: true,
+                    autoHeight:  false,
+                    fillSpace:   true
+                });
+
+                $(".tabs").tabs();
+            });
+        </script></head><body><div xmlns="" class="content">
+<div class="sub-page-main-header-api-documentation"><h2>API Documentation</h2></div>
+<div class="dotted-line"></div>
+</div>
+<div xmlns="" id="content">
+<script>
+      $(document).ready(function() {
+        $('dl.function-info, dl.constant-info, dl.property-info').prev().css('cursor', 'pointer');
+        $('dl.function-info, dl.constant-info, dl.property-info').prev().click(function() {
+          if ($(this).next().is(':hidden'))
+          {
+            $(this).children('img')[0].src = 'images/arrow_down.gif';
+          } else
+          {
+            $(this).children('img')[0].src = 'images/arrow_right.gif';
+          }
+          $(this).next().slideToggle();
+        });
+      $('dl.function-info, dl.constant-info, dl.property-info').hide();
+      $('dl.function-info img, dl.constant-info img, dl.property-info img').show();
+      });
+    </script><a name="top"></a><h1 class="file">Gdata/Docs/Query.php</h1>
+<div class="file_menu">
+<a href="#includes">Includes</a> <a href="#classes">Classes</a> </div>
+<dl class="file-info">
+<dt>category</dt>
+<dd>Zend</dd>
+<dt>copyright</dt>
+<dd>Copyright (c) 2005-2011 Zend Technologies USA Inc. (http://www.zend.com)</dd>
+<dt>license</dt>
+<dd>http://framework.zend.com/license/new-bsd     New BSD License</dd>
+<dt>package</dt>
+<dd>Zend_Gdata</dd>
+<dt>subpackage</dt>
+<dd>Docs</dd>
+<dt>version</dt>
+<dd>$Id: Query.php 23805 2011-03-16 00:55:40Z tjohns $</dd>
+<dt>Classes</dt>
+<dd><a class="class" href="#%5CZend_Gdata_Docs_Query">Zend_Gdata_Docs_Query</a></dd>
+</dl>
+<h2>Description</h2>
+<p class="short-description">Zend Framework</p>
+<div class="long-description"><p>LICENSE</p>
+
+<p>This source file is subject to the new BSD license that is bundled
+with this package in the file LICENSE.txt.
+It is also available through the world-wide-web at this URL:
+http://framework.zend.com/license/new-bsd
+If you did not receive a copy of the license and are unable to
+obtain it through the world-wide-web, please send an email
+to license@zend.com so we can send you a copy immediately.</p>
+</div>
+<a name="classes"></a><a id="\Zend_Gdata_Docs_Query"></a><h2 class="class">\Zend_Gdata_Docs_Query<div class="to-top"><a href="#top">jump to top</a></div>
+</h2>
+<div class="class">
+<dl class="class-info">
+<dt>Extends from</dt>
+<dd><a href="_Gdata_Query.html#%5CZend_Gdata_Query">\Zend_Gdata_Query</a></dd>
+<dt>category</dt>
+<dd>Zend</dd>
+<dt>copyright</dt>
+<dd>Copyright (c) 2005-2011 Zend Technologies USA Inc. (http://www.zend.com)</dd>
+<dt>license</dt>
+<dd>http://framework.zend.com/license/new-bsd     New BSD License</dd>
+<dt>link</dt>
+<dd><a href="http://code.google.com/apis/gdata/spreadsheets/">http://code.google.com/apis/gdata/spreadsheets/</a></dd>
+<dt>package</dt>
+<dd>Zend_Gdata</dd>
+<dt>subpackage</dt>
+<dd>Docs</dd>
+<dt><a href="#" onclick="$(this).children('img').toggle().parents('dt').nextUntil('dt').slideToggle(); return false;"><img src="images/arrow_down.gif"><img src="images/arrow_right.gif" style="display: none">
+                Constants
+              </a></dt>
+<dd><a class="constant" href="#%5CZend_Gdata_Docs_Query::DOCUMENTS_LIST_FEED_URI">DOCUMENTS_LIST_FEED_URI</a></dd>
+<dt><a href="#" onclick="$(this).children('img').toggle().parents('dt').nextUntil('dt').slideToggle(); return false;"><img src="images/arrow_down.gif"><img src="images/arrow_right.gif" style="display: none">
+                Properties
+              </a></dt>
+<dd><a class="property protected" href="#%5CZend_Gdata_Docs_Query::%24_defaultFeedUri">$_defaultFeedUri</a></dd>
+<dd><a class="property protected" href="#%5CZend_Gdata_Docs_Query::%24_projection">$_projection</a></dd>
+<dd><a class="property protected" href="#%5CZend_Gdata_Docs_Query::%24_visibility">$_visibility</a></dd>
+<dt><a href="#" onclick="$(this).children('img').toggle().parents('dt').nextUntil('dt').slideToggle(); return false;"><img src="images/arrow_down.gif"><img src="images/arrow_right.gif" style="display: none">
+                Methods
+              </a></dt>
+<dd><a class="method public" href="#%5CZend_Gdata_Docs_Query::__construct()">__construct</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Docs_Query::getProjection()">getProjection</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Docs_Query::getQueryUrl()">getQueryUrl</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Docs_Query::getTitle()">getTitle</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Docs_Query::getTitleExact()">getTitleExact</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Docs_Query::getVisibility()">getVisibility</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Docs_Query::setProjection()">setProjection</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Docs_Query::setTitle()">setTitle</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Docs_Query::setTitleExact()">setTitleExact</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Docs_Query::setVisibility()">setVisibility</a></dd>
+</dl>
+<h3>Description</h3>
+<p class="short-description">Assists in constructing queries for Google Document List documents</p>
+<div class="long-description"><p>Queries are not defined for APP, but are provided by Gdata services
+as an extension.</p>
+</div>
+<h3>Constants</h3>
+<div>
+<a id="\Zend_Gdata_Docs_Query::DOCUMENTS_LIST_FEED_URI"></a><h4 class="constant">DOCUMENTS_LIST_FEED_URI<div class="to-top"><a href="#Zend_Gdata_Docs_Query">jump to class</a></div>
+</h4>
+<div class="constant">
+<code>string <span class="highlight">DOCUMENTS_LIST_FEED_URI</span> = 'https://docs.google.com/feeds/documents'
+      </code><p class="short-description">The base URL for retrieving a document list</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="constant-info">
+<dt>value</dt>
+<dd>https://docs.google.com/feeds/documents</dd>
+<dt></dt>
+<dd>string<br><em></em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+</div>
+<h3>Properties</h3>
+<div>
+<a id="\Zend_Gdata_Docs_Query::$_defaultFeedUri"></a><h4 class="property protected">$_defaultFeedUri<div class="to-top"><a href="#%5CZend_Gdata_Docs_Query">jump to class</a></div>
+</h4>
+<div class="property">
+<code>string <span class="highlight">$_defaultFeedUri</span> = 'self'</code><p class="short-description">The generic base URL used by some inherited methods</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt></dt>
+<dd>string<br><em></em>
+</dd>
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd>self</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Docs_Query::$_projection"></a><h4 class="property protected">$_projection<div class="to-top"><a href="#%5CZend_Gdata_Docs_Query">jump to class</a></div>
+</h4>
+<div class="property">
+<code>string <span class="highlight">$_projection</span> = 'full'</code><p class="short-description">The projection determines how much detail should be given in the
+result of the query. Full is the only valid projection for the
+documents list.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt></dt>
+<dd>string<br><em></em>
+</dd>
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd>full</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Docs_Query::$_visibility"></a><h4 class="property protected">$_visibility<div class="to-top"><a href="#%5CZend_Gdata_Docs_Query">jump to class</a></div>
+</h4>
+<div class="property">
+<code>string <span class="highlight">$_visibility</span> = 'private'</code><p class="short-description">The visibility to be used when querying for the feed. A request for a
+feed with private visbility requires the user to be authenricated.</p>
+<div class="long-description"><p>Private is the only avilable visibility for the documents list.</p>
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt></dt>
+<dd>string<br><em></em>
+</dd>
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd>private</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+</div>
+<h3>Methods</h3>
+<div>
+<a id="\Zend_Gdata_Docs_Query::__construct()"></a><h4 class="method public">__construct<div class="to-top"><a href="#Zend_Gdata_Docs_Query">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">__construct</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        </code><p class="short-description">Constructs a new instance of a Zend_Gdata_Docs_Query object.</p>
+<div class="long-description"><p>If the URL already contains a calendar ID, projection, visibility,
+event ID, or comment ID, you will need to set these fields to null
+to prevent them from being inserted. See this class's properties for
+more information.</p>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Docs_Query::getProjection()"></a><h4 class="method public">getProjection<div class="to-top"><a href="#Zend_Gdata_Docs_Query">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getProjection</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        string</code><p class="short-description">Gets the projection for this query.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>string</dt>
+<dd><em>projection</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Docs_Query::getQueryUrl()"></a><h4 class="method public">getQueryUrl<div class="to-top"><a href="#Zend_Gdata_Docs_Query">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getQueryUrl</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        string</code><p class="short-description">Gets the full query URL for this query.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>string</dt>
+<dd><em>url</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Docs_Query::getTitle()"></a><h4 class="method public">getTitle<div class="to-top"><a href="#Zend_Gdata_Docs_Query">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getTitle</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        string</code><p class="short-description">Gets the title attribute for this query.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>string</dt>
+<dd><em>title</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Docs_Query::getTitleExact()"></a><h4 class="method public">getTitleExact<div class="to-top"><a href="#Zend_Gdata_Docs_Query">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getTitleExact</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        string</code><p class="short-description">Gets the title-exact attribute for this query.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>string</dt>
+<dd><em>title-exact</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Docs_Query::getVisibility()"></a><h4 class="method public">getVisibility<div class="to-top"><a href="#Zend_Gdata_Docs_Query">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getVisibility</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        string</code><p class="short-description">Gets the visibility for this query.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>string</dt>
+<dd><em>visibility</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Docs_Query::setProjection()"></a><h4 class="method public">setProjection<div class="to-top"><a href="#Zend_Gdata_Docs_Query">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">setProjection</span><span class="nb-faded-text">(
+          string $value
+          )
+        </span>
+        :
+        <a href="_Gdata_Docs_Query.html#%5CZend_Gdata_Docs_Query">\Zend_Gdata_Docs_Query</a></code><p class="short-description">Sets the projection for this query. Common values for projection
+include 'full'.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$value</dt>
+<dd>string<br><em></em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_Docs_Query.html#%5CZend_Gdata_Docs_Query">\Zend_Gdata_Docs_Query</a></dt>
+<dd><em>Provides a fluent interface</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Docs_Query::setTitle()"></a><h4 class="method public">setTitle<div class="to-top"><a href="#Zend_Gdata_Docs_Query">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">setTitle</span><span class="nb-faded-text">(
+          string $value
+          )
+        </span>
+        :
+        <a href="_Gdata_Docs_Query.html#%5CZend_Gdata_Docs_Query">\Zend_Gdata_Docs_Query</a></code><p class="short-description">Sets the title attribute for this query. The title parameter is used
+to restrict the results to documents whose titles either contain or
+completely match the title.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$value</dt>
+<dd>string<br><em></em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_Docs_Query.html#%5CZend_Gdata_Docs_Query">\Zend_Gdata_Docs_Query</a></dt>
+<dd><em>Provides a fluent interface</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Docs_Query::setTitleExact()"></a><h4 class="method public">setTitleExact<div class="to-top"><a href="#Zend_Gdata_Docs_Query">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">setTitleExact</span><span class="nb-faded-text">(
+          boolean $value
+          )
+        </span>
+        :
+        <a href="_Gdata_Docs_Query.html#%5CZend_Gdata_Docs_Query">\Zend_Gdata_Docs_Query</a></code><p class="short-description">Sets the title-exact attribute for this query.</p>
+<div class="long-description"><p>If title-exact is set to true, the title query parameter will be used
+in an exact match. Only documents with a title identical to the
+title parameter will be returned.</p>
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$value</dt>
+<dd>boolean<br><em>Use either true or false</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_Docs_Query.html#%5CZend_Gdata_Docs_Query">\Zend_Gdata_Docs_Query</a></dt>
+<dd><em>Provides a fluent interface</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Docs_Query::setVisibility()"></a><h4 class="method public">setVisibility<div class="to-top"><a href="#Zend_Gdata_Docs_Query">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">setVisibility</span><span class="nb-faded-text">(
+          string $value
+          )
+        </span>
+        :
+        <a href="_Gdata_Docs_Query.html#%5CZend_Gdata_Docs_Query">\Zend_Gdata_Docs_Query</a></code><p class="short-description">Sets the visibility for this query. Common values for visibility
+include 'private'.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$value</dt>
+<dd>string<br><em>visibility</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_Docs_Query.html#%5CZend_Gdata_Docs_Query">\Zend_Gdata_Docs_Query</a></dt>
+<dd><em>Provides a fluent interface</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<small xmlns="" class="footer">Documentation was generated by <a href="http://docblox-project.org">DocBlox 0.12.2</a>.
+    </small></body></html>

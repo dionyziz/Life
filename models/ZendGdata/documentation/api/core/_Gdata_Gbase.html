@@ -1,0 +1,540 @@
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title>Zend Gdata API Documentation</title><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" href="css/black-tie/jquery-ui-1.8.2.custom.css" type="text/css"></link><link rel="stylesheet" href="css/jquery.treeview.css" type="text/css"></link><link rel="stylesheet" href="css/theme.css" type="text/css"></link><script type="text/javascript" src="js/jquery-1.4.2.min.js"></script><script type="text/javascript" src="js/jquery-ui-1.8.2.custom.min.js"></script><script type="text/javascript" src="js/jquery.cookie.js"></script><script type="text/javascript" src="js/jquery.treeview.js"></script><script type="text/javascript">
+            $(document).ready(function() {
+                $(".filetree").treeview({
+                    collapsed: true,
+                    persist: "cookie"
+                });
+
+                $("#accordion").accordion({
+                    collapsible: true,
+                    autoHeight:  false,
+                    fillSpace:   true
+                });
+
+                $(".tabs").tabs();
+            });
+        </script></head><body><div xmlns="" class="content">
+<div class="sub-page-main-header-api-documentation"><h2>API Documentation</h2></div>
+<div class="dotted-line"></div>
+</div>
+<div xmlns="" id="content">
+<script>
+      $(document).ready(function() {
+        $('dl.function-info, dl.constant-info, dl.property-info').prev().css('cursor', 'pointer');
+        $('dl.function-info, dl.constant-info, dl.property-info').prev().click(function() {
+          if ($(this).next().is(':hidden'))
+          {
+            $(this).children('img')[0].src = 'images/arrow_down.gif';
+          } else
+          {
+            $(this).children('img')[0].src = 'images/arrow_right.gif';
+          }
+          $(this).next().slideToggle();
+        });
+      $('dl.function-info, dl.constant-info, dl.property-info').hide();
+      $('dl.function-info img, dl.constant-info img, dl.property-info img').show();
+      });
+    </script><a name="top"></a><h1 class="file">Gdata/Gbase.php</h1>
+<div class="file_menu">
+<a href="#includes">Includes</a> <a href="#classes">Classes</a> </div>
+<dl class="file-info">
+<dt>category</dt>
+<dd>Zend</dd>
+<dt>copyright</dt>
+<dd>Copyright (c) 2005-2011 Zend Technologies USA Inc. (http://www.zend.com)</dd>
+<dt>license</dt>
+<dd>http://framework.zend.com/license/new-bsd     New BSD License</dd>
+<dt>package</dt>
+<dd>Zend_Gdata</dd>
+<dt>subpackage</dt>
+<dd>Gbase</dd>
+<dt>version</dt>
+<dd>$Id: Gbase.php 23805 2011-03-16 00:55:40Z tjohns $</dd>
+<dt>Classes</dt>
+<dd><a class="class" href="#%5CZend_Gdata_Gbase">Zend_Gdata_Gbase</a></dd>
+</dl>
+<h2>Description</h2>
+<p class="short-description">Zend Framework</p>
+<div class="long-description"><p>LICENSE</p>
+
+<p>This source file is subject to the new BSD license that is bundled
+with this package in the file LICENSE.txt.
+It is also available through the world-wide-web at this URL:
+http://framework.zend.com/license/new-bsd
+If you did not receive a copy of the license and are unable to
+obtain it through the world-wide-web, please send an email
+to license@zend.com so we can send you a copy immediately.</p>
+</div>
+<a name="classes"></a><a id="\Zend_Gdata_Gbase"></a><h2 class="class">\Zend_Gdata_Gbase<div class="to-top"><a href="#top">jump to top</a></div>
+</h2>
+<div class="class">
+<dl class="class-info">
+<dt>Extends from</dt>
+<dd><a href="_Gdata.html#%5CZend_Gdata">\Zend_Gdata</a></dd>
+<dt>category</dt>
+<dd>Zend</dd>
+<dt>copyright</dt>
+<dd>Copyright (c) 2005-2011 Zend Technologies USA Inc. (http://www.zend.com)</dd>
+<dt>license</dt>
+<dd>http://framework.zend.com/license/new-bsd     New BSD License</dd>
+<dt>link</dt>
+<dd><a href="http://code.google.com/apis/base">http://code.google.com/apis/base</a></dd>
+<dt>package</dt>
+<dd>Zend_Gdata</dd>
+<dt>subpackage</dt>
+<dd>Gbase</dd>
+<dt><a href="#" onclick="$(this).children('img').toggle().parents('dt').nextUntil('dt').slideToggle(); return false;"><img src="images/arrow_down.gif"><img src="images/arrow_right.gif" style="display: none">
+                Constants
+              </a></dt>
+<dd><a class="constant" href="#%5CZend_Gdata_Gbase::AUTH_SERVICE_NAME">AUTH_SERVICE_NAME</a></dd>
+<dd><a class="constant" href="#%5CZend_Gdata_Gbase::GBASE_ITEM_FEED_URI">GBASE_ITEM_FEED_URI</a></dd>
+<dd><a class="constant" href="#%5CZend_Gdata_Gbase::GBASE_SNIPPET_FEED_URI">GBASE_SNIPPET_FEED_URI</a></dd>
+<dt><a href="#" onclick="$(this).children('img').toggle().parents('dt').nextUntil('dt').slideToggle(); return false;"><img src="images/arrow_down.gif"><img src="images/arrow_right.gif" style="display: none">
+                Properties
+              </a></dt>
+<dd><a class="property protected" href="#%5CZend_Gdata_Gbase::%24_defaultPostUri">$_defaultPostUri</a></dd>
+<dd><a class="property public" href="#%5CZend_Gdata_Gbase::%24namespaces">$namespaces</a></dd>
+<dt><a href="#" onclick="$(this).children('img').toggle().parents('dt').nextUntil('dt').slideToggle(); return false;"><img src="images/arrow_down.gif"><img src="images/arrow_right.gif" style="display: none">
+                Methods
+              </a></dt>
+<dd><a class="method public" href="#%5CZend_Gdata_Gbase::__construct()">__construct</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Gbase::deleteGbaseItem()">deleteGbaseItem</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Gbase::getGbaseItemEntry()">getGbaseItemEntry</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Gbase::getGbaseItemFeed()">getGbaseItemFeed</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Gbase::getGbaseSnippetFeed()">getGbaseSnippetFeed</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Gbase::insertGbaseItem()">insertGbaseItem</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Gbase::updateGbaseItem()">updateGbaseItem</a></dd>
+</dl>
+<h3>Description</h3>
+<p class="short-description">Service class for interacting with the Google Base data API</p>
+<div class="long-description"><p>As the Google data API protocol is based upon the Atom Publishing Protocol
+(APP), Gdata functionality extends the appropriate Zend_Gdata_App classes</p>
+</div>
+<h3>Constants</h3>
+<div>
+<a id="\Zend_Gdata_Gbase::GBASE_ITEM_FEED_URI"></a><h4 class="constant">GBASE_ITEM_FEED_URI<div class="to-top"><a href="#Zend_Gdata_Gbase">jump to class</a></div>
+</h4>
+<div class="constant">
+<code> <span class="highlight">GBASE_ITEM_FEED_URI</span> = 'https://www.google.com/base/feeds/items'
+      </code><p class="short-description">Path to the customer items feeds on the Google Base server.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="constant-info">
+<dt>value</dt>
+<dd>https://www.google.com/base/feeds/items</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Gbase::GBASE_SNIPPET_FEED_URI"></a><h4 class="constant">GBASE_SNIPPET_FEED_URI<div class="to-top"><a href="#Zend_Gdata_Gbase">jump to class</a></div>
+</h4>
+<div class="constant">
+<code> <span class="highlight">GBASE_SNIPPET_FEED_URI</span> = 'https://www.google.com/base/feeds/snippets'
+      </code><p class="short-description">Path to the snippets feeds on the Google Base server.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="constant-info">
+<dt>value</dt>
+<dd>https://www.google.com/base/feeds/snippets</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Gbase::AUTH_SERVICE_NAME"></a><h4 class="constant">AUTH_SERVICE_NAME<div class="to-top"><a href="#Zend_Gdata_Gbase">jump to class</a></div>
+</h4>
+<div class="constant">
+<code> <span class="highlight">AUTH_SERVICE_NAME</span> = 'gbase'
+      </code><p class="short-description">Authentication service name for Google Base</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="constant-info">
+<dt>value</dt>
+<dd>gbase</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+</div>
+<h3>Properties</h3>
+<div>
+<a id="\Zend_Gdata_Gbase::$_defaultPostUri"></a><h4 class="property protected">$_defaultPostUri<div class="to-top"><a href="#%5CZend_Gdata_Gbase">jump to class</a></div>
+</h4>
+<div class="property">
+<code>string <span class="highlight">$_defaultPostUri</span> = 'self'</code><p class="short-description">The default URI for POST methods</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt></dt>
+<dd>string<br><em></em>
+</dd>
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd>self</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Gbase::$namespaces"></a><h4 class="property public">$namespaces<div class="to-top"><a href="#%5CZend_Gdata_Gbase">jump to class</a></div>
+</h4>
+<div class="property">
+<code>array <span class="highlight">$namespaces</span> = 'array'</code><p class="short-description">Namespaces used for Zend_Gdata_Gbase</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt></dt>
+<dd>array<br><em></em>
+</dd>
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>default</dt>
+<dd>array</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>true</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+</div>
+<h3>Methods</h3>
+<div>
+<a id="\Zend_Gdata_Gbase::__construct()"></a><h4 class="method public">__construct<div class="to-top"><a href="#Zend_Gdata_Gbase">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">__construct</span><span class="nb-faded-text">(
+          <a href="_Http_Client.html#%5CZend_Http_Client">\Zend_Http_Client</a> $client
+              =
+              null, string $applicationId
+              =
+              MyCompany-MyApp-1.0
+          )
+        </span>
+        :
+        </code><p class="short-description">Create Zend_Gdata_Gbase object</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$client</dt>
+<dd>\Zend_Http_Client<br><em>(optional) The HTTP client to use when when communicating with the Google Apps servers.</em>
+</dd>
+<dt>$applicationId</dt>
+<dd>string<br><em>The identity of the app in the form of Company-AppName-Version</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Gbase::deleteGbaseItem()"></a><h4 class="method public">deleteGbaseItem<div class="to-top"><a href="#Zend_Gdata_Gbase">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">deleteGbaseItem</span><span class="nb-faded-text">(
+          <a href="_Gdata_Gbase_ItemEntry.html#%5CZend_Gdata_Gbase_ItemEntry">\Zend_Gdata_Gbase_ItemEntry</a> $entry, boolean $dryRun
+              =
+              false
+          )
+        </span>
+        :
+        <a href="_Gdata_Gbase_ItemFeed.html#%5CZend_Gdata_Gbase_ItemFeed">\Zend_Gdata_Gbase_ItemFeed</a></code><p class="short-description">Delete an entry</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$entry</dt>
+<dd>\Zend_Gdata_Gbase_ItemEntry<br><em>The Base entry to remove</em>
+</dd>
+<dt>$dryRun</dt>
+<dd>boolean<br><em>Flag for the &amp;#039;dry-run&amp;#039; parameter</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_Gbase_ItemFeed.html#%5CZend_Gdata_Gbase_ItemFeed">\Zend_Gdata_Gbase_ItemFeed</a></dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Gbase::getGbaseItemEntry()"></a><h4 class="method public">getGbaseItemEntry<div class="to-top"><a href="#Zend_Gdata_Gbase">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getGbaseItemEntry</span><span class="nb-faded-text">(
+          mixed $location
+              =
+              null
+          )
+        </span>
+        :
+        <a href="_Gdata_Gbase_ItemEntry.html#%5CZend_Gdata_Gbase_ItemEntry">\Zend_Gdata_Gbase_ItemEntry</a></code><p class="short-description">Retreive entry object</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$location</dt>
+<dd>mixed<br><em>The location for the feed, as a URL or Query</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_Gbase_ItemEntry.html#%5CZend_Gdata_Gbase_ItemEntry">\Zend_Gdata_Gbase_ItemEntry</a></dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Gbase::getGbaseItemFeed()"></a><h4 class="method public">getGbaseItemFeed<div class="to-top"><a href="#Zend_Gdata_Gbase">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getGbaseItemFeed</span><span class="nb-faded-text">(
+          mixed $location
+              =
+              null
+          )
+        </span>
+        :
+        <a href="_Gdata_Gbase_ItemFeed.html#%5CZend_Gdata_Gbase_ItemFeed">\Zend_Gdata_Gbase_ItemFeed</a></code><p class="short-description">Retreive feed object</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$location</dt>
+<dd>mixed<br><em>The location for the feed, as a URL or Query</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_Gbase_ItemFeed.html#%5CZend_Gdata_Gbase_ItemFeed">\Zend_Gdata_Gbase_ItemFeed</a></dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Gbase::getGbaseSnippetFeed()"></a><h4 class="method public">getGbaseSnippetFeed<div class="to-top"><a href="#Zend_Gdata_Gbase">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getGbaseSnippetFeed</span><span class="nb-faded-text">(
+          mixed $location
+              =
+              null
+          )
+        </span>
+        :
+        <a href="_Gdata_Gbase_SnippetFeed.html#%5CZend_Gdata_Gbase_SnippetFeed">\Zend_Gdata_Gbase_SnippetFeed</a></code><p class="short-description">Retrieve feed object</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$location</dt>
+<dd>mixed<br><em>The location for the feed, as a URL or Query</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_Gbase_SnippetFeed.html#%5CZend_Gdata_Gbase_SnippetFeed">\Zend_Gdata_Gbase_SnippetFeed</a></dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Gbase::insertGbaseItem()"></a><h4 class="method public">insertGbaseItem<div class="to-top"><a href="#Zend_Gdata_Gbase">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">insertGbaseItem</span><span class="nb-faded-text">(
+          <a href="_Gdata_Gbase_ItemEntry.html#%5CZend_Gdata_Gbase_ItemEntry">\Zend_Gdata_Gbase_ItemEntry</a> $entry, boolean $dryRun
+              =
+              false
+          )
+        </span>
+        :
+        <a href="_Gdata_Gbase_ItemFeed.html#%5CZend_Gdata_Gbase_ItemFeed">\Zend_Gdata_Gbase_ItemFeed</a></code><p class="short-description">Insert an entry</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$entry</dt>
+<dd>\Zend_Gdata_Gbase_ItemEntry<br><em>The Base entry to upload</em>
+</dd>
+<dt>$dryRun</dt>
+<dd>boolean<br><em>Flag for the &amp;#039;dry-run&amp;#039; parameter</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_Gbase_ItemFeed.html#%5CZend_Gdata_Gbase_ItemFeed">\Zend_Gdata_Gbase_ItemFeed</a></dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Gbase::updateGbaseItem()"></a><h4 class="method public">updateGbaseItem<div class="to-top"><a href="#Zend_Gdata_Gbase">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">updateGbaseItem</span><span class="nb-faded-text">(
+          <a href="_Gdata_Gbase_ItemEntry.html#%5CZend_Gdata_Gbase_ItemEntry">\Zend_Gdata_Gbase_ItemEntry</a> $entry, boolean $dryRun
+              =
+              false
+          )
+        </span>
+        :
+        <a href="_Gdata_Gbase_ItemEntry.html#%5CZend_Gdata_Gbase_ItemEntry">\Zend_Gdata_Gbase_ItemEntry</a></code><p class="short-description">Update an entry</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$entry</dt>
+<dd>\Zend_Gdata_Gbase_ItemEntry<br><em>The Base entry to be updated</em>
+</dd>
+<dt>$dryRun</dt>
+<dd>boolean<br><em>Flag for the &amp;#039;dry-run&amp;#039; parameter</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_Gbase_ItemEntry.html#%5CZend_Gdata_Gbase_ItemEntry">\Zend_Gdata_Gbase_ItemEntry</a></dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<small xmlns="" class="footer">Documentation was generated by <a href="http://docblox-project.org">DocBlox 0.12.2</a>.
+    </small></body></html>

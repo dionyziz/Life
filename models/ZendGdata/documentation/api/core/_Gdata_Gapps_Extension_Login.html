@@ -1,0 +1,1128 @@
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title>Zend Gdata API Documentation</title><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" href="css/black-tie/jquery-ui-1.8.2.custom.css" type="text/css"></link><link rel="stylesheet" href="css/jquery.treeview.css" type="text/css"></link><link rel="stylesheet" href="css/theme.css" type="text/css"></link><script type="text/javascript" src="js/jquery-1.4.2.min.js"></script><script type="text/javascript" src="js/jquery-ui-1.8.2.custom.min.js"></script><script type="text/javascript" src="js/jquery.cookie.js"></script><script type="text/javascript" src="js/jquery.treeview.js"></script><script type="text/javascript">
+            $(document).ready(function() {
+                $(".filetree").treeview({
+                    collapsed: true,
+                    persist: "cookie"
+                });
+
+                $("#accordion").accordion({
+                    collapsible: true,
+                    autoHeight:  false,
+                    fillSpace:   true
+                });
+
+                $(".tabs").tabs();
+            });
+        </script></head><body><div xmlns="" class="content">
+<div class="sub-page-main-header-api-documentation"><h2>API Documentation</h2></div>
+<div class="dotted-line"></div>
+</div>
+<div xmlns="" id="content">
+<script>
+      $(document).ready(function() {
+        $('dl.function-info, dl.constant-info, dl.property-info').prev().css('cursor', 'pointer');
+        $('dl.function-info, dl.constant-info, dl.property-info').prev().click(function() {
+          if ($(this).next().is(':hidden'))
+          {
+            $(this).children('img')[0].src = 'images/arrow_down.gif';
+          } else
+          {
+            $(this).children('img')[0].src = 'images/arrow_right.gif';
+          }
+          $(this).next().slideToggle();
+        });
+      $('dl.function-info, dl.constant-info, dl.property-info').hide();
+      $('dl.function-info img, dl.constant-info img, dl.property-info img').show();
+      });
+    </script><a name="top"></a><h1 class="file">Gdata/Gapps/Extension/Login.php</h1>
+<div class="file_menu">
+<a href="#includes">Includes</a> <a href="#classes">Classes</a> </div>
+<dl class="file-info">
+<dt>category</dt>
+<dd>Zend</dd>
+<dt>copyright</dt>
+<dd>Copyright (c) 2005-2011 Zend Technologies USA Inc. (http://www.zend.com)</dd>
+<dt>license</dt>
+<dd>http://framework.zend.com/license/new-bsd     New BSD License</dd>
+<dt>package</dt>
+<dd>Zend_Gdata</dd>
+<dt>subpackage</dt>
+<dd>Gapps</dd>
+<dt>version</dt>
+<dd>$Id: Login.php 23775 2011-03-01 17:25:24Z ralph $</dd>
+<dt>Classes</dt>
+<dd><a class="class" href="#%5CZend_Gdata_Gapps_Extension_Login">Zend_Gdata_Gapps_Extension_Login</a></dd>
+</dl>
+<h2>Description</h2>
+<p class="short-description">Zend Framework</p>
+<div class="long-description"><p>LICENSE</p>
+
+<p>This source file is subject to the new BSD license that is bundled
+with this package in the file LICENSE.txt.
+It is also available through the world-wide-web at this URL:
+http://framework.zend.com/license/new-bsd
+If you did not receive a copy of the license and are unable to
+obtain it through the world-wide-web, please send an email
+to license@zend.com so we can send you a copy immediately.</p>
+</div>
+<a name="classes"></a><a id="\Zend_Gdata_Gapps_Extension_Login"></a><h2 class="class">\Zend_Gdata_Gapps_Extension_Login<div class="to-top"><a href="#top">jump to top</a></div>
+</h2>
+<div class="class">
+<dl class="class-info">
+<dt>Extends from</dt>
+<dd><a href="_Gdata_Extension.html#%5CZend_Gdata_Extension">\Zend_Gdata_Extension</a></dd>
+<dt>category</dt>
+<dd>Zend</dd>
+<dt>copyright</dt>
+<dd>Copyright (c) 2005-2011 Zend Technologies USA Inc. (http://www.zend.com)</dd>
+<dt>license</dt>
+<dd>http://framework.zend.com/license/new-bsd     New BSD License</dd>
+<dt>package</dt>
+<dd>Zend_Gdata</dd>
+<dt>subpackage</dt>
+<dd>Gapps</dd>
+<dt><a href="#" onclick="$(this).children('img').toggle().parents('dt').nextUntil('dt').slideToggle(); return false;"><img src="images/arrow_down.gif"><img src="images/arrow_right.gif" style="display: none">
+                Properties
+              </a></dt>
+<dd><a class="property protected" href="#%5CZend_Gdata_Gapps_Extension_Login::%24_admin">$_admin</a></dd>
+<dd><a class="property protected" href="#%5CZend_Gdata_Gapps_Extension_Login::%24_agreedToTerms">$_agreedToTerms</a></dd>
+<dd><a class="property protected" href="#%5CZend_Gdata_Gapps_Extension_Login::%24_changePasswordAtNextLogin">$_changePasswordAtNextLogin</a></dd>
+<dd><a class="property protected" href="#%5CZend_Gdata_Gapps_Extension_Login::%24_hashFunctionName">$_hashFunctionName</a></dd>
+<dd><a class="property protected" href="#%5CZend_Gdata_Gapps_Extension_Login::%24_password">$_password</a></dd>
+<dd><a class="property protected" href="#%5CZend_Gdata_Gapps_Extension_Login::%24_rootElement">$_rootElement</a></dd>
+<dd><a class="property protected" href="#%5CZend_Gdata_Gapps_Extension_Login::%24_rootNamespace">$_rootNamespace</a></dd>
+<dd><a class="property protected" href="#%5CZend_Gdata_Gapps_Extension_Login::%24_suspended">$_suspended</a></dd>
+<dd><a class="property protected" href="#%5CZend_Gdata_Gapps_Extension_Login::%24_username">$_username</a></dd>
+<dt><a href="#" onclick="$(this).children('img').toggle().parents('dt').nextUntil('dt').slideToggle(); return false;"><img src="images/arrow_down.gif"><img src="images/arrow_right.gif" style="display: none">
+                Methods
+              </a></dt>
+<dd><a class="method public" href="#%5CZend_Gdata_Gapps_Extension_Login::__construct()">__construct</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Gapps_Extension_Login::__toString()">__toString</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Gapps_Extension_Login::getAdmin()">getAdmin</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Gapps_Extension_Login::getAgreedToTerms()">getAgreedToTerms</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Gapps_Extension_Login::getChangePasswordAtNextLogin()">getChangePasswordAtNextLogin</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Gapps_Extension_Login::getDOM()">getDOM</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Gapps_Extension_Login::getHashFunctionName()">getHashFunctionName</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Gapps_Extension_Login::getPassword()">getPassword</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Gapps_Extension_Login::getSuspended()">getSuspended</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Gapps_Extension_Login::getUsername()">getUsername</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Gapps_Extension_Login::setAdmin()">setAdmin</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Gapps_Extension_Login::setAgreedToTerms()">setAgreedToTerms</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Gapps_Extension_Login::setChangePasswordAtNextLogin()">setChangePasswordAtNextLogin</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Gapps_Extension_Login::setHashFunctionName()">setHashFunctionName</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Gapps_Extension_Login::setPassword()">setPassword</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Gapps_Extension_Login::setSuspended()">setSuspended</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Gapps_Extension_Login::setUsername()">setUsername</a></dd>
+<dd><a class="method protected" href="#%5CZend_Gdata_Gapps_Extension_Login::takeAttributeFromDOM()">takeAttributeFromDOM</a></dd>
+</dl>
+<h3>Description</h3>
+<p class="short-description">Represents the apps:login element used by the Apps data API. This
+class is used to describe properties of a user, and is usually contained
+within instances of Zene_Gdata_Gapps_UserEntry or any other class
+which is linked to a particular username.</p>
+<div class="long-description">
+</div>
+<h3>Properties</h3>
+<div>
+<a id="\Zend_Gdata_Gapps_Extension_Login::$_admin"></a><h4 class="property protected">$_admin<div class="to-top"><a href="#%5CZend_Gdata_Gapps_Extension_Login">jump to class</a></div>
+</h4>
+<div class="property">
+<code>boolean <span class="highlight">$_admin</span> = 'null'</code><p class="short-description">True if the user has administrative rights for this domain, false
+otherwise.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt></dt>
+<dd>boolean<br><em></em>
+</dd>
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd>null</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Gapps_Extension_Login::$_agreedToTerms"></a><h4 class="property protected">$_agreedToTerms<div class="to-top"><a href="#%5CZend_Gdata_Gapps_Extension_Login">jump to class</a></div>
+</h4>
+<div class="property">
+<code>\boolean. <span class="highlight">$_agreedToTerms</span> = 'null'</code><p class="short-description">True if the user has agreed to the terms of service for Google Apps,
+false otherwise.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt></dt>
+<dd>\boolean.<br><em></em>
+</dd>
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd>null</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Gapps_Extension_Login::$_changePasswordAtNextLogin"></a><h4 class="property protected">$_changePasswordAtNextLogin<div class="to-top"><a href="#%5CZend_Gdata_Gapps_Extension_Login">jump to class</a></div>
+</h4>
+<div class="property">
+<code>boolean <span class="highlight">$_changePasswordAtNextLogin</span> = 'null'</code><p class="short-description">True if the user will be required to change their password at
+their next login, false otherwise.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt></dt>
+<dd>boolean<br><em></em>
+</dd>
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd>null</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Gapps_Extension_Login::$_hashFunctionName"></a><h4 class="property protected">$_hashFunctionName<div class="to-top"><a href="#%5CZend_Gdata_Gapps_Extension_Login">jump to class</a></div>
+</h4>
+<div class="property">
+<code>string <span class="highlight">$_hashFunctionName</span> = 'null'</code><p class="short-description">Specifies whether the password stored in _password is in cleartext
+or is an SHA-1 digest of a password. If the password is cleartext,
+then this should be null. If the password is an SHA-1 digest, then
+this should be set to 'SHA-1'.</p>
+<div class="long-description"><p>At the time of writing, no other hash functions are supported</p>
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt></dt>
+<dd>string<br><em></em>
+</dd>
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd>null</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Gapps_Extension_Login::$_password"></a><h4 class="property protected">$_password<div class="to-top"><a href="#%5CZend_Gdata_Gapps_Extension_Login">jump to class</a></div>
+</h4>
+<div class="property">
+<code>string <span class="highlight">$_password</span> = 'null'</code><p class="short-description">The password for the user. May be in cleartext or as an SHA-1
+digest, depending on the value of _hashFunctionName.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt></dt>
+<dd>string<br><em></em>
+</dd>
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd>null</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Gapps_Extension_Login::$_rootElement"></a><h4 class="property protected">$_rootElement<div class="to-top"><a href="#%5CZend_Gdata_Gapps_Extension_Login">jump to class</a></div>
+</h4>
+<div class="property">
+<code>string <span class="highlight">$_rootElement</span> = 'login'</code><p class="short-description"></p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt></dt>
+<dd>string<br><em>The XML element name, including prefix if desired</em>
+</dd>
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd>login</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Gapps_Extension_Login::$_rootNamespace"></a><h4 class="property protected">$_rootNamespace<div class="to-top"><a href="#%5CZend_Gdata_Gapps_Extension_Login">jump to class</a></div>
+</h4>
+<div class="property">
+<code>string <span class="highlight">$_rootNamespace</span> = 'apps'</code><p class="short-description"></p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt></dt>
+<dd>string<br><em>The XML namespace prefix</em>
+</dd>
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd>apps</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Gapps_Extension_Login::$_suspended"></a><h4 class="property protected">$_suspended<div class="to-top"><a href="#%5CZend_Gdata_Gapps_Extension_Login">jump to class</a></div>
+</h4>
+<div class="property">
+<code>boolean <span class="highlight">$_suspended</span> = 'null'</code><p class="short-description">True if this user has been suspended, false otherwise.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt></dt>
+<dd>boolean<br><em></em>
+</dd>
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd>null</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Gapps_Extension_Login::$_username"></a><h4 class="property protected">$_username<div class="to-top"><a href="#%5CZend_Gdata_Gapps_Extension_Login">jump to class</a></div>
+</h4>
+<div class="property">
+<code>string <span class="highlight">$_username</span> = 'null'</code><p class="short-description">The username for this user. This is used as the user's email address
+and when logging in to Google Apps-hosted services.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt></dt>
+<dd>string<br><em></em>
+</dd>
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd>null</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+</div>
+<h3>Methods</h3>
+<div>
+<a id="\Zend_Gdata_Gapps_Extension_Login::__construct()"></a><h4 class="method public">__construct<div class="to-top"><a href="#Zend_Gdata_Gapps_Extension_Login">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">__construct</span><span class="nb-faded-text">(
+          string $username
+              =
+              null, string $password
+              =
+              null, string $hashFunctionName
+              =
+              null, boolean $admin
+              =
+              null, boolean $suspended
+              =
+              null, boolean $changePasswordAtNextLogin
+              =
+              null, boolean $agreedToTerms
+              =
+              null
+          )
+        </span>
+        :
+        </code><p class="short-description">Constructs a new Zend_Gdata_Gapps_Extension_Login object.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$username</dt>
+<dd>string<br><em>(optional) The username to be used for this login.</em>
+</dd>
+<dt>$password</dt>
+<dd>string<br><em>(optional) The password to be used for this login.</em>
+</dd>
+<dt>$hashFunctionName</dt>
+<dd>string<br><em>(optional) The name of the hash function used to protect the password, or null if no has function has been applied. As of this writing, the only valid values are &amp;#039;SHA-1&amp;#039; or null.</em>
+</dd>
+<dt>$admin</dt>
+<dd>boolean<br><em>(optional) Whether the user is an administrator or not.</em>
+</dd>
+<dt>$suspended</dt>
+<dd>boolean<br><em>(optional) Whether this login is suspended or not.</em>
+</dd>
+<dt>$changePasswordAtNextLogin</dt>
+<dd>boolean<br><em>(optional) Whether the user is required to change their password at their next login.</em>
+</dd>
+<dt>$agreedToTerms</dt>
+<dd>boolean<br><em>(optional) Whether the user has agreed to the terms of service.</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Gapps_Extension_Login::__toString()"></a><h4 class="method public">__toString<div class="to-top"><a href="#Zend_Gdata_Gapps_Extension_Login">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">__toString</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        string</code><p class="short-description">Magic toString method allows using this directly via echo
+Works best in PHP &gt;= 4.2.0</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>string</dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Gapps_Extension_Login::getAdmin()"></a><h4 class="method public">getAdmin<div class="to-top"><a href="#Zend_Gdata_Gapps_Extension_Login">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getAdmin</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        boolean</code><p class="short-description">Get the value for this element's admin attribute.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>boolean</dt>
+<dd><em>The requested attribute.</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+<dt>see</dt>
+<dd>setAdmin</dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_App_InvalidArgumentException.html#%5CZend_Gdata_App_InvalidArgumentException"></a></dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Gapps_Extension_Login::getAgreedToTerms()"></a><h4 class="method public">getAgreedToTerms<div class="to-top"><a href="#Zend_Gdata_Gapps_Extension_Login">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getAgreedToTerms</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        boolean</code><p class="short-description">Get the value for this element's agreedToTerms attribute.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>boolean</dt>
+<dd><em>The requested attribute.</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+<dt>see</dt>
+<dd>setAgreedToTerms</dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_App_InvalidArgumentException.html#%5CZend_Gdata_App_InvalidArgumentException"></a></dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Gapps_Extension_Login::getChangePasswordAtNextLogin()"></a><h4 class="method public">getChangePasswordAtNextLogin<div class="to-top"><a href="#Zend_Gdata_Gapps_Extension_Login">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getChangePasswordAtNextLogin</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        boolean</code><p class="short-description">Get the value for this element's changePasswordAtNextLogin attribute.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>boolean</dt>
+<dd><em>The requested attribute.</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+<dt>see</dt>
+<dd>setChangePasswordAtNextLogin</dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_App_InvalidArgumentException.html#%5CZend_Gdata_App_InvalidArgumentException"></a></dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Gapps_Extension_Login::getDOM()"></a><h4 class="method public">getDOM<div class="to-top"><a href="#Zend_Gdata_Gapps_Extension_Login">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getDOM</span><span class="nb-faded-text">(
+          <a href="http://php.net/manual/en/class.domdocument.php">\DOMDocument</a> $doc
+              =
+              null,  $majorVersion
+              =
+              1,  $minorVersion
+              =
+              null
+          )
+        </span>
+        :
+        <a href="http://php.net/manual/en/class.domelement.php">\DOMElement</a></code><p class="short-description">Retrieves a DOMElement which corresponds to this element and all
+child properties.  This is used to build an entry back into a DOM
+and eventually XML text for sending to the server upon updates, or
+for application storage/persistence.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$doc</dt>
+<dd>\DOMDocument<br><em>The DOMDocument used to construct DOMElements</em>
+</dd>
+<dt>$majorVersion</dt>
+<dd><em></em></dd>
+<dt>$minorVersion</dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="http://php.net/manual/en/class.domelement.php">\DOMElement</a></dt>
+<dd><em>The DOMElement representing this element and all child properties.</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Gapps_Extension_Login::getHashFunctionName()"></a><h4 class="method public">getHashFunctionName<div class="to-top"><a href="#Zend_Gdata_Gapps_Extension_Login">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getHashFunctionName</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        string</code><p class="short-description">Get the value for this element's hashFunctionName attribute.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>string</dt>
+<dd><em>The requested attribute.</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+<dt>see</dt>
+<dd>setHashFunctionName</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Gapps_Extension_Login::getPassword()"></a><h4 class="method public">getPassword<div class="to-top"><a href="#Zend_Gdata_Gapps_Extension_Login">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getPassword</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        string</code><p class="short-description">Get the value for this element's password attribute.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>string</dt>
+<dd><em>The requested attribute.</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+<dt>see</dt>
+<dd>setPassword</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Gapps_Extension_Login::getSuspended()"></a><h4 class="method public">getSuspended<div class="to-top"><a href="#Zend_Gdata_Gapps_Extension_Login">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getSuspended</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        boolean</code><p class="short-description">Get the value for this element's suspended attribute.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>boolean</dt>
+<dd><em>The requested attribute.</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+<dt>see</dt>
+<dd>setSuspended</dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_App_InvalidArgumentException.html#%5CZend_Gdata_App_InvalidArgumentException"></a></dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Gapps_Extension_Login::getUsername()"></a><h4 class="method public">getUsername<div class="to-top"><a href="#Zend_Gdata_Gapps_Extension_Login">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getUsername</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        string</code><p class="short-description">Get the value for this element's username attribute.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>string</dt>
+<dd><em>The attribute being modified.</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+<dt>see</dt>
+<dd>setUsername</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Gapps_Extension_Login::setAdmin()"></a><h4 class="method public">setAdmin<div class="to-top"><a href="#Zend_Gdata_Gapps_Extension_Login">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">setAdmin</span><span class="nb-faded-text">(
+          boolean $value
+          )
+        </span>
+        :
+        <a href="_Gdata_Gapps_Extension_Login.html#%5CZend_Gdata_Gapps_Extension_Login">\Zend_Gdata_Gapps_Extension_Login</a></code><p class="short-description">Set the value for this element's admin attribute. This indicates
+whether this user is an administrator for this domain.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$value</dt>
+<dd>boolean<br><em>The desired value for this attribute.</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_Gapps_Extension_Login.html#%5CZend_Gdata_Gapps_Extension_Login">\Zend_Gdata_Gapps_Extension_Login</a></dt>
+<dd><em>Provides a fluent interface.</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_App_InvalidArgumentException.html#%5CZend_Gdata_App_InvalidArgumentException"></a></dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Gapps_Extension_Login::setAgreedToTerms()"></a><h4 class="method public">setAgreedToTerms<div class="to-top"><a href="#Zend_Gdata_Gapps_Extension_Login">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">setAgreedToTerms</span><span class="nb-faded-text">(
+          boolean $value
+          )
+        </span>
+        :
+        <a href="_Gdata_Gapps_Extension_Login.html#%5CZend_Gdata_Gapps_Extension_Login">\Zend_Gdata_Gapps_Extension_Login</a></code><p class="short-description">Set the value for this element's agreedToTerms attribute. This
+indicates whether this user has agreed to the terms of service.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$value</dt>
+<dd>boolean<br><em>The desired value for this attribute.</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_Gapps_Extension_Login.html#%5CZend_Gdata_Gapps_Extension_Login">\Zend_Gdata_Gapps_Extension_Login</a></dt>
+<dd><em>Provides a fluent interface.</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_App_InvalidArgumentException.html#%5CZend_Gdata_App_InvalidArgumentException"></a></dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Gapps_Extension_Login::setChangePasswordAtNextLogin()"></a><h4 class="method public">setChangePasswordAtNextLogin<div class="to-top"><a href="#Zend_Gdata_Gapps_Extension_Login">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">setChangePasswordAtNextLogin</span><span class="nb-faded-text">(
+          boolean $value
+          )
+        </span>
+        :
+        <a href="_Gdata_Gapps_Extension_Login.html#%5CZend_Gdata_Gapps_Extension_Login">\Zend_Gdata_Gapps_Extension_Login</a></code><p class="short-description">Set the value for this element's changePasswordAtNextLogin attribute.</p>
+<div class="long-description"><p>If true, the user will be forced to set a new password the next
+time they login.</p>
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$value</dt>
+<dd>boolean<br><em>The desired value for this attribute.</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_Gapps_Extension_Login.html#%5CZend_Gdata_Gapps_Extension_Login">\Zend_Gdata_Gapps_Extension_Login</a></dt>
+<dd><em>Provides a fluent interface.</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_App_InvalidArgumentException.html#%5CZend_Gdata_App_InvalidArgumentException"></a></dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Gapps_Extension_Login::setHashFunctionName()"></a><h4 class="method public">setHashFunctionName<div class="to-top"><a href="#Zend_Gdata_Gapps_Extension_Login">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">setHashFunctionName</span><span class="nb-faded-text">(
+          string $value
+          )
+        </span>
+        :
+        <a href="_Gdata_Gapps_Extension_Login.html#%5CZend_Gdata_Gapps_Extension_Login">\Zend_Gdata_Gapps_Extension_Login</a></code><p class="short-description">Set the value for this element's hashFunctionName attribute. This
+indicates whether the password supplied with setPassword() is in
+plaintext or has had a hash function applied to it. If null,
+plaintext is assumed. As of this writing, the only valid hash
+function is 'SHA-1'.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$value</dt>
+<dd>string<br><em>The desired value for this attribute.</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_Gapps_Extension_Login.html#%5CZend_Gdata_Gapps_Extension_Login">\Zend_Gdata_Gapps_Extension_Login</a></dt>
+<dd><em>Provides a fluent interface.</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Gapps_Extension_Login::setPassword()"></a><h4 class="method public">setPassword<div class="to-top"><a href="#Zend_Gdata_Gapps_Extension_Login">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">setPassword</span><span class="nb-faded-text">(
+          string $value
+          )
+        </span>
+        :
+        <a href="_Gdata_Gapps_Extension_Login.html#%5CZend_Gdata_Gapps_Extension_Login">\Zend_Gdata_Gapps_Extension_Login</a></code><p class="short-description">Set the value for this element's password attribute. As of this
+writing, this can be either be provided as plaintext or hashed using
+the SHA-1 algorithm for protection. If using a hash function,
+this must be indicated by calling setHashFunctionName().</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$value</dt>
+<dd>string<br><em>The desired value for this attribute.</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_Gapps_Extension_Login.html#%5CZend_Gdata_Gapps_Extension_Login">\Zend_Gdata_Gapps_Extension_Login</a></dt>
+<dd><em>Provides a fluent interface.</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Gapps_Extension_Login::setSuspended()"></a><h4 class="method public">setSuspended<div class="to-top"><a href="#Zend_Gdata_Gapps_Extension_Login">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">setSuspended</span><span class="nb-faded-text">(
+          boolean $value
+          )
+        </span>
+        :
+        <a href="_Gdata_Gapps_Extension_Login.html#%5CZend_Gdata_Gapps_Extension_Login">\Zend_Gdata_Gapps_Extension_Login</a></code><p class="short-description">Set the value for this element's suspended attribute. If true, the
+user will not be able to login to this domain until unsuspended.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$value</dt>
+<dd>boolean<br><em>The desired value for this attribute.</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_Gapps_Extension_Login.html#%5CZend_Gdata_Gapps_Extension_Login">\Zend_Gdata_Gapps_Extension_Login</a></dt>
+<dd><em>Provides a fluent interface.</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_App_InvalidArgumentException.html#%5CZend_Gdata_App_InvalidArgumentException"></a></dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Gapps_Extension_Login::setUsername()"></a><h4 class="method public">setUsername<div class="to-top"><a href="#Zend_Gdata_Gapps_Extension_Login">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">setUsername</span><span class="nb-faded-text">(
+          string $value
+          )
+        </span>
+        :
+        <a href="_Gdata_Gapps_Extension_Login.html#%5CZend_Gdata_Gapps_Extension_Login">\Zend_Gdata_Gapps_Extension_Login</a></code><p class="short-description">Set the value for this element's username attribute. This string
+is used to uniquely identify the user in this domian and is used
+to form this user's email address.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$value</dt>
+<dd>string<br><em>The desired value for this attribute.</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_Gapps_Extension_Login.html#%5CZend_Gdata_Gapps_Extension_Login">\Zend_Gdata_Gapps_Extension_Login</a></dt>
+<dd><em>Provides a fluent interface.</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Gapps_Extension_Login::takeAttributeFromDOM()"></a><h4 class="method protected">takeAttributeFromDOM<div class="to-top"><a href="#Zend_Gdata_Gapps_Extension_Login">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">takeAttributeFromDOM</span><span class="nb-faded-text">(
+          <a href="http://php.net/manual/en/class.domnode.php">\DOMNode</a> $attribute
+          )
+        </span>
+        :
+        </code><p class="short-description">Given a DOMNode representing an attribute, tries to map the data into
+instance members.  If no mapping is defined, the name and value are
+stored in an array.</p>
+<div class="long-description"><p>TODO: Convert attributes to proper types</p>
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$attribute</dt>
+<dd>\DOMNode<br><em>The DOMNode attribute needed to be handled</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_App_InvalidArgumentException.html#%5CZend_Gdata_App_InvalidArgumentException"></a></dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<small xmlns="" class="footer">Documentation was generated by <a href="http://docblox-project.org">DocBlox 0.12.2</a>.
+    </small></body></html>

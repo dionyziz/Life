@@ -1,0 +1,1182 @@
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title>Zend Gdata API Documentation</title><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" href="css/black-tie/jquery-ui-1.8.2.custom.css" type="text/css"></link><link rel="stylesheet" href="css/jquery.treeview.css" type="text/css"></link><link rel="stylesheet" href="css/theme.css" type="text/css"></link><script type="text/javascript" src="js/jquery-1.4.2.min.js"></script><script type="text/javascript" src="js/jquery-ui-1.8.2.custom.min.js"></script><script type="text/javascript" src="js/jquery.cookie.js"></script><script type="text/javascript" src="js/jquery.treeview.js"></script><script type="text/javascript">
+            $(document).ready(function() {
+                $(".filetree").treeview({
+                    collapsed: true,
+                    persist: "cookie"
+                });
+
+                $("#accordion").accordion({
+                    collapsible: true,
+                    autoHeight:  false,
+                    fillSpace:   true
+                });
+
+                $(".tabs").tabs();
+            });
+        </script></head><body><div xmlns="" class="content">
+<div class="sub-page-main-header-api-documentation"><h2>API Documentation</h2></div>
+<div class="dotted-line"></div>
+</div>
+<div xmlns="" id="content">
+<script>
+      $(document).ready(function() {
+        $('dl.function-info, dl.constant-info, dl.property-info').prev().css('cursor', 'pointer');
+        $('dl.function-info, dl.constant-info, dl.property-info').prev().click(function() {
+          if ($(this).next().is(':hidden'))
+          {
+            $(this).children('img')[0].src = 'images/arrow_down.gif';
+          } else
+          {
+            $(this).children('img')[0].src = 'images/arrow_right.gif';
+          }
+          $(this).next().slideToggle();
+        });
+      $('dl.function-info, dl.constant-info, dl.property-info').hide();
+      $('dl.function-info img, dl.constant-info img, dl.property-info img').show();
+      });
+    </script><a name="top"></a><h1 class="file">Gdata/Photos.php</h1>
+<div class="file_menu">
+<a href="#includes">Includes</a> <a href="#classes">Classes</a> </div>
+<dl class="file-info">
+<dt>category</dt>
+<dd>Zend</dd>
+<dt>copyright</dt>
+<dd>Copyright (c) 2005-2011 Zend Technologies USA Inc. (http://www.zend.com)</dd>
+<dt>license</dt>
+<dd>http://framework.zend.com/license/new-bsd     New BSD License</dd>
+<dt>package</dt>
+<dd>Zend_Gdata</dd>
+<dt>subpackage</dt>
+<dd>Photos</dd>
+<dt>version</dt>
+<dd>$Id: Photos.php 23805 2011-03-16 00:55:40Z tjohns $</dd>
+<dt>Classes</dt>
+<dd><a class="class" href="#%5CZend_Gdata_Photos">Zend_Gdata_Photos</a></dd>
+</dl>
+<h2>Description</h2>
+<p class="short-description">Zend Framework</p>
+<div class="long-description"><p>LICENSE</p>
+
+<p>This source file is subject to the new BSD license that is bundled
+with this package in the file LICENSE.txt.
+It is also available through the world-wide-web at this URL:
+http://framework.zend.com/license/new-bsd
+If you did not receive a copy of the license and are unable to
+obtain it through the world-wide-web, please send an email
+to license@zend.com so we can send you a copy immediately.</p>
+</div>
+<a name="classes"></a><a id="\Zend_Gdata_Photos"></a><h2 class="class">\Zend_Gdata_Photos<div class="to-top"><a href="#top">jump to top</a></div>
+</h2>
+<div class="class">
+<dl class="class-info">
+<dt>Extends from</dt>
+<dd><a href="_Gdata.html#%5CZend_Gdata">\Zend_Gdata</a></dd>
+<dt>category</dt>
+<dd>Zend</dd>
+<dt>copyright</dt>
+<dd>Copyright (c) 2005-2011 Zend Technologies USA Inc. (http://www.zend.com)</dd>
+<dt>license</dt>
+<dd>http://framework.zend.com/license/new-bsd     New BSD License</dd>
+<dt>link</dt>
+<dd><a href="http://code.google.com/apis/picasaweb/gdata.html">http://code.google.com/apis/picasaweb/gdata.html</a></dd>
+<dt>package</dt>
+<dd>Zend_Gdata</dd>
+<dt>subpackage</dt>
+<dd>Photos</dd>
+<dt><a href="#" onclick="$(this).children('img').toggle().parents('dt').nextUntil('dt').slideToggle(); return false;"><img src="images/arrow_down.gif"><img src="images/arrow_right.gif" style="display: none">
+                Constants
+              </a></dt>
+<dd><a class="constant" href="#%5CZend_Gdata_Photos::ALBUM_PATH">ALBUM_PATH</a></dd>
+<dd><a class="constant" href="#%5CZend_Gdata_Photos::AUTH_SERVICE_NAME">AUTH_SERVICE_NAME</a></dd>
+<dd><a class="constant" href="#%5CZend_Gdata_Photos::COMMUNITY_SEARCH_PATH">COMMUNITY_SEARCH_PATH</a></dd>
+<dd><a class="constant" href="#%5CZend_Gdata_Photos::DEFAULT_PROJECTION">DEFAULT_PROJECTION</a></dd>
+<dd><a class="constant" href="#%5CZend_Gdata_Photos::DEFAULT_USER">DEFAULT_USER</a></dd>
+<dd><a class="constant" href="#%5CZend_Gdata_Photos::DEFAULT_VISIBILITY">DEFAULT_VISIBILITY</a></dd>
+<dd><a class="constant" href="#%5CZend_Gdata_Photos::FEED_LINK_PATH">FEED_LINK_PATH</a></dd>
+<dd><a class="constant" href="#%5CZend_Gdata_Photos::KIND_PATH">KIND_PATH</a></dd>
+<dd><a class="constant" href="#%5CZend_Gdata_Photos::PHOTO_PATH">PHOTO_PATH</a></dd>
+<dd><a class="constant" href="#%5CZend_Gdata_Photos::PICASA_BASE_FEED_URI">PICASA_BASE_FEED_URI</a></dd>
+<dd><a class="constant" href="#%5CZend_Gdata_Photos::PICASA_BASE_URI">PICASA_BASE_URI</a></dd>
+<dd><a class="constant" href="#%5CZend_Gdata_Photos::USER_PATH">USER_PATH</a></dd>
+<dt><a href="#" onclick="$(this).children('img').toggle().parents('dt').nextUntil('dt').slideToggle(); return false;"><img src="images/arrow_down.gif"><img src="images/arrow_right.gif" style="display: none">
+                Properties
+              </a></dt>
+<dd><a class="property public" href="#%5CZend_Gdata_Photos::%24namespaces">$namespaces</a></dd>
+<dt><a href="#" onclick="$(this).children('img').toggle().parents('dt').nextUntil('dt').slideToggle(); return false;"><img src="images/arrow_down.gif"><img src="images/arrow_right.gif" style="display: none">
+                Methods
+              </a></dt>
+<dd><a class="method public" href="#%5CZend_Gdata_Photos::__construct()">__construct</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Photos::deleteAlbumEntry()">deleteAlbumEntry</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Photos::deleteCommentEntry()">deleteCommentEntry</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Photos::deletePhotoEntry()">deletePhotoEntry</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Photos::deleteTagEntry()">deleteTagEntry</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Photos::getAlbumEntry()">getAlbumEntry</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Photos::getAlbumFeed()">getAlbumFeed</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Photos::getCommentEntry()">getCommentEntry</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Photos::getPhotoEntry()">getPhotoEntry</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Photos::getPhotoFeed()">getPhotoFeed</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Photos::getTagEntry()">getTagEntry</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Photos::getUserEntry()">getUserEntry</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Photos::getUserFeed()">getUserFeed</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Photos::insertAlbumEntry()">insertAlbumEntry</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Photos::insertCommentEntry()">insertCommentEntry</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Photos::insertPhotoEntry()">insertPhotoEntry</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Photos::insertTagEntry()">insertTagEntry</a></dd>
+</dl>
+<h3>Description</h3>
+<p class="short-description">Service class for interacting with the Google Photos Data API.</p>
+<div class="long-description"><p>Like other service classes in this module, this class provides access via
+an HTTP client to Google servers for working with entries and feeds.</p>
+</div>
+<h3>Constants</h3>
+<div>
+<a id="\Zend_Gdata_Photos::PICASA_BASE_URI"></a><h4 class="constant">PICASA_BASE_URI<div class="to-top"><a href="#Zend_Gdata_Photos">jump to class</a></div>
+</h4>
+<div class="constant">
+<code> <span class="highlight">PICASA_BASE_URI</span> = 'https://picasaweb.google.com/data'
+      </code><div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="constant-info">
+<dt>value</dt>
+<dd>https://picasaweb.google.com/data</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Photos::PICASA_BASE_FEED_URI"></a><h4 class="constant">PICASA_BASE_FEED_URI<div class="to-top"><a href="#Zend_Gdata_Photos">jump to class</a></div>
+</h4>
+<div class="constant">
+<code> <span class="highlight">PICASA_BASE_FEED_URI</span> = 'https://picasaweb.google.com/data/feed'
+      </code><div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="constant-info">
+<dt>value</dt>
+<dd>https://picasaweb.google.com/data/feed</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Photos::AUTH_SERVICE_NAME"></a><h4 class="constant">AUTH_SERVICE_NAME<div class="to-top"><a href="#Zend_Gdata_Photos">jump to class</a></div>
+</h4>
+<div class="constant">
+<code> <span class="highlight">AUTH_SERVICE_NAME</span> = 'lh2'
+      </code><div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="constant-info">
+<dt>value</dt>
+<dd>lh2</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Photos::DEFAULT_PROJECTION"></a><h4 class="constant">DEFAULT_PROJECTION<div class="to-top"><a href="#Zend_Gdata_Photos">jump to class</a></div>
+</h4>
+<div class="constant">
+<code> <span class="highlight">DEFAULT_PROJECTION</span> = 'api'
+      </code><p class="short-description">Default projection when interacting with the Picasa server.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="constant-info">
+<dt>value</dt>
+<dd>api</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Photos::DEFAULT_VISIBILITY"></a><h4 class="constant">DEFAULT_VISIBILITY<div class="to-top"><a href="#Zend_Gdata_Photos">jump to class</a></div>
+</h4>
+<div class="constant">
+<code> <span class="highlight">DEFAULT_VISIBILITY</span> = 'all'
+      </code><p class="short-description">The default visibility to filter events by.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="constant-info">
+<dt>value</dt>
+<dd>all</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Photos::DEFAULT_USER"></a><h4 class="constant">DEFAULT_USER<div class="to-top"><a href="#Zend_Gdata_Photos">jump to class</a></div>
+</h4>
+<div class="constant">
+<code> <span class="highlight">DEFAULT_USER</span> = 'default'
+      </code><p class="short-description">The default user to retrieve feeds for.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="constant-info">
+<dt>value</dt>
+<dd>default</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Photos::USER_PATH"></a><h4 class="constant">USER_PATH<div class="to-top"><a href="#Zend_Gdata_Photos">jump to class</a></div>
+</h4>
+<div class="constant">
+<code> <span class="highlight">USER_PATH</span> = 'user'
+      </code><p class="short-description">Path to the user feed on the Picasa server.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="constant-info">
+<dt>value</dt>
+<dd>user</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Photos::ALBUM_PATH"></a><h4 class="constant">ALBUM_PATH<div class="to-top"><a href="#Zend_Gdata_Photos">jump to class</a></div>
+</h4>
+<div class="constant">
+<code> <span class="highlight">ALBUM_PATH</span> = 'albumid'
+      </code><p class="short-description">Path to album feeds on the Picasa server.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="constant-info">
+<dt>value</dt>
+<dd>albumid</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Photos::PHOTO_PATH"></a><h4 class="constant">PHOTO_PATH<div class="to-top"><a href="#Zend_Gdata_Photos">jump to class</a></div>
+</h4>
+<div class="constant">
+<code> <span class="highlight">PHOTO_PATH</span> = 'photoid'
+      </code><p class="short-description">Path to photo feeds on the Picasa server.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="constant-info">
+<dt>value</dt>
+<dd>photoid</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Photos::COMMUNITY_SEARCH_PATH"></a><h4 class="constant">COMMUNITY_SEARCH_PATH<div class="to-top"><a href="#Zend_Gdata_Photos">jump to class</a></div>
+</h4>
+<div class="constant">
+<code> <span class="highlight">COMMUNITY_SEARCH_PATH</span> = 'all'
+      </code><p class="short-description">The path to the community search feed on the Picasa server.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="constant-info">
+<dt>value</dt>
+<dd>all</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Photos::FEED_LINK_PATH"></a><h4 class="constant">FEED_LINK_PATH<div class="to-top"><a href="#Zend_Gdata_Photos">jump to class</a></div>
+</h4>
+<div class="constant">
+<code> <span class="highlight">FEED_LINK_PATH</span> = 'http://schemas.google.com/g/2005#feed'
+      </code><p class="short-description">The path to use for finding links to feeds within entries</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="constant-info">
+<dt>value</dt>
+<dd>http://schemas.google.com/g/2005#feed</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Photos::KIND_PATH"></a><h4 class="constant">KIND_PATH<div class="to-top"><a href="#Zend_Gdata_Photos">jump to class</a></div>
+</h4>
+<div class="constant">
+<code> <span class="highlight">KIND_PATH</span> = 'http://schemas.google.com/g/2005#kind'
+      </code><p class="short-description">The path to use for the determining type of an entry</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="constant-info">
+<dt>value</dt>
+<dd>http://schemas.google.com/g/2005#kind</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+</div>
+<h3>Properties</h3>
+<div>
+<a id="\Zend_Gdata_Photos::$namespaces"></a><h4 class="property public">$namespaces<div class="to-top"><a href="#%5CZend_Gdata_Photos">jump to class</a></div>
+</h4>
+<div class="property">
+<code>array <span class="highlight">$namespaces</span> = 'array'</code><p class="short-description">Namespaces used for Zend_Gdata_Photos</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt></dt>
+<dd>array<br><em></em>
+</dd>
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>default</dt>
+<dd>array</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>true</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+</div>
+<h3>Methods</h3>
+<div>
+<a id="\Zend_Gdata_Photos::__construct()"></a><h4 class="method public">__construct<div class="to-top"><a href="#Zend_Gdata_Photos">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">__construct</span><span class="nb-faded-text">(
+          <a href="_Http_Client.html#%5CZend_Http_Client">\Zend_Http_Client</a> $client
+              =
+              null, string $applicationId
+              =
+              MyCompany-MyApp-1.0
+          )
+        </span>
+        :
+        </code><p class="short-description">Create Zend_Gdata_Photos object</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$client</dt>
+<dd>\Zend_Http_Client<br><em>(optional) The HTTP client to use when when communicating with the servers.</em>
+</dd>
+<dt>$applicationId</dt>
+<dd>string<br><em>The identity of the app in the form of Company-AppName-Version</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Photos::deleteAlbumEntry()"></a><h4 class="method public">deleteAlbumEntry<div class="to-top"><a href="#Zend_Gdata_Photos">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">deleteAlbumEntry</span><span class="nb-faded-text">(
+          <a href="_Gdata_Photos_AlbumEntry.html#%5CZend_Gdata_Photos_AlbumEntry">\Zend_Gdata_Photos_AlbumEntry</a> $album, boolean $catch
+          )
+        </span>
+        :
+        \void.</code><p class="short-description">Delete an AlbumEntry.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$album</dt>
+<dd>\Zend_Gdata_Photos_AlbumEntry<br><em>The album entry to delete.</em>
+</dd>
+<dt>$catch</dt>
+<dd>boolean<br><em>Whether to catch an exception when modified and re-delete or throw</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>\void.</dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_App_Exception.html#%5CZend_Gdata_App_Exception"></a></dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_App_HttpException.html#%5CZend_Gdata_App_HttpException"></a></dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Photos::deleteCommentEntry()"></a><h4 class="method public">deleteCommentEntry<div class="to-top"><a href="#Zend_Gdata_Photos">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">deleteCommentEntry</span><span class="nb-faded-text">(
+          <a href="_Gdata_Photos_CommentEntry.html#%5CZend_Gdata_Photos_CommentEntry">\Zend_Gdata_Photos_CommentEntry</a> $comment, boolean $catch
+          )
+        </span>
+        :
+        \void.</code><p class="short-description">Delete a CommentEntry.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$comment</dt>
+<dd>\Zend_Gdata_Photos_CommentEntry<br><em>The comment entry to delete.</em>
+</dd>
+<dt>$catch</dt>
+<dd>boolean<br><em>Whether to catch an exception when modified and re-delete or throw</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>\void.</dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_App_Exception.html#%5CZend_Gdata_App_Exception"></a></dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_App_HttpException.html#%5CZend_Gdata_App_HttpException"></a></dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Photos::deletePhotoEntry()"></a><h4 class="method public">deletePhotoEntry<div class="to-top"><a href="#Zend_Gdata_Photos">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">deletePhotoEntry</span><span class="nb-faded-text">(
+          <a href="_Gdata_Photos_PhotoEntry.html#%5CZend_Gdata_Photos_PhotoEntry">\Zend_Gdata_Photos_PhotoEntry</a> $photo, boolean $catch
+          )
+        </span>
+        :
+        \void.</code><p class="short-description">Delete a PhotoEntry.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$photo</dt>
+<dd>\Zend_Gdata_Photos_PhotoEntry<br><em>The photo entry to delete.</em>
+</dd>
+<dt>$catch</dt>
+<dd>boolean<br><em>Whether to catch an exception when modified and re-delete or throw</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>\void.</dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_App_Exception.html#%5CZend_Gdata_App_Exception"></a></dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_App_HttpException.html#%5CZend_Gdata_App_HttpException"></a></dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Photos::deleteTagEntry()"></a><h4 class="method public">deleteTagEntry<div class="to-top"><a href="#Zend_Gdata_Photos">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">deleteTagEntry</span><span class="nb-faded-text">(
+          <a href="_Gdata_Photos_TagEntry.html#%5CZend_Gdata_Photos_TagEntry">\Zend_Gdata_Photos_TagEntry</a> $tag, boolean $catch
+          )
+        </span>
+        :
+        \void.</code><p class="short-description">Delete a TagEntry.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$tag</dt>
+<dd>\Zend_Gdata_Photos_TagEntry<br><em>The tag entry to delete.</em>
+</dd>
+<dt>$catch</dt>
+<dd>boolean<br><em>Whether to catch an exception when modified and re-delete or throw</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>\void.</dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_App_Exception.html#%5CZend_Gdata_App_Exception"></a></dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_App_HttpException.html#%5CZend_Gdata_App_HttpException"></a></dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Photos::getAlbumEntry()"></a><h4 class="method public">getAlbumEntry<div class="to-top"><a href="#Zend_Gdata_Photos">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getAlbumEntry</span><span class="nb-faded-text">(
+          mixed $location
+          )
+        </span>
+        :
+        <a href="_Gdata_Photos_AlbumEntry.html#%5CZend_Gdata_Photos_AlbumEntry">\Zend_Gdata_Photos_AlbumEntry</a></code><p class="short-description">Retreive a single AlbumEntry object.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$location</dt>
+<dd>mixed<br><em>The location for the feed, as a URL or Query.</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_Photos_AlbumEntry.html#%5CZend_Gdata_Photos_AlbumEntry">\Zend_Gdata_Photos_AlbumEntry</a></dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_App_Exception.html#%5CZend_Gdata_App_Exception"></a></dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_App_HttpException.html#%5CZend_Gdata_App_HttpException"></a></dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Photos::getAlbumFeed()"></a><h4 class="method public">getAlbumFeed<div class="to-top"><a href="#Zend_Gdata_Photos">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getAlbumFeed</span><span class="nb-faded-text">(
+          mixed $location
+              =
+              null
+          )
+        </span>
+        :
+        <a href="_Gdata_Photos_AlbumFeed.html#%5CZend_Gdata_Photos_AlbumFeed">\Zend_Gdata_Photos_AlbumFeed</a></code><p class="short-description">Retreive AlbumFeed object containing multiple PhotoEntry or TagEntry
+objects.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$location</dt>
+<dd>mixed<br><em>(optional) The location for the feed, as a URL or Query.</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_Photos_AlbumFeed.html#%5CZend_Gdata_Photos_AlbumFeed">\Zend_Gdata_Photos_AlbumFeed</a></dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_App_Exception.html#%5CZend_Gdata_App_Exception"></a></dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_App_HttpException.html#%5CZend_Gdata_App_HttpException"></a></dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Photos::getCommentEntry()"></a><h4 class="method public">getCommentEntry<div class="to-top"><a href="#Zend_Gdata_Photos">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getCommentEntry</span><span class="nb-faded-text">(
+          mixed $location
+          )
+        </span>
+        :
+        <a href="_Gdata_Photos_CommentEntry.html#%5CZend_Gdata_Photos_CommentEntry">\Zend_Gdata_Photos_CommentEntry</a></code><p class="short-description">Retreive a single CommentEntry object.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$location</dt>
+<dd>mixed<br><em>The location for the feed, as a URL or Query.</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_Photos_CommentEntry.html#%5CZend_Gdata_Photos_CommentEntry">\Zend_Gdata_Photos_CommentEntry</a></dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_App_Exception.html#%5CZend_Gdata_App_Exception"></a></dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_App_HttpException.html#%5CZend_Gdata_App_HttpException"></a></dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Photos::getPhotoEntry()"></a><h4 class="method public">getPhotoEntry<div class="to-top"><a href="#Zend_Gdata_Photos">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getPhotoEntry</span><span class="nb-faded-text">(
+          mixed $location
+          )
+        </span>
+        :
+        <a href="_Gdata_Photos_PhotoEntry.html#%5CZend_Gdata_Photos_PhotoEntry">\Zend_Gdata_Photos_PhotoEntry</a></code><p class="short-description">Retreive a single PhotoEntry object.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$location</dt>
+<dd>mixed<br><em>The location for the feed, as a URL or Query.</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_Photos_PhotoEntry.html#%5CZend_Gdata_Photos_PhotoEntry">\Zend_Gdata_Photos_PhotoEntry</a></dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_App_Exception.html#%5CZend_Gdata_App_Exception"></a></dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_App_HttpException.html#%5CZend_Gdata_App_HttpException"></a></dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Photos::getPhotoFeed()"></a><h4 class="method public">getPhotoFeed<div class="to-top"><a href="#Zend_Gdata_Photos">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getPhotoFeed</span><span class="nb-faded-text">(
+          mixed $location
+              =
+              null
+          )
+        </span>
+        :
+        <a href="_Gdata_Photos_PhotoFeed.html#%5CZend_Gdata_Photos_PhotoFeed">\Zend_Gdata_Photos_PhotoFeed</a></code><p class="short-description">Retreive PhotoFeed object containing comments and tags associated
+with a given photo.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$location</dt>
+<dd>mixed<br><em>(optional) The location for the feed, as a URL or Query. If not specified, the community search feed will be returned instead.</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_Photos_PhotoFeed.html#%5CZend_Gdata_Photos_PhotoFeed">\Zend_Gdata_Photos_PhotoFeed</a></dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_App_Exception.html#%5CZend_Gdata_App_Exception"></a></dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_App_HttpException.html#%5CZend_Gdata_App_HttpException"></a></dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Photos::getTagEntry()"></a><h4 class="method public">getTagEntry<div class="to-top"><a href="#Zend_Gdata_Photos">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getTagEntry</span><span class="nb-faded-text">(
+          mixed $location
+          )
+        </span>
+        :
+        <a href="_Gdata_Photos_TagEntry.html#%5CZend_Gdata_Photos_TagEntry">\Zend_Gdata_Photos_TagEntry</a></code><p class="short-description">Retreive a single TagEntry object.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$location</dt>
+<dd>mixed<br><em>The location for the feed, as a URL or Query.</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_Photos_TagEntry.html#%5CZend_Gdata_Photos_TagEntry">\Zend_Gdata_Photos_TagEntry</a></dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_App_Exception.html#%5CZend_Gdata_App_Exception"></a></dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_App_HttpException.html#%5CZend_Gdata_App_HttpException"></a></dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Photos::getUserEntry()"></a><h4 class="method public">getUserEntry<div class="to-top"><a href="#Zend_Gdata_Photos">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getUserEntry</span><span class="nb-faded-text">(
+          mixed $location
+          )
+        </span>
+        :
+        <a href="_Gdata_Photos_UserEntry.html#%5CZend_Gdata_Photos_UserEntry">\Zend_Gdata_Photos_UserEntry</a></code><p class="short-description">Retreive a single UserEntry object.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$location</dt>
+<dd>mixed<br><em>The location for the feed, as a URL or Query.</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_Photos_UserEntry.html#%5CZend_Gdata_Photos_UserEntry">\Zend_Gdata_Photos_UserEntry</a></dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_App_Exception.html#%5CZend_Gdata_App_Exception"></a></dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_App_HttpException.html#%5CZend_Gdata_App_HttpException"></a></dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Photos::getUserFeed()"></a><h4 class="method public">getUserFeed<div class="to-top"><a href="#Zend_Gdata_Photos">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getUserFeed</span><span class="nb-faded-text">(
+          string $userName
+              =
+              null, mixed $location
+              =
+              null
+          )
+        </span>
+        :
+        <a href="_Gdata_Photos_UserFeed.html#%5CZend_Gdata_Photos_UserFeed">\Zend_Gdata_Photos_UserFeed</a></code><p class="short-description">Retrieve a UserFeed containing AlbumEntries, PhotoEntries and
+TagEntries associated with a given user.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$userName</dt>
+<dd>string<br><em>The userName of interest</em>
+</dd>
+<dt>$location</dt>
+<dd>mixed<br><em>(optional) The location for the feed, as a URL or Query. If not provided, a default URL will be used instead.</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_Photos_UserFeed.html#%5CZend_Gdata_Photos_UserFeed">\Zend_Gdata_Photos_UserFeed</a></dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_App_Exception.html#%5CZend_Gdata_App_Exception"></a></dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_App_HttpException.html#%5CZend_Gdata_App_HttpException"></a></dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Photos::insertAlbumEntry()"></a><h4 class="method public">insertAlbumEntry<div class="to-top"><a href="#Zend_Gdata_Photos">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">insertAlbumEntry</span><span class="nb-faded-text">(
+          <a href="_Gdata_Photos_AlbumEntry.html#%5CZend_Gdata_Photos_AlbumEntry">\Zend_Gdata_Photos_AlbumEntry</a> $album,  $uri
+              =
+              null
+          )
+        </span>
+        :
+        <a href="_Gdata_Photos_AlbumEntry.html#%5CZend_Gdata_Photos_AlbumEntry">\Zend_Gdata_Photos_AlbumEntry</a></code><p class="short-description">Create a new album from a AlbumEntry.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$album</dt>
+<dd>\Zend_Gdata_Photos_AlbumEntry<br><em>The album entry to insert.</em>
+</dd>
+<dt>$uri</dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_Photos_AlbumEntry.html#%5CZend_Gdata_Photos_AlbumEntry">\Zend_Gdata_Photos_AlbumEntry</a></dt>
+<dd><em>The inserted album entry as returned by the server.</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_App_Exception.html#%5CZend_Gdata_App_Exception"></a></dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_App_HttpException.html#%5CZend_Gdata_App_HttpException"></a></dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Photos::insertCommentEntry()"></a><h4 class="method public">insertCommentEntry<div class="to-top"><a href="#Zend_Gdata_Photos">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">insertCommentEntry</span><span class="nb-faded-text">(
+          <a href="_Gdata_Photos_CommentEntry.html#%5CZend_Gdata_Photos_CommentEntry">\Zend_Gdata_Photos_CommentEntry</a> $comment,  $uri
+              =
+              null
+          )
+        </span>
+        :
+        <a href="_Gdata_Photos_CommentEntry.html#%5CZend_Gdata_Photos_CommentEntry">\Zend_Gdata_Photos_CommentEntry</a></code><p class="short-description">Create a new comment from a CommentEntry.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$comment</dt>
+<dd>\Zend_Gdata_Photos_CommentEntry<br><em>The comment entry to insert.</em>
+</dd>
+<dt>$uri</dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_Photos_CommentEntry.html#%5CZend_Gdata_Photos_CommentEntry">\Zend_Gdata_Photos_CommentEntry</a></dt>
+<dd><em>The inserted comment entry as returned by the server.</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_App_Exception.html#%5CZend_Gdata_App_Exception"></a></dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_App_HttpException.html#%5CZend_Gdata_App_HttpException"></a></dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Photos::insertPhotoEntry()"></a><h4 class="method public">insertPhotoEntry<div class="to-top"><a href="#Zend_Gdata_Photos">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">insertPhotoEntry</span><span class="nb-faded-text">(
+          <a href="_Gdata_Photos_PhotoEntry.html#%5CZend_Gdata_Photos_PhotoEntry">\Zend_Gdata_Photos_PhotoEntry</a> $photo,  $uri
+              =
+              null
+          )
+        </span>
+        :
+        <a href="_Gdata_Photos_PhotoEntry.html#%5CZend_Gdata_Photos_PhotoEntry">\Zend_Gdata_Photos_PhotoEntry</a></code><p class="short-description">Create a new photo from a PhotoEntry.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$photo</dt>
+<dd>\Zend_Gdata_Photos_PhotoEntry<br><em>The photo to insert.</em>
+</dd>
+<dt>$uri</dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_Photos_PhotoEntry.html#%5CZend_Gdata_Photos_PhotoEntry">\Zend_Gdata_Photos_PhotoEntry</a></dt>
+<dd><em>The inserted photo entry as returned by the server.</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_App_Exception.html#%5CZend_Gdata_App_Exception"></a></dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_App_HttpException.html#%5CZend_Gdata_App_HttpException"></a></dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Photos::insertTagEntry()"></a><h4 class="method public">insertTagEntry<div class="to-top"><a href="#Zend_Gdata_Photos">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">insertTagEntry</span><span class="nb-faded-text">(
+          <a href="_Gdata_Photos_TagEntry.html#%5CZend_Gdata_Photos_TagEntry">\Zend_Gdata_Photos_TagEntry</a> $tag,  $uri
+              =
+              null
+          )
+        </span>
+        :
+        <a href="_Gdata_Photos_TagEntry.html#%5CZend_Gdata_Photos_TagEntry">\Zend_Gdata_Photos_TagEntry</a></code><p class="short-description">Create a new tag from a TagEntry.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$tag</dt>
+<dd>\Zend_Gdata_Photos_TagEntry<br><em>The tag entry to insert.</em>
+</dd>
+<dt>$uri</dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_Photos_TagEntry.html#%5CZend_Gdata_Photos_TagEntry">\Zend_Gdata_Photos_TagEntry</a></dt>
+<dd><em>The inserted tag entry as returned by the server.</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_App_Exception.html#%5CZend_Gdata_App_Exception"></a></dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_App_HttpException.html#%5CZend_Gdata_App_HttpException"></a></dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<small xmlns="" class="footer">Documentation was generated by <a href="http://docblox-project.org">DocBlox 0.12.2</a>.
+    </small></body></html>

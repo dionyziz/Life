@@ -1,0 +1,1808 @@
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title>Zend Gdata API Documentation</title><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" href="css/black-tie/jquery-ui-1.8.2.custom.css" type="text/css"></link><link rel="stylesheet" href="css/jquery.treeview.css" type="text/css"></link><link rel="stylesheet" href="css/theme.css" type="text/css"></link><script type="text/javascript" src="js/jquery-1.4.2.min.js"></script><script type="text/javascript" src="js/jquery-ui-1.8.2.custom.min.js"></script><script type="text/javascript" src="js/jquery.cookie.js"></script><script type="text/javascript" src="js/jquery.treeview.js"></script><script type="text/javascript">
+            $(document).ready(function() {
+                $(".filetree").treeview({
+                    collapsed: true,
+                    persist: "cookie"
+                });
+
+                $("#accordion").accordion({
+                    collapsible: true,
+                    autoHeight:  false,
+                    fillSpace:   true
+                });
+
+                $(".tabs").tabs();
+            });
+        </script></head><body><div xmlns="" class="content">
+<div class="sub-page-main-header-api-documentation"><h2>API Documentation</h2></div>
+<div class="dotted-line"></div>
+</div>
+<div xmlns="" id="content">
+<script>
+      $(document).ready(function() {
+        $('dl.function-info, dl.constant-info, dl.property-info').prev().css('cursor', 'pointer');
+        $('dl.function-info, dl.constant-info, dl.property-info').prev().click(function() {
+          if ($(this).next().is(':hidden'))
+          {
+            $(this).children('img')[0].src = 'images/arrow_down.gif';
+          } else
+          {
+            $(this).children('img')[0].src = 'images/arrow_right.gif';
+          }
+          $(this).next().slideToggle();
+        });
+      $('dl.function-info, dl.constant-info, dl.property-info').hide();
+      $('dl.function-info img, dl.constant-info img, dl.property-info img').show();
+      });
+    </script><a name="top"></a><h1 class="file">Gdata/Media/Extension/MediaContent.php</h1>
+<div class="file_menu">
+<a href="#includes">Includes</a> <a href="#classes">Classes</a> </div>
+<dl class="file-info">
+<dt>category</dt>
+<dd>Zend</dd>
+<dt>copyright</dt>
+<dd>Copyright (c) 2005-2011 Zend Technologies USA Inc. (http://www.zend.com)</dd>
+<dt>license</dt>
+<dd>http://framework.zend.com/license/new-bsd     New BSD License</dd>
+<dt>package</dt>
+<dd>Zend_Gdata</dd>
+<dt>subpackage</dt>
+<dd>Media</dd>
+<dt>version</dt>
+<dd>$Id: MediaContent.php 23775 2011-03-01 17:25:24Z ralph $</dd>
+<dt>Classes</dt>
+<dd><a class="class" href="#%5CZend_Gdata_Media_Extension_MediaContent">Zend_Gdata_Media_Extension_MediaContent</a></dd>
+</dl>
+<h2>Description</h2>
+<p class="short-description">Zend Framework</p>
+<div class="long-description"><p>LICENSE</p>
+
+<p>This source file is subject to the new BSD license that is bundled
+with this package in the file LICENSE.txt.
+It is also available through the world-wide-web at this URL:
+http://framework.zend.com/license/new-bsd
+If you did not receive a copy of the license and are unable to
+obtain it through the world-wide-web, please send an email
+to license@zend.com so we can send you a copy immediately.</p>
+</div>
+<a name="classes"></a><a id="\Zend_Gdata_Media_Extension_MediaContent"></a><h2 class="class">\Zend_Gdata_Media_Extension_MediaContent<div class="to-top"><a href="#top">jump to top</a></div>
+</h2>
+<div class="class">
+<dl class="class-info">
+<dt>Extends from</dt>
+<dd><a href="_Gdata_Extension.html#%5CZend_Gdata_Extension">\Zend_Gdata_Extension</a></dd>
+<dt>category</dt>
+<dd>Zend</dd>
+<dt>copyright</dt>
+<dd>Copyright (c) 2005-2011 Zend Technologies USA Inc. (http://www.zend.com)</dd>
+<dt>license</dt>
+<dd>http://framework.zend.com/license/new-bsd     New BSD License</dd>
+<dt>package</dt>
+<dd>Zend_Gdata</dd>
+<dt>subpackage</dt>
+<dd>Media</dd>
+<dt><a href="#" onclick="$(this).children('img').toggle().parents('dt').nextUntil('dt').slideToggle(); return false;"><img src="images/arrow_down.gif"><img src="images/arrow_right.gif" style="display: none">
+                Properties
+              </a></dt>
+<dd><a class="property protected" href="#%5CZend_Gdata_Media_Extension_MediaContent::%24_bitrate">$_bitrate</a></dd>
+<dd><a class="property protected" href="#%5CZend_Gdata_Media_Extension_MediaContent::%24_channels">$_channels</a></dd>
+<dd><a class="property protected" href="#%5CZend_Gdata_Media_Extension_MediaContent::%24_duration">$_duration</a></dd>
+<dd><a class="property protected" href="#%5CZend_Gdata_Media_Extension_MediaContent::%24_expression">$_expression</a></dd>
+<dd><a class="property protected" href="#%5CZend_Gdata_Media_Extension_MediaContent::%24_fileSize">$_fileSize</a></dd>
+<dd><a class="property protected" href="#%5CZend_Gdata_Media_Extension_MediaContent::%24_framerate">$_framerate</a></dd>
+<dd><a class="property protected" href="#%5CZend_Gdata_Media_Extension_MediaContent::%24_height">$_height</a></dd>
+<dd><a class="property protected" href="#%5CZend_Gdata_Media_Extension_MediaContent::%24_isDefault">$_isDefault</a></dd>
+<dd><a class="property protected" href="#%5CZend_Gdata_Media_Extension_MediaContent::%24_lang">$_lang</a></dd>
+<dd><a class="property protected" href="#%5CZend_Gdata_Media_Extension_MediaContent::%24_medium">$_medium</a></dd>
+<dd><a class="property protected" href="#%5CZend_Gdata_Media_Extension_MediaContent::%24_rootElement">$_rootElement</a></dd>
+<dd><a class="property protected" href="#%5CZend_Gdata_Media_Extension_MediaContent::%24_rootNamespace">$_rootNamespace</a></dd>
+<dd><a class="property protected" href="#%5CZend_Gdata_Media_Extension_MediaContent::%24_samplingrate">$_samplingrate</a></dd>
+<dd><a class="property protected" href="#%5CZend_Gdata_Media_Extension_MediaContent::%24_type">$_type</a></dd>
+<dd><a class="property protected" href="#%5CZend_Gdata_Media_Extension_MediaContent::%24_url">$_url</a></dd>
+<dd><a class="property protected" href="#%5CZend_Gdata_Media_Extension_MediaContent::%24_width">$_width</a></dd>
+<dt><a href="#" onclick="$(this).children('img').toggle().parents('dt').nextUntil('dt').slideToggle(); return false;"><img src="images/arrow_down.gif"><img src="images/arrow_right.gif" style="display: none">
+                Methods
+              </a></dt>
+<dd><a class="method public" href="#%5CZend_Gdata_Media_Extension_MediaContent::__construct()">__construct</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Media_Extension_MediaContent::__toString()">__toString</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Media_Extension_MediaContent::getBitrate()">getBitrate</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Media_Extension_MediaContent::getChannels()">getChannels</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Media_Extension_MediaContent::getDOM()">getDOM</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Media_Extension_MediaContent::getDuration()">getDuration</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Media_Extension_MediaContent::getExpression()">getExpression</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Media_Extension_MediaContent::getFileSize()">getFileSize</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Media_Extension_MediaContent::getFramerate()">getFramerate</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Media_Extension_MediaContent::getHeight()">getHeight</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Media_Extension_MediaContent::getIsDefault()">getIsDefault</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Media_Extension_MediaContent::getLang()">getLang</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Media_Extension_MediaContent::getMedium()">getMedium</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Media_Extension_MediaContent::getSamplingrate()">getSamplingrate</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Media_Extension_MediaContent::getType()">getType</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Media_Extension_MediaContent::getUrl()">getUrl</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Media_Extension_MediaContent::getWidth()">getWidth</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Media_Extension_MediaContent::setBitrate()">setBitrate</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Media_Extension_MediaContent::setChannels()">setChannels</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Media_Extension_MediaContent::setDuration()">setDuration</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Media_Extension_MediaContent::setExpression()">setExpression</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Media_Extension_MediaContent::setFileSize()">setFileSize</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Media_Extension_MediaContent::setFramerate()">setFramerate</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Media_Extension_MediaContent::setHeight()">setHeight</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Media_Extension_MediaContent::setIsDefault()">setIsDefault</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Media_Extension_MediaContent::setLang()">setLang</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Media_Extension_MediaContent::setMedium()">setMedium</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Media_Extension_MediaContent::setSamplingrate()">setSamplingrate</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Media_Extension_MediaContent::setType()">setType</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Media_Extension_MediaContent::setUrl()">setUrl</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Media_Extension_MediaContent::setWidth()">setWidth</a></dd>
+<dd><a class="method protected" href="#%5CZend_Gdata_Media_Extension_MediaContent::takeAttributeFromDOM()">takeAttributeFromDOM</a></dd>
+</dl>
+<h3>Description</h3>
+<p class="short-description">Represents the media:content element of Media RSS.</p>
+<div class="long-description"><p>Represents media objects.  Multiple media objects representing
+the same content can be represented using a
+media:group (Zend_Gdata_Media_Extension_MediaGroup) element.</p>
+</div>
+<h3>Properties</h3>
+<div>
+<a id="\Zend_Gdata_Media_Extension_MediaContent::$_bitrate"></a><h4 class="property protected">$_bitrate<div class="to-top"><a href="#%5CZend_Gdata_Media_Extension_MediaContent">jump to class</a></div>
+</h4>
+<div class="property">
+<code>int <span class="highlight">$_bitrate</span> = 'null'</code><p class="short-description"></p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt></dt>
+<dd>int<br><em></em>
+</dd>
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd>null</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Media_Extension_MediaContent::$_channels"></a><h4 class="property protected">$_channels<div class="to-top"><a href="#%5CZend_Gdata_Media_Extension_MediaContent">jump to class</a></div>
+</h4>
+<div class="property">
+<code>int <span class="highlight">$_channels</span> = 'null'</code><p class="short-description"></p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt></dt>
+<dd>int<br><em></em>
+</dd>
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd>null</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Media_Extension_MediaContent::$_duration"></a><h4 class="property protected">$_duration<div class="to-top"><a href="#%5CZend_Gdata_Media_Extension_MediaContent">jump to class</a></div>
+</h4>
+<div class="property">
+<code>int <span class="highlight">$_duration</span> = 'null'</code><p class="short-description"></p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt></dt>
+<dd>int<br><em></em>
+</dd>
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd>null</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Media_Extension_MediaContent::$_expression"></a><h4 class="property protected">$_expression<div class="to-top"><a href="#%5CZend_Gdata_Media_Extension_MediaContent">jump to class</a></div>
+</h4>
+<div class="property">
+<code>string <span class="highlight">$_expression</span> = 'null'</code><p class="short-description"></p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt></dt>
+<dd>string<br><em></em>
+</dd>
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd>null</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Media_Extension_MediaContent::$_fileSize"></a><h4 class="property protected">$_fileSize<div class="to-top"><a href="#%5CZend_Gdata_Media_Extension_MediaContent">jump to class</a></div>
+</h4>
+<div class="property">
+<code>int <span class="highlight">$_fileSize</span> = 'null'</code><p class="short-description"></p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt></dt>
+<dd>int<br><em></em>
+</dd>
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd>null</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Media_Extension_MediaContent::$_framerate"></a><h4 class="property protected">$_framerate<div class="to-top"><a href="#%5CZend_Gdata_Media_Extension_MediaContent">jump to class</a></div>
+</h4>
+<div class="property">
+<code>int <span class="highlight">$_framerate</span> = 'null'</code><p class="short-description"></p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt></dt>
+<dd>int<br><em></em>
+</dd>
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd>null</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Media_Extension_MediaContent::$_height"></a><h4 class="property protected">$_height<div class="to-top"><a href="#%5CZend_Gdata_Media_Extension_MediaContent">jump to class</a></div>
+</h4>
+<div class="property">
+<code>int <span class="highlight">$_height</span> = 'null'</code><p class="short-description"></p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt></dt>
+<dd>int<br><em></em>
+</dd>
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd>null</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Media_Extension_MediaContent::$_isDefault"></a><h4 class="property protected">$_isDefault<div class="to-top"><a href="#%5CZend_Gdata_Media_Extension_MediaContent">jump to class</a></div>
+</h4>
+<div class="property">
+<code>string <span class="highlight">$_isDefault</span> = 'null'</code><p class="short-description"></p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt></dt>
+<dd>string<br><em></em>
+</dd>
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd>null</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Media_Extension_MediaContent::$_lang"></a><h4 class="property protected">$_lang<div class="to-top"><a href="#%5CZend_Gdata_Media_Extension_MediaContent">jump to class</a></div>
+</h4>
+<div class="property">
+<code>string <span class="highlight">$_lang</span> = 'null'</code><p class="short-description"></p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt></dt>
+<dd>string<br><em></em>
+</dd>
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd>null</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Media_Extension_MediaContent::$_medium"></a><h4 class="property protected">$_medium<div class="to-top"><a href="#%5CZend_Gdata_Media_Extension_MediaContent">jump to class</a></div>
+</h4>
+<div class="property">
+<code>string <span class="highlight">$_medium</span> = 'null'</code><p class="short-description"></p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt></dt>
+<dd>string<br><em></em>
+</dd>
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd>null</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Media_Extension_MediaContent::$_rootElement"></a><h4 class="property protected">$_rootElement<div class="to-top"><a href="#%5CZend_Gdata_Media_Extension_MediaContent">jump to class</a></div>
+</h4>
+<div class="property">
+<code>string <span class="highlight">$_rootElement</span> = 'content'</code><p class="short-description"></p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt></dt>
+<dd>string<br><em>The XML element name, including prefix if desired</em>
+</dd>
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd>content</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Media_Extension_MediaContent::$_rootNamespace"></a><h4 class="property protected">$_rootNamespace<div class="to-top"><a href="#%5CZend_Gdata_Media_Extension_MediaContent">jump to class</a></div>
+</h4>
+<div class="property">
+<code>string <span class="highlight">$_rootNamespace</span> = 'media'</code><p class="short-description"></p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt></dt>
+<dd>string<br><em>The XML namespace prefix</em>
+</dd>
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd>media</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Media_Extension_MediaContent::$_samplingrate"></a><h4 class="property protected">$_samplingrate<div class="to-top"><a href="#%5CZend_Gdata_Media_Extension_MediaContent">jump to class</a></div>
+</h4>
+<div class="property">
+<code>int <span class="highlight">$_samplingrate</span> = 'null'</code><p class="short-description"></p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt></dt>
+<dd>int<br><em></em>
+</dd>
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd>null</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Media_Extension_MediaContent::$_type"></a><h4 class="property protected">$_type<div class="to-top"><a href="#%5CZend_Gdata_Media_Extension_MediaContent">jump to class</a></div>
+</h4>
+<div class="property">
+<code>string <span class="highlight">$_type</span> = 'null'</code><p class="short-description"></p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt></dt>
+<dd>string<br><em></em>
+</dd>
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd>null</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Media_Extension_MediaContent::$_url"></a><h4 class="property protected">$_url<div class="to-top"><a href="#%5CZend_Gdata_Media_Extension_MediaContent">jump to class</a></div>
+</h4>
+<div class="property">
+<code>string <span class="highlight">$_url</span> = 'null'</code><p class="short-description"></p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt></dt>
+<dd>string<br><em></em>
+</dd>
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd>null</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Media_Extension_MediaContent::$_width"></a><h4 class="property protected">$_width<div class="to-top"><a href="#%5CZend_Gdata_Media_Extension_MediaContent">jump to class</a></div>
+</h4>
+<div class="property">
+<code>int <span class="highlight">$_width</span> = 'null'</code><p class="short-description"></p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt></dt>
+<dd>int<br><em></em>
+</dd>
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd>null</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+</div>
+<h3>Methods</h3>
+<div>
+<a id="\Zend_Gdata_Media_Extension_MediaContent::__construct()"></a><h4 class="method public">__construct<div class="to-top"><a href="#Zend_Gdata_Media_Extension_MediaContent">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">__construct</span><span class="nb-faded-text">(
+           $url
+              =
+              null,  $fileSize
+              =
+              null,  $type
+              =
+              null,  $medium
+              =
+              null,  $isDefault
+              =
+              null,  $expression
+              =
+              null,  $bitrate
+              =
+              null,  $framerate
+              =
+              null,  $samplingrate
+              =
+              null,  $channels
+              =
+              null,  $duration
+              =
+              null,  $height
+              =
+              null,  $width
+              =
+              null,  $lang
+              =
+              null
+          )
+        </span>
+        :
+        </code><p class="short-description">Creates an individual MediaContent object.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$url</dt>
+<dd><em></em></dd>
+<dt>$fileSize</dt>
+<dd><em></em></dd>
+<dt>$type</dt>
+<dd><em></em></dd>
+<dt>$medium</dt>
+<dd><em></em></dd>
+<dt>$isDefault</dt>
+<dd><em></em></dd>
+<dt>$expression</dt>
+<dd><em></em></dd>
+<dt>$bitrate</dt>
+<dd><em></em></dd>
+<dt>$framerate</dt>
+<dd><em></em></dd>
+<dt>$samplingrate</dt>
+<dd><em></em></dd>
+<dt>$channels</dt>
+<dd><em></em></dd>
+<dt>$duration</dt>
+<dd><em></em></dd>
+<dt>$height</dt>
+<dd><em></em></dd>
+<dt>$width</dt>
+<dd><em></em></dd>
+<dt>$lang</dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Media_Extension_MediaContent::__toString()"></a><h4 class="method public">__toString<div class="to-top"><a href="#Zend_Gdata_Media_Extension_MediaContent">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">__toString</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        string</code><p class="short-description">Returns the URL representing this MediaContent object</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>string</dt>
+<dd><em>The URL representing this MediaContent object.</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Media_Extension_MediaContent::getBitrate()"></a><h4 class="method public">getBitrate<div class="to-top"><a href="#Zend_Gdata_Media_Extension_MediaContent">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getBitrate</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        int</code><p class="short-description"></p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>int</dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Media_Extension_MediaContent::getChannels()"></a><h4 class="method public">getChannels<div class="to-top"><a href="#Zend_Gdata_Media_Extension_MediaContent">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getChannels</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        int</code><p class="short-description"></p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>int</dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Media_Extension_MediaContent::getDOM()"></a><h4 class="method public">getDOM<div class="to-top"><a href="#Zend_Gdata_Media_Extension_MediaContent">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getDOM</span><span class="nb-faded-text">(
+          <a href="http://php.net/manual/en/class.domdocument.php">\DOMDocument</a> $doc
+              =
+              null,  $majorVersion
+              =
+              1,  $minorVersion
+              =
+              null
+          )
+        </span>
+        :
+        <a href="http://php.net/manual/en/class.domelement.php">\DOMElement</a></code><p class="short-description">Retrieves a DOMElement which corresponds to this element and all
+child properties.  This is used to build an entry back into a DOM
+and eventually XML text for sending to the server upon updates, or
+for application storage/persistence.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$doc</dt>
+<dd>\DOMDocument<br><em>The DOMDocument used to construct DOMElements</em>
+</dd>
+<dt>$majorVersion</dt>
+<dd><em></em></dd>
+<dt>$minorVersion</dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="http://php.net/manual/en/class.domelement.php">\DOMElement</a></dt>
+<dd><em>The DOMElement representing this element and all child properties.</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Media_Extension_MediaContent::getDuration()"></a><h4 class="method public">getDuration<div class="to-top"><a href="#Zend_Gdata_Media_Extension_MediaContent">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getDuration</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        int</code><p class="short-description">Returns the duration value of this element</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>int</dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Media_Extension_MediaContent::getExpression()"></a><h4 class="method public">getExpression<div class="to-top"><a href="#Zend_Gdata_Media_Extension_MediaContent">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getExpression</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        string</code><p class="short-description"></p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>string</dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Media_Extension_MediaContent::getFileSize()"></a><h4 class="method public">getFileSize<div class="to-top"><a href="#Zend_Gdata_Media_Extension_MediaContent">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getFileSize</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        int</code><p class="short-description"></p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>int</dt>
+<dd><em>The size of the media in bytes</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Media_Extension_MediaContent::getFramerate()"></a><h4 class="method public">getFramerate<div class="to-top"><a href="#Zend_Gdata_Media_Extension_MediaContent">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getFramerate</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        int</code><p class="short-description"></p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>int</dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Media_Extension_MediaContent::getHeight()"></a><h4 class="method public">getHeight<div class="to-top"><a href="#Zend_Gdata_Media_Extension_MediaContent">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getHeight</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        int</code><p class="short-description">Get the value for this element's height attribute.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>int</dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Media_Extension_MediaContent::getIsDefault()"></a><h4 class="method public">getIsDefault<div class="to-top"><a href="#Zend_Gdata_Media_Extension_MediaContent">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getIsDefault</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        bool</code><p class="short-description"></p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>bool</dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Media_Extension_MediaContent::getLang()"></a><h4 class="method public">getLang<div class="to-top"><a href="#Zend_Gdata_Media_Extension_MediaContent">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getLang</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        string</code><p class="short-description">Returns the language of link title</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>string</dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Media_Extension_MediaContent::getMedium()"></a><h4 class="method public">getMedium<div class="to-top"><a href="#Zend_Gdata_Media_Extension_MediaContent">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getMedium</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        string</code><p class="short-description"></p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>string</dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Media_Extension_MediaContent::getSamplingrate()"></a><h4 class="method public">getSamplingrate<div class="to-top"><a href="#Zend_Gdata_Media_Extension_MediaContent">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getSamplingrate</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        int</code><p class="short-description"></p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>int</dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Media_Extension_MediaContent::getType()"></a><h4 class="method public">getType<div class="to-top"><a href="#Zend_Gdata_Media_Extension_MediaContent">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getType</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        string</code><p class="short-description">Returns the type of text construct (typically 'text', 'html' or 'xhtml')</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>string</dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Media_Extension_MediaContent::getUrl()"></a><h4 class="method public">getUrl<div class="to-top"><a href="#Zend_Gdata_Media_Extension_MediaContent">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getUrl</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        string</code><p class="short-description"></p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>string</dt>
+<dd><em>The direct URL to the media object</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Media_Extension_MediaContent::getWidth()"></a><h4 class="method public">getWidth<div class="to-top"><a href="#Zend_Gdata_Media_Extension_MediaContent">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getWidth</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        int</code><p class="short-description">Get the value for this element's height attribute.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>int</dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Media_Extension_MediaContent::setBitrate()"></a><h4 class="method public">setBitrate<div class="to-top"><a href="#Zend_Gdata_Media_Extension_MediaContent">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">setBitrate</span><span class="nb-faded-text">(
+           $value
+          )
+        </span>
+        :
+        <a href="_Gdata_Media_Extension_MediaContent.html#%5CZend_Gdata_Media_Extension_MediaContent">\Zend_Gdata_Media_Extension_MediaContent</a></code><p class="short-description"></p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$value</dt>
+<dd><em>int</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_Media_Extension_MediaContent.html#%5CZend_Gdata_Media_Extension_MediaContent">\Zend_Gdata_Media_Extension_MediaContent</a></dt>
+<dd><em>Provides a fluent interface</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Media_Extension_MediaContent::setChannels()"></a><h4 class="method public">setChannels<div class="to-top"><a href="#Zend_Gdata_Media_Extension_MediaContent">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">setChannels</span><span class="nb-faded-text">(
+           $value
+          )
+        </span>
+        :
+        <a href="_Gdata_Media_Extension_MediaContent.html#%5CZend_Gdata_Media_Extension_MediaContent">\Zend_Gdata_Media_Extension_MediaContent</a></code><p class="short-description"></p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$value</dt>
+<dd><em>int</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_Media_Extension_MediaContent.html#%5CZend_Gdata_Media_Extension_MediaContent">\Zend_Gdata_Media_Extension_MediaContent</a></dt>
+<dd><em>Provides a fluent interface</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Media_Extension_MediaContent::setDuration()"></a><h4 class="method public">setDuration<div class="to-top"><a href="#Zend_Gdata_Media_Extension_MediaContent">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">setDuration</span><span class="nb-faded-text">(
+           $value
+          )
+        </span>
+        :
+        <a href="_Gdata_Media_Extension_MediaContent.html#%5CZend_Gdata_Media_Extension_MediaContent">\Zend_Gdata_Media_Extension_MediaContent</a></code><p class="short-description">Sets the duration value of this element</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$value</dt>
+<dd><em>int</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_Media_Extension_MediaContent.html#%5CZend_Gdata_Media_Extension_MediaContent">\Zend_Gdata_Media_Extension_MediaContent</a></dt>
+<dd><em>Provides a fluent interface</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Media_Extension_MediaContent::setExpression()"></a><h4 class="method public">setExpression<div class="to-top"><a href="#Zend_Gdata_Media_Extension_MediaContent">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">setExpression</span><span class="nb-faded-text">(
+           $value
+          )
+        </span>
+        :
+        <a href="_Gdata_Media_Extension_MediaContent.html#%5CZend_Gdata_Media_Extension_MediaContent">\Zend_Gdata_Media_Extension_MediaContent</a></code><p class="short-description"></p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$value</dt>
+<dd><em>string</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_Media_Extension_MediaContent.html#%5CZend_Gdata_Media_Extension_MediaContent">\Zend_Gdata_Media_Extension_MediaContent</a></dt>
+<dd><em>Provides a fluent interface</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Media_Extension_MediaContent::setFileSize()"></a><h4 class="method public">setFileSize<div class="to-top"><a href="#Zend_Gdata_Media_Extension_MediaContent">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">setFileSize</span><span class="nb-faded-text">(
+          int $value
+          )
+        </span>
+        :
+        <a href="_Gdata_Media_Extension_MediaContent.html#%5CZend_Gdata_Media_Extension_MediaContent">\Zend_Gdata_Media_Extension_MediaContent</a></code><p class="short-description"></p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$value</dt>
+<dd>int<br><em></em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_Media_Extension_MediaContent.html#%5CZend_Gdata_Media_Extension_MediaContent">\Zend_Gdata_Media_Extension_MediaContent</a></dt>
+<dd><em>Provides a fluent interface</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Media_Extension_MediaContent::setFramerate()"></a><h4 class="method public">setFramerate<div class="to-top"><a href="#Zend_Gdata_Media_Extension_MediaContent">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">setFramerate</span><span class="nb-faded-text">(
+           $value
+          )
+        </span>
+        :
+        <a href="_Gdata_Media_Extension_MediaContent.html#%5CZend_Gdata_Media_Extension_MediaContent">\Zend_Gdata_Media_Extension_MediaContent</a></code><p class="short-description"></p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$value</dt>
+<dd><em>int</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_Media_Extension_MediaContent.html#%5CZend_Gdata_Media_Extension_MediaContent">\Zend_Gdata_Media_Extension_MediaContent</a></dt>
+<dd><em>Provides a fluent interface</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Media_Extension_MediaContent::setHeight()"></a><h4 class="method public">setHeight<div class="to-top"><a href="#Zend_Gdata_Media_Extension_MediaContent">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">setHeight</span><span class="nb-faded-text">(
+           $value
+          )
+        </span>
+        :
+        <a href="_Gdata_Media_Extension_MediaContent.html#%5CZend_Gdata_Media_Extension_MediaContent">\Zend_Gdata_Media_Extension_MediaContent</a></code><p class="short-description">Set the value for this element's height attribute.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$value</dt>
+<dd><em>int</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_Media_Extension_MediaContent.html#%5CZend_Gdata_Media_Extension_MediaContent">\Zend_Gdata_Media_Extension_MediaContent</a></dt>
+<dd><em>Provides a fluent interface</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Media_Extension_MediaContent::setIsDefault()"></a><h4 class="method public">setIsDefault<div class="to-top"><a href="#Zend_Gdata_Media_Extension_MediaContent">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">setIsDefault</span><span class="nb-faded-text">(
+          bool $value
+          )
+        </span>
+        :
+        <a href="_Gdata_Media_Extension_MediaContent.html#%5CZend_Gdata_Media_Extension_MediaContent">\Zend_Gdata_Media_Extension_MediaContent</a></code><p class="short-description"></p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$value</dt>
+<dd>bool<br><em></em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_Media_Extension_MediaContent.html#%5CZend_Gdata_Media_Extension_MediaContent">\Zend_Gdata_Media_Extension_MediaContent</a></dt>
+<dd><em>Provides a fluent interface</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Media_Extension_MediaContent::setLang()"></a><h4 class="method public">setLang<div class="to-top"><a href="#Zend_Gdata_Media_Extension_MediaContent">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">setLang</span><span class="nb-faded-text">(
+           $value
+          )
+        </span>
+        :
+        <a href="_Gdata_Media_Extension_MediaContent.html#%5CZend_Gdata_Media_Extension_MediaContent">\Zend_Gdata_Media_Extension_MediaContent</a></code><p class="short-description">Sets the language of link title</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$value</dt>
+<dd><em>string</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_Media_Extension_MediaContent.html#%5CZend_Gdata_Media_Extension_MediaContent">\Zend_Gdata_Media_Extension_MediaContent</a></dt>
+<dd><em>Provides a fluent interface</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Media_Extension_MediaContent::setMedium()"></a><h4 class="method public">setMedium<div class="to-top"><a href="#Zend_Gdata_Media_Extension_MediaContent">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">setMedium</span><span class="nb-faded-text">(
+          string $value
+          )
+        </span>
+        :
+        <a href="_Gdata_Media_Extension_MediaContent.html#%5CZend_Gdata_Media_Extension_MediaContent">\Zend_Gdata_Media_Extension_MediaContent</a></code><p class="short-description"></p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$value</dt>
+<dd>string<br><em></em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_Media_Extension_MediaContent.html#%5CZend_Gdata_Media_Extension_MediaContent">\Zend_Gdata_Media_Extension_MediaContent</a></dt>
+<dd><em>Provides a fluent interface</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Media_Extension_MediaContent::setSamplingrate()"></a><h4 class="method public">setSamplingrate<div class="to-top"><a href="#Zend_Gdata_Media_Extension_MediaContent">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">setSamplingrate</span><span class="nb-faded-text">(
+           $value
+          )
+        </span>
+        :
+        <a href="_Gdata_Media_Extension_MediaContent.html#%5CZend_Gdata_Media_Extension_MediaContent">\Zend_Gdata_Media_Extension_MediaContent</a></code><p class="short-description"></p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$value</dt>
+<dd><em>int</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_Media_Extension_MediaContent.html#%5CZend_Gdata_Media_Extension_MediaContent">\Zend_Gdata_Media_Extension_MediaContent</a></dt>
+<dd><em>Provides a fluent interface</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Media_Extension_MediaContent::setType()"></a><h4 class="method public">setType<div class="to-top"><a href="#Zend_Gdata_Media_Extension_MediaContent">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">setType</span><span class="nb-faded-text">(
+          string $value
+          )
+        </span>
+        :
+        <a href="_Gdata_Media_Extension_MediaContent.html#%5CZend_Gdata_Media_Extension_MediaContent">\Zend_Gdata_Media_Extension_MediaContent</a></code><p class="short-description">Sets the type of text construct (typically 'text', 'html' or 'xhtml')</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$value</dt>
+<dd>string<br><em></em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_Media_Extension_MediaContent.html#%5CZend_Gdata_Media_Extension_MediaContent">\Zend_Gdata_Media_Extension_MediaContent</a></dt>
+<dd><em>Provides a fluent interface</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Media_Extension_MediaContent::setUrl()"></a><h4 class="method public">setUrl<div class="to-top"><a href="#Zend_Gdata_Media_Extension_MediaContent">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">setUrl</span><span class="nb-faded-text">(
+          string $value
+          )
+        </span>
+        :
+        <a href="_Gdata_Media_Extension_MediaContent.html#%5CZend_Gdata_Media_Extension_MediaContent">\Zend_Gdata_Media_Extension_MediaContent</a></code><p class="short-description"></p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$value</dt>
+<dd>string<br><em>The direct URL to the media object</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_Media_Extension_MediaContent.html#%5CZend_Gdata_Media_Extension_MediaContent">\Zend_Gdata_Media_Extension_MediaContent</a></dt>
+<dd><em>Provides a fluent interface</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Media_Extension_MediaContent::setWidth()"></a><h4 class="method public">setWidth<div class="to-top"><a href="#Zend_Gdata_Media_Extension_MediaContent">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">setWidth</span><span class="nb-faded-text">(
+           $value
+          )
+        </span>
+        :
+        <a href="_Gdata_Media_Extension_MediaContent.html#%5CZend_Gdata_Media_Extension_MediaContent">\Zend_Gdata_Media_Extension_MediaContent</a></code><p class="short-description">Set the value for this element's height attribute.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$value</dt>
+<dd><em>int</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_Media_Extension_MediaContent.html#%5CZend_Gdata_Media_Extension_MediaContent">\Zend_Gdata_Media_Extension_MediaContent</a></dt>
+<dd><em>Provides a fluent interface</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Media_Extension_MediaContent::takeAttributeFromDOM()"></a><h4 class="method protected">takeAttributeFromDOM<div class="to-top"><a href="#Zend_Gdata_Media_Extension_MediaContent">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">takeAttributeFromDOM</span><span class="nb-faded-text">(
+          <a href="http://php.net/manual/en/class.domnode.php">\DOMNode</a> $attribute
+          )
+        </span>
+        :
+        </code><p class="short-description">Given a DOMNode representing an attribute, tries to map the data into
+instance members.  If no mapping is defined, the name and value are
+stored in an array.</p>
+<div class="long-description"><p>TODO: Convert attributes to proper types</p>
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$attribute</dt>
+<dd>\DOMNode<br><em>The DOMNode attribute needed to be handled</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_App_InvalidArgumentException.html#%5CZend_Gdata_App_InvalidArgumentException"></a></dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<small xmlns="" class="footer">Documentation was generated by <a href="http://docblox-project.org">DocBlox 0.12.2</a>.
+    </small></body></html>

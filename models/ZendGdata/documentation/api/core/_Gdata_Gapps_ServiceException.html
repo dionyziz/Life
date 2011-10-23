@@ -1,0 +1,473 @@
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title>Zend Gdata API Documentation</title><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" href="css/black-tie/jquery-ui-1.8.2.custom.css" type="text/css"></link><link rel="stylesheet" href="css/jquery.treeview.css" type="text/css"></link><link rel="stylesheet" href="css/theme.css" type="text/css"></link><script type="text/javascript" src="js/jquery-1.4.2.min.js"></script><script type="text/javascript" src="js/jquery-ui-1.8.2.custom.min.js"></script><script type="text/javascript" src="js/jquery.cookie.js"></script><script type="text/javascript" src="js/jquery.treeview.js"></script><script type="text/javascript">
+            $(document).ready(function() {
+                $(".filetree").treeview({
+                    collapsed: true,
+                    persist: "cookie"
+                });
+
+                $("#accordion").accordion({
+                    collapsible: true,
+                    autoHeight:  false,
+                    fillSpace:   true
+                });
+
+                $(".tabs").tabs();
+            });
+        </script></head><body><div xmlns="" class="content">
+<div class="sub-page-main-header-api-documentation"><h2>API Documentation</h2></div>
+<div class="dotted-line"></div>
+</div>
+<div xmlns="" id="content">
+<script>
+      $(document).ready(function() {
+        $('dl.function-info, dl.constant-info, dl.property-info').prev().css('cursor', 'pointer');
+        $('dl.function-info, dl.constant-info, dl.property-info').prev().click(function() {
+          if ($(this).next().is(':hidden'))
+          {
+            $(this).children('img')[0].src = 'images/arrow_down.gif';
+          } else
+          {
+            $(this).children('img')[0].src = 'images/arrow_right.gif';
+          }
+          $(this).next().slideToggle();
+        });
+      $('dl.function-info, dl.constant-info, dl.property-info').hide();
+      $('dl.function-info img, dl.constant-info img, dl.property-info img').show();
+      });
+    </script><a name="top"></a><h1 class="file">Gdata/Gapps/ServiceException.php</h1>
+<div class="file_menu">
+<a href="#includes">Includes</a> <a href="#classes">Classes</a> </div>
+<dl class="file-info">
+<dt>category</dt>
+<dd>Zend</dd>
+<dt>copyright</dt>
+<dd>Copyright (c) 2005-2011 Zend Technologies USA Inc. (http://www.zend.com)</dd>
+<dt>license</dt>
+<dd>http://framework.zend.com/license/new-bsd     New BSD License</dd>
+<dt>package</dt>
+<dd>Zend_Gdata</dd>
+<dt>subpackage</dt>
+<dd>Gapps</dd>
+<dt>version</dt>
+<dd>$Id: ServiceException.php 23775 2011-03-01 17:25:24Z ralph $</dd>
+<dt>Classes</dt>
+<dd><a class="class" href="#%5CZend_Gdata_Gapps_ServiceException">Zend_Gdata_Gapps_ServiceException</a></dd>
+</dl>
+<h2>Description</h2>
+<p class="short-description">Zend Framework</p>
+<div class="long-description"><p>LICENSE</p>
+
+<p>This source file is subject to the new BSD license that is bundled
+with this package in the file LICENSE.txt.
+It is also available through the world-wide-web at this URL:
+http://framework.zend.com/license/new-bsd
+If you did not receive a copy of the license and are unable to
+obtain it through the world-wide-web, please send an email
+to license@zend.com so we can send you a copy immediately.</p>
+</div>
+<a name="classes"></a><a id="\Zend_Gdata_Gapps_ServiceException"></a><h2 class="class">\Zend_Gdata_Gapps_ServiceException<div class="to-top"><a href="#top">jump to top</a></div>
+</h2>
+<div class="class">
+<dl class="class-info">
+<dt>Extends from</dt>
+<dd><a href="_Exception.html#%5CZend_Exception">\Zend_Exception</a></dd>
+<dt>category</dt>
+<dd>Zend</dd>
+<dt>copyright</dt>
+<dd>Copyright (c) 2005-2011 Zend Technologies USA Inc. (http://www.zend.com)</dd>
+<dt>license</dt>
+<dd>http://framework.zend.com/license/new-bsd     New BSD License</dd>
+<dt>package</dt>
+<dd>Zend_Gdata</dd>
+<dt>subpackage</dt>
+<dd>Gapps</dd>
+<dt><a href="#" onclick="$(this).children('img').toggle().parents('dt').nextUntil('dt').slideToggle(); return false;"><img src="images/arrow_down.gif"><img src="images/arrow_right.gif" style="display: none">
+                Properties
+              </a></dt>
+<dd><a class="property protected" href="#%5CZend_Gdata_Gapps_ServiceException::%24_errors">$_errors</a></dd>
+<dd><a class="property protected" href="#%5CZend_Gdata_Gapps_ServiceException::%24_rootElement">$_rootElement</a></dd>
+<dt><a href="#" onclick="$(this).children('img').toggle().parents('dt').nextUntil('dt').slideToggle(); return false;"><img src="images/arrow_down.gif"><img src="images/arrow_right.gif" style="display: none">
+                Methods
+              </a></dt>
+<dd><a class="method public" href="#%5CZend_Gdata_Gapps_ServiceException::__construct()">__construct</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Gapps_ServiceException::__toString()">__toString</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Gapps_ServiceException::addError()">addError</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Gapps_ServiceException::getError()">getError</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Gapps_ServiceException::getErrors()">getErrors</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Gapps_ServiceException::hasError()">hasError</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Gapps_ServiceException::importFromString()">importFromString</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Gapps_ServiceException::setErrors()">setErrors</a></dd>
+</dl>
+<h3>Description</h3>
+<p class="short-description">Gdata Gapps Exception class. This is thrown when an
+AppsForYourDomainErrors message is received from the Google Apps
+servers.</p>
+<div class="long-description"><p>Several different errors may be represented by this exception. For a list
+of error codes available, see getErrorCode.</p>
+</div>
+<h3>Properties</h3>
+<div>
+<a id="\Zend_Gdata_Gapps_ServiceException::$_errors"></a><h4 class="property protected">$_errors<div class="to-top"><a href="#%5CZend_Gdata_Gapps_ServiceException">jump to class</a></div>
+</h4>
+<div class="property">
+<code>array <span class="highlight">$_errors</span> = 'array'</code><p class="short-description">Array of Zend_Gdata_Error objects indexed by error code.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt></dt>
+<dd>array<br><em></em>
+</dd>
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd>array</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Gapps_ServiceException::$_rootElement"></a><h4 class="property protected">$_rootElement<div class="to-top"><a href="#%5CZend_Gdata_Gapps_ServiceException">jump to class</a></div>
+</h4>
+<div class="property">
+<code> <span class="highlight">$_rootElement</span> = 'AppsForYourDomainErrors'</code><div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd>AppsForYourDomainErrors</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+</div>
+<h3>Methods</h3>
+<div>
+<a id="\Zend_Gdata_Gapps_ServiceException::__construct()"></a><h4 class="method public">__construct<div class="to-top"><a href="#Zend_Gdata_Gapps_ServiceException">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">__construct</span><span class="nb-faded-text">(
+           $errors
+              =
+              null
+          )
+        </span>
+        :
+        array</code><p class="short-description">Create a new ServiceException.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$errors</dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>array</dt>
+<dd><em>An array containing a collection of Zend_Gdata_Gapps_Error objects.</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Gapps_ServiceException::__toString()"></a><h4 class="method public">__toString<div class="to-top"><a href="#Zend_Gdata_Gapps_ServiceException">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">__toString</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        string</code><p class="short-description">Get a human readable version of this exception.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>string</dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Gapps_ServiceException::addError()"></a><h4 class="method public">addError<div class="to-top"><a href="#Zend_Gdata_Gapps_ServiceException">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">addError</span><span class="nb-faded-text">(
+          <a href="_Gdata_Gapps_Error.html#%5CZend_Gdata_Gapps_Error">\Zend_Gdata_Gapps_Error</a> $error
+          )
+        </span>
+        :
+        </code><p class="short-description">Add a single Error object to the list of errors received by the
+server.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$error</dt>
+<dd>\Zend_Gdata_Gapps_Error<br><em>An instance of an error returned by the server. The error&amp;#039;s errorCode must be set.</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_App_Exception.html#%5CZend_Gdata_App_Exception"></a></dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Gapps_ServiceException::getError()"></a><h4 class="method public">getError<div class="to-top"><a href="#Zend_Gdata_Gapps_ServiceException">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getError</span><span class="nb-faded-text">(
+           $errorCode
+          )
+        </span>
+        :
+        <a href="_Gdata_Gapps_Error.html#%5CZend_Gdata_Gapps_Error">\Zend_Gdata_Gapps_Error</a></code><p class="short-description">Return the Error object associated with a specific error code.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$errorCode</dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_Gapps_Error.html#%5CZend_Gdata_Gapps_Error">\Zend_Gdata_Gapps_Error</a></dt>
+<dd><em>The Error object requested, or null if not found.</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Gapps_ServiceException::getErrors()"></a><h4 class="method public">getErrors<div class="to-top"><a href="#Zend_Gdata_Gapps_ServiceException">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getErrors</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        array</code><p class="short-description">Get the list of errors as sent by the server inside of an
+AppsForYourDomainErrors tag.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>array</dt>
+<dd><em>An associative array containing a collection of Zend_Gdata_Gapps_Error objects, indexed by error code.</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Gapps_ServiceException::hasError()"></a><h4 class="method public">hasError<div class="to-top"><a href="#Zend_Gdata_Gapps_ServiceException">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">hasError</span><span class="nb-faded-text">(
+          integer $errorCode
+          )
+        </span>
+        :
+        boolean</code><p class="short-description">Check whether or not a particular error code was returned by the
+server.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$errorCode</dt>
+<dd>integer<br><em>The error code to check against.</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>boolean</dt>
+<dd><em>Whether or not the supplied error code was returned by the server.</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Gapps_ServiceException::importFromString()"></a><h4 class="method public">importFromString<div class="to-top"><a href="#Zend_Gdata_Gapps_ServiceException">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">importFromString</span><span class="nb-faded-text">(
+          string $string
+          )
+        </span>
+        :
+        <a href="_Gdata_Gapps_ServiceException.html#%5CZend_Gdata_Gapps_ServiceException">\Zend_Gdata_Gapps_ServiceException</a></code><p class="short-description">Import an AppsForYourDomain error from XML.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$string</dt>
+<dd>string<br><em>The XML data to be imported</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_Gapps_ServiceException.html#%5CZend_Gdata_Gapps_ServiceException">\Zend_Gdata_Gapps_ServiceException</a></dt>
+<dd><em>Provides a fluent interface.</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_App_Exception.html#%5CZend_Gdata_App_Exception"></a></dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Gapps_ServiceException::setErrors()"></a><h4 class="method public">setErrors<div class="to-top"><a href="#Zend_Gdata_Gapps_ServiceException">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">setErrors</span><span class="nb-faded-text">(
+          array $array
+          )
+        </span>
+        :
+        </code><p class="short-description">Set the list of errors as sent by the server inside of an
+AppsForYourDomainErrors tag.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$array</dt>
+<dd>array<br><em>An associative array containing a collection of Zend_Gdata_Gapps_Error objects. All errors must have their errorCode value set.</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_App_Exception.html#%5CZend_Gdata_App_Exception"></a></dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<small xmlns="" class="footer">Documentation was generated by <a href="http://docblox-project.org">DocBlox 0.12.2</a>.
+    </small></body></html>

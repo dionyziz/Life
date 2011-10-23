@@ -1,0 +1,289 @@
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title>Zend Gdata API Documentation</title><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" href="css/black-tie/jquery-ui-1.8.2.custom.css" type="text/css"></link><link rel="stylesheet" href="css/jquery.treeview.css" type="text/css"></link><link rel="stylesheet" href="css/theme.css" type="text/css"></link><script type="text/javascript" src="js/jquery-1.4.2.min.js"></script><script type="text/javascript" src="js/jquery-ui-1.8.2.custom.min.js"></script><script type="text/javascript" src="js/jquery.cookie.js"></script><script type="text/javascript" src="js/jquery.treeview.js"></script><script type="text/javascript">
+            $(document).ready(function() {
+                $(".filetree").treeview({
+                    collapsed: true,
+                    persist: "cookie"
+                });
+
+                $("#accordion").accordion({
+                    collapsible: true,
+                    autoHeight:  false,
+                    fillSpace:   true
+                });
+
+                $(".tabs").tabs();
+            });
+        </script></head><body><div xmlns="" class="content">
+<div class="sub-page-main-header-api-documentation"><h2>API Documentation</h2></div>
+<div class="dotted-line"></div>
+</div>
+<div xmlns="" id="content">
+<script>
+      $(document).ready(function() {
+        $('dl.function-info, dl.constant-info, dl.property-info').prev().css('cursor', 'pointer');
+        $('dl.function-info, dl.constant-info, dl.property-info').prev().click(function() {
+          if ($(this).next().is(':hidden'))
+          {
+            $(this).children('img')[0].src = 'images/arrow_down.gif';
+          } else
+          {
+            $(this).children('img')[0].src = 'images/arrow_right.gif';
+          }
+          $(this).next().slideToggle();
+        });
+      $('dl.function-info, dl.constant-info, dl.property-info').hide();
+      $('dl.function-info img, dl.constant-info img, dl.property-info img').show();
+      });
+    </script><a name="top"></a><h1 class="file">Gdata/App/CaptchaRequiredException.php</h1>
+<div class="file_menu">
+<a href="#includes">Includes</a> <a href="#classes">Classes</a> </div>
+<dl class="file-info">
+<dt>category</dt>
+<dd>Zend</dd>
+<dt>copyright</dt>
+<dd>Copyright (c) 2005-2011 Zend Technologies USA Inc. (http://www.zend.com)</dd>
+<dt>license</dt>
+<dd>http://framework.zend.com/license/new-bsd     New BSD License</dd>
+<dt>package</dt>
+<dd>Zend_Gdata</dd>
+<dt>subpackage</dt>
+<dd>App</dd>
+<dt>version</dt>
+<dd>$Id: CaptchaRequiredException.php 23775 2011-03-01 17:25:24Z ralph $</dd>
+<dt>Classes</dt>
+<dd><a class="class" href="#%5CZend_Gdata_App_CaptchaRequiredException">Zend_Gdata_App_CaptchaRequiredException</a></dd>
+</dl>
+<h2>Description</h2>
+<p class="short-description">Zend Framework</p>
+<div class="long-description"><p>LICENSE</p>
+
+<p>This source file is subject to the new BSD license that is bundled
+with this package in the file LICENSE.txt.
+It is also available through the world-wide-web at this URL:
+http://framework.zend.com/license/new-bsd
+If you did not receive a copy of the license and are unable to
+obtain it through the world-wide-web, please send an email
+to license@zend.com so we can send you a copy immediately.</p>
+</div>
+<a name="classes"></a><a id="\Zend_Gdata_App_CaptchaRequiredException"></a><h2 class="class">\Zend_Gdata_App_CaptchaRequiredException<div class="to-top"><a href="#top">jump to top</a></div>
+</h2>
+<div class="class">
+<dl class="class-info">
+<dt>Extends from</dt>
+<dd><a href="_Gdata_App_AuthException.html#%5CZend_Gdata_App_AuthException">\Zend_Gdata_App_AuthException</a></dd>
+<dt>category</dt>
+<dd>Zend</dd>
+<dt>copyright</dt>
+<dd>Copyright (c) 2005-2011 Zend Technologies USA Inc. (http://www.zend.com)</dd>
+<dt>license</dt>
+<dd>http://framework.zend.com/license/new-bsd     New BSD License</dd>
+<dt>package</dt>
+<dd>Zend_Gdata</dd>
+<dt>subpackage</dt>
+<dd>App</dd>
+<dt><a href="#" onclick="$(this).children('img').toggle().parents('dt').nextUntil('dt').slideToggle(); return false;"><img src="images/arrow_down.gif"><img src="images/arrow_right.gif" style="display: none">
+                Constants
+              </a></dt>
+<dd><a class="constant" href="#%5CZend_Gdata_App_CaptchaRequiredException::ACCOUNTS_URL">ACCOUNTS_URL</a></dd>
+<dt><a href="#" onclick="$(this).children('img').toggle().parents('dt').nextUntil('dt').slideToggle(); return false;"><img src="images/arrow_down.gif"><img src="images/arrow_right.gif" style="display: none">
+                Properties
+              </a></dt>
+<dd><a class="property private" href="#%5CZend_Gdata_App_CaptchaRequiredException::%24captchaToken">$captchaToken</a></dd>
+<dd><a class="property private" href="#%5CZend_Gdata_App_CaptchaRequiredException::%24captchaUrl">$captchaUrl</a></dd>
+<dt><a href="#" onclick="$(this).children('img').toggle().parents('dt').nextUntil('dt').slideToggle(); return false;"><img src="images/arrow_down.gif"><img src="images/arrow_right.gif" style="display: none">
+                Methods
+              </a></dt>
+<dd><a class="method public" href="#%5CZend_Gdata_App_CaptchaRequiredException::__construct()">__construct</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_App_CaptchaRequiredException::getCaptchaToken()">getCaptchaToken</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_App_CaptchaRequiredException::getCaptchaUrl()">getCaptchaUrl</a></dd>
+</dl>
+<h3>Description</h3>
+<p class="short-description">Gdata exceptions</p>
+<div class="long-description"><p>Class to represent an exception that occurs during the use of ClientLogin.
+This particular exception happens when a CAPTCHA challenge is issued. This
+challenge is a visual puzzle presented to the user to prove that they are
+not an automated system.</p>
+</div>
+<h3>Constants</h3>
+<div>
+<a id="\Zend_Gdata_App_CaptchaRequiredException::ACCOUNTS_URL"></a><h4 class="constant">ACCOUNTS_URL<div class="to-top"><a href="#Zend_Gdata_App_CaptchaRequiredException">jump to class</a></div>
+</h4>
+<div class="constant">
+<code> <span class="highlight">ACCOUNTS_URL</span> = 'https://www.google.com/accounts/'
+      </code><p class="short-description">The Google Accounts URL prefix.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="constant-info">
+<dt>value</dt>
+<dd>https://www.google.com/accounts/</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+</div>
+<h3>Properties</h3>
+<div>
+<a id="\Zend_Gdata_App_CaptchaRequiredException::$captchaToken"></a><h4 class="property private">$captchaToken<div class="to-top"><a href="#%5CZend_Gdata_App_CaptchaRequiredException">jump to class</a></div>
+</h4>
+<div class="property">
+<code>string <span class="highlight">$captchaToken</span> = ''</code><p class="short-description">The token identifier from the server.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt></dt>
+<dd>string<br><em></em>
+</dd>
+<dt>visibility</dt>
+<dd>private</dd>
+<dt>default</dt>
+<dd></dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_App_CaptchaRequiredException::$captchaUrl"></a><h4 class="property private">$captchaUrl<div class="to-top"><a href="#%5CZend_Gdata_App_CaptchaRequiredException">jump to class</a></div>
+</h4>
+<div class="property">
+<code>string <span class="highlight">$captchaUrl</span> = ''</code><p class="short-description">The URL of the CAPTCHA image.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt></dt>
+<dd>string<br><em></em>
+</dd>
+<dt>visibility</dt>
+<dd>private</dd>
+<dt>default</dt>
+<dd></dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+</div>
+<h3>Methods</h3>
+<div>
+<a id="\Zend_Gdata_App_CaptchaRequiredException::__construct()"></a><h4 class="method public">__construct<div class="to-top"><a href="#Zend_Gdata_App_CaptchaRequiredException">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">__construct</span><span class="nb-faded-text">(
+          string $captchaToken, string $captchaUrl
+          )
+        </span>
+        :
+        void</code><p class="short-description">Constructs the exception to handle a CAPTCHA required response.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$captchaToken</dt>
+<dd>string<br><em>The CAPTCHA token ID provided by the server.</em>
+</dd>
+<dt>$captchaUrl</dt>
+<dd>string<br><em>The URL to the CAPTCHA challenge image.</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_App_CaptchaRequiredException::getCaptchaToken()"></a><h4 class="method public">getCaptchaToken<div class="to-top"><a href="#Zend_Gdata_App_CaptchaRequiredException">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getCaptchaToken</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        string</code><p class="short-description">Retrieves the token identifier as provided by the server.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>string</dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_App_CaptchaRequiredException::getCaptchaUrl()"></a><h4 class="method public">getCaptchaUrl<div class="to-top"><a href="#Zend_Gdata_App_CaptchaRequiredException">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getCaptchaUrl</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        string</code><p class="short-description">Retrieves the URL CAPTCHA image as provided by the server.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>string</dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<small xmlns="" class="footer">Documentation was generated by <a href="http://docblox-project.org">DocBlox 0.12.2</a>.
+    </small></body></html>

@@ -1,0 +1,2435 @@
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title>Zend Gdata API Documentation</title><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" href="css/black-tie/jquery-ui-1.8.2.custom.css" type="text/css"></link><link rel="stylesheet" href="css/jquery.treeview.css" type="text/css"></link><link rel="stylesheet" href="css/theme.css" type="text/css"></link><script type="text/javascript" src="js/jquery-1.4.2.min.js"></script><script type="text/javascript" src="js/jquery-ui-1.8.2.custom.min.js"></script><script type="text/javascript" src="js/jquery.cookie.js"></script><script type="text/javascript" src="js/jquery.treeview.js"></script><script type="text/javascript">
+            $(document).ready(function() {
+                $(".filetree").treeview({
+                    collapsed: true,
+                    persist: "cookie"
+                });
+
+                $("#accordion").accordion({
+                    collapsible: true,
+                    autoHeight:  false,
+                    fillSpace:   true
+                });
+
+                $(".tabs").tabs();
+            });
+        </script></head><body><div xmlns="" class="content">
+<div class="sub-page-main-header-api-documentation"><h2>API Documentation</h2></div>
+<div class="dotted-line"></div>
+</div>
+<div xmlns="" id="content">
+<script>
+      $(document).ready(function() {
+        $('dl.function-info, dl.constant-info, dl.property-info').prev().css('cursor', 'pointer');
+        $('dl.function-info, dl.constant-info, dl.property-info').prev().click(function() {
+          if ($(this).next().is(':hidden'))
+          {
+            $(this).children('img')[0].src = 'images/arrow_down.gif';
+          } else
+          {
+            $(this).children('img')[0].src = 'images/arrow_right.gif';
+          }
+          $(this).next().slideToggle();
+        });
+      $('dl.function-info, dl.constant-info, dl.property-info').hide();
+      $('dl.function-info img, dl.constant-info img, dl.property-info img').show();
+      });
+    </script><a name="top"></a><h1 class="file">Gdata/YouTube/UserProfileEntry.php</h1>
+<div class="file_menu">
+<a href="#includes">Includes</a> <a href="#classes">Classes</a> </div>
+<dl class="file-info">
+<dt>category</dt>
+<dd>Zend</dd>
+<dt>copyright</dt>
+<dd>Copyright (c) 2005-2011 Zend Technologies USA Inc. (http://www.zend.com)</dd>
+<dt>license</dt>
+<dd>http://framework.zend.com/license/new-bsd     New BSD License</dd>
+<dt>package</dt>
+<dd>Zend_Gdata</dd>
+<dt>subpackage</dt>
+<dd>YouTube</dd>
+<dt>version</dt>
+<dd>$Id: UserProfileEntry.php 23775 2011-03-01 17:25:24Z ralph $</dd>
+<dt>Classes</dt>
+<dd><a class="class" href="#%5CZend_Gdata_YouTube_UserProfileEntry">Zend_Gdata_YouTube_UserProfileEntry</a></dd>
+</dl>
+<h2>Description</h2>
+<p class="short-description">Zend Framework</p>
+<div class="long-description"><p>LICENSE</p>
+
+<p>This source file is subject to the new BSD license that is bundled
+with this package in the file LICENSE.txt.
+It is also available through the world-wide-web at this URL:
+http://framework.zend.com/license/new-bsd
+If you did not receive a copy of the license and are unable to
+obtain it through the world-wide-web, please send an email
+to license@zend.com so we can send you a copy immediately.</p>
+</div>
+<a name="classes"></a><a id="\Zend_Gdata_YouTube_UserProfileEntry"></a><h2 class="class">\Zend_Gdata_YouTube_UserProfileEntry<div class="to-top"><a href="#top">jump to top</a></div>
+</h2>
+<div class="class">
+<dl class="class-info">
+<dt>Extends from</dt>
+<dd><a href="_Gdata_Entry.html#%5CZend_Gdata_Entry">\Zend_Gdata_Entry</a></dd>
+<dt>category</dt>
+<dd>Zend</dd>
+<dt>copyright</dt>
+<dd>Copyright (c) 2005-2011 Zend Technologies USA Inc. (http://www.zend.com)</dd>
+<dt>license</dt>
+<dd>http://framework.zend.com/license/new-bsd     New BSD License</dd>
+<dt>package</dt>
+<dd>Zend_Gdata</dd>
+<dt>subpackage</dt>
+<dd>YouTube</dd>
+<dt><a href="#" onclick="$(this).children('img').toggle().parents('dt').nextUntil('dt').slideToggle(); return false;"><img src="images/arrow_down.gif"><img src="images/arrow_right.gif" style="display: none">
+                Properties
+              </a></dt>
+<dd><a class="property protected" href="#%5CZend_Gdata_YouTube_UserProfileEntry::%24_aboutMe">$_aboutMe</a></dd>
+<dd><a class="property protected" href="#%5CZend_Gdata_YouTube_UserProfileEntry::%24_age">$_age</a></dd>
+<dd><a class="property protected" href="#%5CZend_Gdata_YouTube_UserProfileEntry::%24_books">$_books</a></dd>
+<dd><a class="property protected" href="#%5CZend_Gdata_YouTube_UserProfileEntry::%24_company">$_company</a></dd>
+<dd><a class="property protected" href="#%5CZend_Gdata_YouTube_UserProfileEntry::%24_description">$_description</a></dd>
+<dd><a class="property protected" href="#%5CZend_Gdata_YouTube_UserProfileEntry::%24_entryClassName">$_entryClassName</a></dd>
+<dd><a class="property protected" href="#%5CZend_Gdata_YouTube_UserProfileEntry::%24_feedLink">$_feedLink</a></dd>
+<dd><a class="property protected" href="#%5CZend_Gdata_YouTube_UserProfileEntry::%24_firstName">$_firstName</a></dd>
+<dd><a class="property protected" href="#%5CZend_Gdata_YouTube_UserProfileEntry::%24_gender">$_gender</a></dd>
+<dd><a class="property protected" href="#%5CZend_Gdata_YouTube_UserProfileEntry::%24_hobbies">$_hobbies</a></dd>
+<dd><a class="property protected" href="#%5CZend_Gdata_YouTube_UserProfileEntry::%24_hometown">$_hometown</a></dd>
+<dd><a class="property protected" href="#%5CZend_Gdata_YouTube_UserProfileEntry::%24_lastName">$_lastName</a></dd>
+<dd><a class="property protected" href="#%5CZend_Gdata_YouTube_UserProfileEntry::%24_location">$_location</a></dd>
+<dd><a class="property protected" href="#%5CZend_Gdata_YouTube_UserProfileEntry::%24_movies">$_movies</a></dd>
+<dd><a class="property protected" href="#%5CZend_Gdata_YouTube_UserProfileEntry::%24_music">$_music</a></dd>
+<dd><a class="property protected" href="#%5CZend_Gdata_YouTube_UserProfileEntry::%24_occupation">$_occupation</a></dd>
+<dd><a class="property protected" href="#%5CZend_Gdata_YouTube_UserProfileEntry::%24_relationship">$_relationship</a></dd>
+<dd><a class="property protected" href="#%5CZend_Gdata_YouTube_UserProfileEntry::%24_school">$_school</a></dd>
+<dd><a class="property protected" href="#%5CZend_Gdata_YouTube_UserProfileEntry::%24_statistics">$_statistics</a></dd>
+<dd><a class="property protected" href="#%5CZend_Gdata_YouTube_UserProfileEntry::%24_thumbnail">$_thumbnail</a></dd>
+<dd><a class="property protected" href="#%5CZend_Gdata_YouTube_UserProfileEntry::%24_username">$_username</a></dd>
+<dt><a href="#" onclick="$(this).children('img').toggle().parents('dt').nextUntil('dt').slideToggle(); return false;"><img src="images/arrow_down.gif"><img src="images/arrow_right.gif" style="display: none">
+                Methods
+              </a></dt>
+<dd><a class="method public" href="#%5CZend_Gdata_YouTube_UserProfileEntry::__construct()">__construct</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_YouTube_UserProfileEntry::getAboutMe()">getAboutMe</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_YouTube_UserProfileEntry::getAge()">getAge</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_YouTube_UserProfileEntry::getBooks()">getBooks</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_YouTube_UserProfileEntry::getCompany()">getCompany</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_YouTube_UserProfileEntry::getContactsFeedUrl()">getContactsFeedUrl</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_YouTube_UserProfileEntry::getDOM()">getDOM</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_YouTube_UserProfileEntry::getFavoritesFeedUrl()">getFavoritesFeedUrl</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_YouTube_UserProfileEntry::getFeedLink()">getFeedLink</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_YouTube_UserProfileEntry::getFeedLinkHref()">getFeedLinkHref</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_YouTube_UserProfileEntry::getFirstName()">getFirstName</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_YouTube_UserProfileEntry::getGender()">getGender</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_YouTube_UserProfileEntry::getHobbies()">getHobbies</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_YouTube_UserProfileEntry::getHometown()">getHometown</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_YouTube_UserProfileEntry::getLastName()">getLastName</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_YouTube_UserProfileEntry::getLocation()">getLocation</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_YouTube_UserProfileEntry::getMovies()">getMovies</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_YouTube_UserProfileEntry::getMusic()">getMusic</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_YouTube_UserProfileEntry::getOccupation()">getOccupation</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_YouTube_UserProfileEntry::getPlaylistListFeedUrl()">getPlaylistListFeedUrl</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_YouTube_UserProfileEntry::getRelationship()">getRelationship</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_YouTube_UserProfileEntry::getSchool()">getSchool</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_YouTube_UserProfileEntry::getStatistics()">getStatistics</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_YouTube_UserProfileEntry::getSubscriptionsFeedUrl()">getSubscriptionsFeedUrl</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_YouTube_UserProfileEntry::getThumbnail()">getThumbnail</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_YouTube_UserProfileEntry::getUploadsFeedUrl()">getUploadsFeedUrl</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_YouTube_UserProfileEntry::getUsername()">getUsername</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_YouTube_UserProfileEntry::setAboutMe()">setAboutMe</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_YouTube_UserProfileEntry::setAge()">setAge</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_YouTube_UserProfileEntry::setBooks()">setBooks</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_YouTube_UserProfileEntry::setCompany()">setCompany</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_YouTube_UserProfileEntry::setFeedLink()">setFeedLink</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_YouTube_UserProfileEntry::setFirstName()">setFirstName</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_YouTube_UserProfileEntry::setGender()">setGender</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_YouTube_UserProfileEntry::setHobbies()">setHobbies</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_YouTube_UserProfileEntry::setHometown()">setHometown</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_YouTube_UserProfileEntry::setLastName()">setLastName</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_YouTube_UserProfileEntry::setLocation()">setLocation</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_YouTube_UserProfileEntry::setMovies()">setMovies</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_YouTube_UserProfileEntry::setMusic()">setMusic</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_YouTube_UserProfileEntry::setOccupation()">setOccupation</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_YouTube_UserProfileEntry::setRelationship()">setRelationship</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_YouTube_UserProfileEntry::setSchool()">setSchool</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_YouTube_UserProfileEntry::setUsername()">setUsername</a></dd>
+<dd><a class="method protected" href="#%5CZend_Gdata_YouTube_UserProfileEntry::takeChildFromDOM()">takeChildFromDOM</a></dd>
+</dl>
+<h3>Description</h3>
+<p class="short-description">Represents the YouTube video playlist flavor of an Atom entry</p>
+<div class="long-description">
+</div>
+<h3>Properties</h3>
+<div>
+<a id="\Zend_Gdata_YouTube_UserProfileEntry::$_aboutMe"></a><h4 class="property protected">$_aboutMe<div class="to-top"><a href="#%5CZend_Gdata_YouTube_UserProfileEntry">jump to class</a></div>
+</h4>
+<div class="property">
+<code>string <span class="highlight">$_aboutMe</span> = 'null'</code><p class="short-description">The contents of the 'About Me' field.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt></dt>
+<dd>string<br><em></em>
+</dd>
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd>null</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_YouTube_UserProfileEntry::$_age"></a><h4 class="property protected">$_age<div class="to-top"><a href="#%5CZend_Gdata_YouTube_UserProfileEntry">jump to class</a></div>
+</h4>
+<div class="property">
+<code>int <span class="highlight">$_age</span> = 'null'</code><p class="short-description">The age of the user</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt></dt>
+<dd>int<br><em></em>
+</dd>
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd>null</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_YouTube_UserProfileEntry::$_books"></a><h4 class="property protected">$_books<div class="to-top"><a href="#%5CZend_Gdata_YouTube_UserProfileEntry">jump to class</a></div>
+</h4>
+<div class="property">
+<code>string <span class="highlight">$_books</span> = 'null'</code><p class="short-description">Books of interest to the user</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt></dt>
+<dd>string<br><em></em>
+</dd>
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd>null</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_YouTube_UserProfileEntry::$_company"></a><h4 class="property protected">$_company<div class="to-top"><a href="#%5CZend_Gdata_YouTube_UserProfileEntry">jump to class</a></div>
+</h4>
+<div class="property">
+<code>string <span class="highlight">$_company</span> = 'null'</code><p class="short-description">Company</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt></dt>
+<dd>string<br><em></em>
+</dd>
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd>null</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_YouTube_UserProfileEntry::$_description"></a><h4 class="property protected">$_description<div class="to-top"><a href="#%5CZend_Gdata_YouTube_UserProfileEntry">jump to class</a></div>
+</h4>
+<div class="property">
+<code>string <span class="highlight">$_description</span> = 'null'</code><p class="short-description">The description of the user</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt></dt>
+<dd>string<br><em></em>
+</dd>
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd>null</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_YouTube_UserProfileEntry::$_entryClassName"></a><h4 class="property protected">$_entryClassName<div class="to-top"><a href="#%5CZend_Gdata_YouTube_UserProfileEntry">jump to class</a></div>
+</h4>
+<div class="property">
+<code>string <span class="highlight">$_entryClassName</span> = 'Zend_Gdata_YouTube_UserProfileEntry'</code><p class="short-description">The classname for individual user activity entry elements.</p>
+<div class="long-description"><p>var @string</p>
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt></dt>
+<dd>string<br><em></em>
+</dd>
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd>Zend_Gdata_YouTube_UserProfileEntry</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_YouTube_UserProfileEntry::$_feedLink"></a><h4 class="property protected">$_feedLink<div class="to-top"><a href="#%5CZend_Gdata_YouTube_UserProfileEntry">jump to class</a></div>
+</h4>
+<div class="property">
+<code>array <span class="highlight">$_feedLink</span> = 'array'</code><p class="short-description">Nested feed links</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt></dt>
+<dd>array<br><em></em>
+</dd>
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd>array</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_YouTube_UserProfileEntry::$_firstName"></a><h4 class="property protected">$_firstName<div class="to-top"><a href="#%5CZend_Gdata_YouTube_UserProfileEntry">jump to class</a></div>
+</h4>
+<div class="property">
+<code>string <span class="highlight">$_firstName</span> = 'null'</code><p class="short-description">First name</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt></dt>
+<dd>string<br><em></em>
+</dd>
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd>null</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_YouTube_UserProfileEntry::$_gender"></a><h4 class="property protected">$_gender<div class="to-top"><a href="#%5CZend_Gdata_YouTube_UserProfileEntry">jump to class</a></div>
+</h4>
+<div class="property">
+<code>string <span class="highlight">$_gender</span> = 'null'</code><p class="short-description">Gender</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt></dt>
+<dd>string<br><em></em>
+</dd>
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd>null</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_YouTube_UserProfileEntry::$_hobbies"></a><h4 class="property protected">$_hobbies<div class="to-top"><a href="#%5CZend_Gdata_YouTube_UserProfileEntry">jump to class</a></div>
+</h4>
+<div class="property">
+<code>string <span class="highlight">$_hobbies</span> = 'null'</code><p class="short-description">Hobbies</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt></dt>
+<dd>string<br><em></em>
+</dd>
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd>null</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_YouTube_UserProfileEntry::$_hometown"></a><h4 class="property protected">$_hometown<div class="to-top"><a href="#%5CZend_Gdata_YouTube_UserProfileEntry">jump to class</a></div>
+</h4>
+<div class="property">
+<code>string <span class="highlight">$_hometown</span> = 'null'</code><p class="short-description">Hometown</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt></dt>
+<dd>string<br><em></em>
+</dd>
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd>null</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_YouTube_UserProfileEntry::$_lastName"></a><h4 class="property protected">$_lastName<div class="to-top"><a href="#%5CZend_Gdata_YouTube_UserProfileEntry">jump to class</a></div>
+</h4>
+<div class="property">
+<code>string <span class="highlight">$_lastName</span> = 'null'</code><p class="short-description">Last name</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt></dt>
+<dd>string<br><em></em>
+</dd>
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd>null</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_YouTube_UserProfileEntry::$_location"></a><h4 class="property protected">$_location<div class="to-top"><a href="#%5CZend_Gdata_YouTube_UserProfileEntry">jump to class</a></div>
+</h4>
+<div class="property">
+<code>string <span class="highlight">$_location</span> = 'null'</code><p class="short-description">Location</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt></dt>
+<dd>string<br><em></em>
+</dd>
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd>null</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_YouTube_UserProfileEntry::$_movies"></a><h4 class="property protected">$_movies<div class="to-top"><a href="#%5CZend_Gdata_YouTube_UserProfileEntry">jump to class</a></div>
+</h4>
+<div class="property">
+<code>string <span class="highlight">$_movies</span> = 'null'</code><p class="short-description">Movies</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt></dt>
+<dd>string<br><em></em>
+</dd>
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd>null</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_YouTube_UserProfileEntry::$_music"></a><h4 class="property protected">$_music<div class="to-top"><a href="#%5CZend_Gdata_YouTube_UserProfileEntry">jump to class</a></div>
+</h4>
+<div class="property">
+<code>string <span class="highlight">$_music</span> = 'null'</code><p class="short-description">Music</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt></dt>
+<dd>string<br><em></em>
+</dd>
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd>null</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_YouTube_UserProfileEntry::$_occupation"></a><h4 class="property protected">$_occupation<div class="to-top"><a href="#%5CZend_Gdata_YouTube_UserProfileEntry">jump to class</a></div>
+</h4>
+<div class="property">
+<code>string <span class="highlight">$_occupation</span> = 'null'</code><p class="short-description">Occupation</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt></dt>
+<dd>string<br><em></em>
+</dd>
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd>null</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_YouTube_UserProfileEntry::$_relationship"></a><h4 class="property protected">$_relationship<div class="to-top"><a href="#%5CZend_Gdata_YouTube_UserProfileEntry">jump to class</a></div>
+</h4>
+<div class="property">
+<code>string <span class="highlight">$_relationship</span> = 'null'</code><p class="short-description">Relationship</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt></dt>
+<dd>string<br><em></em>
+</dd>
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd>null</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_YouTube_UserProfileEntry::$_school"></a><h4 class="property protected">$_school<div class="to-top"><a href="#%5CZend_Gdata_YouTube_UserProfileEntry">jump to class</a></div>
+</h4>
+<div class="property">
+<code>string <span class="highlight">$_school</span> = 'null'</code><p class="short-description">School</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt></dt>
+<dd>string<br><em></em>
+</dd>
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd>null</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_YouTube_UserProfileEntry::$_statistics"></a><h4 class="property protected">$_statistics<div class="to-top"><a href="#%5CZend_Gdata_YouTube_UserProfileEntry">jump to class</a></div>
+</h4>
+<div class="property">
+<code><a href="_Gdata_YouTube_Extension_Statistics.html#%5CZend_Gdata_YouTube_Extension_Statistics">\Zend_Gdata_YouTube_Extension_Statistics</a> <span class="highlight">$_statistics</span> = 'null'</code><p class="short-description">Statistics</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt></dt>
+<dd>
+<a href="_Gdata_YouTube_Extension_Statistics.html#%5CZend_Gdata_YouTube_Extension_Statistics">\Zend_Gdata_YouTube_Extension_Statistics</a><br><em></em>
+</dd>
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd>null</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_YouTube_UserProfileEntry::$_thumbnail"></a><h4 class="property protected">$_thumbnail<div class="to-top"><a href="#%5CZend_Gdata_YouTube_UserProfileEntry">jump to class</a></div>
+</h4>
+<div class="property">
+<code><a href="_Gdata_Media_Extension_MediaThumbnail.html#%5CZend_Gdata_Media_Extension_MediaThumbnail">\Zend_Gdata_Media_Extension_MediaThumbnail</a> <span class="highlight">$_thumbnail</span> = 'null'</code><p class="short-description">Thumbnail</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt></dt>
+<dd>
+<a href="_Gdata_Media_Extension_MediaThumbnail.html#%5CZend_Gdata_Media_Extension_MediaThumbnail">\Zend_Gdata_Media_Extension_MediaThumbnail</a><br><em></em>
+</dd>
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd>null</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_YouTube_UserProfileEntry::$_username"></a><h4 class="property protected">$_username<div class="to-top"><a href="#%5CZend_Gdata_YouTube_UserProfileEntry">jump to class</a></div>
+</h4>
+<div class="property">
+<code>string <span class="highlight">$_username</span> = 'null'</code><p class="short-description">The username for this profile entry</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt></dt>
+<dd>string<br><em></em>
+</dd>
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd>null</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+</div>
+<h3>Methods</h3>
+<div>
+<a id="\Zend_Gdata_YouTube_UserProfileEntry::__construct()"></a><h4 class="method public">__construct<div class="to-top"><a href="#Zend_Gdata_YouTube_UserProfileEntry">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">__construct</span><span class="nb-faded-text">(
+          <a href="http://php.net/manual/en/class.domelement.php">\DOMElement</a> $element
+              =
+              null
+          )
+        </span>
+        :
+        </code><p class="short-description">Creates a User Profile entry, representing an individual user
+and their attributes.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$element</dt>
+<dd>\DOMElement<br><em>(optional) DOMElement from which this object should be constructed.</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_YouTube_UserProfileEntry::getAboutMe()"></a><h4 class="method public">getAboutMe<div class="to-top"><a href="#Zend_Gdata_YouTube_UserProfileEntry">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getAboutMe</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        <a href="_Gdata_YouTube_Extension_AboutMe.html#%5CZend_Gdata_YouTube_Extension_AboutMe">\Zend_Gdata_YouTube_Extension_AboutMe</a></code><p class="short-description">Returns the contents of the 'about me' field.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_YouTube_Extension_AboutMe.html#%5CZend_Gdata_YouTube_Extension_AboutMe">\Zend_Gdata_YouTube_Extension_AboutMe</a></dt>
+<dd><em>The &#039;about me&#039; information</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_App_VersionException.html#%5CZend_Gdata_App_VersionException"></a></dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_YouTube_UserProfileEntry::getAge()"></a><h4 class="method public">getAge<div class="to-top"><a href="#Zend_Gdata_YouTube_UserProfileEntry">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getAge</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        <a href="_Gdata_YouTube_Extension_Age.html#%5CZend_Gdata_YouTube_Extension_Age">\Zend_Gdata_YouTube_Extension_Age</a></code><p class="short-description">Returns the age</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_YouTube_Extension_Age.html#%5CZend_Gdata_YouTube_Extension_Age">\Zend_Gdata_YouTube_Extension_Age</a></dt>
+<dd><em>The age</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_YouTube_UserProfileEntry::getBooks()"></a><h4 class="method public">getBooks<div class="to-top"><a href="#Zend_Gdata_YouTube_UserProfileEntry">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getBooks</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        <a href="_Gdata_YouTube_Extension_Books.html#%5CZend_Gdata_YouTube_Extension_Books">\Zend_Gdata_YouTube_Extension_Books</a></code><p class="short-description">Returns the books</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_YouTube_Extension_Books.html#%5CZend_Gdata_YouTube_Extension_Books">\Zend_Gdata_YouTube_Extension_Books</a></dt>
+<dd><em>The books</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_YouTube_UserProfileEntry::getCompany()"></a><h4 class="method public">getCompany<div class="to-top"><a href="#Zend_Gdata_YouTube_UserProfileEntry">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getCompany</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        <a href="_Gdata_YouTube_Extension_Company.html#%5CZend_Gdata_YouTube_Extension_Company">\Zend_Gdata_YouTube_Extension_Company</a></code><p class="short-description">Returns the company</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_YouTube_Extension_Company.html#%5CZend_Gdata_YouTube_Extension_Company">\Zend_Gdata_YouTube_Extension_Company</a></dt>
+<dd><em>The company</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_YouTube_UserProfileEntry::getContactsFeedUrl()"></a><h4 class="method public">getContactsFeedUrl<div class="to-top"><a href="#Zend_Gdata_YouTube_UserProfileEntry">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getContactsFeedUrl</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        string</code><p class="short-description">Returns the URL of the contacts feed</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>string</dt>
+<dd><em>The URL of the contacts feed</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_YouTube_UserProfileEntry::getDOM()"></a><h4 class="method public">getDOM<div class="to-top"><a href="#Zend_Gdata_YouTube_UserProfileEntry">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getDOM</span><span class="nb-faded-text">(
+          <a href="http://php.net/manual/en/class.domdocument.php">\DOMDocument</a> $doc
+              =
+              null,  $majorVersion
+              =
+              1,  $minorVersion
+              =
+              null
+          )
+        </span>
+        :
+        <a href="http://php.net/manual/en/class.domelement.php">\DOMElement</a></code><p class="short-description">Retrieves a DOMElement which corresponds to this element and all
+child properties.  This is used to build an entry back into a DOM
+and eventually XML text for sending to the server upon updates, or
+for application storage/persistence.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$doc</dt>
+<dd>\DOMDocument<br><em>The DOMDocument used to construct DOMElements</em>
+</dd>
+<dt>$majorVersion</dt>
+<dd><em></em></dd>
+<dt>$minorVersion</dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="http://php.net/manual/en/class.domelement.php">\DOMElement</a></dt>
+<dd><em>The DOMElement representing this element and all child properties.</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_YouTube_UserProfileEntry::getFavoritesFeedUrl()"></a><h4 class="method public">getFavoritesFeedUrl<div class="to-top"><a href="#Zend_Gdata_YouTube_UserProfileEntry">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getFavoritesFeedUrl</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        string</code><p class="short-description">Returns the URL of the favorites feed</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>string</dt>
+<dd><em>The URL of the favorites feed</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_YouTube_UserProfileEntry::getFeedLink()"></a><h4 class="method public">getFeedLink<div class="to-top"><a href="#Zend_Gdata_YouTube_UserProfileEntry">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getFeedLink</span><span class="nb-faded-text">(
+          string $rel
+              =
+              null
+          )
+        </span>
+        :
+        mixed</code><p class="short-description">Get the feed link property for this entry.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$rel</dt>
+<dd>string<br><em>(optional) The rel value of the link to be found. If null, the array of links is returned.</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>mixed</dt>
+<dd><em>If $rel is specified, a Zend_Gdata_Extension_FeedLink object corresponding to the requested rel value is returned if found, or null if the requested value is not found. If $rel is null or not specified, an array of all available feed links for this entry is returned, or null if no feed links are set.</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+<dt>see</dt>
+<dd>setFeedLink</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_YouTube_UserProfileEntry::getFeedLinkHref()"></a><h4 class="method public">getFeedLinkHref<div class="to-top"><a href="#Zend_Gdata_YouTube_UserProfileEntry">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getFeedLinkHref</span><span class="nb-faded-text">(
+          string $rel
+          )
+        </span>
+        :
+        mixed</code><p class="short-description">Returns the URL in the gd:feedLink with the provided rel value</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$rel</dt>
+<dd>string<br><em>The rel value to find</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>mixed</dt>
+<dd><em>Either the URL as a string or null if a feedLink wasn&#039;t found with the provided rel value</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_YouTube_UserProfileEntry::getFirstName()"></a><h4 class="method public">getFirstName<div class="to-top"><a href="#Zend_Gdata_YouTube_UserProfileEntry">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getFirstName</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        <a href="_Gdata_YouTube_Extension_FirstName.html#%5CZend_Gdata_YouTube_Extension_FirstName">\Zend_Gdata_YouTube_Extension_FirstName</a></code><p class="short-description">Returns the first name</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_YouTube_Extension_FirstName.html#%5CZend_Gdata_YouTube_Extension_FirstName">\Zend_Gdata_YouTube_Extension_FirstName</a></dt>
+<dd><em>The first name</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_App_VersionException.html#%5CZend_Gdata_App_VersionException"></a></dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_YouTube_UserProfileEntry::getGender()"></a><h4 class="method public">getGender<div class="to-top"><a href="#Zend_Gdata_YouTube_UserProfileEntry">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getGender</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        <a href="_Gdata_YouTube_Extension_Gender.html#%5CZend_Gdata_YouTube_Extension_Gender">\Zend_Gdata_YouTube_Extension_Gender</a></code><p class="short-description">Returns the gender</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_YouTube_Extension_Gender.html#%5CZend_Gdata_YouTube_Extension_Gender">\Zend_Gdata_YouTube_Extension_Gender</a></dt>
+<dd><em>The gender</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_YouTube_UserProfileEntry::getHobbies()"></a><h4 class="method public">getHobbies<div class="to-top"><a href="#Zend_Gdata_YouTube_UserProfileEntry">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getHobbies</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        <a href="_Gdata_YouTube_Extension_Hobbies.html#%5CZend_Gdata_YouTube_Extension_Hobbies">\Zend_Gdata_YouTube_Extension_Hobbies</a></code><p class="short-description">Returns the hobbies</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_YouTube_Extension_Hobbies.html#%5CZend_Gdata_YouTube_Extension_Hobbies">\Zend_Gdata_YouTube_Extension_Hobbies</a></dt>
+<dd><em>The hobbies</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_YouTube_UserProfileEntry::getHometown()"></a><h4 class="method public">getHometown<div class="to-top"><a href="#Zend_Gdata_YouTube_UserProfileEntry">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getHometown</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        <a href="_Gdata_YouTube_Extension_Hometown.html#%5CZend_Gdata_YouTube_Extension_Hometown">\Zend_Gdata_YouTube_Extension_Hometown</a></code><p class="short-description">Returns the hometown</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_YouTube_Extension_Hometown.html#%5CZend_Gdata_YouTube_Extension_Hometown">\Zend_Gdata_YouTube_Extension_Hometown</a></dt>
+<dd><em>The hometown</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_YouTube_UserProfileEntry::getLastName()"></a><h4 class="method public">getLastName<div class="to-top"><a href="#Zend_Gdata_YouTube_UserProfileEntry">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getLastName</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        <a href="_Gdata_YouTube_Extension_LastName.html#%5CZend_Gdata_YouTube_Extension_LastName">\Zend_Gdata_YouTube_Extension_LastName</a></code><p class="short-description">Returns the last name</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_YouTube_Extension_LastName.html#%5CZend_Gdata_YouTube_Extension_LastName">\Zend_Gdata_YouTube_Extension_LastName</a></dt>
+<dd><em>The last name</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_App_VersionException.html#%5CZend_Gdata_App_VersionException"></a></dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_YouTube_UserProfileEntry::getLocation()"></a><h4 class="method public">getLocation<div class="to-top"><a href="#Zend_Gdata_YouTube_UserProfileEntry">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getLocation</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        <a href="_Gdata_YouTube_Extension_Location.html#%5CZend_Gdata_YouTube_Extension_Location">\Zend_Gdata_YouTube_Extension_Location</a></code><p class="short-description">Returns the location</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_YouTube_Extension_Location.html#%5CZend_Gdata_YouTube_Extension_Location">\Zend_Gdata_YouTube_Extension_Location</a></dt>
+<dd><em>The location</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_YouTube_UserProfileEntry::getMovies()"></a><h4 class="method public">getMovies<div class="to-top"><a href="#Zend_Gdata_YouTube_UserProfileEntry">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getMovies</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        <a href="_Gdata_YouTube_Extension_Movies.html#%5CZend_Gdata_YouTube_Extension_Movies">\Zend_Gdata_YouTube_Extension_Movies</a></code><p class="short-description">Returns the movies</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_YouTube_Extension_Movies.html#%5CZend_Gdata_YouTube_Extension_Movies">\Zend_Gdata_YouTube_Extension_Movies</a></dt>
+<dd><em>The movies</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_YouTube_UserProfileEntry::getMusic()"></a><h4 class="method public">getMusic<div class="to-top"><a href="#Zend_Gdata_YouTube_UserProfileEntry">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getMusic</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        <a href="_Gdata_YouTube_Extension_Music.html#%5CZend_Gdata_YouTube_Extension_Music">\Zend_Gdata_YouTube_Extension_Music</a></code><p class="short-description">Returns the music</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_YouTube_Extension_Music.html#%5CZend_Gdata_YouTube_Extension_Music">\Zend_Gdata_YouTube_Extension_Music</a></dt>
+<dd><em>The music</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_YouTube_UserProfileEntry::getOccupation()"></a><h4 class="method public">getOccupation<div class="to-top"><a href="#Zend_Gdata_YouTube_UserProfileEntry">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getOccupation</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        <a href="_Gdata_YouTube_Extension_Occupation.html#%5CZend_Gdata_YouTube_Extension_Occupation">\Zend_Gdata_YouTube_Extension_Occupation</a></code><p class="short-description">Returns the occupation</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_YouTube_Extension_Occupation.html#%5CZend_Gdata_YouTube_Extension_Occupation">\Zend_Gdata_YouTube_Extension_Occupation</a></dt>
+<dd><em>The occupation</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_YouTube_UserProfileEntry::getPlaylistListFeedUrl()"></a><h4 class="method public">getPlaylistListFeedUrl<div class="to-top"><a href="#Zend_Gdata_YouTube_UserProfileEntry">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getPlaylistListFeedUrl</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        string</code><p class="short-description">Returns the URL of the playlist list feed</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>string</dt>
+<dd><em>The URL of the playlist video feed</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_YouTube_UserProfileEntry::getRelationship()"></a><h4 class="method public">getRelationship<div class="to-top"><a href="#Zend_Gdata_YouTube_UserProfileEntry">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getRelationship</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        <a href="_Gdata_YouTube_Extension_Relationship.html#%5CZend_Gdata_YouTube_Extension_Relationship">\Zend_Gdata_YouTube_Extension_Relationship</a></code><p class="short-description">Returns the relationship</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_YouTube_Extension_Relationship.html#%5CZend_Gdata_YouTube_Extension_Relationship">\Zend_Gdata_YouTube_Extension_Relationship</a></dt>
+<dd><em>The relationship</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_YouTube_UserProfileEntry::getSchool()"></a><h4 class="method public">getSchool<div class="to-top"><a href="#Zend_Gdata_YouTube_UserProfileEntry">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getSchool</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        <a href="_Gdata_YouTube_Extension_School.html#%5CZend_Gdata_YouTube_Extension_School">\Zend_Gdata_YouTube_Extension_School</a></code><p class="short-description">Returns the school</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_YouTube_Extension_School.html#%5CZend_Gdata_YouTube_Extension_School">\Zend_Gdata_YouTube_Extension_School</a></dt>
+<dd><em>The school</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_YouTube_UserProfileEntry::getStatistics()"></a><h4 class="method public">getStatistics<div class="to-top"><a href="#Zend_Gdata_YouTube_UserProfileEntry">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getStatistics</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        <a href="_Gdata_YouTube_Extension_Statistics.html#%5CZend_Gdata_YouTube_Extension_Statistics">\Zend_Gdata_YouTube_Extension_Statistics</a></code><p class="short-description">Returns the statistics</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_YouTube_Extension_Statistics.html#%5CZend_Gdata_YouTube_Extension_Statistics">\Zend_Gdata_YouTube_Extension_Statistics</a></dt>
+<dd><em>The profile statistics</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_App_VersionException.html#%5CZend_Gdata_App_VersionException"></a></dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_YouTube_UserProfileEntry::getSubscriptionsFeedUrl()"></a><h4 class="method public">getSubscriptionsFeedUrl<div class="to-top"><a href="#Zend_Gdata_YouTube_UserProfileEntry">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getSubscriptionsFeedUrl</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        string</code><p class="short-description">Returns the URL of the subscriptions feed</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>string</dt>
+<dd><em>The URL of the subscriptions feed</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_YouTube_UserProfileEntry::getThumbnail()"></a><h4 class="method public">getThumbnail<div class="to-top"><a href="#Zend_Gdata_YouTube_UserProfileEntry">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getThumbnail</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        <a href="_Gdata_Media_Extension_MediaThumbnail.html#%5CZend_Gdata_Media_Extension_MediaThumbnail">\Zend_Gdata_Media_Extension_MediaThumbnail</a></code><p class="short-description">Returns the thumbnail</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_Media_Extension_MediaThumbnail.html#%5CZend_Gdata_Media_Extension_MediaThumbnail">\Zend_Gdata_Media_Extension_MediaThumbnail</a></dt>
+<dd><em>The profile thumbnail</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_App_VersionException.html#%5CZend_Gdata_App_VersionException"></a></dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_YouTube_UserProfileEntry::getUploadsFeedUrl()"></a><h4 class="method public">getUploadsFeedUrl<div class="to-top"><a href="#Zend_Gdata_YouTube_UserProfileEntry">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getUploadsFeedUrl</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        string</code><p class="short-description">Returns the URL of the uploads feed</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>string</dt>
+<dd><em>The URL of the uploads video feed</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_YouTube_UserProfileEntry::getUsername()"></a><h4 class="method public">getUsername<div class="to-top"><a href="#Zend_Gdata_YouTube_UserProfileEntry">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getUsername</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        <a href="_Gdata_YouTube_Extension_Username.html#%5CZend_Gdata_YouTube_Extension_Username">\Zend_Gdata_YouTube_Extension_Username</a></code><p class="short-description">Returns the username</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_YouTube_Extension_Username.html#%5CZend_Gdata_YouTube_Extension_Username">\Zend_Gdata_YouTube_Extension_Username</a></dt>
+<dd><em>The username</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_YouTube_UserProfileEntry::setAboutMe()"></a><h4 class="method public">setAboutMe<div class="to-top"><a href="#Zend_Gdata_YouTube_UserProfileEntry">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">setAboutMe</span><span class="nb-faded-text">(
+          <a href="_Gdata_YouTube_Extension_AboutMe.html#%5CZend_Gdata_YouTube_Extension_AboutMe">\Zend_Gdata_YouTube_Extension_AboutMe</a> $aboutMe
+              =
+              null
+          )
+        </span>
+        :
+        <a href="_Gdata_YouTube_UserProfileEntry.html#%5CZend_Gdata_YouTube_UserProfileEntry">\Zend_Gdata_YouTube_UserProfileEntry</a></code><p class="short-description">Sets the content of the 'about me' field.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$aboutMe</dt>
+<dd>\Zend_Gdata_YouTube_Extension_AboutMe<br><em>The &amp;#039;about me&amp;#039; information.</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_YouTube_UserProfileEntry.html#%5CZend_Gdata_YouTube_UserProfileEntry">\Zend_Gdata_YouTube_UserProfileEntry</a></dt>
+<dd><em>Provides a fluent interface</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_App_VersionException.html#%5CZend_Gdata_App_VersionException"></a></dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_YouTube_UserProfileEntry::setAge()"></a><h4 class="method public">setAge<div class="to-top"><a href="#Zend_Gdata_YouTube_UserProfileEntry">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">setAge</span><span class="nb-faded-text">(
+          <a href="_Gdata_YouTube_Extension_Age.html#%5CZend_Gdata_YouTube_Extension_Age">\Zend_Gdata_YouTube_Extension_Age</a> $age
+              =
+              null
+          )
+        </span>
+        :
+        <a href="_Gdata_YouTube_UserProfileEntry.html#%5CZend_Gdata_YouTube_UserProfileEntry">\Zend_Gdata_YouTube_UserProfileEntry</a></code><p class="short-description">Sets the age</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$age</dt>
+<dd>\Zend_Gdata_YouTube_Extension_Age<br><em>The age</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_YouTube_UserProfileEntry.html#%5CZend_Gdata_YouTube_UserProfileEntry">\Zend_Gdata_YouTube_UserProfileEntry</a></dt>
+<dd><em>Provides a fluent interface</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_YouTube_UserProfileEntry::setBooks()"></a><h4 class="method public">setBooks<div class="to-top"><a href="#Zend_Gdata_YouTube_UserProfileEntry">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">setBooks</span><span class="nb-faded-text">(
+          <a href="_Gdata_YouTube_Extension_Books.html#%5CZend_Gdata_YouTube_Extension_Books">\Zend_Gdata_YouTube_Extension_Books</a> $books
+              =
+              null
+          )
+        </span>
+        :
+        <a href="_Gdata_YouTube_UserProfileEntry.html#%5CZend_Gdata_YouTube_UserProfileEntry">\Zend_Gdata_YouTube_UserProfileEntry</a></code><p class="short-description">Sets the books</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$books</dt>
+<dd>\Zend_Gdata_YouTube_Extension_Books<br><em>The books</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_YouTube_UserProfileEntry.html#%5CZend_Gdata_YouTube_UserProfileEntry">\Zend_Gdata_YouTube_UserProfileEntry</a></dt>
+<dd><em>Provides a fluent interface</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_YouTube_UserProfileEntry::setCompany()"></a><h4 class="method public">setCompany<div class="to-top"><a href="#Zend_Gdata_YouTube_UserProfileEntry">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">setCompany</span><span class="nb-faded-text">(
+          <a href="_Gdata_YouTube_Extension_Company.html#%5CZend_Gdata_YouTube_Extension_Company">\Zend_Gdata_YouTube_Extension_Company</a> $company
+              =
+              null
+          )
+        </span>
+        :
+        <a href="_Gdata_YouTube_UserProfileEntry.html#%5CZend_Gdata_YouTube_UserProfileEntry">\Zend_Gdata_YouTube_UserProfileEntry</a></code><p class="short-description">Sets the company</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$company</dt>
+<dd>\Zend_Gdata_YouTube_Extension_Company<br><em>The company</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_YouTube_UserProfileEntry.html#%5CZend_Gdata_YouTube_UserProfileEntry">\Zend_Gdata_YouTube_UserProfileEntry</a></dt>
+<dd><em>Provides a fluent interface</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_YouTube_UserProfileEntry::setFeedLink()"></a><h4 class="method public">setFeedLink<div class="to-top"><a href="#Zend_Gdata_YouTube_UserProfileEntry">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">setFeedLink</span><span class="nb-faded-text">(
+          array $feedLink
+              =
+              null
+          )
+        </span>
+        :
+        <a href="_Gdata_YouTube_UserProfileEntry.html#%5CZend_Gdata_YouTube_UserProfileEntry">\Zend_Gdata_YouTube_UserProfileEntry</a></code><p class="short-description">Sets the array of embedded feeds related to the video</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$feedLink</dt>
+<dd>array<br><em>The array of embedded feeds relating to the video</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_YouTube_UserProfileEntry.html#%5CZend_Gdata_YouTube_UserProfileEntry">\Zend_Gdata_YouTube_UserProfileEntry</a></dt>
+<dd><em>Provides a fluent interface</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_YouTube_UserProfileEntry::setFirstName()"></a><h4 class="method public">setFirstName<div class="to-top"><a href="#Zend_Gdata_YouTube_UserProfileEntry">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">setFirstName</span><span class="nb-faded-text">(
+          <a href="_Gdata_YouTube_Extension_FirstName.html#%5CZend_Gdata_YouTube_Extension_FirstName">\Zend_Gdata_YouTube_Extension_FirstName</a> $firstName
+              =
+              null
+          )
+        </span>
+        :
+        <a href="_Gdata_YouTube_UserProfileEntry.html#%5CZend_Gdata_YouTube_UserProfileEntry">\Zend_Gdata_YouTube_UserProfileEntry</a></code><p class="short-description">Sets the content of the 'first name' field.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$firstName</dt>
+<dd>\Zend_Gdata_YouTube_Extension_FirstName<br><em>The first name</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_YouTube_UserProfileEntry.html#%5CZend_Gdata_YouTube_UserProfileEntry">\Zend_Gdata_YouTube_UserProfileEntry</a></dt>
+<dd><em>Provides a fluent interface</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_App_VersionException.html#%5CZend_Gdata_App_VersionException"></a></dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_YouTube_UserProfileEntry::setGender()"></a><h4 class="method public">setGender<div class="to-top"><a href="#Zend_Gdata_YouTube_UserProfileEntry">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">setGender</span><span class="nb-faded-text">(
+          <a href="_Gdata_YouTube_Extension_Gender.html#%5CZend_Gdata_YouTube_Extension_Gender">\Zend_Gdata_YouTube_Extension_Gender</a> $gender
+              =
+              null
+          )
+        </span>
+        :
+        <a href="_Gdata_YouTube_UserProfileEntry.html#%5CZend_Gdata_YouTube_UserProfileEntry">\Zend_Gdata_YouTube_UserProfileEntry</a></code><p class="short-description">Sets the gender</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$gender</dt>
+<dd>\Zend_Gdata_YouTube_Extension_Gender<br><em>The gender</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_YouTube_UserProfileEntry.html#%5CZend_Gdata_YouTube_UserProfileEntry">\Zend_Gdata_YouTube_UserProfileEntry</a></dt>
+<dd><em>Provides a fluent interface</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_YouTube_UserProfileEntry::setHobbies()"></a><h4 class="method public">setHobbies<div class="to-top"><a href="#Zend_Gdata_YouTube_UserProfileEntry">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">setHobbies</span><span class="nb-faded-text">(
+          <a href="_Gdata_YouTube_Extension_Hobbies.html#%5CZend_Gdata_YouTube_Extension_Hobbies">\Zend_Gdata_YouTube_Extension_Hobbies</a> $hobbies
+              =
+              null
+          )
+        </span>
+        :
+        <a href="_Gdata_YouTube_UserProfileEntry.html#%5CZend_Gdata_YouTube_UserProfileEntry">\Zend_Gdata_YouTube_UserProfileEntry</a></code><p class="short-description">Sets the hobbies</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$hobbies</dt>
+<dd>\Zend_Gdata_YouTube_Extension_Hobbies<br><em>The hobbies</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_YouTube_UserProfileEntry.html#%5CZend_Gdata_YouTube_UserProfileEntry">\Zend_Gdata_YouTube_UserProfileEntry</a></dt>
+<dd><em>Provides a fluent interface</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_YouTube_UserProfileEntry::setHometown()"></a><h4 class="method public">setHometown<div class="to-top"><a href="#Zend_Gdata_YouTube_UserProfileEntry">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">setHometown</span><span class="nb-faded-text">(
+          <a href="_Gdata_YouTube_Extension_Hometown.html#%5CZend_Gdata_YouTube_Extension_Hometown">\Zend_Gdata_YouTube_Extension_Hometown</a> $hometown
+              =
+              null
+          )
+        </span>
+        :
+        <a href="_Gdata_YouTube_UserProfileEntry.html#%5CZend_Gdata_YouTube_UserProfileEntry">\Zend_Gdata_YouTube_UserProfileEntry</a></code><p class="short-description">Sets the hometown</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$hometown</dt>
+<dd>\Zend_Gdata_YouTube_Extension_Hometown<br><em>The hometown</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_YouTube_UserProfileEntry.html#%5CZend_Gdata_YouTube_UserProfileEntry">\Zend_Gdata_YouTube_UserProfileEntry</a></dt>
+<dd><em>Provides a fluent interface</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_YouTube_UserProfileEntry::setLastName()"></a><h4 class="method public">setLastName<div class="to-top"><a href="#Zend_Gdata_YouTube_UserProfileEntry">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">setLastName</span><span class="nb-faded-text">(
+          <a href="_Gdata_YouTube_Extension_LastName.html#%5CZend_Gdata_YouTube_Extension_LastName">\Zend_Gdata_YouTube_Extension_LastName</a> $lastName
+              =
+              null
+          )
+        </span>
+        :
+        <a href="_Gdata_YouTube_UserProfileEntry.html#%5CZend_Gdata_YouTube_UserProfileEntry">\Zend_Gdata_YouTube_UserProfileEntry</a></code><p class="short-description">Sets the content of the 'last name' field.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$lastName</dt>
+<dd>\Zend_Gdata_YouTube_Extension_LastName<br><em>The last name</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_YouTube_UserProfileEntry.html#%5CZend_Gdata_YouTube_UserProfileEntry">\Zend_Gdata_YouTube_UserProfileEntry</a></dt>
+<dd><em>Provides a fluent interface</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_App_VersionException.html#%5CZend_Gdata_App_VersionException"></a></dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_YouTube_UserProfileEntry::setLocation()"></a><h4 class="method public">setLocation<div class="to-top"><a href="#Zend_Gdata_YouTube_UserProfileEntry">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">setLocation</span><span class="nb-faded-text">(
+          <a href="_Gdata_YouTube_Extension_Location.html#%5CZend_Gdata_YouTube_Extension_Location">\Zend_Gdata_YouTube_Extension_Location</a> $location
+              =
+              null
+          )
+        </span>
+        :
+        <a href="_Gdata_YouTube_UserProfileEntry.html#%5CZend_Gdata_YouTube_UserProfileEntry">\Zend_Gdata_YouTube_UserProfileEntry</a></code><p class="short-description">Sets the location</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$location</dt>
+<dd>\Zend_Gdata_YouTube_Extension_Location<br><em>The location</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_YouTube_UserProfileEntry.html#%5CZend_Gdata_YouTube_UserProfileEntry">\Zend_Gdata_YouTube_UserProfileEntry</a></dt>
+<dd><em>Provides a fluent interface</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_YouTube_UserProfileEntry::setMovies()"></a><h4 class="method public">setMovies<div class="to-top"><a href="#Zend_Gdata_YouTube_UserProfileEntry">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">setMovies</span><span class="nb-faded-text">(
+          <a href="_Gdata_YouTube_Extension_Movies.html#%5CZend_Gdata_YouTube_Extension_Movies">\Zend_Gdata_YouTube_Extension_Movies</a> $movies
+              =
+              null
+          )
+        </span>
+        :
+        <a href="_Gdata_YouTube_UserProfileEntry.html#%5CZend_Gdata_YouTube_UserProfileEntry">\Zend_Gdata_YouTube_UserProfileEntry</a></code><p class="short-description">Sets the movies</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$movies</dt>
+<dd>\Zend_Gdata_YouTube_Extension_Movies<br><em>The movies</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_YouTube_UserProfileEntry.html#%5CZend_Gdata_YouTube_UserProfileEntry">\Zend_Gdata_YouTube_UserProfileEntry</a></dt>
+<dd><em>Provides a fluent interface</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_YouTube_UserProfileEntry::setMusic()"></a><h4 class="method public">setMusic<div class="to-top"><a href="#Zend_Gdata_YouTube_UserProfileEntry">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">setMusic</span><span class="nb-faded-text">(
+          <a href="_Gdata_YouTube_Extension_Music.html#%5CZend_Gdata_YouTube_Extension_Music">\Zend_Gdata_YouTube_Extension_Music</a> $music
+              =
+              null
+          )
+        </span>
+        :
+        <a href="_Gdata_YouTube_UserProfileEntry.html#%5CZend_Gdata_YouTube_UserProfileEntry">\Zend_Gdata_YouTube_UserProfileEntry</a></code><p class="short-description">Sets the music</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$music</dt>
+<dd>\Zend_Gdata_YouTube_Extension_Music<br><em>The music</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_YouTube_UserProfileEntry.html#%5CZend_Gdata_YouTube_UserProfileEntry">\Zend_Gdata_YouTube_UserProfileEntry</a></dt>
+<dd><em>Provides a fluent interface</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_YouTube_UserProfileEntry::setOccupation()"></a><h4 class="method public">setOccupation<div class="to-top"><a href="#Zend_Gdata_YouTube_UserProfileEntry">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">setOccupation</span><span class="nb-faded-text">(
+          <a href="_Gdata_YouTube_Extension_Occupation.html#%5CZend_Gdata_YouTube_Extension_Occupation">\Zend_Gdata_YouTube_Extension_Occupation</a> $occupation
+              =
+              null
+          )
+        </span>
+        :
+        <a href="_Gdata_YouTube_UserProfileEntry.html#%5CZend_Gdata_YouTube_UserProfileEntry">\Zend_Gdata_YouTube_UserProfileEntry</a></code><p class="short-description">Sets the occupation</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$occupation</dt>
+<dd>\Zend_Gdata_YouTube_Extension_Occupation<br><em>The occupation</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_YouTube_UserProfileEntry.html#%5CZend_Gdata_YouTube_UserProfileEntry">\Zend_Gdata_YouTube_UserProfileEntry</a></dt>
+<dd><em>Provides a fluent interface</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_YouTube_UserProfileEntry::setRelationship()"></a><h4 class="method public">setRelationship<div class="to-top"><a href="#Zend_Gdata_YouTube_UserProfileEntry">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">setRelationship</span><span class="nb-faded-text">(
+          <a href="_Gdata_YouTube_Extension_Relationship.html#%5CZend_Gdata_YouTube_Extension_Relationship">\Zend_Gdata_YouTube_Extension_Relationship</a> $relationship
+              =
+              null
+          )
+        </span>
+        :
+        <a href="_Gdata_YouTube_UserProfileEntry.html#%5CZend_Gdata_YouTube_UserProfileEntry">\Zend_Gdata_YouTube_UserProfileEntry</a></code><p class="short-description">Sets the relationship</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$relationship</dt>
+<dd>\Zend_Gdata_YouTube_Extension_Relationship<br><em>The relationship</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_YouTube_UserProfileEntry.html#%5CZend_Gdata_YouTube_UserProfileEntry">\Zend_Gdata_YouTube_UserProfileEntry</a></dt>
+<dd><em>Provides a fluent interface</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_YouTube_UserProfileEntry::setSchool()"></a><h4 class="method public">setSchool<div class="to-top"><a href="#Zend_Gdata_YouTube_UserProfileEntry">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">setSchool</span><span class="nb-faded-text">(
+          <a href="_Gdata_YouTube_Extension_School.html#%5CZend_Gdata_YouTube_Extension_School">\Zend_Gdata_YouTube_Extension_School</a> $school
+              =
+              null
+          )
+        </span>
+        :
+        <a href="_Gdata_YouTube_UserProfileEntry.html#%5CZend_Gdata_YouTube_UserProfileEntry">\Zend_Gdata_YouTube_UserProfileEntry</a></code><p class="short-description">Sets the school</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$school</dt>
+<dd>\Zend_Gdata_YouTube_Extension_School<br><em>The school</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_YouTube_UserProfileEntry.html#%5CZend_Gdata_YouTube_UserProfileEntry">\Zend_Gdata_YouTube_UserProfileEntry</a></dt>
+<dd><em>Provides a fluent interface</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_YouTube_UserProfileEntry::setUsername()"></a><h4 class="method public">setUsername<div class="to-top"><a href="#Zend_Gdata_YouTube_UserProfileEntry">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">setUsername</span><span class="nb-faded-text">(
+          <a href="_Gdata_YouTube_Extension_Username.html#%5CZend_Gdata_YouTube_Extension_Username">\Zend_Gdata_YouTube_Extension_Username</a> $username
+              =
+              null
+          )
+        </span>
+        :
+        <a href="_Gdata_YouTube_UserProfileEntry.html#%5CZend_Gdata_YouTube_UserProfileEntry">\Zend_Gdata_YouTube_UserProfileEntry</a></code><p class="short-description">Sets the username</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$username</dt>
+<dd>\Zend_Gdata_YouTube_Extension_Username<br><em>The username</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_YouTube_UserProfileEntry.html#%5CZend_Gdata_YouTube_UserProfileEntry">\Zend_Gdata_YouTube_UserProfileEntry</a></dt>
+<dd><em>Provides a fluent interface</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_YouTube_UserProfileEntry::takeChildFromDOM()"></a><h4 class="method protected">takeChildFromDOM<div class="to-top"><a href="#Zend_Gdata_YouTube_UserProfileEntry">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">takeChildFromDOM</span><span class="nb-faded-text">(
+          <a href="http://php.net/manual/en/class.domnode.php">\DOMNode</a> $child
+          )
+        </span>
+        :
+        </code><p class="short-description">Creates individual Entry objects of the appropriate type and
+stores them in the $_entry array based upon DOM data.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$child</dt>
+<dd>\DOMNode<br><em>The DOMNode to process</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<small xmlns="" class="footer">Documentation was generated by <a href="http://docblox-project.org">DocBlox 0.12.2</a>.
+    </small></body></html>

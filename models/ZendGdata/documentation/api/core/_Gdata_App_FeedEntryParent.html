@@ -1,0 +1,1867 @@
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title>Zend Gdata API Documentation</title><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" href="css/black-tie/jquery-ui-1.8.2.custom.css" type="text/css"></link><link rel="stylesheet" href="css/jquery.treeview.css" type="text/css"></link><link rel="stylesheet" href="css/theme.css" type="text/css"></link><script type="text/javascript" src="js/jquery-1.4.2.min.js"></script><script type="text/javascript" src="js/jquery-ui-1.8.2.custom.min.js"></script><script type="text/javascript" src="js/jquery.cookie.js"></script><script type="text/javascript" src="js/jquery.treeview.js"></script><script type="text/javascript">
+            $(document).ready(function() {
+                $(".filetree").treeview({
+                    collapsed: true,
+                    persist: "cookie"
+                });
+
+                $("#accordion").accordion({
+                    collapsible: true,
+                    autoHeight:  false,
+                    fillSpace:   true
+                });
+
+                $(".tabs").tabs();
+            });
+        </script></head><body><div xmlns="" class="content">
+<div class="sub-page-main-header-api-documentation"><h2>API Documentation</h2></div>
+<div class="dotted-line"></div>
+</div>
+<div xmlns="" id="content">
+<script>
+      $(document).ready(function() {
+        $('dl.function-info, dl.constant-info, dl.property-info').prev().css('cursor', 'pointer');
+        $('dl.function-info, dl.constant-info, dl.property-info').prev().click(function() {
+          if ($(this).next().is(':hidden'))
+          {
+            $(this).children('img')[0].src = 'images/arrow_down.gif';
+          } else
+          {
+            $(this).children('img')[0].src = 'images/arrow_right.gif';
+          }
+          $(this).next().slideToggle();
+        });
+      $('dl.function-info, dl.constant-info, dl.property-info').hide();
+      $('dl.function-info img, dl.constant-info img, dl.property-info img').show();
+      });
+    </script><a name="top"></a><h1 class="file">Gdata/App/FeedEntryParent.php</h1>
+<div class="file_menu">
+<a href="#includes">Includes</a> <a href="#classes">Classes</a> </div>
+<dl class="file-info">
+<dt>category</dt>
+<dd>Zend</dd>
+<dt>copyright</dt>
+<dd>Copyright (c) 2005-2011 Zend Technologies USA Inc. (http://www.zend.com)</dd>
+<dt>license</dt>
+<dd>http://framework.zend.com/license/new-bsd     New BSD License</dd>
+<dt>package</dt>
+<dd>Zend_Gdata</dd>
+<dt>subpackage</dt>
+<dd>App</dd>
+<dt>version</dt>
+<dd>$Id: FeedEntryParent.php 23775 2011-03-01 17:25:24Z ralph $</dd>
+<dt>Classes</dt>
+<dd><a class="class" href="#%5CZend_Gdata_App_FeedEntryParent">Zend_Gdata_App_FeedEntryParent</a></dd>
+</dl>
+<h2>Description</h2>
+<p class="short-description">Zend Framework</p>
+<div class="long-description"><p>LICENSE</p>
+
+<p>This source file is subject to the new BSD license that is bundled
+with this package in the file LICENSE.txt.
+It is also available through the world-wide-web at this URL:
+http://framework.zend.com/license/new-bsd
+If you did not receive a copy of the license and are unable to
+obtain it through the world-wide-web, please send an email
+to license@zend.com so we can send you a copy immediately.</p>
+</div>
+<a name="classes"></a><a id="\Zend_Gdata_App_FeedEntryParent"></a><h2 class="class">\Zend_Gdata_App_FeedEntryParent<div class="to-top"><a href="#top">jump to top</a></div>
+</h2>
+<div class="class">
+<dl class="class-info">
+<dt>Extends from</dt>
+<dd><a href="_Gdata_App_Base.html#%5CZend_Gdata_App_Base">\Zend_Gdata_App_Base</a></dd>
+<dt>category</dt>
+<dd>Zend</dd>
+<dt>copyright</dt>
+<dd>Copyright (c) 2005-2011 Zend Technologies USA Inc. (http://www.zend.com)</dd>
+<dt>license</dt>
+<dd>http://framework.zend.com/license/new-bsd     New BSD License</dd>
+<dt>package</dt>
+<dd>Zend_Gdata</dd>
+<dt>subpackage</dt>
+<dd>App</dd>
+<dt><a href="#" onclick="$(this).children('img').toggle().parents('dt').nextUntil('dt').slideToggle(); return false;"><img src="images/arrow_down.gif"><img src="images/arrow_right.gif" style="display: none">
+                Properties
+              </a></dt>
+<dd><a class="property protected" href="#%5CZend_Gdata_App_FeedEntryParent::%24_author">$_author</a></dd>
+<dd><a class="property protected" href="#%5CZend_Gdata_App_FeedEntryParent::%24_category">$_category</a></dd>
+<dd><a class="property protected" href="#%5CZend_Gdata_App_FeedEntryParent::%24_contributor">$_contributor</a></dd>
+<dd><a class="property protected" href="#%5CZend_Gdata_App_FeedEntryParent::%24_etag">$_etag</a></dd>
+<dd><a class="property protected" href="#%5CZend_Gdata_App_FeedEntryParent::%24_id">$_id</a></dd>
+<dd><a class="property protected" href="#%5CZend_Gdata_App_FeedEntryParent::%24_link">$_link</a></dd>
+<dd><a class="property protected" href="#%5CZend_Gdata_App_FeedEntryParent::%24_majorProtocolVersion">$_majorProtocolVersion</a></dd>
+<dd><a class="property protected" href="#%5CZend_Gdata_App_FeedEntryParent::%24_minorProtocolVersion">$_minorProtocolVersion</a></dd>
+<dd><a class="property protected" href="#%5CZend_Gdata_App_FeedEntryParent::%24_rights">$_rights</a></dd>
+<dd><a class="property protected" href="#%5CZend_Gdata_App_FeedEntryParent::%24_service">$_service</a></dd>
+<dd><a class="property protected" href="#%5CZend_Gdata_App_FeedEntryParent::%24_title">$_title</a></dd>
+<dd><a class="property protected" href="#%5CZend_Gdata_App_FeedEntryParent::%24_updated">$_updated</a></dd>
+<dt><a href="#" onclick="$(this).children('img').toggle().parents('dt').nextUntil('dt').slideToggle(); return false;"><img src="images/arrow_down.gif"><img src="images/arrow_right.gif" style="display: none">
+                Methods
+              </a></dt>
+<dd><a class="method public" href="#%5CZend_Gdata_App_FeedEntryParent::__construct()">__construct</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_App_FeedEntryParent::getAlternateLink()">getAlternateLink</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_App_FeedEntryParent::getAuthor()">getAuthor</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_App_FeedEntryParent::getCategory()">getCategory</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_App_FeedEntryParent::getContributor()">getContributor</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_App_FeedEntryParent::getDOM()">getDOM</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_App_FeedEntryParent::getEditLink()">getEditLink</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_App_FeedEntryParent::getEtag()">getEtag</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_App_FeedEntryParent::getHttpClient()">getHttpClient</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_App_FeedEntryParent::getId()">getId</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_App_FeedEntryParent::getLicenseLink()">getLicenseLink</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_App_FeedEntryParent::getLink()">getLink</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_App_FeedEntryParent::getMajorProtocolVersion()">getMajorProtocolVersion</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_App_FeedEntryParent::getMinorProtocolVersion()">getMinorProtocolVersion</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_App_FeedEntryParent::getNextLink()">getNextLink</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_App_FeedEntryParent::getPreviousLink()">getPreviousLink</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_App_FeedEntryParent::getRights()">getRights</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_App_FeedEntryParent::getSelfLink()">getSelfLink</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_App_FeedEntryParent::getService()">getService</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_App_FeedEntryParent::getTitle()">getTitle</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_App_FeedEntryParent::getTitleValue()">getTitleValue</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_App_FeedEntryParent::getUpdated()">getUpdated</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_App_FeedEntryParent::lookupNamespace()">lookupNamespace</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_App_FeedEntryParent::setAuthor()">setAuthor</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_App_FeedEntryParent::setCategory()">setCategory</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_App_FeedEntryParent::setContributor()">setContributor</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_App_FeedEntryParent::setEtag()">setEtag</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_App_FeedEntryParent::setHttpClient()">setHttpClient</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_App_FeedEntryParent::setId()">setId</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_App_FeedEntryParent::setLink()">setLink</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_App_FeedEntryParent::setMajorProtocolVersion()">setMajorProtocolVersion</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_App_FeedEntryParent::setMinorProtocolVersion()">setMinorProtocolVersion</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_App_FeedEntryParent::setRights()">setRights</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_App_FeedEntryParent::setService()">setService</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_App_FeedEntryParent::setTitle()">setTitle</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_App_FeedEntryParent::setUpdated()">setUpdated</a></dd>
+<dd><a class="method protected" href="#%5CZend_Gdata_App_FeedEntryParent::takeChildFromDOM()">takeChildFromDOM</a></dd>
+</dl>
+<h3>Description</h3>
+<p class="short-description">Abstract class for common functionality in entries and feeds</p>
+<div class="long-description">
+</div>
+<h3>Properties</h3>
+<div>
+<a id="\Zend_Gdata_App_FeedEntryParent::$_author"></a><h4 class="property protected">$_author<div class="to-top"><a href="#%5CZend_Gdata_App_FeedEntryParent">jump to class</a></div>
+</h4>
+<div class="property">
+<code> <span class="highlight">$_author</span> = 'array'</code><div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd>array</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_App_FeedEntryParent::$_category"></a><h4 class="property protected">$_category<div class="to-top"><a href="#%5CZend_Gdata_App_FeedEntryParent">jump to class</a></div>
+</h4>
+<div class="property">
+<code>array <span class="highlight">$_category</span> = 'array'</code><p class="short-description"></p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt></dt>
+<dd>array<br><em></em>
+</dd>
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd>array</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_App_FeedEntryParent::$_contributor"></a><h4 class="property protected">$_contributor<div class="to-top"><a href="#%5CZend_Gdata_App_FeedEntryParent">jump to class</a></div>
+</h4>
+<div class="property">
+<code> <span class="highlight">$_contributor</span> = 'array'</code><div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd>array</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_App_FeedEntryParent::$_etag"></a><h4 class="property protected">$_etag<div class="to-top"><a href="#%5CZend_Gdata_App_FeedEntryParent">jump to class</a></div>
+</h4>
+<div class="property">
+<code>string|null <span class="highlight">$_etag</span> = 'NULL'</code><p class="short-description">The HTTP ETag associated with this entry. Used for optimistic
+concurrency in protoco v2 or greater.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt></dt>
+<dd>string|null<br><em></em>
+</dd>
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd>NULL</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_App_FeedEntryParent::$_id"></a><h4 class="property protected">$_id<div class="to-top"><a href="#%5CZend_Gdata_App_FeedEntryParent">jump to class</a></div>
+</h4>
+<div class="property">
+<code> <span class="highlight">$_id</span> = 'null'</code><div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd>null</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_App_FeedEntryParent::$_link"></a><h4 class="property protected">$_link<div class="to-top"><a href="#%5CZend_Gdata_App_FeedEntryParent">jump to class</a></div>
+</h4>
+<div class="property">
+<code> <span class="highlight">$_link</span> = 'array'</code><div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd>array</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_App_FeedEntryParent::$_majorProtocolVersion"></a><h4 class="property protected">$_majorProtocolVersion<div class="to-top"><a href="#%5CZend_Gdata_App_FeedEntryParent">jump to class</a></div>
+</h4>
+<div class="property">
+<code> <span class="highlight">$_majorProtocolVersion</span> = '1'</code><p class="short-description">Indicates the major protocol version that should be used.</p>
+<div class="long-description"><p>At present, recognized values are either 1 or 2. However, any integer
+value >= 1 is considered valid.</p>
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd>1</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+<dt>see</dt>
+<dd>setMajorProtocolVersion()</dd>
+<dt>see</dt>
+<dd>getMajorProtocolVersion()</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_App_FeedEntryParent::$_minorProtocolVersion"></a><h4 class="property protected">$_minorProtocolVersion<div class="to-top"><a href="#%5CZend_Gdata_App_FeedEntryParent">jump to class</a></div>
+</h4>
+<div class="property">
+<code> <span class="highlight">$_minorProtocolVersion</span> = 'null'</code><p class="short-description">Indicates the minor protocol version that should be used. Can be set
+to either an integer &gt;= 0, or NULL if no minor version should be sent
+to the server.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd>null</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+<dt>see</dt>
+<dd>setMinorProtocolVersion()</dd>
+<dt>see</dt>
+<dd>getMinorProtocolVersion()</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_App_FeedEntryParent::$_rights"></a><h4 class="property protected">$_rights<div class="to-top"><a href="#%5CZend_Gdata_App_FeedEntryParent">jump to class</a></div>
+</h4>
+<div class="property">
+<code> <span class="highlight">$_rights</span> = 'null'</code><div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd>null</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_App_FeedEntryParent::$_service"></a><h4 class="property protected">$_service<div class="to-top"><a href="#%5CZend_Gdata_App_FeedEntryParent">jump to class</a></div>
+</h4>
+<div class="property">
+<code> <span class="highlight">$_service</span> = 'null'</code><p class="short-description">Service instance used to make network requests.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd>null</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+<dt>see</dt>
+<dd>setService(), getService()</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_App_FeedEntryParent::$_title"></a><h4 class="property protected">$_title<div class="to-top"><a href="#%5CZend_Gdata_App_FeedEntryParent">jump to class</a></div>
+</h4>
+<div class="property">
+<code>string <span class="highlight">$_title</span> = 'null'</code><p class="short-description"></p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt></dt>
+<dd>string<br><em></em>
+</dd>
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd>null</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_App_FeedEntryParent::$_updated"></a><h4 class="property protected">$_updated<div class="to-top"><a href="#%5CZend_Gdata_App_FeedEntryParent">jump to class</a></div>
+</h4>
+<div class="property">
+<code> <span class="highlight">$_updated</span> = 'null'</code><div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd>null</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+</div>
+<h3>Methods</h3>
+<div>
+<a id="\Zend_Gdata_App_FeedEntryParent::__construct()"></a><h4 class="method public">__construct<div class="to-top"><a href="#Zend_Gdata_App_FeedEntryParent">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">__construct</span><span class="nb-faded-text">(
+           $element
+              =
+              null
+          )
+        </span>
+        :
+        </code><p class="short-description">Constructs a Feed or Entry</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$element</dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_App_FeedEntryParent::getAlternateLink()"></a><h4 class="method public">getAlternateLink<div class="to-top"><a href="#Zend_Gdata_App_FeedEntryParent">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getAlternateLink</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        <a href="_Gdata_App_Extension_Link.html#%5CZend_Gdata_App_Extension_Link">\Zend_Gdata_App_Extension_Link</a></code><p class="short-description">Returns the Zend_Gdata_App_Extension_Link element which represents
+the URL for an alternate view of the data represented by this feed or
+entry.  This alternate view is commonly a user-facing webpage, blog
+post, etc.  The MIME type for the data at the URL is available from the
+returned Zend_Gdata_App_Extension_Link element.</p>
+<div class="long-description"><p>This link is in the atom feed/entry as an atom:link with a
+rel attribute value of 'self'.</p>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_App_Extension_Link.html#%5CZend_Gdata_App_Extension_Link">\Zend_Gdata_App_Extension_Link</a></dt>
+<dd><em>The link, or null if not found</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_App_FeedEntryParent::getAuthor()"></a><h4 class="method public">getAuthor<div class="to-top"><a href="#Zend_Gdata_App_FeedEntryParent">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getAuthor</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        <a href="_Gdata_App_Extension_Author.html#%5CZend_Gdata_App_Extension_Author">\Zend_Gdata_App_Extension_Author</a></code><p class="short-description"></p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_App_Extension_Author.html#%5CZend_Gdata_App_Extension_Author">\Zend_Gdata_App_Extension_Author</a></dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_App_FeedEntryParent::getCategory()"></a><h4 class="method public">getCategory<div class="to-top"><a href="#Zend_Gdata_App_FeedEntryParent">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getCategory</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        array</code><p class="short-description">Returns the array of categories that classify this feed/entry.  Each
+category is represented in an atom feed by an atom:category element.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>array</dt>
+<dd><em>Array of Zend_Gdata_App_Extension_Category</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_App_FeedEntryParent::getContributor()"></a><h4 class="method public">getContributor<div class="to-top"><a href="#Zend_Gdata_App_FeedEntryParent">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getContributor</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        array</code><p class="short-description">Returns the array of contributors to this feed/entry.  Each contributor
+is represented in an atom feed by an atom:contributor XML element</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>array</dt>
+<dd><em>An array of Zend_Gdata_App_Extension_Contributor</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_App_FeedEntryParent::getDOM()"></a><h4 class="method public">getDOM<div class="to-top"><a href="#Zend_Gdata_App_FeedEntryParent">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getDOM</span><span class="nb-faded-text">(
+          <a href="http://php.net/manual/en/class.domdocument.php">\DOMDocument</a> $doc
+              =
+              null,  $majorVersion
+              =
+              1,  $minorVersion
+              =
+              null
+          )
+        </span>
+        :
+        <a href="http://php.net/manual/en/class.domelement.php">\DOMElement</a></code><p class="short-description">Retrieves a DOMElement which corresponds to this element and all
+child properties.  This is used to build an entry back into a DOM
+and eventually XML text for sending to the server upon updates, or
+for application storage/persistence.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$doc</dt>
+<dd>\DOMDocument<br><em>The DOMDocument used to construct DOMElements</em>
+</dd>
+<dt>$majorVersion</dt>
+<dd><em></em></dd>
+<dt>$minorVersion</dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="http://php.net/manual/en/class.domelement.php">\DOMElement</a></dt>
+<dd><em>The DOMElement representing this element and all child properties.</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_App_FeedEntryParent::getEditLink()"></a><h4 class="method public">getEditLink<div class="to-top"><a href="#Zend_Gdata_App_FeedEntryParent">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getEditLink</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        <a href="_Gdata_App_Extension_Link.html#%5CZend_Gdata_App_Extension_Link">\Zend_Gdata_App_Extension_Link</a></code><p class="short-description">Returns the Zend_Gdata_App_Extension_Link element which represents
+the URL used to edit this resource.  This link is in the atom feed/entry
+as an atom:link with a rel attribute value of 'edit'.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_App_Extension_Link.html#%5CZend_Gdata_App_Extension_Link">\Zend_Gdata_App_Extension_Link</a></dt>
+<dd><em>The link, or null if not found</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_App_FeedEntryParent::getEtag()"></a><h4 class="method public">getEtag<div class="to-top"><a href="#Zend_Gdata_App_FeedEntryParent">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getEtag</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        string|null</code><p class="short-description">Return the Etag for the current entry, or null if not set.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>string|null</dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_App_FeedEntryParent::getHttpClient()"></a><h4 class="method public">getHttpClient<div class="to-top"><a href="#Zend_Gdata_App_FeedEntryParent">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getHttpClient</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        \Zend_Http_Client_Abstract</code><p class="short-description">Gets the HTTP client object. If none is set, a new Zend_Http_Client
+will be used.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>\Zend_Http_Client_Abstract</dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+<dt>deprecated</dt>
+<dd>Deprecated as of Zend Framework 1.7. Use
+getService() instead.</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_App_FeedEntryParent::getId()"></a><h4 class="method public">getId<div class="to-top"><a href="#Zend_Gdata_App_FeedEntryParent">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getId</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        <a href="_Gdata_App_Extension_Id.html#%5CZend_Gdata_App_Extension_Id">\Zend_Gdata_App_Extension_Id</a></code><p class="short-description"></p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_App_Extension_Id.html#%5CZend_Gdata_App_Extension_Id">\Zend_Gdata_App_Extension_Id</a></dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_App_FeedEntryParent::getLicenseLink()"></a><h4 class="method public">getLicenseLink<div class="to-top"><a href="#Zend_Gdata_App_FeedEntryParent">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getLicenseLink</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        <a href="_Gdata_App_Extension_Link.html#%5CZend_Gdata_App_Extension_Link">\Zend_Gdata_App_Extension_Link</a></code><p class="short-description"></p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_App_Extension_Link.html#%5CZend_Gdata_App_Extension_Link">\Zend_Gdata_App_Extension_Link</a></dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_App_FeedEntryParent::getLink()"></a><h4 class="method public">getLink<div class="to-top"><a href="#Zend_Gdata_App_FeedEntryParent">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getLink</span><span class="nb-faded-text">(
+          string $rel
+              =
+              null
+          )
+        </span>
+        :
+        mixed</code><p class="short-description">Given a particular 'rel' value, this method returns a matching
+Zend_Gdata_App_Extension_Link element.  If the 'rel' value
+is not provided, the full array of Zend_Gdata_App_Extension_Link
+elements is returned.  In an atom feed, each link is represented
+by an atom:link element.  The 'rel' value passed to this function
+is the atom:link/@rel attribute.  Example rel values include 'self',
+'edit', and 'alternate'.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$rel</dt>
+<dd>string<br><em>The rel value of the link to be found. If null, the array of Zend_Gdata_App_Extension_link elements is returned</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>mixed</dt>
+<dd><em>Either a single Zend_Gdata_App_Extension_link element, an array of the same or null is returned depending on the rel value supplied as the argument to this function</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_App_FeedEntryParent::getMajorProtocolVersion()"></a><h4 class="method public">getMajorProtocolVersion<div class="to-top"><a href="#Zend_Gdata_App_FeedEntryParent">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getMajorProtocolVersion</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        \(int|\NULL)</code><p class="short-description">Get the major protocol version that is in use.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>\(int|\NULL)</dt>
+<dd><em>The major protocol version in use.</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+<dt>see</dt>
+<dd>_majorProtocolVersion</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_App_FeedEntryParent::getMinorProtocolVersion()"></a><h4 class="method public">getMinorProtocolVersion<div class="to-top"><a href="#Zend_Gdata_App_FeedEntryParent">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getMinorProtocolVersion</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        \(int|\NULL)</code><p class="short-description">Get the minor protocol version that is in use.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>\(int|\NULL)</dt>
+<dd><em>The major protocol version in use, or NULL if no minor version is specified.</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+<dt>see</dt>
+<dd>_minorProtocolVersion</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_App_FeedEntryParent::getNextLink()"></a><h4 class="method public">getNextLink<div class="to-top"><a href="#Zend_Gdata_App_FeedEntryParent">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getNextLink</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        <a href="_Gdata_App_Extension_Link.html#%5CZend_Gdata_App_Extension_Link">\Zend_Gdata_App_Extension_Link</a></code><p class="short-description">Returns the Zend_Gdata_App_Extension_Link element which represents
+the URL used to retrieve the next chunk of results when paging through
+a feed.  This link is in the atom feed as an atom:link with a
+rel attribute value of 'next'.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_App_Extension_Link.html#%5CZend_Gdata_App_Extension_Link">\Zend_Gdata_App_Extension_Link</a></dt>
+<dd><em>The link, or null if not found</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_App_FeedEntryParent::getPreviousLink()"></a><h4 class="method public">getPreviousLink<div class="to-top"><a href="#Zend_Gdata_App_FeedEntryParent">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getPreviousLink</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        <a href="_Gdata_App_Extension_Link.html#%5CZend_Gdata_App_Extension_Link">\Zend_Gdata_App_Extension_Link</a></code><p class="short-description">Returns the Zend_Gdata_App_Extension_Link element which represents
+the URL used to retrieve the previous chunk of results when paging
+through a feed.  This link is in the atom feed as an atom:link with a
+rel attribute value of 'previous'.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_App_Extension_Link.html#%5CZend_Gdata_App_Extension_Link">\Zend_Gdata_App_Extension_Link</a></dt>
+<dd><em>The link, or null if not found</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_App_FeedEntryParent::getRights()"></a><h4 class="method public">getRights<div class="to-top"><a href="#Zend_Gdata_App_FeedEntryParent">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getRights</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        \Zend_Gdata_AppExtension_Rights</code><p class="short-description"></p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>\Zend_Gdata_AppExtension_Rights</dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_App_FeedEntryParent::getSelfLink()"></a><h4 class="method public">getSelfLink<div class="to-top"><a href="#Zend_Gdata_App_FeedEntryParent">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getSelfLink</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        <a href="_Gdata_App_Extension_Link.html#%5CZend_Gdata_App_Extension_Link">\Zend_Gdata_App_Extension_Link</a></code><p class="short-description">Returns the Zend_Gdata_App_Extension_Link element which represents
+the URL used to retrieve the entry or feed represented by this object
+This link is in the atom feed/entry as an atom:link with a
+rel attribute value of 'self'.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_App_Extension_Link.html#%5CZend_Gdata_App_Extension_Link">\Zend_Gdata_App_Extension_Link</a></dt>
+<dd><em>The link, or null if not found</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_App_FeedEntryParent::getService()"></a><h4 class="method public">getService<div class="to-top"><a href="#Zend_Gdata_App_FeedEntryParent">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getService</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        <a href="_Gdata_App.html#%5CZend_Gdata_App">\Zend_Gdata_App</a>|null</code><p class="short-description">Get the active service instance for this object. This will be used to
+perform network requests, such as when calling save() and delete().</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>
+<a href="_Gdata_App.html#%5CZend_Gdata_App">\Zend_Gdata_App</a>|null</dt>
+<dd><em>The current service instance, or null if not set.</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_App_FeedEntryParent::getTitle()"></a><h4 class="method public">getTitle<div class="to-top"><a href="#Zend_Gdata_App_FeedEntryParent">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getTitle</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        <a href="_Gdata_App_Extension_Title.html#%5CZend_Gdata_App_Extension_Title">\Zend_Gdata_App_Extension_Title</a></code><p class="short-description">Returns the title of this feed or entry.  The title is an extremely
+short textual representation of this resource and is found as
+an atom:title element in a feed or entry</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_App_Extension_Title.html#%5CZend_Gdata_App_Extension_Title">\Zend_Gdata_App_Extension_Title</a></dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_App_FeedEntryParent::getTitleValue()"></a><h4 class="method public">getTitleValue<div class="to-top"><a href="#Zend_Gdata_App_FeedEntryParent">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getTitleValue</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        string</code><p class="short-description">Returns a string representation of the title of this feed or entry.</p>
+<div class="long-description"><p>The title is an extremely short textual representation of this
+resource and is found as an atom:title element in a feed or entry</p>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>string</dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_App_FeedEntryParent::getUpdated()"></a><h4 class="method public">getUpdated<div class="to-top"><a href="#Zend_Gdata_App_FeedEntryParent">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getUpdated</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        <a href="_Gdata_App_Extension_Updated.html#%5CZend_Gdata_App_Extension_Updated">\Zend_Gdata_App_Extension_Updated</a></code><p class="short-description"></p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_App_Extension_Updated.html#%5CZend_Gdata_App_Extension_Updated">\Zend_Gdata_App_Extension_Updated</a></dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_App_FeedEntryParent::lookupNamespace()"></a><h4 class="method public">lookupNamespace<div class="to-top"><a href="#Zend_Gdata_App_FeedEntryParent">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">lookupNamespace</span><span class="nb-faded-text">(
+          string $prefix, integer $majorVersion
+              =
+              null, integer $minorVersion
+              =
+              null
+          )
+        </span>
+        :
+        string</code><p class="short-description">Get the full version of a namespace prefix</p>
+<div class="long-description"><p>Looks up a prefix (atom:, etc.) in the list of registered
+namespaces and returns the full namespace URI if
+available. Returns the prefix, unmodified, if it's not
+registered.</p>
+
+<p>The current entry or feed's version will be used when performing the
+namespace lookup unless overridden using $majorVersion and
+$minorVersion. If the entry/fee has a null version, then the latest
+protocol version will be used by default.</p>
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$prefix</dt>
+<dd>string<br><em>The namespace prefix to lookup.</em>
+</dd>
+<dt>$majorVersion</dt>
+<dd>integer<br><em>The major protocol version in effect. Defaults to null (auto-select).</em>
+</dd>
+<dt>$minorVersion</dt>
+<dd>integer<br><em>The minor protocol version in effect. Defaults to null (auto-select).</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>string</dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_App_FeedEntryParent::setAuthor()"></a><h4 class="method public">setAuthor<div class="to-top"><a href="#Zend_Gdata_App_FeedEntryParent">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">setAuthor</span><span class="nb-faded-text">(
+          array $value
+          )
+        </span>
+        :
+        <a href="_Gdata_App_FeedEntryParent.html#%5CZend_Gdata_App_FeedEntryParent">\Zend_Gdata_App_FeedEntryParent</a></code><p class="short-description">Sets the list of the authors of this feed/entry.  In an atom feed, each
+author is represented by an atom:author element</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$value</dt>
+<dd>array<br><em></em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_App_FeedEntryParent.html#%5CZend_Gdata_App_FeedEntryParent">\Zend_Gdata_App_FeedEntryParent</a></dt>
+<dd><em>Provides a fluent interface</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_App_FeedEntryParent::setCategory()"></a><h4 class="method public">setCategory<div class="to-top"><a href="#Zend_Gdata_App_FeedEntryParent">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">setCategory</span><span class="nb-faded-text">(
+          array $value
+          )
+        </span>
+        :
+        <a href="_Gdata_App_FeedEntryParent.html#%5CZend_Gdata_App_FeedEntryParent">\Zend_Gdata_App_FeedEntryParent</a></code><p class="short-description">Sets the array of categories that classify this feed/entry.  Each
+category is represented in an atom feed by an atom:category element.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$value</dt>
+<dd>array<br><em>Array of Zend_Gdata_App_Extension_Category</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_App_FeedEntryParent.html#%5CZend_Gdata_App_FeedEntryParent">\Zend_Gdata_App_FeedEntryParent</a></dt>
+<dd><em>Provides a fluent interface</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_App_FeedEntryParent::setContributor()"></a><h4 class="method public">setContributor<div class="to-top"><a href="#Zend_Gdata_App_FeedEntryParent">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">setContributor</span><span class="nb-faded-text">(
+          array $value
+          )
+        </span>
+        :
+        <a href="_Gdata_App_FeedEntryParent.html#%5CZend_Gdata_App_FeedEntryParent">\Zend_Gdata_App_FeedEntryParent</a></code><p class="short-description">Sets the array of contributors to this feed/entry.  Each contributor
+is represented in an atom feed by an atom:contributor XML element</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$value</dt>
+<dd>array<br><em></em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_App_FeedEntryParent.html#%5CZend_Gdata_App_FeedEntryParent">\Zend_Gdata_App_FeedEntryParent</a></dt>
+<dd><em>Provides a fluent interface</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_App_FeedEntryParent::setEtag()"></a><h4 class="method public">setEtag<div class="to-top"><a href="#Zend_Gdata_App_FeedEntryParent">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">setEtag</span><span class="nb-faded-text">(
+          string|null $value
+          )
+        </span>
+        :
+        <a href="_Gdata_App_Entry.html#%5CZend_Gdata_App_Entry">\Zend_Gdata_App_Entry</a></code><p class="short-description">Set the Etag for the current entry to $value. Setting $value to null
+unsets the Etag.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$value</dt>
+<dd>stringnull<br><em></em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_App_Entry.html#%5CZend_Gdata_App_Entry">\Zend_Gdata_App_Entry</a></dt>
+<dd><em>Provides a fluent interface</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_App_FeedEntryParent::setHttpClient()"></a><h4 class="method public">setHttpClient<div class="to-top"><a href="#Zend_Gdata_App_FeedEntryParent">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">setHttpClient</span><span class="nb-faded-text">(
+          <a href="_Http_Client.html#%5CZend_Http_Client">\Zend_Http_Client</a> $httpClient
+          )
+        </span>
+        :
+        <a href="_Gdata_App_FeedEntryParent.html#%5CZend_Gdata_App_FeedEntryParent">\Zend_Gdata_App_FeedEntryParent</a></code><p class="short-description">Set the HTTP client instance</p>
+<div class="long-description"><p>Sets the HTTP client object to use for retrieving the feed.</p>
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$httpClient</dt>
+<dd>\Zend_Http_Client<br><em></em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_App_FeedEntryParent.html#%5CZend_Gdata_App_FeedEntryParent">\Zend_Gdata_App_FeedEntryParent</a></dt>
+<dd><em>Provides a fluent interface</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+<dt>deprecated</dt>
+<dd>Deprecated as of Zend Framework 1.7. Use
+setService() instead.</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_App_FeedEntryParent::setId()"></a><h4 class="method public">setId<div class="to-top"><a href="#Zend_Gdata_App_FeedEntryParent">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">setId</span><span class="nb-faded-text">(
+          <a href="_Gdata_App_Extension_Id.html#%5CZend_Gdata_App_Extension_Id">\Zend_Gdata_App_Extension_Id</a> $value
+          )
+        </span>
+        :
+        <a href="_Gdata_App_FeedEntryParent.html#%5CZend_Gdata_App_FeedEntryParent">\Zend_Gdata_App_FeedEntryParent</a></code><p class="short-description"></p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$value</dt>
+<dd>\Zend_Gdata_App_Extension_Id<br><em></em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_App_FeedEntryParent.html#%5CZend_Gdata_App_FeedEntryParent">\Zend_Gdata_App_FeedEntryParent</a></dt>
+<dd><em>Provides a fluent interface</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_App_FeedEntryParent::setLink()"></a><h4 class="method public">setLink<div class="to-top"><a href="#Zend_Gdata_App_FeedEntryParent">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">setLink</span><span class="nb-faded-text">(
+          array $value
+          )
+        </span>
+        :
+        <a href="_Gdata_App_FeedEntryParent.html#%5CZend_Gdata_App_FeedEntryParent">\Zend_Gdata_App_FeedEntryParent</a></code><p class="short-description"></p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$value</dt>
+<dd>array<br><em>The array of Zend_Gdata_App_Extension_Link elements</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_App_FeedEntryParent.html#%5CZend_Gdata_App_FeedEntryParent">\Zend_Gdata_App_FeedEntryParent</a></dt>
+<dd><em>Provides a fluent interface</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_App_FeedEntryParent::setMajorProtocolVersion()"></a><h4 class="method public">setMajorProtocolVersion<div class="to-top"><a href="#Zend_Gdata_App_FeedEntryParent">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">setMajorProtocolVersion</span><span class="nb-faded-text">(
+          \(int|\NULL) $value
+          )
+        </span>
+        :
+        </code><p class="short-description">Set the major protocol version that should be used. Values &lt; 1
+(excluding NULL) will cause a Zend_Gdata_App_InvalidArgumentException
+to be thrown.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$value</dt>
+<dd>\(int\NULL)<br><em>The major protocol version to use.</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+<dt>see</dt>
+<dd>_majorProtocolVersion</dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_App_InvalidArgumentException.html#%5CZend_Gdata_App_InvalidArgumentException"></a></dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_App_FeedEntryParent::setMinorProtocolVersion()"></a><h4 class="method public">setMinorProtocolVersion<div class="to-top"><a href="#Zend_Gdata_App_FeedEntryParent">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">setMinorProtocolVersion</span><span class="nb-faded-text">(
+          \(int|\NULL) $value
+          )
+        </span>
+        :
+        </code><p class="short-description">Set the minor protocol version that should be used. If set to NULL, no
+minor protocol version will be sent to the server. Values &lt; 0 will
+cause a Zend_Gdata_App_InvalidArgumentException to be thrown.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$value</dt>
+<dd>\(int\NULL)<br><em>The minor protocol version to use.</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+<dt>see</dt>
+<dd>_minorProtocolVersion</dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_App_InvalidArgumentException.html#%5CZend_Gdata_App_InvalidArgumentException"></a></dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_App_FeedEntryParent::setRights()"></a><h4 class="method public">setRights<div class="to-top"><a href="#Zend_Gdata_App_FeedEntryParent">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">setRights</span><span class="nb-faded-text">(
+          <a href="_Gdata_App_Extension_Rights.html#%5CZend_Gdata_App_Extension_Rights">\Zend_Gdata_App_Extension_Rights</a> $value
+          )
+        </span>
+        :
+        <a href="_Gdata_App_FeedEntryParent.html#%5CZend_Gdata_App_FeedEntryParent">\Zend_Gdata_App_FeedEntryParent</a></code><p class="short-description"></p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$value</dt>
+<dd>\Zend_Gdata_App_Extension_Rights<br><em></em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_App_FeedEntryParent.html#%5CZend_Gdata_App_FeedEntryParent">\Zend_Gdata_App_FeedEntryParent</a></dt>
+<dd><em>Provides a fluent interface</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_App_FeedEntryParent::setService()"></a><h4 class="method public">setService<div class="to-top"><a href="#Zend_Gdata_App_FeedEntryParent">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">setService</span><span class="nb-faded-text">(
+          <a href="_Gdata_App.html#%5CZend_Gdata_App">\Zend_Gdata_App</a> $instance
+          )
+        </span>
+        :
+        <a href="_Gdata_App_FeedEntryParent.html#%5CZend_Gdata_App_FeedEntryParent">\Zend_Gdata_App_FeedEntryParent</a></code><p class="short-description">Set the active service instance for this object. This will be used to
+perform network requests, such as when calling save() and delete().</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$instance</dt>
+<dd>\Zend_Gdata_App<br><em>The new service instance.</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_App_FeedEntryParent.html#%5CZend_Gdata_App_FeedEntryParent">\Zend_Gdata_App_FeedEntryParent</a></dt>
+<dd><em>Provides a fluent interface.</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_App_FeedEntryParent::setTitle()"></a><h4 class="method public">setTitle<div class="to-top"><a href="#Zend_Gdata_App_FeedEntryParent">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">setTitle</span><span class="nb-faded-text">(
+          <a href="_Gdata_App_Extension_Title.html#%5CZend_Gdata_App_Extension_Title">\Zend_Gdata_App_Extension_Title</a> $value
+          )
+        </span>
+        :
+        <a href="_Gdata_App_FeedEntryParent.html#%5CZend_Gdata_App_FeedEntryParent">\Zend_Gdata_App_FeedEntryParent</a></code><p class="short-description">Returns the title of this feed or entry.  The title is an extremely
+short textual representation of this resource and is found as
+an atom:title element in a feed or entry</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$value</dt>
+<dd>\Zend_Gdata_App_Extension_Title<br><em></em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_App_FeedEntryParent.html#%5CZend_Gdata_App_FeedEntryParent">\Zend_Gdata_App_FeedEntryParent</a></dt>
+<dd><em>Provides a fluent interface</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_App_FeedEntryParent::setUpdated()"></a><h4 class="method public">setUpdated<div class="to-top"><a href="#Zend_Gdata_App_FeedEntryParent">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">setUpdated</span><span class="nb-faded-text">(
+          <a href="_Gdata_App_Extension_Updated.html#%5CZend_Gdata_App_Extension_Updated">\Zend_Gdata_App_Extension_Updated</a> $value
+          )
+        </span>
+        :
+        <a href="_Gdata_App_FeedEntryParent.html#%5CZend_Gdata_App_FeedEntryParent">\Zend_Gdata_App_FeedEntryParent</a></code><p class="short-description"></p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$value</dt>
+<dd>\Zend_Gdata_App_Extension_Updated<br><em></em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_App_FeedEntryParent.html#%5CZend_Gdata_App_FeedEntryParent">\Zend_Gdata_App_FeedEntryParent</a></dt>
+<dd><em>Provides a fluent interface</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_App_FeedEntryParent::takeChildFromDOM()"></a><h4 class="method protected">takeChildFromDOM<div class="to-top"><a href="#Zend_Gdata_App_FeedEntryParent">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">takeChildFromDOM</span><span class="nb-faded-text">(
+          <a href="http://php.net/manual/en/class.domnode.php">\DOMNode</a> $child
+          )
+        </span>
+        :
+        </code><p class="short-description">Creates individual Entry objects of the appropriate type and
+stores them as members of this entry based upon DOM data.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$child</dt>
+<dd>\DOMNode<br><em>The DOMNode to process</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<small xmlns="" class="footer">Documentation was generated by <a href="http://docblox-project.org">DocBlox 0.12.2</a>.
+    </small></body></html>

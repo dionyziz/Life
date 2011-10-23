@@ -1,0 +1,416 @@
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title>Zend Gdata API Documentation</title><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" href="css/black-tie/jquery-ui-1.8.2.custom.css" type="text/css"></link><link rel="stylesheet" href="css/jquery.treeview.css" type="text/css"></link><link rel="stylesheet" href="css/theme.css" type="text/css"></link><script type="text/javascript" src="js/jquery-1.4.2.min.js"></script><script type="text/javascript" src="js/jquery-ui-1.8.2.custom.min.js"></script><script type="text/javascript" src="js/jquery.cookie.js"></script><script type="text/javascript" src="js/jquery.treeview.js"></script><script type="text/javascript">
+            $(document).ready(function() {
+                $(".filetree").treeview({
+                    collapsed: true,
+                    persist: "cookie"
+                });
+
+                $("#accordion").accordion({
+                    collapsible: true,
+                    autoHeight:  false,
+                    fillSpace:   true
+                });
+
+                $(".tabs").tabs();
+            });
+        </script></head><body><div xmlns="" class="content">
+<div class="sub-page-main-header-api-documentation"><h2>API Documentation</h2></div>
+<div class="dotted-line"></div>
+</div>
+<div xmlns="" id="content">
+<script>
+      $(document).ready(function() {
+        $('dl.function-info, dl.constant-info, dl.property-info').prev().css('cursor', 'pointer');
+        $('dl.function-info, dl.constant-info, dl.property-info').prev().click(function() {
+          if ($(this).next().is(':hidden'))
+          {
+            $(this).children('img')[0].src = 'images/arrow_down.gif';
+          } else
+          {
+            $(this).children('img')[0].src = 'images/arrow_right.gif';
+          }
+          $(this).next().slideToggle();
+        });
+      $('dl.function-info, dl.constant-info, dl.property-info').hide();
+      $('dl.function-info img, dl.constant-info img, dl.property-info img').show();
+      });
+    </script><a name="top"></a><h1 class="file">Gdata/AuthSub.php</h1>
+<div class="file_menu">
+<a href="#includes">Includes</a> <a href="#classes">Classes</a> </div>
+<dl class="file-info">
+<dt>category</dt>
+<dd>Zend</dd>
+<dt>copyright</dt>
+<dd>Copyright (c) 2005-2011 Zend Technologies USA Inc. (http://www.zend.com)</dd>
+<dt>license</dt>
+<dd>http://framework.zend.com/license/new-bsd     New BSD License</dd>
+<dt>package</dt>
+<dd>Zend_Gdata</dd>
+<dt>subpackage</dt>
+<dd>Gdata</dd>
+<dt>version</dt>
+<dd>$Id: AuthSub.php 24319 2011-07-30 13:43:41Z mikaelkael $</dd>
+<dt>Classes</dt>
+<dd><a class="class" href="#%5CZend_Gdata_AuthSub">Zend_Gdata_AuthSub</a></dd>
+</dl>
+<h2>Description</h2>
+<p class="short-description">Zend Framework</p>
+<div class="long-description"><p>LICENSE</p>
+
+<p>This source file is subject to the new BSD license that is bundled
+with this package in the file LICENSE.txt.
+It is also available through the world-wide-web at this URL:
+http://framework.zend.com/license/new-bsd
+If you did not receive a copy of the license and are unable to
+obtain it through the world-wide-web, please send an email
+to license@zend.com so we can send you a copy immediately.</p>
+</div>
+<a name="classes"></a><a id="\Zend_Gdata_AuthSub"></a><h2 class="class">\Zend_Gdata_AuthSub<div class="to-top"><a href="#top">jump to top</a></div>
+</h2>
+<div class="class">
+<dl class="class-info">
+<dt>category</dt>
+<dd>Zend</dd>
+<dt>copyright</dt>
+<dd>Copyright (c) 2005-2011 Zend Technologies USA Inc. (http://www.zend.com)</dd>
+<dt>license</dt>
+<dd>http://framework.zend.com/license/new-bsd     New BSD License</dd>
+<dt>package</dt>
+<dd>Zend_Gdata</dd>
+<dt>see</dt>
+<dd>http://code.google.com/apis/accounts/AuthForWebApps.html</dd>
+<dt>subpackage</dt>
+<dd>Gdata</dd>
+<dt><a href="#" onclick="$(this).children('img').toggle().parents('dt').nextUntil('dt').slideToggle(); return false;"><img src="images/arrow_down.gif"><img src="images/arrow_right.gif" style="display: none">
+                Constants
+              </a></dt>
+<dd><a class="constant" href="#%5CZend_Gdata_AuthSub::AUTHSUB_REQUEST_URI">AUTHSUB_REQUEST_URI</a></dd>
+<dd><a class="constant" href="#%5CZend_Gdata_AuthSub::AUTHSUB_REVOKE_TOKEN_URI">AUTHSUB_REVOKE_TOKEN_URI</a></dd>
+<dd><a class="constant" href="#%5CZend_Gdata_AuthSub::AUTHSUB_SESSION_TOKEN_URI">AUTHSUB_SESSION_TOKEN_URI</a></dd>
+<dd><a class="constant" href="#%5CZend_Gdata_AuthSub::AUTHSUB_TOKEN_INFO_URI">AUTHSUB_TOKEN_INFO_URI</a></dd>
+<dt><a href="#" onclick="$(this).children('img').toggle().parents('dt').nextUntil('dt').slideToggle(); return false;"><img src="images/arrow_down.gif"><img src="images/arrow_right.gif" style="display: none">
+                Methods
+              </a></dt>
+<dd><a class="method public" href="#%5CZend_Gdata_AuthSub::AuthSubRevokeToken()">AuthSubRevokeToken</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_AuthSub::getAuthSubSessionToken()">getAuthSubSessionToken</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_AuthSub::getAuthSubTokenInfo()">getAuthSubTokenInfo</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_AuthSub::getAuthSubTokenUri()">getAuthSubTokenUri</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_AuthSub::getHttpClient()">getHttpClient</a></dd>
+</dl>
+<h3>Description</h3>
+<p class="short-description">Wrapper around Zend_Http_Client to facilitate Google's "Account Authentication
+Proxy for Web-Based Applications".</p>
+<div class="long-description">
+</div>
+<h3>Constants</h3>
+<div>
+<a id="\Zend_Gdata_AuthSub::AUTHSUB_REQUEST_URI"></a><h4 class="constant">AUTHSUB_REQUEST_URI<div class="to-top"><a href="#Zend_Gdata_AuthSub">jump to class</a></div>
+</h4>
+<div class="constant">
+<code> <span class="highlight">AUTHSUB_REQUEST_URI</span> = 'https://www.google.com/accounts/AuthSubRequest'
+      </code><div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="constant-info">
+<dt>value</dt>
+<dd>https://www.google.com/accounts/AuthSubRequest</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_AuthSub::AUTHSUB_SESSION_TOKEN_URI"></a><h4 class="constant">AUTHSUB_SESSION_TOKEN_URI<div class="to-top"><a href="#Zend_Gdata_AuthSub">jump to class</a></div>
+</h4>
+<div class="constant">
+<code> <span class="highlight">AUTHSUB_SESSION_TOKEN_URI</span> = 'https://www.google.com/accounts/AuthSubSessionToken'
+      </code><div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="constant-info">
+<dt>value</dt>
+<dd>https://www.google.com/accounts/AuthSubSessionToken</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_AuthSub::AUTHSUB_REVOKE_TOKEN_URI"></a><h4 class="constant">AUTHSUB_REVOKE_TOKEN_URI<div class="to-top"><a href="#Zend_Gdata_AuthSub">jump to class</a></div>
+</h4>
+<div class="constant">
+<code> <span class="highlight">AUTHSUB_REVOKE_TOKEN_URI</span> = 'https://www.google.com/accounts/AuthSubRevokeToken'
+      </code><div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="constant-info">
+<dt>value</dt>
+<dd>https://www.google.com/accounts/AuthSubRevokeToken</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_AuthSub::AUTHSUB_TOKEN_INFO_URI"></a><h4 class="constant">AUTHSUB_TOKEN_INFO_URI<div class="to-top"><a href="#Zend_Gdata_AuthSub">jump to class</a></div>
+</h4>
+<div class="constant">
+<code> <span class="highlight">AUTHSUB_TOKEN_INFO_URI</span> = 'https://www.google.com/accounts/AuthSubTokenInfo'
+      </code><div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="constant-info">
+<dt>value</dt>
+<dd>https://www.google.com/accounts/AuthSubTokenInfo</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+</div>
+<h3>Methods</h3>
+<div>
+<a id="\Zend_Gdata_AuthSub::AuthSubRevokeToken()"></a><h4 class="method public">AuthSubRevokeToken<div class="to-top"><a href="#Zend_Gdata_AuthSub">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">AuthSubRevokeToken</span><span class="nb-faded-text">(
+          string $token, <a href="_Http_Client.html#%5CZend_Http_Client">\Zend_Http_Client</a> $client
+              =
+              null, string $request_uri
+              =
+              self
+          )
+        </span>
+        :
+        boolean</code><p class="short-description">Revoke a token</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$token</dt>
+<dd>string<br><em>The token to revoke</em>
+</dd>
+<dt>$client</dt>
+<dd>\Zend_Http_Client<br><em>(optional) HTTP client to use to make the request</em>
+</dd>
+<dt>$request_uri</dt>
+<dd>string<br><em>(optional) URI to which to direct the revokation request</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>boolean</dt>
+<dd><em>Whether the revokation was successful</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>true</dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_App_HttpException.html#%5CZend_Gdata_App_HttpException"></a></dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_AuthSub::getAuthSubSessionToken()"></a><h4 class="method public">getAuthSubSessionToken<div class="to-top"><a href="#Zend_Gdata_AuthSub">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getAuthSubSessionToken</span><span class="nb-faded-text">(
+          string $token, <a href="_Http_Client.html#%5CZend_Http_Client">\Zend_Http_Client</a> $client
+              =
+              null, string $request_uri
+              =
+              self
+          )
+        </span>
+        :
+        string</code><p class="short-description">Upgrades a single use token to a session token</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$token</dt>
+<dd>string<br><em>The single use token which is to be upgraded</em>
+</dd>
+<dt>$client</dt>
+<dd>\Zend_Http_Client<br><em>(optional) HTTP client to use to make the request</em>
+</dd>
+<dt>$request_uri</dt>
+<dd>string<br><em>(optional) URI to which to direct the session token upgrade</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>string</dt>
+<dd><em>The upgraded token value</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>true</dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_App_AuthException.html#%5CZend_Gdata_App_AuthException"></a></dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_App_HttpException.html#%5CZend_Gdata_App_HttpException"></a></dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_AuthSub::getAuthSubTokenInfo()"></a><h4 class="method public">getAuthSubTokenInfo<div class="to-top"><a href="#Zend_Gdata_AuthSub">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getAuthSubTokenInfo</span><span class="nb-faded-text">(
+          string $token, <a href="_Http_Client.html#%5CZend_Http_Client">\Zend_Http_Client</a> $client
+              =
+              null, string $request_uri
+              =
+              self
+          )
+        </span>
+        :
+        </code><p class="short-description">get token information</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$token</dt>
+<dd>string<br><em>The token to retrieve information about</em>
+</dd>
+<dt>$client</dt>
+<dd>\Zend_Http_Client<br><em>(optional) HTTP client to use to make the request</em>
+</dd>
+<dt>$request_uri</dt>
+<dd>string<br><em>(optional) URI to which to direct the information request</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>true</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_AuthSub::getAuthSubTokenUri()"></a><h4 class="method public">getAuthSubTokenUri<div class="to-top"><a href="#Zend_Gdata_AuthSub">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getAuthSubTokenUri</span><span class="nb-faded-text">(
+          string $next, string $scope, int $secure
+              =
+              0, int $session
+              =
+              0, string $request_uri
+              =
+              self
+          )
+        </span>
+        :
+        </code><p class="short-description">Creates a URI to request a single-use AuthSub token.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$next</dt>
+<dd>string<br><em>(required) URL identifying the service to be accessed. The resulting token will enable access to the specified service only. Some services may limit scope further, such as read-only access.</em>
+</dd>
+<dt>$scope</dt>
+<dd>string<br><em>(required) URL identifying the service to be accessed. The resulting token will enable access to the specified service only. Some services may limit scope further, such as read-only access.</em>
+</dd>
+<dt>$secure</dt>
+<dd>int<br><em>(optional) Boolean flag indicating whether the authentication transaction should issue a secure token (1) or a non-secure token (0). Secure tokens are available to registered applications only.</em>
+</dd>
+<dt>$session</dt>
+<dd>int<br><em>(optional) Boolean flag indicating whether the one-time-use token may be exchanged for a session token (1) or not (0).</em>
+</dd>
+<dt>$request_uri</dt>
+<dd>string<br><em>(optional) URI to which to direct the authentication request.</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>true</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_AuthSub::getHttpClient()"></a><h4 class="method public">getHttpClient<div class="to-top"><a href="#Zend_Gdata_AuthSub">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getHttpClient</span><span class="nb-faded-text">(
+          string $token, <a href="_Gdata_HttpClient.html#%5CZend_Gdata_HttpClient">\Zend_Gdata_HttpClient</a> $client
+              =
+              null
+          )
+        </span>
+        :
+        </code><p class="short-description">Retrieve a HTTP client object with AuthSub credentials attached
+as the Authorization header</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$token</dt>
+<dd>string<br><em>The token to retrieve information about</em>
+</dd>
+<dt>$client</dt>
+<dd>\Zend_Gdata_HttpClient<br><em>(optional) HTTP client to use to make the request</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>true</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<small xmlns="" class="footer">Documentation was generated by <a href="http://docblox-project.org">DocBlox 0.12.2</a>.
+    </small></body></html>

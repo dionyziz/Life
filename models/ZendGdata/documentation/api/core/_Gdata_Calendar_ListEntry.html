@@ -1,0 +1,748 @@
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title>Zend Gdata API Documentation</title><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" href="css/black-tie/jquery-ui-1.8.2.custom.css" type="text/css"></link><link rel="stylesheet" href="css/jquery.treeview.css" type="text/css"></link><link rel="stylesheet" href="css/theme.css" type="text/css"></link><script type="text/javascript" src="js/jquery-1.4.2.min.js"></script><script type="text/javascript" src="js/jquery-ui-1.8.2.custom.min.js"></script><script type="text/javascript" src="js/jquery.cookie.js"></script><script type="text/javascript" src="js/jquery.treeview.js"></script><script type="text/javascript">
+            $(document).ready(function() {
+                $(".filetree").treeview({
+                    collapsed: true,
+                    persist: "cookie"
+                });
+
+                $("#accordion").accordion({
+                    collapsible: true,
+                    autoHeight:  false,
+                    fillSpace:   true
+                });
+
+                $(".tabs").tabs();
+            });
+        </script></head><body><div xmlns="" class="content">
+<div class="sub-page-main-header-api-documentation"><h2>API Documentation</h2></div>
+<div class="dotted-line"></div>
+</div>
+<div xmlns="" id="content">
+<script>
+      $(document).ready(function() {
+        $('dl.function-info, dl.constant-info, dl.property-info').prev().css('cursor', 'pointer');
+        $('dl.function-info, dl.constant-info, dl.property-info').prev().click(function() {
+          if ($(this).next().is(':hidden'))
+          {
+            $(this).children('img')[0].src = 'images/arrow_down.gif';
+          } else
+          {
+            $(this).children('img')[0].src = 'images/arrow_right.gif';
+          }
+          $(this).next().slideToggle();
+        });
+      $('dl.function-info, dl.constant-info, dl.property-info').hide();
+      $('dl.function-info img, dl.constant-info img, dl.property-info img').show();
+      });
+    </script><a name="top"></a><h1 class="file">Gdata/Calendar/ListEntry.php</h1>
+<div class="file_menu">
+<a href="#includes">Includes</a> <a href="#classes">Classes</a> </div>
+<dl class="file-info">
+<dt>category</dt>
+<dd>Zend</dd>
+<dt>copyright</dt>
+<dd>Copyright (c) 2005-2011 Zend Technologies USA Inc. (http://www.zend.com)</dd>
+<dt>license</dt>
+<dd>http://framework.zend.com/license/new-bsd     New BSD License</dd>
+<dt>package</dt>
+<dd>Zend_Gdata</dd>
+<dt>subpackage</dt>
+<dd>Calendar</dd>
+<dt>version</dt>
+<dd>$Id: ListEntry.php 23775 2011-03-01 17:25:24Z ralph $</dd>
+<dt>Classes</dt>
+<dd><a class="class" href="#%5CZend_Gdata_Calendar_ListEntry">Zend_Gdata_Calendar_ListEntry</a></dd>
+</dl>
+<h2>Description</h2>
+<p class="short-description">Zend Framework</p>
+<div class="long-description"><p>LICENSE</p>
+
+<p>This source file is subject to the new BSD license that is bundled
+with this package in the file LICENSE.txt.
+It is also available through the world-wide-web at this URL:
+http://framework.zend.com/license/new-bsd
+If you did not receive a copy of the license and are unable to
+obtain it through the world-wide-web, please send an email
+to license@zend.com so we can send you a copy immediately.</p>
+</div>
+<a name="classes"></a><a id="\Zend_Gdata_Calendar_ListEntry"></a><h2 class="class">\Zend_Gdata_Calendar_ListEntry<div class="to-top"><a href="#top">jump to top</a></div>
+</h2>
+<div class="class">
+<dl class="class-info">
+<dt>Extends from</dt>
+<dd><a href="_Gdata_Entry.html#%5CZend_Gdata_Entry">\Zend_Gdata_Entry</a></dd>
+<dt>category</dt>
+<dd>Zend</dd>
+<dt>copyright</dt>
+<dd>Copyright (c) 2005-2011 Zend Technologies USA Inc. (http://www.zend.com)</dd>
+<dt>license</dt>
+<dd>http://framework.zend.com/license/new-bsd     New BSD License</dd>
+<dt>package</dt>
+<dd>Zend_Gdata</dd>
+<dt>subpackage</dt>
+<dd>Calendar</dd>
+<dt><a href="#" onclick="$(this).children('img').toggle().parents('dt').nextUntil('dt').slideToggle(); return false;"><img src="images/arrow_down.gif"><img src="images/arrow_right.gif" style="display: none">
+                Properties
+              </a></dt>
+<dd><a class="property protected" href="#%5CZend_Gdata_Calendar_ListEntry::%24_accessLevel">$_accessLevel</a></dd>
+<dd><a class="property protected" href="#%5CZend_Gdata_Calendar_ListEntry::%24_color">$_color</a></dd>
+<dd><a class="property protected" href="#%5CZend_Gdata_Calendar_ListEntry::%24_hidden">$_hidden</a></dd>
+<dd><a class="property protected" href="#%5CZend_Gdata_Calendar_ListEntry::%24_selected">$_selected</a></dd>
+<dd><a class="property protected" href="#%5CZend_Gdata_Calendar_ListEntry::%24_timezone">$_timezone</a></dd>
+<dd><a class="property protected" href="#%5CZend_Gdata_Calendar_ListEntry::%24_where">$_where</a></dd>
+<dt><a href="#" onclick="$(this).children('img').toggle().parents('dt').nextUntil('dt').slideToggle(); return false;"><img src="images/arrow_down.gif"><img src="images/arrow_right.gif" style="display: none">
+                Methods
+              </a></dt>
+<dd><a class="method public" href="#%5CZend_Gdata_Calendar_ListEntry::__construct()">__construct</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Calendar_ListEntry::getAccessLevel()">getAccessLevel</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Calendar_ListEntry::getColor()">getColor</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Calendar_ListEntry::getDOM()">getDOM</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Calendar_ListEntry::getHidden()">getHidden</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Calendar_ListEntry::getSelected()">getSelected</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Calendar_ListEntry::getTimezone()">getTimezone</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Calendar_ListEntry::getWhere()">getWhere</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Calendar_ListEntry::setAccessLevel()">setAccessLevel</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Calendar_ListEntry::setColor()">setColor</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Calendar_ListEntry::setHidden()">setHidden</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Calendar_ListEntry::setSelected()">setSelected</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Calendar_ListEntry::setTimezone()">setTimezone</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Calendar_ListEntry::setWhere()">setWhere</a></dd>
+<dd><a class="method protected" href="#%5CZend_Gdata_Calendar_ListEntry::takeChildFromDOM()">takeChildFromDOM</a></dd>
+</dl>
+<h3>Description</h3>
+<p class="short-description">Represents a Calendar entry in the Calendar data API meta feed of a user's
+calendars.</p>
+<div class="long-description">
+</div>
+<h3>Properties</h3>
+<div>
+<a id="\Zend_Gdata_Calendar_ListEntry::$_accessLevel"></a><h4 class="property protected">$_accessLevel<div class="to-top"><a href="#%5CZend_Gdata_Calendar_ListEntry">jump to class</a></div>
+</h4>
+<div class="property">
+<code> <span class="highlight">$_accessLevel</span> = 'null'</code><div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd>null</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Calendar_ListEntry::$_color"></a><h4 class="property protected">$_color<div class="to-top"><a href="#%5CZend_Gdata_Calendar_ListEntry">jump to class</a></div>
+</h4>
+<div class="property">
+<code> <span class="highlight">$_color</span> = 'null'</code><div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd>null</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Calendar_ListEntry::$_hidden"></a><h4 class="property protected">$_hidden<div class="to-top"><a href="#%5CZend_Gdata_Calendar_ListEntry">jump to class</a></div>
+</h4>
+<div class="property">
+<code> <span class="highlight">$_hidden</span> = 'null'</code><div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd>null</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Calendar_ListEntry::$_selected"></a><h4 class="property protected">$_selected<div class="to-top"><a href="#%5CZend_Gdata_Calendar_ListEntry">jump to class</a></div>
+</h4>
+<div class="property">
+<code> <span class="highlight">$_selected</span> = 'null'</code><div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd>null</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Calendar_ListEntry::$_timezone"></a><h4 class="property protected">$_timezone<div class="to-top"><a href="#%5CZend_Gdata_Calendar_ListEntry">jump to class</a></div>
+</h4>
+<div class="property">
+<code> <span class="highlight">$_timezone</span> = 'null'</code><div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd>null</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Calendar_ListEntry::$_where"></a><h4 class="property protected">$_where<div class="to-top"><a href="#%5CZend_Gdata_Calendar_ListEntry">jump to class</a></div>
+</h4>
+<div class="property">
+<code> <span class="highlight">$_where</span> = 'array'</code><div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd>array</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+</div>
+<h3>Methods</h3>
+<div>
+<a id="\Zend_Gdata_Calendar_ListEntry::__construct()"></a><h4 class="method public">__construct<div class="to-top"><a href="#Zend_Gdata_Calendar_ListEntry">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">__construct</span><span class="nb-faded-text">(
+          <a href="http://php.net/manual/en/class.domelement.php">\DOMElement</a> $element
+              =
+              null
+          )
+        </span>
+        :
+        </code><p class="short-description">Constructs a new MediaEntry, representing XML data and optional
+file to upload</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$element</dt>
+<dd>\DOMElement<br><em>(optional) DOMElement from which this object should be constructed.</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Calendar_ListEntry::getAccessLevel()"></a><h4 class="method public">getAccessLevel<div class="to-top"><a href="#Zend_Gdata_Calendar_ListEntry">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getAccessLevel</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        </code><div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Calendar_ListEntry::getColor()"></a><h4 class="method public">getColor<div class="to-top"><a href="#Zend_Gdata_Calendar_ListEntry">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getColor</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        </code><div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Calendar_ListEntry::getDOM()"></a><h4 class="method public">getDOM<div class="to-top"><a href="#Zend_Gdata_Calendar_ListEntry">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getDOM</span><span class="nb-faded-text">(
+          <a href="http://php.net/manual/en/class.domdocument.php">\DOMDocument</a> $doc
+              =
+              null,  $majorVersion
+              =
+              1,  $minorVersion
+              =
+              null
+          )
+        </span>
+        :
+        <a href="http://php.net/manual/en/class.domelement.php">\DOMElement</a></code><p class="short-description">Retrieves the DOM model representing this object and all children</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$doc</dt>
+<dd>\DOMDocument<br><em></em>
+</dd>
+<dt>$majorVersion</dt>
+<dd><em></em></dd>
+<dt>$minorVersion</dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="http://php.net/manual/en/class.domelement.php">\DOMElement</a></dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Calendar_ListEntry::getHidden()"></a><h4 class="method public">getHidden<div class="to-top"><a href="#Zend_Gdata_Calendar_ListEntry">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getHidden</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        </code><div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Calendar_ListEntry::getSelected()"></a><h4 class="method public">getSelected<div class="to-top"><a href="#Zend_Gdata_Calendar_ListEntry">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getSelected</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        </code><div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Calendar_ListEntry::getTimezone()"></a><h4 class="method public">getTimezone<div class="to-top"><a href="#Zend_Gdata_Calendar_ListEntry">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getTimezone</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        </code><div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Calendar_ListEntry::getWhere()"></a><h4 class="method public">getWhere<div class="to-top"><a href="#Zend_Gdata_Calendar_ListEntry">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getWhere</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        </code><div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Calendar_ListEntry::setAccessLevel()"></a><h4 class="method public">setAccessLevel<div class="to-top"><a href="#Zend_Gdata_Calendar_ListEntry">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">setAccessLevel</span><span class="nb-faded-text">(
+          <a href="_Gdata_Calendar_Extension_AccessLevel.html#%5CZend_Gdata_Calendar_Extension_AccessLevel">\Zend_Gdata_Calendar_Extension_AccessLevel</a> $value
+          )
+        </span>
+        :
+        \Zend_Gdata_Extension_ListEntry</code><p class="short-description"></p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$value</dt>
+<dd>\Zend_Gdata_Calendar_Extension_AccessLevel<br><em></em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>\Zend_Gdata_Extension_ListEntry</dt>
+<dd><em>Provides a fluent interface</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Calendar_ListEntry::setColor()"></a><h4 class="method public">setColor<div class="to-top"><a href="#Zend_Gdata_Calendar_ListEntry">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">setColor</span><span class="nb-faded-text">(
+          <a href="_Gdata_Calendar_Extension_Color.html#%5CZend_Gdata_Calendar_Extension_Color">\Zend_Gdata_Calendar_Extension_Color</a> $value
+          )
+        </span>
+        :
+        \Zend_Gdata_Extension_ListEntry</code><p class="short-description"></p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$value</dt>
+<dd>\Zend_Gdata_Calendar_Extension_Color<br><em></em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>\Zend_Gdata_Extension_ListEntry</dt>
+<dd><em>Provides a fluent interface</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Calendar_ListEntry::setHidden()"></a><h4 class="method public">setHidden<div class="to-top"><a href="#Zend_Gdata_Calendar_ListEntry">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">setHidden</span><span class="nb-faded-text">(
+          <a href="_Gdata_Calendar_Extension_Hidden.html#%5CZend_Gdata_Calendar_Extension_Hidden">\Zend_Gdata_Calendar_Extension_Hidden</a> $value
+          )
+        </span>
+        :
+        \Zend_Gdata_Extension_ListEntry</code><p class="short-description"></p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$value</dt>
+<dd>\Zend_Gdata_Calendar_Extension_Hidden<br><em></em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>\Zend_Gdata_Extension_ListEntry</dt>
+<dd><em>Provides a fluent interface</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Calendar_ListEntry::setSelected()"></a><h4 class="method public">setSelected<div class="to-top"><a href="#Zend_Gdata_Calendar_ListEntry">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">setSelected</span><span class="nb-faded-text">(
+          <a href="_Gdata_Calendar_Extension_Selected.html#%5CZend_Gdata_Calendar_Extension_Selected">\Zend_Gdata_Calendar_Extension_Selected</a> $value
+          )
+        </span>
+        :
+        \Zend_Gdata_Extension_ListEntry</code><p class="short-description"></p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$value</dt>
+<dd>\Zend_Gdata_Calendar_Extension_Selected<br><em></em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>\Zend_Gdata_Extension_ListEntry</dt>
+<dd><em>Provides a fluent interface</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Calendar_ListEntry::setTimezone()"></a><h4 class="method public">setTimezone<div class="to-top"><a href="#Zend_Gdata_Calendar_ListEntry">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">setTimezone</span><span class="nb-faded-text">(
+          <a href="_Gdata_Calendar_Extension_Timezone.html#%5CZend_Gdata_Calendar_Extension_Timezone">\Zend_Gdata_Calendar_Extension_Timezone</a> $value
+          )
+        </span>
+        :
+        \Zend_Gdata_Extension_ListEntry</code><p class="short-description"></p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$value</dt>
+<dd>\Zend_Gdata_Calendar_Extension_Timezone<br><em></em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>\Zend_Gdata_Extension_ListEntry</dt>
+<dd><em>Provides a fluent interface</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Calendar_ListEntry::setWhere()"></a><h4 class="method public">setWhere<div class="to-top"><a href="#Zend_Gdata_Calendar_ListEntry">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">setWhere</span><span class="nb-faded-text">(
+          <a href="_Gdata_Extension_Where.html#%5CZend_Gdata_Extension_Where">\Zend_Gdata_Extension_Where</a> $value
+          )
+        </span>
+        :
+        \Zend_Gdata_Extension_ListEntry</code><p class="short-description"></p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$value</dt>
+<dd>\Zend_Gdata_Extension_Where<br><em></em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>\Zend_Gdata_Extension_ListEntry</dt>
+<dd><em>Provides a fluent interface</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Calendar_ListEntry::takeChildFromDOM()"></a><h4 class="method protected">takeChildFromDOM<div class="to-top"><a href="#Zend_Gdata_Calendar_ListEntry">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">takeChildFromDOM</span><span class="nb-faded-text">(
+          <a href="http://php.net/manual/en/class.domnode.php">\DOMNode</a> $child
+          )
+        </span>
+        :
+        </code><p class="short-description">Creates individual Entry objects of the appropriate type and
+stores them in the $_entry array based upon DOM data.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$child</dt>
+<dd>\DOMNode<br><em>The DOMNode to process</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<small xmlns="" class="footer">Documentation was generated by <a href="http://docblox-project.org">DocBlox 0.12.2</a>.
+    </small></body></html>

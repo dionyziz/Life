@@ -1,0 +1,1901 @@
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title>Zend Gdata API Documentation</title><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" href="css/black-tie/jquery-ui-1.8.2.custom.css" type="text/css"></link><link rel="stylesheet" href="css/jquery.treeview.css" type="text/css"></link><link rel="stylesheet" href="css/theme.css" type="text/css"></link><script type="text/javascript" src="js/jquery-1.4.2.min.js"></script><script type="text/javascript" src="js/jquery-ui-1.8.2.custom.min.js"></script><script type="text/javascript" src="js/jquery.cookie.js"></script><script type="text/javascript" src="js/jquery.treeview.js"></script><script type="text/javascript">
+            $(document).ready(function() {
+                $(".filetree").treeview({
+                    collapsed: true,
+                    persist: "cookie"
+                });
+
+                $("#accordion").accordion({
+                    collapsible: true,
+                    autoHeight:  false,
+                    fillSpace:   true
+                });
+
+                $(".tabs").tabs();
+            });
+        </script></head><body><div xmlns="" class="content">
+<div class="sub-page-main-header-api-documentation"><h2>API Documentation</h2></div>
+<div class="dotted-line"></div>
+</div>
+<div xmlns="" id="content">
+<script>
+      $(document).ready(function() {
+        $('dl.function-info, dl.constant-info, dl.property-info').prev().css('cursor', 'pointer');
+        $('dl.function-info, dl.constant-info, dl.property-info').prev().click(function() {
+          if ($(this).next().is(':hidden'))
+          {
+            $(this).children('img')[0].src = 'images/arrow_down.gif';
+          } else
+          {
+            $(this).children('img')[0].src = 'images/arrow_right.gif';
+          }
+          $(this).next().slideToggle();
+        });
+      $('dl.function-info, dl.constant-info, dl.property-info').hide();
+      $('dl.function-info img, dl.constant-info img, dl.property-info img').show();
+      });
+    </script><a name="top"></a><h1 class="file">Gdata/YouTube.php</h1>
+<div class="file_menu">
+<a href="#includes">Includes</a> <a href="#classes">Classes</a> </div>
+<dl class="file-info">
+<dt>category</dt>
+<dd>Zend</dd>
+<dt>copyright</dt>
+<dd>Copyright (c) 2005-2011 Zend Technologies USA Inc. (http://www.zend.com)</dd>
+<dt>license</dt>
+<dd>http://framework.zend.com/license/new-bsd     New BSD License</dd>
+<dt>package</dt>
+<dd>Zend_Gdata</dd>
+<dt>subpackage</dt>
+<dd>YouTube</dd>
+<dt>version</dt>
+<dd>$Id: YouTube.php 23775 2011-03-01 17:25:24Z ralph $</dd>
+<dt>Classes</dt>
+<dd><a class="class" href="#%5CZend_Gdata_YouTube">Zend_Gdata_YouTube</a></dd>
+</dl>
+<h2>Description</h2>
+<p class="short-description">Zend Framework</p>
+<div class="long-description"><p>LICENSE</p>
+
+<p>This source file is subject to the new BSD license that is bundled
+with this package in the file LICENSE.txt.
+It is also available through the world-wide-web at this URL:
+http://framework.zend.com/license/new-bsd
+If you did not receive a copy of the license and are unable to
+obtain it through the world-wide-web, please send an email
+to license@zend.com so we can send you a copy immediately.</p>
+</div>
+<a name="classes"></a><a id="\Zend_Gdata_YouTube"></a><h2 class="class">\Zend_Gdata_YouTube<div class="to-top"><a href="#top">jump to top</a></div>
+</h2>
+<div class="class">
+<dl class="class-info">
+<dt>Extends from</dt>
+<dd><a href="_Gdata_Media.html#%5CZend_Gdata_Media">\Zend_Gdata_Media</a></dd>
+<dt>category</dt>
+<dd>Zend</dd>
+<dt>copyright</dt>
+<dd>Copyright (c) 2005-2011 Zend Technologies USA Inc. (http://www.zend.com)</dd>
+<dt>license</dt>
+<dd>http://framework.zend.com/license/new-bsd     New BSD License</dd>
+<dt>link</dt>
+<dd><a href="http://code.google.com/apis/youtube/">http://code.google.com/apis/youtube/</a></dd>
+<dt>package</dt>
+<dd>Zend_Gdata</dd>
+<dt>subpackage</dt>
+<dd>YouTube</dd>
+<dt><a href="#" onclick="$(this).children('img').toggle().parents('dt').nextUntil('dt').slideToggle(); return false;"><img src="images/arrow_down.gif"><img src="images/arrow_right.gif" style="display: none">
+                Constants
+              </a></dt>
+<dd><a class="constant" href="#%5CZend_Gdata_YouTube::ACTIVITY_FEED_MAX_USERS">ACTIVITY_FEED_MAX_USERS</a></dd>
+<dd><a class="constant" href="#%5CZend_Gdata_YouTube::ACTIVITY_FEED_URI">ACTIVITY_FEED_URI</a></dd>
+<dd><a class="constant" href="#%5CZend_Gdata_YouTube::AUTH_SERVICE_NAME">AUTH_SERVICE_NAME</a></dd>
+<dd><a class="constant" href="#%5CZend_Gdata_YouTube::CLIENTLOGIN_URL">CLIENTLOGIN_URL</a></dd>
+<dd><a class="constant" href="#%5CZend_Gdata_YouTube::FAVORITES_URI_SUFFIX">FAVORITES_URI_SUFFIX</a></dd>
+<dd><a class="constant" href="#%5CZend_Gdata_YouTube::FRIEND_ACTIVITY_FEED_URI">FRIEND_ACTIVITY_FEED_URI</a></dd>
+<dd><a class="constant" href="#%5CZend_Gdata_YouTube::INBOX_FEED_URI">INBOX_FEED_URI</a></dd>
+<dd><a class="constant" href="#%5CZend_Gdata_YouTube::INBOX_URI_SUFFIX">INBOX_URI_SUFFIX</a></dd>
+<dd><a class="constant" href="#%5CZend_Gdata_YouTube::IN_REPLY_TO_SCHEME">IN_REPLY_TO_SCHEME</a></dd>
+<dd><a class="constant" href="#%5CZend_Gdata_YouTube::PLAYLIST_REL">PLAYLIST_REL</a></dd>
+<dd><a class="constant" href="#%5CZend_Gdata_YouTube::RELATED_URI_SUFFIX">RELATED_URI_SUFFIX</a></dd>
+<dd><a class="constant" href="#%5CZend_Gdata_YouTube::RESPONSES_URI_SUFFIX">RESPONSES_URI_SUFFIX</a></dd>
+<dd><a class="constant" href="#%5CZend_Gdata_YouTube::STANDARD_MOST_VIEWED_URI">STANDARD_MOST_VIEWED_URI</a></dd>
+<dd><a class="constant" href="#%5CZend_Gdata_YouTube::STANDARD_MOST_VIEWED_URI_V2">STANDARD_MOST_VIEWED_URI_V2</a></dd>
+<dd><a class="constant" href="#%5CZend_Gdata_YouTube::STANDARD_RECENTLY_FEATURED_URI">STANDARD_RECENTLY_FEATURED_URI</a></dd>
+<dd><a class="constant" href="#%5CZend_Gdata_YouTube::STANDARD_RECENTLY_FEATURED_URI_V2">STANDARD_RECENTLY_FEATURED_URI_V2</a></dd>
+<dd><a class="constant" href="#%5CZend_Gdata_YouTube::STANDARD_TOP_RATED_URI">STANDARD_TOP_RATED_URI</a></dd>
+<dd><a class="constant" href="#%5CZend_Gdata_YouTube::STANDARD_TOP_RATED_URI_V2">STANDARD_TOP_RATED_URI_V2</a></dd>
+<dd><a class="constant" href="#%5CZend_Gdata_YouTube::STANDARD_WATCH_ON_MOBILE_URI">STANDARD_WATCH_ON_MOBILE_URI</a></dd>
+<dd><a class="constant" href="#%5CZend_Gdata_YouTube::STANDARD_WATCH_ON_MOBILE_URI_V2">STANDARD_WATCH_ON_MOBILE_URI_V2</a></dd>
+<dd><a class="constant" href="#%5CZend_Gdata_YouTube::UPLOADS_URI_SUFFIX">UPLOADS_URI_SUFFIX</a></dd>
+<dd><a class="constant" href="#%5CZend_Gdata_YouTube::USER_CONTACTS_REL">USER_CONTACTS_REL</a></dd>
+<dd><a class="constant" href="#%5CZend_Gdata_YouTube::USER_FAVORITES_REL">USER_FAVORITES_REL</a></dd>
+<dd><a class="constant" href="#%5CZend_Gdata_YouTube::USER_PLAYLISTS_REL">USER_PLAYLISTS_REL</a></dd>
+<dd><a class="constant" href="#%5CZend_Gdata_YouTube::USER_SUBSCRIPTIONS_REL">USER_SUBSCRIPTIONS_REL</a></dd>
+<dd><a class="constant" href="#%5CZend_Gdata_YouTube::USER_UPLOADS_REL">USER_UPLOADS_REL</a></dd>
+<dd><a class="constant" href="#%5CZend_Gdata_YouTube::USER_URI">USER_URI</a></dd>
+<dd><a class="constant" href="#%5CZend_Gdata_YouTube::VIDEO_COMPLAINTS_REL">VIDEO_COMPLAINTS_REL</a></dd>
+<dd><a class="constant" href="#%5CZend_Gdata_YouTube::VIDEO_RATINGS_REL">VIDEO_RATINGS_REL</a></dd>
+<dd><a class="constant" href="#%5CZend_Gdata_YouTube::VIDEO_RESPONSES_REL">VIDEO_RESPONSES_REL</a></dd>
+<dd><a class="constant" href="#%5CZend_Gdata_YouTube::VIDEO_URI">VIDEO_URI</a></dd>
+<dt><a href="#" onclick="$(this).children('img').toggle().parents('dt').nextUntil('dt').slideToggle(); return false;"><img src="images/arrow_down.gif"><img src="images/arrow_right.gif" style="display: none">
+                Properties
+              </a></dt>
+<dd><a class="property public" href="#%5CZend_Gdata_YouTube::%24namespaces">$namespaces</a></dd>
+<dt><a href="#" onclick="$(this).children('img').toggle().parents('dt').nextUntil('dt').slideToggle(); return false;"><img src="images/arrow_down.gif"><img src="images/arrow_right.gif" style="display: none">
+                Methods
+              </a></dt>
+<dd><a class="method public" href="#%5CZend_Gdata_YouTube::__construct()">__construct</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_YouTube::getActivityForUser()">getActivityForUser</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_YouTube::getContactFeed()">getContactFeed</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_YouTube::getFormUploadToken()">getFormUploadToken</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_YouTube::getFriendActivityForCurrentUser()">getFriendActivityForCurrentUser</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_YouTube::getFullVideoEntry()">getFullVideoEntry</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_YouTube::getInboxFeedForCurrentUser()">getInboxFeedForCurrentUser</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_YouTube::getMostViewedVideoFeed()">getMostViewedVideoFeed</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_YouTube::getPlaylistListFeed()">getPlaylistListFeed</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_YouTube::getPlaylistVideoFeed()">getPlaylistVideoFeed</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_YouTube::getRecentlyFeaturedVideoFeed()">getRecentlyFeaturedVideoFeed</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_YouTube::getRelatedVideoFeed()">getRelatedVideoFeed</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_YouTube::getSubscriptionFeed()">getSubscriptionFeed</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_YouTube::getTopRatedVideoFeed()">getTopRatedVideoFeed</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_YouTube::getUserFavorites()">getUserFavorites</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_YouTube::getUserProfile()">getUserProfile</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_YouTube::getUserUploads()">getUserUploads</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_YouTube::getVideoCommentFeed()">getVideoCommentFeed</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_YouTube::getVideoEntry()">getVideoEntry</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_YouTube::getVideoFeed()">getVideoFeed</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_YouTube::getVideoResponseFeed()">getVideoResponseFeed</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_YouTube::getWatchOnMobileVideoFeed()">getWatchOnMobileVideoFeed</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_YouTube::parseFormUploadTokenResponse()">parseFormUploadTokenResponse</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_YouTube::replyToCommentEntry()">replyToCommentEntry</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_YouTube::sendVideoMessage()">sendVideoMessage</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_YouTube::setHttpClient()">setHttpClient</a></dd>
+</dl>
+<h3>Description</h3>
+<p class="short-description">Service class for interacting with the YouTube Data API.</p>
+<div class="long-description"><p>As the Google data API protocol is based upon the Atom Publishing Protocol
+(APP), Gdata functionality extends the appropriate Zend_Gdata_App classes</p>
+</div>
+<h3>Constants</h3>
+<div>
+<a id="\Zend_Gdata_YouTube::AUTH_SERVICE_NAME"></a><h4 class="constant">AUTH_SERVICE_NAME<div class="to-top"><a href="#Zend_Gdata_YouTube">jump to class</a></div>
+</h4>
+<div class="constant">
+<code> <span class="highlight">AUTH_SERVICE_NAME</span> = 'youtube'
+      </code><div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="constant-info">
+<dt>value</dt>
+<dd>youtube</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_YouTube::CLIENTLOGIN_URL"></a><h4 class="constant">CLIENTLOGIN_URL<div class="to-top"><a href="#Zend_Gdata_YouTube">jump to class</a></div>
+</h4>
+<div class="constant">
+<code> <span class="highlight">CLIENTLOGIN_URL</span> = 'https://www.google.com/youtube/accounts/ClientLogin'
+      </code><div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="constant-info">
+<dt>value</dt>
+<dd>https://www.google.com/youtube/accounts/ClientLogin</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_YouTube::STANDARD_TOP_RATED_URI"></a><h4 class="constant">STANDARD_TOP_RATED_URI<div class="to-top"><a href="#Zend_Gdata_YouTube">jump to class</a></div>
+</h4>
+<div class="constant">
+<code> <span class="highlight">STANDARD_TOP_RATED_URI</span> = 'http://gdata.youtube.com/feeds/api/standardfeeds/top_rated'
+      </code><div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="constant-info">
+<dt>value</dt>
+<dd>http://gdata.youtube.com/feeds/api/standardfeeds/top_rated</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_YouTube::STANDARD_MOST_VIEWED_URI"></a><h4 class="constant">STANDARD_MOST_VIEWED_URI<div class="to-top"><a href="#Zend_Gdata_YouTube">jump to class</a></div>
+</h4>
+<div class="constant">
+<code> <span class="highlight">STANDARD_MOST_VIEWED_URI</span> = 'http://gdata.youtube.com/feeds/api/standardfeeds/most_viewed'
+      </code><div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="constant-info">
+<dt>value</dt>
+<dd>http://gdata.youtube.com/feeds/api/standardfeeds/most_viewed</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_YouTube::STANDARD_RECENTLY_FEATURED_URI"></a><h4 class="constant">STANDARD_RECENTLY_FEATURED_URI<div class="to-top"><a href="#Zend_Gdata_YouTube">jump to class</a></div>
+</h4>
+<div class="constant">
+<code> <span class="highlight">STANDARD_RECENTLY_FEATURED_URI</span> = 'http://gdata.youtube.com/feeds/api/standardfeeds/recently_featured'
+      </code><div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="constant-info">
+<dt>value</dt>
+<dd>http://gdata.youtube.com/feeds/api/standardfeeds/recently_featured</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_YouTube::STANDARD_WATCH_ON_MOBILE_URI"></a><h4 class="constant">STANDARD_WATCH_ON_MOBILE_URI<div class="to-top"><a href="#Zend_Gdata_YouTube">jump to class</a></div>
+</h4>
+<div class="constant">
+<code> <span class="highlight">STANDARD_WATCH_ON_MOBILE_URI</span> = 'http://gdata.youtube.com/feeds/api/standardfeeds/watch_on_mobile'
+      </code><div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="constant-info">
+<dt>value</dt>
+<dd>http://gdata.youtube.com/feeds/api/standardfeeds/watch_on_mobile</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_YouTube::STANDARD_TOP_RATED_URI_V2"></a><h4 class="constant">STANDARD_TOP_RATED_URI_V2<div class="to-top"><a href="#Zend_Gdata_YouTube">jump to class</a></div>
+</h4>
+<div class="constant">
+<code> <span class="highlight">STANDARD_TOP_RATED_URI_V2</span> = 'http://gdata.youtube.com/feeds/api/standardfeeds/top_rated'
+      </code><div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="constant-info">
+<dt>value</dt>
+<dd>http://gdata.youtube.com/feeds/api/standardfeeds/top_rated</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_YouTube::STANDARD_MOST_VIEWED_URI_V2"></a><h4 class="constant">STANDARD_MOST_VIEWED_URI_V2<div class="to-top"><a href="#Zend_Gdata_YouTube">jump to class</a></div>
+</h4>
+<div class="constant">
+<code> <span class="highlight">STANDARD_MOST_VIEWED_URI_V2</span> = 'http://gdata.youtube.com/feeds/api/standardfeeds/most_viewed'
+      </code><div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="constant-info">
+<dt>value</dt>
+<dd>http://gdata.youtube.com/feeds/api/standardfeeds/most_viewed</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_YouTube::STANDARD_RECENTLY_FEATURED_URI_V2"></a><h4 class="constant">STANDARD_RECENTLY_FEATURED_URI_V2<div class="to-top"><a href="#Zend_Gdata_YouTube">jump to class</a></div>
+</h4>
+<div class="constant">
+<code> <span class="highlight">STANDARD_RECENTLY_FEATURED_URI_V2</span> = 'http://gdata.youtube.com/feeds/api/standardfeeds/recently_featured'
+      </code><div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="constant-info">
+<dt>value</dt>
+<dd>http://gdata.youtube.com/feeds/api/standardfeeds/recently_featured</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_YouTube::STANDARD_WATCH_ON_MOBILE_URI_V2"></a><h4 class="constant">STANDARD_WATCH_ON_MOBILE_URI_V2<div class="to-top"><a href="#Zend_Gdata_YouTube">jump to class</a></div>
+</h4>
+<div class="constant">
+<code> <span class="highlight">STANDARD_WATCH_ON_MOBILE_URI_V2</span> = 'http://gdata.youtube.com/feeds/api/standardfeeds/watch_on_mobile'
+      </code><div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="constant-info">
+<dt>value</dt>
+<dd>http://gdata.youtube.com/feeds/api/standardfeeds/watch_on_mobile</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_YouTube::USER_URI"></a><h4 class="constant">USER_URI<div class="to-top"><a href="#Zend_Gdata_YouTube">jump to class</a></div>
+</h4>
+<div class="constant">
+<code> <span class="highlight">USER_URI</span> = 'http://gdata.youtube.com/feeds/api/users'
+      </code><div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="constant-info">
+<dt>value</dt>
+<dd>http://gdata.youtube.com/feeds/api/users</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_YouTube::VIDEO_URI"></a><h4 class="constant">VIDEO_URI<div class="to-top"><a href="#Zend_Gdata_YouTube">jump to class</a></div>
+</h4>
+<div class="constant">
+<code> <span class="highlight">VIDEO_URI</span> = 'http://gdata.youtube.com/feeds/api/videos'
+      </code><div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="constant-info">
+<dt>value</dt>
+<dd>http://gdata.youtube.com/feeds/api/videos</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_YouTube::PLAYLIST_REL"></a><h4 class="constant">PLAYLIST_REL<div class="to-top"><a href="#Zend_Gdata_YouTube">jump to class</a></div>
+</h4>
+<div class="constant">
+<code> <span class="highlight">PLAYLIST_REL</span> = 'http://gdata.youtube.com/schemas/2007#playlist'
+      </code><div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="constant-info">
+<dt>value</dt>
+<dd>http://gdata.youtube.com/schemas/2007#playlist</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_YouTube::USER_UPLOADS_REL"></a><h4 class="constant">USER_UPLOADS_REL<div class="to-top"><a href="#Zend_Gdata_YouTube">jump to class</a></div>
+</h4>
+<div class="constant">
+<code> <span class="highlight">USER_UPLOADS_REL</span> = 'http://gdata.youtube.com/schemas/2007#user.uploads'
+      </code><div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="constant-info">
+<dt>value</dt>
+<dd>http://gdata.youtube.com/schemas/2007#user.uploads</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_YouTube::USER_PLAYLISTS_REL"></a><h4 class="constant">USER_PLAYLISTS_REL<div class="to-top"><a href="#Zend_Gdata_YouTube">jump to class</a></div>
+</h4>
+<div class="constant">
+<code> <span class="highlight">USER_PLAYLISTS_REL</span> = 'http://gdata.youtube.com/schemas/2007#user.playlists'
+      </code><div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="constant-info">
+<dt>value</dt>
+<dd>http://gdata.youtube.com/schemas/2007#user.playlists</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_YouTube::USER_SUBSCRIPTIONS_REL"></a><h4 class="constant">USER_SUBSCRIPTIONS_REL<div class="to-top"><a href="#Zend_Gdata_YouTube">jump to class</a></div>
+</h4>
+<div class="constant">
+<code> <span class="highlight">USER_SUBSCRIPTIONS_REL</span> = 'http://gdata.youtube.com/schemas/2007#user.subscriptions'
+      </code><div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="constant-info">
+<dt>value</dt>
+<dd>http://gdata.youtube.com/schemas/2007#user.subscriptions</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_YouTube::USER_CONTACTS_REL"></a><h4 class="constant">USER_CONTACTS_REL<div class="to-top"><a href="#Zend_Gdata_YouTube">jump to class</a></div>
+</h4>
+<div class="constant">
+<code> <span class="highlight">USER_CONTACTS_REL</span> = 'http://gdata.youtube.com/schemas/2007#user.contacts'
+      </code><div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="constant-info">
+<dt>value</dt>
+<dd>http://gdata.youtube.com/schemas/2007#user.contacts</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_YouTube::USER_FAVORITES_REL"></a><h4 class="constant">USER_FAVORITES_REL<div class="to-top"><a href="#Zend_Gdata_YouTube">jump to class</a></div>
+</h4>
+<div class="constant">
+<code> <span class="highlight">USER_FAVORITES_REL</span> = 'http://gdata.youtube.com/schemas/2007#user.favorites'
+      </code><div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="constant-info">
+<dt>value</dt>
+<dd>http://gdata.youtube.com/schemas/2007#user.favorites</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_YouTube::VIDEO_RESPONSES_REL"></a><h4 class="constant">VIDEO_RESPONSES_REL<div class="to-top"><a href="#Zend_Gdata_YouTube">jump to class</a></div>
+</h4>
+<div class="constant">
+<code> <span class="highlight">VIDEO_RESPONSES_REL</span> = 'http://gdata.youtube.com/schemas/2007#video.responses'
+      </code><div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="constant-info">
+<dt>value</dt>
+<dd>http://gdata.youtube.com/schemas/2007#video.responses</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_YouTube::VIDEO_RATINGS_REL"></a><h4 class="constant">VIDEO_RATINGS_REL<div class="to-top"><a href="#Zend_Gdata_YouTube">jump to class</a></div>
+</h4>
+<div class="constant">
+<code> <span class="highlight">VIDEO_RATINGS_REL</span> = 'http://gdata.youtube.com/schemas/2007#video.ratings'
+      </code><div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="constant-info">
+<dt>value</dt>
+<dd>http://gdata.youtube.com/schemas/2007#video.ratings</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_YouTube::VIDEO_COMPLAINTS_REL"></a><h4 class="constant">VIDEO_COMPLAINTS_REL<div class="to-top"><a href="#Zend_Gdata_YouTube">jump to class</a></div>
+</h4>
+<div class="constant">
+<code> <span class="highlight">VIDEO_COMPLAINTS_REL</span> = 'http://gdata.youtube.com/schemas/2007#video.complaints'
+      </code><div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="constant-info">
+<dt>value</dt>
+<dd>http://gdata.youtube.com/schemas/2007#video.complaints</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_YouTube::ACTIVITY_FEED_URI"></a><h4 class="constant">ACTIVITY_FEED_URI<div class="to-top"><a href="#Zend_Gdata_YouTube">jump to class</a></div>
+</h4>
+<div class="constant">
+<code> <span class="highlight">ACTIVITY_FEED_URI</span> = 'http://gdata.youtube.com/feeds/api/events'
+      </code><div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="constant-info">
+<dt>value</dt>
+<dd>http://gdata.youtube.com/feeds/api/events</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_YouTube::FRIEND_ACTIVITY_FEED_URI"></a><h4 class="constant">FRIEND_ACTIVITY_FEED_URI<div class="to-top"><a href="#Zend_Gdata_YouTube">jump to class</a></div>
+</h4>
+<div class="constant">
+<code> <span class="highlight">FRIEND_ACTIVITY_FEED_URI</span> = 'http://gdata.youtube.com/feeds/api/users/default/friendsactivity'
+      </code><div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="constant-info">
+<dt>value</dt>
+<dd>http://gdata.youtube.com/feeds/api/users/default/friendsactivity</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_YouTube::IN_REPLY_TO_SCHEME"></a><h4 class="constant">IN_REPLY_TO_SCHEME<div class="to-top"><a href="#Zend_Gdata_YouTube">jump to class</a></div>
+</h4>
+<div class="constant">
+<code>string <span class="highlight">IN_REPLY_TO_SCHEME</span> = 'http://gdata.youtube.com/schemas/2007#in-reply-to'
+      </code><p class="short-description">The URI of the in-reply-to schema for comments in reply to
+other comments.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="constant-info">
+<dt>value</dt>
+<dd>http://gdata.youtube.com/schemas/2007#in-reply-to</dd>
+<dt></dt>
+<dd>string<br><em></em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_YouTube::INBOX_FEED_URI"></a><h4 class="constant">INBOX_FEED_URI<div class="to-top"><a href="#Zend_Gdata_YouTube">jump to class</a></div>
+</h4>
+<div class="constant">
+<code>string <span class="highlight">INBOX_FEED_URI</span> = 'http://gdata.youtube.com/feeds/api/users/default/inbox'
+      </code><p class="short-description">The URI of the inbox feed for the currently authenticated user.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="constant-info">
+<dt>value</dt>
+<dd>http://gdata.youtube.com/feeds/api/users/default/inbox</dd>
+<dt></dt>
+<dd>string<br><em></em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_YouTube::ACTIVITY_FEED_MAX_USERS"></a><h4 class="constant">ACTIVITY_FEED_MAX_USERS<div class="to-top"><a href="#Zend_Gdata_YouTube">jump to class</a></div>
+</h4>
+<div class="constant">
+<code>integer <span class="highlight">ACTIVITY_FEED_MAX_USERS</span> = '20'
+      </code><p class="short-description">The maximum number of users for which activity can be requested for,
+as enforced by the API.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="constant-info">
+<dt>value</dt>
+<dd>20</dd>
+<dt></dt>
+<dd>integer<br><em></em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_YouTube::FAVORITES_URI_SUFFIX"></a><h4 class="constant">FAVORITES_URI_SUFFIX<div class="to-top"><a href="#Zend_Gdata_YouTube">jump to class</a></div>
+</h4>
+<div class="constant">
+<code>string <span class="highlight">FAVORITES_URI_SUFFIX</span> = 'favorites'
+      </code><p class="short-description">The suffix for a feed of favorites.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="constant-info">
+<dt>value</dt>
+<dd>favorites</dd>
+<dt></dt>
+<dd>string<br><em></em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_YouTube::UPLOADS_URI_SUFFIX"></a><h4 class="constant">UPLOADS_URI_SUFFIX<div class="to-top"><a href="#Zend_Gdata_YouTube">jump to class</a></div>
+</h4>
+<div class="constant">
+<code>string <span class="highlight">UPLOADS_URI_SUFFIX</span> = 'uploads'
+      </code><p class="short-description">The suffix for the user's upload feed.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="constant-info">
+<dt>value</dt>
+<dd>uploads</dd>
+<dt></dt>
+<dd>string<br><em></em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_YouTube::RESPONSES_URI_SUFFIX"></a><h4 class="constant">RESPONSES_URI_SUFFIX<div class="to-top"><a href="#Zend_Gdata_YouTube">jump to class</a></div>
+</h4>
+<div class="constant">
+<code>string <span class="highlight">RESPONSES_URI_SUFFIX</span> = 'responses'
+      </code><p class="short-description">The suffix for a feed of video responses.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="constant-info">
+<dt>value</dt>
+<dd>responses</dd>
+<dt></dt>
+<dd>string<br><em></em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_YouTube::RELATED_URI_SUFFIX"></a><h4 class="constant">RELATED_URI_SUFFIX<div class="to-top"><a href="#Zend_Gdata_YouTube">jump to class</a></div>
+</h4>
+<div class="constant">
+<code>string <span class="highlight">RELATED_URI_SUFFIX</span> = 'related'
+      </code><p class="short-description">The suffix for a feed of related videos.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="constant-info">
+<dt>value</dt>
+<dd>related</dd>
+<dt></dt>
+<dd>string<br><em></em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_YouTube::INBOX_URI_SUFFIX"></a><h4 class="constant">INBOX_URI_SUFFIX<div class="to-top"><a href="#Zend_Gdata_YouTube">jump to class</a></div>
+</h4>
+<div class="constant">
+<code>string <span class="highlight">INBOX_URI_SUFFIX</span> = 'inbox'
+      </code><p class="short-description">The suffix for a feed of messages (inbox entries).</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="constant-info">
+<dt>value</dt>
+<dd>inbox</dd>
+<dt></dt>
+<dd>string<br><em></em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+</div>
+<h3>Properties</h3>
+<div>
+<a id="\Zend_Gdata_YouTube::$namespaces"></a><h4 class="property public">$namespaces<div class="to-top"><a href="#%5CZend_Gdata_YouTube">jump to class</a></div>
+</h4>
+<div class="property">
+<code>array <span class="highlight">$namespaces</span> = 'array'</code><p class="short-description">Namespaces used for Zend_Gdata_YouTube</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt></dt>
+<dd>array<br><em></em>
+</dd>
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>default</dt>
+<dd>array</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>true</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+</div>
+<h3>Methods</h3>
+<div>
+<a id="\Zend_Gdata_YouTube::__construct()"></a><h4 class="method public">__construct<div class="to-top"><a href="#Zend_Gdata_YouTube">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">__construct</span><span class="nb-faded-text">(
+          <a href="_Http_Client.html#%5CZend_Http_Client">\Zend_Http_Client</a> $client
+              =
+              null, string $applicationId
+              =
+              MyCompany-MyApp-1.0, string $clientId
+              =
+              null, string $developerKey
+              =
+              null
+          )
+        </span>
+        :
+        </code><p class="short-description">Create Zend_Gdata_YouTube object</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$client</dt>
+<dd>\Zend_Http_Client<br><em>(optional) The HTTP client to use when when communicating with the Google servers.</em>
+</dd>
+<dt>$applicationId</dt>
+<dd>string<br><em>The identity of the app in the form of Company-AppName-Version</em>
+</dd>
+<dt>$clientId</dt>
+<dd>string<br><em>The clientId issued by the YouTube dashboard</em>
+</dd>
+<dt>$developerKey</dt>
+<dd>string<br><em>The developerKey issued by the YouTube dashboard</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_YouTube::getActivityForUser()"></a><h4 class="method public">getActivityForUser<div class="to-top"><a href="#Zend_Gdata_YouTube">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getActivityForUser</span><span class="nb-faded-text">(
+           $username
+          )
+        </span>
+        :
+        <a href="_Gdata_YouTube_ActivityFeed.html#%5CZend_Gdata_YouTube_ActivityFeed">\Zend_Gdata_YouTube_ActivityFeed</a></code><p class="short-description">Retrieves the activity feed for users</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$username</dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_YouTube_ActivityFeed.html#%5CZend_Gdata_YouTube_ActivityFeed">\Zend_Gdata_YouTube_ActivityFeed</a></dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_App_VersionException.html#%5CZend_Gdata_App_VersionException">if using version less than 2.</a></dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_YouTube::getContactFeed()"></a><h4 class="method public">getContactFeed<div class="to-top"><a href="#Zend_Gdata_YouTube">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getContactFeed</span><span class="nb-faded-text">(
+          string $user
+              =
+              null, mixed $location
+              =
+              null
+          )
+        </span>
+        :
+        <a href="_Gdata_YouTube_ContactFeed.html#%5CZend_Gdata_YouTube_ContactFeed">\Zend_Gdata_YouTube_ContactFeed</a></code><p class="short-description">Retrieves a feed of a user's contacts</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$user</dt>
+<dd>string<br><em>(optional) The username of interest</em>
+</dd>
+<dt>$location</dt>
+<dd>mixed<br><em>(optional) The URL to query or a Zend_Gdata_Query object from which a URL can be determined</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_YouTube_ContactFeed.html#%5CZend_Gdata_YouTube_ContactFeed">\Zend_Gdata_YouTube_ContactFeed</a></dt>
+<dd><em>The feed of contacts</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_YouTube::getFormUploadToken()"></a><h4 class="method public">getFormUploadToken<div class="to-top"><a href="#Zend_Gdata_YouTube">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getFormUploadToken</span><span class="nb-faded-text">(
+          <a href="_Gdata_YouTube_VideoEntry.html#%5CZend_Gdata_YouTube_VideoEntry">\Zend_Gdata_YouTube_VideoEntry</a> $videoEntry, string $url
+              =
+              http://gdata.youtube.com/action/GetUploadToken
+          )
+        </span>
+        :
+        array</code><p class="short-description">Retrieves a YouTube token</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$videoEntry</dt>
+<dd>\Zend_Gdata_YouTube_VideoEntry<br><em>The video entry</em>
+</dd>
+<dt>$url</dt>
+<dd>string<br><em>The location as a string URL</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>array</dt>
+<dd><em>An array containing a token and URL</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_App_Exception.html#%5CZend_Gdata_App_Exception"></a></dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_YouTube::getFriendActivityForCurrentUser()"></a><h4 class="method public">getFriendActivityForCurrentUser<div class="to-top"><a href="#Zend_Gdata_YouTube">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getFriendActivityForCurrentUser</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        <a href="_Gdata_YouTube_ActivityFeed.html#%5CZend_Gdata_YouTube_ActivityFeed">\Zend_Gdata_YouTube_ActivityFeed</a></code><p class="short-description">Retrieve the activity of the currently authenticated users friend.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_YouTube_ActivityFeed.html#%5CZend_Gdata_YouTube_ActivityFeed">\Zend_Gdata_YouTube_ActivityFeed</a></dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_App_Exception.html#%5CZend_Gdata_App_Exception">if not logged in.</a></dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_YouTube::getFullVideoEntry()"></a><h4 class="method public">getFullVideoEntry<div class="to-top"><a href="#Zend_Gdata_YouTube">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getFullVideoEntry</span><span class="nb-faded-text">(
+           $videoId
+          )
+        </span>
+        :
+        <a href="_Gdata_YouTube_VideoEntry.html#%5CZend_Gdata_YouTube_VideoEntry">\Zend_Gdata_YouTube_VideoEntry</a>|null</code><p class="short-description">Retrieves a video entry from the user's upload feed.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$videoId</dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>
+<a href="_Gdata_YouTube_VideoEntry.html#%5CZend_Gdata_YouTube_VideoEntry">\Zend_Gdata_YouTube_VideoEntry</a>|null</dt>
+<dd><em>The video entry to be retrieved, or null if it was not found or the user requesting it did not have the appropriate permissions.</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_App_HttpException.html#%5CZend_Gdata_App_HttpException"></a></dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_YouTube::getInboxFeedForCurrentUser()"></a><h4 class="method public">getInboxFeedForCurrentUser<div class="to-top"><a href="#Zend_Gdata_YouTube">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getInboxFeedForCurrentUser</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        <a href="_Gdata_YouTube_InboxFeed.html#%5CZend_Gdata_YouTube_InboxFeed">\Zend_Gdata_YouTube_InboxFeed</a>|null</code><p class="short-description">Retrieve a feed of messages in the currently authenticated user's inbox.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>
+<a href="_Gdata_YouTube_InboxFeed.html#%5CZend_Gdata_YouTube_InboxFeed">\Zend_Gdata_YouTube_InboxFeed</a>|null</dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_App_Exception.html#%5CZend_Gdata_App_Exception">if not logged in.</a></dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_YouTube::getMostViewedVideoFeed()"></a><h4 class="method public">getMostViewedVideoFeed<div class="to-top"><a href="#Zend_Gdata_YouTube">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getMostViewedVideoFeed</span><span class="nb-faded-text">(
+          mixed $location
+              =
+              null
+          )
+        </span>
+        :
+        <a href="_Gdata_YouTube_VideoFeed.html#%5CZend_Gdata_YouTube_VideoFeed">\Zend_Gdata_YouTube_VideoFeed</a></code><p class="short-description">Retrieves a feed of the most viewed videos.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$location</dt>
+<dd>mixed<br><em>(optional) The URL to query or a Zend_Gdata_Query object from which a URL can be determined</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_YouTube_VideoFeed.html#%5CZend_Gdata_YouTube_VideoFeed">\Zend_Gdata_YouTube_VideoFeed</a></dt>
+<dd><em>The feed of videos found at the specified URL.</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_YouTube::getPlaylistListFeed()"></a><h4 class="method public">getPlaylistListFeed<div class="to-top"><a href="#Zend_Gdata_YouTube">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getPlaylistListFeed</span><span class="nb-faded-text">(
+          string $user
+              =
+              null, mixed $location
+              =
+              null
+          )
+        </span>
+        :
+        <a href="_Gdata_YouTube_PlaylistListFeed.html#%5CZend_Gdata_YouTube_PlaylistListFeed">\Zend_Gdata_YouTube_PlaylistListFeed</a></code><p class="short-description">Retrieves a feed which lists a user's playlist</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$user</dt>
+<dd>string<br><em>(optional) The username of interest</em>
+</dd>
+<dt>$location</dt>
+<dd>mixed<br><em>(optional) The URL to query or a Zend_Gdata_Query object from which a URL can be determined</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_YouTube_PlaylistListFeed.html#%5CZend_Gdata_YouTube_PlaylistListFeed">\Zend_Gdata_YouTube_PlaylistListFeed</a></dt>
+<dd><em>The feed of playlists</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_YouTube::getPlaylistVideoFeed()"></a><h4 class="method public">getPlaylistVideoFeed<div class="to-top"><a href="#Zend_Gdata_YouTube">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getPlaylistVideoFeed</span><span class="nb-faded-text">(
+          mixed $location
+          )
+        </span>
+        :
+        <a href="_Gdata_YouTube_PlaylistVideoFeed.html#%5CZend_Gdata_YouTube_PlaylistVideoFeed">\Zend_Gdata_YouTube_PlaylistVideoFeed</a></code><p class="short-description">Retrieves a feed of videos in a particular playlist</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$location</dt>
+<dd>mixed<br><em>(optional) The URL to query or a Zend_Gdata_Query object from which a URL can be determined</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_YouTube_PlaylistVideoFeed.html#%5CZend_Gdata_YouTube_PlaylistVideoFeed">\Zend_Gdata_YouTube_PlaylistVideoFeed</a></dt>
+<dd><em>The feed of videos found at the specified URL.</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_YouTube::getRecentlyFeaturedVideoFeed()"></a><h4 class="method public">getRecentlyFeaturedVideoFeed<div class="to-top"><a href="#Zend_Gdata_YouTube">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getRecentlyFeaturedVideoFeed</span><span class="nb-faded-text">(
+          mixed $location
+              =
+              null
+          )
+        </span>
+        :
+        <a href="_Gdata_YouTube_VideoFeed.html#%5CZend_Gdata_YouTube_VideoFeed">\Zend_Gdata_YouTube_VideoFeed</a></code><p class="short-description">Retrieves a feed of recently featured videos.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$location</dt>
+<dd>mixed<br><em>(optional) The URL to query or a Zend_Gdata_Query object from which a URL can be determined</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_YouTube_VideoFeed.html#%5CZend_Gdata_YouTube_VideoFeed">\Zend_Gdata_YouTube_VideoFeed</a></dt>
+<dd><em>The feed of videos found at the specified URL.</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_YouTube::getRelatedVideoFeed()"></a><h4 class="method public">getRelatedVideoFeed<div class="to-top"><a href="#Zend_Gdata_YouTube">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getRelatedVideoFeed</span><span class="nb-faded-text">(
+          string $videoId
+              =
+              null, mixed $location
+              =
+              null
+          )
+        </span>
+        :
+        <a href="_Gdata_YouTube_VideoFeed.html#%5CZend_Gdata_YouTube_VideoFeed">\Zend_Gdata_YouTube_VideoFeed</a></code><p class="short-description">Retrieves a feed of videos related to the specified video ID.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$videoId</dt>
+<dd>string<br><em>The videoId of interest</em>
+</dd>
+<dt>$location</dt>
+<dd>mixed<br><em>(optional) The URL to query or a Zend_Gdata_Query object from which a URL can be determined</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_YouTube_VideoFeed.html#%5CZend_Gdata_YouTube_VideoFeed">\Zend_Gdata_YouTube_VideoFeed</a></dt>
+<dd><em>The feed of videos found at the specified URL.</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_YouTube::getSubscriptionFeed()"></a><h4 class="method public">getSubscriptionFeed<div class="to-top"><a href="#Zend_Gdata_YouTube">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getSubscriptionFeed</span><span class="nb-faded-text">(
+          string $user
+              =
+              null, mixed $location
+              =
+              null
+          )
+        </span>
+        :
+        \Zend_Gdata_YouTube_SubscriptionListFeed</code><p class="short-description">Retrieves a feed of a user's subscriptions</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$user</dt>
+<dd>string<br><em>(optional) The username of interest</em>
+</dd>
+<dt>$location</dt>
+<dd>mixed<br><em>(optional) The URL to query or a Zend_Gdata_Query object from which a URL can be determined</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>\Zend_Gdata_YouTube_SubscriptionListFeed</dt>
+<dd><em>The feed of subscriptions</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_YouTube::getTopRatedVideoFeed()"></a><h4 class="method public">getTopRatedVideoFeed<div class="to-top"><a href="#Zend_Gdata_YouTube">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getTopRatedVideoFeed</span><span class="nb-faded-text">(
+          mixed $location
+              =
+              null
+          )
+        </span>
+        :
+        <a href="_Gdata_YouTube_CommentFeed.html#%5CZend_Gdata_YouTube_CommentFeed">\Zend_Gdata_YouTube_CommentFeed</a></code><p class="short-description">Retrieves a feed of comments related to the specified video ID.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$location</dt>
+<dd>mixed<br><em>(optional) The URL to query or a Zend_Gdata_Query object from which a URL can be determined</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_YouTube_CommentFeed.html#%5CZend_Gdata_YouTube_CommentFeed">\Zend_Gdata_YouTube_CommentFeed</a></dt>
+<dd><em>The feed of videos found at the specified URL.</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_YouTube::getUserFavorites()"></a><h4 class="method public">getUserFavorites<div class="to-top"><a href="#Zend_Gdata_YouTube">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getUserFavorites</span><span class="nb-faded-text">(
+          string $user
+              =
+              null, mixed $location
+              =
+              null
+          )
+        </span>
+        :
+        <a href="_Gdata_YouTube_VideoFeed.html#%5CZend_Gdata_YouTube_VideoFeed">\Zend_Gdata_YouTube_VideoFeed</a></code><p class="short-description">Retrieves a user's favorites</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$user</dt>
+<dd>string<br><em>(optional) The username of interest</em>
+</dd>
+<dt>$location</dt>
+<dd>mixed<br><em>(optional) The URL to query or a Zend_Gdata_Query object from which a URL can be determined</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_YouTube_VideoFeed.html#%5CZend_Gdata_YouTube_VideoFeed">\Zend_Gdata_YouTube_VideoFeed</a></dt>
+<dd><em>The videos favorited by the user</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_YouTube::getUserProfile()"></a><h4 class="method public">getUserProfile<div class="to-top"><a href="#Zend_Gdata_YouTube">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getUserProfile</span><span class="nb-faded-text">(
+          string $user
+              =
+              null, mixed $location
+              =
+              null
+          )
+        </span>
+        :
+        <a href="_Gdata_YouTube_UserProfileEntry.html#%5CZend_Gdata_YouTube_UserProfileEntry">\Zend_Gdata_YouTube_UserProfileEntry</a></code><p class="short-description">Retrieves a user's profile as an entry</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$user</dt>
+<dd>string<br><em>(optional) The username of interest</em>
+</dd>
+<dt>$location</dt>
+<dd>mixed<br><em>(optional) The URL to query or a Zend_Gdata_Query object from which a URL can be determined</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_YouTube_UserProfileEntry.html#%5CZend_Gdata_YouTube_UserProfileEntry">\Zend_Gdata_YouTube_UserProfileEntry</a></dt>
+<dd><em>The user profile entry</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_YouTube::getUserUploads()"></a><h4 class="method public">getUserUploads<div class="to-top"><a href="#Zend_Gdata_YouTube">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getUserUploads</span><span class="nb-faded-text">(
+          string $user
+              =
+              null, mixed $location
+              =
+              null
+          )
+        </span>
+        :
+        <a href="_Gdata_YouTube_VideoFeed.html#%5CZend_Gdata_YouTube_VideoFeed">\Zend_Gdata_YouTube_VideoFeed</a></code><p class="short-description">Retrieves a user's uploads</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$user</dt>
+<dd>string<br><em>(optional) The username of interest</em>
+</dd>
+<dt>$location</dt>
+<dd>mixed<br><em>(optional) The URL to query or a Zend_Gdata_Query object from which a URL can be determined</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_YouTube_VideoFeed.html#%5CZend_Gdata_YouTube_VideoFeed">\Zend_Gdata_YouTube_VideoFeed</a></dt>
+<dd><em>The videos uploaded by the user</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_YouTube::getVideoCommentFeed()"></a><h4 class="method public">getVideoCommentFeed<div class="to-top"><a href="#Zend_Gdata_YouTube">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getVideoCommentFeed</span><span class="nb-faded-text">(
+          string $videoId
+              =
+              null, mixed $location
+              =
+              null
+          )
+        </span>
+        :
+        <a href="_Gdata_YouTube_CommentFeed.html#%5CZend_Gdata_YouTube_CommentFeed">\Zend_Gdata_YouTube_CommentFeed</a></code><p class="short-description">Retrieves a feed of comments related to the specified video ID.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$videoId</dt>
+<dd>string<br><em>The videoId of interest</em>
+</dd>
+<dt>$location</dt>
+<dd>mixed<br><em>(optional) The URL to query or a Zend_Gdata_Query object from which a URL can be determined</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_YouTube_CommentFeed.html#%5CZend_Gdata_YouTube_CommentFeed">\Zend_Gdata_YouTube_CommentFeed</a></dt>
+<dd><em>The feed of videos found at the specified URL.</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_YouTube::getVideoEntry()"></a><h4 class="method public">getVideoEntry<div class="to-top"><a href="#Zend_Gdata_YouTube">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getVideoEntry</span><span class="nb-faded-text">(
+          mixed $videoId
+              =
+              null, mixed $location
+              =
+              null, boolean $fullEntry
+              =
+              false
+          )
+        </span>
+        :
+        <a href="_Gdata_YouTube_VideoEntry.html#%5CZend_Gdata_YouTube_VideoEntry">\Zend_Gdata_YouTube_VideoEntry</a></code><p class="short-description">Retrieves a specific video entry.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$videoId</dt>
+<dd>mixed<br><em>The ID of the video to retrieve.</em>
+</dd>
+<dt>$location</dt>
+<dd>mixed<br><em>(optional) The URL to query or a Zend_Gdata_Query object from which a URL can be determined.</em>
+</dd>
+<dt>$fullEntry</dt>
+<dd>boolean<br><em>(optional) Retrieve the full metadata for the entry. Only possible if entry belongs to currently authenticated user. An exception will be thrown otherwise.</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_YouTube_VideoEntry.html#%5CZend_Gdata_YouTube_VideoEntry">\Zend_Gdata_YouTube_VideoEntry</a></dt>
+<dd><em>The video entry found at the specified URL.</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_App_HttpException.html#%5CZend_Gdata_App_HttpException"></a></dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_YouTube::getVideoFeed()"></a><h4 class="method public">getVideoFeed<div class="to-top"><a href="#Zend_Gdata_YouTube">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getVideoFeed</span><span class="nb-faded-text">(
+          mixed $location
+              =
+              null
+          )
+        </span>
+        :
+        <a href="_Gdata_YouTube_VideoFeed.html#%5CZend_Gdata_YouTube_VideoFeed">\Zend_Gdata_YouTube_VideoFeed</a></code><p class="short-description">Retrieves a feed of videos.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$location</dt>
+<dd>mixed<br><em>(optional) The URL to query or a Zend_Gdata_Query object from which a URL can be determined</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_YouTube_VideoFeed.html#%5CZend_Gdata_YouTube_VideoFeed">\Zend_Gdata_YouTube_VideoFeed</a></dt>
+<dd><em>The feed of videos found at the specified URL.</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_YouTube::getVideoResponseFeed()"></a><h4 class="method public">getVideoResponseFeed<div class="to-top"><a href="#Zend_Gdata_YouTube">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getVideoResponseFeed</span><span class="nb-faded-text">(
+          string $videoId
+              =
+              null, mixed $location
+              =
+              null
+          )
+        </span>
+        :
+        <a href="_Gdata_YouTube_VideoFeed.html#%5CZend_Gdata_YouTube_VideoFeed">\Zend_Gdata_YouTube_VideoFeed</a></code><p class="short-description">Retrieves a feed of video responses related to the specified video ID.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$videoId</dt>
+<dd>string<br><em>The videoId of interest</em>
+</dd>
+<dt>$location</dt>
+<dd>mixed<br><em>(optional) The URL to query or a Zend_Gdata_Query object from which a URL can be determined</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_YouTube_VideoFeed.html#%5CZend_Gdata_YouTube_VideoFeed">\Zend_Gdata_YouTube_VideoFeed</a></dt>
+<dd><em>The feed of videos found at the specified URL.</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_YouTube::getWatchOnMobileVideoFeed()"></a><h4 class="method public">getWatchOnMobileVideoFeed<div class="to-top"><a href="#Zend_Gdata_YouTube">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getWatchOnMobileVideoFeed</span><span class="nb-faded-text">(
+          mixed $location
+              =
+              null
+          )
+        </span>
+        :
+        <a href="_Gdata_YouTube_VideoFeed.html#%5CZend_Gdata_YouTube_VideoFeed">\Zend_Gdata_YouTube_VideoFeed</a></code><p class="short-description">Retrieves a feed of videos recently featured for mobile devices.</p>
+<div class="long-description"><p>These videos will have RTSP links in the $entry->mediaGroup->content</p>
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$location</dt>
+<dd>mixed<br><em>(optional) The URL to query or a Zend_Gdata_Query object from which a URL can be determined</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_YouTube_VideoFeed.html#%5CZend_Gdata_YouTube_VideoFeed">\Zend_Gdata_YouTube_VideoFeed</a></dt>
+<dd><em>The feed of videos found at the specified URL.</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_YouTube::parseFormUploadTokenResponse()"></a><h4 class="method public">parseFormUploadTokenResponse<div class="to-top"><a href="#Zend_Gdata_YouTube">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">parseFormUploadTokenResponse</span><span class="nb-faded-text">(
+          string $response
+          )
+        </span>
+        :
+        array</code><p class="short-description">Helper function for parsing a YouTube token response</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$response</dt>
+<dd>string<br><em>The service response</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>array</dt>
+<dd><em>An array containing the token and URL</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>true</dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_App_Exception.html#%5CZend_Gdata_App_Exception"></a></dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_YouTube::replyToCommentEntry()"></a><h4 class="method public">replyToCommentEntry<div class="to-top"><a href="#Zend_Gdata_YouTube">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">replyToCommentEntry</span><span class="nb-faded-text">(
+          <a href="_Gdata_YouTube_CommentEntry.html#%5CZend_Gdata_YouTube_CommentEntry">\Zend_Gdata_YouTube_CommentEntry</a> $commentEntry, string $commentText
+          )
+        </span>
+        :
+        <a href="_Gdata_YouTube_CommentEntry.html#%5CZend_Gdata_YouTube_CommentEntry">\Zend_Gdata_YouTube_CommentEntry</a></code><p class="short-description">Post a comment in reply to an existing comment</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$commentEntry</dt>
+<dd>\Zend_Gdata_YouTube_CommentEntry<br><em>The comment entry to reply to</em>
+</dd>
+<dt>$commentText</dt>
+<dd>string<br><em>The text of the comment to post</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_YouTube_CommentEntry.html#%5CZend_Gdata_YouTube_CommentEntry">\Zend_Gdata_YouTube_CommentEntry</a></dt>
+<dd><em>the posted comment</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_YouTube::sendVideoMessage()"></a><h4 class="method public">sendVideoMessage<div class="to-top"><a href="#Zend_Gdata_YouTube">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">sendVideoMessage</span><span class="nb-faded-text">(
+          string $body, <a href="_Gdata_YouTube_VideoEntry.html#%5CZend_Gdata_YouTube_VideoEntry">\Zend_Gdata_YouTube_VideoEntry</a> $videoEntry
+              =
+              null, string $videoId
+              =
+              null, string $recipientUserName
+          )
+        </span>
+        :
+        <a href="_Gdata_YouTube_InboxEntry.html#%5CZend_Gdata_YouTube_InboxEntry">\Zend_Gdata_YouTube_InboxEntry</a>|null</code><p class="short-description">Send a video message.</p>
+<div class="long-description"><p>Note: Either a Zend_Gdata_YouTube_VideoEntry or a valid video ID must
+be provided.</p>
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$body</dt>
+<dd>string<br><em>The body of the message</em>
+</dd>
+<dt>$videoEntry</dt>
+<dd>\Zend_Gdata_YouTube_VideoEntry<br><em>(optional) The video entry to send</em>
+</dd>
+<dt>$videoId</dt>
+<dd>string<br><em>The id of the video to send</em>
+</dd>
+<dt>$recipientUserName</dt>
+<dd>string<br><em>The username of the recipient</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>
+<a href="_Gdata_YouTube_InboxEntry.html#%5CZend_Gdata_YouTube_InboxEntry">\Zend_Gdata_YouTube_InboxEntry</a>|null</dt>
+<dd><em>The Zend_Gdata_YouTube_Inbox_Entry representing the sent message.</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_App_InvalidArgumentException.html#%5CZend_Gdata_App_InvalidArgumentException">if no valid Zend_Gdata_YouTube_VideoEntry or videoId were provided</a></dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_YouTube::setHttpClient()"></a><h4 class="method public">setHttpClient<div class="to-top"><a href="#Zend_Gdata_YouTube">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">setHttpClient</span><span class="nb-faded-text">(
+          <a href="_Http_Client.html#%5CZend_Http_Client">\Zend_Http_Client</a> $client,  $applicationId
+              =
+              MyCompany-MyApp-1.0,  $clientId
+              =
+              null,  $developerKey
+              =
+              null
+          )
+        </span>
+        :
+        <a href="_Gdata_App.html#%5CZend_Gdata_App">\Zend_Gdata_App</a></code><p class="short-description">Set the Zend_Http_Client object used for communication</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$client</dt>
+<dd>\Zend_Http_Client<br><em>The client to use for communication</em>
+</dd>
+<dt>$applicationId</dt>
+<dd><em></em></dd>
+<dt>$clientId</dt>
+<dd><em></em></dd>
+<dt>$developerKey</dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_App.html#%5CZend_Gdata_App">\Zend_Gdata_App</a></dt>
+<dd><em>Provides a fluent interface</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_App_HttpException.html#%5CZend_Gdata_App_HttpException"></a></dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<small xmlns="" class="footer">Documentation was generated by <a href="http://docblox-project.org">DocBlox 0.12.2</a>.
+    </small></body></html>

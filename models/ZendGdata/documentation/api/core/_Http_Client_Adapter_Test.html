@@ -1,0 +1,639 @@
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title>Zend Gdata API Documentation</title><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" href="css/black-tie/jquery-ui-1.8.2.custom.css" type="text/css"></link><link rel="stylesheet" href="css/jquery.treeview.css" type="text/css"></link><link rel="stylesheet" href="css/theme.css" type="text/css"></link><script type="text/javascript" src="js/jquery-1.4.2.min.js"></script><script type="text/javascript" src="js/jquery-ui-1.8.2.custom.min.js"></script><script type="text/javascript" src="js/jquery.cookie.js"></script><script type="text/javascript" src="js/jquery.treeview.js"></script><script type="text/javascript">
+            $(document).ready(function() {
+                $(".filetree").treeview({
+                    collapsed: true,
+                    persist: "cookie"
+                });
+
+                $("#accordion").accordion({
+                    collapsible: true,
+                    autoHeight:  false,
+                    fillSpace:   true
+                });
+
+                $(".tabs").tabs();
+            });
+        </script></head><body><div xmlns="" class="content">
+<div class="sub-page-main-header-api-documentation"><h2>API Documentation</h2></div>
+<div class="dotted-line"></div>
+</div>
+<div xmlns="" id="content">
+<script>
+      $(document).ready(function() {
+        $('dl.function-info, dl.constant-info, dl.property-info').prev().css('cursor', 'pointer');
+        $('dl.function-info, dl.constant-info, dl.property-info').prev().click(function() {
+          if ($(this).next().is(':hidden'))
+          {
+            $(this).children('img')[0].src = 'images/arrow_down.gif';
+          } else
+          {
+            $(this).children('img')[0].src = 'images/arrow_right.gif';
+          }
+          $(this).next().slideToggle();
+        });
+      $('dl.function-info, dl.constant-info, dl.property-info').hide();
+      $('dl.function-info img, dl.constant-info img, dl.property-info img').show();
+      });
+    </script><a name="top"></a><h1 class="file">Http/Client/Adapter/Test.php</h1>
+<div class="file_menu">
+<a href="#includes">Includes</a> <a href="#classes">Classes</a> </div>
+<dl class="file-info">
+<dt>category</dt>
+<dd>Zend</dd>
+<dt>copyright</dt>
+<dd>Copyright (c) 2005-2011 Zend Technologies USA Inc. (http://www.zend.com)</dd>
+<dt>license</dt>
+<dd>http://framework.zend.com/license/new-bsd     New BSD License</dd>
+<dt>package</dt>
+<dd>Zend_Http</dd>
+<dt>subpackage</dt>
+<dd>Client_Adapter</dd>
+<dt>version</dt>
+<dd>$Id: Test.php 24309 2011-07-30 02:52:32Z ramon $</dd>
+<dt>Classes</dt>
+<dd><a class="class" href="#%5CZend_Http_Client_Adapter_Test">Zend_Http_Client_Adapter_Test</a></dd>
+</dl>
+<h2>Description</h2>
+<p class="short-description">Zend Framework</p>
+<div class="long-description"><p>LICENSE</p>
+
+<p>This source file is subject to the new BSD license that is bundled
+with this package in the file LICENSE.txt.
+It is also available through the world-wide-web at this URL:
+http://framework.zend.com/license/new-bsd
+If you did not receive a copy of the license and are unable to
+obtain it through the world-wide-web, please send an email
+to license@zend.com so we can send you a copy immediately.</p>
+</div>
+<a name="classes"></a><a id="\Zend_Http_Client_Adapter_Test"></a><h2 class="class">\Zend_Http_Client_Adapter_Test<div class="to-top"><a href="#top">jump to top</a></div>
+</h2>
+<div class="class">
+<dl class="class-info">
+<dt>Implements</dt>
+<dd><a href="_Http_Client_Adapter_Interface.html#%5CZend_Http_Client_Adapter_Interface">\Zend_Http_Client_Adapter_Interface</a></dd>
+<dt>category</dt>
+<dd>Zend</dd>
+<dt>copyright</dt>
+<dd>Copyright (c) 2005-2011 Zend Technologies USA Inc. (http://www.zend.com)</dd>
+<dt>license</dt>
+<dd>http://framework.zend.com/license/new-bsd     New BSD License</dd>
+<dt>package</dt>
+<dd>Zend_Http</dd>
+<dt>subpackage</dt>
+<dd>Client_Adapter</dd>
+<dt><a href="#" onclick="$(this).children('img').toggle().parents('dt').nextUntil('dt').slideToggle(); return false;"><img src="images/arrow_down.gif"><img src="images/arrow_right.gif" style="display: none">
+                Properties
+              </a></dt>
+<dd><a class="property protected" href="#%5CZend_Http_Client_Adapter_Test::%24_nextRequestWillFail">$_nextRequestWillFail</a></dd>
+<dd><a class="property protected" href="#%5CZend_Http_Client_Adapter_Test::%24config">$config</a></dd>
+<dd><a class="property protected" href="#%5CZend_Http_Client_Adapter_Test::%24responseIndex">$responseIndex</a></dd>
+<dd><a class="property protected" href="#%5CZend_Http_Client_Adapter_Test::%24responses">$responses</a></dd>
+<dt><a href="#" onclick="$(this).children('img').toggle().parents('dt').nextUntil('dt').slideToggle(); return false;"><img src="images/arrow_down.gif"><img src="images/arrow_right.gif" style="display: none">
+                Methods
+              </a></dt>
+<dd><a class="method public" href="#%5CZend_Http_Client_Adapter_Test::__construct()">__construct</a></dd>
+<dd><a class="method public" href="#%5CZend_Http_Client_Adapter_Test::addResponse()">addResponse</a></dd>
+<dd><a class="method public" href="#%5CZend_Http_Client_Adapter_Test::close()">close</a></dd>
+<dd><a class="method public" href="#%5CZend_Http_Client_Adapter_Test::connect()">connect</a></dd>
+<dd><a class="method public" href="#%5CZend_Http_Client_Adapter_Test::getConfig()">getConfig</a></dd>
+<dd><a class="method public" href="#%5CZend_Http_Client_Adapter_Test::read()">read</a></dd>
+<dd><a class="method public" href="#%5CZend_Http_Client_Adapter_Test::setConfig()">setConfig</a></dd>
+<dd><a class="method public" href="#%5CZend_Http_Client_Adapter_Test::setNextRequestWillFail()">setNextRequestWillFail</a></dd>
+<dd><a class="method public" href="#%5CZend_Http_Client_Adapter_Test::setResponse()">setResponse</a></dd>
+<dd><a class="method public" href="#%5CZend_Http_Client_Adapter_Test::setResponseIndex()">setResponseIndex</a></dd>
+<dd><a class="method public" href="#%5CZend_Http_Client_Adapter_Test::write()">write</a></dd>
+</dl>
+<h3>Description</h3>
+<p class="short-description">A testing-purposes adapter.</p>
+<div class="long-description"><p>Should be used to test all components that rely on Zend_Http_Client,
+without actually performing an HTTP request. You should instantiate this
+object manually, and then set it as the client's adapter. Then, you can
+set the expected response using the setResponse() method.</p>
+</div>
+<h3>Properties</h3>
+<div>
+<a id="\Zend_Http_Client_Adapter_Test::$_nextRequestWillFail"></a><h4 class="property protected">$_nextRequestWillFail<div class="to-top"><a href="#%5CZend_Http_Client_Adapter_Test">jump to class</a></div>
+</h4>
+<div class="property">
+<code>boolean <span class="highlight">$_nextRequestWillFail</span> = 'false'</code><p class="short-description">Wether or not the next request will fail with an exception</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt></dt>
+<dd>boolean<br><em></em>
+</dd>
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd>false</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Http_Client_Adapter_Test::$config"></a><h4 class="property protected">$config<div class="to-top"><a href="#%5CZend_Http_Client_Adapter_Test">jump to class</a></div>
+</h4>
+<div class="property">
+<code>array <span class="highlight">$config</span> = 'array'</code><p class="short-description">Parameters array</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt></dt>
+<dd>array<br><em></em>
+</dd>
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd>array</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Http_Client_Adapter_Test::$responseIndex"></a><h4 class="property protected">$responseIndex<div class="to-top"><a href="#%5CZend_Http_Client_Adapter_Test">jump to class</a></div>
+</h4>
+<div class="property">
+<code>integer <span class="highlight">$responseIndex</span> = '0'</code><p class="short-description">Current position in the response buffer</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt></dt>
+<dd>integer<br><em></em>
+</dd>
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd>0</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Http_Client_Adapter_Test::$responses"></a><h4 class="property protected">$responses<div class="to-top"><a href="#%5CZend_Http_Client_Adapter_Test">jump to class</a></div>
+</h4>
+<div class="property">
+<code>array <span class="highlight">$responses</span> = 'array'</code><p class="short-description">Buffer of responses to be returned by the read() method.  Can be
+set using setResponse() and addResponse().</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt></dt>
+<dd>array<br><em></em>
+</dd>
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd>array</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+</div>
+<h3>Methods</h3>
+<div>
+<a id="\Zend_Http_Client_Adapter_Test::__construct()"></a><h4 class="method public">__construct<div class="to-top"><a href="#Zend_Http_Client_Adapter_Test">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">__construct</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        void</code><p class="short-description">Adapter constructor, currently empty. Config is set using setConfig()</p>
+<div class="long-description"><p>Config is set using setConfig()</p>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+<dt>throws</dt>
+<dd><a href="_Http_Client_Adapter_Exception.html#%5CZend_Http_Client_Adapter_Exception"></a></dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Http_Client_Adapter_Test::addResponse()"></a><h4 class="method public">addResponse<div class="to-top"><a href="#Zend_Http_Client_Adapter_Test">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">addResponse</span><span class="nb-faded-text">(
+          string $response
+          )
+        </span>
+        :
+        </code><p class="short-description">Add another response to the response buffer.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$response</dt>
+<dd>string<br><em>Zend_Http_Response|$response</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Http_Client_Adapter_Test::close()"></a><h4 class="method public">close<div class="to-top"><a href="#Zend_Http_Client_Adapter_Test">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">close</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        </code><p class="short-description">Close the connection (dummy)</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Http_Client_Adapter_Test::connect()"></a><h4 class="method public">connect<div class="to-top"><a href="#Zend_Http_Client_Adapter_Test">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">connect</span><span class="nb-faded-text">(
+          string $host, int $port
+              =
+              80, boolean $secure
+              =
+              false
+          )
+        </span>
+        :
+        void</code><p class="short-description">Connect to the remote server</p>
+<div class="long-description"><p>Will try to connect to the proxy server. If no proxy was set, will
+fall back to the target server (behave like regular Socket adapter)</p>
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$host</dt>
+<dd>string<br><em></em>
+</dd>
+<dt>$port</dt>
+<dd>int<br><em></em>
+</dd>
+<dt>$secure</dt>
+<dd>boolean<br><em></em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+<dt>throws</dt>
+<dd><a href="_Http_Client_Adapter_Exception.html#%5CZend_Http_Client_Adapter_Exception"></a></dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Http_Client_Adapter_Test::getConfig()"></a><h4 class="method public">getConfig<div class="to-top"><a href="#Zend_Http_Client_Adapter_Test">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getConfig</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        array</code><p class="short-description">Retrieve the array of all configuration options</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>array</dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Http_Client_Adapter_Test::read()"></a><h4 class="method public">read<div class="to-top"><a href="#Zend_Http_Client_Adapter_Test">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">read</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        string</code><p class="short-description">Return the response set in $this-&gt;setResponse()</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>string</dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Http_Client_Adapter_Test::setConfig()"></a><h4 class="method public">setConfig<div class="to-top"><a href="#Zend_Http_Client_Adapter_Test">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">setConfig</span><span class="nb-faded-text">(
+          \Zend_Config $config
+              =
+              array
+          )
+        </span>
+        :
+        <a href="_Http_Client_Adapter_Curl.html#%5CZend_Http_Client_Adapter_Curl">\Zend_Http_Client_Adapter_Curl</a></code><p class="short-description">Set the configuration array for the adapter</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$config</dt>
+<dd>\Zend_Config<br><em>| array $config</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Http_Client_Adapter_Curl.html#%5CZend_Http_Client_Adapter_Curl">\Zend_Http_Client_Adapter_Curl</a></dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+<dt>throws</dt>
+<dd><a href="_Http_Client_Adapter_Exception.html#%5CZend_Http_Client_Adapter_Exception"></a></dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Http_Client_Adapter_Test::setNextRequestWillFail()"></a><h4 class="method public">setNextRequestWillFail<div class="to-top"><a href="#Zend_Http_Client_Adapter_Test">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">setNextRequestWillFail</span><span class="nb-faded-text">(
+          boolean $flag
+          )
+        </span>
+        :
+        <a href="_Http_Client_Adapter_Test.html#%5CZend_Http_Client_Adapter_Test">\Zend_Http_Client_Adapter_Test</a></code><p class="short-description">Set the nextRequestWillFail flag</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$flag</dt>
+<dd>boolean<br><em></em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Http_Client_Adapter_Test.html#%5CZend_Http_Client_Adapter_Test">\Zend_Http_Client_Adapter_Test</a></dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Http_Client_Adapter_Test::setResponse()"></a><h4 class="method public">setResponse<div class="to-top"><a href="#Zend_Http_Client_Adapter_Test">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">setResponse</span><span class="nb-faded-text">(
+          <a href="_Http_Response.html#%5CZend_Http_Response">\Zend_Http_Response</a>|array|string $response
+          )
+        </span>
+        :
+        </code><p class="short-description">Set the HTTP response(s) to be returned by this adapter</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$response</dt>
+<dd>\Zend_Http_Responsearraystring<br><em></em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Http_Client_Adapter_Test::setResponseIndex()"></a><h4 class="method public">setResponseIndex<div class="to-top"><a href="#Zend_Http_Client_Adapter_Test">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">setResponseIndex</span><span class="nb-faded-text">(
+          integer $index
+          )
+        </span>
+        :
+        </code><p class="short-description">Sets the position of the response buffer.  Selects which
+response will be returned on the next call to read().</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$index</dt>
+<dd>integer<br><em></em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Http_Client_Adapter_Test::write()"></a><h4 class="method public">write<div class="to-top"><a href="#Zend_Http_Client_Adapter_Test">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">write</span><span class="nb-faded-text">(
+          string $method, <a href="_Uri_Http.html#%5CZend_Uri_Http">\Zend_Uri_Http</a> $uri, string $http_ver
+              =
+              1.1, array $headers
+              =
+              array, string $body
+          )
+        </span>
+        :
+        string</code><p class="short-description">Send request to the remote server</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$method</dt>
+<dd>string<br><em></em>
+</dd>
+<dt>$uri</dt>
+<dd>\Zend_Uri_Http<br><em></em>
+</dd>
+<dt>$http_ver</dt>
+<dd>string<br><em></em>
+</dd>
+<dt>$headers</dt>
+<dd>array<br><em></em>
+</dd>
+<dt>$body</dt>
+<dd>string<br><em></em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>string</dt>
+<dd><em>Request as string</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+<dt>throws</dt>
+<dd><a href="_Http_Client_Adapter_Exception.html#%5CZend_Http_Client_Adapter_Exception">If connection fails, connected to wrong host, no PUT file defined, unsupported method, or unsupported cURL option</a></dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<small xmlns="" class="footer">Documentation was generated by <a href="http://docblox-project.org">DocBlox 0.12.2</a>.
+    </small></body></html>

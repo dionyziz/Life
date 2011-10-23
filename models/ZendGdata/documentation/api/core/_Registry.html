@@ -1,0 +1,530 @@
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title>Zend Gdata API Documentation</title><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" href="css/black-tie/jquery-ui-1.8.2.custom.css" type="text/css"></link><link rel="stylesheet" href="css/jquery.treeview.css" type="text/css"></link><link rel="stylesheet" href="css/theme.css" type="text/css"></link><script type="text/javascript" src="js/jquery-1.4.2.min.js"></script><script type="text/javascript" src="js/jquery-ui-1.8.2.custom.min.js"></script><script type="text/javascript" src="js/jquery.cookie.js"></script><script type="text/javascript" src="js/jquery.treeview.js"></script><script type="text/javascript">
+            $(document).ready(function() {
+                $(".filetree").treeview({
+                    collapsed: true,
+                    persist: "cookie"
+                });
+
+                $("#accordion").accordion({
+                    collapsible: true,
+                    autoHeight:  false,
+                    fillSpace:   true
+                });
+
+                $(".tabs").tabs();
+            });
+        </script></head><body><div xmlns="" class="content">
+<div class="sub-page-main-header-api-documentation"><h2>API Documentation</h2></div>
+<div class="dotted-line"></div>
+</div>
+<div xmlns="" id="content">
+<script>
+      $(document).ready(function() {
+        $('dl.function-info, dl.constant-info, dl.property-info').prev().css('cursor', 'pointer');
+        $('dl.function-info, dl.constant-info, dl.property-info').prev().click(function() {
+          if ($(this).next().is(':hidden'))
+          {
+            $(this).children('img')[0].src = 'images/arrow_down.gif';
+          } else
+          {
+            $(this).children('img')[0].src = 'images/arrow_right.gif';
+          }
+          $(this).next().slideToggle();
+        });
+      $('dl.function-info, dl.constant-info, dl.property-info').hide();
+      $('dl.function-info img, dl.constant-info img, dl.property-info img').show();
+      });
+    </script><a name="top"></a><h1 class="file">Registry.php</h1>
+<div class="file_menu">
+<a href="#classes">Classes</a> </div>
+<dl class="file-info">
+<dt>category</dt>
+<dd>Zend</dd>
+<dt>copyright</dt>
+<dd>Copyright (c) 2005-2011 Zend Technologies USA Inc. (http://www.zend.com)</dd>
+<dt>license</dt>
+<dd>http://framework.zend.com/license/new-bsd     New BSD License</dd>
+<dt>package</dt>
+<dd>Zend_Registry</dd>
+<dt>version</dt>
+<dd>$Id: Registry.php 23775 2011-03-01 17:25:24Z ralph $</dd>
+<dt>Classes</dt>
+<dd><a class="class" href="#%5CZend_Registry">Zend_Registry</a></dd>
+</dl>
+<h2>Description</h2>
+<p class="short-description">Zend Framework</p>
+<div class="long-description"><p>LICENSE</p>
+
+<p>This source file is subject to the new BSD license that is bundled
+with this package in the file LICENSE.txt.
+It is also available through the world-wide-web at this URL:
+http://framework.zend.com/license/new-bsd
+If you did not receive a copy of the license and are unable to
+obtain it through the world-wide-web, please send an email
+to license@zend.com so we can send you a copy immediately.</p>
+</div>
+<a name="classes"></a><a id="\Zend_Registry"></a><h2 class="class">\Zend_Registry<div class="to-top"><a href="#top">jump to top</a></div>
+</h2>
+<div class="class">
+<dl class="class-info">
+<dt>Extends from</dt>
+<dd><a href="http://php.net/manual/en/class.arrayobject.php">\ArrayObject</a></dd>
+<dt>category</dt>
+<dd>Zend</dd>
+<dt>copyright</dt>
+<dd>Copyright (c) 2005-2011 Zend Technologies USA Inc. (http://www.zend.com)</dd>
+<dt>license</dt>
+<dd>http://framework.zend.com/license/new-bsd     New BSD License</dd>
+<dt>package</dt>
+<dd>Zend_Registry</dd>
+<dt><a href="#" onclick="$(this).children('img').toggle().parents('dt').nextUntil('dt').slideToggle(); return false;"><img src="images/arrow_down.gif"><img src="images/arrow_right.gif" style="display: none">
+                Properties
+              </a></dt>
+<dd><a class="property private" href="#%5CZend_Registry::%24_registry">$_registry</a></dd>
+<dd><a class="property private" href="#%5CZend_Registry::%24_registryClassName">$_registryClassName</a></dd>
+<dt><a href="#" onclick="$(this).children('img').toggle().parents('dt').nextUntil('dt').slideToggle(); return false;"><img src="images/arrow_down.gif"><img src="images/arrow_right.gif" style="display: none">
+                Methods
+              </a></dt>
+<dd><a class="method public" href="#%5CZend_Registry::__construct()">__construct</a></dd>
+<dd><a class="method public" href="#%5CZend_Registry::_unsetInstance()">_unsetInstance</a></dd>
+<dd><a class="method public" href="#%5CZend_Registry::get()">get</a></dd>
+<dd><a class="method public" href="#%5CZend_Registry::getInstance()">getInstance</a></dd>
+<dd><a class="method protected" href="#%5CZend_Registry::init()">init</a></dd>
+<dd><a class="method public" href="#%5CZend_Registry::isRegistered()">isRegistered</a></dd>
+<dd><a class="method public" href="#%5CZend_Registry::offsetExists()">offsetExists</a></dd>
+<dd><a class="method public" href="#%5CZend_Registry::set()">set</a></dd>
+<dd><a class="method public" href="#%5CZend_Registry::setClassName()">setClassName</a></dd>
+<dd><a class="method public" href="#%5CZend_Registry::setInstance()">setInstance</a></dd>
+</dl>
+<h3>Description</h3>
+<p class="short-description">Generic storage class helps to manage global data.</p>
+<div class="long-description">
+</div>
+<h3>Properties</h3>
+<div>
+<a id="\Zend_Registry::$_registry"></a><h4 class="property private">$_registry<div class="to-top"><a href="#%5CZend_Registry">jump to class</a></div>
+</h4>
+<div class="property">
+<code><a href="_Registry.html#%5CZend_Registry">\Zend_Registry</a> <span class="highlight">$_registry</span> = 'null'</code><p class="short-description">Registry object provides storage for shared objects.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt></dt>
+<dd>
+<a href="_Registry.html#%5CZend_Registry">\Zend_Registry</a><br><em></em>
+</dd>
+<dt>visibility</dt>
+<dd>private</dd>
+<dt>default</dt>
+<dd>null</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>true</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Registry::$_registryClassName"></a><h4 class="property private">$_registryClassName<div class="to-top"><a href="#%5CZend_Registry">jump to class</a></div>
+</h4>
+<div class="property">
+<code>string <span class="highlight">$_registryClassName</span> = 'Zend_Registry'</code><p class="short-description">Class name of the singleton registry object.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt></dt>
+<dd>string<br><em></em>
+</dd>
+<dt>visibility</dt>
+<dd>private</dd>
+<dt>default</dt>
+<dd>Zend_Registry</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>true</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+</div>
+<h3>Methods</h3>
+<div>
+<a id="\Zend_Registry::__construct()"></a><h4 class="method public">__construct<div class="to-top"><a href="#Zend_Registry">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">__construct</span><span class="nb-faded-text">(
+          array $array
+              =
+              array, integer $flags
+              =
+              parent
+          )
+        </span>
+        :
+        </code><p class="short-description">Constructs a parent ArrayObject with default
+ARRAY_AS_PROPS to allow acces as an object</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$array</dt>
+<dd>array<br><em>data array</em>
+</dd>
+<dt>$flags</dt>
+<dd>integer<br><em>ArrayObject flags</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Registry::_unsetInstance()"></a><h4 class="method public">_unsetInstance<div class="to-top"><a href="#Zend_Registry">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">_unsetInstance</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        </code><p class="short-description">Unset the default registry instance.</p>
+<div class="long-description"><p>Primarily used in tearDown() in unit tests.</p>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>true</dd>
+<dt>returns</dt>
+<dd>void</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Registry::get()"></a><h4 class="method public">get<div class="to-top"><a href="#Zend_Registry">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">get</span><span class="nb-faded-text">(
+          string $index
+          )
+        </span>
+        :
+        mixed</code><p class="short-description">getter method, basically same as offsetGet().</p>
+<div class="long-description"><p>This method can be called from an object of type Zend_Registry, or it
+can be called statically.  In the latter case, it uses the default
+static instance stored in the class.</p>
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$index</dt>
+<dd>string<br><em>- get the value associated with $index</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>mixed</dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>true</dd>
+<dt>throws</dt>
+<dd><a href="_Exception.html#%5CZend_Exception">if no entry is registerd for $index.</a></dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Registry::getInstance()"></a><h4 class="method public">getInstance<div class="to-top"><a href="#Zend_Registry">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getInstance</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        <a href="_Registry.html#%5CZend_Registry">\Zend_Registry</a></code><p class="short-description">Retrieves the default registry instance.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Registry.html#%5CZend_Registry">\Zend_Registry</a></dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>true</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Registry::init()"></a><h4 class="method protected">init<div class="to-top"><a href="#Zend_Registry">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">init</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        void</code><p class="short-description">Initialize the default registry instance.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>true</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Registry::isRegistered()"></a><h4 class="method public">isRegistered<div class="to-top"><a href="#Zend_Registry">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">isRegistered</span><span class="nb-faded-text">(
+          string $index
+          )
+        </span>
+        :
+        boolean</code><p class="short-description">Returns TRUE if the $index is a named value in the registry,
+or FALSE if $index was not found in the registry.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$index</dt>
+<dd>string<br><em></em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>boolean</dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>true</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Registry::offsetExists()"></a><h4 class="method public">offsetExists<div class="to-top"><a href="#Zend_Registry">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">offsetExists</span><span class="nb-faded-text">(
+          string $index
+          )
+        </span>
+        :
+        </code><p class="short-description"></p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$index</dt>
+<dd>string<br><em></em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+<dt>returns</dt>
+<dd>mixed
+Workaround for http://bugs.php.net/bug.php?id=40442 (ZF-960).</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Registry::set()"></a><h4 class="method public">set<div class="to-top"><a href="#Zend_Registry">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">set</span><span class="nb-faded-text">(
+          string $index, mixed $value
+          )
+        </span>
+        :
+        void</code><p class="short-description">setter method, basically same as offsetSet().</p>
+<div class="long-description"><p>This method can be called from an object of type Zend_Registry, or it
+can be called statically.  In the latter case, it uses the default
+static instance stored in the class.</p>
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$index</dt>
+<dd>string<br><em>The location in the ArrayObject in which to store the value.</em>
+</dd>
+<dt>$value</dt>
+<dd>mixed<br><em>The object to store in the ArrayObject.</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>true</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Registry::setClassName()"></a><h4 class="method public">setClassName<div class="to-top"><a href="#Zend_Registry">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">setClassName</span><span class="nb-faded-text">(
+          string $registryClassName
+              =
+              Zend_Registry
+          )
+        </span>
+        :
+        void</code><p class="short-description">Set the class name to use for the default registry instance.</p>
+<div class="long-description"><p>Does not affect the currently initialized instance, it only applies
+for the next time you instantiate.</p>
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$registryClassName</dt>
+<dd>string<br><em></em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>true</dd>
+<dt>throws</dt>
+<dd><a href="_Exception.html#%5CZend_Exception">if the registry is initialized or if the class name is not valid.</a></dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Registry::setInstance()"></a><h4 class="method public">setInstance<div class="to-top"><a href="#Zend_Registry">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">setInstance</span><span class="nb-faded-text">(
+          <a href="_Registry.html#%5CZend_Registry">\Zend_Registry</a> $registry
+          )
+        </span>
+        :
+        void</code><p class="short-description">Set the default registry instance to a specified instance.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$registry</dt>
+<dd>\Zend_Registry<br><em>An object instance of type Zend_Registry, or a subclass.</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>true</dd>
+<dt>throws</dt>
+<dd><a href="_Exception.html#%5CZend_Exception">if registry is already initialized.</a></dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<small xmlns="" class="footer">Documentation was generated by <a href="http://docblox-project.org">DocBlox 0.12.2</a>.
+    </small></body></html>

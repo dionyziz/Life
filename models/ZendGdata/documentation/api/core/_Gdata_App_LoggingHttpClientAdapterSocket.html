@@ -1,0 +1,300 @@
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title>Zend Gdata API Documentation</title><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" href="css/black-tie/jquery-ui-1.8.2.custom.css" type="text/css"></link><link rel="stylesheet" href="css/jquery.treeview.css" type="text/css"></link><link rel="stylesheet" href="css/theme.css" type="text/css"></link><script type="text/javascript" src="js/jquery-1.4.2.min.js"></script><script type="text/javascript" src="js/jquery-ui-1.8.2.custom.min.js"></script><script type="text/javascript" src="js/jquery.cookie.js"></script><script type="text/javascript" src="js/jquery.treeview.js"></script><script type="text/javascript">
+            $(document).ready(function() {
+                $(".filetree").treeview({
+                    collapsed: true,
+                    persist: "cookie"
+                });
+
+                $("#accordion").accordion({
+                    collapsible: true,
+                    autoHeight:  false,
+                    fillSpace:   true
+                });
+
+                $(".tabs").tabs();
+            });
+        </script></head><body><div xmlns="" class="content">
+<div class="sub-page-main-header-api-documentation"><h2>API Documentation</h2></div>
+<div class="dotted-line"></div>
+</div>
+<div xmlns="" id="content">
+<script>
+      $(document).ready(function() {
+        $('dl.function-info, dl.constant-info, dl.property-info').prev().css('cursor', 'pointer');
+        $('dl.function-info, dl.constant-info, dl.property-info').prev().click(function() {
+          if ($(this).next().is(':hidden'))
+          {
+            $(this).children('img')[0].src = 'images/arrow_down.gif';
+          } else
+          {
+            $(this).children('img')[0].src = 'images/arrow_right.gif';
+          }
+          $(this).next().slideToggle();
+        });
+      $('dl.function-info, dl.constant-info, dl.property-info').hide();
+      $('dl.function-info img, dl.constant-info img, dl.property-info img').show();
+      });
+    </script><a name="top"></a><h1 class="file">Gdata/App/LoggingHttpClientAdapterSocket.php</h1>
+<div class="file_menu">
+<a href="#includes">Includes</a> <a href="#functions">Functions</a> <a href="#classes">Classes</a> </div>
+<dl class="file-info">
+<dt>category</dt>
+<dd>Zend</dd>
+<dt>copyright</dt>
+<dd>Copyright (c) 2005-2011 Zend Technologies USA Inc. (http://www.zend.com)</dd>
+<dt>license</dt>
+<dd>http://framework.zend.com/license/new-bsd     New BSD License</dd>
+<dt>package</dt>
+<dd>Zend_Gdata</dd>
+<dt>subpackage</dt>
+<dd>App</dd>
+<dt>version</dt>
+<dd>$Id: LoggingHttpClientAdapterSocket.php 23775 2011-03-01 17:25:24Z ralph $</dd>
+<dt>Functions</dt>
+<dd><a class="function" href="#::write()">write</a></dd>
+<dd><a class="function" href="#::read()">read</a></dd>
+<dd><a class="function" href="#::close()">close</a></dd>
+<dt>Classes</dt>
+<dd><a class="class" href="#%5CZend_Gdata_App_LoggingHttpClientAdapterSocket">Zend_Gdata_App_LoggingHttpClientAdapterSocket</a></dd>
+</dl>
+<h2>Description</h2>
+<p class="short-description">Zend Framework</p>
+<div class="long-description"><p>LICENSE</p>
+
+<p>This source file is subject to the new BSD license that is bundled
+with this package in the file LICENSE.txt.
+It is also available through the world-wide-web at this URL:
+http://framework.zend.com/license/new-bsd
+If you did not receive a copy of the license and are unable to
+obtain it through the world-wide-web, please send an email
+to license@zend.com so we can send you a copy immediately.</p>
+</div>
+<a name="functions"></a><h2>Functions</h2>
+<div>
+<a id="::close()"></a><h3 class="function ">close<div class="to-top"><a href="#top">jump to top</a></div>
+</h3>
+<div class="function">
+<code><span class="highlight">close</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        </code><p class="short-description">Close the connection to the server</p>
+<div class="long-description">
+</div>
+</div>
+<a id="::read()"></a><h3 class="function ">read<div class="to-top"><a href="#top">jump to top</a></div>
+</h3>
+<div class="function">
+<code><span class="highlight">read</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        string</code><p class="short-description">Read response from server</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="output">Output</h4>
+<dl class="return-info">
+<dt>string</dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="::write()"></a><h3 class="function ">write<div class="to-top"><a href="#top">jump to top</a></div>
+</h3>
+<div class="function">
+<code><span class="highlight">write</span><span class="nb-faded-text">(
+          string $method, <a href="_Uri_Http.html#%5CZend_Uri_Http">\Zend_Uri_Http</a> $uri, string $http_ver
+              =
+              1.1, array $headers
+              =
+              array, string $body
+          )
+        </span>
+        :
+        string</code><p class="short-description">Send request to the remote server</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="arguments">Arguments</h4>
+<dl class="argument-info">
+<dt>$method</dt>
+<dd>string<br><em></em>
+</dd>
+<dt>$uri</dt>
+<dd>\Zend_Uri_Http<br><em></em>
+</dd>
+<dt>$http_ver</dt>
+<dd>string<br><em></em>
+</dd>
+<dt>$headers</dt>
+<dd>array<br><em></em>
+</dd>
+<dt>$body</dt>
+<dd>string<br><em></em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h4 class="output">Output</h4>
+<dl class="return-info">
+<dt>string</dt>
+<dd><em>Request as string</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+</div>
+<a name="classes"></a><a id="\Zend_Gdata_App_LoggingHttpClientAdapterSocket"></a><h2 class="class">\Zend_Gdata_App_LoggingHttpClientAdapterSocket<div class="to-top"><a href="#top">jump to top</a></div>
+</h2>
+<div class="class">
+<dl class="class-info">
+<dt>Extends from</dt>
+<dd><a href="_Http_Client_Adapter_Socket.html#%5CZend_Http_Client_Adapter_Socket">\Zend_Http_Client_Adapter_Socket</a></dd>
+<dt>category</dt>
+<dd>Zend</dd>
+<dt>copyright</dt>
+<dd>Copyright (c) 2005-2011 Zend Technologies USA Inc. (http://www.zend.com)</dd>
+<dt>license</dt>
+<dd>http://framework.zend.com/license/new-bsd     New BSD License</dd>
+<dt>package</dt>
+<dd>Zend_Gdata</dd>
+<dt>subpackage</dt>
+<dd>App</dd>
+<dt><a href="#" onclick="$(this).children('img').toggle().parents('dt').nextUntil('dt').slideToggle(); return false;"><img src="images/arrow_down.gif"><img src="images/arrow_right.gif" style="display: none">
+                Properties
+              </a></dt>
+<dd><a class="property protected" href="#%5CZend_Gdata_App_LoggingHttpClientAdapterSocket::%24log_handle">$log_handle</a></dd>
+<dt><a href="#" onclick="$(this).children('img').toggle().parents('dt').nextUntil('dt').slideToggle(); return false;"><img src="images/arrow_down.gif"><img src="images/arrow_right.gif" style="display: none">
+                Methods
+              </a></dt>
+<dd><a class="method public" href="#%5CZend_Gdata_App_LoggingHttpClientAdapterSocket::connect()">connect</a></dd>
+<dd><a class="method protected" href="#%5CZend_Gdata_App_LoggingHttpClientAdapterSocket::log()">log</a></dd>
+</dl>
+<h3>Description</h3>
+<p class="short-description">Overrides the traditional socket-based adapter class for Zend_Http_Client to
+enable logging of requests.  All requests are logged to a location specified
+in the config as $config['logfile'].  Requests and responses are logged after
+they are sent and received/processed, thus an error could prevent logging.</p>
+<div class="long-description">
+</div>
+<h3>Properties</h3>
+<div>
+<a id="\Zend_Gdata_App_LoggingHttpClientAdapterSocket::$log_handle"></a><h4 class="property protected">$log_handle<div class="to-top"><a href="#%5CZend_Gdata_App_LoggingHttpClientAdapterSocket">jump to class</a></div>
+</h4>
+<div class="property">
+<code>resource|null <span class="highlight">$log_handle</span> = 'null'</code><p class="short-description">The file handle for writing logs</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt></dt>
+<dd>resource|null<br><em></em>
+</dd>
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd>null</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+</div>
+<h3>Methods</h3>
+<div>
+<a id="\Zend_Gdata_App_LoggingHttpClientAdapterSocket::connect()"></a><h4 class="method public">connect<div class="to-top"><a href="#Zend_Gdata_App_LoggingHttpClientAdapterSocket">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">connect</span><span class="nb-faded-text">(
+          string $host, int $port
+              =
+              80, boolean $secure
+              =
+              false
+          )
+        </span>
+        :
+        </code><p class="short-description">Connect to the remote server</p>
+<div class="long-description"><p>Will try to connect to the proxy server. If no proxy was set, will
+fall back to the target server (behave like regular Socket adapter)</p>
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$host</dt>
+<dd>string<br><em></em>
+</dd>
+<dt>$port</dt>
+<dd>int<br><em></em>
+</dd>
+<dt>$secure</dt>
+<dd>boolean<br><em></em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_App_LoggingHttpClientAdapterSocket::log()"></a><h4 class="method protected">log<div class="to-top"><a href="#Zend_Gdata_App_LoggingHttpClientAdapterSocket">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">log</span><span class="nb-faded-text">(
+          string $message
+          )
+        </span>
+        :
+        </code><p class="short-description">Log the given message to the log file.  The log file is configured
+as the config param 'logfile'.  This method opens the file for
+writing if necessary.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$message</dt>
+<dd>string<br><em>The message to log</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<small xmlns="" class="footer">Documentation was generated by <a href="http://docblox-project.org">DocBlox 0.12.2</a>.
+    </small></body></html>

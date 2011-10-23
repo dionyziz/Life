@@ -1,0 +1,489 @@
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title>Zend Gdata API Documentation</title><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" href="css/black-tie/jquery-ui-1.8.2.custom.css" type="text/css"></link><link rel="stylesheet" href="css/jquery.treeview.css" type="text/css"></link><link rel="stylesheet" href="css/theme.css" type="text/css"></link><script type="text/javascript" src="js/jquery-1.4.2.min.js"></script><script type="text/javascript" src="js/jquery-ui-1.8.2.custom.min.js"></script><script type="text/javascript" src="js/jquery.cookie.js"></script><script type="text/javascript" src="js/jquery.treeview.js"></script><script type="text/javascript">
+            $(document).ready(function() {
+                $(".filetree").treeview({
+                    collapsed: true,
+                    persist: "cookie"
+                });
+
+                $("#accordion").accordion({
+                    collapsible: true,
+                    autoHeight:  false,
+                    fillSpace:   true
+                });
+
+                $(".tabs").tabs();
+            });
+        </script></head><body><div xmlns="" class="content">
+<div class="sub-page-main-header-api-documentation"><h2>API Documentation</h2></div>
+<div class="dotted-line"></div>
+</div>
+<div xmlns="" id="content">
+<script>
+      $(document).ready(function() {
+        $('dl.function-info, dl.constant-info, dl.property-info').prev().css('cursor', 'pointer');
+        $('dl.function-info, dl.constant-info, dl.property-info').prev().click(function() {
+          if ($(this).next().is(':hidden'))
+          {
+            $(this).children('img')[0].src = 'images/arrow_down.gif';
+          } else
+          {
+            $(this).children('img')[0].src = 'images/arrow_right.gif';
+          }
+          $(this).next().slideToggle();
+        });
+      $('dl.function-info, dl.constant-info, dl.property-info').hide();
+      $('dl.function-info img, dl.constant-info img, dl.property-info img').show();
+      });
+    </script><a name="top"></a><h1 class="file">Loader.php</h1>
+<div class="file_menu">
+<a href="#classes">Classes</a> </div>
+<dl class="file-info">
+<dt>category</dt>
+<dd>Zend</dd>
+<dt>copyright</dt>
+<dd>Copyright (c) 2005-2011 Zend Technologies USA Inc. (http://www.zend.com)</dd>
+<dt>license</dt>
+<dd>http://framework.zend.com/license/new-bsd     New BSD License</dd>
+<dt>package</dt>
+<dd>Zend_Loader</dd>
+<dt>version</dt>
+<dd>$Id: Loader.php 23775 2011-03-01 17:25:24Z ralph $</dd>
+<dt>Classes</dt>
+<dd><a class="class" href="#%5CZend_Loader">Zend_Loader</a></dd>
+</dl>
+<h2>Description</h2>
+<p class="short-description">Zend Framework</p>
+<div class="long-description"><p>LICENSE</p>
+
+<p>This source file is subject to the new BSD license that is bundled
+with this package in the file LICENSE.txt.
+It is also available through the world-wide-web at this URL:
+http://framework.zend.com/license/new-bsd
+If you did not receive a copy of the license and are unable to
+obtain it through the world-wide-web, please send an email
+to license@zend.com so we can send you a copy immediately.</p>
+</div>
+<a name="classes"></a><a id="\Zend_Loader"></a><h2 class="class">\Zend_Loader<div class="to-top"><a href="#top">jump to top</a></div>
+</h2>
+<div class="class">
+<dl class="class-info">
+<dt>category</dt>
+<dd>Zend</dd>
+<dt>copyright</dt>
+<dd>Copyright (c) 2005-2011 Zend Technologies USA Inc. (http://www.zend.com)</dd>
+<dt>license</dt>
+<dd>http://framework.zend.com/license/new-bsd     New BSD License</dd>
+<dt>package</dt>
+<dd>Zend_Loader</dd>
+<dt><a href="#" onclick="$(this).children('img').toggle().parents('dt').nextUntil('dt').slideToggle(); return false;"><img src="images/arrow_down.gif"><img src="images/arrow_right.gif" style="display: none">
+                Methods
+              </a></dt>
+<dd><a class="method protected" href="#%5CZend_Loader::_includeFile()">_includeFile</a></dd>
+<dd><a class="method protected" href="#%5CZend_Loader::_securityCheck()">_securityCheck</a></dd>
+<dd><a class="method public" href="#%5CZend_Loader::autoload()">autoload</a></dd>
+<dd><a class="method public" href="#%5CZend_Loader::explodeIncludePath()">explodeIncludePath</a></dd>
+<dd><a class="method public" href="#%5CZend_Loader::isReadable()">isReadable</a></dd>
+<dd><a class="method public" href="#%5CZend_Loader::loadClass()">loadClass</a></dd>
+<dd><a class="method public" href="#%5CZend_Loader::loadFile()">loadFile</a></dd>
+<dd><a class="method public" href="#%5CZend_Loader::registerAutoload()">registerAutoload</a></dd>
+</dl>
+<h3>Description</h3>
+<p class="short-description">Static methods for loading classes and files.</p>
+<div class="long-description">
+</div>
+<h3>Methods</h3>
+<div>
+<a id="\Zend_Loader::_includeFile()"></a><h4 class="method protected">_includeFile<div class="to-top"><a href="#Zend_Loader">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">_includeFile</span><span class="nb-faded-text">(
+          string $filespec, boolean $once
+              =
+              false
+          )
+        </span>
+        :
+        boolean</code><p class="short-description">Attempt to include() the file.</p>
+<div class="long-description"><p>include() is not prefixed with the @ operator because if
+the file is loaded and contains a parse error, execution
+will halt silently and this is difficult to debug.</p>
+
+<p>Always set display_errors = Off on production servers!</p>
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$filespec</dt>
+<dd>string<br><em></em>
+</dd>
+<dt>$once</dt>
+<dd>boolean<br><em></em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>boolean</dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>true</dd>
+<dt>deprecated</dt>
+<dd>Since 1.5.0; use loadFile() instead</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Loader::_securityCheck()"></a><h4 class="method protected">_securityCheck<div class="to-top"><a href="#Zend_Loader">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">_securityCheck</span><span class="nb-faded-text">(
+          string $filename
+          )
+        </span>
+        :
+        void</code><p class="short-description">Ensure that filename does not contain exploits</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$filename</dt>
+<dd>string<br><em></em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>true</dd>
+<dt>throws</dt>
+<dd><a href="_Exception.html#%5CZend_Exception"></a></dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Loader::autoload()"></a><h4 class="method public">autoload<div class="to-top"><a href="#Zend_Loader">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">autoload</span><span class="nb-faded-text">(
+          string $class
+          )
+        </span>
+        :
+        string|\false</code><p class="short-description">spl_autoload() suitable implementation for supporting class autoloading.</p>
+<div class="long-description"><p>Attach to spl_autoload() using the following:
+<code>
+spl_autoload_register(array('Zend_Loader', 'autoload'));
+</code></p>
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$class</dt>
+<dd>string<br><em></em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>string|\false</dt>
+<dd><em>Class name on success; false on failure</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>true</dd>
+<dt>deprecated</dt>
+<dd>Since 1.8.0</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Loader::explodeIncludePath()"></a><h4 class="method public">explodeIncludePath<div class="to-top"><a href="#Zend_Loader">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">explodeIncludePath</span><span class="nb-faded-text">(
+          string|null $path
+              =
+              null
+          )
+        </span>
+        :
+        array</code><p class="short-description">Explode an include path into an array</p>
+<div class="long-description"><p>If no path provided, uses current include_path. Works around issues that
+occur when the path includes stream schemas.</p>
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$path</dt>
+<dd>stringnull<br><em></em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>array</dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>true</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Loader::isReadable()"></a><h4 class="method public">isReadable<div class="to-top"><a href="#Zend_Loader">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">isReadable</span><span class="nb-faded-text">(
+          string $filename
+          )
+        </span>
+        :
+        boolean</code><p class="short-description">Returns TRUE if the $filename is readable, or FALSE otherwise.</p>
+<div class="long-description"><p>This function uses the PHP include_path, where PHP's is_readable()
+does not.</p>
+
+<p>Note from ZF-2900:
+If you use custom error handler, please check whether return value
+ from error_reporting() is zero or not.
+At mark of fopen() can not suppress warning if the handler is used.</p>
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$filename</dt>
+<dd>string<br><em></em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>boolean</dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>true</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Loader::loadClass()"></a><h4 class="method public">loadClass<div class="to-top"><a href="#Zend_Loader">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">loadClass</span><span class="nb-faded-text">(
+          string $class, string|array $dirs
+              =
+              null
+          )
+        </span>
+        :
+        void</code><p class="short-description">Loads a class from a PHP file.  The filename must be formatted
+as "$class.php".</p>
+<div class="long-description"><p>If $dirs is a string or an array, it will search the directories
+in the order supplied, and attempt to load the first matching file.</p>
+
+<p>If $dirs is null, it will split the class name at underscores to
+generate a path hierarchy (e.g., "Zend_Example_Class" will map
+to "Zend/Example/Class.php").</p>
+
+<p>If the file was not found in the $dirs, or if no $dirs were specified,
+it will attempt to load it from PHP's include_path.</p>
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$class</dt>
+<dd>string<br><em>- The full class name of a Zend component.</em>
+</dd>
+<dt>$dirs</dt>
+<dd>stringarray<br><em>- OPTIONAL Either a path or an array of paths to search.</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>true</dd>
+<dt>throws</dt>
+<dd><a href="_Exception.html#%5CZend_Exception"></a></dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Loader::loadFile()"></a><h4 class="method public">loadFile<div class="to-top"><a href="#Zend_Loader">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">loadFile</span><span class="nb-faded-text">(
+          string $filename, string|array $dirs
+              =
+              null, boolean $once
+              =
+              false
+          )
+        </span>
+        :
+        boolean</code><p class="short-description">Loads a PHP file.  This is a wrapper for PHP's include() function.</p>
+<div class="long-description"><p>$filename must be the complete filename, including any
+extension such as ".php".  Note that a security check is performed that
+does not permit extended characters in the filename.  This method is
+intended for loading Zend Framework files.</p>
+
+<p>If $dirs is a string or an array, it will search the directories
+in the order supplied, and attempt to load the first matching file.</p>
+
+<p>If the file was not found in the $dirs, or if no $dirs were specified,
+it will attempt to load it from PHP's include_path.</p>
+
+<p>If $once is TRUE, it will use include_once() instead of include().</p>
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$filename</dt>
+<dd>string<br><em></em>
+</dd>
+<dt>$dirs</dt>
+<dd>stringarray<br><em>- OPTIONAL either a path or array of paths to search.</em>
+</dd>
+<dt>$once</dt>
+<dd>boolean<br><em></em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>boolean</dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>true</dd>
+<dt>throws</dt>
+<dd><a href="_Exception.html#%5CZend_Exception"></a></dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Loader::registerAutoload()"></a><h4 class="method public">registerAutoload<div class="to-top"><a href="#Zend_Loader">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">registerAutoload</span><span class="nb-faded-text">(
+          string $class
+              =
+              Zend_Loader, boolean $enabled
+              =
+              true
+          )
+        </span>
+        :
+        void</code><p class="short-description">Register {@link autoload()} with spl_autoload()</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$class</dt>
+<dd>string<br><em>(optional)</em>
+</dd>
+<dt>$enabled</dt>
+<dd>boolean<br><em>(optional)</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>true</dd>
+<dt>deprecated</dt>
+<dd>Since 1.8.0</dd>
+<dt>throws</dt>
+<dd><a href="_Exception.html#%5CZend_Exception">if spl_autoload() is not found or if the specified class does not have an autoload() method.</a></dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<small xmlns="" class="footer">Documentation was generated by <a href="http://docblox-project.org">DocBlox 0.12.2</a>.
+    </small></body></html>

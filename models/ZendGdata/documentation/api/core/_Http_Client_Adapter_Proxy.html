@@ -1,0 +1,367 @@
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title>Zend Gdata API Documentation</title><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" href="css/black-tie/jquery-ui-1.8.2.custom.css" type="text/css"></link><link rel="stylesheet" href="css/jquery.treeview.css" type="text/css"></link><link rel="stylesheet" href="css/theme.css" type="text/css"></link><script type="text/javascript" src="js/jquery-1.4.2.min.js"></script><script type="text/javascript" src="js/jquery-ui-1.8.2.custom.min.js"></script><script type="text/javascript" src="js/jquery.cookie.js"></script><script type="text/javascript" src="js/jquery.treeview.js"></script><script type="text/javascript">
+            $(document).ready(function() {
+                $(".filetree").treeview({
+                    collapsed: true,
+                    persist: "cookie"
+                });
+
+                $("#accordion").accordion({
+                    collapsible: true,
+                    autoHeight:  false,
+                    fillSpace:   true
+                });
+
+                $(".tabs").tabs();
+            });
+        </script></head><body><div xmlns="" class="content">
+<div class="sub-page-main-header-api-documentation"><h2>API Documentation</h2></div>
+<div class="dotted-line"></div>
+</div>
+<div xmlns="" id="content">
+<script>
+      $(document).ready(function() {
+        $('dl.function-info, dl.constant-info, dl.property-info').prev().css('cursor', 'pointer');
+        $('dl.function-info, dl.constant-info, dl.property-info').prev().click(function() {
+          if ($(this).next().is(':hidden'))
+          {
+            $(this).children('img')[0].src = 'images/arrow_down.gif';
+          } else
+          {
+            $(this).children('img')[0].src = 'images/arrow_right.gif';
+          }
+          $(this).next().slideToggle();
+        });
+      $('dl.function-info, dl.constant-info, dl.property-info').hide();
+      $('dl.function-info img, dl.constant-info img, dl.property-info img').show();
+      });
+    </script><a name="top"></a><h1 class="file">Http/Client/Adapter/Proxy.php</h1>
+<div class="file_menu">
+<a href="#includes">Includes</a> <a href="#classes">Classes</a> </div>
+<dl class="file-info">
+<dt>category</dt>
+<dd>Zend</dd>
+<dt>copyright</dt>
+<dd>Copyright (c) 2005-2011 Zend Technologies USA Inc. (http://www.zend.com)</dd>
+<dt>license</dt>
+<dd>http://framework.zend.com/license/new-bsd     New BSD License</dd>
+<dt>package</dt>
+<dd>Zend_Http</dd>
+<dt>subpackage</dt>
+<dd>Client_Adapter</dd>
+<dt>version</dt>
+<dd>$Id: Proxy.php 23775 2011-03-01 17:25:24Z ralph $</dd>
+<dt>Classes</dt>
+<dd><a class="class" href="#%5CZend_Http_Client_Adapter_Proxy">Zend_Http_Client_Adapter_Proxy</a></dd>
+</dl>
+<h2>Description</h2>
+<p class="short-description">Zend Framework</p>
+<div class="long-description"><p>LICENSE</p>
+
+<p>This source file is subject to the new BSD license that is bundled
+with this package in the file LICENSE.txt.
+It is also available through the world-wide-web at this URL:
+http://framework.zend.com/license/new-bsd
+If you did not receive a copy of the license and are unable to
+obtain it through the world-wide-web, please send an email
+to license@zend.com so we can send you a copy immediately.</p>
+</div>
+<a name="classes"></a><a id="\Zend_Http_Client_Adapter_Proxy"></a><h2 class="class">\Zend_Http_Client_Adapter_Proxy<div class="to-top"><a href="#top">jump to top</a></div>
+</h2>
+<div class="class">
+<dl class="class-info">
+<dt>Extends from</dt>
+<dd><a href="_Http_Client_Adapter_Socket.html#%5CZend_Http_Client_Adapter_Socket">\Zend_Http_Client_Adapter_Socket</a></dd>
+<dt>category</dt>
+<dd>Zend</dd>
+<dt>copyright</dt>
+<dd>Copyright (c) 2005-2011 Zend Technologies USA Inc. (http://www.zend.com)</dd>
+<dt>license</dt>
+<dd>http://framework.zend.com/license/new-bsd     New BSD License</dd>
+<dt>package</dt>
+<dd>Zend_Http</dd>
+<dt>subpackage</dt>
+<dd>Client_Adapter</dd>
+<dt><a href="#" onclick="$(this).children('img').toggle().parents('dt').nextUntil('dt').slideToggle(); return false;"><img src="images/arrow_down.gif"><img src="images/arrow_right.gif" style="display: none">
+                Properties
+              </a></dt>
+<dd><a class="property protected" href="#%5CZend_Http_Client_Adapter_Proxy::%24config">$config</a></dd>
+<dd><a class="property protected" href="#%5CZend_Http_Client_Adapter_Proxy::%24negotiated">$negotiated</a></dd>
+<dt><a href="#" onclick="$(this).children('img').toggle().parents('dt').nextUntil('dt').slideToggle(); return false;"><img src="images/arrow_down.gif"><img src="images/arrow_right.gif" style="display: none">
+                Methods
+              </a></dt>
+<dd><a class="method public" href="#%5CZend_Http_Client_Adapter_Proxy::__destruct()">__destruct</a></dd>
+<dd><a class="method public" href="#%5CZend_Http_Client_Adapter_Proxy::close()">close</a></dd>
+<dd><a class="method public" href="#%5CZend_Http_Client_Adapter_Proxy::connect()">connect</a></dd>
+<dd><a class="method protected" href="#%5CZend_Http_Client_Adapter_Proxy::connectHandshake()">connectHandshake</a></dd>
+<dd><a class="method public" href="#%5CZend_Http_Client_Adapter_Proxy::write()">write</a></dd>
+</dl>
+<h3>Description</h3>
+<p class="short-description">HTTP Proxy-supporting Zend_Http_Client adapter class, based on the default
+socket based adapter.</p>
+<div class="long-description"><p>Should be used if proxy HTTP access is required. If no proxy is set, will
+fall back to Zend_Http_Client_Adapter_Socket behavior. Just like the
+default Socket adapter, this adapter does not require any special extensions
+installed.</p>
+</div>
+<h3>Properties</h3>
+<div>
+<a id="\Zend_Http_Client_Adapter_Proxy::$config"></a><h4 class="property protected">$config<div class="to-top"><a href="#%5CZend_Http_Client_Adapter_Proxy">jump to class</a></div>
+</h4>
+<div class="property">
+<code>array <span class="highlight">$config</span> = 'array'</code><p class="short-description">Parameters array</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt></dt>
+<dd>array<br><em></em>
+</dd>
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd>array</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Http_Client_Adapter_Proxy::$negotiated"></a><h4 class="property protected">$negotiated<div class="to-top"><a href="#%5CZend_Http_Client_Adapter_Proxy">jump to class</a></div>
+</h4>
+<div class="property">
+<code>boolean <span class="highlight">$negotiated</span> = 'false'</code><p class="short-description">Whether HTTPS CONNECT was already negotiated with the proxy or not</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt></dt>
+<dd>boolean<br><em></em>
+</dd>
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd>false</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+</div>
+<h3>Methods</h3>
+<div>
+<a id="\Zend_Http_Client_Adapter_Proxy::__destruct()"></a><h4 class="method public">__destruct<div class="to-top"><a href="#Zend_Http_Client_Adapter_Proxy">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">__destruct</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        </code><p class="short-description">Destructor: make sure the socket is disconnected</p>
+<div class="long-description"><p>If we are in persistent TCP mode, will not close the connection</p>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Http_Client_Adapter_Proxy::close()"></a><h4 class="method public">close<div class="to-top"><a href="#Zend_Http_Client_Adapter_Proxy">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">close</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        </code><p class="short-description">Close the connection to the server</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Http_Client_Adapter_Proxy::connect()"></a><h4 class="method public">connect<div class="to-top"><a href="#Zend_Http_Client_Adapter_Proxy">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">connect</span><span class="nb-faded-text">(
+          string $host, int $port
+              =
+              80, boolean $secure
+              =
+              false
+          )
+        </span>
+        :
+        </code><p class="short-description">Connect to the remote server</p>
+<div class="long-description"><p>Will try to connect to the proxy server. If no proxy was set, will
+fall back to the target server (behave like regular Socket adapter)</p>
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$host</dt>
+<dd>string<br><em></em>
+</dd>
+<dt>$port</dt>
+<dd>int<br><em></em>
+</dd>
+<dt>$secure</dt>
+<dd>boolean<br><em></em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Http_Client_Adapter_Proxy::connectHandshake()"></a><h4 class="method protected">connectHandshake<div class="to-top"><a href="#Zend_Http_Client_Adapter_Proxy">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">connectHandshake</span><span class="nb-faded-text">(
+          string $host, integer $port
+              =
+              443, string $http_ver
+              =
+              1.1, array $headers
+              =
+              array
+          )
+        </span>
+        :
+        </code><p class="short-description">Preform handshaking with HTTPS proxy using CONNECT method</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$host</dt>
+<dd>string<br><em></em>
+</dd>
+<dt>$port</dt>
+<dd>integer<br><em></em>
+</dd>
+<dt>$http_ver</dt>
+<dd>string<br><em></em>
+</dd>
+<dt>$headers</dt>
+<dd>array<br><em></em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Http_Client_Adapter_Proxy::write()"></a><h4 class="method public">write<div class="to-top"><a href="#Zend_Http_Client_Adapter_Proxy">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">write</span><span class="nb-faded-text">(
+          string $method, <a href="_Uri_Http.html#%5CZend_Uri_Http">\Zend_Uri_Http</a> $uri, string $http_ver
+              =
+              1.1, array $headers
+              =
+              array, string $body
+          )
+        </span>
+        :
+        string</code><p class="short-description">Send request to the proxy server</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$method</dt>
+<dd>string<br><em></em>
+</dd>
+<dt>$uri</dt>
+<dd>\Zend_Uri_Http<br><em></em>
+</dd>
+<dt>$http_ver</dt>
+<dd>string<br><em></em>
+</dd>
+<dt>$headers</dt>
+<dd>array<br><em></em>
+</dd>
+<dt>$body</dt>
+<dd>string<br><em></em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>string</dt>
+<dd><em>Request as string</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<small xmlns="" class="footer">Documentation was generated by <a href="http://docblox-project.org">DocBlox 0.12.2</a>.
+    </small></body></html>

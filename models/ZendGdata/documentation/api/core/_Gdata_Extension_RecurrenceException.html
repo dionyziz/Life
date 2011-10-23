@@ -1,0 +1,597 @@
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title>Zend Gdata API Documentation</title><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" href="css/black-tie/jquery-ui-1.8.2.custom.css" type="text/css"></link><link rel="stylesheet" href="css/jquery.treeview.css" type="text/css"></link><link rel="stylesheet" href="css/theme.css" type="text/css"></link><script type="text/javascript" src="js/jquery-1.4.2.min.js"></script><script type="text/javascript" src="js/jquery-ui-1.8.2.custom.min.js"></script><script type="text/javascript" src="js/jquery.cookie.js"></script><script type="text/javascript" src="js/jquery.treeview.js"></script><script type="text/javascript">
+            $(document).ready(function() {
+                $(".filetree").treeview({
+                    collapsed: true,
+                    persist: "cookie"
+                });
+
+                $("#accordion").accordion({
+                    collapsible: true,
+                    autoHeight:  false,
+                    fillSpace:   true
+                });
+
+                $(".tabs").tabs();
+            });
+        </script></head><body><div xmlns="" class="content">
+<div class="sub-page-main-header-api-documentation"><h2>API Documentation</h2></div>
+<div class="dotted-line"></div>
+</div>
+<div xmlns="" id="content">
+<script>
+      $(document).ready(function() {
+        $('dl.function-info, dl.constant-info, dl.property-info').prev().css('cursor', 'pointer');
+        $('dl.function-info, dl.constant-info, dl.property-info').prev().click(function() {
+          if ($(this).next().is(':hidden'))
+          {
+            $(this).children('img')[0].src = 'images/arrow_down.gif';
+          } else
+          {
+            $(this).children('img')[0].src = 'images/arrow_right.gif';
+          }
+          $(this).next().slideToggle();
+        });
+      $('dl.function-info, dl.constant-info, dl.property-info').hide();
+      $('dl.function-info img, dl.constant-info img, dl.property-info img').show();
+      });
+    </script><a name="top"></a><h1 class="file">Gdata/Extension/RecurrenceException.php</h1>
+<div class="file_menu">
+<a href="#includes">Includes</a> <a href="#classes">Classes</a> </div>
+<dl class="file-info">
+<dt>category</dt>
+<dd>Zend</dd>
+<dt>copyright</dt>
+<dd>Copyright (c) 2005-2011 Zend Technologies USA Inc. (http://www.zend.com)</dd>
+<dt>license</dt>
+<dd>http://framework.zend.com/license/new-bsd     New BSD License</dd>
+<dt>package</dt>
+<dd>Zend_Gdata</dd>
+<dt>subpackage</dt>
+<dd>Gdata</dd>
+<dt>version</dt>
+<dd>$Id: RecurrenceException.php 23775 2011-03-01 17:25:24Z ralph $</dd>
+<dt>Classes</dt>
+<dd><a class="class" href="#%5CZend_Gdata_Extension_RecurrenceException">Zend_Gdata_Extension_RecurrenceException</a></dd>
+</dl>
+<h2>Description</h2>
+<p class="short-description">Zend Framework</p>
+<div class="long-description"><p>LICENSE</p>
+
+<p>This source file is subject to the new BSD license that is bundled
+with this package in the file LICENSE.txt.
+It is also available through the world-wide-web at this URL:
+http://framework.zend.com/license/new-bsd
+If you did not receive a copy of the license and are unable to
+obtain it through the world-wide-web, please send an email
+to license@zend.com so we can send you a copy immediately.</p>
+</div>
+<a name="classes"></a><a id="\Zend_Gdata_Extension_RecurrenceException"></a><h2 class="class">\Zend_Gdata_Extension_RecurrenceException<div class="to-top"><a href="#top">jump to top</a></div>
+</h2>
+<div class="class">
+<dl class="class-info">
+<dt>Extends from</dt>
+<dd><a href="_Gdata_Extension.html#%5CZend_Gdata_Extension">\Zend_Gdata_Extension</a></dd>
+<dt>category</dt>
+<dd>Zend</dd>
+<dt>copyright</dt>
+<dd>Copyright (c) 2005-2011 Zend Technologies USA Inc. (http://www.zend.com)</dd>
+<dt>license</dt>
+<dd>http://framework.zend.com/license/new-bsd     New BSD License</dd>
+<dt>package</dt>
+<dd>Zend_Gdata</dd>
+<dt>subpackage</dt>
+<dd>Gdata</dd>
+<dt><a href="#" onclick="$(this).children('img').toggle().parents('dt').nextUntil('dt').slideToggle(); return false;"><img src="images/arrow_down.gif"><img src="images/arrow_right.gif" style="display: none">
+                Properties
+              </a></dt>
+<dd><a class="property protected" href="#%5CZend_Gdata_Extension_RecurrenceException::%24_entryLink">$_entryLink</a></dd>
+<dd><a class="property protected" href="#%5CZend_Gdata_Extension_RecurrenceException::%24_originalEvent">$_originalEvent</a></dd>
+<dd><a class="property protected" href="#%5CZend_Gdata_Extension_RecurrenceException::%24_rootElement">$_rootElement</a></dd>
+<dd><a class="property protected" href="#%5CZend_Gdata_Extension_RecurrenceException::%24_specialized">$_specialized</a></dd>
+<dt><a href="#" onclick="$(this).children('img').toggle().parents('dt').nextUntil('dt').slideToggle(); return false;"><img src="images/arrow_down.gif"><img src="images/arrow_right.gif" style="display: none">
+                Methods
+              </a></dt>
+<dd><a class="method public" href="#%5CZend_Gdata_Extension_RecurrenceException::__construct()">__construct</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Extension_RecurrenceException::getDOM()">getDOM</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Extension_RecurrenceException::getEntryLink()">getEntryLink</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Extension_RecurrenceException::getOriginalEvent()">getOriginalEvent</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Extension_RecurrenceException::getSpecialized()">getSpecialized</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Extension_RecurrenceException::setEntryLink()">setEntryLink</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Extension_RecurrenceException::setOriginalEvent()">setOriginalEvent</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Extension_RecurrenceException::setSpecialized()">setSpecialized</a></dd>
+<dd><a class="method protected" href="#%5CZend_Gdata_Extension_RecurrenceException::takeAttributeFromDOM()">takeAttributeFromDOM</a></dd>
+<dd><a class="method protected" href="#%5CZend_Gdata_Extension_RecurrenceException::takeChildFromDOM()">takeChildFromDOM</a></dd>
+</dl>
+<h3>Description</h3>
+<p class="short-description">Data model class to represent an entry's recurrenceException</p>
+<div class="long-description">
+</div>
+<h3>Properties</h3>
+<div>
+<a id="\Zend_Gdata_Extension_RecurrenceException::$_entryLink"></a><h4 class="property protected">$_entryLink<div class="to-top"><a href="#%5CZend_Gdata_Extension_RecurrenceException">jump to class</a></div>
+</h4>
+<div class="property">
+<code> <span class="highlight">$_entryLink</span> = 'null'</code><div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd>null</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Extension_RecurrenceException::$_originalEvent"></a><h4 class="property protected">$_originalEvent<div class="to-top"><a href="#%5CZend_Gdata_Extension_RecurrenceException">jump to class</a></div>
+</h4>
+<div class="property">
+<code> <span class="highlight">$_originalEvent</span> = 'null'</code><div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd>null</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Extension_RecurrenceException::$_rootElement"></a><h4 class="property protected">$_rootElement<div class="to-top"><a href="#%5CZend_Gdata_Extension_RecurrenceException">jump to class</a></div>
+</h4>
+<div class="property">
+<code>string <span class="highlight">$_rootElement</span> = 'recurrenceException'</code><p class="short-description"></p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt></dt>
+<dd>string<br><em>The XML element name, including prefix if desired</em>
+</dd>
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd>recurrenceException</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Extension_RecurrenceException::$_specialized"></a><h4 class="property protected">$_specialized<div class="to-top"><a href="#%5CZend_Gdata_Extension_RecurrenceException">jump to class</a></div>
+</h4>
+<div class="property">
+<code> <span class="highlight">$_specialized</span> = 'null'</code><div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd>null</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+</div>
+<h3>Methods</h3>
+<div>
+<a id="\Zend_Gdata_Extension_RecurrenceException::__construct()"></a><h4 class="method public">__construct<div class="to-top"><a href="#Zend_Gdata_Extension_RecurrenceException">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">__construct</span><span class="nb-faded-text">(
+          bool $specialized
+              =
+              null, \Zend_Gdata_EntryLink $entryLink
+              =
+              null, \Zend_Gdata_OriginalEvent $originalEvent
+              =
+              null
+          )
+        </span>
+        :
+        </code><p class="short-description">Constructs a new Zend_Gdata_Extension_RecurrenceException object.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$specialized</dt>
+<dd>bool<br><em>(optional) Whether this is a specialized exception or not.</em>
+</dd>
+<dt>$entryLink</dt>
+<dd>\Zend_Gdata_EntryLink<br><em>(optional) An Event entry with details about the exception.</em>
+</dd>
+<dt>$originalEvent</dt>
+<dd>\Zend_Gdata_OriginalEvent<br><em>(optional) The origianl recurrent event this is an exeption to.</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Extension_RecurrenceException::getDOM()"></a><h4 class="method public">getDOM<div class="to-top"><a href="#Zend_Gdata_Extension_RecurrenceException">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getDOM</span><span class="nb-faded-text">(
+          <a href="http://php.net/manual/en/class.domdocument.php">\DOMDocument</a> $doc
+              =
+              null,  $majorVersion
+              =
+              1,  $minorVersion
+              =
+              null
+          )
+        </span>
+        :
+        <a href="http://php.net/manual/en/class.domelement.php">\DOMElement</a></code><p class="short-description">Retrieves a DOMElement which corresponds to this element and all
+child properties.  This is used to build an entry back into a DOM
+and eventually XML text for sending to the server upon updates, or
+for application storage/persistence.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$doc</dt>
+<dd>\DOMDocument<br><em>The DOMDocument used to construct DOMElements</em>
+</dd>
+<dt>$majorVersion</dt>
+<dd><em></em></dd>
+<dt>$minorVersion</dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="http://php.net/manual/en/class.domelement.php">\DOMElement</a></dt>
+<dd><em>The DOMElement representing this element and all child properties.</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Extension_RecurrenceException::getEntryLink()"></a><h4 class="method public">getEntryLink<div class="to-top"><a href="#Zend_Gdata_Extension_RecurrenceException">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getEntryLink</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        <a href="_Gdata_Extension_EntryLink.html#%5CZend_Gdata_Extension_EntryLink">\Zend_Gdata_Extension_EntryLink</a></code><p class="short-description">Get the value for this element's EntryLink attribute.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_Extension_EntryLink.html#%5CZend_Gdata_Extension_EntryLink">\Zend_Gdata_Extension_EntryLink</a></dt>
+<dd><em>The requested attribute.</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Extension_RecurrenceException::getOriginalEvent()"></a><h4 class="method public">getOriginalEvent<div class="to-top"><a href="#Zend_Gdata_Extension_RecurrenceException">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getOriginalEvent</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        <a href="_Gdata_Extension_OriginalEvent.html#%5CZend_Gdata_Extension_OriginalEvent">\Zend_Gdata_Extension_OriginalEvent</a></code><p class="short-description">Get the value for this element's Specialized attribute.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_Extension_OriginalEvent.html#%5CZend_Gdata_Extension_OriginalEvent">\Zend_Gdata_Extension_OriginalEvent</a></dt>
+<dd><em>The requested attribute.</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Extension_RecurrenceException::getSpecialized()"></a><h4 class="method public">getSpecialized<div class="to-top"><a href="#Zend_Gdata_Extension_RecurrenceException">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getSpecialized</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        bool</code><p class="short-description">Get the value for this element's Specialized attribute.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>bool</dt>
+<dd><em>The requested attribute.</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Extension_RecurrenceException::setEntryLink()"></a><h4 class="method public">setEntryLink<div class="to-top"><a href="#Zend_Gdata_Extension_RecurrenceException">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">setEntryLink</span><span class="nb-faded-text">(
+          <a href="_Gdata_Extension_EntryLink.html#%5CZend_Gdata_Extension_EntryLink">\Zend_Gdata_Extension_EntryLink</a> $value
+          )
+        </span>
+        :
+        <a href="_Gdata_Extension_RecurrenceException.html#%5CZend_Gdata_Extension_RecurrenceException">\Zend_Gdata_Extension_RecurrenceException</a></code><p class="short-description">Set the value for this element's EntryLink attribute.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$value</dt>
+<dd>\Zend_Gdata_Extension_EntryLink<br><em>The desired value for this attribute.</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_Extension_RecurrenceException.html#%5CZend_Gdata_Extension_RecurrenceException">\Zend_Gdata_Extension_RecurrenceException</a></dt>
+<dd><em>The element being modified.</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Extension_RecurrenceException::setOriginalEvent()"></a><h4 class="method public">setOriginalEvent<div class="to-top"><a href="#Zend_Gdata_Extension_RecurrenceException">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">setOriginalEvent</span><span class="nb-faded-text">(
+          <a href="_Gdata_Extension_OriginalEvent.html#%5CZend_Gdata_Extension_OriginalEvent">\Zend_Gdata_Extension_OriginalEvent</a> $value
+          )
+        </span>
+        :
+        <a href="_Gdata_Extension_RecurrenceException.html#%5CZend_Gdata_Extension_RecurrenceException">\Zend_Gdata_Extension_RecurrenceException</a></code><p class="short-description">Set the value for this element's Specialized attribute.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$value</dt>
+<dd>\Zend_Gdata_Extension_OriginalEvent<br><em>The desired value for this attribute.</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_Extension_RecurrenceException.html#%5CZend_Gdata_Extension_RecurrenceException">\Zend_Gdata_Extension_RecurrenceException</a></dt>
+<dd><em>The element being modified.</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Extension_RecurrenceException::setSpecialized()"></a><h4 class="method public">setSpecialized<div class="to-top"><a href="#Zend_Gdata_Extension_RecurrenceException">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">setSpecialized</span><span class="nb-faded-text">(
+          bool $value
+          )
+        </span>
+        :
+        <a href="_Gdata_Extension_RecurrenceException.html#%5CZend_Gdata_Extension_RecurrenceException">\Zend_Gdata_Extension_RecurrenceException</a></code><p class="short-description">Set the value for this element's Specialized attribute.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$value</dt>
+<dd>bool<br><em>The desired value for this attribute.</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_Extension_RecurrenceException.html#%5CZend_Gdata_Extension_RecurrenceException">\Zend_Gdata_Extension_RecurrenceException</a></dt>
+<dd><em>The element being modified.</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Extension_RecurrenceException::takeAttributeFromDOM()"></a><h4 class="method protected">takeAttributeFromDOM<div class="to-top"><a href="#Zend_Gdata_Extension_RecurrenceException">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">takeAttributeFromDOM</span><span class="nb-faded-text">(
+          <a href="http://php.net/manual/en/class.domnode.php">\DOMNode</a> $attribute
+          )
+        </span>
+        :
+        </code><p class="short-description">Given a DOMNode representing an attribute, tries to map the data into
+instance members.  If no mapping is defined, the name and value are
+stored in an array.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$attribute</dt>
+<dd>\DOMNode<br><em>The DOMNode attribute needed to be handled</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Extension_RecurrenceException::takeChildFromDOM()"></a><h4 class="method protected">takeChildFromDOM<div class="to-top"><a href="#Zend_Gdata_Extension_RecurrenceException">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">takeChildFromDOM</span><span class="nb-faded-text">(
+          <a href="http://php.net/manual/en/class.domnode.php">\DOMNode</a> $child
+          )
+        </span>
+        :
+        </code><p class="short-description">Creates individual Entry objects of the appropriate type and
+stores them as members of this entry based upon DOM data.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$child</dt>
+<dd>\DOMNode<br><em>The DOMNode to process</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<small xmlns="" class="footer">Documentation was generated by <a href="http://docblox-project.org">DocBlox 0.12.2</a>.
+    </small></body></html>

@@ -1,0 +1,568 @@
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title>Zend Gdata API Documentation</title><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" href="css/black-tie/jquery-ui-1.8.2.custom.css" type="text/css"></link><link rel="stylesheet" href="css/jquery.treeview.css" type="text/css"></link><link rel="stylesheet" href="css/theme.css" type="text/css"></link><script type="text/javascript" src="js/jquery-1.4.2.min.js"></script><script type="text/javascript" src="js/jquery-ui-1.8.2.custom.min.js"></script><script type="text/javascript" src="js/jquery.cookie.js"></script><script type="text/javascript" src="js/jquery.treeview.js"></script><script type="text/javascript">
+            $(document).ready(function() {
+                $(".filetree").treeview({
+                    collapsed: true,
+                    persist: "cookie"
+                });
+
+                $("#accordion").accordion({
+                    collapsible: true,
+                    autoHeight:  false,
+                    fillSpace:   true
+                });
+
+                $(".tabs").tabs();
+            });
+        </script></head><body><div xmlns="" class="content">
+<div class="sub-page-main-header-api-documentation"><h2>API Documentation</h2></div>
+<div class="dotted-line"></div>
+</div>
+<div xmlns="" id="content">
+<script>
+      $(document).ready(function() {
+        $('dl.function-info, dl.constant-info, dl.property-info').prev().css('cursor', 'pointer');
+        $('dl.function-info, dl.constant-info, dl.property-info').prev().click(function() {
+          if ($(this).next().is(':hidden'))
+          {
+            $(this).children('img')[0].src = 'images/arrow_down.gif';
+          } else
+          {
+            $(this).children('img')[0].src = 'images/arrow_right.gif';
+          }
+          $(this).next().slideToggle();
+        });
+      $('dl.function-info, dl.constant-info, dl.property-info').hide();
+      $('dl.function-info img, dl.constant-info img, dl.property-info img').show();
+      });
+    </script><a name="top"></a><h1 class="file">Gdata.php</h1>
+<div class="file_menu">
+<a href="#includes">Includes</a> <a href="#classes">Classes</a> </div>
+<dl class="file-info">
+<dt>category</dt>
+<dd>Zend</dd>
+<dt>copyright</dt>
+<dd>Copyright (c) 2005-2011 Zend Technologies USA Inc. (http://www.zend.com)</dd>
+<dt>license</dt>
+<dd>http://framework.zend.com/license/new-bsd     New BSD License</dd>
+<dt>package</dt>
+<dd>Zend_Gdata</dd>
+<dt>subpackage</dt>
+<dd>Gdata</dd>
+<dt>version</dt>
+<dd>$Id: Gdata.php 23775 2011-03-01 17:25:24Z ralph $</dd>
+<dt>Classes</dt>
+<dd><a class="class" href="#%5CZend_Gdata">Zend_Gdata</a></dd>
+</dl>
+<h2>Description</h2>
+<p class="short-description">Zend Framework</p>
+<div class="long-description"><p>LICENSE</p>
+
+<p>This source file is subject to the new BSD license that is bundled
+with this package in the file LICENSE.txt.
+It is also available through the world-wide-web at this URL:
+http://framework.zend.com/license/new-bsd
+If you did not receive a copy of the license and are unable to
+obtain it through the world-wide-web, please send an email
+to license@zend.com so we can send you a copy immediately.</p>
+</div>
+<a name="classes"></a><a id="\Zend_Gdata"></a><h2 class="class">\Zend_Gdata<div class="to-top"><a href="#top">jump to top</a></div>
+</h2>
+<div class="class">
+<dl class="class-info">
+<dt>Extends from</dt>
+<dd><a href="_Gdata_App.html#%5CZend_Gdata_App">\Zend_Gdata_App</a></dd>
+<dt>category</dt>
+<dd>Zend</dd>
+<dt>copyright</dt>
+<dd>Copyright (c) 2005-2011 Zend Technologies USA Inc. (http://www.zend.com)</dd>
+<dt>license</dt>
+<dd>http://framework.zend.com/license/new-bsd     New BSD License</dd>
+<dt>link</dt>
+<dd><a href="http://code.google.com/apis/gdata/overview.html">http://code.google.com/apis/gdata/overview.html</a></dd>
+<dt>package</dt>
+<dd>Zend_Gdata</dd>
+<dt>subpackage</dt>
+<dd>Gdata</dd>
+<dt><a href="#" onclick="$(this).children('img').toggle().parents('dt').nextUntil('dt').slideToggle(); return false;"><img src="images/arrow_down.gif"><img src="images/arrow_right.gif" style="display: none">
+                Constants
+              </a></dt>
+<dd><a class="constant" href="#%5CZend_Gdata::AUTH_SERVICE_NAME">AUTH_SERVICE_NAME</a></dd>
+<dt><a href="#" onclick="$(this).children('img').toggle().parents('dt').nextUntil('dt').slideToggle(); return false;"><img src="images/arrow_down.gif"><img src="images/arrow_right.gif" style="display: none">
+                Properties
+              </a></dt>
+<dd><a class="property protected" href="#%5CZend_Gdata::%24_defaultPostUri">$_defaultPostUri</a></dd>
+<dd><a class="property protected" href="#%5CZend_Gdata::%24_httpClient">$_httpClient</a></dd>
+<dd><a class="property protected" href="#%5CZend_Gdata::%24_registeredPackages">$_registeredPackages</a></dd>
+<dd><a class="property protected" href="#%5CZend_Gdata::%24_staticHttpClient">$_staticHttpClient</a></dd>
+<dd><a class="property public" href="#%5CZend_Gdata::%24namespaces">$namespaces</a></dd>
+<dt><a href="#" onclick="$(this).children('img').toggle().parents('dt').nextUntil('dt').slideToggle(); return false;"><img src="images/arrow_down.gif"><img src="images/arrow_right.gif" style="display: none">
+                Methods
+              </a></dt>
+<dd><a class="method public" href="#%5CZend_Gdata::__construct()">__construct</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata::getEntry()">getEntry</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata::getFeed()">getFeed</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata::import()">import</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata::isAuthenticated()">isAuthenticated</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata::performHttpRequest()">performHttpRequest</a></dd>
+</dl>
+<h3>Description</h3>
+<p class="short-description">Provides functionality to interact with Google data APIs
+Subclasses exist to implement service-specific features</p>
+<div class="long-description"><p>As the Google data API protocol is based upon the Atom Publishing Protocol
+(APP), Gdata functionality extends the appropriate Zend_Gdata_App classes</p>
+</div>
+<h3>Constants</h3>
+<div>
+<a id="\Zend_Gdata::AUTH_SERVICE_NAME"></a><h4 class="constant">AUTH_SERVICE_NAME<div class="to-top"><a href="#Zend_Gdata">jump to class</a></div>
+</h4>
+<div class="constant">
+<code>string <span class="highlight">AUTH_SERVICE_NAME</span> = 'xapi'
+      </code><p class="short-description">Service name for use with Google's authentication mechanisms</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="constant-info">
+<dt>value</dt>
+<dd>xapi</dd>
+<dt></dt>
+<dd>string<br><em></em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+</div>
+<h3>Properties</h3>
+<div>
+<a id="\Zend_Gdata::$_defaultPostUri"></a><h4 class="property protected">$_defaultPostUri<div class="to-top"><a href="#%5CZend_Gdata">jump to class</a></div>
+</h4>
+<div class="property">
+<code>string <span class="highlight">$_defaultPostUri</span> = 'null'</code><p class="short-description">Default URI to which to POST.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt></dt>
+<dd>string<br><em></em>
+</dd>
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd>null</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata::$_httpClient"></a><h4 class="property protected">$_httpClient<div class="to-top"><a href="#%5CZend_Gdata">jump to class</a></div>
+</h4>
+<div class="property">
+<code><a href="_Gdata_HttpClient.html#%5CZend_Gdata_HttpClient">\Zend_Gdata_HttpClient</a> <span class="highlight">$_httpClient</span> = ''</code><p class="short-description">Client object used to communicate</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt></dt>
+<dd>
+<a href="_Gdata_HttpClient.html#%5CZend_Gdata_HttpClient">\Zend_Gdata_HttpClient</a><br><em></em>
+</dd>
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd></dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata::$_registeredPackages"></a><h4 class="property protected">$_registeredPackages<div class="to-top"><a href="#%5CZend_Gdata">jump to class</a></div>
+</h4>
+<div class="property">
+<code>array <span class="highlight">$_registeredPackages</span> = 'array'</code><p class="short-description">Packages to search for classes when using magic __call method, in order.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt></dt>
+<dd>array<br><em></em>
+</dd>
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd>array</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata::$_staticHttpClient"></a><h4 class="property protected">$_staticHttpClient<div class="to-top"><a href="#%5CZend_Gdata">jump to class</a></div>
+</h4>
+<div class="property">
+<code><a href="_Gdata_HttpClient.html#%5CZend_Gdata_HttpClient">\Zend_Gdata_HttpClient</a> <span class="highlight">$_staticHttpClient</span> = 'null'</code><p class="short-description">Client object used to communicate in static context</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt></dt>
+<dd>
+<a href="_Gdata_HttpClient.html#%5CZend_Gdata_HttpClient">\Zend_Gdata_HttpClient</a><br><em></em>
+</dd>
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd>null</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>true</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata::$namespaces"></a><h4 class="property public">$namespaces<div class="to-top"><a href="#%5CZend_Gdata">jump to class</a></div>
+</h4>
+<div class="property">
+<code>array <span class="highlight">$namespaces</span> = 'array'</code><p class="short-description">Namespaces used for Gdata data</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt></dt>
+<dd>array<br><em></em>
+</dd>
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>default</dt>
+<dd>array</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>true</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+</div>
+<h3>Methods</h3>
+<div>
+<a id="\Zend_Gdata::__construct()"></a><h4 class="method public">__construct<div class="to-top"><a href="#Zend_Gdata">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">__construct</span><span class="nb-faded-text">(
+          <a href="_Http_Client.html#%5CZend_Http_Client">\Zend_Http_Client</a> $client
+              =
+              null, string $applicationId
+              =
+              MyCompany-MyApp-1.0
+          )
+        </span>
+        :
+        </code><p class="short-description">Create Gdata object</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$client</dt>
+<dd>\Zend_Http_Client<br><em></em>
+</dd>
+<dt>$applicationId</dt>
+<dd>string<br><em>The identity of the app in the form of Company-AppName-Version</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata::getEntry()"></a><h4 class="method public">getEntry<div class="to-top"><a href="#Zend_Gdata">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getEntry</span><span class="nb-faded-text">(
+          mixed $location,  $className
+              =
+              Zend_Gdata_Entry
+          )
+        </span>
+        :
+        string|<a href="_Gdata_App_Entry.html#%5CZend_Gdata_App_Entry">\Zend_Gdata_App_Entry</a></code><p class="short-description">Retrieve entry as string or object</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$location</dt>
+<dd>mixed<br><em>The location as string or Zend_Gdata_Query</em>
+</dd>
+<dt>$className</dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>string|<a href="_Gdata_App_Entry.html#%5CZend_Gdata_App_Entry">\Zend_Gdata_App_Entry</a>
+</dt>
+<dd><em>Returns string only if the object mapping has been disabled explicitly by passing false to the useObjectMapping() function.</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_App_InvalidArgumentException.html#%5CZend_Gdata_App_InvalidArgumentException"></a></dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata::getFeed()"></a><h4 class="method public">getFeed<div class="to-top"><a href="#Zend_Gdata">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getFeed</span><span class="nb-faded-text">(
+          mixed $location, string $className
+              =
+              Zend_Gdata_Feed
+          )
+        </span>
+        :
+        string|<a href="_Gdata_App_Feed.html#%5CZend_Gdata_App_Feed">\Zend_Gdata_App_Feed</a></code><p class="short-description">Retrieve feed as string or object</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$location</dt>
+<dd>mixed<br><em>The location as string or Zend_Gdata_Query</em>
+</dd>
+<dt>$className</dt>
+<dd>string<br><em>The class type to use for returning the feed</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>string|<a href="_Gdata_App_Feed.html#%5CZend_Gdata_App_Feed">\Zend_Gdata_App_Feed</a>
+</dt>
+<dd><em>Returns string only if the object mapping has been disabled explicitly by passing false to the useObjectMapping() function.</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_App_InvalidArgumentException.html#%5CZend_Gdata_App_InvalidArgumentException"></a></dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata::import()"></a><h4 class="method public">import<div class="to-top"><a href="#Zend_Gdata">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">import</span><span class="nb-faded-text">(
+          string $uri, <a href="_Http_Client.html#%5CZend_Http_Client">\Zend_Http_Client</a> $client
+              =
+              null, string $className
+              =
+              Zend_Gdata_Feed
+          )
+        </span>
+        :
+        string|<a href="_Gdata_App_Feed.html#%5CZend_Gdata_App_Feed">\Zend_Gdata_App_Feed</a></code><p class="short-description">Imports a feed located at $uri.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$uri</dt>
+<dd>string<br><em></em>
+</dd>
+<dt>$client</dt>
+<dd>\Zend_Http_Client<br><em>The client used for communication</em>
+</dd>
+<dt>$className</dt>
+<dd>string<br><em>The class which is used as the return type</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>string|<a href="_Gdata_App_Feed.html#%5CZend_Gdata_App_Feed">\Zend_Gdata_App_Feed</a>
+</dt>
+<dd><em>Returns string only if the object mapping has been disabled explicitly by passing false to the useObjectMapping() function.</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>true</dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_App_Exception.html#%5CZend_Gdata_App_Exception"></a></dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata::isAuthenticated()"></a><h4 class="method public">isAuthenticated<div class="to-top"><a href="#Zend_Gdata">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">isAuthenticated</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        boolean</code><p class="short-description">Determines whether service object is authenticated.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>boolean</dt>
+<dd><em>True if service object is authenticated, false otherwise.</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata::performHttpRequest()"></a><h4 class="method public">performHttpRequest<div class="to-top"><a href="#Zend_Gdata">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">performHttpRequest</span><span class="nb-faded-text">(
+          string $method, string $url, array $headers
+              =
+              array, string $body
+              =
+              null, string $contentType
+              =
+              null, int $remainingRedirects
+              =
+              null
+          )
+        </span>
+        :
+        <a href="_Http_Response.html#%5CZend_Http_Response">\Zend_Http_Response</a></code><p class="short-description">Performs a HTTP request using the specified method.</p>
+<div class="long-description"><p>Overrides the definition in the parent (Zend_Gdata_App)
+and uses the Zend_Gdata_HttpClient functionality
+to filter the HTTP requests and responses.</p>
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$method</dt>
+<dd>string<br><em>The HTTP method for the request - &amp;#039;GET&amp;#039;, &amp;#039;POST&amp;#039;, &amp;#039;PUT&amp;#039;, &amp;#039;DELETE&amp;#039;</em>
+</dd>
+<dt>$url</dt>
+<dd>string<br><em>The URL to which this request is being performed, or null if found in $data</em>
+</dd>
+<dt>$headers</dt>
+<dd>array<br><em>An associative array of HTTP headers for this request</em>
+</dd>
+<dt>$body</dt>
+<dd>string<br><em>The body of the HTTP request</em>
+</dd>
+<dt>$contentType</dt>
+<dd>string<br><em>The value for the content type of the request body</em>
+</dd>
+<dt>$remainingRedirects</dt>
+<dd>int<br><em>Number of redirects to follow if requests results in one</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Http_Response.html#%5CZend_Http_Response">\Zend_Http_Response</a></dt>
+<dd><em>The response object</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<small xmlns="" class="footer">Documentation was generated by <a href="http://docblox-project.org">DocBlox 0.12.2</a>.
+    </small></body></html>

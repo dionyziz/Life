@@ -1,0 +1,507 @@
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title>Zend Gdata API Documentation</title><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" href="css/black-tie/jquery-ui-1.8.2.custom.css" type="text/css"></link><link rel="stylesheet" href="css/jquery.treeview.css" type="text/css"></link><link rel="stylesheet" href="css/theme.css" type="text/css"></link><script type="text/javascript" src="js/jquery-1.4.2.min.js"></script><script type="text/javascript" src="js/jquery-ui-1.8.2.custom.min.js"></script><script type="text/javascript" src="js/jquery.cookie.js"></script><script type="text/javascript" src="js/jquery.treeview.js"></script><script type="text/javascript">
+            $(document).ready(function() {
+                $(".filetree").treeview({
+                    collapsed: true,
+                    persist: "cookie"
+                });
+
+                $("#accordion").accordion({
+                    collapsible: true,
+                    autoHeight:  false,
+                    fillSpace:   true
+                });
+
+                $(".tabs").tabs();
+            });
+        </script></head><body><div xmlns="" class="content">
+<div class="sub-page-main-header-api-documentation"><h2>API Documentation</h2></div>
+<div class="dotted-line"></div>
+</div>
+<div xmlns="" id="content">
+<script>
+      $(document).ready(function() {
+        $('dl.function-info, dl.constant-info, dl.property-info').prev().css('cursor', 'pointer');
+        $('dl.function-info, dl.constant-info, dl.property-info').prev().click(function() {
+          if ($(this).next().is(':hidden'))
+          {
+            $(this).children('img')[0].src = 'images/arrow_down.gif';
+          } else
+          {
+            $(this).children('img')[0].src = 'images/arrow_right.gif';
+          }
+          $(this).next().slideToggle();
+        });
+      $('dl.function-info, dl.constant-info, dl.property-info').hide();
+      $('dl.function-info img, dl.constant-info img, dl.property-info img').show();
+      });
+    </script><a name="top"></a><h1 class="file">Gdata/Books.php</h1>
+<div class="file_menu">
+<a href="#includes">Includes</a> <a href="#classes">Classes</a> </div>
+<dl class="file-info">
+<dt>category</dt>
+<dd>Zend</dd>
+<dt>copyright</dt>
+<dd>Copyright (c) 2005-2011 Zend Technologies USA Inc. (http://www.zend.com)</dd>
+<dt>license</dt>
+<dd>http://framework.zend.com/license/new-bsd     New BSD License</dd>
+<dt>package</dt>
+<dd>Zend_Gdata</dd>
+<dt>subpackage</dt>
+<dd>Books</dd>
+<dt>version</dt>
+<dd>$Id: Books.php 23805 2011-03-16 00:55:40Z tjohns $</dd>
+<dt>Classes</dt>
+<dd><a class="class" href="#%5CZend_Gdata_Books">Zend_Gdata_Books</a></dd>
+</dl>
+<h2>Description</h2>
+<p class="short-description">Zend Framework</p>
+<div class="long-description"><p>LICENSE</p>
+
+<p>This source file is subject to the new BSD license that is bundled
+with this package in the file LICENSE.txt.
+It is also available through the world-wide-web at this URL:
+http://framework.zend.com/license/new-bsd
+If you did not receive a copy of the license and are unable to
+obtain it through the world-wide-web, please send an email
+to license@zend.com so we can send you a copy immediately.</p>
+</div>
+<a name="classes"></a><a id="\Zend_Gdata_Books"></a><h2 class="class">\Zend_Gdata_Books<div class="to-top"><a href="#top">jump to top</a></div>
+</h2>
+<div class="class">
+<dl class="class-info">
+<dt>Extends from</dt>
+<dd><a href="_Gdata.html#%5CZend_Gdata">\Zend_Gdata</a></dd>
+<dt>category</dt>
+<dd>Zend</dd>
+<dt>copyright</dt>
+<dd>Copyright (c) 2005-2011 Zend Technologies USA Inc. (http://www.zend.com)</dd>
+<dt>license</dt>
+<dd>http://framework.zend.com/license/new-bsd     New BSD License</dd>
+<dt>package</dt>
+<dd>Zend_Gdata</dd>
+<dt>subpackage</dt>
+<dd>Books</dd>
+<dt><a href="#" onclick="$(this).children('img').toggle().parents('dt').nextUntil('dt').slideToggle(); return false;"><img src="images/arrow_down.gif"><img src="images/arrow_right.gif" style="display: none">
+                Constants
+              </a></dt>
+<dd><a class="constant" href="#%5CZend_Gdata_Books::AUTH_SERVICE_NAME">AUTH_SERVICE_NAME</a></dd>
+<dd><a class="constant" href="#%5CZend_Gdata_Books::MY_ANNOTATION_FEED_URI">MY_ANNOTATION_FEED_URI</a></dd>
+<dd><a class="constant" href="#%5CZend_Gdata_Books::MY_LIBRARY_FEED_URI">MY_LIBRARY_FEED_URI</a></dd>
+<dd><a class="constant" href="#%5CZend_Gdata_Books::VOLUME_FEED_URI">VOLUME_FEED_URI</a></dd>
+<dt><a href="#" onclick="$(this).children('img').toggle().parents('dt').nextUntil('dt').slideToggle(); return false;"><img src="images/arrow_down.gif"><img src="images/arrow_right.gif" style="display: none">
+                Properties
+              </a></dt>
+<dd><a class="property public" href="#%5CZend_Gdata_Books::%24namespaces">$namespaces</a></dd>
+<dt><a href="#" onclick="$(this).children('img').toggle().parents('dt').nextUntil('dt').slideToggle(); return false;"><img src="images/arrow_down.gif"><img src="images/arrow_right.gif" style="display: none">
+                Methods
+              </a></dt>
+<dd><a class="method public" href="#%5CZend_Gdata_Books::__construct()">__construct</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Books::deleteVolume()">deleteVolume</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Books::getUserAnnotationFeed()">getUserAnnotationFeed</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Books::getUserLibraryFeed()">getUserLibraryFeed</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Books::getVolumeEntry()">getVolumeEntry</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Books::getVolumeFeed()">getVolumeFeed</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Books::insertVolume()">insertVolume</a></dd>
+</dl>
+<h3>Description</h3>
+<p class="short-description">Service class for interacting with the Books service</p>
+<div class="long-description"><p>As the Google data API protocol is based upon the Atom Publishing Protocol
+(APP), Gdata functionality extends the appropriate Zend_Gdata_App classes</p>
+</div>
+<h3>Constants</h3>
+<div>
+<a id="\Zend_Gdata_Books::VOLUME_FEED_URI"></a><h4 class="constant">VOLUME_FEED_URI<div class="to-top"><a href="#Zend_Gdata_Books">jump to class</a></div>
+</h4>
+<div class="constant">
+<code> <span class="highlight">VOLUME_FEED_URI</span> = 'https://books.google.com/books/feeds/volumes'
+      </code><div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="constant-info">
+<dt>value</dt>
+<dd>https://books.google.com/books/feeds/volumes</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Books::MY_LIBRARY_FEED_URI"></a><h4 class="constant">MY_LIBRARY_FEED_URI<div class="to-top"><a href="#Zend_Gdata_Books">jump to class</a></div>
+</h4>
+<div class="constant">
+<code> <span class="highlight">MY_LIBRARY_FEED_URI</span> = 'https://books.google.com/books/feeds/users/me/collections/library/volumes'
+      </code><div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="constant-info">
+<dt>value</dt>
+<dd>https://books.google.com/books/feeds/users/me/collections/library/volumes</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Books::MY_ANNOTATION_FEED_URI"></a><h4 class="constant">MY_ANNOTATION_FEED_URI<div class="to-top"><a href="#Zend_Gdata_Books">jump to class</a></div>
+</h4>
+<div class="constant">
+<code> <span class="highlight">MY_ANNOTATION_FEED_URI</span> = 'https://books.google.com/books/feeds/users/me/volumes'
+      </code><div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="constant-info">
+<dt>value</dt>
+<dd>https://books.google.com/books/feeds/users/me/volumes</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Books::AUTH_SERVICE_NAME"></a><h4 class="constant">AUTH_SERVICE_NAME<div class="to-top"><a href="#Zend_Gdata_Books">jump to class</a></div>
+</h4>
+<div class="constant">
+<code> <span class="highlight">AUTH_SERVICE_NAME</span> = 'print'
+      </code><div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="constant-info">
+<dt>value</dt>
+<dd>print</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+</div>
+<h3>Properties</h3>
+<div>
+<a id="\Zend_Gdata_Books::$namespaces"></a><h4 class="property public">$namespaces<div class="to-top"><a href="#%5CZend_Gdata_Books">jump to class</a></div>
+</h4>
+<div class="property">
+<code>array <span class="highlight">$namespaces</span> = 'array'</code><p class="short-description">Namespaces used for Zend_Gdata_Books</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt></dt>
+<dd>array<br><em></em>
+</dd>
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>default</dt>
+<dd>array</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>true</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+</div>
+<h3>Methods</h3>
+<div>
+<a id="\Zend_Gdata_Books::__construct()"></a><h4 class="method public">__construct<div class="to-top"><a href="#Zend_Gdata_Books">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">__construct</span><span class="nb-faded-text">(
+          <a href="_Http_Client.html#%5CZend_Http_Client">\Zend_Http_Client</a> $client
+              =
+              null, string $applicationId
+              =
+              MyCompany-MyApp-1.0
+          )
+        </span>
+        :
+        </code><p class="short-description">Create Zend_Gdata_Books object</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$client</dt>
+<dd>\Zend_Http_Client<br><em>(optional) The HTTP client to use when when communicating with the Google servers.</em>
+</dd>
+<dt>$applicationId</dt>
+<dd>string<br><em>The identity of the app in the form of Company-AppName-Version</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Books::deleteVolume()"></a><h4 class="method public">deleteVolume<div class="to-top"><a href="#Zend_Gdata_Books">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">deleteVolume</span><span class="nb-faded-text">(
+          <a href="_Gdata_Books_VolumeEntry.html#%5CZend_Gdata_Books_VolumeEntry">\Zend_Gdata_Books_VolumeEntry</a> $entry
+          )
+        </span>
+        :
+        void</code><p class="short-description">Delete a Volume</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$entry</dt>
+<dd>\Zend_Gdata_Books_VolumeEntry<br><em></em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Books::getUserAnnotationFeed()"></a><h4 class="method public">getUserAnnotationFeed<div class="to-top"><a href="#Zend_Gdata_Books">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getUserAnnotationFeed</span><span class="nb-faded-text">(
+          <a href="_Gdata_Query.html#%5CZend_Gdata_Query">\Zend_Gdata_Query</a>|string|null $location
+              =
+              null
+          )
+        </span>
+        :
+        <a href="_Gdata_Books_VolumeFeed.html#%5CZend_Gdata_Books_VolumeFeed">\Zend_Gdata_Books_VolumeFeed</a></code><p class="short-description">Retrieves a feed of volumes, by default the User annotation feed</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$location</dt>
+<dd>\Zend_Gdata_Querystringnull<br><em>(optional) The URL to query.</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_Books_VolumeFeed.html#%5CZend_Gdata_Books_VolumeFeed">\Zend_Gdata_Books_VolumeFeed</a></dt>
+<dd><em>The feed of volumes found at the specified URL.</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Books::getUserLibraryFeed()"></a><h4 class="method public">getUserLibraryFeed<div class="to-top"><a href="#Zend_Gdata_Books">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getUserLibraryFeed</span><span class="nb-faded-text">(
+          <a href="_Gdata_Query.html#%5CZend_Gdata_Query">\Zend_Gdata_Query</a>|string|null $location
+              =
+              null
+          )
+        </span>
+        :
+        <a href="_Gdata_Books_VolumeFeed.html#%5CZend_Gdata_Books_VolumeFeed">\Zend_Gdata_Books_VolumeFeed</a></code><p class="short-description">Retrieves a feed of volumes, by default the User library feed.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$location</dt>
+<dd>\Zend_Gdata_Querystringnull<br><em>(optional) The URL to query.</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_Books_VolumeFeed.html#%5CZend_Gdata_Books_VolumeFeed">\Zend_Gdata_Books_VolumeFeed</a></dt>
+<dd><em>The feed of volumes found at the specified URL.</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Books::getVolumeEntry()"></a><h4 class="method public">getVolumeEntry<div class="to-top"><a href="#Zend_Gdata_Books">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getVolumeEntry</span><span class="nb-faded-text">(
+          string|null $volumeId
+              =
+              null, <a href="_Gdata_Query.html#%5CZend_Gdata_Query">\Zend_Gdata_Query</a>|string|null $location
+              =
+              null
+          )
+        </span>
+        :
+        <a href="_Gdata_Books_VolumeEntry.html#%5CZend_Gdata_Books_VolumeEntry">\Zend_Gdata_Books_VolumeEntry</a></code><p class="short-description">Retrieves a specific volume entry.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$volumeId</dt>
+<dd>stringnull<br><em>The volumeId of interest.</em>
+</dd>
+<dt>$location</dt>
+<dd>\Zend_Gdata_Querystringnull<br><em>(optional) The URL to query or a Zend_Gdata_Query object from which a URL can be determined.</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_Books_VolumeEntry.html#%5CZend_Gdata_Books_VolumeEntry">\Zend_Gdata_Books_VolumeEntry</a></dt>
+<dd><em>The feed of volumes found at the specified URL.</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Books::getVolumeFeed()"></a><h4 class="method public">getVolumeFeed<div class="to-top"><a href="#Zend_Gdata_Books">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getVolumeFeed</span><span class="nb-faded-text">(
+          <a href="_Gdata_Query.html#%5CZend_Gdata_Query">\Zend_Gdata_Query</a>|string|null $location
+              =
+              null
+          )
+        </span>
+        :
+        <a href="_Gdata_Books_VolumeFeed.html#%5CZend_Gdata_Books_VolumeFeed">\Zend_Gdata_Books_VolumeFeed</a></code><p class="short-description">Retrieves a feed of volumes.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$location</dt>
+<dd>\Zend_Gdata_Querystringnull<br><em>(optional) The URL to query or a Zend_Gdata_Query object from which a URL can be determined.</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_Books_VolumeFeed.html#%5CZend_Gdata_Books_VolumeFeed">\Zend_Gdata_Books_VolumeFeed</a></dt>
+<dd><em>The feed of volumes found at the specified URL.</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Books::insertVolume()"></a><h4 class="method public">insertVolume<div class="to-top"><a href="#Zend_Gdata_Books">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">insertVolume</span><span class="nb-faded-text">(
+          <a href="_Gdata_Books_VolumeEntry.html#%5CZend_Gdata_Books_VolumeEntry">\Zend_Gdata_Books_VolumeEntry</a> $entry, <a href="_Gdata_Query.html#%5CZend_Gdata_Query">\Zend_Gdata_Query</a>|string|null $location
+              =
+              null
+          )
+        </span>
+        :
+        <a href="_Gdata_Books_VolumeEntry.html#%5CZend_Gdata_Books_VolumeEntry">\Zend_Gdata_Books_VolumeEntry</a></code><p class="short-description">Insert a Volume / Annotation</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$entry</dt>
+<dd>\Zend_Gdata_Books_VolumeEntry<br><em></em>
+</dd>
+<dt>$location</dt>
+<dd>\Zend_Gdata_Querystringnull<br><em>(optional) The URL to query</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_Books_VolumeEntry.html#%5CZend_Gdata_Books_VolumeEntry">\Zend_Gdata_Books_VolumeEntry</a></dt>
+<dd><em>The inserted volume entry.</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<small xmlns="" class="footer">Documentation was generated by <a href="http://docblox-project.org">DocBlox 0.12.2</a>.
+    </small></body></html>

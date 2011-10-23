@@ -1,0 +1,454 @@
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title>Zend Gdata API Documentation</title><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" href="css/black-tie/jquery-ui-1.8.2.custom.css" type="text/css"></link><link rel="stylesheet" href="css/jquery.treeview.css" type="text/css"></link><link rel="stylesheet" href="css/theme.css" type="text/css"></link><script type="text/javascript" src="js/jquery-1.4.2.min.js"></script><script type="text/javascript" src="js/jquery-ui-1.8.2.custom.min.js"></script><script type="text/javascript" src="js/jquery.cookie.js"></script><script type="text/javascript" src="js/jquery.treeview.js"></script><script type="text/javascript">
+            $(document).ready(function() {
+                $(".filetree").treeview({
+                    collapsed: true,
+                    persist: "cookie"
+                });
+
+                $("#accordion").accordion({
+                    collapsible: true,
+                    autoHeight:  false,
+                    fillSpace:   true
+                });
+
+                $(".tabs").tabs();
+            });
+        </script></head><body><div xmlns="" class="content">
+<div class="sub-page-main-header-api-documentation"><h2>API Documentation</h2></div>
+<div class="dotted-line"></div>
+</div>
+<div xmlns="" id="content">
+<script>
+      $(document).ready(function() {
+        $('dl.function-info, dl.constant-info, dl.property-info').prev().css('cursor', 'pointer');
+        $('dl.function-info, dl.constant-info, dl.property-info').prev().click(function() {
+          if ($(this).next().is(':hidden'))
+          {
+            $(this).children('img')[0].src = 'images/arrow_down.gif';
+          } else
+          {
+            $(this).children('img')[0].src = 'images/arrow_right.gif';
+          }
+          $(this).next().slideToggle();
+        });
+      $('dl.function-info, dl.constant-info, dl.property-info').hide();
+      $('dl.function-info img, dl.constant-info img, dl.property-info img').show();
+      });
+    </script><a name="top"></a><h1 class="file">Gdata/MediaMimeStream.php</h1>
+<div class="file_menu">
+<a href="#includes">Includes</a> <a href="#classes">Classes</a> </div>
+<dl class="file-info">
+<dt>category</dt>
+<dd>Zend</dd>
+<dt>copyright</dt>
+<dd>Copyright (c) 2005-2011 Zend Technologies USA Inc. (http://www.zend.com)</dd>
+<dt>license</dt>
+<dd>http://framework.zend.com/license/new-bsd     New BSD License</dd>
+<dt>package</dt>
+<dd>Zend_Gdata</dd>
+<dt>subpackage</dt>
+<dd>Gdata</dd>
+<dt>version</dt>
+<dd>$Id: MediaMimeStream.php 23775 2011-03-01 17:25:24Z ralph $</dd>
+<dt>Classes</dt>
+<dd><a class="class" href="#%5CZend_Gdata_MediaMimeStream">Zend_Gdata_MediaMimeStream</a></dd>
+</dl>
+<h2>Description</h2>
+<p class="short-description">Zend Framework</p>
+<div class="long-description"><p>LICENSE</p>
+
+<p>This source file is subject to the new BSD license that is bundled
+with this package in the file LICENSE.txt.
+It is also available through the world-wide-web at this URL:
+http://framework.zend.com/license/new-bsd
+If you did not receive a copy of the license and are unable to
+obtain it through the world-wide-web, please send an email
+to license@zend.com so we can send you a copy immediately.</p>
+</div>
+<a name="classes"></a><a id="\Zend_Gdata_MediaMimeStream"></a><h2 class="class">\Zend_Gdata_MediaMimeStream<div class="to-top"><a href="#top">jump to top</a></div>
+</h2>
+<div class="class">
+<dl class="class-info">
+<dt>category</dt>
+<dd>Zend</dd>
+<dt>copyright</dt>
+<dd>Copyright (c) 2005-2011 Zend Technologies USA Inc. (http://www.zend.com)</dd>
+<dt>license</dt>
+<dd>http://framework.zend.com/license/new-bsd     New BSD License</dd>
+<dt>package</dt>
+<dd>Zend_Gdata</dd>
+<dt>subpackage</dt>
+<dd>Gdata</dd>
+<dt><a href="#" onclick="$(this).children('img').toggle().parents('dt').nextUntil('dt').slideToggle(); return false;"><img src="images/arrow_down.gif"><img src="images/arrow_right.gif" style="display: none">
+                Properties
+              </a></dt>
+<dd><a class="property protected" href="#%5CZend_Gdata_MediaMimeStream::%24_boundaryString">$_boundaryString</a></dd>
+<dd><a class="property protected" href="#%5CZend_Gdata_MediaMimeStream::%24_currentPart">$_currentPart</a></dd>
+<dd><a class="property protected" href="#%5CZend_Gdata_MediaMimeStream::%24_fileHandle">$_fileHandle</a></dd>
+<dd><a class="property protected" href="#%5CZend_Gdata_MediaMimeStream::%24_parts">$_parts</a></dd>
+<dd><a class="property protected" href="#%5CZend_Gdata_MediaMimeStream::%24_totalSize">$_totalSize</a></dd>
+<dt><a href="#" onclick="$(this).children('img').toggle().parents('dt').nextUntil('dt').slideToggle(); return false;"><img src="images/arrow_down.gif"><img src="images/arrow_right.gif" style="display: none">
+                Methods
+              </a></dt>
+<dd><a class="method public" href="#%5CZend_Gdata_MediaMimeStream::__construct()">__construct</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_MediaMimeStream::closeFileHandle()">closeFileHandle</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_MediaMimeStream::getContentType()">getContentType</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_MediaMimeStream::getTotalSize()">getTotalSize</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_MediaMimeStream::read()">read</a></dd>
+<dd><a class="method private" href="#%5CZend_Gdata_MediaMimeStream::wrapEntry()">wrapEntry</a></dd>
+</dl>
+<h3>Description</h3>
+<p class="short-description">A streaming Media MIME class that allows for buffered read operations.</p>
+<div class="long-description">
+</div>
+<h3>Properties</h3>
+<div>
+<a id="\Zend_Gdata_MediaMimeStream::$_boundaryString"></a><h4 class="property protected">$_boundaryString<div class="to-top"><a href="#%5CZend_Gdata_MediaMimeStream">jump to class</a></div>
+</h4>
+<div class="property">
+<code>string <span class="highlight">$_boundaryString</span> = 'null'</code><p class="short-description">A valid MIME boundary.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt></dt>
+<dd>string<br><em></em>
+</dd>
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd>null</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_MediaMimeStream::$_currentPart"></a><h4 class="property protected">$_currentPart<div class="to-top"><a href="#%5CZend_Gdata_MediaMimeStream">jump to class</a></div>
+</h4>
+<div class="property">
+<code>integer <span class="highlight">$_currentPart</span> = '0'</code><p class="short-description">The current part being read from.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt></dt>
+<dd>integer<br><em></em>
+</dd>
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd>0</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_MediaMimeStream::$_fileHandle"></a><h4 class="property protected">$_fileHandle<div class="to-top"><a href="#%5CZend_Gdata_MediaMimeStream">jump to class</a></div>
+</h4>
+<div class="property">
+<code>resource <span class="highlight">$_fileHandle</span> = 'null'</code><p class="short-description">A handle to the file that is part of the message.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt></dt>
+<dd>resource<br><em></em>
+</dd>
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd>null</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_MediaMimeStream::$_parts"></a><h4 class="property protected">$_parts<div class="to-top"><a href="#%5CZend_Gdata_MediaMimeStream">jump to class</a></div>
+</h4>
+<div class="property">
+<code>array <span class="highlight">$_parts</span> = 'null'</code><p class="short-description">An array of all the parts to be sent. Array members are either a
+MimeFile or a MimeBodyString object.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt></dt>
+<dd>array<br><em></em>
+</dd>
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd>null</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_MediaMimeStream::$_totalSize"></a><h4 class="property protected">$_totalSize<div class="to-top"><a href="#%5CZend_Gdata_MediaMimeStream">jump to class</a></div>
+</h4>
+<div class="property">
+<code>integer <span class="highlight">$_totalSize</span> = '0'</code><p class="short-description">The size of the MIME message.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt></dt>
+<dd>integer<br><em></em>
+</dd>
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd>0</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+</div>
+<h3>Methods</h3>
+<div>
+<a id="\Zend_Gdata_MediaMimeStream::__construct()"></a><h4 class="method public">__construct<div class="to-top"><a href="#Zend_Gdata_MediaMimeStream">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">__construct</span><span class="nb-faded-text">(
+          string $xmlString
+              =
+              null, string $filePath
+              =
+              null, string $fileContentType
+              =
+              null
+          )
+        </span>
+        :
+        </code><p class="short-description">Create a new MimeMediaStream object.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$xmlString</dt>
+<dd>string<br><em>The string corresponding to the XML section of the message, typically an atom entry or feed.</em>
+</dd>
+<dt>$filePath</dt>
+<dd>string<br><em>The path to the file that constitutes the binary part of the message.</em>
+</dd>
+<dt>$fileContentType</dt>
+<dd>string<br><em>The valid internet media type of the file.</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_App_IOException.html#%5CZend_Gdata_App_IOException">If the file cannot be read or does not exist. Also if mbstring.func_overload has been set &gt; 1.</a></dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_MediaMimeStream::closeFileHandle()"></a><h4 class="method public">closeFileHandle<div class="to-top"><a href="#Zend_Gdata_MediaMimeStream">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">closeFileHandle</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        void</code><p class="short-description">Close the internal file that we are streaming to the socket.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_MediaMimeStream::getContentType()"></a><h4 class="method public">getContentType<div class="to-top"><a href="#Zend_Gdata_MediaMimeStream">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getContentType</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        string</code><p class="short-description">Return a Content-type header that includes the current boundary string.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>string</dt>
+<dd><em>A valid HTTP Content-Type header.</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_MediaMimeStream::getTotalSize()"></a><h4 class="method public">getTotalSize<div class="to-top"><a href="#Zend_Gdata_MediaMimeStream">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getTotalSize</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        integer</code><p class="short-description">Return the total size of the mime message.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>integer</dt>
+<dd><em>Total size of the message to be sent.</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_MediaMimeStream::read()"></a><h4 class="method public">read<div class="to-top"><a href="#Zend_Gdata_MediaMimeStream">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">read</span><span class="nb-faded-text">(
+           $bytesRequested
+          )
+        </span>
+        :
+        string</code><p class="short-description">Read a specific chunk of the the MIME multipart message.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$bytesRequested</dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>string</dt>
+<dd><em>A corresponding piece of the message. This could be binary or regular text.</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_MediaMimeStream::wrapEntry()"></a><h4 class="method private">wrapEntry<div class="to-top"><a href="#Zend_Gdata_MediaMimeStream">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">wrapEntry</span><span class="nb-faded-text">(
+           $entry,  $fileMimeType
+          )
+        </span>
+        :
+        void</code><p class="short-description">Sandwiches the entry body into a MIME message</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$entry</dt>
+<dd><em></em></dd>
+<dt>$fileMimeType</dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>private</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<small xmlns="" class="footer">Documentation was generated by <a href="http://docblox-project.org">DocBlox 0.12.2</a>.
+    </small></body></html>

@@ -1,0 +1,943 @@
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title>Zend Gdata API Documentation</title><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" href="css/black-tie/jquery-ui-1.8.2.custom.css" type="text/css"></link><link rel="stylesheet" href="css/jquery.treeview.css" type="text/css"></link><link rel="stylesheet" href="css/theme.css" type="text/css"></link><script type="text/javascript" src="js/jquery-1.4.2.min.js"></script><script type="text/javascript" src="js/jquery-ui-1.8.2.custom.min.js"></script><script type="text/javascript" src="js/jquery.cookie.js"></script><script type="text/javascript" src="js/jquery.treeview.js"></script><script type="text/javascript">
+            $(document).ready(function() {
+                $(".filetree").treeview({
+                    collapsed: true,
+                    persist: "cookie"
+                });
+
+                $("#accordion").accordion({
+                    collapsible: true,
+                    autoHeight:  false,
+                    fillSpace:   true
+                });
+
+                $(".tabs").tabs();
+            });
+        </script></head><body><div xmlns="" class="content">
+<div class="sub-page-main-header-api-documentation"><h2>API Documentation</h2></div>
+<div class="dotted-line"></div>
+</div>
+<div xmlns="" id="content">
+<script>
+      $(document).ready(function() {
+        $('dl.function-info, dl.constant-info, dl.property-info').prev().css('cursor', 'pointer');
+        $('dl.function-info, dl.constant-info, dl.property-info').prev().click(function() {
+          if ($(this).next().is(':hidden'))
+          {
+            $(this).children('img')[0].src = 'images/arrow_down.gif';
+          } else
+          {
+            $(this).children('img')[0].src = 'images/arrow_right.gif';
+          }
+          $(this).next().slideToggle();
+        });
+      $('dl.function-info, dl.constant-info, dl.property-info').hide();
+      $('dl.function-info img, dl.constant-info img, dl.property-info img').show();
+      });
+    </script><a name="top"></a><h1 class="file">Gdata/Spreadsheets.php</h1>
+<div class="file_menu">
+<a href="#includes">Includes</a> <a href="#classes">Classes</a> </div>
+<dl class="file-info">
+<dt>category</dt>
+<dd>Zend</dd>
+<dt>copyright</dt>
+<dd>Copyright (c) 2005-2011 Zend Technologies USA Inc. (http://www.zend.com)</dd>
+<dt>license</dt>
+<dd>http://framework.zend.com/license/new-bsd     New BSD License</dd>
+<dt>package</dt>
+<dd>Zend_Gdata</dd>
+<dt>subpackage</dt>
+<dd>Spreadsheets</dd>
+<dt>version</dt>
+<dd>$Id: Spreadsheets.php 23805 2011-03-16 00:55:40Z tjohns $</dd>
+<dt>Classes</dt>
+<dd><a class="class" href="#%5CZend_Gdata_Spreadsheets">Zend_Gdata_Spreadsheets</a></dd>
+</dl>
+<h2>Description</h2>
+<p class="short-description">Zend Framework</p>
+<div class="long-description"><p>LICENSE</p>
+
+<p>This source file is subject to the new BSD license that is bundled
+with this package in the file LICENSE.txt.
+It is also available through the world-wide-web at this URL:
+http://framework.zend.com/license/new-bsd
+If you did not receive a copy of the license and are unable to
+obtain it through the world-wide-web, please send an email
+to license@zend.com so we can send you a copy immediately.</p>
+</div>
+<a name="classes"></a><a id="\Zend_Gdata_Spreadsheets"></a><h2 class="class">\Zend_Gdata_Spreadsheets<div class="to-top"><a href="#top">jump to top</a></div>
+</h2>
+<div class="class">
+<dl class="class-info">
+<dt>Extends from</dt>
+<dd><a href="_Gdata.html#%5CZend_Gdata">\Zend_Gdata</a></dd>
+<dt>category</dt>
+<dd>Zend</dd>
+<dt>copyright</dt>
+<dd>Copyright (c) 2005-2011 Zend Technologies USA Inc. (http://www.zend.com)</dd>
+<dt>license</dt>
+<dd>http://framework.zend.com/license/new-bsd     New BSD License</dd>
+<dt>link</dt>
+<dd><a href="http://code.google.com/apis/gdata/spreadsheets.html">http://code.google.com/apis/gdata/spreadsheets.html</a></dd>
+<dt>package</dt>
+<dd>Zend_Gdata</dd>
+<dt>subpackage</dt>
+<dd>Spreadsheets</dd>
+<dt><a href="#" onclick="$(this).children('img').toggle().parents('dt').nextUntil('dt').slideToggle(); return false;"><img src="images/arrow_down.gif"><img src="images/arrow_right.gif" style="display: none">
+                Constants
+              </a></dt>
+<dd><a class="constant" href="#%5CZend_Gdata_Spreadsheets::AUTH_SERVICE_NAME">AUTH_SERVICE_NAME</a></dd>
+<dd><a class="constant" href="#%5CZend_Gdata_Spreadsheets::CELL_FEED_LINK_URI">CELL_FEED_LINK_URI</a></dd>
+<dd><a class="constant" href="#%5CZend_Gdata_Spreadsheets::LIST_FEED_LINK_URI">LIST_FEED_LINK_URI</a></dd>
+<dd><a class="constant" href="#%5CZend_Gdata_Spreadsheets::SPREADSHEETS_FEED_URI">SPREADSHEETS_FEED_URI</a></dd>
+<dd><a class="constant" href="#%5CZend_Gdata_Spreadsheets::SPREADSHEETS_POST_URI">SPREADSHEETS_POST_URI</a></dd>
+<dd><a class="constant" href="#%5CZend_Gdata_Spreadsheets::WORKSHEETS_FEED_LINK_URI">WORKSHEETS_FEED_LINK_URI</a></dd>
+<dt><a href="#" onclick="$(this).children('img').toggle().parents('dt').nextUntil('dt').slideToggle(); return false;"><img src="images/arrow_down.gif"><img src="images/arrow_right.gif" style="display: none">
+                Properties
+              </a></dt>
+<dd><a class="property public" href="#%5CZend_Gdata_Spreadsheets::%24namespaces">$namespaces</a></dd>
+<dt><a href="#" onclick="$(this).children('img').toggle().parents('dt').nextUntil('dt').slideToggle(); return false;"><img src="images/arrow_down.gif"><img src="images/arrow_right.gif" style="display: none">
+                Methods
+              </a></dt>
+<dd><a class="method public" href="#%5CZend_Gdata_Spreadsheets::GetWorksheetEntry()">GetWorksheetEntry</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Spreadsheets::__construct()">__construct</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Spreadsheets::deleteRow()">deleteRow</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Spreadsheets::getCellEntry()">getCellEntry</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Spreadsheets::getCellFeed()">getCellFeed</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Spreadsheets::getListEntry()">getListEntry</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Spreadsheets::getListFeed()">getListFeed</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Spreadsheets::getSpreadsheetCellFeedContents()">getSpreadsheetCellFeedContents</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Spreadsheets::getSpreadsheetEntry()">getSpreadsheetEntry</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Spreadsheets::getSpreadsheetFeed()">getSpreadsheetFeed</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Spreadsheets::getSpreadsheetListFeedContents()">getSpreadsheetListFeedContents</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Spreadsheets::getSpreadsheets()">getSpreadsheets</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Spreadsheets::getWorksheetFeed()">getWorksheetFeed</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Spreadsheets::insertRow()">insertRow</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Spreadsheets::updateCell()">updateCell</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Spreadsheets::updateRow()">updateRow</a></dd>
+</dl>
+<h3>Description</h3>
+<p class="short-description">Gdata Spreadsheets</p>
+<div class="long-description"><p>As the Google data API protocol is based upon the Atom Publishing Protocol
+(APP), Gdata functionality extends the appropriate Zend_Gdata_App classes</p>
+</div>
+<h3>Constants</h3>
+<div>
+<a id="\Zend_Gdata_Spreadsheets::SPREADSHEETS_FEED_URI"></a><h4 class="constant">SPREADSHEETS_FEED_URI<div class="to-top"><a href="#Zend_Gdata_Spreadsheets">jump to class</a></div>
+</h4>
+<div class="constant">
+<code> <span class="highlight">SPREADSHEETS_FEED_URI</span> = 'https://spreadsheets.google.com/feeds/spreadsheets'
+      </code><div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="constant-info">
+<dt>value</dt>
+<dd>https://spreadsheets.google.com/feeds/spreadsheets</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Spreadsheets::SPREADSHEETS_POST_URI"></a><h4 class="constant">SPREADSHEETS_POST_URI<div class="to-top"><a href="#Zend_Gdata_Spreadsheets">jump to class</a></div>
+</h4>
+<div class="constant">
+<code> <span class="highlight">SPREADSHEETS_POST_URI</span> = 'https://spreadsheets.google.com/feeds/spreadsheets/private/full'
+      </code><div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="constant-info">
+<dt>value</dt>
+<dd>https://spreadsheets.google.com/feeds/spreadsheets/private/full</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Spreadsheets::WORKSHEETS_FEED_LINK_URI"></a><h4 class="constant">WORKSHEETS_FEED_LINK_URI<div class="to-top"><a href="#Zend_Gdata_Spreadsheets">jump to class</a></div>
+</h4>
+<div class="constant">
+<code> <span class="highlight">WORKSHEETS_FEED_LINK_URI</span> = 'http://schemas.google.com/spreadsheets/2006#worksheetsfeed'
+      </code><div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="constant-info">
+<dt>value</dt>
+<dd>http://schemas.google.com/spreadsheets/2006#worksheetsfeed</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Spreadsheets::LIST_FEED_LINK_URI"></a><h4 class="constant">LIST_FEED_LINK_URI<div class="to-top"><a href="#Zend_Gdata_Spreadsheets">jump to class</a></div>
+</h4>
+<div class="constant">
+<code> <span class="highlight">LIST_FEED_LINK_URI</span> = 'http://schemas.google.com/spreadsheets/2006#listfeed'
+      </code><div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="constant-info">
+<dt>value</dt>
+<dd>http://schemas.google.com/spreadsheets/2006#listfeed</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Spreadsheets::CELL_FEED_LINK_URI"></a><h4 class="constant">CELL_FEED_LINK_URI<div class="to-top"><a href="#Zend_Gdata_Spreadsheets">jump to class</a></div>
+</h4>
+<div class="constant">
+<code> <span class="highlight">CELL_FEED_LINK_URI</span> = 'http://schemas.google.com/spreadsheets/2006#cellsfeed'
+      </code><div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="constant-info">
+<dt>value</dt>
+<dd>http://schemas.google.com/spreadsheets/2006#cellsfeed</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Spreadsheets::AUTH_SERVICE_NAME"></a><h4 class="constant">AUTH_SERVICE_NAME<div class="to-top"><a href="#Zend_Gdata_Spreadsheets">jump to class</a></div>
+</h4>
+<div class="constant">
+<code> <span class="highlight">AUTH_SERVICE_NAME</span> = 'wise'
+      </code><div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="constant-info">
+<dt>value</dt>
+<dd>wise</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+</div>
+<h3>Properties</h3>
+<div>
+<a id="\Zend_Gdata_Spreadsheets::$namespaces"></a><h4 class="property public">$namespaces<div class="to-top"><a href="#%5CZend_Gdata_Spreadsheets">jump to class</a></div>
+</h4>
+<div class="property">
+<code>array <span class="highlight">$namespaces</span> = 'array'</code><p class="short-description">Namespaces used for Zend_Gdata_Photos</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt></dt>
+<dd>array<br><em></em>
+</dd>
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>default</dt>
+<dd>array</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>true</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+</div>
+<h3>Methods</h3>
+<div>
+<a id="\Zend_Gdata_Spreadsheets::GetWorksheetEntry()"></a><h4 class="method public">GetWorksheetEntry<div class="to-top"><a href="#Zend_Gdata_Spreadsheets">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">GetWorksheetEntry</span><span class="nb-faded-text">(
+          string $location
+          )
+        </span>
+        :
+        \WorksheetEntry</code><p class="short-description">Gets a worksheet entry.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$location</dt>
+<dd>string<br><em>A DocumentQuery or a URI specifying the entry location.</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>\WorksheetEntry</dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Spreadsheets::__construct()"></a><h4 class="method public">__construct<div class="to-top"><a href="#Zend_Gdata_Spreadsheets">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">__construct</span><span class="nb-faded-text">(
+          <a href="_Http_Client.html#%5CZend_Http_Client">\Zend_Http_Client</a> $client
+              =
+              null, string $applicationId
+              =
+              MyCompany-MyApp-1.0
+          )
+        </span>
+        :
+        </code><p class="short-description">Create Gdata_Spreadsheets object</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$client</dt>
+<dd>\Zend_Http_Client<br><em>(optional) The HTTP client to use when when communicating with the Google servers.</em>
+</dd>
+<dt>$applicationId</dt>
+<dd>string<br><em>The identity of the app in the form of Company-AppName-Version</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Spreadsheets::deleteRow()"></a><h4 class="method public">deleteRow<div class="to-top"><a href="#Zend_Gdata_Spreadsheets">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">deleteRow</span><span class="nb-faded-text">(
+          \ListEntry $entry
+          )
+        </span>
+        :
+        </code><p class="short-description">Deletes an existing row .</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$entry</dt>
+<dd>\ListEntry<br><em>The row to delete</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Spreadsheets::getCellEntry()"></a><h4 class="method public">getCellEntry<div class="to-top"><a href="#Zend_Gdata_Spreadsheets">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getCellEntry</span><span class="nb-faded-text">(
+          string $location
+          )
+        </span>
+        :
+        \CellEntry</code><p class="short-description">Gets a cell entry.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$location</dt>
+<dd>string<br><em>A CellQuery or a URI specifying the entry location.</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>\CellEntry</dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Spreadsheets::getCellFeed()"></a><h4 class="method public">getCellFeed<div class="to-top"><a href="#Zend_Gdata_Spreadsheets">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getCellFeed</span><span class="nb-faded-text">(
+          string $location
+          )
+        </span>
+        :
+        \CellFeed</code><p class="short-description">Gets a cell feed.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$location</dt>
+<dd>string<br><em>A CellQuery, WorksheetEntry or a URI specifying the feed location.</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>\CellFeed</dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Spreadsheets::getListEntry()"></a><h4 class="method public">getListEntry<div class="to-top"><a href="#Zend_Gdata_Spreadsheets">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getListEntry</span><span class="nb-faded-text">(
+          string $location
+          )
+        </span>
+        :
+        \ListEntry</code><p class="short-description">Gets a list entry.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$location</dt>
+<dd>string<br><em>A ListQuery or a URI specifying the entry location.</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>\ListEntry</dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Spreadsheets::getListFeed()"></a><h4 class="method public">getListFeed<div class="to-top"><a href="#Zend_Gdata_Spreadsheets">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getListFeed</span><span class="nb-faded-text">(
+          mixed $location
+          )
+        </span>
+        :
+        \ListFeed</code><p class="short-description">Gets a list feed.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$location</dt>
+<dd>mixed<br><em>A ListQuery, WorksheetEntry or string URI specifying the feed location.</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>\ListFeed</dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Spreadsheets::getSpreadsheetCellFeedContents()"></a><h4 class="method public">getSpreadsheetCellFeedContents<div class="to-top"><a href="#Zend_Gdata_Spreadsheets">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getSpreadsheetCellFeedContents</span><span class="nb-faded-text">(
+          mixed $location, string $range
+              =
+              null, boolean $empty
+              =
+              false
+          )
+        </span>
+        :
+        array</code><p class="short-description">Returns the content of all cells as an associative array, indexed
+off the cell location  (ie 'A1', 'D4', etc).  Each element of
+the array is an associative array with a 'value' and a 'function'.</p>
+<div class="long-description"><p>Only non-empty cells are returned by default.  'range' is the
+value of the 'range' query parameter specified at:
+http://code.google.com/apis/spreadsheets/reference.html#cells_Parameters</p>
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$location</dt>
+<dd>mixed<br><em>A CellQuery, WorksheetEntry or a URL (w/o query string) specifying the feed location.</em>
+</dd>
+<dt>$range</dt>
+<dd>string<br><em>The range of cells to retrieve</em>
+</dd>
+<dt>$empty</dt>
+<dd>boolean<br><em>Whether to retrieve empty cells</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>array</dt>
+<dd><em>An associative array of cells</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Spreadsheets::getSpreadsheetEntry()"></a><h4 class="method public">getSpreadsheetEntry<div class="to-top"><a href="#Zend_Gdata_Spreadsheets">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getSpreadsheetEntry</span><span class="nb-faded-text">(
+          string $location
+          )
+        </span>
+        :
+        \SpreadsheetEntry</code><p class="short-description">Gets a spreadsheet entry.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$location</dt>
+<dd>string<br><em>A DocumentQuery or a URI specifying the entry location.</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>\SpreadsheetEntry</dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Spreadsheets::getSpreadsheetFeed()"></a><h4 class="method public">getSpreadsheetFeed<div class="to-top"><a href="#Zend_Gdata_Spreadsheets">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getSpreadsheetFeed</span><span class="nb-faded-text">(
+          mixed $location
+              =
+              null
+          )
+        </span>
+        :
+        <a href="_Gdata_Spreadsheets_SpreadsheetFeed.html#%5CZend_Gdata_Spreadsheets_SpreadsheetFeed">\Zend_Gdata_Spreadsheets_SpreadsheetFeed</a></code><p class="short-description">Gets a spreadsheet feed.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$location</dt>
+<dd>mixed<br><em>A DocumentQuery or a string URI specifying the feed location.</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_Spreadsheets_SpreadsheetFeed.html#%5CZend_Gdata_Spreadsheets_SpreadsheetFeed">\Zend_Gdata_Spreadsheets_SpreadsheetFeed</a></dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Spreadsheets::getSpreadsheetListFeedContents()"></a><h4 class="method public">getSpreadsheetListFeedContents<div class="to-top"><a href="#Zend_Gdata_Spreadsheets">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getSpreadsheetListFeedContents</span><span class="nb-faded-text">(
+          mixed $location
+          )
+        </span>
+        :
+        array</code><p class="short-description">Returns the content of all rows as an associative array</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$location</dt>
+<dd>mixed<br><em>A ListQuery or string URI specifying the feed location.</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>array</dt>
+<dd><em>An array of rows. Each element of the array is an associative array of data</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Spreadsheets::getSpreadsheets()"></a><h4 class="method public">getSpreadsheets<div class="to-top"><a href="#Zend_Gdata_Spreadsheets">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getSpreadsheets</span><span class="nb-faded-text">(
+          mixed $location
+              =
+              null
+          )
+        </span>
+        :
+        <a href="_Gdata_Spreadsheets_SpreadsheetFeed.html#%5CZend_Gdata_Spreadsheets_SpreadsheetFeed">\Zend_Gdata_Spreadsheets_SpreadsheetFeed</a></code><p class="short-description">Alias for getSpreadsheetFeed</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$location</dt>
+<dd>mixed<br><em>A DocumentQuery or a string URI specifying the feed location.</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_Spreadsheets_SpreadsheetFeed.html#%5CZend_Gdata_Spreadsheets_SpreadsheetFeed">\Zend_Gdata_Spreadsheets_SpreadsheetFeed</a></dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Spreadsheets::getWorksheetFeed()"></a><h4 class="method public">getWorksheetFeed<div class="to-top"><a href="#Zend_Gdata_Spreadsheets">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getWorksheetFeed</span><span class="nb-faded-text">(
+          mixed $location
+          )
+        </span>
+        :
+        <a href="_Gdata_Spreadsheets_WorksheetFeed.html#%5CZend_Gdata_Spreadsheets_WorksheetFeed">\Zend_Gdata_Spreadsheets_WorksheetFeed</a></code><p class="short-description">Gets a worksheet feed.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$location</dt>
+<dd>mixed<br><em>A DocumentQuery, SpreadsheetEntry, or a string URI</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_Spreadsheets_WorksheetFeed.html#%5CZend_Gdata_Spreadsheets_WorksheetFeed">\Zend_Gdata_Spreadsheets_WorksheetFeed</a></dt>
+<dd><em>The feed of worksheets</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Spreadsheets::insertRow()"></a><h4 class="method public">insertRow<div class="to-top"><a href="#Zend_Gdata_Spreadsheets">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">insertRow</span><span class="nb-faded-text">(
+          array $rowData, string $key, string $wkshtId
+              =
+              default
+          )
+        </span>
+        :
+        \ListEntry</code><p class="short-description">Inserts a new row with provided data.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$rowData</dt>
+<dd>array<br><em>An array of column header to row data</em>
+</dd>
+<dt>$key</dt>
+<dd>string<br><em>The key of the spreadsheet to modify</em>
+</dd>
+<dt>$wkshtId</dt>
+<dd>string<br><em>(optional) The worksheet to modify</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>\ListEntry</dt>
+<dd><em>The inserted row</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Spreadsheets::updateCell()"></a><h4 class="method public">updateCell<div class="to-top"><a href="#Zend_Gdata_Spreadsheets">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">updateCell</span><span class="nb-faded-text">(
+          int $row, int $col, int $inputValue, string $key, string $wkshtId
+              =
+              default
+          )
+        </span>
+        :
+        \CellEntry</code><p class="short-description">Updates an existing cell.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$row</dt>
+<dd>int<br><em>The row containing the cell to update</em>
+</dd>
+<dt>$col</dt>
+<dd>int<br><em>The column containing the cell to update</em>
+</dd>
+<dt>$inputValue</dt>
+<dd>int<br><em>The new value for the cell</em>
+</dd>
+<dt>$key</dt>
+<dd>string<br><em>The key for the spreadsheet to be updated</em>
+</dd>
+<dt>$wkshtId</dt>
+<dd>string<br><em>(optional) The worksheet to be updated</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>\CellEntry</dt>
+<dd><em>The updated cell entry.</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Spreadsheets::updateRow()"></a><h4 class="method public">updateRow<div class="to-top"><a href="#Zend_Gdata_Spreadsheets">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">updateRow</span><span class="nb-faded-text">(
+          \ListEntry $entry, array $newRowData
+          )
+        </span>
+        :
+        </code><p class="short-description">Updates an existing row with provided data.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$entry</dt>
+<dd>\ListEntry<br><em>The row entry to update</em>
+</dd>
+<dt>$newRowData</dt>
+<dd>array<br><em>An array of column header to row data</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<small xmlns="" class="footer">Documentation was generated by <a href="http://docblox-project.org">DocBlox 0.12.2</a>.
+    </small></body></html>

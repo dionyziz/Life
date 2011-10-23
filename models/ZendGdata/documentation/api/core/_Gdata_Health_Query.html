@@ -1,0 +1,737 @@
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title>Zend Gdata API Documentation</title><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" href="css/black-tie/jquery-ui-1.8.2.custom.css" type="text/css"></link><link rel="stylesheet" href="css/jquery.treeview.css" type="text/css"></link><link rel="stylesheet" href="css/theme.css" type="text/css"></link><script type="text/javascript" src="js/jquery-1.4.2.min.js"></script><script type="text/javascript" src="js/jquery-ui-1.8.2.custom.min.js"></script><script type="text/javascript" src="js/jquery.cookie.js"></script><script type="text/javascript" src="js/jquery.treeview.js"></script><script type="text/javascript">
+            $(document).ready(function() {
+                $(".filetree").treeview({
+                    collapsed: true,
+                    persist: "cookie"
+                });
+
+                $("#accordion").accordion({
+                    collapsible: true,
+                    autoHeight:  false,
+                    fillSpace:   true
+                });
+
+                $(".tabs").tabs();
+            });
+        </script></head><body><div xmlns="" class="content">
+<div class="sub-page-main-header-api-documentation"><h2>API Documentation</h2></div>
+<div class="dotted-line"></div>
+</div>
+<div xmlns="" id="content">
+<script>
+      $(document).ready(function() {
+        $('dl.function-info, dl.constant-info, dl.property-info').prev().css('cursor', 'pointer');
+        $('dl.function-info, dl.constant-info, dl.property-info').prev().click(function() {
+          if ($(this).next().is(':hidden'))
+          {
+            $(this).children('img')[0].src = 'images/arrow_down.gif';
+          } else
+          {
+            $(this).children('img')[0].src = 'images/arrow_right.gif';
+          }
+          $(this).next().slideToggle();
+        });
+      $('dl.function-info, dl.constant-info, dl.property-info').hide();
+      $('dl.function-info img, dl.constant-info img, dl.property-info img').show();
+      });
+    </script><a name="top"></a><h1 class="file">Gdata/Health/Query.php</h1>
+<div class="file_menu">
+<a href="#includes">Includes</a> <a href="#classes">Classes</a> </div>
+<dl class="file-info">
+<dt>category</dt>
+<dd>Zend</dd>
+<dt>copyright</dt>
+<dd>Copyright (c) 2005-2011 Zend Technologies USA Inc. (http://www.zend.com)</dd>
+<dt>license</dt>
+<dd>http://framework.zend.com/license/new-bsd     New BSD License</dd>
+<dt>package</dt>
+<dd>Zend_Gdata</dd>
+<dt>subpackage</dt>
+<dd>Health</dd>
+<dt>version</dt>
+<dd>$Id: Query.php 23775 2011-03-01 17:25:24Z ralph $</dd>
+<dt>Classes</dt>
+<dd><a class="class" href="#%5CZend_Gdata_Health_Query">Zend_Gdata_Health_Query</a></dd>
+</dl>
+<h2>Description</h2>
+<p class="short-description">Zend Framework</p>
+<div class="long-description"><p>LICENSE</p>
+
+<p>This source file is subject to the new BSD license that is bundled
+with this package in the file LICENSE.txt.
+It is also available through the world-wide-web at this URL:
+http://framework.zend.com/license/new-bsd
+If you did not receive a copy of the license and are unable to
+obtain it through the world-wide-web, please send an email
+to license@zend.com so we can send you a copy immediately.</p>
+</div>
+<a name="classes"></a><a id="\Zend_Gdata_Health_Query"></a><h2 class="class">\Zend_Gdata_Health_Query<div class="to-top"><a href="#top">jump to top</a></div>
+</h2>
+<div class="class">
+<dl class="class-info">
+<dt>Extends from</dt>
+<dd><a href="_Gdata_Query.html#%5CZend_Gdata_Query">\Zend_Gdata_Query</a></dd>
+<dt>category</dt>
+<dd>Zend</dd>
+<dt>copyright</dt>
+<dd>Copyright (c) 2005-2011 Zend Technologies USA Inc. (http://www.zend.com)</dd>
+<dt>license</dt>
+<dd>http://framework.zend.com/license/new-bsd     New BSD License</dd>
+<dt>link</dt>
+<dd><a href="http://code.google.com/apis/health">http://code.google.com/apis/health</a></dd>
+<dt>package</dt>
+<dd>Zend_Gdata</dd>
+<dt>subpackage</dt>
+<dd>Health</dd>
+<dt><a href="#" onclick="$(this).children('img').toggle().parents('dt').nextUntil('dt').slideToggle(); return false;"><img src="images/arrow_down.gif"><img src="images/arrow_right.gif" style="display: none">
+                Constants
+              </a></dt>
+<dd><a class="constant" href="#%5CZend_Gdata_Health_Query::HEALTH_PROFILE_FEED_URI">HEALTH_PROFILE_FEED_URI</a></dd>
+<dd><a class="constant" href="#%5CZend_Gdata_Health_Query::HEALTH_REGISTER_FEED_URI">HEALTH_REGISTER_FEED_URI</a></dd>
+<dd><a class="constant" href="#%5CZend_Gdata_Health_Query::ITEM_CATEGORY_NS">ITEM_CATEGORY_NS</a></dd>
+<dt><a href="#" onclick="$(this).children('img').toggle().parents('dt').nextUntil('dt').slideToggle(); return false;"><img src="images/arrow_down.gif"><img src="images/arrow_right.gif" style="display: none">
+                Properties
+              </a></dt>
+<dd><a class="property protected" href="#%5CZend_Gdata_Health_Query::%24_defaultFeedUri">$_defaultFeedUri</a></dd>
+<dt><a href="#" onclick="$(this).children('img').toggle().parents('dt').nextUntil('dt').slideToggle(); return false;"><img src="images/arrow_down.gif"><img src="images/arrow_right.gif" style="display: none">
+                Methods
+              </a></dt>
+<dd><a class="method public" href="#%5CZend_Gdata_Health_Query::getCategory()">getCategory</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Health_Query::getDigest()">getDigest</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Health_Query::getGrouped()">getGrouped</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Health_Query::getMaxResultsGroup()">getMaxResultsGroup</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Health_Query::getMaxResultsInGroup()">getMaxResultsInGroup</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Health_Query::getStartIndexGroup()">getStartIndexGroup</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Health_Query::getStartIndexInGroup()">getStartIndexInGroup</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Health_Query::setCategory()">setCategory</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Health_Query::setDigest()">setDigest</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Health_Query::setGrouped()">setGrouped</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Health_Query::setMaxResultsGroup()">setMaxResultsGroup</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Health_Query::setMaxResultsInGroup()">setMaxResultsInGroup</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Health_Query::setStartIndexGroup()">setStartIndexGroup</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Health_Query::setStartIndexInGroup()">setStartIndexInGroup</a></dd>
+</dl>
+<h3>Description</h3>
+<p class="short-description">Assists in constructing queries for Google Health</p>
+<div class="long-description"><p>Queries are not defined for APP, but are provided by Gdata services
+as an extension.</p>
+</div>
+<h3>Constants</h3>
+<div>
+<a id="\Zend_Gdata_Health_Query::HEALTH_PROFILE_FEED_URI"></a><h4 class="constant">HEALTH_PROFILE_FEED_URI<div class="to-top"><a href="#Zend_Gdata_Health_Query">jump to class</a></div>
+</h4>
+<div class="constant">
+<code> <span class="highlight">HEALTH_PROFILE_FEED_URI</span> = 'https://www.google.com/health/feeds/profile/default'
+      </code><p class="short-description">URI of a user's profile feed.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="constant-info">
+<dt>value</dt>
+<dd>https://www.google.com/health/feeds/profile/default</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Health_Query::HEALTH_REGISTER_FEED_URI"></a><h4 class="constant">HEALTH_REGISTER_FEED_URI<div class="to-top"><a href="#Zend_Gdata_Health_Query">jump to class</a></div>
+</h4>
+<div class="constant">
+<code> <span class="highlight">HEALTH_REGISTER_FEED_URI</span> = 'https://www.google.com/health/feeds/register/default'
+      </code><p class="short-description">URI of register (notices) feed.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="constant-info">
+<dt>value</dt>
+<dd>https://www.google.com/health/feeds/register/default</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Health_Query::ITEM_CATEGORY_NS"></a><h4 class="constant">ITEM_CATEGORY_NS<div class="to-top"><a href="#Zend_Gdata_Health_Query">jump to class</a></div>
+</h4>
+<div class="constant">
+<code> <span class="highlight">ITEM_CATEGORY_NS</span> = 'http://schemas.google.com/health/item'
+      </code><p class="short-description">Namespace for an item category</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="constant-info">
+<dt>value</dt>
+<dd>http://schemas.google.com/health/item</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+</div>
+<h3>Properties</h3>
+<div>
+<a id="\Zend_Gdata_Health_Query::$_defaultFeedUri"></a><h4 class="property protected">$_defaultFeedUri<div class="to-top"><a href="#%5CZend_Gdata_Health_Query">jump to class</a></div>
+</h4>
+<div class="property">
+<code>string <span class="highlight">$_defaultFeedUri</span> = 'self'</code><p class="short-description">The default URI for POST methods</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt></dt>
+<dd>string<br><em></em>
+</dd>
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd>self</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+</div>
+<h3>Methods</h3>
+<div>
+<a id="\Zend_Gdata_Health_Query::getCategory()"></a><h4 class="method public">getCategory<div class="to-top"><a href="#Zend_Gdata_Health_Query">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getCategory</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        string</code><p class="short-description">Returns the query object's category.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>string</dt>
+<dd><em>id</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Health_Query::getDigest()"></a><h4 class="method public">getDigest<div class="to-top"><a href="#Zend_Gdata_Health_Query">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getDigest</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        string</code><p class="short-description">Returns the digest parameter's value.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>string</dt>
+<dd><em>The value set for the digest parameter.</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Health_Query::getGrouped()"></a><h4 class="method public">getGrouped<div class="to-top"><a href="#Zend_Gdata_Health_Query">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getGrouped</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        string</code><p class="short-description">Returns the value set for the grouped parameter.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>string</dt>
+<dd><em>grouped parameter.</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Health_Query::getMaxResultsGroup()"></a><h4 class="method public">getMaxResultsGroup<div class="to-top"><a href="#Zend_Gdata_Health_Query">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getMaxResultsGroup</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        int</code><p class="short-description">Returns the value set for max-results-group.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>int</dt>
+<dd><em>Returns max-results-group parameter.</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Health_Query::getMaxResultsInGroup()"></a><h4 class="method public">getMaxResultsInGroup<div class="to-top"><a href="#Zend_Gdata_Health_Query">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getMaxResultsInGroup</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        int</code><p class="short-description">Returns the value set for max-results-in-group.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>int</dt>
+<dd><em>Returns max-results-in-group parameter.</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Health_Query::getStartIndexGroup()"></a><h4 class="method public">getStartIndexGroup<div class="to-top"><a href="#Zend_Gdata_Health_Query">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getStartIndexGroup</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        int</code><p class="short-description">Returns the value set for start-index-group.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>int</dt>
+<dd><em>Returns start-index-group parameter.</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Health_Query::getStartIndexInGroup()"></a><h4 class="method public">getStartIndexInGroup<div class="to-top"><a href="#Zend_Gdata_Health_Query">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getStartIndexInGroup</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        int</code><p class="short-description">Returns the value set for start-index-in-group.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>int</dt>
+<dd><em>Returns start-index-in-group parameter.</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Health_Query::setCategory()"></a><h4 class="method public">setCategory<div class="to-top"><a href="#Zend_Gdata_Health_Query">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">setCategory</span><span class="nb-faded-text">(
+          string $item, string $name
+              =
+              null
+          )
+        </span>
+        :
+        <a href="_Gdata_Health_Query.html#%5CZend_Gdata_Health_Query">\Zend_Gdata_Health_Query</a></code><p class="short-description">Setter for category queries.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$item</dt>
+<dd>string<br><em>A category to query.</em>
+</dd>
+<dt>$name</dt>
+<dd>string<br><em>(optional) A specific item to search a category for. An example would be &amp;#039;Lipitor&amp;#039; if $item is set to &amp;#039;medication&amp;#039;.</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_Health_Query.html#%5CZend_Gdata_Health_Query">\Zend_Gdata_Health_Query</a></dt>
+<dd><em>Provides a fluent interface</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Health_Query::setDigest()"></a><h4 class="method public">setDigest<div class="to-top"><a href="#Zend_Gdata_Health_Query">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">setDigest</span><span class="nb-faded-text">(
+          string $value
+          )
+        </span>
+        :
+        <a href="_Gdata_Health_Query.html#%5CZend_Gdata_Health_Query">\Zend_Gdata_Health_Query</a></code><p class="short-description">Sets the digest parameter's value.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$value</dt>
+<dd>string<br><em></em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_Health_Query.html#%5CZend_Gdata_Health_Query">\Zend_Gdata_Health_Query</a></dt>
+<dd><em>Provides a fluent interface</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Health_Query::setGrouped()"></a><h4 class="method public">setGrouped<div class="to-top"><a href="#Zend_Gdata_Health_Query">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">setGrouped</span><span class="nb-faded-text">(
+          string $value
+          )
+        </span>
+        :
+        <a href="_Gdata_Health_Query.html#%5CZend_Gdata_Health_Query">\Zend_Gdata_Health_Query</a></code><p class="short-description">Setter for the grouped parameter.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$value</dt>
+<dd>string<br><em>setting a count of results per group.</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_Health_Query.html#%5CZend_Gdata_Health_Query">\Zend_Gdata_Health_Query</a></dt>
+<dd><em>Provides a fluent interface</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Health_Query::setMaxResultsGroup()"></a><h4 class="method public">setMaxResultsGroup<div class="to-top"><a href="#Zend_Gdata_Health_Query">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">setMaxResultsGroup</span><span class="nb-faded-text">(
+          int $value
+          )
+        </span>
+        :
+        <a href="_Gdata_Health_Query.html#%5CZend_Gdata_Health_Query">\Zend_Gdata_Health_Query</a></code><p class="short-description">Setter for the max-results-group parameter.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$value</dt>
+<dd>int<br><em>Specifies the maximum number of groups to be retrieved. Must be an integer value greater than zero. This parameter is only valid if grouped=true.</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_Health_Query.html#%5CZend_Gdata_Health_Query">\Zend_Gdata_Health_Query</a></dt>
+<dd><em>Provides a fluent interface</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Health_Query::setMaxResultsInGroup()"></a><h4 class="method public">setMaxResultsInGroup<div class="to-top"><a href="#Zend_Gdata_Health_Query">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">setMaxResultsInGroup</span><span class="nb-faded-text">(
+          int $value
+          )
+        </span>
+        :
+        <a href="_Gdata_Health_Query.html#%5CZend_Gdata_Health_Query">\Zend_Gdata_Health_Query</a></code><p class="short-description">Setter for the max-results-group parameter.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$value</dt>
+<dd>int<br><em>Specifies the maximum number of records to be retrieved from each group. The limits that you specify with this parameter apply to all groups. Must be an integer value greater than zero. This parameter is only valid if grouped=true.</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_Health_Query.html#%5CZend_Gdata_Health_Query">\Zend_Gdata_Health_Query</a></dt>
+<dd><em>Provides a fluent interface</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Health_Query::setStartIndexGroup()"></a><h4 class="method public">setStartIndexGroup<div class="to-top"><a href="#Zend_Gdata_Health_Query">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">setStartIndexGroup</span><span class="nb-faded-text">(
+          int $value
+          )
+        </span>
+        :
+        <a href="_Gdata_Health_Query.html#%5CZend_Gdata_Health_Query">\Zend_Gdata_Health_Query</a></code><p class="short-description">Setter for the start-index-group parameter.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$value</dt>
+<dd>int<br><em>Retrieves only items whose group ranking is at least start-index-group. This should be set to a 1-based index of the first group to be retrieved. The range is applied per category. This parameter is only valid if grouped=true.</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_Health_Query.html#%5CZend_Gdata_Health_Query">\Zend_Gdata_Health_Query</a></dt>
+<dd><em>Provides a fluent interface</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Health_Query::setStartIndexInGroup()"></a><h4 class="method public">setStartIndexInGroup<div class="to-top"><a href="#Zend_Gdata_Health_Query">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">setStartIndexInGroup</span><span class="nb-faded-text">(
+          int $value
+          )
+        </span>
+        :
+        <a href="_Gdata_Health_Query.html#%5CZend_Gdata_Health_Query">\Zend_Gdata_Health_Query</a></code><p class="short-description">Setter for the start-index-in-group parameter.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$value</dt>
+<dd>int<br><em>A 1-based index of the records to be retrieved from each group. This parameter is only valid if grouped=true.</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_Health_Query.html#%5CZend_Gdata_Health_Query">\Zend_Gdata_Health_Query</a></dt>
+<dd><em>Provides a fluent interface</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<small xmlns="" class="footer">Documentation was generated by <a href="http://docblox-project.org">DocBlox 0.12.2</a>.
+    </small></body></html>

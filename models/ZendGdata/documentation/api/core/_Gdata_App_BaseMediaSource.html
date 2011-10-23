@@ -1,0 +1,465 @@
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title>Zend Gdata API Documentation</title><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" href="css/black-tie/jquery-ui-1.8.2.custom.css" type="text/css"></link><link rel="stylesheet" href="css/jquery.treeview.css" type="text/css"></link><link rel="stylesheet" href="css/theme.css" type="text/css"></link><script type="text/javascript" src="js/jquery-1.4.2.min.js"></script><script type="text/javascript" src="js/jquery-ui-1.8.2.custom.min.js"></script><script type="text/javascript" src="js/jquery.cookie.js"></script><script type="text/javascript" src="js/jquery.treeview.js"></script><script type="text/javascript">
+            $(document).ready(function() {
+                $(".filetree").treeview({
+                    collapsed: true,
+                    persist: "cookie"
+                });
+
+                $("#accordion").accordion({
+                    collapsible: true,
+                    autoHeight:  false,
+                    fillSpace:   true
+                });
+
+                $(".tabs").tabs();
+            });
+        </script></head><body><div xmlns="" class="content">
+<div class="sub-page-main-header-api-documentation"><h2>API Documentation</h2></div>
+<div class="dotted-line"></div>
+</div>
+<div xmlns="" id="content">
+<script>
+      $(document).ready(function() {
+        $('dl.function-info, dl.constant-info, dl.property-info').prev().css('cursor', 'pointer');
+        $('dl.function-info, dl.constant-info, dl.property-info').prev().click(function() {
+          if ($(this).next().is(':hidden'))
+          {
+            $(this).children('img')[0].src = 'images/arrow_down.gif';
+          } else
+          {
+            $(this).children('img')[0].src = 'images/arrow_right.gif';
+          }
+          $(this).next().slideToggle();
+        });
+      $('dl.function-info, dl.constant-info, dl.property-info').hide();
+      $('dl.function-info img, dl.constant-info img, dl.property-info img').show();
+      });
+    </script><a name="top"></a><h1 class="file">Gdata/App/BaseMediaSource.php</h1>
+<div class="file_menu">
+<a href="#includes">Includes</a> <a href="#functions">Functions</a> <a href="#classes">Classes</a> </div>
+<dl class="file-info">
+<dt>category</dt>
+<dd>Zend</dd>
+<dt>copyright</dt>
+<dd>Copyright (c) 2005-2011 Zend Technologies USA Inc. (http://www.zend.com)</dd>
+<dt>license</dt>
+<dd>http://framework.zend.com/license/new-bsd     New BSD License</dd>
+<dt>package</dt>
+<dd>Zend_Gdata</dd>
+<dt>subpackage</dt>
+<dd>App</dd>
+<dt>version</dt>
+<dd>$Id: BaseMediaSource.php 23775 2011-03-01 17:25:24Z ralph $</dd>
+<dt>Functions</dt>
+<dd><a class="function" href="#::__set()">__set</a></dd>
+<dd><a class="function" href="#::__isset()">__isset</a></dd>
+<dt>Classes</dt>
+<dd><a class="class" href="#%5CZend_Gdata_App_BaseMediaSource">Zend_Gdata_App_BaseMediaSource</a></dd>
+</dl>
+<h2>Description</h2>
+<p class="short-description">Zend Framework</p>
+<div class="long-description"><p>LICENSE</p>
+
+<p>This source file is subject to the new BSD license that is bundled
+with this package in the file LICENSE.txt.
+It is also available through the world-wide-web at this URL:
+http://framework.zend.com/license/new-bsd
+If you did not receive a copy of the license and are unable to
+obtain it through the world-wide-web, please send an email
+to license@zend.com so we can send you a copy immediately.</p>
+</div>
+<a name="functions"></a><h2>Functions</h2>
+<div>
+<a id="::__isset()"></a><h3 class="function ">__isset<div class="to-top"><a href="#top">jump to top</a></div>
+</h3>
+<div class="function">
+<code><span class="highlight">__isset</span><span class="nb-faded-text">(
+          string $name
+          )
+        </span>
+        :
+        </code><p class="short-description">Magic __isset method</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="arguments">Arguments</h4>
+<dl class="argument-info">
+<dt>$name</dt>
+<dd>string<br><em></em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="::__set()"></a><h3 class="function ">__set<div class="to-top"><a href="#top">jump to top</a></div>
+</h3>
+<div class="function">
+<code><span class="highlight">__set</span><span class="nb-faded-text">(
+          string $name,  $val
+          )
+        </span>
+        :
+        </code><p class="short-description">Magic setter to allow acces like $source-&gt;foo='bar' to call
+$source-&gt;setFoo('bar') automatically.</p>
+<div class="long-description"><p>Alternatively, if no setFoo() is defined, but a $_foo protected variable
+is defined, this is returned.</p>
+</div>
+<div class="api-section">
+<h4 class="arguments">Arguments</h4>
+<dl class="argument-info">
+<dt>$name</dt>
+<dd>string<br><em></em>
+</dd>
+<dt>$val</dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+</div>
+<a name="classes"></a><a id="\Zend_Gdata_App_BaseMediaSource"></a><h2 class="class">\Zend_Gdata_App_BaseMediaSource<div class="to-top"><a href="#top">jump to top</a></div>
+</h2>
+<div class="class">
+<dl class="class-info">
+<dt>Implements</dt>
+<dd><a href="_Gdata_App_MediaSource.html#%5CZend_Gdata_App_MediaSource">\Zend_Gdata_App_MediaSource</a></dd>
+<dt>category</dt>
+<dd>Zend</dd>
+<dt>copyright</dt>
+<dd>Copyright (c) 2005-2011 Zend Technologies USA Inc. (http://www.zend.com)</dd>
+<dt>license</dt>
+<dd>http://framework.zend.com/license/new-bsd     New BSD License</dd>
+<dt>package</dt>
+<dd>Zend_Gdata</dd>
+<dt>subpackage</dt>
+<dd>App</dd>
+<dt><a href="#" onclick="$(this).children('img').toggle().parents('dt').nextUntil('dt').slideToggle(); return false;"><img src="images/arrow_down.gif"><img src="images/arrow_right.gif" style="display: none">
+                Properties
+              </a></dt>
+<dd><a class="property protected" href="#%5CZend_Gdata_App_BaseMediaSource::%24_contentType">$_contentType</a></dd>
+<dd><a class="property protected" href="#%5CZend_Gdata_App_BaseMediaSource::%24_slug">$_slug</a></dd>
+<dd><a class="property public" href="#%5CZend_Gdata_App_BaseMediaSource::%24name">$name</a></dd>
+<dd><a class="property public" href="#%5CZend_Gdata_App_BaseMediaSource::%24name">$name</a></dd>
+<dd><a class="property public" href="#%5CZend_Gdata_App_BaseMediaSource::%24this">$this</a></dd>
+<dt><a href="#" onclick="$(this).children('img').toggle().parents('dt').nextUntil('dt').slideToggle(); return false;"><img src="images/arrow_down.gif"><img src="images/arrow_right.gif" style="display: none">
+                Methods
+              </a></dt>
+<dd><a class="method public" href="#%5CZend_Gdata_App_BaseMediaSource::__get()">__get</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_App_BaseMediaSource::getContentType()">getContentType</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_App_BaseMediaSource::getSlug()">getSlug</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_App_BaseMediaSource::setContentType()">setContentType</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_App_BaseMediaSource::setSlug()">setSlug</a></dd>
+</dl>
+<h3>Description</h3>
+<p class="short-description">Concrete class to use a file handle as an attachment within a MediaEntry.</p>
+<div class="long-description">
+</div>
+<h3>Properties</h3>
+<div>
+<a id="\Zend_Gdata_App_BaseMediaSource::$_contentType"></a><h4 class="property protected">$_contentType<div class="to-top"><a href="#%5CZend_Gdata_App_BaseMediaSource">jump to class</a></div>
+</h4>
+<div class="property">
+<code>string <span class="highlight">$_contentType</span> = 'null'</code><p class="short-description">The content type for the attached file (example image/png)</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt></dt>
+<dd>string<br><em></em>
+</dd>
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd>null</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_App_BaseMediaSource::$_slug"></a><h4 class="property protected">$_slug<div class="to-top"><a href="#%5CZend_Gdata_App_BaseMediaSource">jump to class</a></div>
+</h4>
+<div class="property">
+<code>string <span class="highlight">$_slug</span> = 'null'</code><p class="short-description">The slug header value representing the attached file title, or null if
+no slug should be used.  The slug header is only necessary in some cases,
+usually when a multipart upload is not being performed.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt></dt>
+<dd>string<br><em></em>
+</dd>
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd>null</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_App_BaseMediaSource::$name"></a><h4 class="property public">$name<div class="to-top"><a href="#%5CZend_Gdata_App_BaseMediaSource">jump to class</a></div>
+</h4>
+<div class="property">
+<code> <span class="highlight">$name</span> = ''</code><div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>default</dt>
+<dd></dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_App_BaseMediaSource::$name"></a><h4 class="property public">$name<div class="to-top"><a href="#%5CZend_Gdata_App_BaseMediaSource">jump to class</a></div>
+</h4>
+<div class="property">
+<code> <span class="highlight">$name</span> = ' does not exist'</code><div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>default</dt>
+<dd> does not exist</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_App_BaseMediaSource::$this"></a><h4 class="property public">$this<div class="to-top"><a href="#%5CZend_Gdata_App_BaseMediaSource">jump to class</a></div>
+</h4>
+<div class="property">
+<code> <span class="highlight">$this</span> = '_'</code><div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>default</dt>
+<dd>_</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+</div>
+<h3>Methods</h3>
+<div>
+<a id="\Zend_Gdata_App_BaseMediaSource::__get()"></a><h4 class="method public">__get<div class="to-top"><a href="#Zend_Gdata_App_BaseMediaSource">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">__get</span><span class="nb-faded-text">(
+          string $name
+          )
+        </span>
+        :
+        </code><p class="short-description">Magic getter to allow acces like $source-&gt;foo to call $source-&gt;getFoo()
+Alternatively, if no getFoo() is defined, but a $_foo protected variable
+is defined, this is returned.</p>
+<div class="long-description"><p>TODO Remove ability to bypass getFoo() methods??</p>
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$name</dt>
+<dd>string<br><em>The variable name sought</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_App_BaseMediaSource::getContentType()"></a><h4 class="method public">getContentType<div class="to-top"><a href="#Zend_Gdata_App_BaseMediaSource">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getContentType</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        string</code><p class="short-description">The content type for the attached file (example image/png)</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>string</dt>
+<dd><em>The content type</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_App_BaseMediaSource::getSlug()"></a><h4 class="method public">getSlug<div class="to-top"><a href="#Zend_Gdata_App_BaseMediaSource">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getSlug</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        string</code><p class="short-description">Returns the Slug header value.  Used by some services to determine the
+title for the uploaded file.  Returns null if no slug should be used.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>string</dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_App_BaseMediaSource::setContentType()"></a><h4 class="method public">setContentType<div class="to-top"><a href="#Zend_Gdata_App_BaseMediaSource">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">setContentType</span><span class="nb-faded-text">(
+          string $value
+          )
+        </span>
+        :
+        <a href="_Gdata_App_MediaFileSource.html#%5CZend_Gdata_App_MediaFileSource">\Zend_Gdata_App_MediaFileSource</a></code><p class="short-description">Set the content type for the file attached (example image/png)</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$value</dt>
+<dd>string<br><em>The content type</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_App_MediaFileSource.html#%5CZend_Gdata_App_MediaFileSource">\Zend_Gdata_App_MediaFileSource</a></dt>
+<dd><em>Provides a fluent interface</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_App_BaseMediaSource::setSlug()"></a><h4 class="method public">setSlug<div class="to-top"><a href="#Zend_Gdata_App_BaseMediaSource">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">setSlug</span><span class="nb-faded-text">(
+           $value
+          )
+        </span>
+        :
+        <a href="_Gdata_App_MediaSource.html#%5CZend_Gdata_App_MediaSource">\Zend_Gdata_App_MediaSource</a></code><p class="short-description">Sets the Slug header value.  Used by some services to determine the
+title for the uploaded file.  A null value indicates no slug header.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$value</dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_App_MediaSource.html#%5CZend_Gdata_App_MediaSource">\Zend_Gdata_App_MediaSource</a></dt>
+<dd><em>Provides a fluent interface</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+<dt></dt>
+<dd>string<br><em>The slug value</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<small xmlns="" class="footer">Documentation was generated by <a href="http://docblox-project.org">DocBlox 0.12.2</a>.
+    </small></body></html>

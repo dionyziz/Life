@@ -1,0 +1,1208 @@
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title>Zend Gdata API Documentation</title><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" href="css/black-tie/jquery-ui-1.8.2.custom.css" type="text/css"></link><link rel="stylesheet" href="css/jquery.treeview.css" type="text/css"></link><link rel="stylesheet" href="css/theme.css" type="text/css"></link><script type="text/javascript" src="js/jquery-1.4.2.min.js"></script><script type="text/javascript" src="js/jquery-ui-1.8.2.custom.min.js"></script><script type="text/javascript" src="js/jquery.cookie.js"></script><script type="text/javascript" src="js/jquery.treeview.js"></script><script type="text/javascript">
+            $(document).ready(function() {
+                $(".filetree").treeview({
+                    collapsed: true,
+                    persist: "cookie"
+                });
+
+                $("#accordion").accordion({
+                    collapsible: true,
+                    autoHeight:  false,
+                    fillSpace:   true
+                });
+
+                $(".tabs").tabs();
+            });
+        </script></head><body><div xmlns="" class="content">
+<div class="sub-page-main-header-api-documentation"><h2>API Documentation</h2></div>
+<div class="dotted-line"></div>
+</div>
+<div xmlns="" id="content">
+<script>
+      $(document).ready(function() {
+        $('dl.function-info, dl.constant-info, dl.property-info').prev().css('cursor', 'pointer');
+        $('dl.function-info, dl.constant-info, dl.property-info').prev().click(function() {
+          if ($(this).next().is(':hidden'))
+          {
+            $(this).children('img')[0].src = 'images/arrow_down.gif';
+          } else
+          {
+            $(this).children('img')[0].src = 'images/arrow_right.gif';
+          }
+          $(this).next().slideToggle();
+        });
+      $('dl.function-info, dl.constant-info, dl.property-info').hide();
+      $('dl.function-info img, dl.constant-info img, dl.property-info img').show();
+      });
+    </script><a name="top"></a><h1 class="file">Validate/Abstract.php</h1>
+<div class="file_menu">
+<a href="#includes">Includes</a> <a href="#classes">Classes</a> </div>
+<dl class="file-info">
+<dt>category</dt>
+<dd>Zend</dd>
+<dt>copyright</dt>
+<dd>Copyright (c) 2005-2011 Zend Technologies USA Inc. (http://www.zend.com)</dd>
+<dt>license</dt>
+<dd>http://framework.zend.com/license/new-bsd     New BSD License</dd>
+<dt>package</dt>
+<dd>Zend_Validate</dd>
+<dt>version</dt>
+<dd>$Id: Abstract.php 23775 2011-03-01 17:25:24Z ralph $</dd>
+<dt>Classes</dt>
+<dd><a class="class" href="#%5CZend_Validate_Abstract">Zend_Validate_Abstract</a></dd>
+</dl>
+<h2>Description</h2>
+<p class="short-description">Zend Framework</p>
+<div class="long-description"><p>LICENSE</p>
+
+<p>This source file is subject to the new BSD license that is bundled
+with this package in the file LICENSE.txt.
+It is also available through the world-wide-web at this URL:
+http://framework.zend.com/license/new-bsd
+If you did not receive a copy of the license and are unable to
+obtain it through the world-wide-web, please send an email
+to license@zend.com so we can send you a copy immediately.</p>
+</div>
+<a name="classes"></a><a id="\Zend_Validate_Abstract"></a><h2 class="class">\Zend_Validate_Abstract<div class="to-top"><a href="#top">jump to top</a></div>
+</h2>
+<div class="class">
+<dl class="class-info">
+<dt>Implements</dt>
+<dd><a href="_Validate_Interface.html#%5CZend_Validate_Interface">\Zend_Validate_Interface</a></dd>
+<dt>category</dt>
+<dd>Zend</dd>
+<dt>copyright</dt>
+<dd>Copyright (c) 2005-2011 Zend Technologies USA Inc. (http://www.zend.com)</dd>
+<dt>license</dt>
+<dd>http://framework.zend.com/license/new-bsd     New BSD License</dd>
+<dt>package</dt>
+<dd>Zend_Validate</dd>
+<dt><a href="#" onclick="$(this).children('img').toggle().parents('dt').nextUntil('dt').slideToggle(); return false;"><img src="images/arrow_down.gif"><img src="images/arrow_right.gif" style="display: none">
+                Properties
+              </a></dt>
+<dd><a class="property protected" href="#%5CZend_Validate_Abstract::%24_defaultTranslator">$_defaultTranslator</a></dd>
+<dd><a class="property protected" href="#%5CZend_Validate_Abstract::%24_errors">$_errors</a></dd>
+<dd><a class="property protected" href="#%5CZend_Validate_Abstract::%24_messageLength">$_messageLength</a></dd>
+<dd><a class="property protected" href="#%5CZend_Validate_Abstract::%24_messageTemplates">$_messageTemplates</a></dd>
+<dd><a class="property protected" href="#%5CZend_Validate_Abstract::%24_messageVariables">$_messageVariables</a></dd>
+<dd><a class="property protected" href="#%5CZend_Validate_Abstract::%24_messages">$_messages</a></dd>
+<dd><a class="property protected" href="#%5CZend_Validate_Abstract::%24_obscureValue">$_obscureValue</a></dd>
+<dd><a class="property protected" href="#%5CZend_Validate_Abstract::%24_translator">$_translator</a></dd>
+<dd><a class="property protected" href="#%5CZend_Validate_Abstract::%24_translatorDisabled">$_translatorDisabled</a></dd>
+<dd><a class="property protected" href="#%5CZend_Validate_Abstract::%24_value">$_value</a></dd>
+<dt><a href="#" onclick="$(this).children('img').toggle().parents('dt').nextUntil('dt').slideToggle(); return false;"><img src="images/arrow_down.gif"><img src="images/arrow_right.gif" style="display: none">
+                Methods
+              </a></dt>
+<dd><a class="method public" href="#%5CZend_Validate_Abstract::__get()">__get</a></dd>
+<dd><a class="method protected" href="#%5CZend_Validate_Abstract::_createMessage()">_createMessage</a></dd>
+<dd><a class="method protected" href="#%5CZend_Validate_Abstract::_error()">_error</a></dd>
+<dd><a class="method protected" href="#%5CZend_Validate_Abstract::_setValue()">_setValue</a></dd>
+<dd><a class="method public" href="#%5CZend_Validate_Abstract::getDefaultTranslator()">getDefaultTranslator</a></dd>
+<dd><a class="method public" href="#%5CZend_Validate_Abstract::getErrors()">getErrors</a></dd>
+<dd><a class="method public" href="#%5CZend_Validate_Abstract::getMessageLength()">getMessageLength</a></dd>
+<dd><a class="method public" href="#%5CZend_Validate_Abstract::getMessageTemplates()">getMessageTemplates</a></dd>
+<dd><a class="method public" href="#%5CZend_Validate_Abstract::getMessageVariables()">getMessageVariables</a></dd>
+<dd><a class="method public" href="#%5CZend_Validate_Abstract::getMessages()">getMessages</a></dd>
+<dd><a class="method public" href="#%5CZend_Validate_Abstract::getObscureValue()">getObscureValue</a></dd>
+<dd><a class="method public" href="#%5CZend_Validate_Abstract::getTranslator()">getTranslator</a></dd>
+<dd><a class="method public" href="#%5CZend_Validate_Abstract::hasDefaultTranslator()">hasDefaultTranslator</a></dd>
+<dd><a class="method public" href="#%5CZend_Validate_Abstract::hasTranslator()">hasTranslator</a></dd>
+<dd><a class="method public" href="#%5CZend_Validate_Abstract::setDefaultTranslator()">setDefaultTranslator</a></dd>
+<dd><a class="method public" href="#%5CZend_Validate_Abstract::setDisableTranslator()">setDisableTranslator</a></dd>
+<dd><a class="method public" href="#%5CZend_Validate_Abstract::setMessage()">setMessage</a></dd>
+<dd><a class="method public" href="#%5CZend_Validate_Abstract::setMessageLength()">setMessageLength</a></dd>
+<dd><a class="method public" href="#%5CZend_Validate_Abstract::setMessages()">setMessages</a></dd>
+<dd><a class="method public" href="#%5CZend_Validate_Abstract::setObscureValue()">setObscureValue</a></dd>
+<dd><a class="method public" href="#%5CZend_Validate_Abstract::setTranslator()">setTranslator</a></dd>
+<dd><a class="method public" href="#%5CZend_Validate_Abstract::translatorIsDisabled()">translatorIsDisabled</a></dd>
+</dl>
+<h3>Description</h3>
+<p class="short-description"></p>
+<div class="long-description">
+</div>
+<h3>Properties</h3>
+<div>
+<a id="\Zend_Validate_Abstract::$_defaultTranslator"></a><h4 class="property protected">$_defaultTranslator<div class="to-top"><a href="#%5CZend_Validate_Abstract">jump to class</a></div>
+</h4>
+<div class="property">
+<code>\Zend_Translate <span class="highlight">$_defaultTranslator</span> = ''</code><p class="short-description">Default translation object for all validate objects</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt></dt>
+<dd>\Zend_Translate<br><em></em>
+</dd>
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd></dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>true</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Validate_Abstract::$_errors"></a><h4 class="property protected">$_errors<div class="to-top"><a href="#%5CZend_Validate_Abstract">jump to class</a></div>
+</h4>
+<div class="property">
+<code>array <span class="highlight">$_errors</span> = 'array'</code><p class="short-description">Array of validation failure message codes</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt></dt>
+<dd>array<br><em></em>
+</dd>
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd>array</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+<dt>deprecated</dt>
+<dd>Since 1.5.0</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Validate_Abstract::$_messageLength"></a><h4 class="property protected">$_messageLength<div class="to-top"><a href="#%5CZend_Validate_Abstract">jump to class</a></div>
+</h4>
+<div class="property">
+<code>Integer <span class="highlight">$_messageLength</span> = ''</code><p class="short-description">Limits the maximum returned length of a error message</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt></dt>
+<dd>Integer<br><em></em>
+</dd>
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd></dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>true</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Validate_Abstract::$_messageTemplates"></a><h4 class="property protected">$_messageTemplates<div class="to-top"><a href="#%5CZend_Validate_Abstract">jump to class</a></div>
+</h4>
+<div class="property">
+<code>array <span class="highlight">$_messageTemplates</span> = 'array'</code><p class="short-description">Validation failure message template definitions</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt></dt>
+<dd>array<br><em></em>
+</dd>
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd>array</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Validate_Abstract::$_messageVariables"></a><h4 class="property protected">$_messageVariables<div class="to-top"><a href="#%5CZend_Validate_Abstract">jump to class</a></div>
+</h4>
+<div class="property">
+<code>array <span class="highlight">$_messageVariables</span> = 'array'</code><p class="short-description">Additional variables available for validation failure messages</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt></dt>
+<dd>array<br><em></em>
+</dd>
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd>array</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Validate_Abstract::$_messages"></a><h4 class="property protected">$_messages<div class="to-top"><a href="#%5CZend_Validate_Abstract">jump to class</a></div>
+</h4>
+<div class="property">
+<code>array <span class="highlight">$_messages</span> = 'array'</code><p class="short-description">Array of validation failure messages</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt></dt>
+<dd>array<br><em></em>
+</dd>
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd>array</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Validate_Abstract::$_obscureValue"></a><h4 class="property protected">$_obscureValue<div class="to-top"><a href="#%5CZend_Validate_Abstract">jump to class</a></div>
+</h4>
+<div class="property">
+<code>bool <span class="highlight">$_obscureValue</span> = 'false'</code><p class="short-description">Flag indidcating whether or not value should be obfuscated in error
+messages</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt></dt>
+<dd>bool<br><em></em>
+</dd>
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd>false</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Validate_Abstract::$_translator"></a><h4 class="property protected">$_translator<div class="to-top"><a href="#%5CZend_Validate_Abstract">jump to class</a></div>
+</h4>
+<div class="property">
+<code>\Zend_Translate <span class="highlight">$_translator</span> = ''</code><p class="short-description">Translation object</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt></dt>
+<dd>\Zend_Translate<br><em></em>
+</dd>
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd></dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Validate_Abstract::$_translatorDisabled"></a><h4 class="property protected">$_translatorDisabled<div class="to-top"><a href="#%5CZend_Validate_Abstract">jump to class</a></div>
+</h4>
+<div class="property">
+<code>Boolean <span class="highlight">$_translatorDisabled</span> = 'false'</code><p class="short-description">Is translation disabled?</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt></dt>
+<dd>Boolean<br><em></em>
+</dd>
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd>false</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Validate_Abstract::$_value"></a><h4 class="property protected">$_value<div class="to-top"><a href="#%5CZend_Validate_Abstract">jump to class</a></div>
+</h4>
+<div class="property">
+<code>mixed <span class="highlight">$_value</span> = ''</code><p class="short-description">The value to be validated</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt></dt>
+<dd>mixed<br><em></em>
+</dd>
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd></dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+</div>
+<h3>Methods</h3>
+<div>
+<a id="\Zend_Validate_Abstract::__get()"></a><h4 class="method public">__get<div class="to-top"><a href="#Zend_Validate_Abstract">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">__get</span><span class="nb-faded-text">(
+          string $property
+          )
+        </span>
+        :
+        mixed</code><p class="short-description">Magic function returns the value of the requested property, if and only if it is the value or a
+message variable.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$property</dt>
+<dd>string<br><em></em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>mixed</dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+<dt>throws</dt>
+<dd></dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Validate_Abstract::_createMessage()"></a><h4 class="method protected">_createMessage<div class="to-top"><a href="#Zend_Validate_Abstract">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">_createMessage</span><span class="nb-faded-text">(
+          string $messageKey, string $value
+          )
+        </span>
+        :
+        string</code><p class="short-description">Constructs and returns a validation failure message with the given message key and value.</p>
+<div class="long-description"><p>Returns null if and only if $messageKey does not correspond to an existing template.</p>
+
+<p>If a translator is available and a translation exists for $messageKey,
+the translation will be used.</p>
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$messageKey</dt>
+<dd>string<br><em></em>
+</dd>
+<dt>$value</dt>
+<dd>string<br><em></em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>string</dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Validate_Abstract::_error()"></a><h4 class="method protected">_error<div class="to-top"><a href="#Zend_Validate_Abstract">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">_error</span><span class="nb-faded-text">(
+          string $messageKey, string $value
+              =
+              null
+          )
+        </span>
+        :
+        void</code><p class="short-description"></p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$messageKey</dt>
+<dd>string<br><em></em>
+</dd>
+<dt>$value</dt>
+<dd>string<br><em>OPTIONAL</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Validate_Abstract::_setValue()"></a><h4 class="method protected">_setValue<div class="to-top"><a href="#Zend_Validate_Abstract">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">_setValue</span><span class="nb-faded-text">(
+          mixed $value
+          )
+        </span>
+        :
+        void</code><p class="short-description">Sets the value to be validated and clears the messages and errors arrays</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$value</dt>
+<dd>mixed<br><em></em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Validate_Abstract::getDefaultTranslator()"></a><h4 class="method public">getDefaultTranslator<div class="to-top"><a href="#Zend_Validate_Abstract">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getDefaultTranslator</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        \Zend_Translate_Adapter|null</code><p class="short-description">Get default translation object for all validate objects</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>\Zend_Translate_Adapter|null</dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>true</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Validate_Abstract::getErrors()"></a><h4 class="method public">getErrors<div class="to-top"><a href="#Zend_Validate_Abstract">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getErrors</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        array</code><p class="short-description">Returns array of validation failure message codes</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>array</dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+<dt>deprecated</dt>
+<dd>Since 1.5.0</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Validate_Abstract::getMessageLength()"></a><h4 class="method public">getMessageLength<div class="to-top"><a href="#Zend_Validate_Abstract">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getMessageLength</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        integer</code><p class="short-description">Returns the maximum allowed message length</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>integer</dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>true</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Validate_Abstract::getMessageTemplates()"></a><h4 class="method public">getMessageTemplates<div class="to-top"><a href="#Zend_Validate_Abstract">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getMessageTemplates</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        array</code><p class="short-description">Returns the message templates from the validator</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>array</dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Validate_Abstract::getMessageVariables()"></a><h4 class="method public">getMessageVariables<div class="to-top"><a href="#Zend_Validate_Abstract">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getMessageVariables</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        array</code><p class="short-description">Returns an array of the names of variables that are used in constructing validation failure messages</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>array</dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Validate_Abstract::getMessages()"></a><h4 class="method public">getMessages<div class="to-top"><a href="#Zend_Validate_Abstract">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getMessages</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        array</code><p class="short-description">Returns array of validation failure messages</p>
+<div class="long-description"><p>If isValid() was never called or if the most recent isValid() call
+returned true, then this method returns an empty array.</p>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>array</dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Validate_Abstract::getObscureValue()"></a><h4 class="method public">getObscureValue<div class="to-top"><a href="#Zend_Validate_Abstract">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getObscureValue</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        bool</code><p class="short-description">Retrieve flag indicating whether or not value should be obfuscated in
+messages</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>bool</dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Validate_Abstract::getTranslator()"></a><h4 class="method public">getTranslator<div class="to-top"><a href="#Zend_Validate_Abstract">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getTranslator</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        \Zend_Translate_Adapter|null</code><p class="short-description">Return translation object</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>\Zend_Translate_Adapter|null</dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Validate_Abstract::hasDefaultTranslator()"></a><h4 class="method public">hasDefaultTranslator<div class="to-top"><a href="#Zend_Validate_Abstract">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">hasDefaultTranslator</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        boolean</code><p class="short-description">Is there a default translation object set?</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>boolean</dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>true</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Validate_Abstract::hasTranslator()"></a><h4 class="method public">hasTranslator<div class="to-top"><a href="#Zend_Validate_Abstract">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">hasTranslator</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        bool</code><p class="short-description">Does this validator have its own specific translator?</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>bool</dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Validate_Abstract::setDefaultTranslator()"></a><h4 class="method public">setDefaultTranslator<div class="to-top"><a href="#Zend_Validate_Abstract">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">setDefaultTranslator</span><span class="nb-faded-text">(
+          \Zend_Translate|\Zend_Translate_Adapter|null $translator
+              =
+              null
+          )
+        </span>
+        :
+        void</code><p class="short-description">Set default translation object for all validate objects</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$translator</dt>
+<dd>\Zend_Translate\Zend_Translate_Adapternull<br><em></em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>true</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Validate_Abstract::setDisableTranslator()"></a><h4 class="method public">setDisableTranslator<div class="to-top"><a href="#Zend_Validate_Abstract">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">setDisableTranslator</span><span class="nb-faded-text">(
+          bool $flag
+          )
+        </span>
+        :
+        <a href="_Validate_Abstract.html#%5CZend_Validate_Abstract">\Zend_Validate_Abstract</a></code><p class="short-description">Indicate whether or not translation should be disabled</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$flag</dt>
+<dd>bool<br><em></em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Validate_Abstract.html#%5CZend_Validate_Abstract">\Zend_Validate_Abstract</a></dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Validate_Abstract::setMessage()"></a><h4 class="method public">setMessage<div class="to-top"><a href="#Zend_Validate_Abstract">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">setMessage</span><span class="nb-faded-text">(
+          string $messageString, string $messageKey
+              =
+              null
+          )
+        </span>
+        :
+        <a href="_Validate_Abstract.html#%5CZend_Validate_Abstract">\Zend_Validate_Abstract</a></code><p class="short-description">Sets the validation failure message template for a particular key</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$messageString</dt>
+<dd>string<br><em></em>
+</dd>
+<dt>$messageKey</dt>
+<dd>string<br><em>OPTIONAL</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Validate_Abstract.html#%5CZend_Validate_Abstract">\Zend_Validate_Abstract</a></dt>
+<dd><em>Provides a fluent interface</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+<dt>throws</dt>
+<dd></dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Validate_Abstract::setMessageLength()"></a><h4 class="method public">setMessageLength<div class="to-top"><a href="#Zend_Validate_Abstract">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">setMessageLength</span><span class="nb-faded-text">(
+          integer $length
+          )
+        </span>
+        :
+        </code><p class="short-description">Sets the maximum allowed message length</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$length</dt>
+<dd>integer<br><em></em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>true</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Validate_Abstract::setMessages()"></a><h4 class="method public">setMessages<div class="to-top"><a href="#Zend_Validate_Abstract">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">setMessages</span><span class="nb-faded-text">(
+          array $messages
+          )
+        </span>
+        :
+        <a href="_Validate_Abstract.html#%5CZend_Validate_Abstract">\Zend_Validate_Abstract</a></code><p class="short-description">Sets validation failure message templates given as an array, where the array keys are the message keys,
+and the array values are the message template strings.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$messages</dt>
+<dd>array<br><em></em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Validate_Abstract.html#%5CZend_Validate_Abstract">\Zend_Validate_Abstract</a></dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Validate_Abstract::setObscureValue()"></a><h4 class="method public">setObscureValue<div class="to-top"><a href="#Zend_Validate_Abstract">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">setObscureValue</span><span class="nb-faded-text">(
+          bool $flag
+          )
+        </span>
+        :
+        <a href="_Validate_Abstract.html#%5CZend_Validate_Abstract">\Zend_Validate_Abstract</a></code><p class="short-description">Set flag indicating whether or not value should be obfuscated in messages</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$flag</dt>
+<dd>bool<br><em></em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Validate_Abstract.html#%5CZend_Validate_Abstract">\Zend_Validate_Abstract</a></dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Validate_Abstract::setTranslator()"></a><h4 class="method public">setTranslator<div class="to-top"><a href="#Zend_Validate_Abstract">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">setTranslator</span><span class="nb-faded-text">(
+          \Zend_Translate|\Zend_Translate_Adapter|null $translator
+              =
+              null
+          )
+        </span>
+        :
+        <a href="_Validate_Abstract.html#%5CZend_Validate_Abstract">\Zend_Validate_Abstract</a></code><p class="short-description">Set translation object</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$translator</dt>
+<dd>\Zend_Translate\Zend_Translate_Adapternull<br><em></em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Validate_Abstract.html#%5CZend_Validate_Abstract">\Zend_Validate_Abstract</a></dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Validate_Abstract::translatorIsDisabled()"></a><h4 class="method public">translatorIsDisabled<div class="to-top"><a href="#Zend_Validate_Abstract">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">translatorIsDisabled</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        bool</code><p class="short-description">Is translation disabled?</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>bool</dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<small xmlns="" class="footer">Documentation was generated by <a href="http://docblox-project.org">DocBlox 0.12.2</a>.
+    </small></body></html>

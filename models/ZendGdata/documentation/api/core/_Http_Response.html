@@ -1,0 +1,1247 @@
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title>Zend Gdata API Documentation</title><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" href="css/black-tie/jquery-ui-1.8.2.custom.css" type="text/css"></link><link rel="stylesheet" href="css/jquery.treeview.css" type="text/css"></link><link rel="stylesheet" href="css/theme.css" type="text/css"></link><script type="text/javascript" src="js/jquery-1.4.2.min.js"></script><script type="text/javascript" src="js/jquery-ui-1.8.2.custom.min.js"></script><script type="text/javascript" src="js/jquery.cookie.js"></script><script type="text/javascript" src="js/jquery.treeview.js"></script><script type="text/javascript">
+            $(document).ready(function() {
+                $(".filetree").treeview({
+                    collapsed: true,
+                    persist: "cookie"
+                });
+
+                $("#accordion").accordion({
+                    collapsible: true,
+                    autoHeight:  false,
+                    fillSpace:   true
+                });
+
+                $(".tabs").tabs();
+            });
+        </script></head><body><div xmlns="" class="content">
+<div class="sub-page-main-header-api-documentation"><h2>API Documentation</h2></div>
+<div class="dotted-line"></div>
+</div>
+<div xmlns="" id="content">
+<script>
+      $(document).ready(function() {
+        $('dl.function-info, dl.constant-info, dl.property-info').prev().css('cursor', 'pointer');
+        $('dl.function-info, dl.constant-info, dl.property-info').prev().click(function() {
+          if ($(this).next().is(':hidden'))
+          {
+            $(this).children('img')[0].src = 'images/arrow_down.gif';
+          } else
+          {
+            $(this).children('img')[0].src = 'images/arrow_right.gif';
+          }
+          $(this).next().slideToggle();
+        });
+      $('dl.function-info, dl.constant-info, dl.property-info').hide();
+      $('dl.function-info img, dl.constant-info img, dl.property-info img').show();
+      });
+    </script><a name="top"></a><h1 class="file">Http/Response.php</h1>
+<div class="file_menu">
+<a href="#classes">Classes</a> </div>
+<dl class="file-info">
+<dt>category</dt>
+<dd>Zend</dd>
+<dt>copyright</dt>
+<dd>Copyright (c) 2005-2011 Zend Technologies USA Inc. (http://www.zend.com)</dd>
+<dt>license</dt>
+<dd>http://framework.zend.com/license/new-bsd     New BSD License</dd>
+<dt>package</dt>
+<dd>Zend_Http</dd>
+<dt>subpackage</dt>
+<dd>Response</dd>
+<dt>version</dt>
+<dd>$Id: Response.php 23775 2011-03-01 17:25:24Z ralph $</dd>
+<dt>Classes</dt>
+<dd><a class="class" href="#%5CZend_Http_Response">Zend_Http_Response</a></dd>
+</dl>
+<h2>Description</h2>
+<p class="short-description">Zend Framework</p>
+<div class="long-description"><p>LICENSE</p>
+
+<p>This source file is subject to the new BSD license that is bundled
+with this package in the file LICENSE.txt.
+It is also available through the world-wide-web at this URL:
+http://framework.zend.com/license/new-bsd
+If you did not receive a copy of the license and are unable to
+obtain it through the world-wide-web, please send an email
+to license@zend.com so we can send you a copy immediately.</p>
+</div>
+<a name="classes"></a><a id="\Zend_Http_Response"></a><h2 class="class">\Zend_Http_Response<div class="to-top"><a href="#top">jump to top</a></div>
+</h2>
+<div class="class">
+<dl class="class-info">
+<dt>copyright</dt>
+<dd>Copyright (c) 2005-2011 Zend Technologies USA Inc. (http://www.zend.com)</dd>
+<dt>license</dt>
+<dd>http://framework.zend.com/license/new-bsd     New BSD License</dd>
+<dt>package</dt>
+<dd>Zend_Http</dd>
+<dt>subpackage</dt>
+<dd>Response</dd>
+<dt><a href="#" onclick="$(this).children('img').toggle().parents('dt').nextUntil('dt').slideToggle(); return false;"><img src="images/arrow_down.gif"><img src="images/arrow_right.gif" style="display: none">
+                Properties
+              </a></dt>
+<dd><a class="property protected" href="#%5CZend_Http_Response::%24body">$body</a></dd>
+<dd><a class="property protected" href="#%5CZend_Http_Response::%24code">$code</a></dd>
+<dd><a class="property protected" href="#%5CZend_Http_Response::%24headers">$headers</a></dd>
+<dd><a class="property protected" href="#%5CZend_Http_Response::%24message">$message</a></dd>
+<dd><a class="property protected" href="#%5CZend_Http_Response::%24messages">$messages</a></dd>
+<dd><a class="property protected" href="#%5CZend_Http_Response::%24version">$version</a></dd>
+<dt><a href="#" onclick="$(this).children('img').toggle().parents('dt').nextUntil('dt').slideToggle(); return false;"><img src="images/arrow_down.gif"><img src="images/arrow_right.gif" style="display: none">
+                Methods
+              </a></dt>
+<dd><a class="method public" href="#%5CZend_Http_Response::__construct()">__construct</a></dd>
+<dd><a class="method public" href="#%5CZend_Http_Response::__toString()">__toString</a></dd>
+<dd><a class="method public" href="#%5CZend_Http_Response::asString()">asString</a></dd>
+<dd><a class="method public" href="#%5CZend_Http_Response::decodeChunkedBody()">decodeChunkedBody</a></dd>
+<dd><a class="method public" href="#%5CZend_Http_Response::decodeDeflate()">decodeDeflate</a></dd>
+<dd><a class="method public" href="#%5CZend_Http_Response::decodeGzip()">decodeGzip</a></dd>
+<dd><a class="method public" href="#%5CZend_Http_Response::extractBody()">extractBody</a></dd>
+<dd><a class="method public" href="#%5CZend_Http_Response::extractCode()">extractCode</a></dd>
+<dd><a class="method public" href="#%5CZend_Http_Response::extractHeaders()">extractHeaders</a></dd>
+<dd><a class="method public" href="#%5CZend_Http_Response::extractMessage()">extractMessage</a></dd>
+<dd><a class="method public" href="#%5CZend_Http_Response::extractVersion()">extractVersion</a></dd>
+<dd><a class="method public" href="#%5CZend_Http_Response::fromString()">fromString</a></dd>
+<dd><a class="method public" href="#%5CZend_Http_Response::getBody()">getBody</a></dd>
+<dd><a class="method public" href="#%5CZend_Http_Response::getHeader()">getHeader</a></dd>
+<dd><a class="method public" href="#%5CZend_Http_Response::getHeaders()">getHeaders</a></dd>
+<dd><a class="method public" href="#%5CZend_Http_Response::getHeadersAsString()">getHeadersAsString</a></dd>
+<dd><a class="method public" href="#%5CZend_Http_Response::getMessage()">getMessage</a></dd>
+<dd><a class="method public" href="#%5CZend_Http_Response::getRawBody()">getRawBody</a></dd>
+<dd><a class="method public" href="#%5CZend_Http_Response::getStatus()">getStatus</a></dd>
+<dd><a class="method public" href="#%5CZend_Http_Response::getVersion()">getVersion</a></dd>
+<dd><a class="method public" href="#%5CZend_Http_Response::isError()">isError</a></dd>
+<dd><a class="method public" href="#%5CZend_Http_Response::isRedirect()">isRedirect</a></dd>
+<dd><a class="method public" href="#%5CZend_Http_Response::isSuccessful()">isSuccessful</a></dd>
+<dd><a class="method public" href="#%5CZend_Http_Response::responseCodeAsText()">responseCodeAsText</a></dd>
+</dl>
+<h3>Description</h3>
+<p class="short-description">Zend_Http_Response represents an HTTP 1.0 / 1.1 response message. It
+includes easy access to all the response's different elemts, as well as some
+convenience methods for parsing and validating HTTP responses.</p>
+<div class="long-description">
+</div>
+<h3>Properties</h3>
+<div>
+<a id="\Zend_Http_Response::$body"></a><h4 class="property protected">$body<div class="to-top"><a href="#%5CZend_Http_Response">jump to class</a></div>
+</h4>
+<div class="property">
+<code>string <span class="highlight">$body</span> = ''</code><p class="short-description">The HTTP response body</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt></dt>
+<dd>string<br><em></em>
+</dd>
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd></dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Http_Response::$code"></a><h4 class="property protected">$code<div class="to-top"><a href="#%5CZend_Http_Response">jump to class</a></div>
+</h4>
+<div class="property">
+<code>int <span class="highlight">$code</span> = ''</code><p class="short-description">The HTTP response code</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt></dt>
+<dd>int<br><em></em>
+</dd>
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd></dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Http_Response::$headers"></a><h4 class="property protected">$headers<div class="to-top"><a href="#%5CZend_Http_Response">jump to class</a></div>
+</h4>
+<div class="property">
+<code>array <span class="highlight">$headers</span> = 'array'</code><p class="short-description">The HTTP response headers array</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt></dt>
+<dd>array<br><em></em>
+</dd>
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd>array</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Http_Response::$message"></a><h4 class="property protected">$message<div class="to-top"><a href="#%5CZend_Http_Response">jump to class</a></div>
+</h4>
+<div class="property">
+<code>string <span class="highlight">$message</span> = ''</code><p class="short-description">The HTTP response code as string
+(e.g. 'Not Found' for 404 or 'Internal Server Error' for 500)</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt></dt>
+<dd>string<br><em></em>
+</dd>
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd></dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Http_Response::$messages"></a><h4 class="property protected">$messages<div class="to-top"><a href="#%5CZend_Http_Response">jump to class</a></div>
+</h4>
+<div class="property">
+<code>array <span class="highlight">$messages</span> = 'array'</code><p class="short-description">List of all known HTTP response codes - used by responseCodeAsText() to
+translate numeric codes to messages.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt></dt>
+<dd>array<br><em></em>
+</dd>
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd>array</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>true</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Http_Response::$version"></a><h4 class="property protected">$version<div class="to-top"><a href="#%5CZend_Http_Response">jump to class</a></div>
+</h4>
+<div class="property">
+<code>string <span class="highlight">$version</span> = ''</code><p class="short-description">The HTTP version (1.0, 1.1)</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt></dt>
+<dd>string<br><em></em>
+</dd>
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd></dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+</div>
+<h3>Methods</h3>
+<div>
+<a id="\Zend_Http_Response::__construct()"></a><h4 class="method public">__construct<div class="to-top"><a href="#Zend_Http_Response">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">__construct</span><span class="nb-faded-text">(
+          int $code, array $headers, string $body
+              =
+              null, string $version
+              =
+              1.1, string $message
+              =
+              null
+          )
+        </span>
+        :
+        </code><p class="short-description">HTTP response constructor</p>
+<div class="long-description"><p>In most cases, you would use Zend_Http_Response::fromString to parse an HTTP
+response string and create a new Zend_Http_Response object.</p>
+
+<p>NOTE: The constructor no longer accepts nulls or empty values for the code and
+headers and will throw an exception if the passed values do not form a valid HTTP
+responses.</p>
+
+<p>If no message is passed, the message will be guessed according to the response code.</p>
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$code</dt>
+<dd>int<br><em>Response code (200, 404, ...)</em>
+</dd>
+<dt>$headers</dt>
+<dd>array<br><em>Headers array</em>
+</dd>
+<dt>$body</dt>
+<dd>string<br><em>Response body</em>
+</dd>
+<dt>$version</dt>
+<dd>string<br><em>HTTP version</em>
+</dd>
+<dt>$message</dt>
+<dd>string<br><em>Response code as text</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+<dt>throws</dt>
+<dd><a href="_Http_Exception.html#%5CZend_Http_Exception"></a></dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Http_Response::__toString()"></a><h4 class="method public">__toString<div class="to-top"><a href="#Zend_Http_Response">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">__toString</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        string</code><p class="short-description">Implements magic __toString()</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>string</dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Http_Response::asString()"></a><h4 class="method public">asString<div class="to-top"><a href="#Zend_Http_Response">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">asString</span><span class="nb-faded-text">(
+          string $br
+              =
+              \n
+          )
+        </span>
+        :
+        string</code><p class="short-description">Get the entire response as string</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$br</dt>
+<dd>string<br><em>Line breaks (eg. &amp;quot;\n&amp;quot;, &amp;quot;\r\n&amp;quot;, &amp;quot;&amp;lt;br /&amp;gt;&amp;quot;)</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>string</dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Http_Response::decodeChunkedBody()"></a><h4 class="method public">decodeChunkedBody<div class="to-top"><a href="#Zend_Http_Response">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">decodeChunkedBody</span><span class="nb-faded-text">(
+          string $body
+          )
+        </span>
+        :
+        string</code><p class="short-description">Decode a "chunked" transfer-encoded body and return the decoded text</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$body</dt>
+<dd>string<br><em></em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>string</dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>true</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Http_Response::decodeDeflate()"></a><h4 class="method public">decodeDeflate<div class="to-top"><a href="#Zend_Http_Response">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">decodeDeflate</span><span class="nb-faded-text">(
+          string $body
+          )
+        </span>
+        :
+        string</code><p class="short-description">Decode a zlib deflated message (when Content-encoding = deflate)</p>
+<div class="long-description"><p>Currently requires PHP with zlib support</p>
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$body</dt>
+<dd>string<br><em></em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>string</dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>true</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Http_Response::decodeGzip()"></a><h4 class="method public">decodeGzip<div class="to-top"><a href="#Zend_Http_Response">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">decodeGzip</span><span class="nb-faded-text">(
+          string $body
+          )
+        </span>
+        :
+        string</code><p class="short-description">Decode a gzip encoded message (when Content-encoding = gzip)</p>
+<div class="long-description"><p>Currently requires PHP with zlib support</p>
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$body</dt>
+<dd>string<br><em></em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>string</dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>true</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Http_Response::extractBody()"></a><h4 class="method public">extractBody<div class="to-top"><a href="#Zend_Http_Response">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">extractBody</span><span class="nb-faded-text">(
+          string $response_str
+          )
+        </span>
+        :
+        string</code><p class="short-description">Extract the body from a response string</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$response_str</dt>
+<dd>string<br><em></em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>string</dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>true</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Http_Response::extractCode()"></a><h4 class="method public">extractCode<div class="to-top"><a href="#Zend_Http_Response">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">extractCode</span><span class="nb-faded-text">(
+          string $response_str
+          )
+        </span>
+        :
+        int</code><p class="short-description">Extract the response code from a response string</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$response_str</dt>
+<dd>string<br><em></em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>int</dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>true</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Http_Response::extractHeaders()"></a><h4 class="method public">extractHeaders<div class="to-top"><a href="#Zend_Http_Response">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">extractHeaders</span><span class="nb-faded-text">(
+          string $response_str
+          )
+        </span>
+        :
+        array</code><p class="short-description">Extract the headers from a response string</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$response_str</dt>
+<dd>string<br><em></em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>array</dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>true</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Http_Response::extractMessage()"></a><h4 class="method public">extractMessage<div class="to-top"><a href="#Zend_Http_Response">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">extractMessage</span><span class="nb-faded-text">(
+          string $response_str
+          )
+        </span>
+        :
+        string</code><p class="short-description">Extract the HTTP message from a response</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$response_str</dt>
+<dd>string<br><em></em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>string</dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>true</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Http_Response::extractVersion()"></a><h4 class="method public">extractVersion<div class="to-top"><a href="#Zend_Http_Response">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">extractVersion</span><span class="nb-faded-text">(
+          string $response_str
+          )
+        </span>
+        :
+        string</code><p class="short-description">Extract the HTTP version from a response</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$response_str</dt>
+<dd>string<br><em></em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>string</dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>true</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Http_Response::fromString()"></a><h4 class="method public">fromString<div class="to-top"><a href="#Zend_Http_Response">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">fromString</span><span class="nb-faded-text">(
+          string $response_str
+          )
+        </span>
+        :
+        <a href="_Http_Response.html#%5CZend_Http_Response">\Zend_Http_Response</a></code><p class="short-description">Create a new Zend_Http_Response object from a string</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$response_str</dt>
+<dd>string<br><em></em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Http_Response.html#%5CZend_Http_Response">\Zend_Http_Response</a></dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>true</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Http_Response::getBody()"></a><h4 class="method public">getBody<div class="to-top"><a href="#Zend_Http_Response">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getBody</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        string</code><p class="short-description">Get the response body as string</p>
+<div class="long-description"><p>This method returns the body of the HTTP response (the content), as it
+should be in it's readable version - that is, after decoding it (if it
+was decoded), deflating it (if it was gzip compressed), etc.</p>
+
+<p>If you want to get the raw body (as transfered on wire) use
+$this->getRawBody() instead.</p>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>string</dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Http_Response::getHeader()"></a><h4 class="method public">getHeader<div class="to-top"><a href="#Zend_Http_Response">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getHeader</span><span class="nb-faded-text">(
+           $header
+          )
+        </span>
+        :
+        string|array|null</code><p class="short-description">Get a specific header as string, or null if it is not set</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$header</dt>
+<dd><em>string$header</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>string|array|null</dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Http_Response::getHeaders()"></a><h4 class="method public">getHeaders<div class="to-top"><a href="#Zend_Http_Response">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getHeaders</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        array</code><p class="short-description">Get the response headers</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>array</dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Http_Response::getHeadersAsString()"></a><h4 class="method public">getHeadersAsString<div class="to-top"><a href="#Zend_Http_Response">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getHeadersAsString</span><span class="nb-faded-text">(
+          boolean $status_line
+              =
+              true, string $br
+              =
+              \n
+          )
+        </span>
+        :
+        string</code><p class="short-description">Get all headers as string</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$status_line</dt>
+<dd>boolean<br><em>Whether to return the first status line (IE &amp;quot;HTTP 200 OK&amp;quot;)</em>
+</dd>
+<dt>$br</dt>
+<dd>string<br><em>Line breaks (eg. &amp;quot;\n&amp;quot;, &amp;quot;\r\n&amp;quot;, &amp;quot;&amp;lt;br /&amp;gt;&amp;quot;)</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>string</dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Http_Response::getMessage()"></a><h4 class="method public">getMessage<div class="to-top"><a href="#Zend_Http_Response">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getMessage</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        string</code><p class="short-description">Return a message describing the HTTP response code
+(Eg. "OK", "Not Found", "Moved Permanently")</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>string</dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Http_Response::getRawBody()"></a><h4 class="method public">getRawBody<div class="to-top"><a href="#Zend_Http_Response">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getRawBody</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        string</code><p class="short-description">Get the raw response body (as transfered "on wire") as string</p>
+<div class="long-description"><p>If the body is encoded (with Transfer-Encoding, not content-encoding -
+IE "chunked" body), gzip compressed, etc. it will not be decoded.</p>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>string</dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Http_Response::getStatus()"></a><h4 class="method public">getStatus<div class="to-top"><a href="#Zend_Http_Response">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getStatus</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        int</code><p class="short-description">Get the HTTP response status code</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>int</dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Http_Response::getVersion()"></a><h4 class="method public">getVersion<div class="to-top"><a href="#Zend_Http_Response">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getVersion</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        string</code><p class="short-description">Get the HTTP version of the response</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>string</dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Http_Response::isError()"></a><h4 class="method public">isError<div class="to-top"><a href="#Zend_Http_Response">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">isError</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        boolean</code><p class="short-description">Check whether the response is an error</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>boolean</dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Http_Response::isRedirect()"></a><h4 class="method public">isRedirect<div class="to-top"><a href="#Zend_Http_Response">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">isRedirect</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        boolean</code><p class="short-description">Check whether the response is a redirection</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>boolean</dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Http_Response::isSuccessful()"></a><h4 class="method public">isSuccessful<div class="to-top"><a href="#Zend_Http_Response">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">isSuccessful</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        boolean</code><p class="short-description">Check whether the response in successful</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>boolean</dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Http_Response::responseCodeAsText()"></a><h4 class="method public">responseCodeAsText<div class="to-top"><a href="#Zend_Http_Response">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">responseCodeAsText</span><span class="nb-faded-text">(
+          int $code
+              =
+              null, boolean $http11
+              =
+              true
+          )
+        </span>
+        :
+        string</code><p class="short-description">A convenience function that returns a text representation of
+HTTP response codes. Returns 'Unknown' for unknown codes.</p>
+<div class="long-description"><p>Returns array of all codes, if $code is not specified.</p>
+
+<p>Conforms to HTTP/1.1 as defined in RFC 2616 (except for 'Unknown')
+See http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10 for reference</p>
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$code</dt>
+<dd>int<br><em>HTTP response code</em>
+</dd>
+<dt>$http11</dt>
+<dd>boolean<br><em>Use HTTP version 1.1</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>string</dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>true</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<small xmlns="" class="footer">Documentation was generated by <a href="http://docblox-project.org">DocBlox 0.12.2</a>.
+    </small></body></html>

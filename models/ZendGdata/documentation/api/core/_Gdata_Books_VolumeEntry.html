@@ -1,0 +1,1844 @@
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title>Zend Gdata API Documentation</title><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" href="css/black-tie/jquery-ui-1.8.2.custom.css" type="text/css"></link><link rel="stylesheet" href="css/jquery.treeview.css" type="text/css"></link><link rel="stylesheet" href="css/theme.css" type="text/css"></link><script type="text/javascript" src="js/jquery-1.4.2.min.js"></script><script type="text/javascript" src="js/jquery-ui-1.8.2.custom.min.js"></script><script type="text/javascript" src="js/jquery.cookie.js"></script><script type="text/javascript" src="js/jquery.treeview.js"></script><script type="text/javascript">
+            $(document).ready(function() {
+                $(".filetree").treeview({
+                    collapsed: true,
+                    persist: "cookie"
+                });
+
+                $("#accordion").accordion({
+                    collapsible: true,
+                    autoHeight:  false,
+                    fillSpace:   true
+                });
+
+                $(".tabs").tabs();
+            });
+        </script></head><body><div xmlns="" class="content">
+<div class="sub-page-main-header-api-documentation"><h2>API Documentation</h2></div>
+<div class="dotted-line"></div>
+</div>
+<div xmlns="" id="content">
+<script>
+      $(document).ready(function() {
+        $('dl.function-info, dl.constant-info, dl.property-info').prev().css('cursor', 'pointer');
+        $('dl.function-info, dl.constant-info, dl.property-info').prev().click(function() {
+          if ($(this).next().is(':hidden'))
+          {
+            $(this).children('img')[0].src = 'images/arrow_down.gif';
+          } else
+          {
+            $(this).children('img')[0].src = 'images/arrow_right.gif';
+          }
+          $(this).next().slideToggle();
+        });
+      $('dl.function-info, dl.constant-info, dl.property-info').hide();
+      $('dl.function-info img, dl.constant-info img, dl.property-info img').show();
+      });
+    </script><a name="top"></a><h1 class="file">Gdata/Books/VolumeEntry.php</h1>
+<div class="file_menu">
+<a href="#includes">Includes</a> <a href="#classes">Classes</a> </div>
+<dl class="file-info">
+<dt>category</dt>
+<dd>Zend</dd>
+<dt>copyright</dt>
+<dd>Copyright (c) 2005-2011 Zend Technologies USA Inc. (http://www.zend.com)</dd>
+<dt>license</dt>
+<dd>http://framework.zend.com/license/new-bsd     New BSD License</dd>
+<dt>package</dt>
+<dd>Zend_Gdata</dd>
+<dt>subpackage</dt>
+<dd>Books</dd>
+<dt>version</dt>
+<dd>$Id: VolumeEntry.php 23775 2011-03-01 17:25:24Z ralph $</dd>
+<dt>Classes</dt>
+<dd><a class="class" href="#%5CZend_Gdata_Books_VolumeEntry">Zend_Gdata_Books_VolumeEntry</a></dd>
+</dl>
+<h2>Description</h2>
+<p class="short-description">Zend Framework</p>
+<div class="long-description"><p>LICENSE</p>
+
+<p>This source file is subject to the new BSD license that is bundled
+with this package in the file LICENSE.txt.
+It is also available through the world-wide-web at this URL:
+http://framework.zend.com/license/new-bsd
+If you did not receive a copy of the license and are unable to
+obtain it through the world-wide-web, please send an email
+to license@zend.com so we can send you a copy immediately.</p>
+</div>
+<a name="classes"></a><a id="\Zend_Gdata_Books_VolumeEntry"></a><h2 class="class">\Zend_Gdata_Books_VolumeEntry<div class="to-top"><a href="#top">jump to top</a></div>
+</h2>
+<div class="class">
+<dl class="class-info">
+<dt>Extends from</dt>
+<dd><a href="_Gdata_Entry.html#%5CZend_Gdata_Entry">\Zend_Gdata_Entry</a></dd>
+<dt>category</dt>
+<dd>Zend</dd>
+<dt>copyright</dt>
+<dd>Copyright (c) 2005-2011 Zend Technologies USA Inc. (http://www.zend.com)</dd>
+<dt>license</dt>
+<dd>http://framework.zend.com/license/new-bsd     New BSD License</dd>
+<dt>package</dt>
+<dd>Zend_Gdata</dd>
+<dt>subpackage</dt>
+<dd>Books</dd>
+<dt><a href="#" onclick="$(this).children('img').toggle().parents('dt').nextUntil('dt').slideToggle(); return false;"><img src="images/arrow_down.gif"><img src="images/arrow_right.gif" style="display: none">
+                Constants
+              </a></dt>
+<dd><a class="constant" href="#%5CZend_Gdata_Books_VolumeEntry::ANNOTATION_LINK_REL">ANNOTATION_LINK_REL</a></dd>
+<dd><a class="constant" href="#%5CZend_Gdata_Books_VolumeEntry::INFO_LINK_REL">INFO_LINK_REL</a></dd>
+<dd><a class="constant" href="#%5CZend_Gdata_Books_VolumeEntry::PREVIEW_LINK_REL">PREVIEW_LINK_REL</a></dd>
+<dd><a class="constant" href="#%5CZend_Gdata_Books_VolumeEntry::THUMBNAIL_LINK_REL">THUMBNAIL_LINK_REL</a></dd>
+<dt><a href="#" onclick="$(this).children('img').toggle().parents('dt').nextUntil('dt').slideToggle(); return false;"><img src="images/arrow_down.gif"><img src="images/arrow_right.gif" style="display: none">
+                Properties
+              </a></dt>
+<dd><a class="property protected" href="#%5CZend_Gdata_Books_VolumeEntry::%24_comments">$_comments</a></dd>
+<dd><a class="property protected" href="#%5CZend_Gdata_Books_VolumeEntry::%24_creators">$_creators</a></dd>
+<dd><a class="property protected" href="#%5CZend_Gdata_Books_VolumeEntry::%24_dates">$_dates</a></dd>
+<dd><a class="property protected" href="#%5CZend_Gdata_Books_VolumeEntry::%24_descriptions">$_descriptions</a></dd>
+<dd><a class="property protected" href="#%5CZend_Gdata_Books_VolumeEntry::%24_embeddability">$_embeddability</a></dd>
+<dd><a class="property protected" href="#%5CZend_Gdata_Books_VolumeEntry::%24_formats">$_formats</a></dd>
+<dd><a class="property protected" href="#%5CZend_Gdata_Books_VolumeEntry::%24_identifiers">$_identifiers</a></dd>
+<dd><a class="property protected" href="#%5CZend_Gdata_Books_VolumeEntry::%24_languages">$_languages</a></dd>
+<dd><a class="property protected" href="#%5CZend_Gdata_Books_VolumeEntry::%24_publishers">$_publishers</a></dd>
+<dd><a class="property protected" href="#%5CZend_Gdata_Books_VolumeEntry::%24_rating">$_rating</a></dd>
+<dd><a class="property protected" href="#%5CZend_Gdata_Books_VolumeEntry::%24_review">$_review</a></dd>
+<dd><a class="property protected" href="#%5CZend_Gdata_Books_VolumeEntry::%24_subjects">$_subjects</a></dd>
+<dd><a class="property protected" href="#%5CZend_Gdata_Books_VolumeEntry::%24_titles">$_titles</a></dd>
+<dd><a class="property protected" href="#%5CZend_Gdata_Books_VolumeEntry::%24_viewability">$_viewability</a></dd>
+<dt><a href="#" onclick="$(this).children('img').toggle().parents('dt').nextUntil('dt').slideToggle(); return false;"><img src="images/arrow_down.gif"><img src="images/arrow_right.gif" style="display: none">
+                Methods
+              </a></dt>
+<dd><a class="method public" href="#%5CZend_Gdata_Books_VolumeEntry::__construct()">__construct</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Books_VolumeEntry::getAnnotationLink()">getAnnotationLink</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Books_VolumeEntry::getComments()">getComments</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Books_VolumeEntry::getCreators()">getCreators</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Books_VolumeEntry::getDOM()">getDOM</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Books_VolumeEntry::getDates()">getDates</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Books_VolumeEntry::getDescriptions()">getDescriptions</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Books_VolumeEntry::getEmbeddability()">getEmbeddability</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Books_VolumeEntry::getFormats()">getFormats</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Books_VolumeEntry::getIdentifiers()">getIdentifiers</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Books_VolumeEntry::getInfoLink()">getInfoLink</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Books_VolumeEntry::getLanguages()">getLanguages</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Books_VolumeEntry::getPreviewLink()">getPreviewLink</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Books_VolumeEntry::getPublishers()">getPublishers</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Books_VolumeEntry::getRating()">getRating</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Books_VolumeEntry::getReview()">getReview</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Books_VolumeEntry::getSubjects()">getSubjects</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Books_VolumeEntry::getThumbnailLink()">getThumbnailLink</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Books_VolumeEntry::getTitles()">getTitles</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Books_VolumeEntry::getViewability()">getViewability</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Books_VolumeEntry::getVolumeId()">getVolumeId</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Books_VolumeEntry::setComments()">setComments</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Books_VolumeEntry::setCreators()">setCreators</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Books_VolumeEntry::setDates()">setDates</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Books_VolumeEntry::setDescriptions()">setDescriptions</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Books_VolumeEntry::setEmbeddability()">setEmbeddability</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Books_VolumeEntry::setFormats()">setFormats</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Books_VolumeEntry::setIdentifiers()">setIdentifiers</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Books_VolumeEntry::setLanguages()">setLanguages</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Books_VolumeEntry::setPublishers()">setPublishers</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Books_VolumeEntry::setRating()">setRating</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Books_VolumeEntry::setReview()">setReview</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Books_VolumeEntry::setSubjects()">setSubjects</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Books_VolumeEntry::setTitles()">setTitles</a></dd>
+<dd><a class="method public" href="#%5CZend_Gdata_Books_VolumeEntry::setViewability()">setViewability</a></dd>
+<dd><a class="method protected" href="#%5CZend_Gdata_Books_VolumeEntry::takeChildFromDOM()">takeChildFromDOM</a></dd>
+</dl>
+<h3>Description</h3>
+<p class="short-description">Describes an entry in a feed of Book Search volumes</p>
+<div class="long-description">
+</div>
+<h3>Constants</h3>
+<div>
+<a id="\Zend_Gdata_Books_VolumeEntry::THUMBNAIL_LINK_REL"></a><h4 class="constant">THUMBNAIL_LINK_REL<div class="to-top"><a href="#Zend_Gdata_Books_VolumeEntry">jump to class</a></div>
+</h4>
+<div class="constant">
+<code> <span class="highlight">THUMBNAIL_LINK_REL</span> = 'http://schemas.google.com/books/2008/thumbnail'
+      </code><div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="constant-info">
+<dt>value</dt>
+<dd>http://schemas.google.com/books/2008/thumbnail</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Books_VolumeEntry::PREVIEW_LINK_REL"></a><h4 class="constant">PREVIEW_LINK_REL<div class="to-top"><a href="#Zend_Gdata_Books_VolumeEntry">jump to class</a></div>
+</h4>
+<div class="constant">
+<code> <span class="highlight">PREVIEW_LINK_REL</span> = 'http://schemas.google.com/books/2008/preview'
+      </code><div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="constant-info">
+<dt>value</dt>
+<dd>http://schemas.google.com/books/2008/preview</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Books_VolumeEntry::INFO_LINK_REL"></a><h4 class="constant">INFO_LINK_REL<div class="to-top"><a href="#Zend_Gdata_Books_VolumeEntry">jump to class</a></div>
+</h4>
+<div class="constant">
+<code> <span class="highlight">INFO_LINK_REL</span> = 'http://schemas.google.com/books/2008/info'
+      </code><div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="constant-info">
+<dt>value</dt>
+<dd>http://schemas.google.com/books/2008/info</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Books_VolumeEntry::ANNOTATION_LINK_REL"></a><h4 class="constant">ANNOTATION_LINK_REL<div class="to-top"><a href="#Zend_Gdata_Books_VolumeEntry">jump to class</a></div>
+</h4>
+<div class="constant">
+<code> <span class="highlight">ANNOTATION_LINK_REL</span> = 'http://schemas.google.com/books/2008/annotation'
+      </code><div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="constant-info">
+<dt>value</dt>
+<dd>http://schemas.google.com/books/2008/annotation</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+</div>
+<h3>Properties</h3>
+<div>
+<a id="\Zend_Gdata_Books_VolumeEntry::$_comments"></a><h4 class="property protected">$_comments<div class="to-top"><a href="#%5CZend_Gdata_Books_VolumeEntry">jump to class</a></div>
+</h4>
+<div class="property">
+<code> <span class="highlight">$_comments</span> = 'null'</code><div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd>null</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Books_VolumeEntry::$_creators"></a><h4 class="property protected">$_creators<div class="to-top"><a href="#%5CZend_Gdata_Books_VolumeEntry">jump to class</a></div>
+</h4>
+<div class="property">
+<code> <span class="highlight">$_creators</span> = 'array'</code><div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd>array</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Books_VolumeEntry::$_dates"></a><h4 class="property protected">$_dates<div class="to-top"><a href="#%5CZend_Gdata_Books_VolumeEntry">jump to class</a></div>
+</h4>
+<div class="property">
+<code> <span class="highlight">$_dates</span> = 'array'</code><div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd>array</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Books_VolumeEntry::$_descriptions"></a><h4 class="property protected">$_descriptions<div class="to-top"><a href="#%5CZend_Gdata_Books_VolumeEntry">jump to class</a></div>
+</h4>
+<div class="property">
+<code> <span class="highlight">$_descriptions</span> = 'array'</code><div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd>array</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Books_VolumeEntry::$_embeddability"></a><h4 class="property protected">$_embeddability<div class="to-top"><a href="#%5CZend_Gdata_Books_VolumeEntry">jump to class</a></div>
+</h4>
+<div class="property">
+<code> <span class="highlight">$_embeddability</span> = 'null'</code><div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd>null</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Books_VolumeEntry::$_formats"></a><h4 class="property protected">$_formats<div class="to-top"><a href="#%5CZend_Gdata_Books_VolumeEntry">jump to class</a></div>
+</h4>
+<div class="property">
+<code> <span class="highlight">$_formats</span> = 'array'</code><div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd>array</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Books_VolumeEntry::$_identifiers"></a><h4 class="property protected">$_identifiers<div class="to-top"><a href="#%5CZend_Gdata_Books_VolumeEntry">jump to class</a></div>
+</h4>
+<div class="property">
+<code> <span class="highlight">$_identifiers</span> = 'array'</code><div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd>array</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Books_VolumeEntry::$_languages"></a><h4 class="property protected">$_languages<div class="to-top"><a href="#%5CZend_Gdata_Books_VolumeEntry">jump to class</a></div>
+</h4>
+<div class="property">
+<code> <span class="highlight">$_languages</span> = 'array'</code><div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd>array</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Books_VolumeEntry::$_publishers"></a><h4 class="property protected">$_publishers<div class="to-top"><a href="#%5CZend_Gdata_Books_VolumeEntry">jump to class</a></div>
+</h4>
+<div class="property">
+<code> <span class="highlight">$_publishers</span> = 'array'</code><div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd>array</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Books_VolumeEntry::$_rating"></a><h4 class="property protected">$_rating<div class="to-top"><a href="#%5CZend_Gdata_Books_VolumeEntry">jump to class</a></div>
+</h4>
+<div class="property">
+<code>array <span class="highlight">$_rating</span> = 'null'</code><p class="short-description"></p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt></dt>
+<dd>array<br><em></em>
+</dd>
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd>null</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Books_VolumeEntry::$_review"></a><h4 class="property protected">$_review<div class="to-top"><a href="#%5CZend_Gdata_Books_VolumeEntry">jump to class</a></div>
+</h4>
+<div class="property">
+<code> <span class="highlight">$_review</span> = 'null'</code><div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd>null</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Books_VolumeEntry::$_subjects"></a><h4 class="property protected">$_subjects<div class="to-top"><a href="#%5CZend_Gdata_Books_VolumeEntry">jump to class</a></div>
+</h4>
+<div class="property">
+<code> <span class="highlight">$_subjects</span> = 'array'</code><div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd>array</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Books_VolumeEntry::$_titles"></a><h4 class="property protected">$_titles<div class="to-top"><a href="#%5CZend_Gdata_Books_VolumeEntry">jump to class</a></div>
+</h4>
+<div class="property">
+<code> <span class="highlight">$_titles</span> = 'array'</code><div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd>array</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Books_VolumeEntry::$_viewability"></a><h4 class="property protected">$_viewability<div class="to-top"><a href="#%5CZend_Gdata_Books_VolumeEntry">jump to class</a></div>
+</h4>
+<div class="property">
+<code> <span class="highlight">$_viewability</span> = 'null'</code><div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd>null</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+</div>
+<h3>Methods</h3>
+<div>
+<a id="\Zend_Gdata_Books_VolumeEntry::__construct()"></a><h4 class="method public">__construct<div class="to-top"><a href="#Zend_Gdata_Books_VolumeEntry">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">__construct</span><span class="nb-faded-text">(
+          <a href="http://php.net/manual/en/class.domelement.php">\DOMElement</a> $element
+              =
+              null
+          )
+        </span>
+        :
+        </code><p class="short-description">Constructor for Zend_Gdata_Books_VolumeEntry which
+Describes an entry in a feed of Book Search volumes</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$element</dt>
+<dd>\DOMElement<br><em>(optional) DOMElement from which this object should be constructed.</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Books_VolumeEntry::getAnnotationLink()"></a><h4 class="method public">getAnnotationLink<div class="to-top"><a href="#Zend_Gdata_Books_VolumeEntry">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getAnnotationLink</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        <a href="_Gdata_App_Extension_Link.html#%5CZend_Gdata_App_Extension_Link">\Zend_Gdata_App_Extension_Link</a>|null</code><p class="short-description">Gets the annotations link</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>
+<a href="_Gdata_App_Extension_Link.html#%5CZend_Gdata_App_Extension_Link">\Zend_Gdata_App_Extension_Link</a>|null</dt>
+<dd><em>The annotations link</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Books_VolumeEntry::getComments()"></a><h4 class="method public">getComments<div class="to-top"><a href="#Zend_Gdata_Books_VolumeEntry">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getComments</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        <a href="_Gdata_Extension_Comments.html#%5CZend_Gdata_Extension_Comments">\Zend_Gdata_Extension_Comments</a>|null</code><p class="short-description">Returns the Comments class</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>
+<a href="_Gdata_Extension_Comments.html#%5CZend_Gdata_Extension_Comments">\Zend_Gdata_Extension_Comments</a>|null</dt>
+<dd><em>The comments</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Books_VolumeEntry::getCreators()"></a><h4 class="method public">getCreators<div class="to-top"><a href="#Zend_Gdata_Books_VolumeEntry">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getCreators</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        array</code><p class="short-description">Returns the creators</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>array</dt>
+<dd><em>The creators</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Books_VolumeEntry::getDOM()"></a><h4 class="method public">getDOM<div class="to-top"><a href="#Zend_Gdata_Books_VolumeEntry">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getDOM</span><span class="nb-faded-text">(
+          <a href="http://php.net/manual/en/class.domdocument.php">\DOMDocument</a> $doc
+              =
+              null,  $majorVersion
+              =
+              1,  $minorVersion
+              =
+              null
+          )
+        </span>
+        :
+        <a href="http://php.net/manual/en/class.domelement.php">\DOMElement</a></code><p class="short-description">Retrieves DOMElement which corresponds to this element and all
+child properties. This is used to build this object back into a DOM
+and eventually XML text for sending to the server upon updates, or
+for application storage/persistance.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$doc</dt>
+<dd>\DOMDocument<br><em>The DOMDocument used to construct DOMElements</em>
+</dd>
+<dt>$majorVersion</dt>
+<dd><em></em></dd>
+<dt>$minorVersion</dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="http://php.net/manual/en/class.domelement.php">\DOMElement</a></dt>
+<dd><em>The DOMElement representing this element and all child properties.</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Books_VolumeEntry::getDates()"></a><h4 class="method public">getDates<div class="to-top"><a href="#Zend_Gdata_Books_VolumeEntry">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getDates</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        array</code><p class="short-description">Returns the dates</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>array</dt>
+<dd><em>The dates</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Books_VolumeEntry::getDescriptions()"></a><h4 class="method public">getDescriptions<div class="to-top"><a href="#Zend_Gdata_Books_VolumeEntry">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getDescriptions</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        array</code><p class="short-description">Returns the descriptions</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>array</dt>
+<dd><em>The descriptions</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Books_VolumeEntry::getEmbeddability()"></a><h4 class="method public">getEmbeddability<div class="to-top"><a href="#Zend_Gdata_Books_VolumeEntry">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getEmbeddability</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        <a href="_Gdata_Books_Extension_Embeddability.html#%5CZend_Gdata_Books_Extension_Embeddability">\Zend_Gdata_Books_Extension_Embeddability</a>|null</code><p class="short-description">Returns the embeddability</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>
+<a href="_Gdata_Books_Extension_Embeddability.html#%5CZend_Gdata_Books_Extension_Embeddability">\Zend_Gdata_Books_Extension_Embeddability</a>|null</dt>
+<dd><em>The embeddability</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Books_VolumeEntry::getFormats()"></a><h4 class="method public">getFormats<div class="to-top"><a href="#Zend_Gdata_Books_VolumeEntry">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getFormats</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        array</code><p class="short-description">Returns the formats</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>array</dt>
+<dd><em>The formats</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Books_VolumeEntry::getIdentifiers()"></a><h4 class="method public">getIdentifiers<div class="to-top"><a href="#Zend_Gdata_Books_VolumeEntry">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getIdentifiers</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        array</code><p class="short-description">Returns the identifiers</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>array</dt>
+<dd><em>The identifiers</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Books_VolumeEntry::getInfoLink()"></a><h4 class="method public">getInfoLink<div class="to-top"><a href="#Zend_Gdata_Books_VolumeEntry">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getInfoLink</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        <a href="_Gdata_App_Extension_Link.html#%5CZend_Gdata_App_Extension_Link">\Zend_Gdata_App_Extension_Link</a>|null</code><p class="short-description">Gets the info link</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>
+<a href="_Gdata_App_Extension_Link.html#%5CZend_Gdata_App_Extension_Link">\Zend_Gdata_App_Extension_Link</a>|null</dt>
+<dd><em>The info link</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Books_VolumeEntry::getLanguages()"></a><h4 class="method public">getLanguages<div class="to-top"><a href="#Zend_Gdata_Books_VolumeEntry">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getLanguages</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        array</code><p class="short-description">Returns the languages</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>array</dt>
+<dd><em>The languages</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Books_VolumeEntry::getPreviewLink()"></a><h4 class="method public">getPreviewLink<div class="to-top"><a href="#Zend_Gdata_Books_VolumeEntry">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getPreviewLink</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        <a href="_Gdata_App_Extension_Link.html#%5CZend_Gdata_App_Extension_Link">\Zend_Gdata_App_Extension_Link</a>|null</code><p class="short-description">Gets the preview link</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>
+<a href="_Gdata_App_Extension_Link.html#%5CZend_Gdata_App_Extension_Link">\Zend_Gdata_App_Extension_Link</a>|null</dt>
+<dd><em>The preview link</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Books_VolumeEntry::getPublishers()"></a><h4 class="method public">getPublishers<div class="to-top"><a href="#Zend_Gdata_Books_VolumeEntry">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getPublishers</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        array</code><p class="short-description">Returns the publishers</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>array</dt>
+<dd><em>The publishers</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Books_VolumeEntry::getRating()"></a><h4 class="method public">getRating<div class="to-top"><a href="#Zend_Gdata_Books_VolumeEntry">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getRating</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        <a href="_Gdata_Extension_Rating.html#%5CZend_Gdata_Extension_Rating">\Zend_Gdata_Extension_Rating</a>|null</code><p class="short-description">Returns the rating</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>
+<a href="_Gdata_Extension_Rating.html#%5CZend_Gdata_Extension_Rating">\Zend_Gdata_Extension_Rating</a>|null</dt>
+<dd><em>The rating</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Books_VolumeEntry::getReview()"></a><h4 class="method public">getReview<div class="to-top"><a href="#Zend_Gdata_Books_VolumeEntry">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getReview</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        <a href="_Gdata_Books_Extension_Review.html#%5CZend_Gdata_Books_Extension_Review">\Zend_Gdata_Books_Extension_Review</a>|null</code><p class="short-description">Returns the review</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>
+<a href="_Gdata_Books_Extension_Review.html#%5CZend_Gdata_Books_Extension_Review">\Zend_Gdata_Books_Extension_Review</a>|null</dt>
+<dd><em>The review</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Books_VolumeEntry::getSubjects()"></a><h4 class="method public">getSubjects<div class="to-top"><a href="#Zend_Gdata_Books_VolumeEntry">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getSubjects</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        array</code><p class="short-description">Returns the subjects</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>array</dt>
+<dd><em>The subjects</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Books_VolumeEntry::getThumbnailLink()"></a><h4 class="method public">getThumbnailLink<div class="to-top"><a href="#Zend_Gdata_Books_VolumeEntry">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getThumbnailLink</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        \Zend_Gdata_App_Extension_link|null</code><p class="short-description">Gets the thumbnail link</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>\Zend_Gdata_App_Extension_link|null</dt>
+<dd><em>The thumbnail link</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Books_VolumeEntry::getTitles()"></a><h4 class="method public">getTitles<div class="to-top"><a href="#Zend_Gdata_Books_VolumeEntry">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getTitles</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        array</code><p class="short-description">Returns the titles</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>array</dt>
+<dd><em>The titles</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Books_VolumeEntry::getViewability()"></a><h4 class="method public">getViewability<div class="to-top"><a href="#Zend_Gdata_Books_VolumeEntry">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getViewability</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        <a href="_Gdata_Books_Extension_Viewability.html#%5CZend_Gdata_Books_Extension_Viewability">\Zend_Gdata_Books_Extension_Viewability</a>|null</code><p class="short-description">Returns the viewability</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>
+<a href="_Gdata_Books_Extension_Viewability.html#%5CZend_Gdata_Books_Extension_Viewability">\Zend_Gdata_Books_Extension_Viewability</a>|null</dt>
+<dd><em>The viewability</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Books_VolumeEntry::getVolumeId()"></a><h4 class="method public">getVolumeId<div class="to-top"><a href="#Zend_Gdata_Books_VolumeEntry">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getVolumeId</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        string</code><p class="short-description">Gets the volume ID based upon the atom:id value</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>string</dt>
+<dd><em>The volume ID</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+<dt>throws</dt>
+<dd><a href="_Gdata_App_Exception.html#%5CZend_Gdata_App_Exception"></a></dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Books_VolumeEntry::setComments()"></a><h4 class="method public">setComments<div class="to-top"><a href="#Zend_Gdata_Books_VolumeEntry">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">setComments</span><span class="nb-faded-text">(
+          <a href="_Gdata_Extension_Comments.html#%5CZend_Gdata_Extension_Comments">\Zend_Gdata_Extension_Comments</a>|null $comments
+          )
+        </span>
+        :
+        <a href="_Gdata_Books_VolumeEntry.html#%5CZend_Gdata_Books_VolumeEntry">\Zend_Gdata_Books_VolumeEntry</a></code><p class="short-description">Sets the Comments class</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$comments</dt>
+<dd>\Zend_Gdata_Extension_Commentsnull<br><em>Comments class</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_Books_VolumeEntry.html#%5CZend_Gdata_Books_VolumeEntry">\Zend_Gdata_Books_VolumeEntry</a></dt>
+<dd><em>Provides a fluent interface</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Books_VolumeEntry::setCreators()"></a><h4 class="method public">setCreators<div class="to-top"><a href="#Zend_Gdata_Books_VolumeEntry">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">setCreators</span><span class="nb-faded-text">(
+          array $creators
+          )
+        </span>
+        :
+        <a href="_Gdata_Books_VolumeEntry.html#%5CZend_Gdata_Books_VolumeEntry">\Zend_Gdata_Books_VolumeEntry</a></code><p class="short-description">Sets the creators</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$creators</dt>
+<dd>array<br><em>Creators|null</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_Books_VolumeEntry.html#%5CZend_Gdata_Books_VolumeEntry">\Zend_Gdata_Books_VolumeEntry</a></dt>
+<dd><em>Provides a fluent interface</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Books_VolumeEntry::setDates()"></a><h4 class="method public">setDates<div class="to-top"><a href="#Zend_Gdata_Books_VolumeEntry">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">setDates</span><span class="nb-faded-text">(
+          array $dates
+          )
+        </span>
+        :
+        <a href="_Gdata_Books_VolumeEntry.html#%5CZend_Gdata_Books_VolumeEntry">\Zend_Gdata_Books_VolumeEntry</a></code><p class="short-description">Sets the dates</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$dates</dt>
+<dd>array<br><em>dates</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_Books_VolumeEntry.html#%5CZend_Gdata_Books_VolumeEntry">\Zend_Gdata_Books_VolumeEntry</a></dt>
+<dd><em>Provides a fluent interface</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Books_VolumeEntry::setDescriptions()"></a><h4 class="method public">setDescriptions<div class="to-top"><a href="#Zend_Gdata_Books_VolumeEntry">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">setDescriptions</span><span class="nb-faded-text">(
+          array $descriptions
+          )
+        </span>
+        :
+        <a href="_Gdata_Books_VolumeEntry.html#%5CZend_Gdata_Books_VolumeEntry">\Zend_Gdata_Books_VolumeEntry</a></code><p class="short-description">Sets the descriptions</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$descriptions</dt>
+<dd>array<br><em>descriptions</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_Books_VolumeEntry.html#%5CZend_Gdata_Books_VolumeEntry">\Zend_Gdata_Books_VolumeEntry</a></dt>
+<dd><em>Provides a fluent interface</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Books_VolumeEntry::setEmbeddability()"></a><h4 class="method public">setEmbeddability<div class="to-top"><a href="#Zend_Gdata_Books_VolumeEntry">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">setEmbeddability</span><span class="nb-faded-text">(
+          <a href="_Gdata_Books_Extension_Embeddability.html#%5CZend_Gdata_Books_Extension_Embeddability">\Zend_Gdata_Books_Extension_Embeddability</a>|null $embeddability
+          )
+        </span>
+        :
+        <a href="_Gdata_Books_VolumeEntry.html#%5CZend_Gdata_Books_VolumeEntry">\Zend_Gdata_Books_VolumeEntry</a></code><p class="short-description">Sets the embeddability</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$embeddability</dt>
+<dd>\Zend_Gdata_Books_Extension_Embeddabilitynull<br><em>embeddability</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_Books_VolumeEntry.html#%5CZend_Gdata_Books_VolumeEntry">\Zend_Gdata_Books_VolumeEntry</a></dt>
+<dd><em>Provides a fluent interface</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Books_VolumeEntry::setFormats()"></a><h4 class="method public">setFormats<div class="to-top"><a href="#Zend_Gdata_Books_VolumeEntry">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">setFormats</span><span class="nb-faded-text">(
+          array $formats
+          )
+        </span>
+        :
+        <a href="_Gdata_Books_VolumeEntry.html#%5CZend_Gdata_Books_VolumeEntry">\Zend_Gdata_Books_VolumeEntry</a></code><p class="short-description">Sets the formats</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$formats</dt>
+<dd>array<br><em>formats</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_Books_VolumeEntry.html#%5CZend_Gdata_Books_VolumeEntry">\Zend_Gdata_Books_VolumeEntry</a></dt>
+<dd><em>Provides a fluent interface</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Books_VolumeEntry::setIdentifiers()"></a><h4 class="method public">setIdentifiers<div class="to-top"><a href="#Zend_Gdata_Books_VolumeEntry">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">setIdentifiers</span><span class="nb-faded-text">(
+          array $identifiers
+          )
+        </span>
+        :
+        <a href="_Gdata_Books_VolumeEntry.html#%5CZend_Gdata_Books_VolumeEntry">\Zend_Gdata_Books_VolumeEntry</a></code><p class="short-description">Sets the identifiers</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$identifiers</dt>
+<dd>array<br><em>identifiers</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_Books_VolumeEntry.html#%5CZend_Gdata_Books_VolumeEntry">\Zend_Gdata_Books_VolumeEntry</a></dt>
+<dd><em>Provides a fluent interface</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Books_VolumeEntry::setLanguages()"></a><h4 class="method public">setLanguages<div class="to-top"><a href="#Zend_Gdata_Books_VolumeEntry">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">setLanguages</span><span class="nb-faded-text">(
+          array $languages
+          )
+        </span>
+        :
+        <a href="_Gdata_Books_VolumeEntry.html#%5CZend_Gdata_Books_VolumeEntry">\Zend_Gdata_Books_VolumeEntry</a></code><p class="short-description">Sets the languages</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$languages</dt>
+<dd>array<br><em>languages</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_Books_VolumeEntry.html#%5CZend_Gdata_Books_VolumeEntry">\Zend_Gdata_Books_VolumeEntry</a></dt>
+<dd><em>Provides a fluent interface</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Books_VolumeEntry::setPublishers()"></a><h4 class="method public">setPublishers<div class="to-top"><a href="#Zend_Gdata_Books_VolumeEntry">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">setPublishers</span><span class="nb-faded-text">(
+          array $publishers
+          )
+        </span>
+        :
+        <a href="_Gdata_Books_VolumeEntry.html#%5CZend_Gdata_Books_VolumeEntry">\Zend_Gdata_Books_VolumeEntry</a></code><p class="short-description">Sets the publishers</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$publishers</dt>
+<dd>array<br><em>publishers</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_Books_VolumeEntry.html#%5CZend_Gdata_Books_VolumeEntry">\Zend_Gdata_Books_VolumeEntry</a></dt>
+<dd><em>Provides a fluent interface</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Books_VolumeEntry::setRating()"></a><h4 class="method public">setRating<div class="to-top"><a href="#Zend_Gdata_Books_VolumeEntry">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">setRating</span><span class="nb-faded-text">(
+          <a href="_Gdata_Extension_Rating.html#%5CZend_Gdata_Extension_Rating">\Zend_Gdata_Extension_Rating</a>|null $rating
+          )
+        </span>
+        :
+        <a href="_Gdata_Books_VolumeEntry.html#%5CZend_Gdata_Books_VolumeEntry">\Zend_Gdata_Books_VolumeEntry</a></code><p class="short-description">Sets the rating</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$rating</dt>
+<dd>\Zend_Gdata_Extension_Ratingnull<br><em>rating</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_Books_VolumeEntry.html#%5CZend_Gdata_Books_VolumeEntry">\Zend_Gdata_Books_VolumeEntry</a></dt>
+<dd><em>Provides a fluent interface</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Books_VolumeEntry::setReview()"></a><h4 class="method public">setReview<div class="to-top"><a href="#Zend_Gdata_Books_VolumeEntry">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">setReview</span><span class="nb-faded-text">(
+          <a href="_Gdata_Books_Extension_Review.html#%5CZend_Gdata_Books_Extension_Review">\Zend_Gdata_Books_Extension_Review</a>|null $review
+          )
+        </span>
+        :
+        <a href="_Gdata_Books_VolumeEntry.html#%5CZend_Gdata_Books_VolumeEntry">\Zend_Gdata_Books_VolumeEntry</a></code><p class="short-description">Sets the review</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$review</dt>
+<dd>\Zend_Gdata_Books_Extension_Reviewnull<br><em>review</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_Books_VolumeEntry.html#%5CZend_Gdata_Books_VolumeEntry">\Zend_Gdata_Books_VolumeEntry</a></dt>
+<dd><em>Provides a fluent interface</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Books_VolumeEntry::setSubjects()"></a><h4 class="method public">setSubjects<div class="to-top"><a href="#Zend_Gdata_Books_VolumeEntry">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">setSubjects</span><span class="nb-faded-text">(
+          array $subjects
+          )
+        </span>
+        :
+        <a href="_Gdata_Books_VolumeEntry.html#%5CZend_Gdata_Books_VolumeEntry">\Zend_Gdata_Books_VolumeEntry</a></code><p class="short-description">Sets the subjects</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$subjects</dt>
+<dd>array<br><em>subjects</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_Books_VolumeEntry.html#%5CZend_Gdata_Books_VolumeEntry">\Zend_Gdata_Books_VolumeEntry</a></dt>
+<dd><em>Provides a fluent interface</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Books_VolumeEntry::setTitles()"></a><h4 class="method public">setTitles<div class="to-top"><a href="#Zend_Gdata_Books_VolumeEntry">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">setTitles</span><span class="nb-faded-text">(
+          array $titles
+          )
+        </span>
+        :
+        <a href="_Gdata_Books_VolumeEntry.html#%5CZend_Gdata_Books_VolumeEntry">\Zend_Gdata_Books_VolumeEntry</a></code><p class="short-description">Sets the titles</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$titles</dt>
+<dd>array<br><em>titles</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_Books_VolumeEntry.html#%5CZend_Gdata_Books_VolumeEntry">\Zend_Gdata_Books_VolumeEntry</a></dt>
+<dd><em>Provides a fluent interface</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Books_VolumeEntry::setViewability()"></a><h4 class="method public">setViewability<div class="to-top"><a href="#Zend_Gdata_Books_VolumeEntry">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">setViewability</span><span class="nb-faded-text">(
+          <a href="_Gdata_Books_Extension_Viewability.html#%5CZend_Gdata_Books_Extension_Viewability">\Zend_Gdata_Books_Extension_Viewability</a>|null $viewability
+          )
+        </span>
+        :
+        <a href="_Gdata_Books_VolumeEntry.html#%5CZend_Gdata_Books_VolumeEntry">\Zend_Gdata_Books_VolumeEntry</a></code><p class="short-description">Sets the viewability</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$viewability</dt>
+<dd>\Zend_Gdata_Books_Extension_Viewabilitynull<br><em>viewability</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Gdata_Books_VolumeEntry.html#%5CZend_Gdata_Books_VolumeEntry">\Zend_Gdata_Books_VolumeEntry</a></dt>
+<dd><em>Provides a fluent interface</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Zend_Gdata_Books_VolumeEntry::takeChildFromDOM()"></a><h4 class="method protected">takeChildFromDOM<div class="to-top"><a href="#Zend_Gdata_Books_VolumeEntry">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">takeChildFromDOM</span><span class="nb-faded-text">(
+          <a href="http://php.net/manual/en/class.domnode.php">\DOMNode</a> $child
+          )
+        </span>
+        :
+        </code><p class="short-description">Creates individual objects of the appropriate type and stores
+them in this object based upon DOM data.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$child</dt>
+<dd>\DOMNode<br><em>The DOMNode to process.</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<small xmlns="" class="footer">Documentation was generated by <a href="http://docblox-project.org">DocBlox 0.12.2</a>.
+    </small></body></html>
