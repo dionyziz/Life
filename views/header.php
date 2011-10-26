@@ -6,7 +6,7 @@
     <head>
         <title><?php
         if ( $loggedin ) {
-            echo $user[ 0 ][ 'name' ] . "'";
+            echo $user[ 'name' ] . "'";
         }
         else {
             echo "Your";
