@@ -4,7 +4,9 @@
 -->
 <html>
     <head>
-        <title>dionyziz' life</title>
+        <title><?php
+        echo $user[ 'name' ];
+        ?>' life</title>
         <base href="<?php
         global $settings;
         echo $settings[ 'url' ];
