@@ -9,7 +9,7 @@
             echo $user[ 'name' ] . "'";
         }
         else {
-            "Your"
+            echo "Your";
         }
         ?> life</title>
         <base href="<?php
