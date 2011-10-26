@@ -4,7 +4,14 @@
 -->
 <html>
     <head>
-        <title>dionyziz' life</title>
+        <title><?php
+        if ( $loggedin ) {
+            echo $user[ 'name' ] . "'";
+        }
+        else {
+            "Your"
+        }
+        ?> life</title>
         <base href="<?php
         global $settings;
         echo $settings[ 'url' ];
