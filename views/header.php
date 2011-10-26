@@ -11,7 +11,7 @@
         else {
             echo "Your";
         }
-        ?> lifee</title>
+        ?> life</title>
         <base href="<?php
         global $settings;
         echo $settings[ 'url' ];
