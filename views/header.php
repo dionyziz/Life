@@ -5,8 +5,13 @@
 <html>
     <head>
         <title><?php
-        echo $user[ 'name' ];
-        ?>' life</title>
+        if ( $loggedin ) {
+            echo $user[ 'name' ] . "'";
+        }
+        else {
+            "Your"
+        }
+        ?> life</title>
         <base href="<?php
         global $settings;
         echo $settings[ 'url' ];
