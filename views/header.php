@@ -21,6 +21,9 @@
         <meta charset="utf-8" />
     </head>
     <body>
+        <?php
+        var_dump( $loggedin );
+        ?>
         <ul class="toolbar"><?php
         if ( $loginform ) {
             ?><li><a href='user/create'>Get a life</a></li><?php
