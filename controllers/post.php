@@ -3,14 +3,13 @@
         public function view( $id ) {
             throw new NotImplemented;
         }
-        public function listing( $name ) {
+        public function listing( $name = $_SESSION[ 'user' ][ 'name' ] ) {
             $user = User::itemByName( $name );
             if ( empty( $user ) ) {
                 throw new Exception( 'User not found' );
             }
             $userid = $user[ 'id' ];
             $posts = Post::Listing( $userid, isset( $_SESSION[ 'user' ] ) && $_SESSION[ 'user' ][ 'id' ] == $userid );
-            var_dump( $posts );
             view(
                 'post/listing', array(
                     'user' => $user,
