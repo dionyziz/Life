@@ -3,7 +3,10 @@
         public function view( $id ) {
             throw new NotImplemented;
         }
-        public function listing( $name = $_SESSION[ 'user' ][ 'name' ] ) {
+        public function listing( $name ) {
+            if ( $name == NULL ) {
+                $name = $_SESSION[ 'user' ][ 'name' ];
+            }
             $user = User::itemByName( $name );
             if ( empty( $user ) ) {
                 throw new Exception( 'User not found' );
