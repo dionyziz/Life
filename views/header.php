@@ -6,7 +6,7 @@
     <head>
         <title><?php
         if ( $loggedin ) {
-            echo $user[ 'name' ] . "'";
+            echo $_SESSION[ 'user' ][ 'name' ] . "'";
         }
         else {
             echo "Your";
@@ -21,9 +21,6 @@
         <meta charset="utf-8" />
     </head>
     <body>
-        <?php
-        var_dump( $_SESSION );
-        ?>
         <ul class="toolbar"><?php
         if ( $loginform ) {
             ?><li><a href='user/create'>Get a life</a></li><?php
