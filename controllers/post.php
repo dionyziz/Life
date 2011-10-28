@@ -5,6 +5,7 @@
         }
         public function listing( $name ) {
             $user = User::itemByName( $name );
+            var_dump( $user );
             if ( empty( $user ) ) {
                 throw new Exception( 'User not found' );
             }
