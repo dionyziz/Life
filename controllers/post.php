@@ -4,7 +4,7 @@
             throw new NotImplemented;
         }
         public function listing( $name ) {
-            echo $name;
+            var_dump( $name );
             $user = User::itemByName( $name );
             if ( empty( $user ) ) {
                 throw new Exception( 'User not found' );
