@@ -5,11 +5,11 @@
         }
         public function listing( $name ) {
             $user = User::itemByName( $name );
-            var_dump( $user );
             if ( empty( $user ) ) {
                 throw new Exception( 'User not found' );
             }
             $userid = $user[ 'id' ];
+            $user[ 'name' ] = $name;
             $posts = Post::Listing( $userid, isset( $_SESSION[ 'user' ] ) && $_SESSION[ 'user' ][ 'id' ] == $userid );
             view(
                 'post/listing', array(
