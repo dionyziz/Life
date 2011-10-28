@@ -5,8 +5,11 @@
                 Redirect( 'post/listing' );
             }
             $loginform = true;
-            var_dump( $loginform );
-            view( 'session/view', compact( 'error' ) );
+            view( 'session/view', array(
+                    'error' => $error,
+                    'loginform' => $loginform
+                )
+            );
         }
         public function create( $username, $password ) {
             $user = User::authenticate( $username, $password );
