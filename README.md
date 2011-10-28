@@ -44,6 +44,7 @@ TODO
 ----
 This project isn't completed yet. We're planning to add the following
 features in the future:
+
  * Gmail integration
  * Facebook integration
  * Twitter integration
