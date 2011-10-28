@@ -5,6 +5,7 @@
                 Redirect( 'post/listing' );
             }
             $loginform = true;
+            var_dump( $loginform );
             view( 'session/view', compact( 'error' ) );
         }
         public function create( $username, $password ) {

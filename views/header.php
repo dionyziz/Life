@@ -22,7 +22,6 @@
     </head>
     <body>
         <ul class="toolbar"><?php
-        var_dump( $loginform );
         if ( $loginform ) {
             ?><li><a href='user/create'>Get a life</a></li><?php
         }
