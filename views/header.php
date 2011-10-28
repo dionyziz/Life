@@ -22,7 +22,7 @@
     </head>
     <body>
         <?php
-        var_dump( $loggedin );
+        var_dump( $_SESSION );
         ?>
         <ul class="toolbar"><?php
         if ( $loginform ) {
