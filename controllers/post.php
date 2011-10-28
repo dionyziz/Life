@@ -10,6 +10,7 @@
             }
             $userid = $user[ 'id' ];
             $posts = Post::Listing( $userid, isset( $_SESSION[ 'user' ] ) && $_SESSION[ 'user' ][ 'id' ] == $userid );
+            var_dump( $posts );
             view(
                 'post/listing', array(
                     'user' => $user,
