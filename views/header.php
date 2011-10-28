@@ -33,7 +33,7 @@
                 ?></span></li> <?php
             }
             else {
-                ?><li><a href="session/view">Log in</a></li><?php
+                ?><li><a href="session/create">Log in</a></li><?php
             }
         }
         ?></ul><?php
