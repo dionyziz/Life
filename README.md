@@ -1,4 +1,8 @@
-== About ==
+Life
+====
+
+About
+-----
 Life is a simple minimalistic personal journal keeping software. It allows
 you to keep a record of your thoughts using a plain web interface. It
 is intended for personal use, a digital format of a handwritten journal.
@@ -23,24 +27,32 @@ WYSIWYG editor, or anything of the like. It lets you post simple,
 unformatted pieces of text. Think of it as a list of Skype messages sent
 to an imaginary friend that never responds.
 
-== Installation ==
-Rename settings-sample.php to settings.php and edit it to include
+Installation
+------------
+Rename settings-sample.php to settings-local.php and edit it to include
 your database credentials. Run life.sql to create the schema of your
 Life database. If you need Picasa integration, download the Zend Gdata
-library into the models folder and add it to your include path. Then
-insert a row into the users table using an MD5 hashing without salt for
-the password. Finally, login and make your first post.
+library into the models folder and add it to your include path. You can
+then open up the web interface to register and post your first post.
 
-== TODO ==
-This project isn't completed yet. I am planning to add the following
+As the authors of this software, Dionysis Zindros and Themis Papameletiou
+also maintain a centralized version of this software, which we run at
+http://life.kamibu.com/. You are welcome to make an account there and use
+it there instead of running it on your own server.
+
+TODO
+----
+This project isn't completed yet. We're planning to add the following
 features in the future:
-* Gmail integration
-* Facebook integration
-* Twitter integration
-* Google calendar integration
-* Google contacts integration
-* Picasa integration
-* Post pagination
-* Calendar view and time ranges
-* Post editing
+ * Gmail integration
+ * Facebook integration
+ * Twitter integration
+ * Google calendar integration
+ * Google contacts integration
+ * Picasa integration
+ * Post pagination
+ * Calendar view and time ranges
+ * Post editing
+ * Encryption of private posts
+ * Key-based authentication
 
