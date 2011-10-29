@@ -7,19 +7,15 @@ if ( !empty( $error ) ) {
         ?><div class="error">Username already exist. Please try another username.</div><?php
     }
 }
+if ( $success ) {
+    echo $password;
+    return false;
+}
 ?>
 <form method="post" action="user/create" class="register">
     <div>
         <label>Username</label>
         <input type="text" name="name" />
-    </div>
-    <div>
-        <label>Password</label>
-        <input type="password" name="password" />
-    </div>
-    <div>
-        <label>Password again</label>
-        <input type="password" name="password2" />
     </div>
     <div>
         <input type="submit" value="Register" />

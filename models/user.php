@@ -27,10 +27,16 @@
             }
             return false;
         }
-        public static function register( $name,  $password ) {
+        public static function register( $name ) {
+            $alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+            for ( $i = 0; $i < 128; ++$i ) {
+                $password .= $alphabet[ rand( 0, strlen( $alphabet ) - 1 ) ];
+            }
+            $decryptedPass = $password;
             $password = blowfishEncrypt( $password );
             try {
-                return db_insert( 'users', compact( 'name', 'password' ) );
+                $id = db_insert( 'users', compact( 'name', 'password' ) );
+                return compact( 'id', 'decryptedPass' );
             }
             catch ( Exception $e ) {
                 // user already exists

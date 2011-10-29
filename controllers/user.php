@@ -5,22 +5,23 @@
         }
         public function createView( $error ) {
             $registerform = true;
+            $success = false;
             view(
-                'user/create', compact( 'error' )
+                'user/create', compact( 'error', 'success' )
             );
         }
-        public function create( $name, $password, $password2 ) {
+        public function create( $name ) {
             // TODO: use key files instead of password
-            if ( $password != $password2 ) {
-                Redirect( 'user/create?error=nomatch' );
-            }
             try {
-                $id = User::register( $name, $password );
+                $credentials = User::register( $name );
             }
             catch ( UserException $e ) {
                 Redirect( 'user/create?error=noregister' );
             }
-            $_SESSION[ 'user' ] = User::item( $id );
+            view( 
+                'user/create', compact( 'success', 'credentials' )
+            );
+            $_SESSION[ 'user' ] = User::item( $credentials[ 'id' );
             Redirect( 'post/listing' );
         }
         public function delete( $id ) {
