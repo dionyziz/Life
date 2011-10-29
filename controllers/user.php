@@ -21,7 +21,7 @@
             view( 
                 'user/create', compact( 'success', 'credentials' )
             );
-            $_SESSION[ 'user' ] = User::item( $credentials[ 'id' );
+            $_SESSION[ 'user' ] = User::item( $credentials[ 'id' ] );
             Redirect( 'post/listing' );
         }
         public function delete( $id ) {
