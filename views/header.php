@@ -6,7 +6,12 @@
     <head>
         <title><?php
         if ( $loggedin ) {
-            echo $_SESSION[ 'user' ][ 'name' ] . "'";
+            if ( $name != NULL ) {
+                echo $name . "'";
+            }
+            else {
+                echo $_SESSION[ 'user' ][ 'name' ] . "'";
+            }
         }
         else {
             echo "Your";
@@ -23,14 +28,16 @@
     <body>
         <ul class="toolbar"><?php
         if ( $loginform ) {
-            ?><li><a href='user/create'>Get a life</a></li><?php
+            ?><li><a href="user/create" id="getlife" >Get a life</a></li><?php
         }
         else {
             if ( $loggedin ) {
-                ?><li><a href="session/delete" id="logoutlink">Log out</a></li>
-                <li><span><?php
-                echo $user[ 'name' ];
-                ?></span></li> <?php
+                if ( $_SESSION[ 'user' ][ 'name' ] == $name ) {
+                    ?><li><a href="session/delete" id="logoutlink">Log out</a></li>
+                    <li><span><?php
+                    echo $user[ 'name' ];
+                    ?></span></li> <?php
+                }
             }
             else {
                 ?><li><a href="session/create">Log in</a></li><?php

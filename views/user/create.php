@@ -8,18 +8,10 @@ if ( !empty( $error ) ) {
     }
 }
 ?>
-<form method="post" action="user/create" class="register">
+<form method="post" action="user/create" id='registerForm' class="register">
     <div>
         <label>Username</label>
         <input type="text" name="name" />
-    </div>
-    <div>
-        <label>Password</label>
-        <input type="password" name="password" />
-    </div>
-    <div>
-        <label>Password again</label>
-        <input type="password" name="password2" />
     </div>
     <div>
         <input type="submit" value="Register" />

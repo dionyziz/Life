@@ -4,6 +4,7 @@
             throw new NotImplemented;
         }
         public function listing( $name ) {
+            $name = str_replace( '.', '', $name );
             if ( $name == NULL ) {
                 $name = $_SESSION[ 'user' ][ 'name' ];
             }
@@ -15,6 +16,7 @@
             $posts = Post::Listing( $userid, isset( $_SESSION[ 'user' ] ) && $_SESSION[ 'user' ][ 'id' ] == $userid );
             view(
                 'post/listing', array(
+                    'name' => $name,
                     'user' => $user,
                     'posts' => $posts,
                     'loggedin' => isset( $_SESSION[ 'user' ] ),

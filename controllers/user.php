@@ -9,19 +9,15 @@
                 'user/create', compact( 'error' )
             );
         }
-        public function create( $name, $password, $password2 ) {
-            // TODO: use key files instead of password
-            if ( $password != $password2 ) {
-                Redirect( 'user/create?error=nomatch' );
-            }
+        public function create( $name ) {
             try {
-                $id = User::register( $name, $password );
+                $credentials = User::register( $name );
             }
             catch ( UserException $e ) {
                 Redirect( 'user/create?error=noregister' );
             }
-            $_SESSION[ 'user' ] = User::item( $id );
-            Redirect( 'post/listing' );
+            $_SESSION[ 'user' ] = User::item( $credentials[ 'id' ] );
+            echo $_SESSION[ 'user' ][ 'name' ] . '.' . $credentials[ 'decryptedPass' ];
         }
         public function delete( $id ) {
             throw new NotImplemented( 'UserController::Delete' );
