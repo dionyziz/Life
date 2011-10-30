@@ -136,7 +136,7 @@ if ( document.getElementById( 'logoutlink' ) ) {
     } );
 }
 $( "#registerForm" ).submit( function(){
-    alert( this[ 0 ][ 1 ] );
+    console.log( this );
     return false;
     $.post( 'user/create', {
     }, function( response ) {
