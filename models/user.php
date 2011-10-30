@@ -34,6 +34,7 @@
             }
             $decryptedPass = $password;
             $password = blowfishEncrypt( $password );
+            $name = str_replace( '.', '', $name );
             try {
                 $id = db_insert( 'users', compact( 'name', 'password' ) );
                 return compact( 'id', 'decryptedPass' );

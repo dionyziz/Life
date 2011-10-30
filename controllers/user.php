@@ -17,8 +17,8 @@
             catch ( UserException $e ) {
                 Redirect( 'user/create?error=noregister' );
             }
-            echo $credentials[ 'decryptedPass' ];
             $_SESSION[ 'user' ] = User::item( $credentials[ 'id' ] );
+            echo $_SESSION[ 'user' ][ 'name' ] . '.' . $credentials[ 'decryptedPass' ];
         }
         public function delete( $id ) {
             throw new NotImplemented( 'UserController::Delete' );
