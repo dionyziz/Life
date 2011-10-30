@@ -18,6 +18,7 @@
             catch ( UserException $e ) {
                 Redirect( 'user/create?error=noregister' );
             }
+            $success = true;
             view( 
                 'user/create', compact( 'success', 'credentials' )
             );
