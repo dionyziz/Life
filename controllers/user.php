@@ -17,7 +17,7 @@
             catch ( UserException $e ) {
                 Redirect( 'user/create?error=noregister' );
             }
-            var_dump( $credentials );
+            echo $credentials[ 'decryptedPass' ];
             $_SESSION[ 'user' ] = User::item( $credentials[ 'id' ] );
         }
         public function delete( $id ) {
