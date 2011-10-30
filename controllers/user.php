@@ -6,6 +6,7 @@
         public function createView( $error ) {
             $registerform = true;
             $success = false;
+            echo "TEST";
             view(
                 'user/create', compact( 'error', 'success' )
             );
