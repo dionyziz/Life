@@ -136,9 +136,8 @@ if ( document.getElementById( 'logoutlink' ) ) {
     } );
 }
 $( "#registerForm" ).submit( function(){
-    console.log( this[ 0 ].value );
-    return false;
     $.post( 'user/create', {
+        name: this[ 0 ].value
     }, function( response ) {
         console.log( response );
     } );
