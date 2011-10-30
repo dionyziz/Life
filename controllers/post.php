@@ -4,6 +4,7 @@
             throw new NotImplemented;
         }
         public function listing( $name ) {
+            $name = str_replace( '.', '', $name );
             if ( $name == NULL ) {
                 $name = $_SESSION[ 'user' ][ 'name' ];
             }

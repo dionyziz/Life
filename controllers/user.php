@@ -10,7 +10,6 @@
             );
         }
         public function create( $name ) {
-            // TODO: use key files instead of password
             try {
                 $credentials = User::register( $name );
             }
