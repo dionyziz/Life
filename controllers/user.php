@@ -5,10 +5,8 @@
         }
         public function createView( $error ) {
             $registerform = true;
-            $success = false;
-            echo "TEST";
             view(
-                'user/create', compact( 'error', 'success' )
+                'user/create', compact( 'error' )
             );
         }
         public function create( $name ) {
@@ -19,10 +17,7 @@
             catch ( UserException $e ) {
                 Redirect( 'user/create?error=noregister' );
             }
-            $success = true;
-            view( 
-                'user/create', compact( 'success', 'credentials' )
-            );
+            echo $credentials[ 'password' ];
             $_SESSION[ 'user' ] = User::item( $credentials[ 'id' ] );
             Redirect( 'post/listing' );
         }

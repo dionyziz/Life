@@ -7,11 +7,6 @@ if ( !empty( $error ) ) {
         ?><div class="error">Username already exist. Please try another username.</div><?php
     }
 }
-if ( $success ) {
-    echo "TEEEEST";
-    echo $password;
-    return false;
-}
 ?>
 <form method="post" action="user/create" id='registerForm' class="register">
     <div>
