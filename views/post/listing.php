@@ -1,6 +1,8 @@
 <?php
     if ( $loggedin ) {
-        include 'views/post/create.php';
+        if ( $_SESSION[ 'user' ][ 'name' ] == $name ) {
+            include 'views/post/create.php';
+        }
     }
     $lastdate = '';
     ?><div class="posts"><?php
