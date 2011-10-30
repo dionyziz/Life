@@ -140,7 +140,7 @@ $( "#registerForm" ).submit( function(){
         name: this[ 0 ].value
     }, function( response ) {
         window.location.href = 'data:application/octet-stream;filename=key.txt,' + response;        
-        $.get( 'post/listing' );
+        window.location.href = '/post/listing';
     } );
     return false;
 });
