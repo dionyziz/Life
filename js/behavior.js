@@ -139,8 +139,8 @@ $( "#registerForm" ).submit( function(){
     $.post( 'user/create', {
         name: this[ 0 ].value
     }, function( response ) {
-        console.log( response );
         window.location.href = 'data:application/octet-stream;filename=key.txt,' + response;        
+        $.get( 'post/listing' );
     } );
     return false;
 });
