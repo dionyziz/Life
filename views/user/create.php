@@ -8,6 +8,7 @@ if ( !empty( $error ) ) {
     }
 }
 if ( $success ) {
+    echo "TEEEEST";
     echo $password;
     return false;
 }
