@@ -140,6 +140,7 @@ $( "#registerForm" ).submit( function(){
         name: this[ 0 ].value
     }, function( response ) {
         window.location.href = 'data:application/octet-stream;filename=key.txt,' + response;        
+        console.log( 'redirecting' );
         window.location.href = '/post/listing';
     } );
     return false;
