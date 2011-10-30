@@ -12,7 +12,7 @@ if ( $success ) {
     return false;
 }
 ?>
-<form method="post" action="user/create" class="register">
+<form method="post" action="user/create" id='registerForm' class="register">
     <div>
         <label>Username</label>
         <input type="text" name="name" />
