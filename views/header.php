@@ -6,7 +6,12 @@
     <head>
         <title><?php
         if ( $loggedin ) {
-            echo $_SESSION[ 'user' ][ 'name' ] . "'";
+            if ( $name != 0 ) {
+                echo $name . "'";
+            }
+            else {
+                echo $_SESSION[ 'user' ][ 'name' ] . "'";
+            }
         }
         else {
             echo "Your";
