@@ -25,6 +25,16 @@ if ( document.getElementsByTagName( 'textarea' ).length ) {
 if ( document.getElementsByTagName( 'input' ).length ) {
     document.getElementsByTagName( 'input' )[ 0 ].focus();
 }
+if ( document.getElementById( 'getlife' ) ) {
+    $( 'body' )[ 0 ].addEventListener( 'dragenter', function ( e ) {
+    }, false );
+    $( '.uploadarea' )[ 0 ].addEventListener( 'dragleave', function ( e ) {
+    }, false );
+    $( '.uploadarea' )[ 0 ].addEventListener( 'dragover', function ( e ) {
+    }, false );
+    $( '.uploadarea' )[ 0 ].addEventListener( 'drop', function ( e ) {
+    }, false );
+}
 if ( document.getElementById( 'logoutlink' ) ) {
     document.getElementById( 'logoutlink' ).onclick = function () {
         $.post( 'session/delete', {}, function () {
@@ -139,8 +149,9 @@ $( "#registerForm" ).submit( function(){
     $.post( 'user/create', {
         name: this[ 0 ].value
     }, function( response ) {
-        window.location.href = 'data:application/octet-stream;filename=key.txt,' + response;        
-        window.location.href = '/post/listing';
+        if ( window.location.href = 'data:application/octet-stream;filename=key.txt,' + response ) {
+            window.location.href = '/post/listing';
+        }
     } );
     return false;
 });

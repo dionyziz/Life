@@ -23,7 +23,7 @@
     <body>
         <ul class="toolbar"><?php
         if ( $loginform ) {
-            ?><li><a href='user/create'>Get a life</a></li><?php
+            ?><li><a href="user/create" id="getlife" >Get a life</a></li><?php
         }
         else {
             if ( $loggedin ) {
