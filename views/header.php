@@ -27,10 +27,12 @@
         }
         else {
             if ( $loggedin ) {
-                ?><li><a href="session/delete" id="logoutlink">Log out</a></li>
-                <li><span><?php
-                echo $user[ 'name' ];
-                ?></span></li> <?php
+                if ( $_SESSION[ 'user' ][ 'name' ] == $name ) {
+                    ?><li><a href="session/delete" id="logoutlink">Log out</a></li>
+                    <li><span><?php
+                    echo $user[ 'name' ];
+                    ?></span></li> <?php
+                }
             }
             else {
                 ?><li><a href="session/create">Log in</a></li><?php
