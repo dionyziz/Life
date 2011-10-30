@@ -6,7 +6,7 @@
     <head>
         <title><?php
         if ( $loggedin ) {
-            if ( $name != 0 ) {
+            if ( $name != NULL ) {
                 echo $name . "'";
             }
             else {
