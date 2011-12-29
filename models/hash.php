@@ -1,6 +1,6 @@
 <?php 
     function blowfishEncrypt( $password ) {
-        $iterations = 7;
+        $iterations = '07';
         $alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
         $salt = '';
         for ( $i = 0; $i < 22; ++$i ) {
