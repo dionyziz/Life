@@ -134,7 +134,7 @@
         );
         return mysql_affected_rows();
     }
-    function db_select( $table, $where ) {
+    function db_select( $table, $where, $select = array( '*' ) ) {
         $wreplace = array();
         $wfields = array();
         foreach ( $where as $field => $value ) {
@@ -143,12 +143,40 @@
         }
         return db_array(
             'SELECT
-                *
+                ' . implode( ', ', $select ) . '
             FROM
                 ' . $table . '
             WHERE
                 ' . implode( ' AND ', $wfields ),
                 $wreplace
+        );
+    }
+    function db_inner_join( $tables, $joinfields, $where, $select = array( '*' ) ) { // joinfields: array( 'user' => 'id' );
+        $wreplace = array();
+        $wfields = array();
+        foreach ( $where as $field => $value ) {
+            $wfields[] = "$field = :where_$field";
+            $wreplace[ 'where_' . $field ] = $value;
+        }
+        $jreplace = array();
+        $jfields = array();
+        foreach ( $joinfields as $field => $value ) {
+        	$jfields[] = "a.$field = b.:join_$field";
+        	$jreplace[ 'join_' . $field ] = $value;
+        }
+        $allreplace = array_merge( $wreplace, $jreplace );
+        return db_array(
+        	'SELECT
+        		' . implode( ', ', $select ) . '
+        	FROM
+        		' . $tables[ 0 ] . ' a
+        	INNER JOIN
+        		' . $tables[ 1 ] . ' b
+        	ON
+        		' . implode( ' AND ', $jfields ) . '
+            WHERE
+                ' . implode( ' AND ', $wfields ),
+                $allreplace
         );
     }
     function db_fetch( $res ) {
