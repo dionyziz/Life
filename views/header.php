@@ -7,11 +7,17 @@
         <title><?php
         if ( $loggedin ) {
             if ( $name != NULL ) {
-                echo $name . "'";
+                $username = $name;
             }
             else {
-                echo $_SESSION[ 'user' ][ 'name' ] . "'";
+                $username = $_SESSION[ 'user' ][ 'name' ];
             }
+            $lastchar = $username[ strlen( $username ) - 1 ];
+            $apostrophe = "'s";
+            if ( $lastchar == 's' || $lastchar == 'z' ) {
+                $apostrophe = "'";
+            }
+            echo $username . $apostrophe;
         }
         else {
             echo "Your";
