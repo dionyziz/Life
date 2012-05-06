@@ -10,4 +10,16 @@ users
     id
     name
     password
+    hashing
     created
+photos
+    id
+    title
+    extension
+    size
+    uploaded
+    taken
+    userid
+    hash
+    width
+    height

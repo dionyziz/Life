@@ -1,13 +1,20 @@
 <?php 
-    function blowfishEncrypt( $password ) {
-        $iterations = '07';
-        $alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-        $salt = '';
-        for ( $i = 0; $i < 22; ++$i ) {
-            $salt .= $alphabet[ rand( 0, strlen( $alphabet ) - 1 ) ];
+    function blowfishEncrypt( $password, $hashing = false ) {
+        if ( $hashing === false ) {
+            $iterations = '07';
+            $alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+            $salt = '';
+            for ( $i = 0; $i < 22; ++$i ) {
+                $salt .= $alphabet[ rand( 0, strlen( $alphabet ) - 1 ) ];
+            }
+
+            $hashing = '$2a$' . $iterations . '$' . $salt . '$';
         }
 
-        return crypt( $password, '$2a$' . $iterations . '$' . $salt . '$' );
+        return array(
+            'password' => crypt( $password, $hashing ),
+            'hashing'  => $hashing
+        );
     }
 
     function hash_random() {
