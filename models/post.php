@@ -27,7 +27,7 @@
                 WHERE
                     userid = :userid
                     AND visibility IN :visibility
-                    AND deleted = "no"
+                    AND deleted != "yes"
                 ORDER BY
                     DATE( created ) DESC, TIME( created ) ASC, id ASC',
                 compact( 'userid', 'visibility' )
