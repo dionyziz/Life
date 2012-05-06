@@ -2,7 +2,10 @@ posts
     id
     userid
     text
+    type
+    visibility
     created
+    deleted
 users
     id
     name
