@@ -80,7 +80,13 @@
             $arguments[] = $http_vars[ $parameter->name ];
         }
         else {
-            $arguments[] = null;
+            try {
+                $arguments[] = $parameter->getDefaultValue();
+            }
+            catch ( ReflectionException $e ) {
+                // not an optional parameter
+                $arguments[] = null;
+            }
         }
     }
     try {
